@@ -1,0 +1,158 @@
+{
+  "task_id": "MNA_T045",
+  "cycle": 1,
+  "lineage": "main",
+  "graded": true,
+  "failures": [
+    {
+      "criterion_id": "C3",
+      "what_went_wrong": "The agent stated warranty survival periods as durations (12 months, 72 months) but failed to convert these into specific calendar dates for claim notification deadlines.",
+      "should_have": "Calculated and explicitly stated the specific deadline dates (e.g., 28 September 2027, 28 September 2032) derived from the Closing Date plus the survival periods.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C5",
+      "what_went_wrong": "The agent identified the quorum issue but did not explicitly list 'valid board approval' as a required condition precedent or state its invalidity in the conditions precedent section.",
+      "should_have": "Explicitly listed 'valid board approval of the transaction' as a required condition precedent and stated whether it had been validly obtained.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C6",
+      "what_went_wrong": "The agent stated survival periods as durations but did not convert them into specific dates or calculate the days remaining from the report date to the general-warranty expiry.",
+      "should_have": "Converted survival periods into specific dates and calculated the days remaining from the report date to the general-warranty expiry deadline.",
+      "failure_kind": "procedural"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T045_0",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "For every time-bound obligation or deadline, state both the duration and the specific calendar date it expires, calculated from the relevant reference date (e.g., Closing Date).",
+      "source_tasks": [
+        "MNA_T045"
+      ],
+      "evidence": [
+        "MNA_T045:C3",
+        "MNA_T045:C6"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T045_1",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Calculate and include the number of days remaining from the report date to every critical deadline, using date arithmetic tools.",
+      "source_tasks": [
+        "MNA_T045"
+      ],
+      "evidence": [
+        "MNA_T045:C6"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T045_2",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Explicitly list all required approvals (e.g., board, regulatory, third-party) as conditions precedent in the deliverable, and state whether each has been validly obtained.",
+      "source_tasks": [
+        "MNA_T045"
+      ],
+      "evidence": [
+        "MNA_T045:C5"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T045_3",
+      "type": "practice_note",
+      "category": "review",
+      "text": "Before finalising, verify that every condition precedent or approval requirement identified in the analysis is explicitly addressed in the deliverable's conditions precedent section.",
+      "source_tasks": [
+        "MNA_T045"
+      ],
+      "evidence": [
+        "MNA_T045:C5"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T045_4",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Use date arithmetic tools to compute and cross-verify all derived dates (e.g., deadlines, survival periods) from reference dates (e.g., Closing Date) before including them in the deliverable.",
+      "source_tasks": [
+        "MNA_T045"
+      ],
+      "evidence": [
+        "MNA_T045:C3",
+        "MNA_T045:C6"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T045_5",
+      "type": "checklist",
+      "category": "review",
+      "text": "Ensure every deadline or time-bound obligation in the deliverable includes: (1) the duration, (2) the specific expiry date, and (3) the days remaining from the report date.",
+      "source_tasks": [
+        "MNA_T045"
+      ],
+      "evidence": [
+        "MNA_T045:C3",
+        "MNA_T045:C6"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.95
+    }
+  ],
+  "lesson_feedback": [
+    {
+      "lesson_id": "L0001",
+      "label": "HELPFUL",
+      "reason": "Directly addresses the procedural failure to convert durations into specific dates, a common oversight in contract reviews."
+    },
+    {
+      "lesson_id": "L0002",
+      "label": "HELPFUL",
+      "reason": "Ensures the agent proactively calculates and includes days remaining, which is critical for client decision-making."
+    },
+    {
+      "lesson_id": "L0003",
+      "label": "HELPFUL",
+      "reason": "Explicitly requires listing approvals as conditions precedent, which would have caught the board approval issue in C5."
+    },
+    {
+      "lesson_id": "L0004",
+      "label": "HELPFUL",
+      "reason": "Encourages a final review step to ensure all analysis findings are reflected in the deliverable, preventing omissions like in C5."
+    },
+    {
+      "lesson_id": "L0005",
+      "label": "HELPFUL",
+      "reason": "Reinforces the need for date arithmetic, which would have prevented the failures in C3 and C6."
+    },
+    {
+      "lesson_id": "L0006",
+      "label": "HELPFUL",
+      "reason": "Provides a clear, reusable checklist for time-bound obligations, ensuring consistency across deliverables."
+    }
+  ],
+  "input_tokens": 4472,
+  "output_tokens": 1219,
+  "cost_usd": 0.0040645,
+  "prompt": "# Task\nType: contract_review | Practice area: corporate_mna\nYou act for the Buyer, Ashcombe Foods Ltd. Ashcombe Foods Ltd (the Buyer) is acquiring the entire issued share capital of Ivybridge Holdings Ltd (the Company) from Pemberton Industries Ltd (the Seller).\n\nReview the principal agreement against the other matter documents and report the problematic provisions. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 1 July 2026. Address the deliverable to the supervising partner.\n\n# Trajectory (18 model steps, 18 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 3. [research] read_document({\"name\": \"client_email.md\"})\n 4. [research] read_document({\"name\": \"articles_of_association_extract.md\"})\n 5. [research] read_document({\"name\": \"board_minutes.md\"})\n 6. [research] read_document({\"name\": \"employment_agreement.md\"})\n 7. [research] search_documents({\"query\": \"warranty\"})\n 8. [research] search_documents({\"query\": \"Material Adverse Change\"})\n 9. [research] search_documents({\"query\": \"Closing Date\"})\n10. [analysis] calculate({\"expression\": \"date('2026-07-01')\"})\n11. [analysis] calculate({\"expression\": \"days_between(date('2026-07-01'), date('2026-09-28'))\"})\n12. [research] search_documents({\"query\": \"quorum\"})\n13. [drafting] write_draft(<1276 words>)\n14. [verification] read_draft({})\n15. [editing] edit_draft(find='### 2.2 Missing Definitions\\n**Problem:** The SPA lacks defin' -> '### 2.2 Missing Definitions\\n**Problem:** The SPA lacks defin')\n16. [editing] edit_draft(find='### 6.3 Disclosure Letter Mechanism\\n**Problem:** No provisio' -> '### 6.3 Disclosure Letter Mechanism\\n**Problem:** No provisio')\n17. [verification] read_draft({})\n18. [control] finish({\"summary\": \"Completed comprehensive legal review of the Share Purchase Agreement for Ashcombe Foods Ltd's acquisition of Ivybridge Holdings Ltd. Identified mul)\n\n# Final deliverable\n# Legal Review: Share Purchase Agreement for Acquisition of Ivybridge Holdings Ltd\n\n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Date:** 1 July 2026  \n**Matter:** Acquisition of Ivybridge Holdings Ltd by Ashcombe Foods Ltd  \n**Client:** Ashcombe Foods Ltd (Buyer)  \n**Counterparty:** Pemberton Industries Ltd (Seller)  \n**Target:** Ivybridge Holdings Ltd (Company)\n\n## Executive Summary\n\nI have reviewed the principal Share Purchase Agreement (SPA) dated 5 June 2026 against the other matter documents. The SPA contains several problematic provisions that require amendment to protect our client's interests. Key issues include: (1) a Closing Date that conflicts with the client's timeline; (2) an overly broad Material Adverse Change exclusion; (3) inadequate warranty protection; (4) missing essential provisions requested by the client; and (5) inconsistencies with the Company's Articles of Association.\n\n## 1. Critical Timeline Issues\n\n### 1.1 Closing Date Conflict\n**Problem:** The SPA specifies a Closing Date of 28 September 2026 (SPA §4.1), which directly conflicts with the client's instruction to target \"completion prior to 1 July 2026\" (Client Email, line 13).\n\n**Risk:** This creates a 3-month delay from the client's intended timeline, potentially affecting business planning and integration.\n\n**Recommendation:** Amend §4.1 to align with the client's requested timeline or negotiate an earlier closing date.\n\n### 1.2 Payment Timing\n**Problem:** §3.2 states \"Time for payment shall be of the essence,\" creating an absolute obligation without flexibility.\n\n**Risk:** Any minor delay in payment could constitute a fundamental breach, potentially allowing the Seller to terminate the agreement.\n\n**Recommendation:** Remove or qualify this provision to allow for reasonable delays in banking processes.\n\n## 2. Definitional Issues\n\n### 2.1 Material Adverse Change Definition\n**Problem:** The Material Adverse Change definition in §1.1 excludes \"pandemics\" without qualification (SPA, line 25-26).\n\n**Risk:** This exclusion is overly broad and could prevent our client from relying on a Material Adverse Change clause if a future pandemic disproportionately affects the Company compared to its competitors.\n\n**Recommendation:** Narrow the exclusion to \"industry-wide pandemics\" or specify that pandemics affecting the Company disproportionately compared to industry peers are not excluded.\n\n### 2.2 Missing Definitions\n**Problem:** The SPA lacks definitions for \"Business Days\" and other standard commercial terms.\n\n**Risk:** Creates ambiguity around timing for notices, payments, and other time-sensitive obligations.\n\n**Recommendation:** Add comprehensive definitions section including \"Business Days\" (excluding weekends and English bank holidays).\n\n### 2.3 Currency Discrepancy\n**Problem:** The SPA specifies the Purchase Price as \"$145,000,000\" (SPA §2.1), but all parties are English companies operating in sterling.\n\n**Risk:** Creates ambiguity about whether the price is in US dollars or if this is a typographical error for pounds sterling.\n\n**Recommendation:** Clarify the currency as pounds sterling (£145,000,000) to avoid foreign exchange risk and confusion.\n\n## 3. Warranty and Indemnity Issues\n\n### 3.1 Missing Warranties Section\n**Problem:** The SPA references \"General Warranties\" and \"Fundamental Warranties\" in §10.1 but contains no actual warranty provisions.\n\n**Risk:** Our client acquires the Company without any contractual assurances about its state, operations, or compliance.\n\n**Recommendation:** Draft comprehensive warranty schedules covering:\n- Title and capacity\n- Financial statements\n- Tax compliance\n- Material contracts (particularly with Ingleby Analytics Ltd)\n- Litigation\n- Employment matters\n- Intellectual property\n- Compliance with laws\n\n### 3.2 Survival Periods\n**Problem:** §10.1 provides for:\n- General Warranties: 12 months survival\n- Fundamental Warranties: 72 months (6 years) survival\n\n**Risk:** 12 months for general warranties is relatively short for a £145 million transaction. Conversely, 72 months for fundamental warranties may be excessive from the Seller's perspective but provides our client with longer protection.\n\n**Recommendation:** Consider extending general warranties to 18-24 months while maintaining 72 months for fundamental warranties (title, capacity, tax).\n\n### 3.3 Missing Indemnities\n**Problem:** The SPA contains no indemnity provisions, contrary to the client's specific request for advice on \"warranties, indemnities, and pre-completion undertakings\" (Client Email, line 15).\n\n**Risk:** Without indemnities, our client's recourse for breaches is limited to warranty claims, which are subject to various limitations.\n\n**Recommendation:** Include specific indemnities for:\n- Tax liabilities\n- Breaches of specific fundamental warranties\n- Pre-completion liabilities\n\n## 4. Restrictive Covenants\n\n### 4.1 Seller Non-Compete\n**Problem:** §12.1 imposes a 4-year non-compete restriction on the Seller.\n\n**Risk:** While this protects our client's investment, a 4-year restriction may be challenged as unreasonable under English law if it goes beyond what is necessary to protect legitimate business interests.\n\n**Recommendation:** Consider reducing to 2-3 years with appropriate geographical and scope limitations tied to the actual business of the Company.\n\n### 4.2 Confidentiality Period\n**Problem:** §6.2 imposes a 5-year confidentiality obligation post-completion.\n\n**Risk:** This may be insufficient for truly sensitive information. The Company's Articles provide for indefinite confidentiality for directors and employees (Articles §8.2).\n\n**Recommendation:** Align with the Articles by making confidentiality obligations perpetual for trade secrets and other genuinely confidential information.\n\n## 5. Inconsistencies with Company Documents\n\n### 5.1 Board Quorum Inconsistency\n**Problem:** The Company's Articles state a quorum of three directors (Articles §5.1), but the Board Minutes incorrectly state that 2 directors constitute a quorum (Board Minutes, line 15).\n\n**Risk:** This calls into question the validity of the Board's approval of the transaction, potentially affecting the enforceability of the SPA.\n\n**Recommendation:** Require the Company to rectify this inconsistency and confirm that all corporate approvals are valid.\n\n### 5.2 Material Customer Relationship\n**Problem:** The client specifically requested attention to the Company's relationship with Ingleby Analytics Ltd (Client Email, line 13), but the SPA contains no specific provisions addressing this material customer relationship.\n\n**Risk:** Loss of this customer post-acquisition could significantly impact the Company's value.\n\n**Recommendation:** Include specific warranties regarding:\n- The status of the relationship with Ingleby Analytics Ltd\n- Any change of control provisions in customer contracts\n- Revenue concentration from this customer\n\n## 6. Missing Essential Provisions\n\n### 6.1 Pre-Completion Undertakings\n**Problem:** No pre-completion undertakings requiring the Seller to operate the Company in the ordinary course between signing and completion.\n\n**Risk:** The Seller could take actions that diminish the Company's value before closing.\n\n**Recommendation:** Include standard pre-completion undertakings prohibiting:\n- Material changes to business operations\n- Entering into unusual contracts\n- Making significant capital expenditures\n- Changing key personnel terms\n\n### 6.2 Conditions Precedent\n**Problem:** The SPA contains no conditions precedent to closing.\n\n**Risk:** Our client could be obligated to complete the purchase even if key regulatory approvals or third-party consents are not obtained.\n\n**Recommendation:** Include conditions precedent for:\n- Regulatory approvals (if applicable)\n- Third-party consents (particularly from Ingleby Analytics Ltd)\n- No Material Adverse Change\n- Accuracy of warranties\n\n### 6.3 Disclosure Letter Mechanism\n**Problem:** No provision for a disclosure letter to qualify the warranties.\n\n**Risk:** Without a disclosure mechanism, the Seller could claim later that certain matters were known or should have been known to our client.\n\n**Recommendation:** Include a comprehensive disclosure letter process allowing the Seller to disclose matters against warranties, with appropriate limitations on the scope of disclosures.\n\n### 6.4 Notice Provisions\n**Problem:** The notice provisions in §5 are basic and do not specify deemed receipt times for different delivery methods.\n\n**Risk:** Creates uncertainty about when notices are effective, which could be critical for time-sensitive communications.\n\n**Recommendation:** Include detailed deemed receipt provisions (e.g., next business day for email, 2 business days for post) and require read receipts for important notices.\n\n## 7. Employment Considerations\n\n### 7.1 Founder Employment Agreement\n**Note:** The Employment Agreement for Mr. Julian Hartley (the Founder) contains a 12-month non-compete restriction post-employment (§18.2) and specifically includes competition with businesses supplying Ingleby Analytics Ltd (§18.3).\n\n**Observation:** This aligns with protecting the Company's relationship with its material customer and should be preserved post-acquisition.\n\n## 8. Recommendations for Next Steps\n\n1. **Immediate Amendments Required:**\n   - Align Closing Date with client's timeline\n   - Add comprehensive warranty schedules\n   - Include indemnity provisions\n   - Add pre-completion undertakings\n   - Insert conditions precedent\n\n2. **Negotiation Priorities:**\n   - Material Adverse Change definition\n   - Warranty survival periods\n   - Non-compete duration\n   - Payment timing provisions\n\n3. **Due Diligence Focus:**\n   - Validate Board approval given quorum inconsistency\n   - Review all contracts with Ingleby Analytics Ltd\n   - Confirm no change of control provisions triggered\n   - Verify employment arrangements for key personnel\n\n4. **Documentation Completion:**\n   - Draft disclosure letter\n   - Prepare ancillary documents\n   - Finalize completion checklist\n\n## Conclusion\n\nThe current SPA is substantially incomplete and contains several provisions unfavorable to our client. The most critical issues are the timeline conflict, missing warranties and indemnities, and the overly broad Material Adverse Change exclusion. I recommend we seek comprehensive amendments to address these deficiencies before proceeding.\n\nI am available to discuss these findings and prepare the necessary amendments at your convenience.\n\n# Expert rubric verdicts (4/7 passed)\n- C1 [PASS] Identifies that the board approval was given at a meeting with only 2 directors present when Article 11 requires a quorum of three, so the approval may be invalid, and recommends a fresh or ratifying resolution.\n    judges: PASS: The deliverable identifies the quorum discrepancy (Articles require 3 directors, only 2 were present) in section 5.1 and recommends the Company rectify the inconsistency and confirm all corporate approvals are valid. | PASS: The deliverable identifies the quorum inconsistency at §5.1, noting Articles require 3 directors but Board Minutes state 2 constitute a quorum, and recommends requiring the Company to rectify this inconsistency and confi\n- C2 [PASS] Identifies that the 4-year SPA non-compete may be unenforceable as wider than reasonably necessary and is inconsistent with the 12-month restriction in the Founder's employment agreement.\n    judges: PASS: Section 4.1 identifies the 4-year SPA non-compete as potentially unreasonable, and section 7.1 notes the Founder's employment agreement contains a 12-month restriction, highlighting the inconsistency. | PASS: The deliverable identifies the 4-year SPA non-compete at §4.1 and notes it may be challenged as unreasonable under English law, and separately references the Founder's 12-month non-compete at §7.1, though it does not exp\n- C3 [FAIL] States that General Warranty claims must be notified by 28 September 2027 (12 months after Closing) and Fundamental Warranty claims by 28 September 2032 (72 months after Closing).\n    judges: FAIL: The deliverable states the survival periods as durations (12 and 72 months) but fails to calculate or state the specific deadline dates (28 September 2027 and 28 September 2032) for claims notification. | FAIL: The deliverable states survival periods as 12 months and 72 months, but does not convert these to specific dates (28 September 2027 and 28 September 2032) as required by the criterion.\n- C4 [PASS] Identifies that the MAC carve-outs (general economic, industry-wide and pandemic changes) contain no 'disproportionate effect' exception, so the Buyer bears those risks even where the Company is disproportionately affected, and recommends adding one.\n    judges: PASS: Section 2.1 identifies that the MAC definition excludes pandemics without qualification and recommends narrowing the exclusion to specify that pandemics affecting the Company disproportionately are not excluded. | PASS: The deliverable at §2.1 explicitly identifies that the pandemics exclusion is 'overly broad' and recommends narrowing it to 'industry-wide pandemics' or specifying that pandemics affecting the Company 'disproportionately\n- C5 [FAIL] Lists valid board approval of the transaction as a required approval and states it has not been validly obtained.\n    judges: FAIL: While the deliverable notes the quorum issue and questions the validity of the approval, it does not explicitly list 'valid board approval' as a required approval in the conditions precedent section or state it has not b | FAIL: While the deliverable identifies the board quorum issue, it does not explicitly list 'valid board approval of the transaction' as a required approval in a conditions precedent or approvals section, nor does it explicitly\n- C6 [FAIL] States the survival periods as durations and as dates (28 September 2027; 28 September 2032) and gives days remaining to the general-warranty expiry from 1 July 2026 (454 days).\n    judges: FAIL: The deliverable states the survival periods as durations but fails to convert them into the specific dates (28 September 2027 and 28 September 2032) or calculate the days remaining from the report date. | FAIL: The deliverable states survival periods as durations (12 months, 72 months) but does not state them as specific dates (28 September 2027; 28 September 2032) nor calculate days remaining to general-warranty expiry from 1 \n- C7 [PASS] Gives a pinpoint citation (document name and section/clause number) for every issue or finding.\n    judges: PASS: The deliverable provides pinpoint citations for its findings, referencing specific SPA sections (e.g., §4.1, §1.1, §10.1), Articles of Association sections (e.g., §5.1, §8.2), and document names throughout. | PASS: The deliverable consistently provides pinpoint citations (e.g., 'SPA §4.1', 'Client Email, line 13', 'Articles §5.1', 'Board Minutes, line 15', 'SPA §2.1', 'SPA §10.1', 'SPA §12.1', 'SPA §6.2', 'Articles §8.2', 'Employme\n\n# Your job\nAnalyse each FAILED criterion: what went wrong, what the agent should have done, and whether the failure is procedural (reusable) or task-specific. Then write reusable candidate lessons that would prevent the procedural failures on other matters.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|contract_review\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C3\",\n      \"what_went_wrong\": \"The agent stated warranty survival periods as durations (12 months, 72 months) but failed to convert these into specific calendar dates for claim notification deadlines.\",\n      \"should_have\": \"Calculated and explicitly stated the specific deadline dates (e.g., 28 September 2027, 28 September 2032) derived from the Closing Date plus the survival periods.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C5\",\n      \"what_went_wrong\": \"The agent identified the quorum issue but did not explicitly list 'valid board approval' as a required condition precedent or state its invalidity in the conditions precedent section.\",\n      \"should_have\": \"Explicitly listed 'valid board approval of the transaction' as a required condition precedent and stated whether it had been validly obtained.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C6\",\n      \"what_went_wrong\": \"The agent stated survival periods as durations but did not convert them into specific dates or calculate the days remaining from the report date to the general-warranty expiry.\",\n      \"should_have\": \"Converted survival periods into specific dates and calculated the days remaining from the report date to the general-warranty expiry deadline.\",\n      \"failure_kind\": \"procedural\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"For every time-bound obligation or deadline, state both the duration and the specific calendar date it expires, calculated from the relevant reference date (e.g., Closing Date).\",\n      \"evidence\": [\"C3\", \"C6\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Calculate and include the number of days remaining from the report date to every critical deadline, using date arithmetic tools.\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"Explicitly list all required approvals (e.g., board, regulatory, third-party) as conditions precedent in the deliverable, and state whether each has been validly obtained.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"review\",\n      \"text\": \"Before finalising, verify that every condition precedent or approval requirement identified in the analysis is explicitly addressed in the deliverable's conditions precedent section.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.85\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Use date arithmetic tools to compute and cross-verify all derived dates (e.g., deadlines, survival periods) from reference dates (e.g., Closing Date) before including them in the deliverable.\",\n      \"evidence\": [\"C3\", \"C6\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"review\",\n      \"text\": \"Ensure every deadline or time-bound obligation in the deliverable includes: (1) the duration, (2) the specific expiry date, and (3) the days remaining from the report date.\",\n      \"evidence\": [\"C3\", \"C6\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.95\n    }\n  ],\n  \"lesson_feedback\": [\n    {\n      \"lesson_id\": \"L0001\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Directly addresses the procedural failure to convert durations into specific dates, a common oversight in contract reviews.\"\n    },\n    {\n      \"lesson_id\": \"L0002\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Ensures the agent proactively calculates and includes days remaining, which is critical for client decision-making.\"\n    },\n    {\n      \"lesson_id\": \"L0003\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Explicitly requires listing approvals as conditions precedent, which would have caught the board approval issue in C5.\"\n    },\n    {\n      \"lesson_id\": \"L0004\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Encourages a final review step to ensure all analysis findings are reflected in the deliverable, preventing omissions like in C5.\"\n    },\n    {\n      \"lesson_id\": \"L0005\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Reinforces the need for date arithmetic, which would have prevented the failures in C3 and C6.\"\n    },\n    {\n      \"lesson_id\": \"L0006\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Provides a clear, reusable checklist for time-bound obligations, ensuring consistency across deliverables.\"\n    }\n  ]\n}\n```"
+}

@@ -1,0 +1,142 @@
+{
+  "task_id": "MNA_T029",
+  "cycle": 1,
+  "lineage": "ablation_no_commit_gate",
+  "graded": true,
+  "failures": [
+    {
+      "criterion_id": "C3",
+      "what_went_wrong": "The agent identified the MAC carve-outs but failed to spot the absence of a 'disproportionate effect' exception, which is a critical risk for the Buyer.",
+      "should_have": "Analysed the MAC definition for common exceptions, including 'disproportionate effect', and flagged any omissions as a risk.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C6",
+      "what_went_wrong": "The agent discussed the quorum issue but did not explicitly list 'valid board approval' as a required approval in a dedicated section.",
+      "should_have": "Included a distinct 'Required Approvals' section listing all necessary approvals and their validity status.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C7",
+      "what_went_wrong": "The agent described risks qualitatively but did not assign standardized risk ratings (High/Medium/Low) to each issue.",
+      "should_have": "Applied a consistent risk rating system to all identified issues for clarity and prioritization.",
+      "failure_kind": "procedural"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T029_0",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Include a dedicated 'Required Approvals' section in due diligence reports, listing all necessary approvals and their validity status.",
+      "source_tasks": [
+        "MNA_T029"
+      ],
+      "evidence": [
+        "MNA_T029:C6"
+      ],
+      "task_type_scope": "due_diligence",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T029_1",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Assign a standardized risk rating (High/Medium/Low) to every identified issue in the findings report.",
+      "source_tasks": [
+        "MNA_T029"
+      ],
+      "evidence": [
+        "MNA_T029:C7"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T029_2",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Review Material Adverse Change (MAC) definitions for common exceptions (e.g., 'disproportionate effect') and flag any omissions as risks.",
+      "source_tasks": [
+        "MNA_T029"
+      ],
+      "evidence": [
+        "MNA_T029:C3"
+      ],
+      "task_type_scope": "due_diligence",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T029_3",
+      "type": "practice_note",
+      "category": "review",
+      "text": "Cross-check all contractual definitions (e.g., 'Business Days', 'Material Adverse Change') for consistency across transaction documents.",
+      "source_tasks": [
+        "MNA_T029"
+      ],
+      "evidence": [
+        "MNA_T029:C3",
+        "MNA_T029:C4"
+      ],
+      "task_type_scope": "due_diligence",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.8
+    },
+    {
+      "candidate_id": "c01_MNA_T029_4",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Ensure the report structure includes: Executive Summary, Transaction Overview, Critical Findings, Required Approvals, Action Items, and Conclusion.",
+      "source_tasks": [
+        "MNA_T029"
+      ],
+      "evidence": [
+        "MNA_T029:C6"
+      ],
+      "task_type_scope": "due_diligence",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T029_5",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "For every approval requirement (e.g., board quorum), verify compliance against governing documents (e.g., Articles of Association) and flag discrepancies.",
+      "source_tasks": [
+        "MNA_T029"
+      ],
+      "evidence": [
+        "MNA_T029:C1",
+        "MNA_T029:C6"
+      ],
+      "task_type_scope": "due_diligence",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.85
+    }
+  ],
+  "lesson_feedback": [
+    {
+      "lesson_id": "L0001",
+      "label": "HELPFUL",
+      "reason": "Addresses a clear structural gap in the report (missing 'Required Approvals' section)."
+    },
+    {
+      "lesson_id": "L0002",
+      "label": "HELPFUL",
+      "reason": "Standardizes risk assessment, making the report more actionable for clients."
+    },
+    {
+      "lesson_id": "L0003",
+      "label": "HELPFUL",
+      "reason": "Targets a common oversight in MAC clause analysis, which is critical for Buyer protection."
+    }
+  ],
+  "input_tokens": 4744,
+  "output_tokens": 957,
+  "cost_usd": 0.0038075,
+  "prompt": "# Task\nType: due_diligence | Practice area: corporate_mna\nYou act for the Buyer, Netherby Holdings Ltd. Netherby Holdings Ltd (the Buyer) is acquiring the entire issued share capital of Quayside Logistics plc (the Company) from Ingleby Retail Group plc (the Seller).\n\nPrepare a due diligence findings report on the matter documents. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 8 March 2027. Address the deliverable to the supervising partner.\n\n# Trajectory (38 model steps, 38 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 3. [research] read_document({\"name\": \"escrow_agreement.md\"})\n 4. [research] read_document({\"name\": \"board_minutes.md\"})\n 5. [research] read_document({\"name\": \"articles_of_association_extract.md\"})\n 6. [research] read_document({\"name\": \"client_email.md\"})\n 7. [research] search_documents({\"query\": \"Foxley Marine\"})\n 8. [research] search_documents({\"query\": \"March 2027\"})\n 9. [research] search_documents({\"query\": \"February 2027\"})\n10. [research] search_documents({\"query\": \"30 days\"})\n11. [research] search_documents({\"query\": \"quorum\"})\n12. [research] read_document({\"name\": \"board_minutes.md\", \"start_line\": 20, \"num_lines\": 10})\n13. [analysis] calculate({\"expression\": \"Closing Date = date('2027-04-15')\"})\n14. [analysis] calculate({\"expression\": \"closing_date = date('2027-04-15')\"})\n15. [analysis] calculate({\"expression\": \"today = date('2027-03-08')\"})\n16. [analysis] calculate({\"expression\": \"days_to_closing = days_between(today, closing_date)\"})\n17. [analysis] calculate({\"expression\": \"days_between(date('2027-03-08'), date('2027-04-15'))\"})\n18. [analysis] calculate({\"expression\": \"purchase_price = 180000000\"})\n19. [analysis] calculate({\"expression\": \"escrow_amount = purchase_price * 0.18\"})\n20. [analysis] calculate({\"expression\": \"180000000 * 0.18\"})\n21. [drafting] write_draft(<1058 words>)\n22. [verification] read_draft({})\n23. [verification] search_documents({\"query\": \"Business Days\"})\n24. [verification] calculate({\"expression\": \"closing_date = date('2027-04-15')\\nfive_business_days_before = add_days(closing_date, -5)\\nfive_business_days_before\"})\n25. [verification] search_documents({\"query\": \"Business Day\"})\n26. [verification] read_document({\"name\": \"share_purchase_agreement.md\", \"start_line\": 19, \"num_lines\": 15})\n27. [editing] edit_draft(find='#### 2.3 Escrow Agreement Concerns\\n\\n**Issue 1: Governing Law' -> '#### 2.3 Escrow Agreement Concerns\\n\\n**Issue 1: Governing Law')\n28. [editing] edit_draft(find='#### 2.4 Material Customer - Foxley Marine Ltd' -> '#### 2.5 Material Customer - Foxley Marine Ltd')\n29. [verification] read_draft({})\n30. [editing] edit_draft(find='1. **Immediate (Pre-Completion):**\\n   - Reconcile document d' -> '1. **Immediate (Pre-Completion):**\\n   - Reconcile document d')\n31. [editing] edit_draft(find='#### 2.5 Material Customer - Foxley Marine Ltd\\n\\n**Finding:**' -> '#### 2.5 Material Customer - Foxley Marine Ltd\\n\\n**Finding:**')\n32. [editing] edit_draft(find='### 3. Key Contractual Provisions Requiring Attention' -> '### 3. Additional Contractual Issues\\n\\n#### 3.1 Inconsistent ')\n33. [editing] edit_draft(find='### 4. Action Items\\n\\n1. **Immediate (Pre-Completion):**\\n   -' -> '### 4. Action Items\\n\\n1. **Immediate (Pre-Completion):**\\n   -')\n34. [verification] read_draft({})\n35. [editing] edit_draft(find='#### 2.6 Inconsistent Notice Provisions\\n\\n**Issue:** Differen' -> '### 3. Additional Contractual Issues\\n\\n#### 3.1 Material Adve')\n36. [verification] read_draft({})\n37. [editing] edit_draft(find='#### 2.5 Material Customer - Foxley Marine Ltd\\n\\n**Finding:**' -> '#### 2.5 Material Customer - Foxley Marine Ltd\\n\\n**Finding:**')\n38. [control] finish({\"summary\": \"Due diligence findings report for Netherby Holdings Ltd's acquisition of Quayside Logistics plc, identifying critical issues including document dat)\n\n# Final deliverable\n# Due Diligence Findings Report\n## Acquisition of Quayside Logistics plc by Netherby Holdings Ltd\n\n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Date:** 8 March 2027  \n**Matter:** Netherby Holdings Ltd acquisition of Quayside Logistics plc  \n\n### Executive Summary\n\nThis report outlines the key due diligence findings from our review of the transaction documents for the proposed acquisition by Netherby Holdings Ltd (the \"Buyer\") of the entire issued share capital of Quayside Logistics plc (the \"Company\") from Ingleby Retail Group plc (the \"Seller\"). The transaction is governed by a Share Purchase Agreement dated 20 February 2027, with a Closing Date of 15 April 2027 and a purchase price of $180,000,000.\n\nOur review has identified several material issues requiring attention, including inconsistencies in document dates, corporate governance concerns, and potential conflicts in governing law provisions.\n\n### 1. Transaction Overview\n\n**Parties:**\n- **Buyer:** Netherby Holdings Ltd (Company No. 13239288)\n- **Seller:** Ingleby Retail Group plc (Company No. 15735132)  \n- **Target:** Quayside Logistics plc (Company No. 13292017)\n\n**Key Terms:**\n- Purchase Price: $180,000,000\n- Closing Date: 15 April 2027\n- Escrow Amount: $32,400,000 (18% of purchase price)\n- Governing Law: English law (Share Purchase Agreement)\n\n### 2. Critical Findings\n\n#### 2.1 Document Date Inconsistencies\n\n**Issue:** Multiple conflicting dates appear across transaction documents:\n\n1. **Share Purchase Agreement:** Dated 20 February 2027\n2. **Escrow Agreement:** References a Purchase Agreement dated 4 March 2027\n3. **Board Minutes:** Reference a draft Share Purchase Agreement dated 5 March 2027\n4. **Client Email:** Dated 7 March 2027, requesting documentation for completion \"shortly after 8 March 2027\"\n\n**Risk:** These inconsistencies create ambiguity regarding which version of the Share Purchase Agreement governs the transaction and could lead to disputes over contractual terms.\n\n**Recommendation:** Clarify and reconcile all document dates. Ensure a single, consistent version of the Share Purchase Agreement is executed by all parties.\n\n#### 2.2 Corporate Governance Issues\n\n**Issue 1: Quorum Defect in Board Meeting**\n\nThe Articles of Association (Article 4.4) require a quorum of **three directors** for board meetings. However, the Board Minutes dated 6 March 2027 record only **two directors** present (Mr Alistair Trent and Ms Eleanor Voss), with three directors absent.\n\nThe Chairman incorrectly stated that two directors constituted a quorate meeting, which contradicts the Articles.\n\n**Risk:** Any resolutions passed at this meeting may be invalid, including the board's approval of the transaction. This could affect the validity of corporate actions taken in connection with the transaction.\n\n**Recommendation:** \n1. Verify whether the Articles have been amended to reduce the quorum requirement\n2. If not amended, reconvene the board meeting with proper quorum\n3. Consider obtaining written resolutions from all directors as an alternative\n\n**Issue 2: Director Conflict of Interest**\n\nMs Eleanor Voss declared a \"personal interest\" in Netherby Holdings Ltd but confirmed no financial or material interest conflicting with the Company's interests. The nature of this \"personal interest\" is not specified.\n\n**Risk:** Undisclosed conflicts could invalidate board decisions or expose directors to liability under the Companies Act 2006.\n\n**Recommendation:** Obtain detailed disclosure of Ms Voss's interest and ensure proper management of any conflicts in accordance with the Articles and Companies Act.\n\n#### 2.3 Escrow Agreement Concerns\n\n**Issue 1: Governing Law Conflict**\n\nThe Share Purchase Agreement is governed by English law (Clause 15.1), but the Escrow Agreement specifies New York law and ICC arbitration in New York (Clause 12.1).\n\n**Risk:** This creates a potential conflict of laws and dispute resolution mechanisms, increasing complexity and cost in the event of claims.\n\n**Recommendation:** Align the governing law and dispute resolution provisions across all transaction documents to English law and English courts.\n\n**Issue 2: Inconsistent Claim Notification Periods**\n\n- Share Purchase Agreement: 30 days for warranty claims (Clause 9.7)\n- Escrow Agreement: 45 days for claims against escrow (Clause 5.2)\n\n**Risk:** Different notification periods create confusion and could result in missed claim deadlines.\n\n**Recommendation:** Standardize claim notification periods across all documents.\n\n#### 2.4 Undefined \"Business Days\" Term\n\n**Issue:** The Share Purchase Agreement requires the Seller to designate a bank account \"at least five Business Days prior to the Closing Date\" (Clause 3.1), but the term \"Business Days\" is not defined in the interpretation clause.\n\n**Risk:** Without a definition, disputes could arise over whether weekends and public holidays are included, potentially affecting payment timing and creating completion delays.\n\n**Recommendation:** Include a clear definition of \"Business Days\" in the Share Purchase Agreement, specifying whether it excludes weekends and public holidays.\n\n#### 2.5 Material Customer - Foxley Marine Ltd\n\n**Finding:** Foxley Marine Ltd (Company No. 11631842) is identified as a material customer in multiple documents:\n- Board Minutes reference it as a \"material customer under the terms of the Share Purchase Agreement\"\n- Articles of Association specifically mention Foxley Marine Ltd in confidentiality provisions\n- Client email specifically requests review of the Foxley Marine contract\n\n**Risk:** The loss of this customer post-acquisition could constitute a Material Adverse Change under the Share Purchase Agreement.\n\n**Recommendation:** \n1. Obtain and review the Foxley Marine Ltd contract\n2. Include appropriate representations and warranties regarding this relationship\n3. Consider specific conditions precedent related to maintaining this customer relationship\n\n#### 2.6 Inconsistent Notice Provisions\n\n**Issue:** Different notice provisions appear across documents:\n- **Articles of Association:** Notices deemed given 48 hours after posting (Article 5.2)\n- **Share Purchase Agreement:** No specific deemed delivery timing\n- **Escrow Agreement:** Notices deemed delivered on second business day after posting (Clause 4.2)\n\n**Risk:** Inconsistent notice timing could affect when obligations are triggered or deadlines begin to run.\n\n**Recommendation:** Standardize notice provisions across all transaction documents, particularly regarding deemed delivery times.\n\n### 3. Additional Contractual Issues\n\n#### 3.1 Material Adverse Change Definition\n\nThe Share Purchase Agreement defines Material Adverse Change with broad exclusions for general economic conditions, industry changes, and pandemics. This definition is favorable to the Seller but may be too restrictive for the Buyer's protection.\n\n**Recommendation:** Review whether additional carve-outs or qualifications are needed to protect the Buyer's interests.\n\n#### 3.2 Payment Terms\n\nThe Purchase Price of $180,000,000 is to be paid in full on the Closing Date (15 April 2027), with 18% ($32,400,000) held in escrow.\n\n**Recommendation:** Confirm escrow arrangements are properly documented and the escrow agent is acceptable to both parties.\n\n#### 3.3 Confidentiality Provisions\n\nBoth the Share Purchase Agreement (Clause 17.1) and Articles of Association (Article 6) contain confidentiality provisions. The Articles specifically protect information about Foxley Marine Ltd.\n\n**Recommendation:** Ensure post-completion confidentiality obligations are clearly defined, particularly regarding the Buyer's access to customer information.\n\n### 4. Action Items\n\n1. **Immediate (Pre-Completion):**\n   - Reconcile document date inconsistencies\n   - Address quorum defect in board approval\n   - Obtain Foxley Marine Ltd contract for review\n   - Align governing law provisions across documents\n   - Define \"Business Days\" in Share Purchase Agreement\n   - Standardize notice provisions\n\n2. **Medium Term:**\n   - Standardize claim notification periods\n   - Review Material Adverse Change definition\n   - Finalize escrow arrangements\n\n3. **Post-Completion:**\n   - Monitor escrow claim procedures\n   - Ensure compliance with confidentiality obligations\n   - Integrate Foxley Marine Ltd relationship management\n\n### 5. Conclusion\n\nWhile the transaction structure is standard, several material issues require resolution before completion. The most critical concerns are the corporate governance defects (quorum issue) and document inconsistencies, which could affect the validity of the transaction.\n\nWe recommend addressing these issues promptly to ensure a smooth completion on 15 April 2027 and to protect the Buyer's interests post-acquisition.\n\n**Next Steps:** We should schedule a call with the client to discuss these findings and agree on an action plan for addressing the identified issues.\n\n# Expert rubric verdicts (4/7 passed)\n- C1 [PASS] Identifies that the board approval was given at a meeting with only 2 directors present when Article 11 requires a quorum of three, so the approval may be invalid, and recommends a fresh or ratifying resolution.\n    judges: PASS: The report correctly identifies that only two directors were present when Article 4.4 requires a quorum of three, notes the approval may be invalid, and recommends reconvening the meeting or obtaining written resolutions | PASS: The deliverable clearly identifies the quorum defect at Section 2.2, noting Article 4.4 requires three directors but only two were present, and recommends verifying amendment, reconvening with proper quorum, or obtaining\n- C2 [PASS] Identifies the conflict between the 30-day claim notice period in SPA Section 9.7 and the 45-day period in Escrow Clause 5.2, and recommends the Buyer works to the shorter 30-day period or aligns the documents.\n    judges: PASS: The report identifies the 30-day claim period in the SPA and the 45-day period in the Escrow Agreement, and recommends standardizing the notification periods across documents. | PASS: The deliverable identifies the 30-day vs 45-day inconsistency at Section 2.3 Issue 2, correctly citing SPA Clause 9.7 and Escrow Clause 5.2, and recommends standardizing the periods.\n- C3 [FAIL] Identifies that the MAC carve-outs (general economic, industry-wide and pandemic changes) contain no 'disproportionate effect' exception, so the Buyer bears those risks even where the Company is disproportionately affected, and recommends adding one.\n    judges: FAIL: While the report notes the MAC exclusions, it does not identify the specific risk that there is no 'disproportionate effect' exception, nor does it recommend adding such a carve-out to protect the Buyer. | FAIL: While the deliverable mentions the MAC definition at Section 3.1, it only states it is 'favorable to the Seller' and 'may be too restrictive' without specifically identifying the absence of a 'disproportionate effect' ex\n- C4 [PASS] Identifies the mismatch between English law / English courts in the SPA and New York law / New York arbitration in the escrow agreement, and the risk of parallel proceedings on escrow claims.\n    judges: PASS: The report identifies the governing law conflict between English law in the SPA and New York law/arbitration in the Escrow Agreement, and notes the risk of increased complexity and cost from conflicting dispute resolutio | PASS: The deliverable clearly identifies the governing law conflict at Section 2.3 Issue 1, noting SPA Clause 15.1 (English law/courts) vs Escrow Clause 12.1 (New York law/arbitration), and the risk of complexity/cost, recomme\n- C5 [PASS] Flags the 30-day vs 45-day notice-period inconsistency between the SPA and the escrow agreement.\n    judges: PASS: The report flags the inconsistency between the 30-day notice period in the SPA and the 45-day period in the Escrow Agreement in section 2.3. | PASS: The deliverable flags the 30-day vs 45-day notice period inconsistency at Section 2.3 Issue 2, though this duplicates C2 which is also satisfied.\n- C6 [FAIL] Lists valid board approval of the transaction as a required approval and states it has not been validly obtained.\n    judges: FAIL: The report does not include a distinct 'Required Approvals' section or list valid board approval as a required approval that has not been validly obtained; it only discusses the quorum issue within the corporate governan | PASS: The deliverable lists board approval as a required approval at Section 2.2 Issue 1 and explicitly states it 'may be invalid' due to the quorum defect, with recommendations for corrective action.\n- C7 [FAIL] Assigns a risk rating (High / Medium / Low) to each issue.\n    judges: FAIL: The report does not assign a specific risk rating (High/Medium/Low) to any of the identified issues, instead using qualitative descriptions of risk without a standardized rating. | FAIL: The deliverable does not assign any risk ratings (High/Medium/Low) to the identified issues; it uses descriptive terms like 'material' and 'critical' but not the required rating system.\n\n# Your job\nAnalyse each FAILED criterion: what went wrong, what the agent should have done, and whether the failure is procedural (reusable) or task-specific. Then write reusable candidate lessons that would prevent the procedural failures on other matters.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|due_diligence\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C3\",\n      \"what_went_wrong\": \"The agent identified the MAC carve-outs but failed to spot the absence of a 'disproportionate effect' exception, which is a critical risk for the Buyer.\",\n      \"should_have\": \"Analysed the MAC definition for common exceptions, including 'disproportionate effect', and flagged any omissions as a risk.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C6\",\n      \"what_went_wrong\": \"The agent discussed the quorum issue but did not explicitly list 'valid board approval' as a required approval in a dedicated section.\",\n      \"should_have\": \"Included a distinct 'Required Approvals' section listing all necessary approvals and their validity status.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C7\",\n      \"what_went_wrong\": \"The agent described risks qualitatively but did not assign standardized risk ratings (High/Medium/Low) to each issue.\",\n      \"should_have\": \"Applied a consistent risk rating system to all identified issues for clarity and prioritization.\",\n      \"failure_kind\": \"procedural\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"Include a dedicated 'Required Approvals' section in due diligence reports, listing all necessary approvals and their validity status.\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"due_diligence\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"Assign a standardized risk rating (High/Medium/Low) to every identified issue in the findings report.\",\n      \"evidence\": [\"C7\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Review Material Adverse Change (MAC) definitions for common exceptions (e.g., 'disproportionate effect') and flag any omissions as risks.\",\n      \"evidence\": [\"C3\"],\n      \"task_type_scope\": \"due_diligence\",\n      \"confidence\": 0.85\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"review\",\n      \"text\": \"Cross-check all contractual definitions (e.g., 'Business Days', 'Material Adverse Change') for consistency across transaction documents.\",\n      \"evidence\": [\"C3\", \"C4\"],\n      \"task_type_scope\": \"due_diligence\",\n      \"confidence\": 0.8\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"Ensure the report structure includes: Executive Summary, Transaction Overview, Critical Findings, Required Approvals, Action Items, and Conclusion.\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"due_diligence\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"For every approval requirement (e.g., board quorum), verify compliance against governing documents (e.g., Articles of Association) and flag discrepancies.\",\n      \"evidence\": [\"C1\", \"C6\"],\n      \"task_type_scope\": \"due_diligence\",\n      \"confidence\": 0.85\n    }\n  ],\n  \"lesson_feedback\": [\n    {\n      \"lesson_id\": \"L0001\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Addresses a clear structural gap in the report (missing 'Required Approvals' section).\"\n    },\n    {\n      \"lesson_id\": \"L0002\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Standardizes risk assessment, making the report more actionable for clients.\"\n    },\n    {\n      \"lesson_id\": \"L0003\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Targets a common oversight in MAC clause analysis, which is critical for Buyer protection.\"\n    }\n  ]\n}\n```"
+}

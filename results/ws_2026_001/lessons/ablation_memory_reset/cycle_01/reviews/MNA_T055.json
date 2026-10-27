@@ -1,0 +1,164 @@
+{
+  "task_id": "MNA_T055",
+  "cycle": 1,
+  "lineage": "ablation_memory_reset",
+  "graded": true,
+  "failures": [
+    {
+      "criterion_id": "C1",
+      "what_went_wrong": "The agent described the escrow release period as '24 months post-closing' but did not calculate or explicitly state the specific release date (18 November 2028) or the requirement to notify claims before that date.",
+      "should_have": "The agent should have calculated and explicitly stated the escrow release date by adding 24 months to the closing date, and noted the deadline for notifying claims.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C3",
+      "what_went_wrong": "The agent identified the MAC exclusion for pandemics as 'overly broad' but did not specifically flag the absence of a 'disproportionate effect' exception, which is a critical risk for the Buyer.",
+      "should_have": "The agent should have explicitly identified the lack of a 'disproportionate effect' exception in MAC carve-outs and recommended its inclusion.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C4",
+      "what_went_wrong": "The agent stated the escrow period duration (24 months) but failed to calculate and include the days remaining from the deliverable date (30 September 2026) to the escrow release date (780 days).",
+      "should_have": "The agent should have calculated the days remaining between the deliverable date and the escrow release date and included this figure in the deliverable.",
+      "failure_kind": "procedural"
+    },
+    {
+      "candidate_id": "C5",
+      "what_went_wrong": "The agent did not check whether the escrow release date (18 November 2028) fell on a non-Business Day and whether it would move to the next Business Day (20 November 2028).",
+      "should_have": "The agent should have verified if the escrow release date fell on a weekend or holiday and noted any adjustment to the next Business Day.",
+      "failure_kind": "procedural"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T055_0",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "For any date-based obligation (e.g., escrow release, notice periods), calculate and explicitly state the specific calendar date, not just the duration.",
+      "source_tasks": [
+        "MNA_T055"
+      ],
+      "evidence": [
+        "MNA_T055:C1",
+        "MNA_T055:C4"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T055_1",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "When reviewing material adverse change (MAC) clauses, check for and flag the absence of a 'disproportionate effect' exception in carve-outs.",
+      "source_tasks": [
+        "MNA_T055"
+      ],
+      "evidence": [
+        "MNA_T055:C3"
+      ],
+      "task_type_scope": "issues_list",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T055_2",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "For any deadline or period, calculate and include the number of days remaining from the current date to the deadline.",
+      "source_tasks": [
+        "MNA_T055"
+      ],
+      "evidence": [
+        "MNA_T055:C4"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T055_3",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Verify if any key dates (e.g., release dates, closing dates) fall on weekends or holidays and note adjustments to the next Business Day.",
+      "source_tasks": [
+        "MNA_T055"
+      ],
+      "evidence": [
+        "MNA_T055:C5"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T055_4",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "For escrow agreements, explicitly state the deadline for notifying claims before the escrow release date.",
+      "source_tasks": [
+        "MNA_T055"
+      ],
+      "evidence": [
+        "MNA_T055:C1"
+      ],
+      "task_type_scope": "issues_list",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T055_5",
+      "type": "practice_note",
+      "category": "review",
+      "text": "Recompute all derived dates (e.g., escrow release dates) using a calendar tool to confirm accuracy before finalising the deliverable.",
+      "source_tasks": [
+        "MNA_T055"
+      ],
+      "evidence": [
+        "MNA_T055:C1",
+        "MNA_T055:C4",
+        "MNA_T055:C5"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.95
+    }
+  ],
+  "lesson_feedback": [
+    {
+      "lesson_id": "L0001",
+      "label": "HELPFUL",
+      "reason": "Generalises the need to convert durations into specific dates, which is reusable across all transactional work."
+    },
+    {
+      "lesson_id": "L0002",
+      "label": "HELPFUL",
+      "reason": "Targets a common drafting gap in MAC clauses, making it broadly applicable to M&A and financing matters."
+    },
+    {
+      "lesson_id": "L0003",
+      "label": "HELPFUL",
+      "reason": "Ensures clarity for clients and partners by providing actionable timelines, a universal requirement in legal work."
+    },
+    {
+      "lesson_id": "L0004",
+      "label": "HELPFUL",
+      "reason": "Addresses a frequent oversight in transactional documents, improving accuracy in date-sensitive obligations."
+    },
+    {
+      "lesson_id": "L0005",
+      "label": "HELPFUL",
+      "reason": "Specific to escrow agreements but critical for risk allocation in M&A transactions."
+    },
+    {
+      "lesson_id": "L0006",
+      "label": "HELPFUL",
+      "reason": "Encourages verification of derived dates, reducing errors in all date-dependent deliverables."
+    }
+  ],
+  "input_tokens": 4568,
+  "output_tokens": 1304,
+  "cost_usd": 0.00424,
+  "prompt": "# Task\nType: issues_list | Practice area: corporate_mna\nYou act for the Buyer, Oakhurst Marine Ltd. Oakhurst Marine Ltd (the Buyer) is acquiring the entire issued share capital of Elstree Industries Ltd (the Company) from Brightwater Robotics Ltd (the Seller).\n\nPrepare an issues list for the supervising partner covering the matter documents. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 30 September 2026. Address the deliverable to the supervising partner.\n\n# Trajectory (28 model steps, 28 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 3. [research] read_document({\"name\": \"escrow_agreement.md\"})\n 4. [research] read_document({\"name\": \"articles_of_association_extract.md\"})\n 5. [research] read_document({\"name\": \"board_minutes.md\"})\n 6. [research] read_document({\"name\": \"client_email.md\"})\n 7. [research] search_documents({\"query\": \"warranties\"})\n 8. [research] search_documents({\"query\": \"indemnities\"})\n 9. [research] search_documents({\"query\": \"disclosure\"})\n10. [research] search_documents({\"query\": \"material adverse\"})\n11. [analysis] calculate({\"expression\": \"date('2026-09-30')\"})\n12. [analysis] calculate({\"expression\": \"days_between(date('2026-09-30'), date('2026-11-18'))\"})\n13. [drafting] write_draft(<995 words>)\n14. [verification] read_draft({})\n15. [verification] search_documents({\"query\": \"notice\"})\n16. [verification] search_documents({\"query\": \"Business Day\"})\n17. [editing] edit_draft(find='### 10. **Corporate Authority**\\n\\n**Issue:** Incomplete corpo' -> '### 10. **Inconsistent Notice Provisions**\\n\\n**Issue:** Diffe')\n18. [editing] edit_draft(find='### 3. **Articles of Association - Transfer Restrictions**\\n\\n' -> '### 3. **Articles of Association Anomalies**\\n\\n**Issue:** Art')\n19. [editing] edit_draft(find='### 7. **Missing Protections in SPA**\\n\\n**Issue:** SPA lacks ' -> '### 7. **Missing Protections in SPA**\\n\\n**Issue:** SPA lacks ')\n20. [editing] edit_draft(find='## Priority Actions\\n\\n1. **Immediate (Next 7 days):**\\n   - Cl' -> '## Priority Actions\\n\\n1. **Immediate (Next 7 days):**\\n   - Cl')\n21. [verification] read_draft({})\n22. [verification] calculate({\"expression\": \"45000000 * 0.10\"})\n23. [editing] edit_draft(find='**Evidence:**\\n- SPA Purchase Price: $45,000,000 (USD)\\n- Escr' -> '**Evidence:**\\n- SPA Purchase Price: $45,000,000 (USD)\\n- Escr')\n24. [verification] search_documents({\"query\": \"1,000,000\"})\n25. [editing] edit_draft(find='### 11. **Corporate Authority**\\n\\n**Issue:** Incomplete corpo' -> '### 11. **Share Capital Specification**\\n\\n**Issue:** SPA does')\n26. [editing] edit_draft(find='## Priority Actions\\n\\n1. **Immediate (Next 7 days):**\\n   - Cl' -> '## Priority Actions\\n\\n1. **Immediate (Next 7 days):**\\n   - Cl')\n27. [verification] read_draft({})\n28. [control] finish({\"summary\": \"I have prepared a comprehensive issues list for the supervising partner regarding Oakhurst Marine Ltd's acquisition of Elstree Industries Ltd. The )\n\n# Final deliverable\n# Issues List: Acquisition of Elstree Industries Ltd by Oakhurst Marine Ltd\n\n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Date:** 30 September 2026  \n**Matter:** Oakhurst Marine Ltd acquisition of Elstree Industries Ltd  \n**Client:** Oakhurst Marine Ltd (Buyer)  \n**Counterparty:** Brightwater Robotics Ltd (Seller)  \n**Target:** Elstree Industries Ltd (Company)\n\n## Executive Summary\n\nOakhurst Marine Ltd proposes to acquire the entire issued share capital of Elstree Industries Ltd from Brightwater Robotics Ltd for $45,000,000. The transaction is documented by a Share Purchase Agreement dated 15 September 2026, with a proposed Closing Date of 18 November 2026. An Escrow Agreement provides for retention of £1,250,000 (10% of consideration) for 24 months post-closing. The Company's Articles of Association contain provisions relevant to the transaction, and board minutes dated 15 September 2026 record the Company's approval.\n\n## Key Issues Requiring Attention\n\n### 1. **Incomplete Transaction Documentation**\n\n**Issue:** The Share Purchase Agreement lacks standard protections for the Buyer.\n\n**Evidence:**\n- No warranties or indemnities from Seller regarding Company's affairs\n- No disclosure letter mechanism referenced\n- No completion accounts or working capital adjustment provisions\n- No limitation of liability clauses\n- No termination rights or conditions precedent\n\n**Risk:** Buyer assumes all risk post-closing without contractual recourse for pre-completion issues.\n\n**Action Required:** Draft comprehensive warranties, indemnities, and disclosure letter. Consider including completion accounts mechanism.\n\n### 2. **Escrow Agreement Inconsistencies**\n\n**Issue:** Material inconsistencies between Share Purchase Agreement and Escrow Agreement.\n\n**Evidence:**\n- SPA Purchase Price: $45,000,000 (USD)\n- Escrow Amount: £1,250,000 (GBP) described as \"10% of total consideration\"\n- 10% of $45,000,000 = $4,500,000 ≠ £1,250,000 (significant discrepancy)\n- Currency mismatch creates ambiguity\n- Escrow Agreement references SPA dated \"[●] 2026\" (incomplete)\n- Escrow Agent not identified\n\n**Risk:** Ambiguity regarding escrow amount calculation and release mechanisms.\n\n**Action Required:** Clarify currency conversion basis, complete missing dates, identify Escrow Agent.\n\n### 3. **Articles of Association Anomalies**\n\n**Issue:** Articles contain unusual provisions and transfer restrictions.\n\n**Evidence:**\n- Articles define transaction parties (\"Buyer\", \"Seller\", \"Brightwater Marine Ltd\") - unusual for constitutional documents\n- Article 2.3: \"The Board may, at its discretion, decline to register any transfer of shares without assigning any reason.\"\n- Board minutes show only 2 of 5 directors present at approval meeting\n- Quorum requirement under Articles: 3 directors (Article 4.4)\n- Articles appear drafted specifically for this transaction rather than as standard constitutional documents\n\n**Risk:** Articles may be challenged as improperly adopted. Board discretion creates transfer risk.\n\n**Action Required:** Verify Articles were properly adopted. Ensure all directors consent or confirm Board resolution valid despite quorum issue.\n\n### 4. **Material Customer Relationship**\n\n**Issue:** Brightwater Marine Ltd identified as material customer with potential conflicts.\n\n**Evidence:**\n- Articles define Brightwater Marine Ltd and include confidentiality provisions\n- Board minutes note Brightwater Marine Ltd \"remains a material customer\"\n- Client email highlights this relationship as requiring advice\n- Articles 7.1-7.2 impose confidentiality obligations on directors/officers regarding affiliates including Brightwater Marine Ltd\n\n**Risk:** Post-acquisition commercial relationship continuity and confidentiality obligations.\n\n**Action Required:** Review commercial agreements with Brightwater Marine Ltd. Assess change of control provisions.\n\n### 5. **Board Approval Validity**\n\n**Issue:** Board meeting quorum potentially not met.\n\n**Evidence:**\n- Articles Article 4.4: \"The quorum for board meetings is three directors.\"\n- Board minutes: Only 2 directors present (of 5 total)\n- Minutes claim \"2 directors constitute a quorum\" contrary to Articles\n\n**Risk:** Company's approval of transaction may be invalid.\n\n**Action Required:** Obtain written resolutions from all directors or reconvene meeting with proper quorum.\n\n### 6. **Timeline Discrepancies**\n\n**Issue:** Conflicting completion timelines in documents.\n\n**Evidence:**\n- Client email: \"expected to be completed by a date prior to 30 September 2026\"\n- SPA: Closing Date 18 November 2026\n- Current date: 30 September 2026\n\n**Risk:** Client expectations misaligned with contractual timeline.\n\n**Action Required:** Clarify with client whether November closing acceptable or renegotiate timeline.\n\n### 7. **Missing Protections in SPA**\n\n**Issue:** SPA lacks standard acquisition agreement provisions.\n\n**Evidence:**\n- No interim period covenants (conduct of business between signing and closing)\n- Material Adverse Change definition excludes pandemics but term undefined\n- No termination rights for material adverse change\n- No specific performance or remedies provisions\n- No governing law clause for notices (only general governing law)\n- No bring-down of warranties at completion\n\n**Risk:** Insufficient protection during interim period and limited remedies for breach. MAC exclusion overly broad.\n\n**Action Required:** Draft comprehensive interim covenants, MAC clause with termination right, detailed remedies section, and define pandemic exclusion narrowly.\n\n### 8. **Payment Mechanism**\n\n**Issue:** Payment terms potentially disadvantageous to Buyer.\n\n**Evidence:**\n- SPA Clause 3.1: Full payment on Closing Date\n- No provision for staged payments or holdbacks beyond escrow\n- No conditions linking payment to delivery of documents\n\n**Risk:** Buyer pays full price before receiving all transfer documents.\n\n**Action Required:** Consider simultaneous exchange mechanism or payment against document delivery.\n\n### 9. **Confidentiality Provisions**\n\n**Issue:** Overlapping confidentiality obligations.\n\n**Evidence:**\n- SPA Clause 6: General confidentiality\n- Articles 7.1-7.2: Director/officer confidentiality regarding Company and affiliates\n- Escrow Agreement Clause 6: Escrow Agent confidentiality\n\n**Risk:** Potential conflicts between different confidentiality regimes.\n\n**Action Required:** Harmonise confidentiality provisions and ensure post-completion obligations clear.\n\n### 10. **Inconsistent Notice Provisions**\n\n**Issue:** Different notice periods and definitions across documents.\n\n**Evidence:**\n- SPA Clause 5.2: Email notices deemed received 48 hours after transmission\n- SPA Clause 5.2: Postal notices deemed received on third Business Day after posting\n- Escrow Agreement Clause 5.2: Postal notices deemed served two Business Days after posting\n- Escrow Agreement Clause 5.2: Email notices deemed served on date of transmission if before 5pm on Business Day\n- Articles Clause 6.2: Postal notices deemed served 48 hours after posting\n- SPA uses \"Business Day\" term but doesn't define it\n- Escrow Agreement defines \"Business Day\" as London banking day\n\n**Risk:** Confusion regarding effective dates of notices, particularly for time-sensitive matters.\n\n**Action Required:** Harmonise notice provisions across all documents. Include consistent Business Day definition in SPA.\n\n### 11. **Share Capital Specification**\n\n**Issue:** SPA doesn't specify number of shares being sold.\n\n**Evidence:**\n- Articles Clause 2.1: Company has 1,000,000 ordinary shares of £1.00 each\n- SPA Clause 2.1: Refers to \"entire issued share capital\" but doesn't specify number of shares\n- No schedule listing share certificates or share numbers\n\n**Risk:** Ambiguity regarding exactly what is being purchased.\n\n**Action Required:** Include schedule specifying number of shares, share certificate numbers, and registered holders.\n\n### 12. **Corporate Authority**\n\n**Issue:** Incomplete corporate authority documentation.\n\n**Evidence:**\n- No evidence of Seller's authority to sell shares\n- No shareholders' resolution from Seller approving disposal\n- Company board approval potentially invalid (quorum issue)\n\n**Risk:** Transaction may be challenged for lack of proper authority.\n\n**Action Required:** Obtain certified copies of Seller's board/shareholder resolutions. Address Company board quorum issue.\n\n## Priority Actions\n\n1. **Immediate (Next 7 days):**\n   - Clarify completion timeline with client\n   - Address board quorum issue\n   - Draft missing SPA provisions (warranties, indemnities, interim covenants)\n   - Harmonise notice provisions across documents\n   - Clarify escrow calculation discrepancy\n\n2. **Short-term (Next 14 days):**\n   - Review commercial agreements with Brightwater Marine Ltd\n   - Complete Escrow Agreement (currency, dates, agent)\n   - Obtain corporate authority documents\n   - Verify Articles of Association adoption\n   - Add share capital schedule to SPA\n\n3. **Medium-term (Before closing):**\n   - Negotiate comprehensive disclosure letter\n   - Finalise all transaction documents\n   - Coordinate closing mechanics\n   - Address MAC definition and exclusions\n\n## Recommendations\n\n1. **Documentation Overhaul:** The SPA requires substantial enhancement with standard acquisition protections.\n\n2. **Due Diligence:** Comprehensive due diligence required given absence of warranties in current SPA.\n\n3. **Timeline Management:** Reset client expectations regarding November closing or renegotiate earlier date.\n\n4. **Corporate Governance:** Resolve board quorum issue definitively before proceeding.\n\n5. **Escrow Finalisation:** Complete Escrow Agreement with clear terms and identified agent.\n\nThis transaction in its current documented form exposes the Buyer to significant risk. The documents require substantial revision to provide adequate protection for our client.\n\n# Expert rubric verdicts (2/6 passed)\n- C1 [FAIL] States that the escrow release date is 18 November 2028 (24 months after the 18 November 2026 Closing Date) and that pending claims must be notified before then.\n    judges: FAIL: The deliverable states the escrow release is '24 months post-closing' but does not calculate or state the specific release date of 18 November 2028, nor does it state that pending claims must be notified before that date | PASS: The deliverable correctly states the escrow release date is 24 months after the Closing Date (18 November 2026), which is 18 November 2028, and notes that pending claims must be notified before that date. This is accurat\n- C2 [PASS] Identifies that the board approval was given at a meeting with only 2 directors present when Article 11 requires a quorum of three, so the approval may be invalid, and recommends a fresh or ratifying resolution.\n    judges: PASS: The deliverable correctly identifies the quorum issue (2 directors present vs. 3 required under Article 4.4), notes the approval may be invalid, and recommends obtaining written resolutions or reconvening the meeting. | PASS: The deliverable clearly identifies the quorum issue: only 2 directors present when Articles Article 4.4 requires 3 directors. It notes the minutes incorrectly claim 2 constitutes a quorum and recommends obtaining written\n- C3 [FAIL] Identifies that the MAC carve-outs (general economic, industry-wide and pandemic changes) contain no 'disproportionate effect' exception, so the Buyer bears those risks even where the Company is disproportionately affected, and recommends adding one.\n    judges: FAIL: While the deliverable notes the MAC exclusion is 'overly broad' and recommends defining the pandemic exclusion narrowly, it does not identify the specific risk that the carve-outs lack a 'disproportionate effect' excepti | FAIL: The deliverable mentions the MAC definition excludes pandemics and recommends defining the pandemic exclusion narrowly, but it does NOT identify the specific issue that there is no 'disproportionate effect' exception for\n- C4 [FAIL] Gives the escrow release period as a duration (24 months) and as a date (18 November 2028), with days remaining from 30 September 2026 (780 days).\n    judges: FAIL: The deliverable states the duration (24 months) but fails to calculate the specific release date (18 November 2028) or the days remaining (780 days) from the deliverable date. | FAIL: While the deliverable mentions the 24-month escrow period and the Closing Date of 18 November 2026, it does NOT calculate or state the days remaining from 30 September 2026 (780 days). The specific numerical calculation \n- C5 [FAIL] Notes that 18 November 2028 is a Saturday and that the release moves to the next Business Day, 20 November 2028.\n    judges: FAIL: The deliverable does not mention that 18 November 2028 falls on a Saturday or that the release date would move to Monday, 20 November 2028. | FAIL: The deliverable does not mention that 18 November 2028 is a Saturday or that the release would move to the next Business Day (20 November 2028). This specific point about weekend adjustment is completely absent.\n- C6 [PASS] Expressly flags inconsistencies between documents (amounts, dates, periods or defined terms that differ across documents).\n    judges: PASS: The deliverable expressly flags multiple inconsistencies including the escrow amount calculation ($4.5m vs £1.25m), currency mismatches, notice provision variations, and timeline discrepancies across the documents. | PASS: The deliverable expressly flags multiple inconsistencies: USD vs GBP currency mismatch in escrow calculation, incomplete dates in Escrow Agreement, conflicting notice provisions across documents, and timeline discrepanci\n\n# Your job\nAnalyse each FAILED criterion: what went wrong, what the agent should have done, and whether the failure is procedural (reusable) or task-specific. Then write reusable candidate lessons that would prevent the procedural failures on other matters.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|issues_list\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C1\",\n      \"what_went_wrong\": \"The agent described the escrow release period as '24 months post-closing' but did not calculate or explicitly state the specific release date (18 November 2028) or the requirement to notify claims before that date.\",\n      \"should_have\": \"The agent should have calculated and explicitly stated the escrow release date by adding 24 months to the closing date, and noted the deadline for notifying claims.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C3\",\n      \"what_went_wrong\": \"The agent identified the MAC exclusion for pandemics as 'overly broad' but did not specifically flag the absence of a 'disproportionate effect' exception, which is a critical risk for the Buyer.\",\n      \"should_have\": \"The agent should have explicitly identified the lack of a 'disproportionate effect' exception in MAC carve-outs and recommended its inclusion.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C4\",\n      \"what_went_wrong\": \"The agent stated the escrow period duration (24 months) but failed to calculate and include the days remaining from the deliverable date (30 September 2026) to the escrow release date (780 days).\",\n      \"should_have\": \"The agent should have calculated the days remaining between the deliverable date and the escrow release date and included this figure in the deliverable.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"candidate_id\": \"C5\",\n      \"what_went_wrong\": \"The agent did not check whether the escrow release date (18 November 2028) fell on a non-Business Day and whether it would move to the next Business Day (20 November 2028).\",\n      \"should_have\": \"The agent should have verified if the escrow release date fell on a weekend or holiday and noted any adjustment to the next Business Day.\",\n      \"failure_kind\": \"procedural\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"For any date-based obligation (e.g., escrow release, notice periods), calculate and explicitly state the specific calendar date, not just the duration.\",\n      \"evidence\": [\"C1\", \"C4\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"When reviewing material adverse change (MAC) clauses, check for and flag the absence of a 'disproportionate effect' exception in carve-outs.\",\n      \"evidence\": [\"C3\"],\n      \"task_type_scope\": \"issues_list\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"For any deadline or period, calculate and include the number of days remaining from the current date to the deadline.\",\n      \"evidence\": [\"C4\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Verify if any key dates (e.g., release dates, closing dates) fall on weekends or holidays and note adjustments to the next Business Day.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"For escrow agreements, explicitly state the deadline for notifying claims before the escrow release date.\",\n      \"evidence\": [\"C1\"],\n      \"task_type_scope\": \"issues_list\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"review\",\n      \"text\": \"Recompute all derived dates (e.g., escrow release dates) using a calendar tool to confirm accuracy before finalising the deliverable.\",\n      \"evidence\": [\"C1\", \"C4\", \"C5\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.95\n    }\n  ],\n  \"lesson_feedback\": [\n    {\n      \"lesson_id\": \"L0001\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Generalises the need to convert durations into specific dates, which is reusable across all transactional work.\"\n    },\n    {\n      \"lesson_id\": \"L0002\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Targets a common drafting gap in MAC clauses, making it broadly applicable to M&A and financing matters.\"\n    },\n    {\n      \"lesson_id\": \"L0003\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Ensures clarity for clients and partners by providing actionable timelines, a universal requirement in legal work.\"\n    },\n    {\n      \"lesson_id\": \"L0004\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Addresses a frequent oversight in transactional documents, improving accuracy in date-sensitive obligations.\"\n    },\n    {\n      \"lesson_id\": \"L0005\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Specific to escrow agreements but critical for risk allocation in M&A transactions.\"\n    },\n    {\n      \"lesson_id\": \"L0006\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Encourages verification of derived dates, reducing errors in all date-dependent deliverables.\"\n    }\n  ]\n}\n```"
+}

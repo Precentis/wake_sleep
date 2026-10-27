@@ -1,0 +1,162 @@
+{
+  "task_id": "MNA_T083",
+  "cycle": 1,
+  "lineage": "main",
+  "graded": true,
+  "failures": [
+    {
+      "criterion_id": "C2",
+      "what_went_wrong": "The agent stated the survival periods for warranties but failed to calculate and explicitly state the specific deadlines for notifying claims based on the closing date.",
+      "should_have": "Calculated and explicitly stated the exact notification deadlines (e.g., 10 September 2027 for General Warranties and 10 March 2029 for Fundamental Warranties) by adding the survival periods to the closing date.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C3",
+      "what_went_wrong": "The agent accepted the stated liability cap without independently verifying its mathematical accuracy against the purchase price.",
+      "should_have": "Recomputed the liability cap by applying the stated percentage to the purchase price and flagged any discrepancy with the stated figure.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C6",
+      "what_went_wrong": "The agent recommended obtaining third-party consent but did not explicitly list it as a 'required third-party consent' in a dedicated section or state that it had not been obtained.",
+      "should_have": "Created a dedicated section for 'Required Third-Party Consents' and explicitly listed the Foxley Engineering consent as outstanding.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C7",
+      "what_went_wrong": "The agent provided inconsistent or incomplete pinpoint citations, such as misstating clause numbers or omitting citations for some findings.",
+      "should_have": "Verified every citation for accuracy and ensured every issue or finding included a precise document name and clause/section number.",
+      "failure_kind": "procedural"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T083_0",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "For every warranty survival period, calculate and explicitly state the exact notification deadline by adding the survival period to the closing date.",
+      "source_tasks": [
+        "MNA_T083"
+      ],
+      "evidence": [
+        "MNA_T083:C2"
+      ],
+      "task_type_scope": "due_diligence",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T083_1",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Recompute every liability cap expressed as a percentage of the purchase price and flag any mismatch with the stated figure.",
+      "source_tasks": [
+        "MNA_T083"
+      ],
+      "evidence": [
+        "MNA_T083:C3"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T083_2",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Include a dedicated section titled 'Required Third-Party Consents' listing all consents needed, their status, and responsible parties.",
+      "source_tasks": [
+        "MNA_T083"
+      ],
+      "evidence": [
+        "MNA_T083:C6"
+      ],
+      "task_type_scope": "due_diligence",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T083_3",
+      "type": "practice_note",
+      "category": "review",
+      "text": "Before finalising the report, verify every citation for accuracy, ensuring it matches the exact document name and clause/section number.",
+      "source_tasks": [
+        "MNA_T083"
+      ],
+      "evidence": [
+        "MNA_T083:C7"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T083_4",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "For every finding, include a pinpoint citation (document name and exact clause/section/paragraph number) in the evidence section.",
+      "source_tasks": [
+        "MNA_T083"
+      ],
+      "evidence": [
+        "MNA_T083:C7"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T083_5",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Cross-check all dates and numerical figures in transaction documents against calculations or external references to identify inconsistencies.",
+      "source_tasks": [
+        "MNA_T083"
+      ],
+      "evidence": [
+        "MNA_T083:C2",
+        "MNA_T083:C3"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    }
+  ],
+  "lesson_feedback": [
+    {
+      "lesson_id": "L0001",
+      "label": "HELPFUL",
+      "reason": "Directly addresses the procedural failure in C2 by ensuring deadlines are explicitly calculated and stated."
+    },
+    {
+      "lesson_id": "L0002",
+      "label": "HELPFUL",
+      "reason": "Prevents the procedural failure in C3 by mandating independent verification of liability caps."
+    },
+    {
+      "lesson_id": "L0003",
+      "label": "HELPFUL",
+      "reason": "Ensures third-party consents are explicitly listed and tracked, addressing the omission in C6."
+    },
+    {
+      "lesson_id": "L0004",
+      "label": "HELPFUL",
+      "reason": "Reduces the risk of citation errors, directly targeting the failure in C7."
+    },
+    {
+      "lesson_id": "L0005",
+      "label": "HELPFUL",
+      "reason": "Reinforces the need for precise citations, complementing L0004 and addressing C7."
+    },
+    {
+      "lesson_id": "L0006",
+      "label": "HELPFUL",
+      "reason": "Broadens the scope of analysis to catch numerical and date inconsistencies, useful for C2 and C3."
+    }
+  ],
+  "input_tokens": 5420,
+  "output_tokens": 1219,
+  "cost_usd": 0.0045385,
+  "prompt": "# Task\nType: due_diligence | Practice area: corporate_mna\nYou act for the Buyer, Marlow Marine Ltd. Marlow Marine Ltd (the Buyer) is acquiring the entire issued share capital of Marlow Media Ltd (the Company) from Thornbury Holdings Ltd (the Seller).\n\nPrepare a due diligence findings report on the matter documents. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 6 January 2026. Address the deliverable to the supervising partner.\n\n# Trajectory (27 model steps, 27 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"client_email.md\"})\n 3. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 4. [research] read_document({\"name\": \"disclosure_letter.md\"})\n 5. [research] read_document({\"name\": \"material_customer_contract.md\"})\n 6. [research] read_document({\"name\": \"articles_of_association_extract.md\"})\n 7. [research] read_document({\"name\": \"board_minutes.md\"})\n 8. [research] search_documents({\"query\": \"warranty\"})\n 9. [research] search_documents({\"query\": \"tax\"})\n10. [research] search_documents({\"query\": \"purchase price\"})\n11. [analysis] calculate({\"expression\": \"date('2026-01-06')\"})\n12. [analysis] calculate({\"expression\": \"days_between(date('2026-01-06'), date('2026-03-10'))\"})\n13. [analysis] calculate({\"expression\": \"87500 * 4 * 3\"})\n14. [analysis] calculate({\"expression\": \"87500 * 4\"})\n15. [drafting] write_draft(<1401 words>)\n16. [verification] read_draft({})\n17. [verification] read_document({\"name\": \"material_customer_contract.md\", \"start_line\": 1, \"num_lines\": 15})\n18. [editing] edit_draft(find='**Evidence:**\\n1. **Material Customer Contract (clause 1.11):' -> '**Evidence:**\\n1. **Material Customer Contract (clause 1.1):*')\n19. [editing] edit_draft(find='### 1.2 Purchase Agreement\\n- **Agreement Date:** 18 December' -> '### 1.2 Purchase Agreement\\n- **Agreement Date:** 18 December')\n20. [editing] edit_draft(find='### 2.5 Automatic Renewal Provisions\\n\\n**Finding:** The Foxle' -> '### 2.5 Document Date Inconsistencies\\n\\n**Finding:** Inconsis')\n21. [editing] edit_draft(find='### High Risk Issues:\\n1. **Contract Value Discrepancy** - Po' -> '### High Risk Issues:\\n1. **Contract Value Discrepancy** - Po')\n22. [editing] edit_draft(find='### Immediate Actions (Pre-Closing):\\n1. **Contract Value Cla' -> '### Immediate Actions (Pre-Closing):\\n1. **Contract Value Cla')\n23. [verification] search_documents({\"query\": \"interest\"})\n24. [editing] edit_draft(find='**Recommendation:** Assess whether automatic renewal aligns ' -> '**Recommendation:** Assess whether automatic renewal aligns ')\n25. [editing] edit_draft(find='### Medium Risk Issues:\\n1. **Document Date Inconsistencies**' -> '### Medium Risk Issues:\\n1. **Document Date Inconsistencies**')\n26. [verification] read_draft({})\n27. [control] finish({\"summary\": \"Due diligence findings report identifying critical issues in the acquisition of Marlow Media Ltd, including: 1) \\u00a33.2M discrepancy in key contr)\n\n# Final deliverable\n# Due Diligence Findings Report\n**Matter:** Acquisition of Marlow Media Ltd by Marlow Marine Ltd  \n**Date:** 6 January 2026  \n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Client:** Marlow Marine Ltd (Buyer)  \n\n## Executive Summary\n\nThis report outlines the key findings from our due diligence review of the proposed acquisition of Marlow Media Ltd (the \"Company\") by Marlow Marine Ltd (the \"Buyer\") from Thornbury Holdings Ltd (the \"Seller\"). The transaction involves the purchase of the entire issued share capital of the Company for a purchase price of $200,000,000, with a scheduled closing date of 10 March 2026.\n\nOur review has identified several material issues requiring attention, including inconsistencies in contract values, potential change of control provisions, and governance concerns. The most significant finding relates to a material discrepancy in the disclosed value of the Company's key customer contract with Foxley Engineering Ltd.\n\n## 1. Transaction Structure and Key Terms\n\n### 1.1 Parties\n- **Buyer:** Marlow Marine Ltd (company number 11370294), registered office at 129 Old Broad Street, London\n- **Seller:** Thornbury Holdings Ltd (company number 13910554), registered office at 23 Bishopsgate, London  \n- **Company:** Marlow Media Ltd (company number 13663929), registered office at 98 Old Broad Street, London\n\n### 1.2 Purchase Agreement\n- **Agreement Date:** 18 December 2025 (Share Purchase Agreement) / 5 January 2026 (Disclosure Letter and Board Minutes)\n- **Date Inconsistency:** SPA dated 18 December 2025, but referenced as 5 January 2026 in Disclosure Letter and Board Minutes\n- **Purchase Price:** $200,000,000\n- **Closing Date:** 10 March 2026\n- **Payment Terms:** Wire transfer of immediately available funds on Closing Date\n- **Governing Law:** English law, exclusive jurisdiction of English courts\n\n### 1.3 Warranties and Liability\n- **General Warranties:** Survive for 18 months post-closing\n- **Fundamental Warranties** (title, capacity, tax): Survive for 36 months post-closing\n- **Liability Cap:** 12% of Purchase Price ($21,600,000) aggregate cap for all warranty claims (excluding fraud/wilful misconduct)\n\n## 2. Key Findings and Issues\n\n### 2.1 Material Contract Discrepancy - CRITICAL ISSUE\n\n**Finding:** There is a significant discrepancy between the disclosed value of the Foxley Engineering Ltd contract in the Disclosure Letter and the actual contract terms.\n\n**Evidence:**\n1. **Disclosure Letter (paragraph 3.3):** States the Foxley Engineering contract has \"an aggregate value of £4,250,000\" over 36 months.\n2. **Material Customer Contract (Schedule B):** Specifies quarterly fees of £87,500, equating to:\n   - Annual value: £350,000 (£87,500 × 4)\n   - Three-year value: £1,050,000 (£350,000 × 3)\n\n**Discrepancy:** £3,200,000 (£4,250,000 - £1,050,000)\n\n**Implications:**\n- Potential misrepresentation of Company's revenue streams\n- Overvaluation of the Company if revenue projections are based on incorrect figures\n- Breach of warranty regarding accuracy of disclosed information\n- May affect purchase price justification\n\n**Recommendation:** Immediate clarification required from Seller. Consider price adjustment or additional warranty protection.\n\n### 2.2 Change of Control Provisions - MATERIAL ISSUE\n\n**Finding:** The Disclosure Letter contains contradictory statements regarding change of control provisions.\n\n**Evidence:**\n1. **Disclosure Letter (paragraph 3.1):** \"there are no change of control provisions contained in any material contract\"\n2. **Material Customer Contract (clause 4.2):** \"Either party may terminate this Agreement by giving 30 days' written notice to the other party if the other party undergoes a change of control without the prior written consent of the notifying party.\"\n\n**Contradiction:** The Foxley Engineering contract explicitly contains a change of control termination right.\n\n**Implications:**\n- Foxley Engineering could terminate the contract upon change of control of Marlow Media Ltd\n- Loss of key revenue stream post-acquisition\n- Potential breach of warranty regarding absence of change of control provisions\n\n**Recommendation:** Require Seller to obtain consent from Foxley Engineering prior to closing or negotiate removal of change of control clause.\n\n### 2.3 Board Approval and Governance Issues\n\n**Finding:** The Board Minutes reveal governance concerns and potential non-compliance with Articles of Association.\n\n**Evidence:**\n1. **Board Minutes (paragraph 2):** States quorum present with \"2 directors present at this meeting\"\n2. **Articles of Association (Article 11):** \"The quorum for board meetings is three directors\"\n3. **Board Minutes (paragraph 5):** Only 2 directors (Mr. Julian Hartley and Ms. Elaine Pembroke) approved the transaction\n\n**Issue:** Meeting appears to have been inquorate under Company's Articles.\n\n**Implications:**\n- Board resolution approving SPA may be invalid\n- Condition precedent to closing (board approval) may not be satisfied\n- Potential challenge to transaction validity\n\n**Recommendation:** Require properly constituted board meeting with quorum of 3 directors to re-approve transaction.\n\n### 2.4 Contract Commencement Date Inconsistency\n\n**Finding:** Inconsistency between contract commencement date and transaction timeline.\n\n**Evidence:**\n1. **Material Customer Contract (clause 1.1):** \"Commencement Date means 6 January 2026\"\n2. **Current Date:** 6 January 2026 (date of this report)\n3. **Closing Date:** 10 March 2026\n\n**Issue:** Key revenue-generating contract commences today, but acquisition completes in 63 days.\n\n**Implications:**\n- Buyer assumes risk during interim period without control\n- Performance issues or termination could occur pre-closing\n- Seller retains benefit of new contract commencement\n\n**Recommendation:** Consider adjustment to purchase price or escrow arrangement to account for interim period risk.\n\n### 2.5 Document Date Inconsistencies\n\n**Finding:** Inconsistencies in document dates could affect validity and cross-references.\n\n**Evidence:**\n1. **Share Purchase Agreement:** Dated 18 December 2025\n2. **Disclosure Letter:** Dated 5 January 2026, references \"Purchase Agreement dated on or about 6 January 2026\"\n3. **Board Minutes:** Dated 5 January 2026, references \"Share Purchase Agreement dated 5 January 2026\"\n4. **Material Customer Contract:** Dated 5 January 2026\n\n**Implications:**\n- Potential validity issues if documents reference non-existent dates\n- Confusion regarding which version of SPA is operative\n- May affect enforceability of cross-references between documents\n\n**Recommendation:** Align all document dates and ensure consistent references. Consider executing amended SPA with consistent date.\n\n### 2.6 Automatic Renewal Provisions\n\n**Finding:** The Foxley Engineering contract contains automatic renewal provisions that may create long-term obligations.\n\n**Evidence:**\n- **Material Customer Contract (clause 4.1):** Contract renews automatically for successive one-year periods unless 90 days' written notice of non-renewal given\n\n**Implications:**\n- Buyer inherits potential long-term obligations\n- Limited termination rights (only for change of control or material breach)\n- May affect future business flexibility\n\n**Recommendation:** Assess whether automatic renewal aligns with Buyer's strategic plans for the Company.\n\n### 2.7 Interest Rate Inconsistency\n\n**Finding:** Inconsistent interest rates for late payments between Company documents.\n\n**Evidence:**\n1. **Articles of Association (Article 3.2):** \"interest at the rate of 8% per annum above the base rate of Barclays Bank plc\"\n2. **Material Customer Contract (clause 3.3):** \"interest at the rate of 4% per annum above the base lending rate of Barclays Bank plc\"\n\n**Implications:**\n- Different treatment of late payments depending on which document applies\n- Potential confusion in enforcement\n- May affect revenue collection practices\n\n**Recommendation:** Standardize interest rate provisions across Company documentation.\n\n## 3. Financial Analysis\n\n### 3.1 Purchase Price Considerations\n- **Purchase Price:** $200,000,000\n- **Liability Cap:** $21,600,000 (12% of purchase price)\n- **Key Contract Value Discrepancy:** £3,200,000 (approximately $4,000,000 at current exchange rates)\n\n### 3.2 Contract Value Impact\nIf the Foxley Engineering contract is actually worth £1,050,000 rather than £4,250,000:\n- **Revenue Reduction:** £3,200,000 over 3 years\n- **Annual Impact:** Approximately £1,066,667 reduction in annual revenue\n- **Valuation Impact:** Significant impact on Company valuation multiples\n\n## 4. Legal and Regulatory Compliance\n\n### 4.1 Corporate Governance\n- **Articles Compliance:** Quorum issue identified (Section 2.3)\n- **Board Authority:** Resolution validity in question\n- **Directors' Duties:** Need to ensure compliance with Companies Act 2006\n\n### 4.2 Contractual Compliance\n- **Change of Control:** Contradiction in disclosures (Section 2.2)\n- **Contract Validity:** All material contracts reportedly \"valid, subsisting and binding\" (Disclosure Letter 3.5)\n- **Assignment/Consent:** No third-party consents reportedly required (Disclosure Letter 3.4)\n\n## 5. Risk Assessment\n\n### High Risk Issues:\n1. **Contract Value Discrepancy** - Potential misrepresentation affecting valuation\n2. **Change of Control Termination Right** - Immediate post-acquisition termination risk\n3. **Board Approval Validity** - Transaction condition precedent may not be satisfied\n\n### Medium Risk Issues:\n1. **Document Date Inconsistencies** - Potential validity and reference issues\n2. **Automatic Renewal** - Long-term obligation without Buyer consent\n3. **Interim Period Risk** - Contract commences pre-closing without Buyer control\n\n### Low Risk Issues:\n1. **Interest Rate Inconsistency** - Different late payment terms across documents\n2. **Governing Law/Jurisdiction** - Consistent across all documents (English law)\n3. **Confidentiality** - Standard provisions in place\n\n## 6. Recommendations\n\n### Immediate Actions (Pre-Closing):\n1. **Contract Value Clarification:** Demand immediate explanation and documentation supporting £4,250,000 valuation from Seller.\n2. **Change of Control Consent:** Require Seller to obtain written consent from Foxley Engineering waiving change of control termination right.\n3. **Board Re-approval:** Insist on properly constituted board meeting with 3-director quorum to re-approve transaction.\n4. **Document Date Alignment:** Require consistent dating of all transaction documents and execution of amended SPA if necessary.\n5. **Purchase Price Review:** Consider price reduction or additional escrow to reflect contract value discrepancy.\n\n### Negotiation Points for SPA Amendment:\n1. **Specific Indemnity:** For contract value misrepresentation\n2. **Extended Survival Period:** For warranties related to contract values\n3. **Lower Liability Cap:** Or carve-out for contract value claims from aggregate cap\n4. **Condition Precedent:** Foxley Engineering consent to change of control\n\n### Due Diligence Follow-up:\n1. **Financial Verification:** Independent verification of all material contract values\n2. **Customer Confirmation:** Direct confirmation from Foxley Engineering of contract terms and consent\n3. **Tax Due Diligence:** Review of tax warranties and liabilities (Fundamental Warranty area)\n\n## 7. Conclusion\n\nThe proposed acquisition of Marlow Media Ltd presents several material issues that require immediate attention. The most critical finding is the £3,200,000 discrepancy in the disclosed value of the Foxley Engineering contract, which fundamentally affects the Company's valuation and the integrity of the Seller's disclosures.\n\nAdditionally, the contradictory statements regarding change of control provisions and the governance issues with board approval create significant transaction risk. These issues should be addressed through renegotiation of the SPA terms, additional protections for the Buyer, and verification of key assumptions before proceeding to closing\n\n# Expert rubric verdicts (3/7 passed)\n- C1 [PASS] Identifies that the Foxley Engineering Ltd contract (Clause 14.2) allows termination on a change of control without consent, that the disclosure against Warranty 6.3 says there is no such provision, and that consent should be obtained as a condition to Closing.\n    judges: PASS: The report identifies the change of control termination right in clause 4.2 of the Material Customer Contract, notes the Disclosure Letter's statement that no such provisions exist, and recommends obtaining consent prior | PASS: The deliverable correctly identifies the change of control termination right in clause 4.2 of the material contract (referenced as Clause 14.2 in the rubric, but the deliverable correctly cites clause 4.2), notes the con\n- C2 [FAIL] States that General Warranty claims must be notified by 10 September 2027 (18 months after Closing) and Fundamental Warranty claims by 10 March 2029 (36 months after Closing).\n    judges: FAIL: The report states the survival periods (18 and 36 months) but fails to calculate and state the specific claim notification deadlines of 10 September 2017 and 10 March 2029. | PASS: The deliverable correctly states at section 1.3 that General Warranties survive for 18 months post-closing (until 10 September 2027) and Fundamental Warranties survive for 36 months post-closing (until 10 March 2029), wi\n- C3 [FAIL] Identifies that the warranty cap in SPA Section 8.2 is stated as $21,600,000 but 12% of the $200,000,000 Purchase Price is $24,000,000, i.e. the stated figure is wrong.\n    judges: FAIL: The report accepts the liability cap of $21,600,000 as correct and fails to identify that 12% of $200,000,000 is actually $24,000,000, meaning the SPA contains a mathematical error. | PASS: The deliverable correctly identifies at section 1.3 that the liability cap is stated as $21,600,000 but 12% of $200,000,000 is actually $24,000,000, noting this mathematical error in the SPA.\n- C4 [PASS] Identifies that the board approval was given at a meeting with only 2 directors present when Article 11 requires a quorum of three, so the approval may be invalid, and recommends a fresh or ratifying resolution.\n    judges: PASS: The report correctly identifies that the board meeting had only 2 directors present when Article 11 requires a quorum of three, notes the approval may be invalid, and recommends a properly constituted meeting to re-appro | PASS: The deliverable correctly identifies at section 2.3 that only 2 directors were present when Article 11 requires a quorum of 3 directors, notes the board resolution may be invalid, and recommends a properly constituted bo\n- C5 [PASS] Flags that the disclosure letter is inconsistent with the material contract on change of control.\n    judges: PASS: The report flags the contradiction between Disclosure Letter paragraph 3.1 (stating no change of control provisions) and Material Customer Contract clause 4.2 (which contains such a provision). | PASS: The deliverable clearly flags at section 2.2 the inconsistency between the Disclosure Letter paragraph 3.1 (no change of control provisions) and the material contract clause 4.2 (change of control termination right).\n- C6 [FAIL] Lists the Foxley Engineering Ltd change-of-control consent as a required third-party consent and states it has not been obtained.\n    judges: PASS: The report lists the Foxley Engineering change of control consent as a required action and clearly states in the recommendations that consent has not been obtained and must be required from the Seller. | FAIL: While the deliverable recommends obtaining consent from Foxley Engineering at section 2.2 and 6.1, it does not explicitly list this as a 'required third-party consent' in a dedicated section or state definitively that it\n- C7 [FAIL] Gives a pinpoint citation (document name and section/clause number) for every issue or finding.\n    judges: PASS: The report provides specific document and clause references throughout, including Disclosure Letter paragraph 3.3, Material Customer Contract clauses 4.1 and 4.2, Board Minutes paragraph 2, and Articles of Association Ar | FAIL: While the deliverable provides many citations, it is inconsistent and incomplete. For example, it cites 'Clause 14.2' for the change of control provision when the actual clause is 4.2; it does not provide pinpoint citati\n\n# Your job\nAnalyse each FAILED criterion: what went wrong, what the agent should have done, and whether the failure is procedural (reusable) or task-specific. Then write reusable candidate lessons that would prevent the procedural failures on other matters.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|due_diligence\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C2\",\n      \"what_went_wrong\": \"The agent stated the survival periods for warranties but failed to calculate and explicitly state the specific deadlines for notifying claims based on the closing date.\",\n      \"should_have\": \"Calculated and explicitly stated the exact notification deadlines (e.g., 10 September 2027 for General Warranties and 10 March 2029 for Fundamental Warranties) by adding the survival periods to the closing date.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C3\",\n      \"what_went_wrong\": \"The agent accepted the stated liability cap without independently verifying its mathematical accuracy against the purchase price.\",\n      \"should_have\": \"Recomputed the liability cap by applying the stated percentage to the purchase price and flagged any discrepancy with the stated figure.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C6\",\n      \"what_went_wrong\": \"The agent recommended obtaining third-party consent but did not explicitly list it as a 'required third-party consent' in a dedicated section or state that it had not been obtained.\",\n      \"should_have\": \"Created a dedicated section for 'Required Third-Party Consents' and explicitly listed the Foxley Engineering consent as outstanding.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C7\",\n      \"what_went_wrong\": \"The agent provided inconsistent or incomplete pinpoint citations, such as misstating clause numbers or omitting citations for some findings.\",\n      \"should_have\": \"Verified every citation for accuracy and ensured every issue or finding included a precise document name and clause/section number.\",\n      \"failure_kind\": \"procedural\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"For every warranty survival period, calculate and explicitly state the exact notification deadline by adding the survival period to the closing date.\",\n      \"evidence\": [\"C2\"],\n      \"task_type_scope\": \"due_diligence\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Recompute every liability cap expressed as a percentage of the purchase price and flag any mismatch with the stated figure.\",\n      \"evidence\": [\"C3\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"Include a dedicated section titled 'Required Third-Party Consents' listing all consents needed, their status, and responsible parties.\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"due_diligence\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"review\",\n      \"text\": \"Before finalising the report, verify every citation for accuracy, ensuring it matches the exact document name and clause/section number.\",\n      \"evidence\": [\"C7\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"For every finding, include a pinpoint citation (document name and exact clause/section/paragraph number) in the evidence section.\",\n      \"evidence\": [\"C7\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Cross-check all dates and numerical figures in transaction documents against calculations or external references to identify inconsistencies.\",\n      \"evidence\": [\"C2\", \"C3\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    }\n  ],\n  \"lesson_feedback\": [\n    {\n      \"lesson_id\": \"L0001\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Directly addresses the procedural failure in C2 by ensuring deadlines are explicitly calculated and stated.\"\n    },\n    {\n      \"lesson_id\": \"L0002\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Prevents the procedural failure in C3 by mandating independent verification of liability caps.\"\n    },\n    {\n      \"lesson_id\": \"L0003\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Ensures third-party consents are explicitly listed and tracked, addressing the omission in C6.\"\n    },\n    {\n      \"lesson_id\": \"L0004\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Reduces the risk of citation errors, directly targeting the failure in C7.\"\n    },\n    {\n      \"lesson_id\": \"L0005\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Reinforces the need for precise citations, complementing L0004 and addressing C7.\"\n    },\n    {\n      \"lesson_id\": \"L0006\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Broadens the scope of analysis to catch numerical and date inconsistencies, useful for C2 and C3.\"\n    }\n  ]\n}\n```"
+}

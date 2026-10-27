@@ -1,0 +1,144 @@
+{
+  "task_id": "MNA_T038",
+  "cycle": 1,
+  "lineage": "ablation_no_grading",
+  "graded": false,
+  "failures": [
+    {
+      "criterion_id": "C1",
+      "what_went_wrong": "The agent did not verify the completeness of all referenced schedules before starting the risk analysis, leading to an incomplete assessment.",
+      "should_have": "Confirmed the presence and completeness of all schedules and annexes before proceeding with the analysis.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C2",
+      "what_went_wrong": "The agent calculated working capital adjustments but did not cross-check the methodology or definitions in the missing Schedule 3, risking reliance on unverified assumptions.",
+      "should_have": "Explicitly flagged the absence of Schedule 3 as a critical gap before performing any calculations or making recommendations.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C3",
+      "what_went_wrong": "The agent identified a purchase price discrepancy but did not reconcile the figures or propose a method to resolve such discrepancies in future matters.",
+      "should_have": "Cross-referenced all purchase price figures with the agreement and client communications, and proposed a standard reconciliation process.",
+      "failure_kind": "task_specific"
+    },
+    {
+      "criterion_id": "C4",
+      "what_went_wrong": "The agent noted the closing date fell on a Saturday but did not generalise this as a recurring risk for future transactions.",
+      "should_have": "Checked all key dates for alignment with business days and flagged any non-business day closings as a standard risk.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C5",
+      "what_went_wrong": "The agent did not prioritise risks by severity or likelihood, making it harder for the partner to focus on critical issues.",
+      "should_have": "Included a risk matrix or clear prioritisation of risks based on impact and likelihood.",
+      "failure_kind": "drafting"
+    },
+    {
+      "criterion_id": "C6",
+      "what_went_wrong": "The agent did not verify whether the draft included all standard clauses expected in a share purchase agreement, beyond just warranties and indemnities.",
+      "should_have": "Cross-referenced the draft against a checklist of standard SPA clauses to ensure completeness.",
+      "failure_kind": "analysis"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T038_0",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "Before analysing any transaction document, verify the completeness of all referenced schedules, annexes, and exhibits. Flag any missing documents as a critical risk.",
+      "source_tasks": [
+        "MNA_T038"
+      ],
+      "evidence": [
+        "MNA_T038:C1",
+        "MNA_T038:C2"
+      ],
+      "task_type_scope": "legal_memo",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T038_1",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Cross-check all financial figures (e.g., purchase price, adjustments) against the agreement and client communications. Reconcile discrepancies and flag unresolved mismatches.",
+      "source_tasks": [
+        "MNA_T038"
+      ],
+      "evidence": [
+        "MNA_T038:C3"
+      ],
+      "task_type_scope": "legal_memo",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T038_2",
+      "type": "checklist",
+      "category": "review",
+      "text": "Review all key dates in transaction documents to ensure they fall on business days. Flag any non-business day closings or deadlines as a potential operational risk.",
+      "source_tasks": [
+        "MNA_T038"
+      ],
+      "evidence": [
+        "MNA_T038:C4"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T038_3",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Include a risk prioritisation matrix in legal memos, ranking risks by severity and likelihood to guide the partner's focus on critical issues.",
+      "source_tasks": [
+        "MNA_T038"
+      ],
+      "evidence": [
+        "MNA_T038:C5"
+      ],
+      "task_type_scope": "legal_memo",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T038_4",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Use a standard clause checklist for the transaction type (e.g., SPA) to identify missing or incomplete provisions before finalising the risk analysis.",
+      "source_tasks": [
+        "MNA_T038"
+      ],
+      "evidence": [
+        "MNA_T038:C6"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T038_5",
+      "type": "practice_note",
+      "category": "review",
+      "text": "Before finalising a legal memo, re-read the draft to ensure all identified risks include actionable recommendations, not just observations.",
+      "source_tasks": [
+        "MNA_T038"
+      ],
+      "evidence": [
+        "MNA_T038:C3",
+        "MNA_T038:C5"
+      ],
+      "task_type_scope": "legal_memo",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.8
+    }
+  ],
+  "lesson_feedback": [],
+  "input_tokens": 3671,
+  "output_tokens": 1055,
+  "cost_usd": 0.003418,
+  "prompt": "# Task\nType: legal_memo | Practice area: corporate_mna\nYou act for the Buyer, Lowther Holdings Ltd. Lowther Holdings Ltd (the Buyer) is acquiring the entire issued share capital of Northgate Holdings Ltd (the Company) from Elstree Pharma plc (the Seller).\n\nPrepare a legal memo for the supervising partner analysing the key legal risks in the matter documents. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 16 November 2026. Address the deliverable to the supervising partner.\n\n# Trajectory (27 model steps, 27 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"client_email.md\"})\n 3. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 4. [research] search_documents({\"query\": \"Schedule\"})\n 5. [research] search_documents({\"query\": \"warranties\"})\n 6. [research] search_documents({\"query\": \"indemnities\"})\n 7. [research] search_documents({\"query\": \"representations\"})\n 8. [research] search_documents({\"query\": \"liability\"})\n 9. [analysis] calculate({\"expression\": \"agreement_date = date('2026-10-27')\"})\n10. [analysis] calculate({\"expression\": \"closing_date = date('2026-12-12')\"})\n11. [analysis] calculate({\"expression\": \"conditions_deadline = add_days(agreement_date, 90)\"})\n12. [analysis] calculate({\"expression\": \"add_days(date('2026-10-27'), 90)\"})\n13. [analysis] calculate({\"expression\": \"merger_clearance_date = date('2027-02-08')\"})\n14. [analysis] calculate({\"expression\": \"target_working_capital = 2000000\"})\n15. [analysis] calculate({\"expression\": \"estimated_closing_working_capital = 1650000\"})\n16. [analysis] calculate({\"expression\": \"working_capital_shortfall = target_working_capital - estimated_closing_working_capital\"})\n17. [analysis] calculate({\"expression\": \"2000000 - 1650000\"})\n18. [analysis] calculate({\"expression\": \"purchase_price = 165000000\"})\n19. [analysis] calculate({\"expression\": \"adjusted_purchase_price = 164300000\"})\n20. [analysis] calculate({\"expression\": \"165000000 - 164300000\"})\n21. [drafting] write_draft(<1320 words>)\n22. [verification] read_draft({})\n23. [editing] edit_draft(find='### 3.4 Timing and Regulatory Clearance Issues\\n\\n**Risk:** Mu' -> '### 3.4 Timing and Regulatory Clearance Issues\\n\\n**Risk:** Mu')\n24. [editing] edit_draft(find='**Recommendation:** \\n1. Amend Clause 3.1 to make closing con' -> '**Recommendation:** \\n1. Amend Clause 3.1 to change Closing D')\n25. [editing] edit_draft(find='## 4. COMMERCIAL CONSIDERATIONS' -> '### 3.8 Governing Law and Jurisdiction\\n\\n**Risk Assessment:**')\n26. [verification] read_draft({})\n27. [control] finish({\"summary\": \"Legal memo analyzing key legal risks in Lowther Holdings Ltd's acquisition of Northgate Holdings Ltd. The memo identifies critical issues including)\n\n# Final deliverable\n# LEGAL MEMORANDUM\n\n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Date:** 16 November 2026  \n**Subject:** Analysis of Key Legal Risks in Lowther Holdings Ltd's Acquisition of Northgate Holdings Ltd  \n**Matter:** Acquisition of entire issued share capital of Northgate Holdings Ltd from Elstree Pharma plc  \n**Our Client:** Lowther Holdings Ltd (Buyer)\n\n## 1. EXECUTIVE SUMMARY\n\nThis memorandum analyses the key legal risks identified in the draft Share Purchase Agreement dated 27 October 2026 (the \"SPA\") for Lowther Holdings Ltd's (\"Buyer\") acquisition of the entire issued share capital of Northgate Holdings Ltd (\"Company\") from Elstree Pharma plc (\"Seller\"). The transaction value is $165,000,000, subject to working capital adjustments.\n\nKey risks identified include:\n1. **Incomplete Agreement:** Critical schedules referenced in the SPA are missing\n2. **Material Adverse Change Definition:** Overly restrictive definition potentially limiting Buyer's protection\n3. **Working Capital Mechanism:** Significant shortfall anticipated requiring price adjustment\n4. **Timing Issues:** Closing date conflicts with regulatory clearance timeline\n5. **Confidentiality Provisions:** Overly broad restrictions on use of Company information\n6. **Termination Rights:** Unbalanced termination provisions favouring Seller\n\n## 2. BACKGROUND\n\nThe Buyer is acquiring the Company, which operates in healthcare logistics and has Holloway Logistics plc as a material customer. Regulatory counsel expects merger clearance by 8 February 2027. The estimated Closing Working Capital is $1,650,000 against a Target Working Capital of $2,000,000, indicating a $350,000 shortfall. The Seller's draft funds flow indicates an adjusted purchase price of $164,300,000.\n\n## 3. KEY LEGAL RISKS ANALYSIS\n\n### 3.1 Incomplete Agreement Documentation\n\n**Risk:** The SPA references Schedules 2 (Conditions) and 3 (Working Capital Mechanism) which are not included in the provided documentation. Without these schedules, the Buyer cannot properly assess:\n- Conditions precedent to closing\n- Detailed working capital calculation methodology\n- Measurement and dispute resolution procedures\n\n**Impact:** High. The absence of these schedules creates uncertainty and prevents proper due diligence on critical transaction mechanics.\n\n**Recommendation:** Request complete SPA including all schedules before proceeding with review. Insist on inclusion of standard working capital adjustment mechanisms with clear measurement principles and dispute resolution procedures.\n\n### 3.2 Material Adverse Change Definition\n\n**Risk:** Clause 1.1 defines \"Material Adverse Change\" with significant carve-outs that may limit the Buyer's protection:\n- Excludes changes in general economic or political conditions\n- Excludes industry-wide changes unless they disproportionately affect the Company\n- Specifically excludes pandemics\n\n**Impact:** Medium-High. These carve-outs could prevent the Buyer from terminating the agreement or seeking price adjustments for events that materially affect the Company's value, even if not Company-specific.\n\n**Recommendation:** Negotiate narrower carve-outs or include proportionality tests. Consider adding specific material adverse effect triggers relevant to the healthcare logistics sector.\n\n### 3.3 Working Capital Adjustment Mechanism\n\n**Risk:** Clause 2.3 provides for dollar-for-dollar reduction in Purchase Price if Closing Working Capital falls below Target Working Capital of $2,000,000. Based on the client's email, estimated Closing Working Capital is $1,650,000, indicating a $350,000 shortfall.\n\n**Impact:** Medium. The $350,000 adjustment represents approximately 0.2% of the purchase price. However, without Schedule 3, the detailed calculation methodology and timing of adjustments are unclear.\n\n**Recommendation:** \n1. Review Schedule 3 to understand calculation methodology\n2. Ensure working capital is calculated consistently with past practice\n3. Include provisions for post-closing true-up adjustments\n4. Consider negotiating a collar or de minimis threshold to avoid minor adjustments\n\n### 3.4 Timing and Regulatory Clearance Issues\n\n**Risk:** Multiple timing conflicts exist:\n1. **Closing Date:** 12 December 2026 (Clause 3.1) - **Note:** This falls on a Saturday, which may cause practical difficulties for banking transactions and completion mechanics\n2. **Conditions Deadline:** 25 January 2027 (90 days from 27 October 2026, per Clause 4.5)\n3. **Merger Clearance:** Expected by 8 February 2027 (per client email)\n\nThe Closing Date precedes both the Conditions Deadline and the expected merger clearance date, creating potential for breach if closing proceeds without regulatory approval.\n\n**Impact:** High. Proceeding with closing without regulatory clearance could constitute a regulatory violation and expose the Buyer to penalties.\n\n**Recommendation:** \n1. Amend Clause 3.1 to change Closing Date to a business day (Monday 13 December 2026 or later)\n2. Make closing conditional upon merger clearance\n3. Extend Closing Date to align with regulatory timeline\n4. Include specific regulatory condition precedent in Schedule 2\n5. Consider making merger clearance a condition to closing rather than a post-closing requirement\n\n### 3.5 Confidentiality Provisions\n\n**Risk:** Clause 5.1 contains overly broad confidentiality restrictions that could impede the Buyer's ability to operate the business post-closing. The clause restricts disclosure of \"customer relationships (including, without limitation, the commercial relationship between the Company and Holloway Logistics plc)\" and \"operational methods.\"\n\n**Impact:** Medium. Post-acquisition, the Buyer will need to disclose customer relationships and operational methods to its own personnel, advisors, and potentially new business partners.\n\n**Recommendation:** \n1. Include carve-outs for disclosures necessary for business operations post-closing\n2. Add exceptions for disclosures to Buyer's affiliates, employees, and professional advisors\n3. Consider time-limiting the confidentiality obligations for non-trade secret information\n4. Ensure the clause doesn't restrict integration planning\n\n### 3.6 Termination Provisions\n\n**Risk:** Clause 4.5 allows either party to terminate if conditions precedent are not satisfied or waived by 25 January 2027. This creates an unbalanced position as:\n- The Buyer bears the risk of regulatory clearance not being obtained by this date\n- The Seller can terminate and potentially seek a break fee or pursue other buyers\n\n**Impact:** Medium-High. The Buyer could lose the transaction if regulatory clearance takes longer than anticipated, despite having committed time and resources.\n\n**Recommendation:** \n1. Negotiate extension rights for regulatory conditions\n2. Include \"reasonable efforts\" obligations on both parties to satisfy conditions\n3. Consider making regulatory clearance a condition that only the Buyer can waive\n4. Negotiate termination rights that reflect which party controls satisfaction of each condition\n\n### 3.7 Missing Standard Protections\n\n**Risk:** The provided SPA excerpt lacks standard provisions typically found in share purchase agreements:\n- No warranties or representations from Seller\n- No indemnities for pre-closing liabilities\n- No limitations on liability or caps\n- No survival periods for claims\n- No escrow arrangements for purchase price adjustments\n\n**Impact:** High. Without these protections, the Buyer assumes all risk for pre-closing matters and has limited recourse against the Seller for breaches.\n\n**Recommendation:** \n1. Insist on comprehensive warranties covering title, accounts, compliance, contracts, employees, etc.\n2. Negotiate indemnities for identified risks and general breach of warranty\n3. Include reasonable limitations on liability (time limits, financial caps, baskets)\n4. Consider purchase price holdback or escrow for potential claims\n\n### 3.8 Governing Law and Jurisdiction\n\n**Risk Assessment:** Low. Clause 7 provides for English law and exclusive jurisdiction of English courts, which is appropriate for our English-incorporated client and provides certainty.\n\n**Impact:** Low. This is standard and favourable for our client.\n\n**Recommendation:** No changes required to this clause.\n\n## 4. COMMERCIAL CONSIDERATIONS\n\n### 4.1 Purchase Price Discrepancy\n\nThe SPA specifies a Purchase Price of $165,000,000 (Clause 2.1), while the client email references an adjusted purchase price of $164,300,000. This $700,000 discrepancy requires clarification.\n\n**Action:** Confirm with client whether the $164,300,000 reflects the working capital adjustment or other adjustments.\n\n### 4.2 Holloway Logistics Relationship\n\nThe SPA specifically references Holloway Logistics plc as a material customer in the confidentiality clause. This highlights the importance of this relationship to the Company's business.\n\n**Action:** Conduct specific due diligence on:\n- Terms of commercial relationship with Holloway Logistics\n- Contract duration and termination rights\n- Revenue concentration risk\n- Any change of control provisions affecting the relationship\n\n## 5. NEXT STEPS\n\n1. **Immediate Actions:**\n   - Request complete SPA including all schedules\n   - Schedule call with client to discuss identified risks\n   - Confirm regulatory clearance timeline with client's regulatory counsel\n\n2. **Negotiation Priorities:**\n   - Regulatory condition precedent and closing timing\n   - Comprehensive warranties and indemnities\n   - Working capital adjustment mechanics\n   - Balanced termination provisions\n\n3. **Due Diligence Requirements:**\n   - Financial due diligence focusing on working capital\n   - Legal due diligence on material contracts (particularly Holloway Logistics)\n   - Regulatory compliance in healthcare logistics sector\n\n## 6. CONCLUSION\n\nThe draft SPA presents several significant legal risks requiring immediate attention. The most critical issues are the incomplete documentation, timing conflicts with regulatory clearance, and absence of standard buyer protections. The Buyer should not proceed with signing until these issues are addressed and a complete agreement with appropriate warranties and indemnities is negotiated.\n\nThe estimated $350,000 working capital shortfall, while material, is manageable within the transaction context. However, the broader structural issues pose greater risk to the transaction's success and the Buyer's post-acquisition position.\n\n**Prepared by:** Senior Associate  \n**Date:** 16 November 2026\n\n# Your job\nNo grades are available. Critically assess the deliverable and the work process yourself, as a demanding supervising partner would, and write reusable candidate lessons for improving the work.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|legal_memo\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n    \"failures\": [\n        {\n            \"criterion_id\": \"C1\",\n            \"what_went_wrong\": \"The agent did not verify the completeness of all referenced schedules before starting the risk analysis, leading to an incomplete assessment.\",\n            \"should_have\": \"Confirmed the presence and completeness of all schedules and annexes before proceeding with the analysis.\",\n            \"failure_kind\": \"procedural\"\n        },\n        {\n            \"criterion_id\": \"C2\",\n            \"what_went_wrong\": \"The agent calculated working capital adjustments but did not cross-check the methodology or definitions in the missing Schedule 3, risking reliance on unverified assumptions.\",\n            \"should_have\": \"Explicitly flagged the absence of Schedule 3 as a critical gap before performing any calculations or making recommendations.\",\n            \"failure_kind\": \"content\"\n        },\n        {\n            \"criterion_id\": \"C3\",\n            \"what_went_wrong\": \"The agent identified a purchase price discrepancy but did not reconcile the figures or propose a method to resolve such discrepancies in future matters.\",\n            \"should_have\": \"Cross-referenced all purchase price figures with the agreement and client communications, and proposed a standard reconciliation process.\",\n            \"failure_kind\": \"task_specific\"\n        },\n        {\n            \"criterion_id\": \"C4\",\n            \"what_went_wrong\": \"The agent noted the closing date fell on a Saturday but did not generalise this as a recurring risk for future transactions.\",\n            \"should_have\": \"Checked all key dates for alignment with business days and flagged any non-business day closings as a standard risk.\",\n            \"failure_kind\": \"content\"\n        },\n        {\n            \"criterion_id\": \"C5\",\n            \"what_went_wrong\": \"The agent did not prioritise risks by severity or likelihood, making it harder for the partner to focus on critical issues.\",\n            \"should_have\": \"Included a risk matrix or clear prioritisation of risks based on impact and likelihood.\",\n            \"failure_kind\": \"drafting\"\n        },\n        {\n            \"criterion_id\": \"C6\",\n            \"what_went_wrong\": \"The agent did not verify whether the draft included all standard clauses expected in a share purchase agreement, beyond just warranties and indemnities.\",\n            \"should_have\": \"Cross-referenced the draft against a checklist of standard SPA clauses to ensure completeness.\",\n            \"failure_kind\": \"analysis\"\n        }\n    ],\n    \"candidate_lessons\": [\n        {\n            \"type\": \"checklist\",\n            \"category\": \"analysis\",\n            \"text\": \"Before analysing any transaction document, verify the completeness of all referenced schedules, annexes, and exhibits. Flag any missing documents as a critical risk.\",\n            \"evidence\": [\"C1\", \"C2\"],\n            \"task_type_scope\": \"legal_memo\",\n            \"confidence\": 0.95\n        },\n        {\n            \"type\": \"practice_note\",\n            \"category\": \"analysis\",\n            \"text\": \"Cross-check all financial figures (e.g., purchase price, adjustments) against the agreement and client communications. Reconcile discrepancies and flag unresolved mismatches.\",\n            \"evidence\": [\"C3\"],\n            \"task_type_scope\": \"legal_memo\",\n            \"confidence\": 0.9\n        },\n        {\n            \"type\": \"checklist\",\n            \"category\": \"review\",\n            \"text\": \"Review all key dates in transaction documents to ensure they fall on business days. Flag any non-business day closings or deadlines as a potential operational risk.\",\n            \"evidence\": [\"C4\"],\n            \"task_type_scope\": \"general\",\n            \"confidence\": 0.9\n        },\n        {\n            \"type\": \"checklist\",\n            \"category\": \"drafting\",\n            \"text\": \"Include a risk prioritisation matrix in legal memos, ranking risks by severity and likelihood to guide the partner's focus on critical issues.\",\n            \"evidence\": [\"C5\"],\n            \"task_type_scope\": \"legal_memo\",\n            \"confidence\": 0.85\n        },\n        {\n            \"type\": \"practice_note\",\n            \"category\": \"analysis\",\n            \"text\": \"Use a standard clause checklist for the transaction type (e.g., SPA) to identify missing or incomplete provisions before finalising the risk analysis.\",\n            \"evidence\": [\"C6\"],\n            \"task_type_scope\": \"general\",\n            \"confidence\": 0.9\n        },\n        {\n            \"type\": \"practice_note\",\n            \"category\": \"review\",\n            \"text\": \"Before finalising a legal memo, re-read the draft to ensure all identified risks include actionable recommendations, not just observations.\",\n            \"evidence\": [\"C3\", \"C5\"],\n            \"task_type_scope\": \"legal_memo\",\n            \"confidence\": 0.8\n        }\n    ],\n    \"lesson_feedback\": []\n}\n```"
+}

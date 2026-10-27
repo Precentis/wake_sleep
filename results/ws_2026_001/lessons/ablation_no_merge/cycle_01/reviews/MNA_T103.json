@@ -1,0 +1,143 @@
+{
+  "task_id": "MNA_T103",
+  "cycle": 1,
+  "lineage": "ablation_no_merge",
+  "graded": true,
+  "failures": [
+    {
+      "criterion_id": "C5",
+      "what_went_wrong": "The agent identified the basket threshold but failed to analyze or explain its operational mechanics (deductible vs. tipping basket) and the implications for the Buyer.",
+      "should_have": "The agent should have explicitly analyzed whether the basket operated as a deductible or tipping basket and explained the risk implications for the Buyer.",
+      "failure_kind": "procedural"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T103_0",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "For every liability basket or threshold, explicitly state whether it operates as a deductible (Seller liable only for excess) or tipping basket (full recovery triggered) and note the client impact.",
+      "source_tasks": [
+        "MNA_T103"
+      ],
+      "evidence": [
+        "MNA_T103:C5"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T103_1",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "When reviewing basket provisions, compare the stated threshold with the transaction value to assess materiality and flag if the basket disproportionately limits recovery.",
+      "source_tasks": [
+        "MNA_T103"
+      ],
+      "evidence": [
+        "MNA_T103:C5"
+      ],
+      "task_type_scope": "issues_list",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T103_2",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Include a dedicated 'Liability Mechanics' subsection in issues lists to address basket types, caps, and de minimis thresholds with clear client implications.",
+      "source_tasks": [
+        "MNA_T103"
+      ],
+      "evidence": [
+        "MNA_T103:C5"
+      ],
+      "task_type_scope": "issues_list",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T103_3",
+      "type": "practice_note",
+      "category": "review",
+      "text": "Before finalizing an issues list, cross-check that every liability limitation (basket, cap, de minimis) has a clear explanation of its effect on recovery.",
+      "source_tasks": [
+        "MNA_T103"
+      ],
+      "evidence": [
+        "MNA_T103:C5"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T103_4",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "For basket provisions, calculate the percentage of the transaction value the basket represents and flag if it exceeds 1% unless justified by deal context.",
+      "source_tasks": [
+        "MNA_T103"
+      ],
+      "evidence": [
+        "MNA_T103:C5"
+      ],
+      "task_type_scope": "issues_list",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.8
+    },
+    {
+      "candidate_id": "c01_MNA_T103_5",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Ensure recommendations for liability provisions include specific negotiation asks (e.g., convert deductible to tipping basket) with rationale.",
+      "source_tasks": [
+        "MNA_T103"
+      ],
+      "evidence": [
+        "MNA_T103:C5"
+      ],
+      "task_type_scope": "issues_list",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.85
+    }
+  ],
+  "lesson_feedback": [
+    {
+      "lesson_id": "L0001",
+      "label": "HELPFUL",
+      "reason": "Directly addresses the failure by ensuring the agent explicitly analyzes basket mechanics, which was missing in the original deliverable."
+    },
+    {
+      "lesson_id": "L0002",
+      "label": "HELPFUL",
+      "reason": "Encourages quantitative analysis of basket thresholds, adding rigor to the assessment of materiality."
+    },
+    {
+      "lesson_id": "L0003",
+      "label": "HELPFUL",
+      "reason": "Improves structural consistency in issues lists by mandating a dedicated subsection for liability mechanics, reducing omissions."
+    },
+    {
+      "lesson_id": "L0004",
+      "label": "HELPFUL",
+      "reason": "Provides a clear review step to catch omissions before finalizing deliverables, addressing the procedural failure."
+    },
+    {
+      "lesson_id": "L0005",
+      "label": "HELPFUL",
+      "reason": "Adds a rule-of-thumb for assessing basket materiality, which would have highlighted the $700,000 basket as potentially significant."
+    },
+    {
+      "lesson_id": "L0006",
+      "label": "HELPFUL",
+      "reason": "Ensures actionable recommendations are tied to liability provision analysis, aligning with the expert rubric's expectation for concrete actions."
+    }
+  ],
+  "input_tokens": 4935,
+  "output_tokens": 979,
+  "cost_usd": 0.003936,
+  "prompt": "# Task\nType: issues_list | Practice area: corporate_mna\nYou act for the Buyer, Fenwick Retail Group plc. Fenwick Retail Group plc (the Buyer) is acquiring the entire issued share capital of Kestrel Holdings Ltd (the Company) from Whitlock Retail Group plc (the Seller).\n\nPrepare an issues list for the supervising partner covering the matter documents. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 5 March 2026. Address the deliverable to the supervising partner.\n\n# Trajectory (26 model steps, 26 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"client_email.md\"})\n 3. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 4. [research] read_document({\"name\": \"disclosure_letter.md\"})\n 5. [research] read_document({\"name\": \"material_customer_contract.md\"})\n 6. [research] read_document({\"name\": \"escrow_agreement.md\"})\n 7. [research] search_documents({\"query\": \"Schedule 1\"})\n 8. [research] search_documents({\"query\": \"Schedule 2\"})\n 9. [research] search_documents({\"query\": \"Closing Date\"})\n10. [research] search_documents({\"query\": \"22 February\"})\n11. [research] search_documents({\"query\": \"change of control\"})\n12. [analysis] calculate({\"expression\": \"Target Working Capital = 5000000\"})\n13. [analysis] calculate({\"expression\": \"5000000 - 4650000\"})\n14. [analysis] calculate({\"expression\": \"70000000 - 350000\"})\n15. [analysis] calculate({\"expression\": \"70000000 * 0.1\"})\n16. [drafting] write_draft(<964 words>)\n17. [verification] read_draft({})\n18. [verification] search_documents({\"query\": \"completion accounts\"})\n19. [editing] edit_draft(find='## 1. Critical Issues Requiring Immediate Resolution\\n\\n### 1.' -> '## 1. Critical Issues Requiring Immediate Resolution\\n\\n### 1.')\n20. [editing] edit_draft(find='### 3.1 Working Capital Adjustment Timeline\\n**Issue:** Claus' -> '### 3.1 Working Capital Adjustment Timeline - Direct Respons')\n21. [editing] edit_draft(find='**Priority:** Issues 1.1, 1.2, and 1.3 require immediate res' -> '**Priority:** Issues 1.1, 1.2, and 1.3 require immediate res')\n22. [editing] edit_draft(find='### 4.2 Contract Amendment Reference\\n**Issue:** Escrow Agree' -> '### 4.2 Contract Date and Amendment Discrepancies\\n**Issue:**')\n23. [editing] edit_draft(find='### 2.3 Jurisdictional Conflict\\n**Issue:** Escrow Agreement ' -> '### 2.3 Jurisdictional and Notice Provision Conflicts\\n**Issu')\n24. [verification] read_draft({})\n25. [verification] search_documents({\"query\": \"Basket\"})\n26. [control] finish({\"summary\": \"Issues list for Fenwick Retail Group plc acquisition of Kestrel Holdings Ltd identifying critical document inconsistencies, missing schedules, calc)\n\n# Final deliverable\n# Issues List: Acquisition of Kestrel Holdings Ltd\n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Date:** 5 March 2026  \n**Matter:** Fenwick Retail Group plc acquisition of Kestrel Holdings Ltd from Whitlock Retail Group plc  \n\n## Executive Summary\nThis issues list identifies key concerns arising from the review of transaction documents for the acquisition of Kestrel Holdings Ltd. The documents reveal several material inconsistencies, missing schedules, and potential risks requiring immediate attention prior to completion scheduled for 22 April 2026.\n\n## 1. Critical Issues Requiring Immediate Resolution\n\n### 1.1 Missing Schedules from Share Purchase Agreement - Direct Response to Client Query\n**Issue:** The Share Purchase Agreement references Schedules 1 and 2 which are not provided in the document set, preventing analysis of Clause 2.3 calculation methodology as requested by client.\n- **Schedule 1:** Contains the definition of \"Working Capital\" and calculation methodology for \"Closing Working Capital\" (Clause 2.3) - **CRITICAL FOR CLIENT'S QUERY**\n- **Schedule 2:** Contains the independent accountant mechanism for resolving working capital disputes (Clause 4.2)\n- **Impact:** Without Schedule 1, we cannot confirm whether the calculation methodology supports the estimated Closing Working Capital of $4,650,000. The working capital adjustment mechanism is incomplete and unenforceable.\n\n### 1.2 Inconsistent Change of Control Provisions\n**Issue:** Material contradiction between Disclosure Letter and Material Customer Contract regarding change of control provisions.\n- **Disclosure Letter (Clause 2.5):** \"The Seller confirms that no Material Contract, including without limitation the Merrion Agreement, contains a change of control provision.\"\n- **Material Customer Contract (Clause 14.2):** Contains explicit change of control termination right allowing either party to terminate on 30 days' notice if the other undergoes a change of control without prior written consent.\n- **Risk:** This represents a material misrepresentation that could trigger warranty claims. The change of control provision poses significant post-completion integration risk.\n\n### 1.3 Working Capital Calculation Discrepancy\n**Issue:** Client's estimated adjusted purchase price of $69,300,000 does not align with SPA calculation methodology.\n- **SPA Calculation:** $70,000,000 - ($5,000,000 - $4,650,000) = $69,650,000\n- **Client's Figure:** $69,300,000\n- **Discrepancy:** $350,000 difference requiring clarification on whether additional adjustments are contemplated.\n\n## 2. Document Inconsistencies\n\n### 2.1 Date Inconsistencies\n**Issue:** Multiple conflicting dates across documents:\n- **SPA Date:** 22 February 2026 (first page) vs 27 February 2026 (referenced in Escrow Agreement)\n- **Disclosure Letter Date:** \"on or about 5 March 2026\" (Clause 1.1)\n- **Escrow Agreement Date:** 28 February 2026\n- **Risk:** Creates uncertainty about which version governs and potential arguments about document hierarchy.\n\n### 2.2 Currency Inconsistency in Escrow Agreement\n**Issue:** Escrow amount calculation inconsistent with SPA purchase price.\n- **SPA Purchase Price:** $70,000,000 (USD)\n- **Escrow Amount:** £12,500,000 stated as \"10% of the total purchase price\" (Clause 1.1)\n- **10% of $70,000,000:** Should be $7,000,000 (approximately £5.6m at current exchange rates)\n- **Risk:** Significant currency mismatch creating potential funding shortfall or overpayment.\n\n### 2.3 Jurisdictional and Notice Provision Conflicts\n**Issue:** Multiple conflicts in governing law and notice provisions across documents.\n- **Jurisdiction:** \n  - SPA: English law, English courts exclusive jurisdiction (Clause 15.1)\n  - Escrow Agreement: New York law, ICC arbitration in New York (Clause 12)\n  - Material Customer Contract: English law, English courts (Clause 15)\n- **Notice Provisions:**\n  - SPA: Email notice deemed served on transmission (Clause 16.1)\n  - Material Customer Contract: Email notice requires delivery confirmation (Clause 6.2)\n- **Risk:** Creates forum shopping, increased costs, and uncertainty about effective notice delivery.\n\n## 3. Procedural and Timing Issues\n\n### 3.1 Working Capital Adjustment Timeline - Direct Response to Client Query\n**Issue:** Clause 4.1 procedures for completion accounts require analysis as requested by client.\n- **Preparation Timeline:** Buyer must prepare and deliver Closing Working Capital statement within 90 days post-Closing Date (22 April 2026) - deadline approximately 21 July 2026\n- **Seller Review Period:** Seller has 30 days to review (Clause 4.2)\n- **Notification Requirements:** No specific notification format requirements specified in main agreement (likely in missing Schedule 2)\n- **Concerns:** \n  1. 90 days may be insufficient for proper preparation during post-acquisition integration\n  2. No consequences specified for Seller's delayed response\n  3. Missing Schedule 2 details dispute resolution procedures\n\n### 3.2 Seller Response Period\n**Issue:** Seller has 30 days to review working capital statement (Clause 4.2) but no specified consequences for delayed response.\n- **Risk:** Seller could delay process without penalty, tying up adjustment amounts.\n\n### 3.3 Escrow Funding Timing\n**Issue:** Escrow Agreement requires funding \"within two (2) Business Days of completion\" (Clause 2.2)\n- **Risk:** Creates cash flow timing issue requiring funds to be available immediately post-completion.\n\n## 4. Material Contract Issues\n\n### 4.1 Merrion Energy Contract Term\n**Issue:** Material Customer Contract has automatic renewal provisions.\n- **Initial Term:** 3 years from 1 February 2023 (expires 31 January 2026)\n- **Renewal:** Automatic one-year renewals unless 90 days' notice given (Clause 3.2)\n- **Status:** Contract appears to have already renewed for at least one year without clear documentation of renewal terms.\n\n### 4.2 Contract Date and Amendment Discrepancies\n**Issue:** Multiple inconsistencies in Material Customer Contract dates and references.\n- **Disclosure Letter Date:** 1 April 2023 (Clause 2.3)\n- **Contract Date:** 15 January 2023 (first page)\n- **Escrow Agreement Reference:** Amendment dated 3 April 2024 (Clause 1.1) not provided\n- **Risk:** Creates uncertainty about which version governs and whether amendments contain material changes.\n\n## 5. Liability Limitations Analysis\n\n### 5.1 Warranty Cap Calculation\n**Issue:** Clause 8.3 contains mathematical error in warranty cap calculation.\n- **Stated:** \"12% of the Purchase Price, being $10,500,000\"\n- **Actual 12% of $70,000,000:** $8,400,000\n- **Error:** $2,100,000 overstatement potentially affecting negotiation positions.\n\n### 5.2 De Minimis Threshold\n**Issue:** Clause 9.4 de minimis threshold appears reasonable at 1% ($700,000) but combined with basket provision may limit smaller claims.\n\n## 6. Recommendations for Immediate Action\n\n1. **Request Missing Schedules:** Immediately obtain Schedules 1 and 2 from Seller's counsel to complete SPA.\n2. **Clarify Change of Control:** Address contradiction between Disclosure Letter and Material Customer Contract - require Seller to correct disclosure or provide indemnity.\n3. **Verify Working Capital Calculation:** Request detailed calculation supporting $69,300,000 figure from Seller.\n4. **Harmonize Documents:** Align dates, currencies, and jurisdictional provisions across all transaction documents.\n5. **Obtain Contract Amendments:** Request copy of 3 April 2024 amendment to Merrion Energy contract.\n6. **Correct Mathematical Errors:** Rectify warranty cap calculation in Clause 8.3.\n7. **Review Renewal Status:** Confirm current status and terms of Merrion Energy contract renewal.\n\n## 7. Next Steps\n1. Schedule call with client to discuss findings by COB 5 March 2026.\n2. Prepare mark-up of documents addressing identified issues.\n3. Coordinate with Seller's counsel to resolve inconsistencies.\n4. Advise client on negotiation strategy for material issues.\n\n**Priority:** Issues 1.1, 1.2, and 1.3 require immediate resolution as they affect fundamental economics and risk allocation of the transaction.\n\n## 8. Client Query Response Summary\n**Direct Response to Client's Questions:**\n\n1. **Clause 2.3 Calculation Methodology:** Cannot be verified without Schedule 1. The $350,000 discrepancy between SPA calculation ($69,650,000) and client's figure ($69,300,000) requires clarification from Seller.\n\n2. **Completion Accounts Procedures (Clause 3.1/4.1):** \n   - Timeline: 90 days for Buyer preparation, 30 days for Seller review\n   - Critical missing detail: Dispute resolution mechanism in Schedule 2\n   - Recommendation: Extend preparation period to 120 days given integration demands\n\n**Action Required by COB 5 March 2026:** Schedule call with client to discuss these findings and agree negotiation strategy.\n\n# Expert rubric verdicts (7/8 passed)\n- C1 [PASS] Identifies the mismatch between English law / English courts in the SPA and New York law / New York arbitration in the escrow agreement, and the risk of parallel proceedings on escrow claims.\n    judges: PASS: The deliverable identifies the governing law conflict (SPA: English law/courts vs Escrow: New York law/ICC arbitration) and explicitly states the risk of 'forum shopping' and 'increased costs' from the conflicting regime | PASS: The deliverable clearly identifies the jurisdiction conflict at section 2.3: 'SPA: English law, English courts exclusive jurisdiction' versus 'Escrow Agreement: New York law, ICC arbitration in New York', and flags the r\n- C2 [PASS] Identifies that the Merrion Energy plc contract (Clause 14.2) allows termination on a change of control without consent, that the disclosure against Warranty 6.3 says there is no such provision, and that consent should be obtained as a condition to Closing.\n    judges: PASS: The deliverable correctly identifies the contradiction between the Disclosure Letter's statement that there is no change of control provision and Clause 14.2 of the Material Customer Contract, and recommends requiring th | PASS: The deliverable explicitly identifies the contradiction at section 1.2: Disclosure Letter Clause 2.5 states no change of control provision exists, while Material Customer Contract Clause 14.2 contains an explicit change \n- C3 [PASS] Identifies that the warranty cap in SPA Section 8.3 is stated as $10,500,000 but 12% of the $70,000,000 Purchase Price is $8,400,000, i.e. the stated figure is wrong.\n    judges: PASS: The deliverable identifies the mathematical error in Clause 8.3, noting that 12% of the Purchase Price is $8,400,000 rather than the stated $10,500,000. | PASS: The deliverable clearly identifies the mathematical error at section 5.1: states '12% of the Purchase Price, being $10,500,000' but actual 12% of $70,000,000 is $8,400,000, noting the '$2,100,000 overstatement'.\n- C4 [PASS] Calculates the working capital shortfall as $350,000 and the adjusted Purchase Price as $69,650,000, identifying that the Seller's funds flow figure of $69,300,000 is wrong.\n    judges: PASS: The deliverable correctly calculates the working capital shortfall ($350,000), derives the adjusted price ($69,650,000), and identifies the discrepancy with the Seller's funds flow figure ($69,300,000). | PASS: The deliverable at section 1.3 shows the calculation: '$70,000,000 - ($5,000,000 - $4,650,000) = $69,650,000' and identifies the '$350,000 difference' from the Seller's figure of $69,300,000, requiring clarification.\n- C5 [FAIL] Identifies that the basket in SPA Section 9.4 ($700,000) operates as a deductible (Seller liable only for the excess), not a tipping basket, and explains that this is less favourable to the Buyer.\n    judges: FAIL: While the deliverable notes the basket threshold, it fails to explain that the basket operates as a deductible (where the Buyer bears the first $700,000) rather than a tipping basket (where full recovery is triggered), a | FAIL: The deliverable mentions the basket at section 5.2 but does not explain that it operates as a deductible (Seller liable only for the excess) rather than a tipping basket, nor does it explain this is less favourable to th\n- C6 [PASS] Flags the governing law and forum inconsistency between the SPA and the escrow agreement.\n    judges: PASS: The deliverable flags the governing law and forum inconsistency between the SPA (English law/courts) and the Escrow Agreement (New York law/arbitration) in Section 2.3. | PASS: The deliverable flags the governing law and forum inconsistency at section 2.3, explicitly contrasting 'SPA: English law, English courts' with 'Escrow Agreement: New York law, ICC arbitration in New York'.\n- C7 [PASS] Shows the arithmetic for the cap (12% x $70,000,000 = $8,400,000) and flags the discrepancy with the stated $10,500,000.\n    judges: PASS: The deliverable shows the arithmetic (12% of $70,000,000 = $8,400,000) and flags the $2,100,000 discrepancy with the stated $10,500,000 figure. | PASS: The deliverable at section 5.1 shows the arithmetic '12% of $70,000,000: $8,400,000' and flags the discrepancy with the stated '$10,500,000'.\n- C8 [PASS] Gives a concrete recommended action for each issue (what to request, amend or negotiate).\n    judges: PASS: The deliverable provides a dedicated recommendations section with concrete actions for each issue, such as requesting missing schedules, requiring Seller to correct disclosure, and rectifying mathematical errors. | PASS: The deliverable provides concrete recommended actions in section 6, including: 'Request Missing Schedules,' 'Clarify Change of Control,' 'Verify Working Capital Calculation,' 'Harmonize Documents,' 'Obtain Contract Amend\n\n# Your job\nAnalyse each FAILED criterion: what went wrong, what the agent should have done, and whether the failure is procedural (reusable) or task-specific. Then write reusable candidate lessons that would prevent the procedural failures on other matters.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|issues_list\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C5\",\n      \"what_went_wrong\": \"The agent identified the basket threshold but failed to analyze or explain its operational mechanics (deductible vs. tipping basket) and the implications for the Buyer.\",\n      \"should_have\": \"The agent should have explicitly analyzed whether the basket operated as a deductible or tipping basket and explained the risk implications for the Buyer.\",\n      \"failure_kind\": \"procedural\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"For every liability basket or threshold, explicitly state whether it operates as a deductible (Seller liable only for excess) or tipping basket (full recovery triggered) and note the client impact.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"When reviewing basket provisions, compare the stated threshold with the transaction value to assess materiality and flag if the basket disproportionately limits recovery.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"issues_list\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"Include a dedicated 'Liability Mechanics' subsection in issues lists to address basket types, caps, and de minimis thresholds with clear client implications.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"issues_list\",\n      \"confidence\": 0.85\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"review\",\n      \"text\": \"Before finalizing an issues list, cross-check that every liability limitation (basket, cap, de minimis) has a clear explanation of its effect on recovery.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"For basket provisions, calculate the percentage of the transaction value the basket represents and flag if it exceeds 1% unless justified by deal context.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"issues_list\",\n      \"confidence\": 0.8\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"Ensure recommendations for liability provisions include specific negotiation asks (e.g., convert deductible to tipping basket) with rationale.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"issues_list\",\n      \"confidence\": 0.85\n    }\n  ],\n  \"lesson_feedback\": [\n    {\n      \"lesson_id\": \"L0001\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Directly addresses the failure by ensuring the agent explicitly analyzes basket mechanics, which was missing in the original deliverable.\"\n    },\n    {\n      \"lesson_id\": \"L0002\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Encourages quantitative analysis of basket thresholds, adding rigor to the assessment of materiality.\"\n    },\n    {\n      \"lesson_id\": \"L0003\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Improves structural consistency in issues lists by mandating a dedicated subsection for liability mechanics, reducing omissions.\"\n    },\n    {\n      \"lesson_id\": \"L0004\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Provides a clear review step to catch omissions before finalizing deliverables, addressing the procedural failure.\"\n    },\n    {\n      \"lesson_id\": \"L0005\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Adds a rule-of-thumb for assessing basket materiality, which would have highlighted the $700,000 basket as potentially significant.\"\n    },\n    {\n      \"lesson_id\": \"L0006\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Ensures actionable recommendations are tied to liability provision analysis, aligning with the expert rubric's expectation for concrete actions.\"\n    }\n  ]\n}\n```"
+}

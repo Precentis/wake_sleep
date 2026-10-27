@@ -1,0 +1,151 @@
+{
+  "task_id": "MNA_T058",
+  "cycle": 1,
+  "lineage": "ablation_no_commit_gate",
+  "graded": true,
+  "failures": [
+    {
+      "criterion_id": "C5",
+      "what_went_wrong": "The agent identified the escrow release period and date but failed to calculate and include the days remaining from the deliverable date to the release date.",
+      "should_have": "Calculated and explicitly stated the number of days remaining from the deliverable date to the escrow release date to provide a clear timeline for the client.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C6",
+      "what_went_wrong": "The agent identified the ambiguity in the liability cap but did not explain how each alternative reading would work in practice or the implications of each interpretation.",
+      "should_have": "Explored and documented the practical implications of each alternative reading of ambiguous terms or clauses, including risks and benefits for the client.",
+      "failure_kind": "procedural"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T058_0",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "For any date-based deadlines or periods, calculate and include the number of days remaining from the current date to the deadline to provide clear temporal context.",
+      "source_tasks": [
+        "MNA_T058"
+      ],
+      "evidence": [
+        "MNA_T058:C5"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T058_1",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "When encountering ambiguous terms or clauses, analyse and document how each alternative interpretation would operate in practice, including potential risks and benefits for the client.",
+      "source_tasks": [
+        "MNA_T058"
+      ],
+      "evidence": [
+        "MNA_T058:C6"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T058_2",
+      "type": "checklist",
+      "category": "review",
+      "text": "Before finalising a redline note, verify that all date-based calculations (e.g., deadlines, periods) include both the absolute date and the days remaining from the deliverable date.",
+      "source_tasks": [
+        "MNA_T058"
+      ],
+      "evidence": [
+        "MNA_T058:C5"
+      ],
+      "task_type_scope": "redline",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T058_3",
+      "type": "practice_note",
+      "category": "drafting",
+      "text": "For ambiguous clauses, draft alternative interpretations explicitly, highlighting the legal and commercial consequences of each to guide negotiation or client decisions.",
+      "source_tasks": [
+        "MNA_T058"
+      ],
+      "evidence": [
+        "MNA_T058:C6"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T058_4",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "Ensure all calculations involving dates, percentages, or financial figures are cross-verified and explicitly shown in the deliverable to avoid discrepancies.",
+      "source_tasks": [
+        "MNA_T058"
+      ],
+      "evidence": [
+        "MNA_T058:C5",
+        "MNA_T058:C6"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T058_5",
+      "type": "practice_note",
+      "category": "review",
+      "text": "Recompute all derived figures (e.g., dates, percentages, caps) manually or using tools to confirm accuracy before relying on them in the deliverable.",
+      "source_tasks": [
+        "MNA_T058"
+      ],
+      "evidence": [
+        "MNA_T058:C5",
+        "MNA_T058:C6"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.95
+    }
+  ],
+  "lesson_feedback": [
+    {
+      "lesson_id": "L0001",
+      "label": "HELPFUL",
+      "reason": "Directly addresses the failure to include days remaining in date-based calculations, ensuring clarity for future deliverables."
+    },
+    {
+      "lesson_id": "L0002",
+      "label": "HELPFUL",
+      "reason": "Encourages thorough analysis of ambiguous terms, which would have prevented the oversight in C6 by exploring alternative interpretations."
+    },
+    {
+      "lesson_id": "L0003",
+      "label": "HELPFUL",
+      "reason": "Provides a clear review step to catch missing date calculations, aligning with the procedural failure in C5."
+    },
+    {
+      "lesson_id": "L0004",
+      "label": "HELPFUL",
+      "reason": "Promotes proactive drafting of alternative interpretations, which would have improved the deliverable's handling of ambiguous clauses in C6."
+    },
+    {
+      "lesson_id": "L0005",
+      "label": "HELPFUL",
+      "reason": "Reinforces the need for cross-verification of calculations, addressing both C5 and C6 failures."
+    },
+    {
+      "lesson_id": "L0006",
+      "label": "HELPFUL",
+      "reason": "Ensures accuracy in derived figures, which is critical for both date-based and financial calculations in legal deliverables."
+    }
+  ],
+  "input_tokens": 5345,
+  "output_tokens": 1065,
+  "cost_usd": 0.00427,
+  "prompt": "# Task\nType: redline | Practice area: corporate_mna\nYou act for the Buyer, Redcliffe Retail Group plc. Redcliffe Retail Group plc (the Buyer) is acquiring the entire issued share capital of Eskdale Media Ltd (the Company) from Fenwick Software Ltd (the Seller).\n\nPrepare a redline note proposing amendments to the principal agreement to protect our client. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 6 May 2027. Address the deliverable to the supervising partner.\n\n# Trajectory (18 model steps, 18 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"client_email.md\"})\n 3. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 4. [research] read_document({\"name\": \"escrow_agreement.md\"})\n 5. [analysis] calculate({\"expression\": \"agreement_date = date('2027-04-15')\\ntermination_date = add_days(agreement_date, 120)\\ntermination_date\"})\n 6. [analysis] calculate({\"expression\": \"closing_date = date('2027-07-20')\\nrelease_date = add_months(closing_date, 18)\\nrelease_date\"})\n 7. [analysis] calculate({\"expression\": \"merger_clearance_date = date('2027-08-27')\\ndays_between(agreement_date, merger_clearance_date)\"})\n 8. [analysis] calculate({\"expression\": \"agreement_date = date('2027-04-15')\\nmerger_clearance_date = date('2027-08-27')\\ndays_between(agreement_date, merger_clearance_date)\"})\n 9. [analysis] calculate({\"expression\": \"purchase_price = 220000000\\nliability_limit = 0.20 * purchase_price\\nliability_limit\"})\n10. [research] search_documents({\"query\": \"warranties\"})\n11. [analysis] calculate({\"expression\": \"0.20 * 220000000\"})\n12. [analysis] calculate({\"expression\": \"0.18 * 220000000\"})\n13. [research] search_documents({\"query\": \"conditions\"})\n14. [drafting] write_draft(<1746 words>)\n15. [verification] read_draft({})\n16. [editing] edit_draft(find='**Rationale:** Extends the general termination deadline to 1' -> '**Rationale:** Extends the general termination deadline to 1')\n17. [editing] edit_draft(find='### 2.4 Escrow Arrangement Concerns\\nThe Escrow Agreement pro' -> '### 2.4 Escrow Arrangement Concerns\\nThe Escrow Agreement pro')\n18. [control] finish({\"summary\": \"Redline note proposing amendments to the Share Purchase Agreement for Redcliffe Retail Group plc's acquisition of Eskdale Media Ltd. The note ident)\n\n# Final deliverable\n# REDLINE NOTE: PROPOSED AMENDMENTS TO SHARE PURCHASE AGREEMENT\n**Date:** 6 May 2027  \n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Re:** Proposed Acquisition of Eskdale Media Ltd by Redcliffe Retail Group plc  \n**Client:** Redcliffe Retail Group plc (Buyer)  \n**Counterparty:** Fenwick Software Ltd (Seller)  \n\n## 1. EXECUTIVE SUMMARY\n\nThis note sets out proposed amendments to the Share Purchase Agreement dated 15 April 2027 (the \"SPA\") for the acquisition by Redcliffe Retail Group plc (our client, the \"Buyer\") of the entire issued share capital of Eskdale Media Ltd (the \"Company\") from Fenwick Software Ltd (the \"Seller\"). The amendments are designed to protect the Buyer's interests in light of the transaction structure, regulatory timeline, and commercial considerations identified in the matter documents.\n\n## 2. KEY ISSUES IDENTIFIED\n\n### 2.1 Regulatory Clearance Timeline Conflict\nThe SPA provides for termination if Conditions are not satisfied within 120 days of signing (i.e., by 13 August 2027). However, regulatory counsel expects merger clearance by 27 August 2027 – 14 days after the termination deadline. This creates a significant risk that the Buyer could be forced to terminate the transaction just before obtaining regulatory approval.\n\n### 2.2 Inconsistent Liability Cap Calculation\nClause 8.2 states the Seller's aggregate liability is limited to \"20% of the Purchase Price, being $39,600,000.\" This contains a mathematical error: 20% of $220,000,000 is $44,000,000, not $39,600,000. The clause appears to intend an 18% cap but incorrectly states 20%.\n\n### 2.3 Missing Material Customer Protection\nThe client email identifies Fenwick Robotics Ltd as a \"material customer\" of the Company. The Escrow Agreement defines \"Material Customer\" as Fenwick Robotics Ltd. However, the SPA contains no specific warranties or protections regarding this material customer relationship, which represents a significant commercial risk.\n\n### 2.4 Escrow Arrangement Concerns\nThe Escrow Agreement provides for an 18-month escrow period (with Release Date of 20 January 2029, being 18 months after the Closing Date of 20 July 2027) with £8,500,000 held. However, the SPA lacks integration with this escrow mechanism for warranty claims, creating potential enforcement difficulties.\n\n### 2.5 Incomplete Conditions Precedent\nClause 3.1 refers to \"Conditions\" but no specific conditions are detailed in the SPA. This creates uncertainty about what must be satisfied for completion.\n\n## 3. PROPOSED AMENDMENTS\n\n### 3.1 Amendment to Termination Deadline (Clause 4.5)\n**Current Text:**\n> \"4.5 If the Conditions are not satisfied or waived by the date falling 120 days after the date of this Agreement (signed 15 April 2027), either party may terminate this Agreement by giving written notice to the other, without prejudice to any rights or remedies accrued prior to termination.\"\n\n**Proposed Amendment:**\n> \"4.5 If the Conditions are not satisfied or waived by the date falling **150 days** after the date of this Agreement (signed 15 April 2027), either party may terminate this Agreement by giving written notice to the other, without prejudice to any rights or remedies accrued prior to termination. For the avoidance of doubt, the Condition relating to merger clearance under Clause 3.2(a) shall have an extended long-stop date of **180 days** after the date of this Agreement.\"\n\n**Rationale:** Extends the general termination deadline to 150 days (12 September 2027) and provides a specific 180-day extension (11 October 2027) for merger clearance. The current 120-day deadline (13 August 2027) conflicts with regulatory counsel's expected clearance date of 27 August 2027. This extension provides necessary contingency while maintaining reasonable time limits.\n\n### 3.2 Correction of Liability Cap (Clause 8.2)\n**Current Text:**\n> \"8.2 Limitation of Liability: The aggregate liability of the Seller for any and all claims arising under the warranties given in this Agreement shall not exceed an amount equal to 20% of the Purchase Price, being $39,600,000. For the avoidance of doubt, the Purchase Price is $220,000,000 as set out in Section 2.1.\"\n\n**Proposed Amendment (Option A - Correct Calculation):**\n> \"8.2 Limitation of Liability: The aggregate liability of the Seller for any and all claims arising under the warranties given in this Agreement shall not exceed an amount equal to **20%** of the Purchase Price, being **$44,000,000**. For the avoidance of doubt, the Purchase Price is $220,000,000 as set out in Section 2.1.\"\n\n**Proposed Amendment (Option B - Maintain Intended Percentage):**\n> \"8.2 Limitation of Liability: The aggregate liability of the Seller for any and all claims arising under the warranties given in this Agreement shall not exceed an amount equal to **18%** of the Purchase Price, being $39,600,000. For the avoidance of doubt, the Purchase Price is $220,000,000 as set out in Section 2.1.\"\n\n**Rationale:** Eliminates mathematical inconsistency. Recommend Option A (20% = $44M) as it provides greater protection and corrects the Seller's drafting error.\n\n### 3.3 Addition of Material Customer Warranty (New Clause)\n**Proposed New Clause (to be inserted after Clause 8.2):**\n> \"**8.3 Material Customer Warranty**\n> \n> 8.3.1 The Seller warrants that, as at the date of this Agreement and as at the Closing Date:\n> \n> (a) Fenwick Robotics Ltd (the \"Material Customer\") is not in material breach of any contract with the Company;\n> \n> (b) All contracts between the Company and the Material Customer are in full force and effect;\n> \n> (c) The Company has received no written notice of termination or material reduction in business from the Material Customer;\n> \n> (d) The relationship with the Material Customer is not subject to any undisclosed side agreements or understandings.\n> \n> 8.3.2 For the purposes of this warranty, \"material\" means any breach, reduction, or circumstance that would reasonably be expected to reduce the Company's revenue from the Material Customer by more than 10% in any 12-month period.\"\n\n**Rationale:** Provides specific protection for the identified material customer relationship, which represents significant commercial value in the acquisition.\n\n### 3.4 Integration with Escrow Mechanism (New Clause)\n**Proposed New Clause (to be inserted after Clause 5.1):**\n> \"**5.2 Escrow Arrangement**\n> \n> 5.2.1 The Parties shall enter into an escrow agreement substantially in the form attached as Schedule 3 (the \"Escrow Agreement\").\n> \n> 5.2.2 An amount of £8,500,000 (the \"Escrow Amount\") shall be deducted from the Purchase Price payable on the Closing Date and deposited into the escrow account established under the Escrow Agreement.\n> \n> 5.2.3 The Buyer shall be entitled to make claims against the Escrow Amount for any breach of warranty, indemnity, or other claim under this Agreement, in accordance with the procedures set out in the Escrow Agreement.\n> \n> 5.2.4 The Escrow Amount shall be held for a period of 18 months from the Closing Date (the \"Escrow Period\"), provided that any portion subject to a pending claim shall be retained until resolution of such claim.\"\n\n**Rationale:** Integrates the escrow arrangement into the SPA, providing clear mechanisms for warranty claims and ensuring the escrow funds are available for Buyer protection.\n\n### 3.5 Specification of Conditions Precedent (Clause 3)\n**Current Text:**\n> \"3.1 The obligation of the Buyer to complete the purchase of the Shares is subject to satisfaction or waiver, in writing, by the Buyer, of each of the Conditions, including but not limited to the accuracy of the representations and warranties of the Seller and the delivery of all required documents.\"\n\n**Proposed Amendment:**\n> \"3.1 The obligation of the Buyer to complete the purchase of the Shares is subject to satisfaction or waiver, in writing, by the Buyer, of each of the following Conditions:\n> \n> (a) receipt by the Buyer of unconditional merger clearance from the relevant competition authority;\n> \n> (b) accuracy in all material respects of the representations and warranties of the Seller as of the Closing Date;\n> \n> (c) performance in all material respects by the Seller of all obligations required to be performed by it under this Agreement on or before the Closing Date;\n> \n> (d) delivery by the Seller of all documents and instruments required to be delivered under this Agreement;\n> \n> (e) absence of any material adverse change in the business, assets, or financial condition of the Company between the date of this Agreement and the Closing Date;\n> \n> (f) receipt by the Buyer of satisfactory due diligence results in its sole discretion;\n> \n> (g) execution and delivery of the Escrow Agreement in accordance with Clause 5.2.\"\n\n**Rationale:** Provides certainty by specifying the Conditions precedent, including key protections such as material adverse change and satisfactory due diligence.\n\n## 4. ADDITIONAL RECOMMENDATIONS\n\n### 4.1 Currency Consistency\nThe SPA specifies the Purchase Price in US dollars ($220,000,000) while the Escrow Amount is in pounds sterling (£8,500,000). Recommend specifying a fixed exchange rate for conversion purposes to avoid currency fluctuation risk.\n\n### 4.2 De Minimis and Basket Provisions\nThe SPA lacks standard de minimis (minimum claim threshold) and basket (deductible) provisions for warranty claims. Recommend adding:\n- A de minimis threshold (e.g., $25,000 per claim)\n- A basket/deductible (e.g., 0.5% of Purchase Price = $1,100,000)\n- These provisions would prevent trivial claims while protecting against material losses.\n\n### 4.3 Time Limit for Warranty Claims\nThe SPA does not specify a time limit for bringing warranty claims. Recommend adding:\n- General warranties: 24 months from Closing Date\n- Tax warranties: 7 years from Closing Date\n- Fundamental warranties: 6 years from Closing Date (statutory limitation)\n\n### 4.4 Interest on Late Payments\nThe SPA does not provide for interest on late payments of Purchase Price adjustments or warranty claims. Recommend adding standard interest provisions (e.g., 2% above Bank of England base rate).\n\n## 5. NEGOTIATING STRATEGY\n\n### 5.1 High Priority (Must Achieve)\n1. **Extension of termination deadline** for merger clearance (Clause 4.5)\n2. **Correction of liability cap** (Clause 8.2) - insist on 20% = $44M\n3. **Specification of Conditions precedent** (Clause 3)\n\n### 5.2 Medium Priority (Strongly Recommended)\n1. **Material Customer warranty** (New Clause 8.3)\n2. **Escrow integration** (New Clause 5.2)\n3. **Time limits for claims** (New Clause)\n\n### 5.3 Lower Priority (Nice to Have)\n1. **De minimis and basket provisions**\n2. **Interest on late payments**\n3. **Currency consistency provisions**\n\n## 6. NEXT STEPS\n\n1. Discuss these proposed amendments with the client for approval.\n2. Prepare a formal mark-up of the SPA incorporating the approved amendments.\n3. Initiate negotiations with Seller's counsel, focusing initially on high-priority items.\n4. Coordinate with regulatory counsel to ensure the extended timeline is feasible.\n5. Review due diligence findings on Fenwick Robotics Ltd relationship to inform warranty negotiations.\n\n## 7. CONCLUSION\n\nThe proposed amendments address critical risks identified in the transaction documentation, particularly the timeline conflict with regulatory clearance, the mathematical error in the liability cap, and the lack of protection for the material customer relationship. Implementing these changes will significantly enhance the Buyer's position and provide appropriate safeguards for this substantial acquisition.\n\n**Prepared by:** Senior Associate  \n**Date:** 6 May 2027\n\n# Expert rubric verdicts (4/6 passed)\n- C1 [PASS] States that the escrow release date is 20 January 2029 (18 months after the 20 July 2027 Closing Date) and that pending claims must be notified before then.\n    judges: PASS: The deliverable correctly states the escrow release date as 20 January 2029 (18 months after the 20 July 2027 Closing Date) in section 2.4, and notes that pending claims must be notified prior to the Release Date in sect | PASS: The deliverable correctly states the escrow release date as 20 January 2029 (18 months after 20 July 2027 Closing Date) at section 2.4, and notes that pending claims must be notified prior to the Release Date (section 4.\n- C2 [PASS] Calculates the long-stop date as 13 August 2027 (120 days after signing on 15 April 2027) and identifies that expected clearance on 27 August 2027 falls after it, recommending an extension.\n    judges: PASS: Section 2.1 correctly calculates the long-stop date as 13 August 2027 (120 days after 15 April 2027), identifies the conflict with the expected clearance date of 27 August 2027, and proposes an extension in section 3.1. | PASS: The deliverable correctly calculates the long-stop date as 13 August 2027 (120 days after 15 April 2027 signing) at section 2.1, identifies that expected clearance on 27 August 2027 falls 14 days after this deadline, and\n- C3 [PASS] Identifies that the warranty cap in SPA Section 8.2 is stated as $39,600,000 but 20% of the $220,000,000 Purchase Price is $44,000,000, i.e. the stated figure is wrong.\n    judges: PASS: Section 2.2 correctly identifies that SPA Clause 8.2 states the cap as $39,600,000 but that 20% of the $220,000,000 Purchase Price is actually $44,000,000, flagging the error. | PASS: The deliverable correctly identifies at section 2.2 that the warranty cap states $39,600,000 as 20% of Purchase Price, but 20% of $220,000,000 is actually $44,000,000, flagging this as a mathematical error.\n- C4 [PASS] Shows the arithmetic for the cap (20% x $220,000,000 = $44,000,000) and flags the discrepancy with the stated $39,600,000.\n    judges: PASS: Section 3.2 explicitly shows the arithmetic (20% of $220,000,000 = $44,000,000) and flags the discrepancy with the stated $39,600,000 figure. | PASS: The deliverable shows the arithmetic at section 3.2: '20% of $220,000,000 is $44,000,000, not $39,600,000' and flags the discrepancy, offering Option A ($44,000,000) and Option B (18% = $39,600,000) to resolve it.\n- C5 [FAIL] Gives the escrow release period as a duration (18 months) and as a date (20 January 2029), with days remaining from 6 May 2027 (625 days).\n    judges: FAIL: The deliverable correctly states the escrow release period as 18 months and the date as 20 January 2029, but it does not calculate or state the number of days remaining from the deliverable date (6 May 2027). | FAIL: While the deliverable correctly gives the escrow release period as 18 months and the date as 20 January 2029 at section 2.4, it does not calculate or state the days remaining from 6 May 2027 (625 days). This specific fig\n- C6 [FAIL] Where a defined term or clause is ambiguous, explains how each alternative reading would work.\n    judges: FAIL: While the deliverable identifies the ambiguity in the liability cap (whether 20% or $39,600,000 is correct), it does not explain how each alternative reading would work in practice; it simply proposes two alternative cor | FAIL: The deliverable does not explain how alternative readings of ambiguous defined terms or clauses would work. For example, it does not explore whether '20% of the Purchase Price, being $39,600,000' could be read as (a) 20%\n\n# Your job\nAnalyse each FAILED criterion: what went wrong, what the agent should have done, and whether the failure is procedural (reusable) or task-specific. Then write reusable candidate lessons that would prevent the procedural failures on other matters.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|redline\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C5\",\n      \"what_went_wrong\": \"The agent identified the escrow release period and date but failed to calculate and include the days remaining from the deliverable date to the release date.\",\n      \"should_have\": \"Calculated and explicitly stated the number of days remaining from the deliverable date to the escrow release date to provide a clear timeline for the client.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C6\",\n      \"what_went_wrong\": \"The agent identified the ambiguity in the liability cap but did not explain how each alternative reading would work in practice or the implications of each interpretation.\",\n      \"should_have\": \"Explored and documented the practical implications of each alternative reading of ambiguous terms or clauses, including risks and benefits for the client.\",\n      \"failure_kind\": \"procedural\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"For any date-based deadlines or periods, calculate and include the number of days remaining from the current date to the deadline to provide clear temporal context.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"When encountering ambiguous terms or clauses, analyse and document how each alternative interpretation would operate in practice, including potential risks and benefits for the client.\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"review\",\n      \"text\": \"Before finalising a redline note, verify that all date-based calculations (e.g., deadlines, periods) include both the absolute date and the days remaining from the deliverable date.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"redline\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"drafting\",\n      \"text\": \"For ambiguous clauses, draft alternative interpretations explicitly, highlighting the legal and commercial consequences of each to guide negotiation or client decisions.\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.85\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"Ensure all calculations involving dates, percentages, or financial figures are cross-verified and explicitly shown in the deliverable to avoid discrepancies.\",\n      \"evidence\": [\"C5\", \"C6\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"review\",\n      \"text\": \"Recompute all derived figures (e.g., dates, percentages, caps) manually or using tools to confirm accuracy before relying on them in the deliverable.\",\n      \"evidence\": [\"C5\", \"C6\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.95\n    }\n  ],\n  \"lesson_feedback\": [\n    {\n      \"lesson_id\": \"L0001\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Directly addresses the failure to include days remaining in date-based calculations, ensuring clarity for future deliverables.\"\n    },\n    {\n      \"lesson_id\": \"L0002\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Encourages thorough analysis of ambiguous terms, which would have prevented the oversight in C6 by exploring alternative interpretations.\"\n    },\n    {\n      \"lesson_id\": \"L0003\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Provides a clear review step to catch missing date calculations, aligning with the procedural failure in C5.\"\n    },\n    {\n      \"lesson_id\": \"L0004\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Promotes proactive drafting of alternative interpretations, which would have improved the deliverable's handling of ambiguous clauses in C6.\"\n    },\n    {\n      \"lesson_id\": \"L0005\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Reinforces the need for cross-verification of calculations, addressing both C5 and C6 failures.\"\n    },\n    {\n      \"lesson_id\": \"L0006\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Ensures accuracy in derived figures, which is critical for both date-based and financial calculations in legal deliverables.\"\n    }\n  ]\n}\n```"
+}

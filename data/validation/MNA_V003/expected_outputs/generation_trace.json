@@ -1,0 +1,126 @@
+{
+  "docs": [
+    {
+      "title": "share_purchase_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 614,
+            "output_tokens": 1068
+          }
+        }
+      ]
+    },
+    {
+      "title": "board_minutes.md",
+      "attempts": [
+        {
+          "missing": [
+            "2 directors"
+          ],
+          "usage": {
+            "input_tokens": 478,
+            "output_tokens": 822
+          }
+        },
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 1324,
+            "output_tokens": 823
+          }
+        }
+      ]
+    },
+    {
+      "title": "articles_of_association_extract.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 484,
+            "output_tokens": 933
+          }
+        }
+      ]
+    },
+    {
+      "title": "client_email.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 507,
+            "output_tokens": 413
+          }
+        }
+      ]
+    },
+    {
+      "title": "employment_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 490,
+            "output_tokens": 1048
+          }
+        }
+      ]
+    }
+  ],
+  "doc_facts": {
+    "share_purchase_agreement.md": {
+      "key": "spa",
+      "facts": [
+        "Parties: Ingleby Capital LLP (Buyer), Brightwater Media Ltd (Seller); the Company is Rothley Engineering Ltd.",
+        "Section 2.1: the Purchase Price is $35,000,000.",
+        "This Agreement is dated 16 November 2026; Closing is scheduled for 19 February 2027 (the 'Closing Date').",
+        "Section 2.3: the Purchase Price shall be reduced dollar-for-dollar by any shortfall of Closing Working Capital below the Target Working Capital of $5,000,000.",
+        "Section 12.1: the Seller shall not compete with the business for 4 years after Closing."
+      ],
+      "must_contain": [
+        "$5,000,000",
+        "4 years"
+      ]
+    },
+    "board_minutes.md": {
+      "key": "board_minutes",
+      "facts": [
+        "Present: 2 directors (of 5). The meeting was quorate. RESOLVED to approve entry into the Share Purchase Agreement."
+      ],
+      "must_contain": [
+        "2 directors"
+      ]
+    },
+    "articles_of_association_extract.md": {
+      "key": "articles",
+      "facts": [
+        "Article 11: the quorum for board meetings is three directors."
+      ],
+      "must_contain": [
+        "three directors"
+      ]
+    },
+    "client_email.md": {
+      "key": "client_email",
+      "facts": [
+        "The estimated Closing Working Capital is $4,380,000. The Seller's draft funds flow shows an adjusted purchase price of $33,760,000."
+      ],
+      "must_contain": [
+        "$4,380,000",
+        "$33,760,000"
+      ]
+    },
+    "employment_agreement.md": {
+      "key": "employment",
+      "facts": [
+        "Clause 18: the Founder shall not compete with the business for 18 months after termination of employment."
+      ],
+      "must_contain": [
+        "18 months"
+      ]
+    }
+  }
+}

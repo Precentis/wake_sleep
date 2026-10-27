@@ -1,0 +1,117 @@
+{
+  "docs": [
+    {
+      "title": "underwriting_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 487,
+            "output_tokens": 1040
+          }
+        }
+      ]
+    },
+    {
+      "title": "prospectus_extract.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 570,
+            "output_tokens": 1105
+          }
+        }
+      ]
+    },
+    {
+      "title": "lock_up_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 481,
+            "output_tokens": 873
+          }
+        }
+      ]
+    },
+    {
+      "title": "board_minutes.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 454,
+            "output_tokens": 777
+          }
+        }
+      ]
+    },
+    {
+      "title": "client_email.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 435,
+            "output_tokens": 361
+          }
+        }
+      ]
+    }
+  ],
+  "doc_facts": {
+    "underwriting_agreement.md": {
+      "key": "underwriting",
+      "facts": [
+        "Parties: Ivybridge Technologies Ltd (Company) and Netherby Software Securities (Underwriter).",
+        "Clause 9: the Underwriters may offer the Shares to investors in the United States, Canada and the European Economic Area. No selling restrictions or exemption conditions are specified for any jurisdiction."
+      ],
+      "must_contain": [
+        "United States",
+        "European Economic Area"
+      ]
+    },
+    "prospectus_extract.md": {
+      "key": "prospectus",
+      "facts": [
+        "Issuer: Ivybridge Technologies Ltd. The date of this Prospectus is 21 December 2026.",
+        "The date of this Prospectus is 21 December 2026.",
+        "Use of Proceeds: net proceeds of $120,000,000 will be applied as follows: repayment of the revolving facility $54,000,000; capital expenditure $36,000,000; general corporate purposes $38,000,000.",
+        "Legal Proceedings: the Company is not party to any legal proceedings which may have a significant effect on its financial position."
+      ],
+      "must_contain": [
+        "21 December 2026",
+        "$120,000,000",
+        "$54,000,000",
+        "$36,000,000",
+        "$38,000,000"
+      ]
+    },
+    "lock_up_agreement.md": {
+      "key": "lock_up",
+      "facts": [
+        "Clause 2: the Shareholder shall not sell any Shares during the period ending 180 days after the date of the Prospectus. 'Business Day' means a day other than a Saturday or Sunday on which banks are open in New York."
+      ],
+      "must_contain": [
+        "180 days"
+      ]
+    },
+    "board_minutes.md": {
+      "key": "board_minutes",
+      "facts": [
+        "Item 3: the board discussed a class action filed by Kestrel Systems Ltd seeking $12,500,000 in damages. Counsel assesses the claim as having reasonable prospects."
+      ],
+      "must_contain": [
+        "Kestrel Systems Ltd",
+        "$12,500,000"
+      ]
+    },
+    "client_email.md": {
+      "key": "client_email",
+      "facts": [],
+      "must_contain": []
+    }
+  }
+}

@@ -1,0 +1,178 @@
+{
+  "task_id": "MNA_T027",
+  "cycle": 1,
+  "lineage": "main",
+  "graded": true,
+  "failures": [
+    {
+      "criterion_id": "C1",
+      "what_went_wrong": "The agent identified the IP ownership risk but recommended indemnities and price adjustments instead of proposing a confirmatory assignment as a condition to closing.",
+      "should_have": "Explicitly listed a confirmatory IP assignment from the third-party contractor as a required condition precedent to closing, alongside other risk mitigation measures.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C2",
+      "what_went_wrong": "The agent noted the inconsistency between restrictive covenants but did not assess or state the enforceability risk of the 5-year non-compete as potentially unreasonable.",
+      "should_have": "Explicitly flagged that a 5-year non-compete may be unenforceable as wider than reasonably necessary and recommended alignment with enforceable durations.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C3",
+      "what_went_wrong": "The agent calculated the working capital shortfall but did not recompute the adjusted purchase price or flag the discrepancy with the seller's stated figure.",
+      "should_have": "Recomputed the adjusted purchase price by subtracting the shortfall from the base price and explicitly flagged the discrepancy with the seller's figure.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C5",
+      "what_went_wrong": "The agent discussed the IP assignment issue but did not list a confirmatory assignment as a required third-party action in the recommendations.",
+      "should_have": "Explicitly listed a confirmatory IP assignment from the third-party contractor as a required action in the recommendations section.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C6",
+      "what_went_wrong": "The agent identified the working capital shortfall but did not show the arithmetic for the adjusted purchase price or flag the discrepancy with the seller's figure.",
+      "should_have": "Displayed the adjustment arithmetic (base price - shortfall = adjusted price) and explicitly flagged the discrepancy with the seller's stated figure.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C7",
+      "what_went_wrong": "The agent did not assign a structured risk rating (High/Medium/Low) to any of the identified issues.",
+      "should_have": "Assigned a risk rating to each issue based on severity and likelihood, and included this in the deliverable.",
+      "failure_kind": "procedural"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T027_0",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "For every identified risk, explicitly list required third-party actions (e.g., confirmatory assignments) as conditions precedent in the recommendations.",
+      "source_tasks": [
+        "MNA_T027"
+      ],
+      "evidence": [
+        "MNA_T027:C1",
+        "MNA_T027:C5"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T027_1",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "When reviewing restrictive covenants, assess enforceability by comparing duration and scope to jurisdictional standards and flag any provisions likely to be unenforceable.",
+      "source_tasks": [
+        "MNA_T027"
+      ],
+      "evidence": [
+        "MNA_T027:C2"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T027_2",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "For every financial adjustment, show the arithmetic (base amount ± adjustment = adjusted amount) and flag any discrepancy with stated figures.",
+      "source_tasks": [
+        "MNA_T027"
+      ],
+      "evidence": [
+        "MNA_T027:C3",
+        "MNA_T027:C6"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T027_3",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Before finalising the deliverable, assign a risk rating (High/Medium/Low) to every identified issue based on severity and likelihood.",
+      "source_tasks": [
+        "MNA_T027"
+      ],
+      "evidence": [
+        "MNA_T027:C7"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.98
+    },
+    {
+      "candidate_id": "c01_MNA_T027_4",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Recompute every derived financial figure (e.g., earn-outs, working capital adjustments) using the stated formula and flag any mismatch with provided figures.",
+      "source_tasks": [
+        "MNA_T027"
+      ],
+      "evidence": [
+        "MNA_T027:C3",
+        "MNA_T027:C4",
+        "MNA_T027:C6"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T027_5",
+      "type": "practice_note",
+      "category": "review",
+      "text": "Before finalising recommendations, verify that every identified risk has a corresponding actionable item (e.g., amendment, condition, indemnity).",
+      "source_tasks": [
+        "MNA_T027"
+      ],
+      "evidence": [
+        "MNA_T027:C1",
+        "MNA_T027:C5"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    }
+  ],
+  "lesson_feedback": [
+    {
+      "lesson_id": "L0001",
+      "label": "HELPFUL",
+      "reason": "Directly addresses the procedural failure to list third-party actions as conditions precedent, which is a common oversight in contract reviews."
+    },
+    {
+      "lesson_id": "L0002",
+      "label": "HELPFUL",
+      "reason": "Encourages proactive assessment of enforceability, which is critical for restrictive covenants and often overlooked."
+    },
+    {
+      "lesson_id": "L0003",
+      "label": "HELPFUL",
+      "reason": "Ensures transparency in financial adjustments, reducing the risk of unnoticed discrepancies."
+    },
+    {
+      "lesson_id": "L0004",
+      "label": "HELPFUL",
+      "reason": "Structured risk ratings improve prioritisation and clarity for the supervising partner."
+    },
+    {
+      "lesson_id": "L0005",
+      "label": "HELPFUL",
+      "reason": "Recomputing derived figures is a fundamental check to catch errors or inconsistencies in financial provisions."
+    },
+    {
+      "lesson_id": "L0006",
+      "label": "HELPFUL",
+      "reason": "Ensures recommendations are actionable and comprehensive, addressing all identified risks."
+    }
+  ],
+  "input_tokens": 4947,
+  "output_tokens": 1428,
+  "cost_usd": 0.0046155,
+  "prompt": "# Task\nType: contract_review | Practice area: corporate_mna\nYou act for the Buyer, Brightwater Holdings Ltd. Brightwater Holdings Ltd (the Buyer) is acquiring the entire issued share capital of Foxley Holdings Ltd (the Company) from Glenrock Capital LLP (the Seller).\n\nReview the principal agreement against the other matter documents and report the problematic provisions. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 8 February 2027. Address the deliverable to the supervising partner.\n\n# Trajectory (25 model steps, 25 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"client_email.md\"})\n 3. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 4. [research] read_document({\"name\": \"disclosure_letter.md\"})\n 5. [research] read_document({\"name\": \"employment_agreement.md\"})\n 6. [research] search_documents({\"query\": \"warranty\"})\n 7. [research] search_documents({\"query\": \"schedule\"})\n 8. [research] search_documents({\"query\": \"indemnity\"})\n 9. [analysis] calculate({\"expression\": \"date('2027-02-08')\"})\n10. [analysis] calculate({\"expression\": \"days_between(date('2027-02-08'), date('2027-03-14'))\"})\n11. [analysis] calculate({\"expression\": \"6100000 - 4000000\"})\n12. [analysis] calculate({\"expression\": \"2100000 * 2\"})\n13. [analysis] calculate({\"expression\": \"4200000 - 3800000\"})\n14. [drafting] write_draft(<1101 words>)\n15. [verification] read_draft({})\n16. [editing] edit_draft(find='### 6. Material Customer Relationship\\n\\n**Issue:** Larkspur T' -> '### 6. Material Customer Relationship\\n\\n**Issue:** Larkspur T')\n17. [editing] edit_draft(find='6. **Additional Protections**\\n   - Include specific warranty' -> '6. **Date Consistency**\\n   - Correct Disclosure Letter refer')\n18. [editing] edit_draft(find='**Risk:** Customer concentration risk not addressed in SPA w' -> '**Risk:** Customer concentration risk not addressed in SPA w')\n19. [editing] edit_draft(find='6. **Date Consistency**\\n   - Correct Disclosure Letter refer' -> '6. **Date Consistency**\\n   - Correct Disclosure Letter refer')\n20. [editing] edit_draft(find='**Risk:** Disputes could arise regarding whether and when no' -> '**Risk:** Disputes could arise regarding whether and when no')\n21. [editing] edit_draft(find='7. **Notice Provisions**\\n   - Specify email addresses for se' -> '7. **Notice Provisions**\\n   - Specify email addresses for se')\n22. [verification] read_draft({})\n23. [editing] edit_draft(find='**Consideration:** 5 years is standard but should be assesse' -> '**Consideration:** 5 years is standard but should be assesse')\n24. [verification] read_draft({})\n25. [control] finish({\"summary\": \"Comprehensive review of the Share Purchase Agreement identifying problematic provisions including: $400,000 Earn-out payment discrepancy, material )\n\n# Final deliverable\n# Review of Share Purchase Agreement for Acquisition of Foxley Holdings Ltd\n\n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Date:** 8 February 2027  \n**Matter:** Acquisition of Foxley Holdings Ltd by Brightwater Holdings Ltd  \n**Client:** Brightwater Holdings Ltd  \n\n## Executive Summary\n\nI have reviewed the principal Share Purchase Agreement (SPA) dated 21 January 2027 against the other matter documents (Disclosure Letter, Employment Agreement, and Client Email). Several problematic provisions require immediate attention, particularly concerning:\n\n1. **Earn-out Payment Calculation Discrepancy** - A $400,000 discrepancy between the SPA formula and the Seller's advised amount\n2. **Intellectual Property Risk** - Material disclosure regarding unassigned IP rights in core platform software\n3. **Restrictive Covenant Issues** - Potential conflict between SPA and Employment Agreement non-compete provisions\n4. **Working Capital Adjustment** - Significant shortfall from Target Working Capital\n5. **Missing Schedules** - Critical calculation methodologies absent from the SPA\n\n## Detailed Analysis of Problematic Provisions\n\n### 1. Earn-out Payment Calculation Discrepancy\n\n**Issue:** The SPA contains a material discrepancy in the Earn-out Payment calculation.\n\n**SPA Provision (Clause 3.4):**\n- Earn-out Payment = 2 × (FY2026 EBITDA - $4,000,000)\n- Maximum cap: $5,000,000\n\n**Client Email Information:**\n- FY2026 EBITDA: $6,100,000\n- Seller's advised Earn-out Payment: $3,800,000\n\n**Calculation Discrepancy:**\n- SPA formula: 2 × ($6,100,000 - $4,000,000) = 2 × $2,100,000 = **$4,200,000**\n- Seller's advised amount: **$3,800,000**\n- **Discrepancy: $400,000**\n\n**Risk:** The Buyer may be obligated to pay $400,000 more than anticipated under the SPA formula. This represents either a drafting error or undisclosed adjustment methodology.\n\n### 2. Intellectual Property Risk from Disclosure Letter\n\n**Issue:** The Disclosure Letter reveals material deficiencies in the Company's intellectual property rights.\n\n**Key Disclosure (Clause 3):**\n- Core platform software developed in 2023 by Foxley Pharma plc as independent contractor\n- No written assignment of intellectual property rights executed\n- Development conducted pursuant to oral instructions and informal specifications\n- No formal contract governing creation, ownership, or transfer of IP rights\n- No warranty, indemnity, or assurance obtained regarding non-infringement, title, or originality\n\n**Risk Assessment:**\n1. **Title Defect:** The Company may not have clear legal title to its core platform software\n2. **Infringement Risk:** Potential third-party claims from Foxley Pharma plc or others\n3. **Enforceability Issues:** Difficulty protecting IP rights without proper documentation\n4. **Valuation Impact:** Core business asset may be significantly impaired\n\n**SPA Gap:** The SPA does not contain specific indemnities or price adjustments for this material IP risk.\n\n### 3. Restrictive Covenant Conflicts\n\n**Issue:** Inconsistent non-compete provisions between SPA and Employment Agreement.\n\n**SPA Restriction (Clause 12.1):**\n- Seller restricted for **5 years** post-Closing\n- Geographic scope: UK and any jurisdiction where Company operates\n- Applies to Seller (Glenrock Capital LLP)\n\n**Employment Agreement Restriction (Clause 18):**\n- Employee (Julian Thorne, Founder/CEO) restricted for **18 months** post-termination\n- Geographic scope: England and Wales only\n- Specifically mentions Larkspur Technologies Ltd (material customer)\n\n**Analysis:**\n1. **Duration Discrepancy:** 5 years vs 18 months creates potential enforcement issues\n2. **Geographic Scope:** SPA restriction broader than employment restriction\n3. **Key Personnel Risk:** Founder/CEO has shorter restriction period than Seller entity\n4. **Customer Protection:** Employment agreement specifically protects relationship with Larkspur Technologies Ltd\n\n**Risk:** The Company's key personnel (Founder/CEO) could compete after 18 months while Seller entity remains restricted for 5 years, creating operational and competitive risks.\n\n### 4. Working Capital Adjustment Issue\n\n**Issue:** Significant shortfall between estimated and target working capital.\n\n**SPA Provisions:**\n- Target Working Capital: $2,000,000 (Clause 1.1)\n- Purchase Price reduction: Dollar-for-dollar shortfall below Target (Clause 2.3)\n\n**Client Email Information:**\n- Estimated Closing Working Capital: $1,090,000\n\n**Calculated Shortfall:**\n- $2,000,000 (Target) - $1,090,000 (Estimated) = **$910,000 shortfall**\n- Purchase Price reduction: **$910,000**\n\n**Risk:** While the adjustment mechanism exists, the magnitude of the shortfall ($910,000) represents approximately 0.8% of the $113,180,000 adjusted purchase price. The Buyer should verify the accuracy of this estimate and ensure robust verification procedures in Schedule 3.\n\n### 5. Missing Schedules and Calculation Methodologies\n\n**Issue:** The SPA references critical schedules that are absent from the documents provided.\n\n**Missing Schedules Referenced in SPA:**\n1. **Schedule 1:** Accounting principles for Closing Working Capital calculation\n2. **Schedule 2:** EBITDA calculation methodology\n3. **Schedule 3:** Procedure for verifying Working Capital adjustments\n4. **Schedule 4:** Procedure for verifying Earn-out Payment\n\n**Risk:** Without these schedules, key financial calculations lack defined methodologies, creating ambiguity and potential disputes. The absence of these schedules prevents proper review of calculation mechanics and verification procedures.\n\n### 6. Material Customer Relationship\n\n**Issue:** Larkspur Technologies Ltd identified as material customer in Client Email.\n\n**Relevance:**\n- Employment Agreement specifically restricts competition with Larkspur Technologies Ltd\n- SPA restrictive covenant should protect this relationship\n- Due diligence required on concentration risk\n\n**Risk:** Customer concentration risk not addressed in SPA warranties or disclosures.\n\n### 7. Date Discrepancies and Document Consistency\n\n**Issue:** Inconsistent dates across transaction documents.\n\n**Discrepancies Identified:**\n1. **SPA Date:** 21 January 2027 (actual SPA date)\n2. **Disclosure Letter Reference:** References SPA \"dated on or about 8 February 2027\" (incorrect)\n3. **Employment Agreement:** Dated 5 February 2027 with Effective Date of 8 February 2027\n4. **Client Email Date:** Implied current date is 8 February 2027\n\n**Risk:** Inconsistent dating creates ambiguity about which documents form the complete agreement and could lead to disputes about document hierarchy and effectiveness dates.\n\n### 8. Notice Provisions\n\n**Issue:** Ambiguous notice provisions in SPA Clause 14.1.\n\n**Problems Identified:**\n1. **Email Notice Timing:** Deemed served \"upon confirmation of receipt\" - ambiguous and potentially disputed\n2. **Missing Email Addresses:** No specified email addresses for service of notices\n3. **No Acknowledgment Requirement:** No mechanism to confirm receipt of email notices\n\n**Risk:** Disputes could arise regarding whether and when notices have been properly served, particularly for time-sensitive matters like working capital disputes or earn-out payments.\n\n### 9. Confidentiality Provisions\n\n**Issue:** Standard but should be reviewed for business appropriateness.\n\n**SPA Provision (Clause 13):**\n- 5-year confidentiality period post-completion\n- Standard exceptions for legal requirements and with consent\n\n**Consideration:** 5 years is standard but should be assessed against the business's need for longer protection of sensitive information, particularly given the IP risks identified.\n\n## Recommendations\n\n### Immediate Actions Required:\n\n1. **Earn-out Payment Clarification**\n   - Request explanation for $400,000 discrepancy\n   - Amend Clause 3.4 to reflect agreed calculation or include explanatory note\n   - Consider cap reduction to $3,800,000 if that is the agreed amount\n\n2. **IP Risk Mitigation**\n   - Require specific indemnity from Seller for IP title defects\n   - Consider purchase price reduction reflecting IP risk\n   - Conduct thorough IP due diligence on core platform software\n   - Obtain representations regarding absence of third-party claims\n\n3. **Restrictive Covenant Alignment**\n   - Align duration between SPA and Employment Agreement\n   - Consider extending employee restriction to match Seller restriction\n   - Ensure geographic scope consistency\n   - Strengthen protection for Larkspur Technologies Ltd relationship\n\n4. **Working Capital Verification**\n   - Ensure Schedule 3 provides robust verification mechanism\n   - Consider independent accountant review provisions\n   - Verify accuracy of $1,090,000 estimate\n\n5. **Missing Schedules**\n   - Request all referenced schedules for review\n   - Ensure calculation methodologies are clear and commercially reasonable\n   - Include dispute resolution mechanisms for calculations\n\n6. **Date Consistency**\n   - Correct Disclosure Letter reference to SPA date (21 January 2027)\n   - Ensure all documents reference consistent dates\n   - Clarify document hierarchy and effectiveness dates\n\n7. **Notice Provisions**\n   - Specify email addresses for service of notices\n   - Define \"confirmation of receipt\" for email notices (e.g., read receipt, reply acknowledgment)\n   - Include fallback provisions for disputed receipt\n\n8. **Confidentiality Review**\n   - Assess whether 5-year period is sufficient given IP risks\n   - Consider specific protections for highly sensitive information\n   - Ensure alignment with Employment Agreement confidentiality provisions\n\n9. **Additional Protections**\n   - Include specific warranty regarding Larkspur Technologies Ltd relationship\n   - Consider customer concentration representations\n   - Include material adverse change provisions\n\n## Conclusion\n\nThe Share Purchase Agreement contains several material issues requiring immediate attention. The $400,000 Earn-out Payment discrepancy and the significant IP risk disclosed in the Disclosure Letter represent the most urgent concerns. The inconsistent restrictive covenants create enforcement risks, and the missing schedules prevent proper review of financial calculation mechanics.\n\nI recommend engaging with the Seller's counsel to address these issues before proceeding to signing. The Buyer should not proceed without:\n1. Resolution of the Earn-out Payment discrepancy\n2. Adequate protection for the disclosed IP risks\n3. Complete schedules with clear calculation methodologies\n4. Alignment of restrictive covenants\n\nThe transaction timeline (Closing Date: 14 March 2027) allows sufficient time to address these issues, but prompt action is required.\n\nPlease advise on next steps and whether you would like me to prepare draft amendments or engage directly with Seller's counsel.\n\n# Expert rubric verdicts (1/7 passed)\n- C1 [FAIL] Identifies that the core platform was developed by contractor Foxley Pharma plc without a written IP assignment, so the Company may not own it, and recommends obtaining a confirmatory assignment as a condition to Closing.\n    judges: FAIL: The deliverable identifies the IP ownership risk but recommends a 'specific indemnity' and 'purchase price reduction' rather than obtaining a confirmatory assignment as a condition to Closing. | PASS: The deliverable clearly identifies the Foxley Pharma plc IP assignment issue (Clause 3 of Disclosure Letter) and recommends obtaining representations and conducting due diligence, though it recommends indemnity/price red\n- C2 [FAIL] Identifies that the 5-year SPA non-compete may be unenforceable as wider than reasonably necessary and is inconsistent with the 18-month restriction in the Founder's employment agreement.\n    judges: FAIL: The deliverable identifies the inconsistency between the 5-year and 18-month restrictions but does not advise that the 5-year SPA non-compete may be unenforceable as wider than reasonably necessary. | PASS: The deliverable explicitly identifies the 5-year SPA non-compete vs 18-month employment agreement inconsistency, notes the duration discrepancy creates enforcement issues, and recommends aligning the restrictions.\n- C3 [FAIL] Calculates the working capital shortfall as $910,000 and the adjusted Purchase Price as $114,090,000, identifying that the Seller's funds flow figure of $113,180,000 is wrong.\n    judges: FAIL: The deliverable correctly calculates the $910,000 shortfall but fails to calculate the adjusted Purchase Price of $114,090,000 or identify that the Seller's $113,180,000 figure is wrong. | FAIL: The deliverable calculates the working capital shortfall correctly as $910,000, but fails to calculate the correct adjusted Purchase Price. It states the Seller's funds flow shows $113,180,000 but does not show the corre\n- C4 [PASS] Calculates the Earn-out Payment as $4,200,000 (2 x ($6,100,000 - $4,000,000), subject to the $5,000,000 cap) and identifies that the Seller's figure of $3,800,000 is wrong.\n    judges: PASS: The deliverable correctly calculates the Earn-out Payment as $4,200,000 using the formula 2 × ($6,100,000 - $4,000,000) and identifies the Seller's figure of $3,800,000 as discrepant. | PASS: The deliverable correctly calculates the Earn-out Payment as $4,200,000 (2 × ($6,100,000 - $4,000,000)) and explicitly identifies the $400,000 discrepancy with the Seller's advised figure of $3,800,000.\n- C5 [FAIL] Lists a confirmatory IP assignment from Foxley Pharma plc as a required third-party action not yet obtained.\n    judges: FAIL: The deliverable does not list a confirmatory IP assignment from Foxley Pharma plc as a required third-party action or condition to Closing. | FAIL: While the deliverable discusses the IP assignment issue extensively, it does not specifically list a confirmatory IP assignment from Foxley Pharma plc as a required third-party action not yet obtained. It recommends inde\n- C6 [FAIL] Shows the adjustment arithmetic ($115,000,000 - $910,000 = $114,090,000) and flags the discrepancy.\n    judges: FAIL: The deliverable does not show the adjustment arithmetic ($115,000,000 - $910,000 = $114,090,000) nor does it flag the specific discrepancy with the Seller's funds flow figure. | FAIL: The deliverable calculates the $910,000 shortfall but does not show the adjustment arithmetic ($115,000,000 - $910,000 = $114,090,000) nor does it flag the discrepancy with the Seller's funds flow figure of $113,180,000.\n- C7 [FAIL] Assigns a risk rating (High / Medium / Low) to each issue.\n    judges: FAIL: The deliverable does not assign a risk rating (High/Medium/Low) to any of the identified issues. | FAIL: The deliverable does not assign explicit risk ratings (High/Medium/Low) to each issue. While it uses language like 'material issues' and 'most urgent concerns,' it does not provide structured risk ratings for each identi\n\n# Your job\nAnalyse each FAILED criterion: what went wrong, what the agent should have done, and whether the failure is procedural (reusable) or task-specific. Then write reusable candidate lessons that would prevent the procedural failures on other matters.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|contract_review\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C1\",\n      \"what_went_wrong\": \"The agent identified the IP ownership risk but recommended indemnities and price adjustments instead of proposing a confirmatory assignment as a condition to closing.\",\n      \"should_have\": \"Explicitly listed a confirmatory IP assignment from the third-party contractor as a required condition precedent to closing, alongside other risk mitigation measures.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C2\",\n      \"what_went_wrong\": \"The agent noted the inconsistency between restrictive covenants but did not assess or state the enforceability risk of the 5-year non-compete as potentially unreasonable.\",\n      \"should_have\": \"Explicitly flagged that a 5-year non-compete may be unenforceable as wider than reasonably necessary and recommended alignment with enforceable durations.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C3\",\n      \"what_went_wrong\": \"The agent calculated the working capital shortfall but did not recompute the adjusted purchase price or flag the discrepancy with the seller's stated figure.\",\n      \"should_have\": \"Recomputed the adjusted purchase price by subtracting the shortfall from the base price and explicitly flagged the discrepancy with the seller's figure.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C5\",\n      \"what_went_wrong\": \"The agent discussed the IP assignment issue but did not list a confirmatory assignment as a required third-party action in the recommendations.\",\n      \"should_have\": \"Explicitly listed a confirmatory IP assignment from the third-party contractor as a required action in the recommendations section.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C6\",\n      \"what_went_wrong\": \"The agent identified the working capital shortfall but did not show the arithmetic for the adjusted purchase price or flag the discrepancy with the seller's figure.\",\n      \"should_have\": \"Displayed the adjustment arithmetic (base price - shortfall = adjusted price) and explicitly flagged the discrepancy with the seller's stated figure.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C7\",\n      \"what_went_wrong\": \"The agent did not assign a structured risk rating (High/Medium/Low) to any of the identified issues.\",\n      \"should_have\": \"Assigned a risk rating to each issue based on severity and likelihood, and included this in the deliverable.\",\n      \"failure_kind\": \"procedural\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"For every identified risk, explicitly list required third-party actions (e.g., confirmatory assignments) as conditions precedent in the recommendations.\",\n      \"evidence\": [\"C1\", \"C5\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"When reviewing restrictive covenants, assess enforceability by comparing duration and scope to jurisdictional standards and flag any provisions likely to be unenforceable.\",\n      \"evidence\": [\"C2\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"For every financial adjustment, show the arithmetic (base amount ± adjustment = adjusted amount) and flag any discrepancy with stated figures.\",\n      \"evidence\": [\"C3\", \"C6\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"Before finalising the deliverable, assign a risk rating (High/Medium/Low) to every identified issue based on severity and likelihood.\",\n      \"evidence\": [\"C7\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.98\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Recompute every derived financial figure (e.g., earn-outs, working capital adjustments) using the stated formula and flag any mismatch with provided figures.\",\n      \"evidence\": [\"C3\", \"C4\", \"C6\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"review\",\n      \"text\": \"Before finalising recommendations, verify that every identified risk has a corresponding actionable item (e.g., amendment, condition, indemnity).\",\n      \"evidence\": [\"C1\", \"C5\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    }\n  ],\n  \"lesson_feedback\": [\n    {\n      \"lesson_id\": \"L0001\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Directly addresses the procedural failure to list third-party actions as conditions precedent, which is a common oversight in contract reviews.\"\n    },\n    {\n      \"lesson_id\": \"L0002\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Encourages proactive assessment of enforceability, which is critical for restrictive covenants and often overlooked.\"\n    },\n    {\n      \"lesson_id\": \"L0003\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Ensures transparency in financial adjustments, reducing the risk of unnoticed discrepancies.\"\n    },\n    {\n      \"lesson_id\": \"L0004\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Structured risk ratings improve prioritisation and clarity for the supervising partner.\"\n    },\n    {\n      \"lesson_id\": \"L0005\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Recomputing derived figures is a fundamental check to catch errors or inconsistencies in financial provisions.\"\n    },\n    {\n      \"lesson_id\": \"L0006\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Ensures recommendations are actionable and comprehensive, addressing all identified risks.\"\n    }\n  ]\n}\n```"
+}

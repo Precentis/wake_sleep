@@ -1,0 +1,175 @@
+{
+  "task_id": "MNA_T072",
+  "cycle": 1,
+  "lineage": "ablation_no_grading",
+  "graded": false,
+  "failures": [
+    {
+      "criterion_id": "C1",
+      "what_went_wrong": "The agent did not verify whether the '5 business days before Closing' calculation accounted for jurisdiction-specific bank holidays or local business day conventions.",
+      "should_have": "Confirmed the business day calculation method aligns with the governing law of the agreement and local banking practices.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C2",
+      "what_went_wrong": "The agent included a specific monetary amount ($125,000,000) in the deliverable, which is a fact unique to this matter.",
+      "should_have": "Generalised payment terms to avoid referencing specific amounts, e.g., 'Purchase Price due on Closing Date'.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C3",
+      "what_went_wrong": "The agent did not cross-check the '150 days from Agreement date' calculation with the actual clause in the Share Purchase Agreement to confirm the exact wording or exceptions.",
+      "should_have": "Verified the exact language of the conditions precedent deadline in the source document to ensure the calculation aligns with contractual terms.",
+      "failure_kind": "task_specific"
+    },
+    {
+      "criterion_id": "C4",
+      "what_went_wrong": "The agent relied on a single client email for the regulatory clearance date without confirming its accuracy or checking for updates in other matter documents.",
+      "should_have": "Triangulated the regulatory clearance date with all available sources, including recent correspondence or updates in the matter folder.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C5",
+      "what_went_wrong": "The agent did not flag whether the warranty survival periods (12 months and 48 months) were standard or unusual for the jurisdiction or deal type, missing an opportunity to highlight potential negotiation points.",
+      "should_have": "Compared warranty survival periods against market practice for similar transactions to identify deviations requiring client attention.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C6",
+      "what_went_wrong": "The agent included a specific third-party name (Elstree Energy plc) in the 'Key Condition' section, which is a fact unique to this matter.",
+      "should_have": "Generalised third-party consents to avoid referencing specific entities, e.g., 'all necessary third-party consents'.",
+      "failure_kind": "content"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T072_0",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "For every deadline expressed in business days, confirm the governing law's definition of 'business day' and cross-check against local bank holidays or industry-specific closures.",
+      "source_tasks": [
+        "MNA_T072"
+      ],
+      "evidence": [
+        "MNA_T072:C1"
+      ],
+      "task_type_scope": "timeline_analysis",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T072_1",
+      "type": "practice_note",
+      "category": "drafting",
+      "text": "Replace all matter-specific figures, names, or dates in the deliverable with generalised descriptors to ensure reusability and confidentiality.",
+      "source_tasks": [
+        "MNA_T072"
+      ],
+      "evidence": [
+        "MNA_T072:C2",
+        "MNA_T072:C6"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.98
+    },
+    {
+      "candidate_id": "c01_MNA_T072_2",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "Before finalising any deadline calculation, locate and quote the exact contractual language defining the period to ensure alignment with the source document.",
+      "source_tasks": [
+        "MNA_T072"
+      ],
+      "evidence": [
+        "MNA_T072:C3"
+      ],
+      "task_type_scope": "timeline_analysis",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T072_3",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Triangulate all critical dates or figures with at least two independent sources in the matter documents to confirm accuracy before relying on them.",
+      "source_tasks": [
+        "MNA_T072"
+      ],
+      "evidence": [
+        "MNA_T072:C4"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.92
+    },
+    {
+      "candidate_id": "c01_MNA_T072_4",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Compare all warranty survival periods, non-compete durations, or other time-bound obligations against market practice for the jurisdiction and deal type, flagging deviations.",
+      "source_tasks": [
+        "MNA_T072"
+      ],
+      "evidence": [
+        "MNA_T072:C5"
+      ],
+      "task_type_scope": "timeline_analysis",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.88
+    },
+    {
+      "candidate_id": "c01_MNA_T072_5",
+      "type": "practice_note",
+      "category": "review",
+      "text": "Before finishing, scan the deliverable for any remaining matter-specific details (names, amounts, dates) and replace them with generalised language.",
+      "source_tasks": [
+        "MNA_T072"
+      ],
+      "evidence": [
+        "MNA_T072:C2",
+        "MNA_T072:C6"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.97
+    }
+  ],
+  "lesson_feedback": [
+    {
+      "lesson_id": "L0001",
+      "label": "HELPFUL",
+      "reason": "Addresses a common pitfall in timeline analysis where business day calculations can vary by jurisdiction or context."
+    },
+    {
+      "lesson_id": "L0002",
+      "label": "HELPFUL",
+      "reason": "Critical for maintaining confidentiality and ensuring the deliverable is reusable for future matters."
+    },
+    {
+      "lesson_id": "L0003",
+      "label": "HELPFUL",
+      "reason": "Prevents errors arising from misinterpretation of contractual language, which is a frequent source of oversight."
+    },
+    {
+      "lesson_id": "L0004",
+      "label": "HELPFUL",
+      "reason": "Reduces reliance on single-source information, which is a key risk in legal analysis."
+    },
+    {
+      "lesson_id": "L0005",
+      "label": "HELPFUL",
+      "reason": "Encourages benchmarking against market practice, adding value to the client by highlighting unusual terms."
+    },
+    {
+      "lesson_id": "L0006",
+      "label": "HELPFUL",
+      "reason": "Serves as a final safeguard to ensure the deliverable adheres to generalisation requirements."
+    }
+  ],
+  "input_tokens": 3628,
+  "output_tokens": 1412,
+  "cost_usd": 0.003932,
+  "prompt": "# Task\nType: timeline_analysis | Practice area: corporate_mna\nYou act for the Buyer, Northgate Robotics Ltd. Northgate Robotics Ltd (the Buyer) is acquiring the entire issued share capital of Juniper Systems Ltd (the Company) from Whitlock Logistics plc (the Seller).\n\nPrepare a timeline and deadlines analysis of all time-sensitive obligations in the matter documents. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 30 March 2026. Address the deliverable to the supervising partner.\n\n# Trajectory (23 model steps, 23 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 3. [research] read_document({\"name\": \"disclosure_letter.md\"})\n 4. [research] read_document({\"name\": \"employment_agreement.md\"})\n 5. [research] read_document({\"name\": \"client_email.md\"})\n 6. [analysis] calculate({\"expression\": \"agreement_date = date('2026-03-21')\\nclosing_date = date('2026-04-24')\\ntoday = date('2026-03-30')\\nregulatory_clearance = date('2026-10-02')\\nc)\n 7. [analysis] calculate({\"expression\": \"bank_account_deadline = prev_business_day(closing_date, 5)\\ndays_to_closing = days_between(today, closing_date)\\ndays_to_conditions_termination )\n 8. [analysis] calculate({\"expression\": \"agreement_date = date('2026-03-21')\\nclosing_date = date('2026-04-24')\\ntoday = date('2026-03-30')\\nregulatory_clearance = date('2026-10-02')\\nc)\n 9. [analysis] calculate({\"expression\": \"closing_date = date('2026-04-24')\\nbank_account_deadline = add_days(closing_date, -5)\\nbank_account_deadline_business = prev_business_day(bank_a)\n10. [analysis] calculate({\"expression\": \"closing_date = date('2026-04-24')\\ngeneral_warranties_end = add_months(closing_date, 12)\\nfundamental_warranties_end = add_months(closing_date, )\n11. [research] search_documents({\"query\": \"days\"})\n12. [research] search_documents({\"query\": \"months\"})\n13. [research] search_documents({\"query\": \"years\"})\n14. [drafting] write_draft(<937 words>)\n15. [verification] read_draft({})\n16. [editing] edit_draft(find='#### 3. Intellectual Property Disclosure\\n\\n**Issue:** Disclos' -> '#### 3. Intellectual Property Disclosure\\n\\n**Issue:** Disclos')\n17. [editing] edit_draft(find='**Conditions to be satisfied:**\\n1. All necessary third-party' -> '**Conditions to be satisfied:**\\n1. All necessary third-party')\n18. [editing] edit_draft(find='| **Bank Account Notification** | **17 April 2026** (Friday)' -> '| **Bank Account Notification** | **17 April 2026** (Friday)')\n19. [verification] search_documents({\"query\": \"date\"})\n20. [editing] edit_draft(find='| **Employment Effective Date** | 1 April 2025 | Founder Tho' -> '| **Employment Agreement Date** | On or about 30 March 2025 ')\n21. [editing] edit_draft(find='### Executive Summary\\n\\nThis analysis identifies and calculat' -> '### Executive Summary\\n\\nThis analysis identifies and calculat')\n22. [verification] read_draft({})\n23. [control] finish({\"summary\": \"Completed timeline and deadlines analysis for Northgate Robotics Ltd's acquisition of Juniper Systems Ltd. Identified critical timing conflict betw)\n\n# Final deliverable\n# Timeline and Deadlines Analysis\n## Acquisition of Juniper Systems Ltd by Northgate Robotics Ltd\n\n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Date:** 30 March 2026  \n**Matter:** Acquisition of Juniper Systems Ltd  \n**Client:** Northgate Robotics Ltd (Buyer)  \n**Counterparty:** Whitlock Logistics plc (Seller)\n\n---\n\n### Executive Summary\n\nThis analysis identifies and calculates all time-sensitive obligations arising from the proposed acquisition of Juniper Systems Ltd. The key documents reviewed are: Share Purchase Agreement (dated 21 March 2026), Disclosure Letter, Employment Agreement (extract), and Client Email (15 February 2026). The analysis is prepared as of 30 March 2026.\n\n#### Key Dates Summary\n| Event | Date | Criticality |\n|-------|------|-------------|\n| **Today's Date** | 30 March 2026 | Reference point |\n| **Bank Account Notification Deadline** | 17 April 2026 | High (payment prerequisite) |\n| **Closing Date** | 24 April 2026 | Critical (transaction completion) |\n| **Conditions Satisfaction Deadline** | 18 August 2026 | Critical (conflict with regulatory clearance) |\n| **Expected Regulatory Clearance** | 2 October 2026 | High (45 days after conditions deadline) |\n| **General Warranties Expiry** | 24 April 2027 | Medium (12-month survival) |\n| **Fundamental Warranties Expiry** | 24 April 2030 | Medium (48-month survival) |\n| **Seller Non-Compete Expiry** | 24 April 2031 | Low (5-year restriction) |\n\n### Critical Path Timeline\n\n#### 1. Pre-Closing Deadlines\n\n| Deadline | Date | Days from Today | Obligation | Document Reference |\n|----------|------|-----------------|------------|-------------------|\n| **Bank Account Notification** | **17 April 2026** (Friday) | 18 days | Seller must provide bank account details for Purchase Price payment (5 Business Days before Closing). Calculated as: 24 April - 5 calendar days = 19 April (Sunday), previous business day = 17 April. | SPA Clause 2.2 |\n| **Closing Date** | **24 April 2026** (Friday) | 25 days | Completion of share transfer and payment of Purchase Price ($125,000,000) | SPA Clause 3.1 |\n\n#### 2. Conditions Precedent Timeline\n\n| Deadline | Date | Days from Today | Obligation | Document Reference |\n|----------|------|-----------------|------------|-------------------|\n| **Conditions Satisfaction Deadline** | **18 August 2026** (Tuesday) | 141 days | All conditions must be satisfied or waived; otherwise either party may terminate | SPA Clause 4.5 |\n| **Key Condition: Regulatory Clearance** | **2 October 2026** (Friday) | 186 days | Expected merger clearance date per Client Email | Client Email |\n\n**Conditions to be satisfied:**\n1. All necessary third-party consents (including from Elstree Energy plc)\n2. No order or injunction prohibiting Closing\n\n**Calculation Note:** Conditions Satisfaction Deadline is 150 days from Agreement date (21 March 2026) = 18 August 2026.\n\n**Critical Timing Issue:** The Conditions Satisfaction Deadline (18 August 2026) precedes the expected Regulatory Clearance date (2 October 2026) by 45 days. This creates a timing conflict that requires immediate attention.\n\n#### 3. Post-Closing Warranty Periods\n\n| Warranty Type | Survival Period | End Date | Days from Closing | Notification Deadline |\n|---------------|----------------|----------|-------------------|----------------------|\n| **General Warranties** | 12 months | **24 April 2027** (Saturday) | 365 days | Must notify claims before expiry |\n| **Fundamental Warranties** (title, capacity, tax) | 48 months | **24 April 2030** (Wednesday) | 1,461 days | Must notify claims before expiry |\n\n**Key Limitation:** Aggregate liability capped at 20% of Purchase Price ($31,250,000) - SPA Clause 8.4\n\n#### 4. Restrictive Covenants\n\n| Covenant | Period | End Date | Document Reference |\n|----------|--------|----------|-------------------|\n| **Seller Non-Compete** | 5 years from Closing | **24 April 2031** (Thursday) | SPA Clause 12.1 |\n| **Founder (Thomas Vaughan) Non-Compete** | 18 months after termination of employment | Variable (depends on termination date) | Employment Agreement Clause 18.1 |\n| **Founder Confidentiality** | 5 years after termination of employment | Variable (depends on termination date) | Employment Agreement Clause 6.2 |\n\n#### 5. Employment Agreement Timeline\n\n| Event | Date | Notes |\n|-------|------|-------|\n| **Employment Agreement Date** | On or about 30 March 2025 | Employment agreement executed |\n| **Employment Effective Date** | 1 April 2025 | Founder Thomas Vaughan's employment commenced |\n| **Current Employment Duration** | 1 year as of 30 March 2026 | Ongoing employment |\n\n### Risk Analysis and Recommendations\n\n#### 1. Critical Timing Conflict\n\n**Issue:** The Conditions Satisfaction Deadline (18 August 2026) falls 45 days **before** the expected Regulatory Clearance date (2 October 2026).\n\n**Risk:** If regulatory clearance is not obtained by 18 August 2026, either party could terminate the Agreement, potentially jeopardising the transaction.\n\n**Recommendation:** \n1. Seek amendment to extend Conditions Satisfaction Deadline to at least 2 October 2026 plus a reasonable buffer period.\n2. Alternatively, obtain regulatory clearance on an expedited basis.\n3. Consider whether regulatory clearance should be a condition precedent or a separate undertaking.\n\n#### 2. Bank Account Notification Deadline\n\n**Deadline:** 17 April 2026 (5 Business Days before Closing)\n\n**Action Required:** Ensure Seller provides bank account details by this date to avoid payment delays.\n\n#### 3. Intellectual Property Disclosure\n\n**Issue:** Disclosure Letter reveals critical IP ownership issues with core platform software developed by Ashcombe Technologies Ltd in 2023 without formal written contract or IP assignment.\n\n**Key Disclosures:**\n- No formal written contract with Ashcombe Technologies Ltd\n- No written assignment of intellectual property rights\n- No warranties or indemnities regarding IP ownership\n- Company has been using software since 2023 without challenge\n\n**Risk:** High risk of warranty breach under Warranty 8.2 (Intellectual Property). The Company may not have clear title to its core platform software.\n\n**Action Required:** \n1. Conduct urgent due diligence on IP ownership status\n2. Consider obtaining indemnity from Seller or price adjustment\n3. Address this issue before Closing (24 April 2026)\n4. Ensure any claims are notified before warranty expiry dates (24 April 2027 for General Warranties)\n\n#### 4. Payment Terms\n\n**Payment:** $125,000,000 due on Closing Date (24 April 2026)\n**Late Payment Interest:** Rate prescribed under Late Payment of Commercial Debts (Interest) Act 1998\n\n#### 5. Notice Provisions\n\n**Deemed Service Times:**\n- First-class post: 48 hours after posting\n- Hand delivery: Time of delivery\n- Email: On transmission (if no bounce-back)\n\n### Action Items for Client\n\n1. **Immediate (Next 7 days):**\n   - Address Conditions Satisfaction Deadline conflict with regulatory clearance timeline\n   - Confirm regulatory clearance application status and expected timeline\n   - Request Seller's bank account details for payment\n\n2. **Pre-Closing (Before 17 April 2026):**\n   - Ensure all third-party consents are obtained (particularly Elstree Energy plc)\n   - Finalise closing documents and logistics\n   - Arrange funds transfer for Purchase Price\n\n3. **Post-Closing:**\n   - Maintain calendar of warranty expiry dates (24 April 2027 and 24 April 2030)\n   - Monitor Seller compliance with 5-year non-compete\n   - Review Founder employment terms and restrictive covenants\n\n### Conclusion\n\nThe acquisition timeline presents one critical risk: the mismatch between the Conditions Satisfaction Deadline (18 August 2026) and expected Regulatory Clearance (2 October 2026). This must be addressed immediately to prevent transaction failure. All other deadlines are manageable with proper planning and monitoring.\n\nThe warranty periods (12 months for General Warranties, 48 months for Fundamental Warranties) provide reasonable protection periods, though the IP disclosure requires particular attention. The restrictive covenants (5-year Seller non-compete and 18-month Founder non-compete) provide adequate post-acquisition protection.\n\n**Prepared by:** Senior Associate  \n**Date:** 30 March 2026\n\n# Your job\nNo grades are available. Critically assess the deliverable and the work process yourself, as a demanding supervising partner would, and write reusable candidate lessons for improving the work.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|timeline_analysis\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C1\",\n      \"what_went_wrong\": \"The agent did not verify whether the '5 business days before Closing' calculation accounted for jurisdiction-specific bank holidays or local business day conventions.\",\n      \"should_have\": \"Confirmed the business day calculation method aligns with the governing law of the agreement and local banking practices.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C2\",\n      \"what_went_wrong\": \"The agent included a specific monetary amount ($125,000,000) in the deliverable, which is a fact unique to this matter.\",\n      \"should_have\": \"Generalised payment terms to avoid referencing specific amounts, e.g., 'Purchase Price due on Closing Date'.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C3\",\n      \"what_went_wrong\": \"The agent did not cross-check the '150 days from Agreement date' calculation with the actual clause in the Share Purchase Agreement to confirm the exact wording or exceptions.\",\n      \"should_have\": \"Verified the exact language of the conditions precedent deadline in the source document to ensure the calculation aligns with contractual terms.\",\n      \"failure_kind\": \"task_specific\"\n    },\n    {\n      \"criterion_id\": \"C4\",\n      \"what_went_wrong\": \"The agent relied on a single client email for the regulatory clearance date without confirming its accuracy or checking for updates in other matter documents.\",\n      \"should_have\": \"Triangulated the regulatory clearance date with all available sources, including recent correspondence or updates in the matter folder.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C5\",\n      \"what_went_wrong\": \"The agent did not flag whether the warranty survival periods (12 months and 48 months) were standard or unusual for the jurisdiction or deal type, missing an opportunity to highlight potential negotiation points.\",\n      \"should_have\": \"Compared warranty survival periods against market practice for similar transactions to identify deviations requiring client attention.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C6\",\n      \"what_went_wrong\": \"The agent included a specific third-party name (Elstree Energy plc) in the 'Key Condition' section, which is a fact unique to this matter.\",\n      \"should_have\": \"Generalised third-party consents to avoid referencing specific entities, e.g., 'all necessary third-party consents'.\",\n      \"failure_kind\": \"content\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"For every deadline expressed in business days, confirm the governing law's definition of 'business day' and cross-check against local bank holidays or industry-specific closures.\",\n      \"evidence\": [\"C1\"],\n      \"task_type_scope\": \"timeline_analysis\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"drafting\",\n      \"text\": \"Replace all matter-specific figures, names, or dates in the deliverable with generalised descriptors to ensure reusability and confidentiality.\",\n      \"evidence\": [\"C2\", \"C6\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.98\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"Before finalising any deadline calculation, locate and quote the exact contractual language defining the period to ensure alignment with the source document.\",\n      \"evidence\": [\"C3\"],\n      \"task_type_scope\": \"timeline_analysis\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Triangulate all critical dates or figures with at least two independent sources in the matter documents to confirm accuracy before relying on them.\",\n      \"evidence\": [\"C4\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.92\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"Compare all warranty survival periods, non-compete durations, or other time-bound obligations against market practice for the jurisdiction and deal type, flagging deviations.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"timeline_analysis\",\n      \"confidence\": 0.88\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"review\",\n      \"text\": \"Before finishing, scan the deliverable for any remaining matter-specific details (names, amounts, dates) and replace them with generalised language.\",\n      \"evidence\": [\"C2\", \"C6\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.97\n    }\n  ],\n  \"lesson_feedback\": [\n    {\n      \"lesson_id\": \"L0001\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Addresses a common pitfall in timeline analysis where business day calculations can vary by jurisdiction or context.\"\n    },\n    {\n      \"lesson_id\": \"L0002\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Critical for maintaining confidentiality and ensuring the deliverable is reusable for future matters.\"\n    },\n    {\n      \"lesson_id\": \"L0003\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Prevents errors arising from misinterpretation of contractual language, which is a frequent source of oversight.\"\n    },\n    {\n      \"lesson_id\": \"L0004\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Reduces reliance on single-source information, which is a key risk in legal analysis.\"\n    },\n    {\n      \"lesson_id\": \"L0005\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Encourages benchmarking against market practice, adding value to the client by highlighting unusual terms.\"\n    },\n    {\n      \"lesson_id\": \"L0006\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Serves as a final safeguard to ensure the deliverable adheres to generalisation requirements.\"\n    }\n  ]\n}\n```"
+}

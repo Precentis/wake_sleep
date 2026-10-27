@@ -1,0 +1,98 @@
+{
+  "docs": [
+    {
+      "title": "underwriting_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 542,
+            "output_tokens": 1096
+          }
+        }
+      ]
+    },
+    {
+      "title": "prospectus_extract.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 543,
+            "output_tokens": 1157
+          }
+        }
+      ]
+    },
+    {
+      "title": "lock_up_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 478,
+            "output_tokens": 849
+          }
+        }
+      ]
+    },
+    {
+      "title": "client_email.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 433,
+            "output_tokens": 412
+          }
+        }
+      ]
+    }
+  ],
+  "doc_facts": {
+    "underwriting_agreement.md": {
+      "key": "underwriting",
+      "facts": [
+        "Parties: Penrith Technologies Ltd (Company) and Saltash Systems Securities (Underwriter).",
+        "Clause 9: the Underwriters may offer the Shares to investors in the United States, Canada and the European Economic Area. No selling restrictions or exemption conditions are specified for any jurisdiction.",
+        "Clause 4: the Company grants the Underwriters an option to purchase up to 4,800,000 additional shares (the Over-allotment Option), representing 15% of the 24,000,000 Firm Shares."
+      ],
+      "must_contain": [
+        "United States",
+        "European Economic Area",
+        "4,800,000",
+        "24,000,000",
+        "15%"
+      ]
+    },
+    "prospectus_extract.md": {
+      "key": "prospectus",
+      "facts": [
+        "Issuer: Penrith Technologies Ltd. The date of this Prospectus is 27 February 2027.",
+        "The date of this Prospectus is 27 February 2027.",
+        "Use of Proceeds: net proceeds of $80,000,000 will be applied as follows: repayment of the revolving facility $36,000,000; capital expenditure $24,000,000; general corporate purposes $25,000,000."
+      ],
+      "must_contain": [
+        "27 February 2027",
+        "$80,000,000",
+        "$36,000,000",
+        "$24,000,000",
+        "$25,000,000"
+      ]
+    },
+    "lock_up_agreement.md": {
+      "key": "lock_up",
+      "facts": [
+        "Clause 2: the Shareholder shall not sell any Shares during the period ending 365 days after the date of the Prospectus. 'Business Day' means a day other than a Saturday or Sunday on which banks are open in New York."
+      ],
+      "must_contain": [
+        "365 days"
+      ]
+    },
+    "client_email.md": {
+      "key": "client_email",
+      "facts": [],
+      "must_contain": []
+    }
+  }
+}

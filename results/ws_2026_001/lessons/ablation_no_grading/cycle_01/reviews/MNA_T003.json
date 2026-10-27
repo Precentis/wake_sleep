@@ -1,0 +1,143 @@
+{
+  "task_id": "MNA_T003",
+  "cycle": 1,
+  "lineage": "ablation_no_grading",
+  "graded": false,
+  "failures": [
+    {
+      "criterion_id": "C1",
+      "what_went_wrong": "The deliverable did not explicitly verify the mathematical accuracy of the escrow amount calculation (15% of purchase price).",
+      "should_have": "Recomputed the escrow amount independently to confirm consistency with the stated figure.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C2",
+      "what_went_wrong": "The review did not systematically cross-check all numerical thresholds (e.g., revenue concentration, warranty periods) against client risk appetite or market standards.",
+      "should_have": "Compared all numerical thresholds in the agreement against predefined client risk parameters or industry benchmarks.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C3",
+      "what_went_wrong": "The deliverable lacked a structured summary of missing provisions, making it harder for the partner to prioritise negotiation points.",
+      "should_have": "Included a tabular checklist of standard provisions (e.g., warranties, indemnities) with columns for 'Present/Yes-No' and 'Risk Level'.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C4",
+      "what_went_wrong": "The trajectory did not include a verification step to confirm the consistency of all dates across documents before drafting the report.",
+      "should_have": "Extracted and compared all dates from the SPA, Articles, and Board Minutes in a single table before finalising the deliverable.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C5",
+      "what_went_wrong": "The review did not flag the absence of a 'material adverse change' (MAC) clause, a standard provision in SPAs.",
+      "should_have": "Checked for the presence of a MAC clause and noted its absence as a critical gap.",
+      "failure_kind": "task_specific"
+    },
+    {
+      "criterion_id": "C6",
+      "what_went_wrong": "The deliverable did not explicitly state whether the governing law clause was enforceable for all parties involved (e.g., non-English entities).",
+      "should_have": "Verified the enforceability of the governing law clause for all parties, especially if any are non-English entities.",
+      "failure_kind": "content"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T003_0",
+      "type": "checklist",
+      "category": "review",
+      "text": "Before finalising a contract review, recompute all derived figures (e.g., percentages, caps, escrow amounts) independently to confirm accuracy.",
+      "source_tasks": [
+        "MNA_T003"
+      ],
+      "evidence": [
+        "MNA_T003:C1"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T003_1",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Create a comparison table of all key dates across transaction documents to identify inconsistencies or unworkable timelines.",
+      "source_tasks": [
+        "MNA_T003"
+      ],
+      "evidence": [
+        "MNA_T003:C4"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T003_2",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Include a tabular summary of standard provisions (e.g., warranties, indemnities, MAC clauses) with columns for 'Present/Yes-No' and 'Risk Level' in the deliverable.",
+      "source_tasks": [
+        "MNA_T003"
+      ],
+      "evidence": [
+        "MNA_T003:C3",
+        "MNA_T003:C5"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T003_3",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Compare all numerical thresholds in the agreement (e.g., warranty periods, revenue concentrations) against client risk parameters or industry benchmarks.",
+      "source_tasks": [
+        "MNA_T003"
+      ],
+      "evidence": [
+        "MNA_T003:C2"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.8
+    },
+    {
+      "candidate_id": "c01_MNA_T003_4",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "Verify the enforceability of governing law and jurisdiction clauses for all parties, especially if any are non-domestic entities.",
+      "source_tasks": [
+        "MNA_T003"
+      ],
+      "evidence": [
+        "MNA_T003:C6"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.8
+    },
+    {
+      "candidate_id": "c01_MNA_T003_5",
+      "type": "practice_note",
+      "category": "general",
+      "text": "For M&A transactions, always check for the presence of a 'material adverse change' (MAC) clause and note its absence as a critical gap if missing.",
+      "source_tasks": [
+        "MNA_T003"
+      ],
+      "evidence": [
+        "MNA_T003:C5"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    }
+  ],
+  "lesson_feedback": [],
+  "input_tokens": 2834,
+  "output_tokens": 1067,
+  "cost_usd": 0.0030175,
+  "prompt": "# Task\nType: contract_review | Practice area: corporate_mna\nYou act for the Buyer, Eskdale Marine Ltd. Eskdale Marine Ltd (the Buyer) is acquiring the entire issued share capital of Larkspur Industries Ltd (the Company) from Ivybridge Holdings Ltd (the Seller).\n\nReview the principal agreement against the other matter documents and report the problematic provisions. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 23 April 2026. Address the deliverable to the supervising partner.\n\n# Trajectory (19 model steps, 19 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"client_email.md\"})\n 3. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 4. [research] read_document({\"name\": \"share_purchase_agreement.md\", \"start_line\": 60, \"num_lines\": 20})\n 5. [research] read_document({\"name\": \"articles_of_association_extract.md\"})\n 6. [research] read_document({\"name\": \"board_minutes.md\"})\n 7. [research] read_document({\"name\": \"escrow_agreement.md\"})\n 8. [analysis] calculate({\"expression\": \"date('2026-04-23')\"})\n 9. [analysis] calculate({\"expression\": \"145000000 * 0.15\"})\n10. [drafting] write_draft(<986 words>)\n11. [verification] read_draft({})\n12. [editing] edit_draft(find='#### 3.2 Escrow Agreement Issues\\n- Escrow Amount is 15% of p' -> '#### 3.2 Escrow Agreement Issues\\n- Escrow Amount is 15% of p')\n13. [verification] search_documents({\"query\": \"warranty\"})\n14. [verification] search_documents({\"query\": \"indemnity\"})\n15. [verification] search_documents({\"query\": \"condition\"})\n16. [verification] search_documents({\"query\": \"$145,000,000\"})\n17. [editing] edit_draft(find='#### 1.2 Inconsistent Clause Numbering\\nThe SPA jumps from cl' -> '#### 1.2 Inconsistent Clause Numbering\\nThe SPA jumps from cl')\n18. [verification] read_draft({})\n19. [control] finish({\"summary\": \"Completed review of share purchase agreement and related documents for Eskdale Marine Ltd's acquisition of Larkspur Industries Ltd. Identified mult)\n\n# Final deliverable\n# Review of Share Purchase Agreement and Related Documents\n## Acquisition of Larkspur Industries Ltd by Eskdale Marine Ltd\n\n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Date:** 23 April 2026  \n**Matter:** Eskdale Marine Ltd acquisition of Larkspur Industries Ltd  \n**Client:** Eskdale Marine Ltd (Buyer)\n\n### Executive Summary\n\nI have reviewed the principal share purchase agreement (SPA) and related matter documents for the proposed acquisition of Larkspur Industries Ltd by our client, Eskdale Marine Ltd. The review reveals multiple problematic provisions and inconsistencies that require urgent attention. The SPA is incomplete and contains significant gaps, while ancillary documents contain contradictory terms regarding timing, jurisdiction, and procedural requirements. Most critically, the transaction timeline appears unworkable given the current date of 23 April 2026.\n\n### 1. Principal Agreement Deficiencies\n\n#### 1.1 Incomplete Share Purchase Agreement\nThe SPA (dated 9 April 2026) is materially incomplete:\n- Missing clauses 6-8, 10-14, and most of clause 9\n- Contains only one warranty provision (clause 9.7) with a 30-day notification period\n- No comprehensive warranties and indemnities section\n- No conditions precedent, termination provisions, or post-completion obligations\n- No tax covenants or specific indemnities\n\n**Risk:** The Buyer lacks essential protections typically included in share purchase agreements, exposing our client to significant post-acquisition risks.\n\n#### 1.2 Inconsistent Clause Numbering\nThe SPA jumps from clause 5.1 (Confidentiality) directly to clause 9.7 (Warranties and Indemnities), then to clause 15.1 (Governing Law). This suggests either a drafting error or missing material provisions.\n\n#### 1.3 Currency Inconsistency\nThe SPA specifies the purchase price in US dollars ($145,000,000) rather than pounds sterling, which is unusual for an acquisition of an English company between English parties. This may create foreign exchange risk and tax implications.\n\n### 2. Critical Timing Issues\n\n#### 2.1 Conflicting Completion Dates\n- **SPA:** Closing Date is 5 June 2026 (clause 1.1)\n- **Articles of Association:** Transfer \"shall take effect on a date prior to 23 April 2026\" (clause 2.2)\n- **Board Minutes:** Completion \"expected to occur no later than 23 April 2026\" (clause 3.4)\n- **Current Date:** 23 April 2026 (today)\n\n**Problem:** The SPA completion date of 5 June 2026 contradicts both the Articles and Board Minutes, which require completion by today. This creates legal uncertainty and potential breach of corporate governance requirements.\n\n#### 2.2 Unworkable Timeline\nGiven today's date (23 April 2026), completion cannot occur \"prior to 23 April 2026\" as required by the Articles. The SPA's 5 June 2026 date would require amendment of the Articles and potentially new board resolutions.\n\n### 3. Jurisdictional Conflicts\n\n#### 3.1 Governing Law Inconsistency\n- **SPA:** English law and exclusive jurisdiction of English courts (clause 15.1)\n- **Escrow Agreement:** New York law and AAA arbitration in New York (clause 12)\n\n**Risk:** This creates a \"split jurisdiction\" scenario where disputes under the SPA would be litigated in England, while escrow-related disputes would be arbitrated in New York under different substantive law. This increases complexity, costs, and uncertainty.\n\n#### 3.2 Escrow Agreement Issues\n- Escrow Amount is 15% of purchase price ($21,750,000) but not referenced in SPA\n- **Payment Inconsistency:** SPA requires payment \"in full in cleared funds on the Closing Date\" (clause 2.1), while Escrow Agreement contemplates 15% retention\n- Claim notification period: 60 days in Escrow Agreement vs. 30 days in SPA\n- No integration clause linking the two agreements\n- Escrow Agent not yet appointed\n\n### 4. Corporate Governance Concerns\n\n#### 4.1 Board Meeting Quorum Defect\n- **Articles Requirement:** Quorum for board meetings is three directors (clause 5.1)\n- **Board Minutes:** Only two directors attended (Mr A. Patel and Ms R. Khan)\n- **Result:** Meeting was not quorate under Articles, potentially invalidating the board resolution approving the transaction.\n\n#### 4.2 Director Conflict of Interest\n- Mr A. Patel declared interest as shareholder in Seller (Ivybridge Holdings Ltd)\n- Only Ms R. Khan voted on the resolution\n- Single director approval may be insufficient for major transaction under common law principles\n\n### 5. Material Customer Risk\n\n#### 5.1 Revenue Concentration\n- Larkspur Medical Ltd accounts for 68% of Company's annual revenue\n- No specific warranties or protections in SPA regarding this key customer relationship\n- No conditions precedent regarding customer contract continuity\n- No post-completion earn-out or retention mechanisms linked to customer revenue\n\n**Risk:** Loss of this customer post-acquisition would devastate the Company's value, representing a significant acquisition risk for our client.\n\n### 6. Missing Essential Provisions\n\nThe SPA lacks standard protections for the Buyer:\n1. **No comprehensive warranties** regarding accounts, taxation, contracts, employment, litigation, etc.\n2. **No specific indemnities** for identified risks\n3. **No conditions precedent** (e.g., regulatory approvals, third-party consents)\n4. **No limitation of liability** provisions for Seller\n5. **No restrictive covenants** preventing Seller from competing\n6. **No tax warranties or tax deed**\n7. **No working capital adjustment mechanism**\n8. **No disclosure letter process** documented\n\n### Recommendations\n\n#### Immediate Actions (Today):\n1. **Halt execution** of current SPA due to fundamental defects\n2. **Prepare amended Articles** removing the \"prior to 23 April 2026\" requirement\n3. **Convene properly constituted board meeting** with quorum of three directors\n4. **Obtain fresh board resolution** approving revised transaction timeline\n\n#### Short-term Actions (Next 7 days):\n1. **Complete comprehensive SPA** with full suite of warranties and indemnities\n2. **Align Escrow Agreement** with SPA on jurisdiction (preferably English law/English courts)\n3. **Insert specific protections** regarding Larkspur Medical Ltd relationship\n4. **Include conditions precedent** and detailed completion mechanics\n5. **Address director conflict** through proper governance procedures\n\n#### Negotiation Priorities:\n1. **Extend warranty period** beyond 30 days (minimum 12-24 months for fundamental warranties)\n2. **Secure specific indemnities** for tax, litigation, and customer concentration risks\n3. **Implement retention** or earn-out mechanism linked to Material Customer revenue\n4. **Ensure jurisdiction consistency** across all transaction documents\n5. **Include comprehensive disclosure process** with disclosure letter\n\n### Conclusion\n\nThe current transaction documentation presents unacceptable risks to our client. The incomplete SPA, jurisdictional conflicts, corporate governance defects, and unworkable timeline require fundamental reworking before any documents should be executed. The material customer dependency (68% revenue concentration) necessitates specific contractual protections not currently present.\n\nI recommend we advise the client not to proceed with the transaction in its current form and instead negotiate comprehensive documentation that properly protects their interests as Buyer.\n\n**Next Steps:** Please advise if you would like me to prepare draft amendments to the SPA and coordinate with the client to address these issues.\n\n# Your job\nNo grades are available. Critically assess the deliverable and the work process yourself, as a demanding supervising partner would, and write reusable candidate lessons for improving the work.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|contract_review\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C1\",\n      \"what_went_wrong\": \"The deliverable did not explicitly verify the mathematical accuracy of the escrow amount calculation (15% of purchase price).\",\n      \"should_have\": \"Recomputed the escrow amount independently to confirm consistency with the stated figure.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C2\",\n      \"what_went_wrong\": \"The review did not systematically cross-check all numerical thresholds (e.g., revenue concentration, warranty periods) against client risk appetite or market standards.\",\n      \"should_have\": \"Compared all numerical thresholds in the agreement against predefined client risk parameters or industry benchmarks.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C3\",\n      \"what_went_wrong\": \"The deliverable lacked a structured summary of missing provisions, making it harder for the partner to prioritise negotiation points.\",\n      \"should_have\": \"Included a tabular checklist of standard provisions (e.g., warranties, indemnities) with columns for 'Present/Yes-No' and 'Risk Level'.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C4\",\n      \"what_went_wrong\": \"The trajectory did not include a verification step to confirm the consistency of all dates across documents before drafting the report.\",\n      \"should_have\": \"Extracted and compared all dates from the SPA, Articles, and Board Minutes in a single table before finalising the deliverable.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C5\",\n      \"what_went_wrong\": \"The review did not flag the absence of a 'material adverse change' (MAC) clause, a standard provision in SPAs.\",\n      \"should_have\": \"Checked for the presence of a MAC clause and noted its absence as a critical gap.\",\n      \"failure_kind\": \"task_specific\"\n    },\n    {\n      \"criterion_id\": \"C6\",\n      \"what_went_wrong\": \"The deliverable did not explicitly state whether the governing law clause was enforceable for all parties involved (e.g., non-English entities).\",\n      \"should_have\": \"Verified the enforceability of the governing law clause for all parties, especially if any are non-English entities.\",\n      \"failure_kind\": \"content\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"review\",\n      \"text\": \"Before finalising a contract review, recompute all derived figures (e.g., percentages, caps, escrow amounts) independently to confirm accuracy.\",\n      \"evidence\": [\"C1\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Create a comparison table of all key dates across transaction documents to identify inconsistencies or unworkable timelines.\",\n      \"evidence\": [\"C4\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"Include a tabular summary of standard provisions (e.g., warranties, indemnities, MAC clauses) with columns for 'Present/Yes-No' and 'Risk Level' in the deliverable.\",\n      \"evidence\": [\"C3\", \"C5\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.85\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Compare all numerical thresholds in the agreement (e.g., warranty periods, revenue concentrations) against client risk parameters or industry benchmarks.\",\n      \"evidence\": [\"C2\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.8\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"Verify the enforceability of governing law and jurisdiction clauses for all parties, especially if any are non-domestic entities.\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.8\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"general\",\n      \"text\": \"For M&A transactions, always check for the presence of a 'material adverse change' (MAC) clause and note its absence as a critical gap if missing.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.9\n    }\n  ],\n  \"lesson_feedback\": []\n}\n```"
+}

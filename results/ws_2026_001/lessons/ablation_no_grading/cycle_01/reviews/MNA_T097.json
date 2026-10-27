@@ -1,0 +1,142 @@
+{
+  "task_id": "MNA_T097",
+  "cycle": 1,
+  "lineage": "ablation_no_grading",
+  "graded": false,
+  "failures": [
+    {
+      "criterion_id": "C1",
+      "what_went_wrong": "The agent did not verify the consistency of percentage-based calculations across all transaction documents before flagging discrepancies.",
+      "should_have": "Recomputed all percentage-based figures (e.g., escrow amounts, liability caps) against the stated purchase price to confirm accuracy.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C2",
+      "what_went_wrong": "The agent identified a discrepancy in the liability cap but did not cross-check the governing clause's intent (e.g., whether the cap was meant to be 10% or 12.5%).",
+      "should_have": "Reviewed the context of the liability cap clause to determine whether the stated figure or the percentage was the intended benchmark.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C3",
+      "what_went_wrong": "The agent flagged a weekend release date for the escrow but did not propose a standard fallback provision (e.g., next business day).",
+      "should_have": "Included a recommended contractual provision to address non-business-day releases in the issues list.",
+      "failure_kind": "task_specific"
+    },
+    {
+      "criterion_id": "C4",
+      "what_went_wrong": "The agent noted missing provisions in the Share Purchase Agreement but did not prioritise them by risk level or urgency.",
+      "should_have": "Categorised missing provisions by their potential impact (e.g., high-risk gaps like tax indemnities vs. lower-risk omissions).",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C5",
+      "what_went_wrong": "The agent did not validate whether the escrow amount's currency conversion aligned with market rates or contractual FX provisions.",
+      "should_have": "Checked if the escrow agreement included a fixed exchange rate or referenced a market rate for currency conversion.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C6",
+      "what_went_wrong": "The agent listed inconsistencies in governing law but did not assess the enforceability risks of split jurisdictions (e.g., arbitration vs. litigation).",
+      "should_have": "Evaluated the practical implications of conflicting dispute resolution mechanisms, such as cost and enforceability.",
+      "failure_kind": "content"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T097_0",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "Recompute all percentage-based figures (e.g., escrow amounts, liability caps) against the stated purchase price and flag any mismatches for reconciliation.",
+      "source_tasks": [
+        "MNA_T097"
+      ],
+      "evidence": [
+        "MNA_T097:C1"
+      ],
+      "task_type_scope": "issues_list",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T097_1",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "For discrepancies in monetary limits (e.g., liability caps), review the governing clause's intent and cross-reference with related provisions before concluding an error.",
+      "source_tasks": [
+        "MNA_T097"
+      ],
+      "evidence": [
+        "MNA_T097:C2"
+      ],
+      "task_type_scope": "issues_list",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T097_2",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "When flagging timing issues (e.g., escrow releases on weekends), include a recommended contractual fallback provision (e.g., 'next business day').",
+      "source_tasks": [
+        "MNA_T097"
+      ],
+      "evidence": [
+        "MNA_T097:C3"
+      ],
+      "task_type_scope": "issues_list",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T097_3",
+      "type": "practice_note",
+      "category": "drafting",
+      "text": "Prioritise missing provisions in transaction documents by risk level (e.g., high-risk gaps like tax indemnities) and highlight urgent omissions in the issues list.",
+      "source_tasks": [
+        "MNA_T097"
+      ],
+      "evidence": [
+        "MNA_T097:C4"
+      ],
+      "task_type_scope": "issues_list",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.8
+    },
+    {
+      "candidate_id": "c01_MNA_T097_4",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "For currency discrepancies, verify if the agreement includes a fixed exchange rate or references a market rate, and flag inconsistencies with the stated purchase price.",
+      "source_tasks": [
+        "MNA_T097"
+      ],
+      "evidence": [
+        "MNA_T097:C5"
+      ],
+      "task_type_scope": "issues_list",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T097_5",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Assess the enforceability risks of conflicting dispute resolution mechanisms (e.g., arbitration vs. litigation) and include practical implications in the issues list.",
+      "source_tasks": [
+        "MNA_T097"
+      ],
+      "evidence": [
+        "MNA_T097:C6"
+      ],
+      "task_type_scope": "issues_list",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.85
+    }
+  ],
+  "lesson_feedback": [],
+  "input_tokens": 3167,
+  "output_tokens": 1081,
+  "cost_usd": 0.003205,
+  "prompt": "# Task\nType: issues_list | Practice area: corporate_mna\nYou act for the Buyer, Ashcombe Engineering Ltd. Ashcombe Engineering Ltd (the Buyer) is acquiring the entire issued share capital of Rothley Pharma plc (the Company) from Corrib Pharma plc (the Seller).\n\nPrepare an issues list for the supervising partner covering the matter documents. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 9 November 2026. Address the deliverable to the supervising partner.\n\n# Trajectory (22 model steps, 22 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"client_email.md\"})\n 3. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 4. [research] read_document({\"name\": \"escrow_agreement.md\"})\n 5. [research] search_documents({\"query\": \"warranty\"})\n 6. [research] search_documents({\"query\": \"indemnity\"})\n 7. [research] search_documents({\"query\": \"purchase price\"})\n 8. [research] search_documents({\"query\": \"material adverse\"})\n 9. [analysis] calculate({\"expression\": \"days_between(date('2026-11-09'), date('2027-01-29'))\"})\n10. [analysis] calculate({\"expression\": \"add_months(date('2027-01-29'), 18)\"})\n11. [analysis] calculate({\"expression\": \"165000000 * 0.075\"})\n12. [analysis] calculate({\"expression\": \"165000000 * 0.10\"})\n13. [drafting] write_draft(<1039 words>)\n14. [verification] read_draft({})\n15. [verification] calculate({\"expression\": \"165000000 * 0.10\"})\n16. [verification] calculate({\"expression\": \"165000000 * 0.125\"})\n17. [editing] edit_draft(find='### 6. **Limitation of Liability Cap Discrepancy**\\n- **Issue' -> '### 6. **Limitation of Liability Cap Discrepancy**\\n- **Issue')\n18. [verification] calculate({\"expression\": \"4750000 / 0.075\"})\n19. [editing] edit_draft(find='### 8. **Escrow Period Timing**\\n- **Issue:** 18-month escrow' -> '### 8. **Confidentiality Period Inconsistency**\\n- **Issue:**')\n20. [editing] edit_draft(find='## Commercial and Due Diligence Issues\\n\\n### 9. **Customer Co' -> '## Commercial and Due Diligence Issues\\n\\n### 10. **Customer C')\n21. [verification] read_draft({})\n22. [control] finish({\"summary\": \"Issues list for the acquisition of Rothley Pharma plc by Ashcombe Engineering Ltd, identifying 14 key legal and commercial issues from review of tr)\n\n# Final deliverable\n# Issues List: Proposed Acquisition of Rothley Pharma plc by Ashcombe Engineering Ltd\n\n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Date:** 9 November 2026  \n**Matter:** Ashcombe Engineering Ltd acquisition of Rothley Pharma plc from Corrib Pharma plc  \n\n## Executive Summary\n\nThis issues list identifies key legal and commercial concerns arising from the review of transaction documents for the proposed acquisition of Rothley Pharma plc by Ashcombe Engineering Ltd. The documents reviewed include: (1) client email dated 8 November 2026; (2) Share Purchase Agreement dated 23 October 2026; and (3) Escrow Agreement dated 5 November 2026.\n\n## Critical Issues Requiring Immediate Attention\n\n### 1. **Inconsistent Document Dates and References**\n- **Issue:** The Share Purchase Agreement is dated 23 October 2026, while the Escrow Agreement references a Share Purchase Agreement dated 5 November 2026.\n- **Risk:** Creates ambiguity about which document governs the transaction and potential enforceability issues.\n- **Action Required:** Clarify which Share Purchase Agreement is operative and ensure all cross-references are consistent.\n\n### 2. **Currency Discrepancy Between Documents**\n- **Issue:** The Share Purchase Agreement specifies the Purchase Price in US dollars ($165,000,000), while the Escrow Agreement specifies the Escrow Amount in British pounds (£4,750,000).\n- **Risk:** The Escrow Agreement states the £4,750,000 represents 7.5% of the total consideration, but 7.5% of $165,000,000 is $12,375,000 (not £4,750,000). This creates uncertainty about the actual escrow amount and potential foreign exchange risk.\n- **Action Required:** Standardise currency across all transaction documents or include explicit foreign exchange provisions.\n\n### 3. **Escrow Amount Calculation Discrepancy**\n- **Issue:** The Escrow Agreement states £4,750,000 represents 7.5% of the total consideration, but mathematically this implies a total consideration of approximately £63,333,333, not $165,000,000.\n- **Risk:** Either the escrow amount is incorrectly calculated, or there is a misunderstanding of the total consideration amount.\n- **Action Required:** Reconcile the escrow calculation with the actual Purchase Price.\n\n### 4. **Conflicting Governing Law and Dispute Resolution Provisions**\n- **Issue:** The Share Purchase Agreement specifies English law and English courts jurisdiction, while the Escrow Agreement specifies New York law and ICC arbitration in New York.\n- **Risk:** Creates forum shopping opportunities, increased costs, and complexity in dispute resolution.\n- **Action Required:** Align governing law and dispute resolution mechanisms across all transaction documents.\n\n## Substantive Legal Issues\n\n### 5. **Warranty Claim Notification Period**\n- **Issue:** The Share Purchase Agreement requires warranty claims to be notified within 30 days of the Buyer becoming aware of the matter (clause 9.7), while the Escrow Agreement allows 60 days for claims against the escrow amount (clause 5.2).\n- **Risk:** Creates confusion about applicable time limits and may prejudice the Buyer's ability to make claims.\n- **Action Required:** Harmonise notification periods across documents.\n\n### 6. **Limitation of Liability Cap Discrepancy**\n- **Issue:** Clause 9.5 of the Share Purchase Agreement states the aggregate liability cap is 10% of the Purchase Price ($20,625,000), but the Purchase Price is stated as $165,000,000. 10% of $165,000,000 is $16,500,000, not $20,625,000. The $20,625,000 figure actually represents approximately 12.5% of the Purchase Price.\n- **Risk:** Mathematical error creates uncertainty about the actual liability cap and may lead to disputes about the intended limitation amount.\n- **Action Required:** Correct the calculation to reflect either 10% ($16,500,000) or 12.5% ($20,625,000) and ensure consistency.\n\n### 7. **Material Adverse Change Definition**\n- **Issue:** The definition excludes \"pandemics\" but does not define what constitutes a pandemic, creating potential ambiguity.\n- **Risk:** May lead to disputes about whether specific health crises qualify as excluded pandemics.\n- **Action Required:** Consider defining \"pandemic\" or removing this exclusion if it unduly limits the Buyer's protection.\n\n### 8. **Confidentiality Period Inconsistency**\n- **Issue:** The Share Purchase Agreement specifies a 5-year confidentiality period (clause 17.3), while the Escrow Agreement has confidentiality provisions without a specified duration (clause 6.1).\n- **Risk:** Creates uncertainty about how long confidentiality obligations apply and potential enforcement issues.\n- **Action Required:** Harmonise confidentiality periods across documents.\n\n### 9. **Escrow Period Timing**\n- **Issue:** 18-month escrow period from Closing Date (29 January 2027) means release would occur on 29 July 2028, which is a Saturday.\n- **Risk:** Practical issues with fund release on a non-business day.\n- **Action Required:** Specify that release occurs on the next business day if the calculated date falls on a weekend or holiday.\n\n## Commercial and Due Diligence Issues\n\n### 10. **Customer Concentration Risk**\n- **Issue:** The client email indicates the Company supplies pharmaceutical development equipment to Oakhurst Pharma plc, described as a \"material customer.\"\n- **Risk:** High customer concentration creates significant business risk post-acquisition.\n- **Action Required:** Conduct customer due diligence, review customer contracts, and consider requesting specific warranties about customer relationships.\n\n### 11. **Missing Key Provisions in Share Purchase Agreement**\n- **Issue:** The Share Purchase Agreement appears incomplete, missing standard provisions such as:\n  - Detailed warranties and representations\n  - Conditions precedent to closing\n  - Tax provisions\n  - Restrictive covenants\n  - Detailed indemnities\n- **Risk:** Inadequate protection for the Buyer against post-acquisition liabilities.\n- **Action Required:** Complete the Share Purchase Agreement with comprehensive commercial terms.\n\n### 12. **Escrow Agent Not Identified**\n- **Issue:** The Escrow Agreement references \"[Escrow Agent]\" without identifying the actual agent.\n- **Risk:** The agreement is incomplete and unenforceable without a properly identified escrow agent.\n- **Action Required:** Identify and insert the escrow agent details.\n\n## Procedural and Timing Issues\n\n### 13. **Document Finalisation Timeline**\n- **Issue:** Client email anticipates documents finalised prior to 9 November 2026, but current date is 9 November 2026 and documents contain inconsistencies.\n- **Risk:** Rushed execution without proper review increases legal and commercial risks.\n- **Action Required:** Advise client of need for proper review and correction of documents before execution.\n\n### 14. **Closing Date Considerations**\n- **Issue:** Closing Date is 29 January 2027, approximately 81 days from today.\n- **Risk:** Limited time for due diligence, document finalisation, and regulatory approvals.\n- **Action Required:** Develop and implement a comprehensive due diligence plan immediately.\n\n## Recommendations\n\n1. **Immediate Actions:**\n   - Halt execution of current documents until inconsistencies are resolved\n   - Conduct thorough due diligence on Rothley Pharma plc\n   - Prepare complete set of transaction documents\n\n2. **Document Revisions Required:**\n   - Create single, consistent Share Purchase Agreement\n   - Align Escrow Agreement with Share Purchase Agreement terms\n   - Correct mathematical errors and currency discrepancies\n   - Harmonise governing law and dispute resolution provisions\n\n3. **Client Advice:**\n   - Advise on risks of proceeding with inconsistent documents\n   - Recommend comprehensive due diligence on customer concentration\n   - Suggest negotiation of more favourable warranty and indemnity terms\n\n## Next Steps\n\n1. Schedule meeting with client to discuss these issues\n2. Commence due diligence process\n3. Prepare revised transaction documents addressing identified issues\n4. Negotiate with Seller's counsel on key commercial terms\n\nThis issues list will be updated as additional documents are reviewed and due diligence progresses.\n\n# Your job\nNo grades are available. Critically assess the deliverable and the work process yourself, as a demanding supervising partner would, and write reusable candidate lessons for improving the work.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|issues_list\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C1\",\n      \"what_went_wrong\": \"The agent did not verify the consistency of percentage-based calculations across all transaction documents before flagging discrepancies.\",\n      \"should_have\": \"Recomputed all percentage-based figures (e.g., escrow amounts, liability caps) against the stated purchase price to confirm accuracy.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C2\",\n      \"what_went_wrong\": \"The agent identified a discrepancy in the liability cap but did not cross-check the governing clause's intent (e.g., whether the cap was meant to be 10% or 12.5%).\",\n      \"should_have\": \"Reviewed the context of the liability cap clause to determine whether the stated figure or the percentage was the intended benchmark.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C3\",\n      \"what_went_wrong\": \"The agent flagged a weekend release date for the escrow but did not propose a standard fallback provision (e.g., next business day).\",\n      \"should_have\": \"Included a recommended contractual provision to address non-business-day releases in the issues list.\",\n      \"failure_kind\": \"task_specific\"\n    },\n    {\n      \"criterion_id\": \"C4\",\n      \"what_went_wrong\": \"The agent noted missing provisions in the Share Purchase Agreement but did not prioritise them by risk level or urgency.\",\n      \"should_have\": \"Categorised missing provisions by their potential impact (e.g., high-risk gaps like tax indemnities vs. lower-risk omissions).\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C5\",\n      \"what_went_wrong\": \"The agent did not validate whether the escrow amount's currency conversion aligned with market rates or contractual FX provisions.\",\n      \"should_have\": \"Checked if the escrow agreement included a fixed exchange rate or referenced a market rate for currency conversion.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C6\",\n      \"what_went_wrong\": \"The agent listed inconsistencies in governing law but did not assess the enforceability risks of split jurisdictions (e.g., arbitration vs. litigation).\",\n      \"should_have\": \"Evaluated the practical implications of conflicting dispute resolution mechanisms, such as cost and enforceability.\",\n      \"failure_kind\": \"content\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"Recompute all percentage-based figures (e.g., escrow amounts, liability caps) against the stated purchase price and flag any mismatches for reconciliation.\",\n      \"evidence\": [\"C1\"],\n      \"task_type_scope\": \"issues_list\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"For discrepancies in monetary limits (e.g., liability caps), review the governing clause's intent and cross-reference with related provisions before concluding an error.\",\n      \"evidence\": [\"C2\"],\n      \"task_type_scope\": \"issues_list\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"When flagging timing issues (e.g., escrow releases on weekends), include a recommended contractual fallback provision (e.g., 'next business day').\",\n      \"evidence\": [\"C3\"],\n      \"task_type_scope\": \"issues_list\",\n      \"confidence\": 0.85\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"drafting\",\n      \"text\": \"Prioritise missing provisions in transaction documents by risk level (e.g., high-risk gaps like tax indemnities) and highlight urgent omissions in the issues list.\",\n      \"evidence\": [\"C4\"],\n      \"task_type_scope\": \"issues_list\",\n      \"confidence\": 0.8\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"For currency discrepancies, verify if the agreement includes a fixed exchange rate or references a market rate, and flag inconsistencies with the stated purchase price.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"issues_list\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Assess the enforceability risks of conflicting dispute resolution mechanisms (e.g., arbitration vs. litigation) and include practical implications in the issues list.\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"issues_list\",\n      \"confidence\": 0.85\n    }\n  ],\n  \"lesson_feedback\": []\n}\n```"
+}

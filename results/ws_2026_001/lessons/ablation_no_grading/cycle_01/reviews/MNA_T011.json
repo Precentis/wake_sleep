@@ -1,0 +1,142 @@
+{
+  "task_id": "MNA_T011",
+  "cycle": 1,
+  "lineage": "ablation_no_grading",
+  "graded": false,
+  "failures": [
+    {
+      "criterion_id": "C1",
+      "what_went_wrong": "The agent recomputed the de minimis threshold but did not verify whether the survival periods for warranties aligned with market practice or client risk appetite.",
+      "should_have": "Cross-checked all survival periods and liability caps against standard market ranges for transactions of similar size and sector.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C2",
+      "what_went_wrong": "The agent identified a blank notice period in the employment agreement but did not flag whether the agreement contained any other incomplete or placeholder terms beyond the notice period.",
+      "should_have": "Systematically scanned all agreements for placeholders, blanks, or '[●]' markers and flagged each instance in the report.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C3",
+      "what_went_wrong": "The agent calculated the days remaining in the material customer contract but did not assess whether the contract's termination provisions (e.g., cure periods, notice periods) could impact the Buyer's rights post-closing.",
+      "should_have": "Analysed all termination provisions in material contracts to determine their enforceability and potential impact on the Buyer post-acquisition.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C4",
+      "what_went_wrong": "The agent noted the discrepancy in the Disclosure Letter date but did not verify whether the Disclosure Letter's date aligned with the date of the last disclosure or the SPA execution date.",
+      "should_have": "Cross-referenced the Disclosure Letter date with the SPA execution date and the dates of all disclosed documents to ensure consistency.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C5",
+      "what_went_wrong": "The agent did not prioritise findings by severity or likelihood of impact on the transaction, making it harder for the supervising partner to assess which issues required immediate attention.",
+      "should_have": "Categorised findings by risk level (e.g., critical, high, medium, low) based on potential financial, operational, or legal impact.",
+      "failure_kind": "task_specific"
+    },
+    {
+      "criterion_id": "C6",
+      "what_went_wrong": "The agent did not verify whether the confidentiality provisions in the SPA, material contracts, and employment agreements were consistent or conflicting.",
+      "should_have": "Compared confidentiality provisions across all documents to identify inconsistencies or gaps that could expose the Buyer to risk.",
+      "failure_kind": "content"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T011_0",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Categorise every finding in the due diligence report by risk level (critical, high, medium, low) based on potential financial, operational, or legal impact on the transaction.",
+      "source_tasks": [
+        "MNA_T011"
+      ],
+      "evidence": [
+        "MNA_T011:C5"
+      ],
+      "task_type_scope": "due_diligence",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T011_1",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Compare all liability caps, survival periods, and de minimis thresholds against standard market ranges for transactions of similar size and sector to identify anomalies.",
+      "source_tasks": [
+        "MNA_T011"
+      ],
+      "evidence": [
+        "MNA_T011:C1"
+      ],
+      "task_type_scope": "due_diligence",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T011_2",
+      "type": "checklist",
+      "category": "review",
+      "text": "Scan every agreement for placeholders, blanks, or '[●]' markers and flag each instance in the report, noting the potential risk of incomplete terms.",
+      "source_tasks": [
+        "MNA_T011"
+      ],
+      "evidence": [
+        "MNA_T011:C2"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T011_3",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Analyse all termination provisions in material contracts to assess their enforceability, notice periods, cure rights, and potential impact on the Buyer post-acquisition.",
+      "source_tasks": [
+        "MNA_T011"
+      ],
+      "evidence": [
+        "MNA_T011:C3"
+      ],
+      "task_type_scope": "due_diligence",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T011_4",
+      "type": "checklist",
+      "category": "review",
+      "text": "Cross-reference the Disclosure Letter date with the SPA execution date and the dates of all disclosed documents to ensure consistency and completeness.",
+      "source_tasks": [
+        "MNA_T011"
+      ],
+      "evidence": [
+        "MNA_T011:C4"
+      ],
+      "task_type_scope": "due_diligence",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.8
+    },
+    {
+      "candidate_id": "c01_MNA_T011_5",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Compare confidentiality provisions across all transaction documents to identify inconsistencies, gaps, or conflicts that could expose the Buyer to risk.",
+      "source_tasks": [
+        "MNA_T011"
+      ],
+      "evidence": [
+        "MNA_T011:C6"
+      ],
+      "task_type_scope": "due_diligence",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.85
+    }
+  ],
+  "lesson_feedback": [],
+  "input_tokens": 3692,
+  "output_tokens": 1128,
+  "cost_usd": 0.003538,
+  "prompt": "# Task\nType: due_diligence | Practice area: corporate_mna\nYou act for the Buyer, Quayside Logistics plc. Quayside Logistics plc (the Buyer) is acquiring the entire issued share capital of Galloway Medical Ltd (the Company) from Kingsmere Foods Ltd (the Seller).\n\nPrepare a due diligence findings report on the matter documents. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 5 May 2026. Address the deliverable to the supervising partner.\n\n# Trajectory (29 model steps, 29 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"client_email.md\"})\n 3. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 4. [research] read_document({\"name\": \"disclosure_letter.md\"})\n 5. [research] read_document({\"name\": \"material_customer_contract.md\"})\n 6. [research] read_document({\"name\": \"employment_agreement.md\"})\n 7. [research] search_documents({\"query\": \"warranty\"})\n 8. [research] search_documents({\"query\": \"change of control\"})\n 9. [analysis] calculate({\"expression\": \"closing_date = date('2026-07-08')\\ntoday = date('2026-05-05')\\ndays_to_closing = days_between(today, closing_date)\"})\n10. [analysis] calculate({\"expression\": \"general_warranty_end = add_months(closing_date, 12)\\nfundamental_warranty_end = add_months(closing_date, 36)\\nnon_compete_end = add_years(closin)\n11. [analysis] calculate({\"expression\": \"closing_date = date('2026-07-08')\\ngeneral_warranty_end = add_months(closing_date, 12)\\nfundamental_warranty_end = add_months(closing_date, 36)\\)\n12. [analysis] calculate({\"expression\": \"contract_end_date = date('2027-12-31')\\ndays_remaining = days_between(today, contract_end_date)\"})\n13. [analysis] calculate({\"expression\": \"today = date('2026-05-05')\\ncontract_end_date = date('2027-12-31')\\ndays_remaining = days_between(today, contract_end_date)\"})\n14. [analysis] calculate({\"expression\": \"purchase_price = 55000000\\nde_minimis_threshold = purchase_price * 0.005\"})\n15. [drafting] write_draft(<987 words>)\n16. [verification] read_draft({})\n17. [verification] read_document({\"name\": \"disclosure_letter.md\", \"start_line\": 40, \"num_lines\": 10})\n18. [editing] edit_draft(find='### 3. Material Customer Contract - Redcliffe Technologies L' -> '### 3. Material Customer Contract - Redcliffe Technologies L')\n19. [editing] edit_draft(find='### 1. Critical Risk - Change of Control Provision\\n**Issue:*' -> '### 1. Critical Risk - Change of Control Provision\\n**Issue:*')\n20. [editing] edit_draft(find='### 2. Disclosure Letter Date Discrepancy\\n**Issue:** Inconsi' -> '### 3. Disclosure Letter Date Discrepancy\\n**Issue:** Inconsi')\n21. [verification] search_documents({\"query\": \"termination\"})\n22. [verification] search_documents({\"query\": \"indemnity\"})\n23. [verification] read_draft({})\n24. [editing] edit_draft(find='### 6. Founder Non-Compete\\n**Issue:** 18-month restriction m' -> '### 6. Founder Non-Compete\\n**Issue:** 18-month restriction m')\n25. [editing] edit_draft(find='### 6. Employment Matters\\n- **Standard Employment Agreement:' -> '### 6. Employment Matters\\n- **Standard Employment Agreement:')\n26. [editing] edit_draft(find='### 7. Exclusive Remedies Clause\\n**Issue:** Disclosure Lette' -> '### 7. Incomplete Employment Terms\\n**Issue:** Employment Agr')\n27. [editing] edit_draft(find='## Next Steps\\n\\n1. **Immediate Action:** Address inaccurate d' -> '## Next Steps\\n\\n1. **Immediate Action:** Address inaccurate d')\n28. [verification] read_draft({})\n29. [control] finish({\"summary\": \"Due diligence findings report for acquisition of Galloway Medical Ltd by Quayside Logistics plc. Key findings include: 1) Material inaccuracies in )\n\n# Final deliverable\n# Due Diligence Findings Report\n**Date:** 5 May 2026  \n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Subject:** Due Diligence Findings for Proposed Acquisition of Galloway Medical Ltd by Quayside Logistics plc  \n**Matter:** Acquisition of entire issued share capital of Galloway Medical Ltd from Kingsmere Foods Ltd  \n\n## Executive Summary\n\nThis report outlines the key findings from the due diligence review of documents relating to the proposed acquisition of Galloway Medical Ltd (the \"Company\") by Quayside Logistics plc (the \"Buyer\") from Kingsmere Foods Ltd (the \"Seller\"). The transaction involves a purchase price of $55,000,000 with a scheduled completion date of 8 July 2026.\n\n## Key Findings\n\n### 1. Transaction Structure and Timing\n- **Purchase Price:** $55,000,000 (fifty-five million US dollars)\n- **Closing Date:** 8 July 2026 (64 days from today's date of 5 May 2026)\n- **Payment Terms:** Wire transfer of immediately available funds on Closing Date\n- **Governing Law:** English law with exclusive jurisdiction of English courts\n\n### 2. Warranties and Liability Limitations\n- **General Warranties Survival Period:** 12 months from Closing Date (until 8 July 2027)\n- **Fundamental Warranties Survival Period:** 36 months from Closing Date (until 8 July 2029)\n- **De Minimis Threshold:** $275,000 (0.5% of Purchase Price)\n- **Liability Cap:** Seller liable only for excess over $275,000 threshold\n- **Claims Notification:** Must be notified in writing prior to expiry of applicable Survival Period\n\n### 3. Material Customer Contract - Redcliffe Technologies Ltd\n- **Contract Status:** Material contract dated 15 June 2023\n- **Contract Term:** Commenced 1 June 2022, ends 31 December 2027 (605 days remaining from today)\n- **Key Provisions:**\n  - **Change of Control Clause:** Either party may terminate on 30 days' notice if other party undergoes change of control without prior written consent\n  - **Termination Rights:** Material breach (30-day cure period), insolvency, failure to cure defects within 14 days\n  - **Confidentiality:** Survives termination for 5 years\n  - **Payment Terms:** 30 days from invoice date with 4% interest on late payments\n- **Critical Findings:**\n  1. **Inaccurate Disclosure:** Disclosure Letter states \"no material contract contains a change of control provision\" despite Clause 14.2 containing change of control termination right\n  2. **Term Discrepancy:** Disclosure Letter describes \"twelve-month fixed term, renewable quarterly\" but actual contract shows fixed term ending 31 December 2027\n\n### 4. Disclosure Letter Issues\n- **Date Discrepancy:** Disclosure Letter dated 3 May 2026 references SPA dated \"on or about 3 May 2026\", but SPA is dated 6 April 2026\n- **Inaccurate Disclosure:** Disclosure against Warranty 6.3 incorrectly states no material contract contains change of control provision\n- **Disclosure Approach:** Disclosures made on without-prejudice basis, not admissions of fact or liability\n\n### 5. Post-Closing Covenants\n- **Non-Compete:** Seller covenants not to compete with Company business for 4 years from Closing Date (until 8 July 2030)\n- **Scope:** Direct or indirect engagement in competing business, including financial interests\n\n### 6. Employment Matters\n- **Standard Employment Agreement:** Contains standard provisions for confidentiality, intellectual property, and termination\n- **Notice Period:** Blank \"[●] months\" requires completion\n- **Founder Non-Compete:** 18-month post-termination non-compete restriction for Founder/CEO\n- **Geographic Scope:** United Kingdom and jurisdictions where Company operates\n- **Customer Restriction:** Specifically mentions dealings with material customers including Redcliffe Technologies Ltd\n\n### 7. Confidentiality Provisions\n- **SPA Confidentiality:** Parties must keep agreement information confidential except as required by law\n- **Redcliffe Agreement Confidentiality:** 5-year post-termination survival\n- **Employment Agreement Confidentiality:** 5-year post-termination survival\n\n## Risk Assessment and Recommendations\n\n### 1. Critical Risk - Change of Control Provision\n**Issue:** The Disclosure Letter contains a materially inaccurate statement regarding change of control provisions in the Redcliffe Agreement.\n\n**Risk:** Redcliffe Technologies Ltd could terminate the material customer contract on 30 days' notice following the acquisition, potentially jeopardising a significant revenue stream.\n\n**Recommendation:**\n- Require Seller to correct Disclosure Letter to accurately reflect Clause 14.2 of Redcliffe Agreement\n- Consider requiring Seller to obtain consent from Redcliffe Technologies Ltd prior to Closing\n- Negotiate indemnity from Seller for any losses resulting from termination under change of control clause\n- Consider price adjustment to reflect termination risk\n\n### 2. Material Contract Term Discrepancy\n**Issue:** Disclosure Letter describes Redcliffe Agreement as \"twelve-month fixed term, renewable quarterly\" but actual contract shows fixed term ending 31 December 2027.\n\n**Risk:** Potential misunderstanding of contract duration and renewal mechanisms could affect valuation and future revenue projections.\n\n**Recommendation:**\n- Require Seller to correct this discrepancy in Disclosure Letter\n- Seek clarification on actual renewal mechanisms and history\n- Consider impact on long-term revenue projections\n\n### 3. Disclosure Letter Date Discrepancy\n**Issue:** Inconsistency between SPA date (6 April 2026) and Disclosure Letter reference date (3 May 2026).\n\n**Risk:** Potential ambiguity regarding which documents constitute the \"Agreement\" for disclosure purposes.\n\n**Recommendation:** Align dates or include clarifying language that Disclosure Letter relates to SPA dated 6 April 2026.\n\n### 4. De Minimis Threshold\n**Issue:** $275,000 threshold may be high relative to typical market practice for transaction of this size.\n\n**Risk:** Buyer may bear costs for smaller warranty claims below threshold.\n\n**Recommendation:** Consider negotiating lower threshold (e.g., 0.25% or $137,500) or basket structure rather than deductible.\n\n### 5. Material Customer Contract Duration\n**Issue:** Contract ends 31 December 2027 (approximately 1.5 years post-Closing).\n\n**Risk:** Revenue uncertainty beyond 2027 if contract not renewed.\n\n**Recommendation:** \n- Require Seller representations regarding renewal expectations\n- Consider earn-out or deferred consideration tied to contract renewal\n- Conduct commercial due diligence on customer relationship\n\n### 6. Founder Non-Compete\n**Issue:** 18-month restriction may be insufficient for key personnel in medical devices sector.\n\n**Risk:** Founder could compete after relatively short period.\n\n**Recommendation:** Consider extending to 24 months and ensuring adequate consideration for enforceability under English law.\n\n### 7. Incomplete Employment Terms\n**Issue:** Employment Agreement has blank notice period \"[●] months\" and unspecified salary \"[●]\".\n\n**Risk:** Uncertainty regarding employment terms and potential liabilities.\n\n**Recommendation:** Require completion of all employment terms and review for market competitiveness and enforceability.\n\n### 8. Exclusive Remedies Clause\n**Issue:** Disclosure Letter states \"any indemnity or reduction in price shall be the sole and exclusive remedy\" for breach of warranty.\n\n**Risk:** May limit Buyer's ability to pursue other remedies available under general law.\n\n**Recommendation:** Ensure this aligns with SPA provisions and consider whether to maintain or modify exclusive remedy language.\n\n## Next Steps\n\n1. **Immediate Action:** Address inaccurate disclosure regarding change of control provision with Seller\n2. **Due Diligence Expansion:** Request additional documents including:\n   - Financial statements for last 3 years\n   - Tax compliance certificates\n   - Full list of material contracts\n   - Intellectual property register\n   - Litigation status report\n   - Completed employment agreements with all terms filled\n   - Details of all key personnel and their terms\n3. **Negotiation Points:** Prepare for discussions on:\n   - Correction of Disclosure Letter inaccuracies (change of control, contract term)\n   - Change of control consent from Redcliffe Technologies Ltd\n   - Adjustment to de minimis threshold\n   - Enhanced representations regarding customer relationships\n   - Completion of employment terms\n4. **Legal Documentation:** Finalise SPA with corrected disclosures and appropriate indemnities\n5. **Commercial Due Diligence:** Assess customer concentration risk with Redcliffe Technologies Ltd\n\n## Conclusion\n\nThe due diligence review has identified several material issues requiring immediate attention, particularly the inaccurate disclosure regarding change of control provisions in the Redcliffe Agreement. The transaction presents standard acquisition risks mitigated by English law protections, but the material customer contract risk requires careful management. Further due diligence is recommended before proceeding to completion.\n\n**Prepared by:** Senior Associate  \n**Date:** 5 May 2026\n\n# Your job\nNo grades are available. Critically assess the deliverable and the work process yourself, as a demanding supervising partner would, and write reusable candidate lessons for improving the work.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|due_diligence\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C1\",\n      \"what_went_wrong\": \"The agent recomputed the de minimis threshold but did not verify whether the survival periods for warranties aligned with market practice or client risk appetite.\",\n      \"should_have\": \"Cross-checked all survival periods and liability caps against standard market ranges for transactions of similar size and sector.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C2\",\n      \"what_went_wrong\": \"The agent identified a blank notice period in the employment agreement but did not flag whether the agreement contained any other incomplete or placeholder terms beyond the notice period.\",\n      \"should_have\": \"Systematically scanned all agreements for placeholders, blanks, or '[●]' markers and flagged each instance in the report.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C3\",\n      \"what_went_wrong\": \"The agent calculated the days remaining in the material customer contract but did not assess whether the contract's termination provisions (e.g., cure periods, notice periods) could impact the Buyer's rights post-closing.\",\n      \"should_have\": \"Analysed all termination provisions in material contracts to determine their enforceability and potential impact on the Buyer post-acquisition.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C4\",\n      \"what_went_wrong\": \"The agent noted the discrepancy in the Disclosure Letter date but did not verify whether the Disclosure Letter's date aligned with the date of the last disclosure or the SPA execution date.\",\n      \"should_have\": \"Cross-referenced the Disclosure Letter date with the SPA execution date and the dates of all disclosed documents to ensure consistency.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C5\",\n      \"what_went_wrong\": \"The agent did not prioritise findings by severity or likelihood of impact on the transaction, making it harder for the supervising partner to assess which issues required immediate attention.\",\n      \"should_have\": \"Categorised findings by risk level (e.g., critical, high, medium, low) based on potential financial, operational, or legal impact.\",\n      \"failure_kind\": \"task_specific\"\n    },\n    {\n      \"criterion_id\": \"C6\",\n      \"what_went_wrong\": \"The agent did not verify whether the confidentiality provisions in the SPA, material contracts, and employment agreements were consistent or conflicting.\",\n      \"should_have\": \"Compared confidentiality provisions across all documents to identify inconsistencies or gaps that could expose the Buyer to risk.\",\n      \"failure_kind\": \"content\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"Categorise every finding in the due diligence report by risk level (critical, high, medium, low) based on potential financial, operational, or legal impact on the transaction.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"due_diligence\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Compare all liability caps, survival periods, and de minimis thresholds against standard market ranges for transactions of similar size and sector to identify anomalies.\",\n      \"evidence\": [\"C1\"],\n      \"task_type_scope\": \"due_diligence\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"review\",\n      \"text\": \"Scan every agreement for placeholders, blanks, or '[●]' markers and flag each instance in the report, noting the potential risk of incomplete terms.\",\n      \"evidence\": [\"C2\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Analyse all termination provisions in material contracts to assess their enforceability, notice periods, cure rights, and potential impact on the Buyer post-acquisition.\",\n      \"evidence\": [\"C3\"],\n      \"task_type_scope\": \"due_diligence\",\n      \"confidence\": 0.85\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"review\",\n      \"text\": \"Cross-reference the Disclosure Letter date with the SPA execution date and the dates of all disclosed documents to ensure consistency and completeness.\",\n      \"evidence\": [\"C4\"],\n      \"task_type_scope\": \"due_diligence\",\n      \"confidence\": 0.8\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Compare confidentiality provisions across all transaction documents to identify inconsistencies, gaps, or conflicts that could expose the Buyer to risk.\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"due_diligence\",\n      \"confidence\": 0.85\n    }\n  ],\n  \"lesson_feedback\": []\n}\n```"
+}

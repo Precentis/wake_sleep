@@ -1,0 +1,142 @@
+{
+  "task_id": "MNA_T082",
+  "cycle": 1,
+  "lineage": "ablation_no_grading",
+  "graded": false,
+  "failures": [
+    {
+      "criterion_id": "C1",
+      "what_went_wrong": "The redline note did not explicitly verify whether the proposed amendments align with the client's risk appetite or commercial objectives, as stated in the client email.",
+      "should_have": "Cross-referenced the client's stated priorities (e.g., risk tolerance, deal timeline) with proposed amendments to ensure alignment.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C2",
+      "what_went_wrong": "The deliverable included a specific indemnity proposal (Amendment 4) without first confirming whether the client had pre-approved such financial exposure or escrow arrangements.",
+      "should_have": "Flagged proposed financial protections (e.g., escrow, indemnities) for client approval before including them in the redline note.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C3",
+      "what_went_wrong": "The analysis of the Articles of Association focused on Article 2.3 but did not systematically check for other restrictive provisions (e.g., drag-along, tag-along, pre-emption rights) that could impact the transaction.",
+      "should_have": "Mapped all share transfer restrictions in the Articles of Association to identify potential deal blockers beyond the immediate issue.",
+      "failure_kind": "task_specific"
+    },
+    {
+      "criterion_id": "C4",
+      "what_went_wrong": "The redline note proposed boilerplate clauses (Amendment 5) without tailoring them to the transaction's specific risks (e.g., change of control, currency mismatch).",
+      "should_have": "Customized boilerplate clauses to address identified risks (e.g., force majeure carve-outs for change of control events).",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C5",
+      "what_went_wrong": "The deliverable did not include a prioritization of issues (e.g., 'deal-breaker' vs. 'negotiable'), making it harder for the partner to assess urgency.",
+      "should_have": "Categorized issues by severity (e.g., critical, major, minor) to guide negotiation strategy.",
+      "failure_kind": "drafting"
+    },
+    {
+      "criterion_id": "C6",
+      "what_went_wrong": "The trajectory showed repeated searches for financial figures (e.g., '$', '165') but no verification of whether these amounts were consistent with the client's valuation model or due diligence findings.",
+      "should_have": "Cross-checked financial figures in the SPA against the client's valuation model or DD reports to flag discrepancies.",
+      "failure_kind": "analysis"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T082_0",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Before finalizing a redline note, categorize each proposed amendment by risk severity (e.g., critical, major, minor) to prioritize negotiation efforts.",
+      "source_tasks": [
+        "MNA_T082"
+      ],
+      "evidence": [
+        "MNA_T082:C5"
+      ],
+      "task_type_scope": "redline",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T082_1",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "When reviewing corporate documents, systematically map all share transfer restrictions (e.g., pre-emption rights, drag-along, quorum requirements) to identify potential deal blockers.",
+      "source_tasks": [
+        "MNA_T082"
+      ],
+      "evidence": [
+        "MNA_T082:C3"
+      ],
+      "task_type_scope": "redline",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T082_2",
+      "type": "checklist",
+      "category": "review",
+      "text": "For every financial protection proposed (e.g., escrow, indemnity, price adjustment), flag whether it requires client approval before inclusion in the deliverable.",
+      "source_tasks": [
+        "MNA_T082"
+      ],
+      "evidence": [
+        "MNA_T082:C2"
+      ],
+      "task_type_scope": "redline",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T082_3",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Cross-check all financial figures in transaction documents against the client's valuation model or due diligence reports to identify inconsistencies.",
+      "source_tasks": [
+        "MNA_T082"
+      ],
+      "evidence": [
+        "MNA_T082:C6"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T082_4",
+      "type": "practice_note",
+      "category": "drafting",
+      "text": "Tailor boilerplate clauses to address specific risks identified in the transaction (e.g., add carve-outs for change of control events in force majeure clauses).",
+      "source_tasks": [
+        "MNA_T082"
+      ],
+      "evidence": [
+        "MNA_T082:C4"
+      ],
+      "task_type_scope": "redline",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.8
+    },
+    {
+      "candidate_id": "c01_MNA_T082_5",
+      "type": "checklist",
+      "category": "review",
+      "text": "Ensure proposed amendments align with the client's stated risk appetite and commercial objectives, as outlined in client communications.",
+      "source_tasks": [
+        "MNA_T082"
+      ],
+      "evidence": [
+        "MNA_T082:C1"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    }
+  ],
+  "lesson_feedback": [],
+  "input_tokens": 4287,
+  "output_tokens": 1139,
+  "cost_usd": 0.003852,
+  "prompt": "# Task\nType: redline | Practice area: corporate_mna\nYou act for the Buyer, Upton Medical Ltd. Upton Medical Ltd (the Buyer) is acquiring the entire issued share capital of Pemberton Marine Ltd (the Company) from Juniper Capital LLP (the Seller).\n\nPrepare a redline note proposing amendments to the principal agreement to protect our client. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 25 January 2027. Address the deliverable to the supervising partner.\n\n# Trajectory (35 model steps, 35 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 3. [research] read_document({\"name\": \"client_email.md\"})\n 4. [research] read_document({\"name\": \"material_customer_contract.md\"})\n 5. [research] read_document({\"name\": \"disclosure_letter.md\"})\n 6. [research] read_document({\"name\": \"board_minutes.md\"})\n 7. [research] read_document({\"name\": \"articles_of_association_extract.md\"})\n 8. [research] search_documents({\"query\": \"warranty\"})\n 9. [research] search_documents({\"query\": \"change of control\"})\n10. [research] read_document({\"name\": \"material_customer_contract.md\", \"start_line\": 49, \"num_lines\": 10})\n11. [research] search_documents({\"query\": \"termination\"})\n12. [research] search_documents({\"query\": \"Schedule 1\"})\n13. [research] search_documents({\"query\": \"Schedule\"})\n14. [analysis] calculate({\"expression\": \"date('2027-01-25')\"})\n15. [analysis] calculate({\"expression\": \"days_between(date('2027-01-25'), date('2027-03-29'))\"})\n16. [analysis] calculate({\"expression\": \"days_between(date('2027-01-25'), date('2027-01-15'))\"})\n17. [analysis] calculate({\"expression\": \"days_between(date('2027-01-25'), date('2027-01-29'))\"})\n18. [drafting] write_draft(<1148 words>)\n19. [verification] read_draft({})\n20. [verification] search_documents({\"query\": \"$\"})\n21. [verification] search_documents({\"query\": \"165\"})\n22. [verification] read_document({\"name\": \"articles_of_association_extract.md\", \"start_line\": 20, \"num_lines\": 10})\n23. [editing] edit_draft(find='### 5. ARTICLES OF ASSOCIATION RESTRICTIONS\\n\\n**Issue:** Arti' -> '### 5. ARTICLES OF ASSOCIATION RESTRICTIONS\\n\\n**Issue:** Arti')\n24. [editing] edit_draft(find='### Amendment 3: Purchase Price Adjustment\\n**Add new Clause ' -> '### Amendment 3: Purchase Price Adjustment and Escrow\\n**Add ')\n25. [editing] edit_draft(find='2. **Due Diligence:** Conduct further due diligence on:\\n   -' -> '2. **Due Diligence:** Conduct further due diligence on:\\n   -')\n26. [verification] read_document({\"name\": \"share_purchase_agreement.md\", \"start_line\": 70, \"num_lines\": 10})\n27. [editing] edit_draft(find='### 2. INCOMPLETE SHARE PURCHASE AGREEMENT\\n\\n**Issue:** The S' -> '### 2. INCOMPLETE SHARE PURCHASE AGREEMENT\\n\\n**Issue:** The S')\n28. [verification] search_documents({\"query\": \"6 January\"})\n29. [editing] edit_draft(find='### 6. CURRENCY AND FINANCIAL RISKS\\n\\n**Issue:** The Purchase' -> '### 6. CURRENCY AND FINANCIAL RISKS\\n\\n**Issue:** The Purchase')\n30. [verification] read_draft({})\n31. [editing] edit_draft(find='### Amendment 4: Specific Indemnity\\n**Add new Clause 10.2:**' -> '### Amendment 4: Specific Indemnity\\n**Add new Clause 10.2:**')\n32. [verification] search_documents({\"query\": \"indemnity\"})\n33. [verification] search_documents({\"query\": \"liability\"})\n34. [verification] read_draft({})\n35. [control] finish({\"summary\": \"Prepared a comprehensive redline note proposing amendments to the share purchase agreement for Upton Medical Ltd's acquisition of Pemberton Marine )\n\n# Final deliverable\n# REDLINE NOTE: PROPOSED AMENDMENTS TO SHARE PURCHASE AGREEMENT\n**Date:** 25 January 2027  \n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Re:** Upton Medical Ltd Acquisition of Pemberton Marine Ltd  \n**Matter:** Share Purchase Agreement Review and Amendments  \n\n## EXECUTIVE SUMMARY\n\nOur client, Upton Medical Ltd (the \"Buyer\"), is acquiring the entire issued share capital of Pemberton Marine Ltd (the \"Company\") from Juniper Capital LLP (the \"Seller\"). Following a comprehensive review of the transaction documents, I have identified several material issues requiring immediate attention and proposed amendments to protect our client's interests. The most critical issue is a material misrepresentation in the Disclosure Letter regarding change of control provisions in the Company's key customer contract with Yarrow Industries Ltd.\n\n## KEY ISSUES IDENTIFIED\n\n### 1. MATERIAL MISREPRESENTATION IN DISCLOSURE LETTER\n\n**Issue:** The Disclosure Letter at Clause 2.3 states: \"The Yarrow Agreement does not contain any provision permitting termination, modification, price adjustment, acceleration or other adverse consequence upon a change of control of the Company.\" However, the Material Customer Contract at Clause 7.2 (referencing Clause 14.2) clearly provides: \"Either party may terminate this agreement on 30 days' notice if the other party undergoes a change of control without its prior written consent.\"\n\n**Risk:** This constitutes a material misrepresentation that could:\n- Allow Yarrow Industries to terminate the contract post-acquisition\n- Expose the Seller to warranty claims\n- Materially affect the Company's valuation and future revenue streams\n\n**Proposed Action:** \n1. Require immediate correction of the Disclosure Letter\n2. Seek written confirmation from Yarrow Industries regarding the change of control provision\n3. Consider price adjustment or indemnity protection\n\n### 2. INCOMPLETE SHARE PURCHASE AGREEMENT\n\n**Issue:** The SPA is materially incomplete:\n1. References Schedule 1 for warranties (Clause 1.1: \"General Warranties means the warranties set out in Schedule 1\") but Schedule 1 is not provided\n2. Jumps from Clause 5 (Confidentiality) to Clause 10 (Survival and Claims) - Clauses 6-9 are missing\n3. Missing standard provisions: governing law, entire agreement, assignment, force majeure, dispute resolution\n4. No schedules attached beyond the referenced Schedule 1\n\n**Risk:** \n1. Cannot assess scope of warranties without Schedule 1\n2. Missing clauses create legal uncertainty\n3. Potential for disputes over interpretation\n4. Inadequate legal framework for a $165m transaction\n\n**Proposed Action:** \n1. Require complete SPA with all standard provisions\n2. Require provision of Schedule 1 and any other schedules\n3. Ensure comprehensive warranties covering:\n   - Title and capacity\n   - Financial statements\n   - Material contracts\n   - Litigation\n   - Compliance with laws\n   - Intellectual property\n   - Employees and pensions\n   - Tax matters\n4. Add missing boilerplate clauses\n\n### 3. TIMING AND PERFORMANCE RISKS\n\n**Issue:** The Material Customer Contract with Yarrow Industries has delivery obligations:\n- Unit 1: 15 January 2027 (already past)\n- Unit 2: 29 January 2027 (4 days from today)\n- Unit 3: 12 February 2027\n\nThe Closing Date is 29 March 2027, meaning deliveries will occur pre-closing.\n\n**Risk:** \n- Potential warranty claims arising from pre-closing deliveries\n- Performance issues affecting contract value\n- Change of control termination risk during delivery period\n\n**Proposed Action:**\n1. Require Seller warranties covering pre-closing performance\n2. Seek indemnity for any warranty claims arising from pre-closing deliveries\n3. Consider escrow arrangement for portion of purchase price\n\n### 4. CORPORATE GOVERNANCE ISSUES\n\n**Issue:** The Board Minutes dated 24 January 2027 show only 2 directors present out of 5. The Articles of Association at Article 11 require a quorum of 3 directors for board meetings.\n\n**Risk:** The board resolution approving the SPA may be invalid due to lack of quorum.\n\n**Proposed Action:**\n1. Require confirmation of valid board approval\n2. Consider obtaining shareholder resolution as alternative approval\n3. Seek Seller indemnity for any invalidity of corporate approvals\n\n### 5. ARTICLES OF ASSOCIATION RESTRICTIONS\n\n**Issue:** Articles of Association at Article 2.3 provides: \"The board may, at its discretion, refuse registration of a transfer of shares if it has reasonable grounds to believe the transfer would breach any contractual obligation, including but not limited to confidentiality or non-compete agreements entered into between the Company and third parties, including Yarrow Industries.\"\n\n**Additional Concern:** The Articles specifically name Yarrow Industries in multiple provisions (Definitions, Article 2.3, Article 5.1), suggesting an unusually close relationship that may require special consideration in the transaction.\n\n**Risk:** \n1. The board could refuse to register the share transfer post-closing\n2. The special relationship with Yarrow may involve undisclosed side agreements or understandings\n\n**Proposed Action:**\n1. Require amendment to Articles prior to closing to remove Article 2.3 and references to Yarrow Industries\n2. Obtain written undertaking from current directors not to exercise Article 2.3 power\n3. Include condition precedent requiring removal of these provisions\n4. Conduct further due diligence on the nature of the Yarrow relationship\n\n### 6. CURRENCY AND FINANCIAL RISKS\n\n**Issue:** The Purchase Price is denominated in US dollars ($165,000,000) while the Yarrow contract payments are in pounds sterling (£475,000 per unit). The Company's operations appear to be UK-based.\n\n**Risk:** \n1. Currency exchange rate fluctuations between signing and closing\n2. Mismatch between revenue currency (GBP) and acquisition currency (USD)\n3. Potential hedging costs\n\n**Proposed Action:**\n1. Consider denominating part of the purchase price in GBP to match revenue streams\n2. Include currency adjustment mechanism in SPA\n3. Require disclosure of any currency hedging arrangements\n\n### 7. DOCUMENT INCONSISTENCIES\n\n**Issue:** Multiple date inconsistencies across documents:\n1. SPA states \"This Agreement is made on 6 January 2027\"\n2. Disclosure Letter references \"Share Purchase Agreement dated on or about 20 January 2027\"\n3. Board Minutes reference \"draft Share Purchase Agreement dated 25 January 2027\"\n\n**Risk:** Creates uncertainty about effective dates and which version governs\n\n**Proposed Action:**\n1. Require consistent dating across all documents\n2. Ensure all references to the SPA use the correct execution date\n3. Consider backdating if necessary for commercial reasons\n\n## PROPOSED AMENDMENTS TO SHARE PURCHASE AGREEMENT\n\n### Amendment 1: Additional Condition Precedent\n**Add new Clause 3.3:**\n\"3.3 Completion is conditional upon:\n(a) Receipt by the Buyer of written confirmation from Yarrow Industries Ltd, in form and substance satisfactory to the Buyer, that it consents to the change of control contemplated by this Agreement or waives its right to terminate under Clause 14.2 of the supply agreement dated 18 December 2026;\n(b) Amendment of the Articles of Association of the Company to remove Article 2.3; and\n(c) Valid corporate approval of this Agreement by the Company's board of directors in accordance with its Articles of Association.\"\n\n### Amendment 2: Enhanced Warranties\n**Add to Clause 10 (or Schedule 1 when provided):**\n\"The Seller warrants and represents that:\n(a) All information contained in the Disclosure Letter is true, accurate and complete in all material respects;\n(b) The Company has performed all its obligations under the Yarrow Industries supply agreement up to the date of this Agreement;\n(c) No event has occurred which would entitle Yarrow Industries to terminate the supply agreement; and\n(d) The board resolution approving this Agreement was validly passed in accordance with the Company's Articles of Association.\"\n\n### Amendment 3: Purchase Price Adjustment and Escrow\n**Add new Clause 2.4:**\n\"2.4 10% of the Purchase Price ($16,500,000) shall be held in escrow for a period of 12 months from the Closing Date to secure:\n(a) Any claims under the warranties; and\n(b) Any termination of the Yarrow Industries supply agreement arising from the change of control.\"\n\n**Add new Clause 2.5:**\n\"2.5 The Purchase Price shall be adjusted downward by 15% ($24,750,000) in the event that Yarrow Industries terminates the supply agreement within 6 months of the Closing Date due to the change of control.\"\n\n### Amendment 4: Specific Indemnity\n**Add new Clause 10.2:**\n\"10.2 The Seller shall indemnify the Buyer against:\n(a) Any costs, losses or liabilities arising from termination of the Yarrow Industries supply agreement;\n(b) Any warranty claims made by Yarrow Industries in respect of Marine Systems delivered prior to the Closing Date; and\n(c) Any invalidity of the board resolution dated 24 January 2027 approving this Agreement.\"\n\n### Amendment 5: Missing Boilerplate Clauses\n**Add new Clauses 11-15:**\n\"11. **Governing Law:** This Agreement and any dispute or claim arising out of or in connection with it shall be governed by and construed in accordance with English law.\n12. **Jurisdiction:** The parties irrevocably agree that the courts of England and Wales shall have exclusive jurisdiction to settle any dispute arising out of or in connection with this Agreement.\n13. **Entire Agreement:** This Agreement constitutes the entire agreement between the parties and supersedes all prior agreements, understandings and arrangements, whether oral or written.\n14. **Assignment:** Neither party may assign any of its rights or obligations under this Agreement without the prior written consent of the other party.\n15. **Force Majeure:** Neither party shall be liable for any failure or delay in performing its obligations under this Agreement to the extent such failure or delay is caused by circumstances beyond its reasonable control.\"\n\n## RECOMMENDATIONS\n\n1. **Immediate Action:** Raise the material misrepresentation in the Disclosure Letter with the Seller's solicitors and demand correction.\n\n2. **Due Diligence:** Conduct further due diligence on:\n   - Status of deliveries under the Yarrow contract\n   - Communications with Yarrow Industries regarding the change of control\n   - Financial impact of potential contract termination\n   - Full scope of relationship with Yarrow Industries (beyond the written contract)\n   - Currency exposure and hedging arrangements\n\n3. **Negotiation Strategy:** \n   - Use the material misrepresentation as leverage for other protections\n   - Seek price reduction reflecting termination risk\n   - Require Seller to obtain Yarrow's written consent\n\n4. **Documentation:** Ensure all amendments are properly documented in:\n   - Amended Disclosure Letter\n   - Supplemental SPA\n   - Side letters as necessary\n\n## CONCLUSION\n\nThe transaction presents significant risks primarily due to the material misrepresentation regarding change of control provisions in the Yarrow Industries contract. Our client's position is strengthened by this discovery, and we should use it to negotiate robust protections including price adjustments, escrow arrangements, and specific indemnities. Immediate action is required to address these issues before the 29 January 2027 delivery date under the Yarrow contract.\n\nI recommend we schedule a call with the client to discuss these findings and our proposed negotiation strategy.\n\n# Your job\nNo grades are available. Critically assess the deliverable and the work process yourself, as a demanding supervising partner would, and write reusable candidate lessons for improving the work.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|redline\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C1\",\n      \"what_went_wrong\": \"The redline note did not explicitly verify whether the proposed amendments align with the client's risk appetite or commercial objectives, as stated in the client email.\",\n      \"should_have\": \"Cross-referenced the client's stated priorities (e.g., risk tolerance, deal timeline) with proposed amendments to ensure alignment.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C2\",\n      \"what_went_wrong\": \"The deliverable included a specific indemnity proposal (Amendment 4) without first confirming whether the client had pre-approved such financial exposure or escrow arrangements.\",\n      \"should_have\": \"Flagged proposed financial protections (e.g., escrow, indemnities) for client approval before including them in the redline note.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C3\",\n      \"what_went_wrong\": \"The analysis of the Articles of Association focused on Article 2.3 but did not systematically check for other restrictive provisions (e.g., drag-along, tag-along, pre-emption rights) that could impact the transaction.\",\n      \"should_have\": \"Mapped all share transfer restrictions in the Articles of Association to identify potential deal blockers beyond the immediate issue.\",\n      \"failure_kind\": \"task_specific\"\n    },\n    {\n      \"criterion_id\": \"C4\",\n      \"what_went_wrong\": \"The redline note proposed boilerplate clauses (Amendment 5) without tailoring them to the transaction's specific risks (e.g., change of control, currency mismatch).\",\n      \"should_have\": \"Customized boilerplate clauses to address identified risks (e.g., force majeure carve-outs for change of control events).\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C5\",\n      \"what_went_wrong\": \"The deliverable did not include a prioritization of issues (e.g., 'deal-breaker' vs. 'negotiable'), making it harder for the partner to assess urgency.\",\n      \"should_have\": \"Categorized issues by severity (e.g., critical, major, minor) to guide negotiation strategy.\",\n      \"failure_kind\": \"drafting\"\n    },\n    {\n      \"criterion_id\": \"C6\",\n      \"what_went_wrong\": \"The trajectory showed repeated searches for financial figures (e.g., '$', '165') but no verification of whether these amounts were consistent with the client's valuation model or due diligence findings.\",\n      \"should_have\": \"Cross-checked financial figures in the SPA against the client's valuation model or DD reports to flag discrepancies.\",\n      \"failure_kind\": \"analysis\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"Before finalizing a redline note, categorize each proposed amendment by risk severity (e.g., critical, major, minor) to prioritize negotiation efforts.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"redline\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"When reviewing corporate documents, systematically map all share transfer restrictions (e.g., pre-emption rights, drag-along, quorum requirements) to identify potential deal blockers.\",\n      \"evidence\": [\"C3\"],\n      \"task_type_scope\": \"redline\",\n      \"confidence\": 0.85\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"review\",\n      \"text\": \"For every financial protection proposed (e.g., escrow, indemnity, price adjustment), flag whether it requires client approval before inclusion in the deliverable.\",\n      \"evidence\": [\"C2\"],\n      \"task_type_scope\": \"redline\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Cross-check all financial figures in transaction documents against the client's valuation model or due diligence reports to identify inconsistencies.\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"drafting\",\n      \"text\": \"Tailor boilerplate clauses to address specific risks identified in the transaction (e.g., add carve-outs for change of control events in force majeure clauses).\",\n      \"evidence\": [\"C4\"],\n      \"task_type_scope\": \"redline\",\n      \"confidence\": 0.8\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"review\",\n      \"text\": \"Ensure proposed amendments align with the client's stated risk appetite and commercial objectives, as outlined in client communications.\",\n      \"evidence\": [\"C1\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    }\n  ],\n  \"lesson_feedback\": []\n}\n```"
+}

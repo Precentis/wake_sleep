@@ -1,0 +1,116 @@
+{
+  "docs": [
+    {
+      "title": "underwriting_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 490,
+            "output_tokens": 1168
+          }
+        }
+      ]
+    },
+    {
+      "title": "prospectus_extract.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 518,
+            "output_tokens": 1033
+          }
+        }
+      ]
+    },
+    {
+      "title": "lock_up_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 483,
+            "output_tokens": 915
+          }
+        }
+      ]
+    },
+    {
+      "title": "board_minutes.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 496,
+            "output_tokens": 831
+          }
+        }
+      ]
+    },
+    {
+      "title": "client_email.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 439,
+            "output_tokens": 356
+          }
+        }
+      ]
+    }
+  ],
+  "doc_facts": {
+    "underwriting_agreement.md": {
+      "key": "underwriting",
+      "facts": [
+        "Parties: Netherby Marine Ltd (Company) and Ingleby Robotics Securities (Underwriter).",
+        "Clause 9: the Underwriters may offer the Shares to investors in the United States, Canada and the European Economic Area. No selling restrictions or exemption conditions are specified for any jurisdiction."
+      ],
+      "must_contain": [
+        "United States",
+        "European Economic Area"
+      ]
+    },
+    "prospectus_extract.md": {
+      "key": "prospectus",
+      "facts": [
+        "Issuer: Netherby Marine Ltd. The date of this Prospectus is 14 July 2026.",
+        "The date of this Prospectus is 14 July 2026.",
+        "Legal Proceedings: the Company is not party to any legal proceedings which may have a significant effect on its financial position.",
+        "Related Party Transactions: there are no related party transactions other than directors' service agreements."
+      ],
+      "must_contain": [
+        "14 July 2026"
+      ]
+    },
+    "lock_up_agreement.md": {
+      "key": "lock_up",
+      "facts": [
+        "Clause 2: the Shareholder shall not sell any Shares during the period ending 180 days after the date of the Prospectus. 'Business Day' means a day other than a Saturday or Sunday on which banks are open in New York."
+      ],
+      "must_contain": [
+        "180 days"
+      ]
+    },
+    "board_minutes.md": {
+      "key": "board_minutes",
+      "facts": [
+        "Item 3: the board discussed a class action filed by Pemberton Marine Ltd seeking $20,000,000 in damages. Counsel assesses the claim as having reasonable prospects.",
+        "Item 7: the board approved a loan of $2,500,000 from the Company to Idris Fairbairn, a director, on interest-free terms."
+      ],
+      "must_contain": [
+        "Pemberton Marine Ltd",
+        "$20,000,000",
+        "Idris Fairbairn",
+        "$2,500,000"
+      ]
+    },
+    "client_email.md": {
+      "key": "client_email",
+      "facts": [],
+      "must_contain": []
+    }
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "task_id": "MNA_T051",
+  "cycle": 1,
+  "lineage": "ablation_no_grading",
+  "graded": false,
+  "failures": [
+    {
+      "criterion_id": "C1",
+      "what_went_wrong": "The agent failed to cross-check the mathematical calculation of the liability cap against the purchase price percentage in multiple documents, leading to reliance on a single clause's stated figure without verification.",
+      "should_have": "Recomputed the liability cap independently using the stated percentage and purchase price to identify discrepancies.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C2",
+      "what_went_wrong": "The agent did not systematically map all referenced schedules, annexes, or appendices across the transaction documents to confirm their existence or completeness.",
+      "should_have": "Created a checklist of all referenced schedules, annexes, or appendices and verified their presence or absence in the document set.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C3",
+      "what_went_wrong": "The agent identified inconsistencies in clause numbering but did not cross-reference the missing clause numbers with standard SPA provisions to infer what might be omitted.",
+      "should_have": "Compared the clause numbering gaps against a standard SPA template to identify likely missing provisions.",
+      "failure_kind": "analysis"
+    },
+    {
+      "criterion_id": "C4",
+      "what_went_wrong": "The agent noted a quorum inconsistency in the Articles of Association but did not verify whether the board minutes contained any resolutions or disclaimers that might explain the discrepancy.",
+      "should_have": "Reviewed the board minutes for any resolutions, waivers, or explanations related to quorum requirements.",
+      "failure_kind": "analysis"
+    },
+    {
+      "criterion_id": "C5",
+      "what_went_wrong": "The agent did not flag the absence of a standard 'entire agreement' clause, which is critical in SPAs to prevent reliance on prior representations.",
+      "should_have": "Checked for the presence of an 'entire agreement' clause and flagged its absence as a material omission.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C6",
+      "what_went_wrong": "The agent did not verify whether the Escrow Agreement's claim procedures were explicitly incorporated into the SPA, leaving a potential gap in enforceability.",
+      "should_have": "Confirmed whether the SPA explicitly incorporated the Escrow Agreement's terms or included a cross-reference clause.",
+      "failure_kind": "analysis"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T051_0",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "Recompute every monetary cap, threshold, or percentage-based figure using the stated formula and flag any mismatch with the stated amount.",
+      "source_tasks": [
+        "MNA_T051"
+      ],
+      "evidence": [
+        "MNA_T051:C1"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T051_1",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "List all schedules, annexes, or appendices referenced in any transaction document and verify their physical or electronic presence in the document set.",
+      "source_tasks": [
+        "MNA_T051"
+      ],
+      "evidence": [
+        "MNA_T051:C2"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T051_2",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "When encountering gaps in clause numbering, compare the sequence against a standard template for the document type to identify likely missing provisions.",
+      "source_tasks": [
+        "MNA_T051"
+      ],
+      "evidence": [
+        "MNA_T051:C3"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T051_3",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "For any procedural inconsistency (e.g., quorum), review all related documents (e.g., minutes, resolutions) for waivers, explanations, or contextual disclaimers.",
+      "source_tasks": [
+        "MNA_T051"
+      ],
+      "evidence": [
+        "MNA_T051:C4"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.8
+    },
+    {
+      "candidate_id": "c01_MNA_T051_4",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Ensure the deliverable flags the absence of standard boilerplate clauses (e.g., 'entire agreement', 'assignment', 'severability') as potential omissions.",
+      "source_tasks": [
+        "MNA_T051"
+      ],
+      "evidence": [
+        "MNA_T051:C5"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T051_5",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Verify whether ancillary agreements (e.g., escrow, employment) are explicitly incorporated into the principal agreement via cross-reference or incorporation clauses.",
+      "source_tasks": [
+        "MNA_T051"
+      ],
+      "evidence": [
+        "MNA_T051:C6"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.85
+    }
+  ],
+  "lesson_feedback": [],
+  "input_tokens": 3903,
+  "output_tokens": 1079,
+  "cost_usd": 0.00357,
+  "prompt": "# Task\nType: contract_review | Practice area: corporate_mna\nYou act for the Buyer, Ivybridge Medical Ltd. Ivybridge Medical Ltd (the Buyer) is acquiring the entire issued share capital of Delamere Technologies Ltd (the Company) from Oakhurst Robotics Ltd (the Seller).\n\nReview the principal agreement against the other matter documents and report the problematic provisions. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 2 March 2026. Address the deliverable to the supervising partner.\n\n# Trajectory (29 model steps, 29 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"client_email.md\"})\n 3. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 4. [research] read_document({\"name\": \"articles_of_association_extract.md\"})\n 5. [research] read_document({\"name\": \"board_minutes.md\"})\n 6. [research] read_document({\"name\": \"employment_agreement.md\"})\n 7. [research] read_document({\"name\": \"escrow_agreement.md\"})\n 8. [research] search_documents({\"query\": \"warranty\"})\n 9. [research] search_documents({\"query\": \"Schedule\"})\n10. [research] search_documents({\"query\": \"Holloway\"})\n11. [analysis] calculate({\"expression\": \"date('2026-02-16')\"})\n12. [analysis] calculate({\"expression\": \"date('2026-03-02')\"})\n13. [analysis] calculate({\"expression\": \"date('2026-05-28')\"})\n14. [analysis] calculate({\"expression\": \"days_between(date('2026-02-16'), date('2026-05-28'))\"})\n15. [analysis] calculate({\"expression\": \"add_months(date('2026-05-28'), 24)\"})\n16. [drafting] write_draft(<1182 words>)\n17. [verification] search_documents({\"query\": \"quorum\"})\n18. [verification] search_documents({\"query\": \"condition\"})\n19. [verification] search_documents({\"query\": \"$\"})\n20. [verification] read_document({\"name\": \"share_purchase_agreement.md\", \"start_line\": 34, \"num_lines\": 5})\n21. [verification] read_draft({})\n22. [editing] edit_draft(find='### 5. Closing Date Timing Issues\\n\\n**Issue:** The SPA define' -> '### 5. Closing Date Timing Issues\\n\\n**Issue:** The SPA define')\n23. [editing] edit_draft(find='### 6. Clause Numbering Inconsistencies\\n\\n**Issue:** The SPA ' -> '### 6. Payment Terms and Currency Issues\\n\\n**Issue 1 - Full P')\n24. [editing] edit_draft(find='## Executive Summary\\n\\nI have reviewed the Share Purchase Agr' -> '## Executive Summary\\n\\nI have reviewed the Share Purchase Agr')\n25. [editing] edit_draft(find='**Contrast with Escrow Agreement:** The Escrow Agreement pro' -> '**Contrast with Escrow Agreement:** The Escrow Agreement pro')\n26. [editing] edit_draft(find='**Recommendation:** Extend the notification period to at lea' -> '**Recommendation:** Extend the notification period to at lea')\n27. [editing] edit_draft(find='## Recommendations\\n\\n1. **Immediate Actions:**\\n   - Draft com' -> '## Recommendations\\n\\n1. **Immediate Actions:**\\n   - Draft com')\n28. [verification] read_draft({})\n29. [control] finish({\"summary\": \"Comprehensive review of the Share Purchase Agreement dated 16 February 2026 identifying eight major problematic provisions: missing warranty schedu)\n\n# Final deliverable\n# Review of Share Purchase Agreement: Problematic Provisions\n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Date:** 2 March 2026  \n**Matter:** Acquisition of Delamere Technologies Ltd by Ivybridge Medical Ltd  \n**Client:** Ivybridge Medical Ltd (Buyer)  \n**Subject:** Analysis of Problematic Provisions in Share Purchase Agreement dated 16 February 2026\n\n## Executive Summary\n\nI have reviewed the Share Purchase Agreement (SPA) dated 16 February 2026 against the other matter documents. The SPA contains numerous problematic provisions that require substantial amendment to protect the Buyer's interests. Key issues include: (1) missing warranty schedule, (2) unreasonably short claim notification period, (3) mathematical error in limitation of liability calculation, (4) overly broad non-compete clause, (5) timing inconsistencies with client expectations, (6) payment terms requiring full upfront payment, (7) missing conditions precedent, and (8) structural deficiencies in clause numbering.\n\n## Detailed Analysis of Problematic Provisions\n\n### 1. Missing Warranty Schedule (Clause 6.1)\n\n**Issue:** Clause 6.1 of the SPA states: \"The Seller warrants to the Buyer that as at the date of this Agreement and as at the Closing Date, the warranties set out in Schedule 1 are true and accurate in all respects.\" However, no Schedule 1 is included in the SPA document.\n\n**Risk:** Without a defined warranty schedule, the Buyer has no substantive warranty protection. The Seller could argue that no warranties were actually given, leaving the Buyer exposed to post-completion liabilities.\n\n**Recommendation:** A comprehensive warranty schedule must be drafted and appended to the SPA. Given the material customer relationship with Holloway Technologies Ltd (accounting for 37.5%-38% of revenue), specific warranties should address:\n- Continuity of the Holloway Technologies relationship\n- Accuracy of revenue figures\n- No undisclosed liabilities\n- Compliance with all material contracts\n- Intellectual property ownership\n\n### 2. Unreasonably Short Claim Notification Period (Clause 9.7)\n\n**Issue:** Clause 9.7 provides: \"Any claim by the Buyer in respect of a breach of warranty must be notified in writing to the Seller within 30 days of the Buyer becoming aware of the matter giving rise to the claim.\"\n\n**Risk:** A 30-day notification period is commercially unreasonable. Complex warranty breaches may not be fully understood within this timeframe, especially given the technical nature of the Company's diagnostic software business.\n\n**Contrast with Escrow Agreement:** The Escrow Agreement provides a 60-day notification period for claims against the escrow amount (Clause 5.2). This inconsistency creates confusion and potential disputes. Furthermore, the SPA does not explicitly reference or incorporate the Escrow Agreement's claim procedures.\n\n**Recommendation:** Extend the notification period to at least 60 days (aligning with the Escrow Agreement) or preferably 90 days. Consider a longer period for tax-related claims. Additionally, the SPA should explicitly reference and incorporate the Escrow Agreement's claim procedures to ensure consistency.\n\n### 3. Limitation of Liability Calculation (Clause 8.4)\n\n**Issue:** Clause 8.4 states: \"The aggregate liability of the Seller for all claims arising under or in connection with any breach of warranty shall not exceed an amount equal to 20% of the Purchase Price, being $39,600,000. For the avoidance of doubt, the Purchase Price is $220,000,000 as set out in Section 2.1.\"\n\n**Mathematical Error:** 20% of $220,000,000 is $44,000,000, not $39,600,000. The clause contains an incorrect calculation.\n\n**Risk:** This discrepancy creates ambiguity and could lead to disputes over the actual cap on liability.\n\n**Recommendation:** Correct the calculation to $44,000,000 or specify the percentage clearly without the incorrect dollar amount.\n\n### 4. Overly Broad Non-Compete Clause (Clause 12.1)\n\n**Issue:** Clause 12.1 provides: \"The Seller undertakes that for a period of 4 years from the Closing Date, it shall not, directly or indirectly, carry on, be engaged in, or have any interest in any business which competes with the business of the Company as carried on at the date of this Agreement.\"\n\n**Risk Assessment:**\n- **Duration:** 4 years is potentially excessive under English law for a non-compete in a share purchase agreement. English courts typically require such restrictions to be reasonable in duration, geographical scope, and subject matter.\n- **Scope:** The clause lacks geographical limitation and covers \"any interest in any business,\" which could be construed too broadly.\n- **Contrast with Employment Agreement:** The Founder's non-compete in the Employment Agreement is limited to 12 months and a 50-mile radius (Clause 18.2-18.4). The Seller's restriction is significantly more onerous.\n\n**Recommendation:** Reduce the duration to 2-3 years and add reasonable geographical and scope limitations. Consider whether such a broad restriction is necessary given the Seller is a corporate entity (Oakhurst Robotics Ltd) rather than an individual.\n\n### 5. Closing Date Timing Issues\n\n**Issue:** The SPA defines Closing Date as 28 May 2026 (Clause 1.1), which is 101 days after the agreement date (16 February 2026).\n\n**Client Instruction:** The client email states: \"We anticipate that the acquisition will be completed prior to 2 March 2026.\"\n\n**Risk:** The current Closing Date of 28 May 2026 contradicts the client's stated timeline and expectations. Additionally, the long gap between signing (16 February 2026) and completion (28 May 2026) exposes the Buyer to significant interim risk without corresponding protections.\n\n**Date Inconsistency:** The Board Minutes reference a draft SPA \"dated on or about 28 February 2026,\" but the actual SPA is dated 16 February 2026. This discrepancy requires clarification.\n\n**Recommendation:** Clarify with the client whether the 28 May 2026 date is acceptable or whether an earlier completion is required. If maintaining 28 May 2026, ensure robust conditions precedent and interim covenants are included to protect the Buyer during the extended period.\n\n### 6. Payment Terms and Currency Issues\n\n**Issue 1 - Full Payment on Closing:** Clause 2.1 requires the full Purchase Price of $220,000,000 to be paid on the Closing Date with no retention or escrow for warranty claims (except for the separate Escrow Agreement).\n\n**Risk:** Paying the entire consideration upfront leaves the Buyer with reduced leverage for post-completion warranty claims. While there is a separate Escrow Agreement, the SPA itself does not reference escrow arrangements.\n\n**Issue 2 - Currency:** The Purchase Price is specified in US dollars ($220,000,000) despite all parties being UK-incorporated companies. This creates foreign exchange risk and potential tax implications.\n\n**Recommendation:** Consider retaining a portion of the purchase price (e.g., 10-20%) in escrow under the SPA itself, linked to the Escrow Agreement. Also consider specifying the currency as GBP or including appropriate foreign exchange provisions.\n\n### 7. Missing Conditions Precedent\n\n**Issue:** The SPA lacks a conditions precedent clause, which is standard in share purchase agreements. Conditions precedent typically include items such as:\n- Regulatory approvals\n- Third-party consents\n- No material adverse change\n- Due diligence satisfaction\n- Board approvals\n\n**Risk:** Without conditions precedent, the Buyer is obligated to complete the purchase regardless of intervening events that might affect the Company's value or the transaction's viability.\n\n**Recommendation:** Insert a comprehensive conditions precedent clause allowing the Buyer to withdraw if key conditions are not satisfied by the Closing Date.\n\n### 8. Clause Numbering Inconsistencies\n\n**Issue:** The SPA contains irregular clause numbering: Clause 6.1 (Warranties) jumps to Clause 9.7 (Claims), then to Clause 8.4 (Limitation of Liability), then to Clause 12.1 (Restrictions on Competition), then to Clause 13.1 (Governing Law).\n\n**Risk:** This suggests missing clauses and creates confusion in interpretation. Missing clauses may include important provisions such as termination rights, dispute resolution procedures, and entire sections on representations, covenants, and indemnities.\n\n**Recommendation:** Restructure the SPA with sequential clause numbering and ensure all standard SPA provisions are included.\n\n## Additional Observations from Other Documents\n\n### Articles of Association Issues\n\n1. **Quorum Requirement:** Article 11 states: \"The quorum for board meetings is three directors.\" However, the Board Minutes show only two directors attended the 1 March 2026 meeting, and it was deemed quorate. This inconsistency requires clarification.\n\n2. **Transfer Restrictions:** Article 3.1 restricts share transfers to Ivybridge Medical Ltd or its wholly owned subsidiaries without board consent. This should be reviewed post-acquisition to ensure it aligns with the Buyer's future plans.\n\n### Material Customer Dependency\n\nMultiple documents confirm Holloway Technologies Ltd accounts for 37.5%-38% of the Company's revenue. This concentration risk should be addressed through:\n- Specific warranties regarding the Holloway Technologies relationship\n- Representations about contract terms and payment history\n- Covenants regarding maintenance of the relationship\n\n### Escrow Agreement Considerations\n\nThe Escrow Agreement references a \"Release Date\" of 24 months after the Closing Date (28 May 2026), which would be 28 May 2028. This provides a 2-year escrow period for warranty claims, which is reasonable but should be coordinated with the SPA's claim notification periods.\n\n## Recommendations\n\n1. **Immediate Actions:**\n   - Draft comprehensive warranty schedule (Schedule 1)\n   - Correct the limitation of liability calculation\n   - Extend warranty claim notification period to at least 60 days\n   - Address clause numbering inconsistencies\n   - Insert conditions precedent clause\n   - Coordinate SPA with Escrow Agreement claim procedures\n\n2. **Negotiation Points:**\n   - Reduce non-compete duration to 2-3 years with reasonable limitations\n   - Align Closing Date with client expectations\n   - Consider retention/escrow of portion of purchase price\n   - Address currency considerations (USD vs GBP)\n   - Include interim covenants for extended period between signing and completion\n\n3. **Due Diligence Follow-up:**\n   - Verify Holloway Technologies contract terms and payment history\n   - Confirm board quorum requirements and director appointments\n   - Review all material contracts and intellectual property\n   - Clarify date discrepancies between documents\n\nThe Buyer should not sign the SPA in its current form. The missing warranty schedule alone renders the agreement commercially unacceptable from the Buyer's perspective.\n\nI am available to discuss these issues and prepare amended provisions for negotiation with the Seller's counsel.\n\n# Your job\nNo grades are available. Critically assess the deliverable and the work process yourself, as a demanding supervising partner would, and write reusable candidate lessons for improving the work.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|contract_review\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C1\",\n      \"what_went_wrong\": \"The agent failed to cross-check the mathematical calculation of the liability cap against the purchase price percentage in multiple documents, leading to reliance on a single clause's stated figure without verification.\",\n      \"should_have\": \"Recomputed the liability cap independently using the stated percentage and purchase price to identify discrepancies.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C2\",\n      \"what_went_wrong\": \"The agent did not systematically map all referenced schedules, annexes, or appendices across the transaction documents to confirm their existence or completeness.\",\n      \"should_have\": \"Created a checklist of all referenced schedules, annexes, or appendices and verified their presence or absence in the document set.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C3\",\n      \"what_went_wrong\": \"The agent identified inconsistencies in clause numbering but did not cross-reference the missing clause numbers with standard SPA provisions to infer what might be omitted.\",\n      \"should_have\": \"Compared the clause numbering gaps against a standard SPA template to identify likely missing provisions.\",\n      \"failure_kind\": \"analysis\"\n    },\n    {\n      \"criterion_id\": \"C4\",\n      \"what_went_wrong\": \"The agent noted a quorum inconsistency in the Articles of Association but did not verify whether the board minutes contained any resolutions or disclaimers that might explain the discrepancy.\",\n      \"should_have\": \"Reviewed the board minutes for any resolutions, waivers, or explanations related to quorum requirements.\",\n      \"failure_kind\": \"analysis\"\n    },\n    {\n      \"criterion_id\": \"C5\",\n      \"what_went_wrong\": \"The agent did not flag the absence of a standard 'entire agreement' clause, which is critical in SPAs to prevent reliance on prior representations.\",\n      \"should_have\": \"Checked for the presence of an 'entire agreement' clause and flagged its absence as a material omission.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C6\",\n      \"what_went_wrong\": \"The agent did not verify whether the Escrow Agreement's claim procedures were explicitly incorporated into the SPA, leaving a potential gap in enforceability.\",\n      \"should_have\": \"Confirmed whether the SPA explicitly incorporated the Escrow Agreement's terms or included a cross-reference clause.\",\n      \"failure_kind\": \"analysis\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"Recompute every monetary cap, threshold, or percentage-based figure using the stated formula and flag any mismatch with the stated amount.\",\n      \"evidence\": [\"C1\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"List all schedules, annexes, or appendices referenced in any transaction document and verify their physical or electronic presence in the document set.\",\n      \"evidence\": [\"C2\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"When encountering gaps in clause numbering, compare the sequence against a standard template for the document type to identify likely missing provisions.\",\n      \"evidence\": [\"C3\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.85\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"For any procedural inconsistency (e.g., quorum), review all related documents (e.g., minutes, resolutions) for waivers, explanations, or contextual disclaimers.\",\n      \"evidence\": [\"C4\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.8\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"Ensure the deliverable flags the absence of standard boilerplate clauses (e.g., 'entire agreement', 'assignment', 'severability') as potential omissions.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Verify whether ancillary agreements (e.g., escrow, employment) are explicitly incorporated into the principal agreement via cross-reference or incorporation clauses.\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.85\n    }\n  ],\n  \"lesson_feedback\": []\n}\n```"
+}

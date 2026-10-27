@@ -1,0 +1,163 @@
+{
+  "task_id": "MNA_T005",
+  "cycle": 1,
+  "lineage": "main",
+  "graded": true,
+  "failures": [
+    {
+      "criterion_id": "C1",
+      "what_went_wrong": "The agent noted the non-compete durations (4 years vs 12 months) but did not assess their enforceability or flag the inconsistency as a legal risk.",
+      "should_have": "Compared the non-compete durations, assessed enforceability under relevant jurisdiction law, and flagged the inconsistency as a risk requiring harmonisation.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C4",
+      "what_went_wrong": "The agent mentioned both non-compete periods but did not explicitly flag the inconsistency between the SPA and employment agreement as a specific issue.",
+      "should_have": "Explicitly identified and flagged the inconsistency between the non-compete periods in the SPA and employment agreement as a drafting risk.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C5",
+      "what_went_wrong": "The agent discussed the need for Foxley Logistics consent but did not explicitly list it as a required third-party consent or state its unobtained status in a structured format.",
+      "should_have": "Listed all required third-party consents in a dedicated section, explicitly stating whether each had been obtained.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C6",
+      "what_went_wrong": "The agent described risks qualitatively but did not assign a standardised risk rating (High/Medium/Low) to each issue.",
+      "should_have": "Assigned a standardised risk rating to each identified issue to prioritise client attention and action.",
+      "failure_kind": "procedural"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T005_0",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Assign a standardised risk rating (High/Medium/Low) to every identified issue in the deliverable, ensuring consistent prioritisation for client action.",
+      "source_tasks": [
+        "MNA_T005"
+      ],
+      "evidence": [
+        "MNA_T005:C6"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T005_1",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "List all required third-party consents in a dedicated section, explicitly stating whether each has been obtained and any associated risks.",
+      "source_tasks": [
+        "MNA_T005"
+      ],
+      "evidence": [
+        "MNA_T005:C5"
+      ],
+      "task_type_scope": "due_diligence",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T005_2",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Compare restrictive covenants (e.g., non-competes) across all transaction documents, flagging inconsistencies in scope, duration, or enforceability under relevant jurisdiction law.",
+      "source_tasks": [
+        "MNA_T005"
+      ],
+      "evidence": [
+        "MNA_T005:C1",
+        "MNA_T005:C4"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T005_3",
+      "type": "checklist",
+      "category": "review",
+      "text": "Before finalising the deliverable, verify that every identified issue includes a clear comparison to contractual or legal standards and a risk assessment.",
+      "source_tasks": [
+        "MNA_T005"
+      ],
+      "evidence": [
+        "MNA_T005:C1",
+        "MNA_T005:C4"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T005_4",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "For every change-of-control provision, confirm whether third-party consent is required and explicitly note its status (obtained/pending/missing) in the findings.",
+      "source_tasks": [
+        "MNA_T005"
+      ],
+      "evidence": [
+        "MNA_T005:C5"
+      ],
+      "task_type_scope": "due_diligence",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T005_5",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Ensure every inconsistency between transaction documents is explicitly flagged as a risk, with a recommendation for harmonisation or further review.",
+      "source_tasks": [
+        "MNA_T005"
+      ],
+      "evidence": [
+        "MNA_T005:C4"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.8
+    }
+  ],
+  "lesson_feedback": [
+    {
+      "lesson_id": "L0001",
+      "label": "HELPFUL",
+      "reason": "Standardised risk ratings improve clarity and actionability for clients, addressing a clear gap in the deliverable."
+    },
+    {
+      "lesson_id": "L0002",
+      "label": "HELPFUL",
+      "reason": "Structured third-party consent tracking ensures critical dependencies are not overlooked, directly addressing C5's failure."
+    },
+    {
+      "lesson_id": "L0003",
+      "label": "HELPFUL",
+      "reason": "Proactively comparing restrictive covenants across documents would have caught both C1 and C4's enforceability and inconsistency issues."
+    },
+    {
+      "lesson_id": "L0004",
+      "label": "HELPFUL",
+      "reason": "A final review step to confirm risk assessments and comparisons would prevent oversights like C1 and C4."
+    },
+    {
+      "lesson_id": "L0005",
+      "label": "HELPFUL",
+      "reason": "Explicitly tracking third-party consent status would have ensured C5's requirement was not buried in narrative text."
+    },
+    {
+      "lesson_id": "L0006",
+      "label": "HELPFUL",
+      "reason": "Mandating explicit flags for inconsistencies would have forced the agent to address C4's non-compete mismatch directly."
+    }
+  ],
+  "input_tokens": 5285,
+  "output_tokens": 1246,
+  "cost_usd": 0.0045115,
+  "prompt": "# Task\nType: due_diligence | Practice area: corporate_mna\nYou act for the Buyer, Dunmore Engineering Ltd. Dunmore Engineering Ltd (the Buyer) is acquiring the entire issued share capital of Bellhaven Pharma plc (the Company) from Netherby Pharma plc (the Seller).\n\nPrepare a due diligence findings report on the matter documents. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 17 May 2027. Address the deliverable to the supervising partner.\n\n# Trajectory (33 model steps, 33 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"client_email.md\"})\n 3. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 4. [research] read_document({\"name\": \"disclosure_letter.md\"})\n 5. [research] read_document({\"name\": \"material_customer_contract.md\"})\n 6. [research] read_document({\"name\": \"employment_agreement.md\"})\n 7. [research] search_documents({\"query\": \"Foxley\"})\n 8. [research] search_documents({\"query\": \"change of control\"})\n 9. [analysis] calculate({\"expression\": \"Target Working Capital = 2000000\"})\n10. [analysis] calculate({\"expression\": \"target_working_capital = 2000000\"})\n11. [analysis] calculate({\"expression\": \"estimated_closing_working_capital = 1090000\"})\n12. [analysis] calculate({\"expression\": \"working_capital_shortfall = target_working_capital - estimated_closing_working_capital\"})\n13. [analysis] calculate({\"expression\": \"target = 2000000\\nestimated = 1090000\\nshortfall = target - estimated\"})\n14. [analysis] calculate({\"expression\": \"base_purchase_price = 135000000\\nadjusted_price = base_purchase_price - shortfall\"})\n15. [analysis] calculate({\"expression\": \"base_price = 135000000\\nshortfall = 910000\\nadjusted_price = base_price - shortfall\"})\n16. [analysis] calculate({\"expression\": \"base_price = 135000000\\nestimated_working_capital = 1090000\\ntarget_working_capital = 2000000\\nshortfall = target_working_capital - estimated_wo)\n17. [research] search_documents({\"query\": \"Target Working Capital\"})\n18. [analysis] calculate({\"expression\": \"closing_date = date('2027-07-08')\\ndeliverable_date = date('2027-05-17')\\ndays_to_closing = days_between(deliverable_date, closing_date)\"})\n19. [drafting] write_draft(<1330 words>)\n20. [verification] read_draft({})\n21. [verification] search_documents({\"query\": \"12 March 2022\"})\n22. [editing] edit_draft(find='**Contradicting Evidence:** The material customer contract w' -> '**Contradicting Evidence:** The material customer contract w')\n23. [editing] edit_draft(find='**Contract Details:**\\n- Effective Date: 15 November 2023\\n- T' -> '**Contract Details:**\\n- Effective Date: 15 November 2023 (di')\n24. [verification] search_documents({\"query\": \"Schedule 3\"})\n25. [editing] edit_draft(find='**Recommended Action:**\\n1. Request detailed calculation from' -> '**Recommended Action:**\\n1. Request detailed calculation from')\n26. [editing] edit_draft(find='### 5. Transaction Timeline and Key Dates' -> '### 5. Missing Schedules and Documentation Gaps\\n\\n**Missing D')\n27. [editing] edit_draft(find='### 6. Transaction Timeline and Key Dates\\n\\n**Key Dates:**\\n- ' -> '### 6. Transaction Timeline and Key Dates\\n\\n**Key Dates:**\\n- ')\n28. [editing] edit_draft(find='1. **Critical Discrepancy in Disclosure Letter:** The Seller' -> '1. **Critical Discrepancy in Disclosure Letter:** The Seller')\n29. [verification] read_document({\"name\": \"share_purchase_agreement.md\", \"start_line\": 65, \"num_lines\": 10})\n30. [editing] edit_draft(find='### 4. Employment Agreement Issues' -> '### 4. SPA Drafting Issues\\n\\n**Clause Numbering Error:** \\n- C')\n31. [verification] read_draft({})\n32. [editing] edit_draft(find='### 5. Employment Agreement Issues' -> '### 5. Employment Agreement Issues')\n33. [editing] edit_draft(find='### 5. Missing Schedules and Documentation Gaps' -> '### 6. Missing Schedules and Documentation Gaps')\n\n# Final deliverable\n# Due Diligence Findings Report\n**Date:** 17 May 2027  \n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Re:** Acquisition of Bellhaven Pharma plc by Dunmore Engineering Ltd  \n**Matter:** Share Purchase Agreement Review and Due Diligence  \n\n## Executive Summary\n\nThis report outlines the key findings from our review of the transaction documents for Dunmore Engineering Ltd's acquisition of the entire issued share capital of Bellhaven Pharma plc from Netherby Pharma plc. Our review has identified several material issues requiring immediate attention:\n\n1. **Critical Discrepancy in Disclosure Letter:** The Seller's disclosure letter contains a materially false statement regarding change of control provisions in the Foxley Logistics contract.\n\n2. **Working Capital Adjustment Discrepancy:** There is a significant discrepancy between the Seller's calculated working capital adjustment and the contractual formula.\n\n3. **Material Contract Risk:** The Foxley Logistics agreement contains a change of control termination right that poses substantial business continuity risk.\n\n4. **Missing Documentation:** Key SPA schedules (Schedule 1 - accounting principles and Schedule 3 - material contracts) are missing, preventing full due diligence.\n\n5. **Employment Agreement Issues:** The Founder's employment agreement contains restrictive covenants that may conflict with business needs.\n\n## Detailed Findings\n\n### 1. Material False Disclosure Regarding Foxley Logistics Contract\n\n**Issue:** The disclosure letter at paragraph 6.3 states: \"No Material Contract contains a change of control provision. For the avoidance of doubt, this disclosure confirms that none of the contracts listed in Schedule 3 to the Agreement, including but not limited to the supply agreement dated 12 March 2022 between the Company and Foxley Logistics plc... contains any term, condition or obligation that is triggered, or capable of being triggered, by reason of a change in the shareholding or control of the Company.\"\n\n**Contradicting Evidence:** The material customer contract with Foxley Logistics plc (effective date 15 November 2023, though referenced in disclosure letter as dated 12 March 2022 - possibly an amended/replaced agreement) contains at clause 14.2: \"Either party may terminate this Agreement on 30 days' notice if the other party undergoes a change of control without the prior written consent of the Customer, which in this case is Foxley Logistics plc.\"\n\n**Risk Assessment:** This is a material misrepresentation that:\n- Directly contradicts the warranty disclosure\n- Creates potential liability for breach of warranty\n- Poses immediate business continuity risk (Foxley Logistics could terminate the contract post-acquisition)\n- May affect the valuation of the Company\n\n**Recommended Action:** \n1. Immediately notify the Seller of this discrepancy\n2. Require correction of the disclosure letter\n3. Consider whether this constitutes a breach of warranty\n4. Assess potential price adjustment\n5. Initiate discussions with Foxley Logistics regarding consent to the change of control\n\n### 2. Working Capital Adjustment Mechanism Discrepancy\n\n**Contractual Terms (SPA Clause 2.3):** \n- Target Working Capital: $2,000,000\n- Purchase Price: $135,000,000\n- Adjustment: Dollar-for-dollar reduction for any shortfall below Target Working Capital\n- Estimated Closing Working Capital (per Seller): $1,090,000\n\n**Calculated Adjustment:** \n- Shortfall: $2,000,000 - $1,090,000 = $910,000\n- Adjusted Purchase Price: $135,000,000 - $910,000 = $134,090,000\n\n**Seller's Stated Adjustment (Client Email):** $133,180,000\n\n**Discrepancy:** $134,090,000 - $133,180,000 = $910,000\n\n**Analysis:** The Seller appears to be applying a $1,820,000 adjustment rather than the $910,000 adjustment required by the contractual formula. This represents either:\n1. An error in the Seller's calculation\n2. Application of different accounting principles than contemplated\n3. Inclusion of additional adjustments not provided for in the SPA\n\n**Recommended Action:**\n1. Request detailed calculation from Seller showing how $133,180,000 was derived\n2. Obtain and review Schedule 1 (accounting principles) of SPA to verify calculation methodology\n3. Ensure adjustment mechanism in SPA is clear and unambiguous\n4. Consider whether this discrepancy affects other financial representations\n\n### 3. Foxley Logistics Contract Analysis\n\n**Contract Details:**\n- Effective Date: 15 November 2023 (disclosure letter references \"12 March 2022\" - possible amendment/replacement)\n- Term: 5 years (expires November 2028)\n- Monthly Fee: £112,500 (approximately $140,625 at current exchange rates)\n- Annual Value: £1,350,000 (approximately $1,687,500)\n\n**Change of Control Provision (Clause 14.2):** \n- Either party may terminate on 30 days' notice if the other undergoes a change of control without prior written consent\n- \"Customer\" (Foxley Logistics) consent required for Company's change of control\n- Definition includes acquisition of >50% of voting rights or share capital\n\n**Business Impact:** \n- This represents approximately 12.5% of the Company's revenue based on disclosed figures\n- Loss of this contract would materially affect business valuation\n- Pharmaceutical logistics are specialized services not easily replaced\n\n**Recommended Action:**\n1. Immediate engagement with Foxley Logistics to seek change of control consent\n2. Consider making completion conditional on obtaining such consent\n3. Assess alternative logistics providers as contingency\n4. Review whether this risk is adequately reflected in purchase price\n\n### 4. SPA Drafting Issues\n\n**Clause Numbering Error:** \n- Clause 6 is titled \"NON-COMPETE\" but contains subclause \"12.1\"\n- This creates ambiguity and should be corrected for clarity\n\n**Non-compete Scope (Clause 12.1/6):**\n- Duration: 4 years post-Closing\n- Geographic scope: United Kingdom and European Union\n- This is reasonably standard but should be reviewed for enforceability\n\n**Recommended Action:**\n1. Correct clause numbering inconsistency\n2. Review non-compete for reasonableness under UK law\n3. Ensure clear drafting throughout SPA\n\n### 5. Employment Agreement Issues\n\n**Founder's Employment Agreement:**\n- Effective Date: 17 May 2027\n- Salary: £98,500 annually\n- Non-compete: 12 months post-termination\n- Geographic scope: UK and any territory where Company does business\n\n**Concerns:**\n1. **Non-compete Scope:** Clause 18 restricts the Founder from \"businesses supplying products or services to the Material Customer\" (Foxley Logistics). This may be overly broad and potentially unenforceable under UK law.\n2. **Assignment Clause:** Clause 15 allows assignment to \"any successor entity, including the Buyer\" - this should be confirmed to apply to the acquisition.\n3. **Confidentiality:** Clause 9 references confidentiality obligations to Buyer, Seller, and affiliates - ensure these survive the acquisition.\n\n**Recommended Action:**\n1. Review non-compete clause for reasonableness under UK law\n2. Confirm assignment provisions work effectively for the transaction\n3. Ensure post-completion employment terms are clear\n\n### 6. Missing Schedules and Documentation Gaps\n\n**Missing Documents Identified:**\n1. **Schedule 1 of SPA:** Accounting principles for calculating Closing Working Capital (referenced in SPA Clause 2.3)\n2. **Schedule 3 of SPA:** List of Material Contracts (referenced in disclosure letter paragraph 6.3)\n3. **Financial Statements:** Supporting documents for estimated Closing Working Capital of $1,090,000\n\n**Risk:** Without these documents, we cannot:\n- Verify the Seller's working capital calculation\n- Confirm there are no other material contracts with change of control provisions\n- Properly assess the Company's financial position\n\n**Recommended Action:**\n1. Request immediate provision of SPA Schedules 1 and 3\n2. Obtain supporting financial statements for working capital estimate\n3. Review all contracts listed in Schedule 3 for similar change of control provisions\n\n### 6. Transaction Timeline and Key Dates\n\n**Key Dates:**\n- SPA Date: 22 April 2027\n- Current Date: 17 May 2027\n- Closing Date: 8 July 2027 (52 days from today)\n- Working Capital Statement Due: Within 60 days of Closing (by 6 September 2027)\n- Adjustment Payment Due: Within 30 days of Closing (by 7 August 2027)\n\n**Critical Path Items:**\n1. Resolution of Foxley Logistics disclosure issue\n2. Clarification of working capital adjustment\n3. Foxley Logistics change of control consent\n4. Finalization of employment terms\n5. Obtaining missing SPA schedules and financial documentation\n\n## Legal and Commercial Implications\n\n### 1. Warranty Breach Potential\nThe false disclosure regarding change of control provisions may constitute a breach of warranty under the SPA. This could provide grounds for:\n- Price reduction\n- Indemnity claim\n- Potential termination if material breach\n\n### 2. Business Continuity Risk\nThe Foxley Logistics termination right creates immediate post-completion risk. Without consent, the Buyer faces potential contract termination within 30 days of completion.\n\n### 3. Valuation Impact\nBoth issues (false disclosure and contract termination risk) materially affect Company valuation. The working capital discrepancy also affects purchase price.\n\n## Recommendations\n\n### Immediate Actions (Next 7 Days):\n1. **Formal Notice to Seller:** Issue written notice regarding the false disclosure in the disclosure letter, requesting immediate correction and explanation.\n2. **Working Capital Query:** Request detailed calculation from Seller showing derivation of $133,180,000 adjusted price.\n3. **Foxley Logistics Engagement:** Initiate discussions with Foxley Logistics regarding change of control consent.\n4. **Document Review:** Complete review of all Schedule 3 contracts to verify no other change of control provisions exist.\n\n### Medium-Term Actions (Next 30 Days):\n1. **Contract Amendment:** Negotiate amendment to SPA addressing:\n   - Specific indemnity for Foxley Logistics disclosure\n   - Clear working capital adjustment mechanism\n   - Potential price adjustment for identified risks\n2. **Due Diligence Completion:** Verify all material contracts for similar provisions\n3. **Employment Agreement Finalization:** Ensure Founder's terms are acceptable post-acquisition\n\n### Pre-Completion Actions:\n1. **Condition Precedent:** Consider making Foxley Logistics consent a condition precedent to completion\n2. **Escrow Arrangement:** Consider holding portion of purchase price in escrow for warranty claims\n3. **Final Documentation:** Ensure all corrected documents are executed prior to completion\n\n## Conclusion\n\nThe due diligence review has identified material issues requiring immediate attention. The false disclosure regarding Foxley Logistics represents a significant concern that may affect both the transaction structure and valuation. The working capital discrepancy also requires clarification to ensure proper pricing.\n\nWe recommend proceeding with caution and addressing these issues before advancing to completion. The Foxley Logistics contract risk, in particular, poses a substantial threat to business continuity post-acquisition.\n\n**Next Steps:** We should schedule a meeting with the client to discuss these findings and determine negotiation strategy with the Seller.\n\n---\n**Prepared by:** Senior Associate  \n**Date:** 17 May 2027  \n**Confidentiality:** This report contains confidential information and should not be disclosed to third parties without prior authorization.\n\n# Expert rubric verdicts (2/6 passed)\n- C1 [FAIL] Identifies that the 4-year SPA non-compete may be unenforceable as wider than reasonably necessary and is inconsistent with the 12-month restriction in the Founder's employment agreement.\n    judges: FAIL: The deliverable notes the non-compete durations (4 years vs 12 months) but does not identify that the 4-year SPA restriction may be unenforceable as wider than reasonably necessary, nor does it state that the two restric | FAIL: The deliverable mentions the 4-year SPA non-compete and the 12-month Founder's non-compete separately, but does not explicitly identify that the 4-year SPA non-compete may be unenforceable as wider than reasonably necess\n- C2 [PASS] Calculates the working capital shortfall as $910,000 and the adjusted Purchase Price as $134,090,000, identifying that the Seller's funds flow figure of $133,180,000 is wrong.\n    judges: PASS: The deliverable correctly calculates the working capital shortfall as $910,000, the adjusted Purchase Price as $134,090,000, and identifies that the Seller's figure of $133,180,000 is incorrect. | PASS: The deliverable correctly calculates the working capital shortfall as $910,000 ($2,000,000 - $1,090,000) and the adjusted Purchase Price as $134,090,000 ($135,000,000 - $910,000), explicitly identifying that the Seller's\n- C3 [PASS] Identifies that the Foxley Logistics plc contract (Clause 14.2) allows termination on a change of control without consent, that the disclosure against Warranty 6.3 says there is no such provision, and that consent should be obtained as a condition to Closing.\n    judges: PASS: The deliverable identifies the change of control termination right in Clause 14.2 of the Foxley contract, the contradictory disclosure in paragraph 6.3, and recommends making consent a condition to completion. | PASS: The deliverable clearly identifies that Clause 14.2 of the Foxley Logistics contract allows termination on change of control without consent, that the disclosure against Warranty 6.3 falsely states no such provision exis\n- C4 [FAIL] Flags the inconsistency between the SPA and employment agreement non-compete periods.\n    judges: FAIL: While the deliverable notes both non-compete durations, it does not flag or characterize the difference between the SPA's 4-year term and the employment agreement's 12-month term as an inconsistency. | FAIL: While the deliverable notes both the 4-year SPA non-compete and the 12-month Founder's non-compete, it does not explicitly flag the inconsistency between these two periods as a specific issue requiring attention. The two\n- C5 [FAIL] Lists the Foxley Logistics plc change-of-control consent as a required third-party consent and states it has not been obtained.\n    judges: FAIL: The deliverable discusses the need for Foxley Logistics consent but does not list it as a required third-party consent nor explicitly state that it has not been obtained. | PASS: The deliverable explicitly lists Foxley Logistics plc change-of-control consent as a required third-party consent in section 3 ('Recommended Action: Immediate engagement with Foxley Logistics to seek change of control co\n- C6 [FAIL] Assigns a risk rating (High / Medium / Low) to each issue.\n    judges: FAIL: The deliverable discusses risks but does not assign a specific High/Medium/Low risk rating to any of the identified issues. | FAIL: The deliverable does not assign explicit risk ratings (High/Medium/Low) to each issue. While it uses qualitative language like 'material,' 'critical,' and 'substantial,' it does not apply a standardized risk rating syste\n\n# Your job\nAnalyse each FAILED criterion: what went wrong, what the agent should have done, and whether the failure is procedural (reusable) or task-specific. Then write reusable candidate lessons that would prevent the procedural failures on other matters.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|due_diligence\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C1\",\n      \"what_went_wrong\": \"The agent noted the non-compete durations (4 years vs 12 months) but did not assess their enforceability or flag the inconsistency as a legal risk.\",\n      \"should_have\": \"Compared the non-compete durations, assessed enforceability under relevant jurisdiction law, and flagged the inconsistency as a risk requiring harmonisation.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C4\",\n      \"what_went_wrong\": \"The agent mentioned both non-compete periods but did not explicitly flag the inconsistency between the SPA and employment agreement as a specific issue.\",\n      \"should_have\": \"Explicitly identified and flagged the inconsistency between the non-compete periods in the SPA and employment agreement as a drafting risk.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C5\",\n      \"what_went_wrong\": \"The agent discussed the need for Foxley Logistics consent but did not explicitly list it as a required third-party consent or state its unobtained status in a structured format.\",\n      \"should_have\": \"Listed all required third-party consents in a dedicated section, explicitly stating whether each had been obtained.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C6\",\n      \"what_went_wrong\": \"The agent described risks qualitatively but did not assign a standardised risk rating (High/Medium/Low) to each issue.\",\n      \"should_have\": \"Assigned a standardised risk rating to each identified issue to prioritise client attention and action.\",\n      \"failure_kind\": \"procedural\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"Assign a standardised risk rating (High/Medium/Low) to every identified issue in the deliverable, ensuring consistent prioritisation for client action.\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"List all required third-party consents in a dedicated section, explicitly stating whether each has been obtained and any associated risks.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"due_diligence\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Compare restrictive covenants (e.g., non-competes) across all transaction documents, flagging inconsistencies in scope, duration, or enforceability under relevant jurisdiction law.\",\n      \"evidence\": [\"C1\", \"C4\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"review\",\n      \"text\": \"Before finalising the deliverable, verify that every identified issue includes a clear comparison to contractual or legal standards and a risk assessment.\",\n      \"evidence\": [\"C1\", \"C4\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.85\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"For every change-of-control provision, confirm whether third-party consent is required and explicitly note its status (obtained/pending/missing) in the findings.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"due_diligence\",\n      \"confidence\": 0.85\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"Ensure every inconsistency between transaction documents is explicitly flagged as a risk, with a recommendation for harmonisation or further review.\",\n      \"evidence\": [\"C4\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.8\n    }\n  ],\n  \"lesson_feedback\": [\n    {\n      \"lesson_id\": \"L0001\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Standardised risk ratings improve clarity and actionability for clients, addressing a clear gap in the deliverable.\"\n    },\n    {\n      \"lesson_id\": \"L0002\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Structured third-party consent tracking ensures critical dependencies are not overlooked, directly addressing C5's failure.\"\n    },\n    {\n      \"lesson_id\": \"L0003\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Proactively comparing restrictive covenants across documents would have caught both C1 and C4's enforceability and inconsistency issues.\"\n    },\n    {\n      \"lesson_id\": \"L0004\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"A final review step to confirm risk assessments and comparisons would prevent oversights like C1 and C4.\"\n    },\n    {\n      \"lesson_id\": \"L0005\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Explicitly tracking third-party consent status would have ensured C5's requirement was not buried in narrative text.\"\n    },\n    {\n      \"lesson_id\": \"L0006\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Mandating explicit flags for inconsistencies would have forced the agent to address C4's non-compete mismatch directly.\"\n    }\n  ]\n}\n```"
+}

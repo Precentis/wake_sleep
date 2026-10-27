@@ -1,0 +1,142 @@
+{
+  "task_id": "MNA_T025",
+  "cycle": 1,
+  "lineage": "ablation_no_grading",
+  "graded": false,
+  "failures": [
+    {
+      "criterion_id": "C1",
+      "what_went_wrong": "The agent did not verify the completeness of the document set before starting analysis, leading to assumptions about missing clauses (e.g., 'Likely covering conditions precedent') rather than definitive statements.",
+      "should_have": "Confirmed the document set was complete or explicitly noted which documents were missing as a preliminary step.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C2",
+      "what_went_wrong": "The agent flagged inconsistencies in dates but did not cross-check all date references across documents to ensure consistency in the timeline.",
+      "should_have": "Systematically mapped all date references in transaction documents to identify and resolve inconsistencies.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C3",
+      "what_went_wrong": "The agent identified a currency mismatch but did not calculate the potential financial impact of exchange rate fluctuations on the escrow amount relative to the purchase price.",
+      "should_have": "Quantified the risk of currency mismatch by calculating potential variance based on historical exchange rate data.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C4",
+      "what_went_wrong": "The agent noted missing clauses in the Share Purchase Agreement but did not prioritise them based on legal or commercial criticality (e.g., conditions precedent vs. boilerplate).",
+      "should_have": "Categorised missing clauses by their legal or commercial significance to guide prioritisation for re-drafting.",
+      "failure_kind": "task_specific"
+    },
+    {
+      "criterion_id": "C5",
+      "what_went_wrong": "The agent identified a broad non-compete clause but did not reference jurisdictional precedents or drafting standards to assess enforceability.",
+      "should_have": "Compared non-compete provisions against jurisdictional standards and precedents to assess enforceability risks.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C6",
+      "what_went_wrong": "The agent did not explicitly state whether the issues list was exhaustive or if further review of additional documents was required.",
+      "should_have": "Clarified the scope of review and noted any limitations (e.g., pending document receipt) in the deliverable.",
+      "failure_kind": "procedural"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T025_0",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "Before analysing transaction documents, confirm the completeness of the document set and note any missing documents or clauses explicitly in the issues list.",
+      "source_tasks": [
+        "MNA_T025"
+      ],
+      "evidence": [
+        "MNA_T025:C1"
+      ],
+      "task_type_scope": "issues_list",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T025_1",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Create a timeline of all date references across transaction documents and flag inconsistencies or ambiguities for resolution.",
+      "source_tasks": [
+        "MNA_T025"
+      ],
+      "evidence": [
+        "MNA_T025:C2"
+      ],
+      "task_type_scope": "issues_list",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T025_2",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "For currency mismatches in transaction documents, calculate the potential financial impact using current and historical exchange rates to quantify the risk.",
+      "source_tasks": [
+        "MNA_T025"
+      ],
+      "evidence": [
+        "MNA_T025:C3"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T025_3",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Prioritise issues in the issues list by legal or commercial criticality, labelling each issue with a clear risk rating (e.g., high/medium/low).",
+      "source_tasks": [
+        "MNA_T025"
+      ],
+      "evidence": [
+        "MNA_T025:C4"
+      ],
+      "task_type_scope": "issues_list",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T025_4",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Assess restrictive covenants against jurisdictional precedents and drafting standards to evaluate enforceability and flag potential unenforceability risks.",
+      "source_tasks": [
+        "MNA_T025"
+      ],
+      "evidence": [
+        "MNA_T025:C5"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.8
+    },
+    {
+      "candidate_id": "c01_MNA_T025_5",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Explicitly state the scope of review in the deliverable, including any limitations (e.g., pending document receipt) to manage expectations.",
+      "source_tasks": [
+        "MNA_T025"
+      ],
+      "evidence": [
+        "MNA_T025:C6"
+      ],
+      "task_type_scope": "issues_list",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.95
+    }
+  ],
+  "lesson_feedback": [],
+  "input_tokens": 3222,
+  "output_tokens": 1051,
+  "cost_usd": 0.0031875,
+  "prompt": "# Task\nType: issues_list | Practice area: corporate_mna\nYou act for the Buyer, Delamere Bioscience plc. Delamere Bioscience plc (the Buyer) is acquiring the entire issued share capital of Dunmore Medical Ltd (the Company) from Penrith Energy plc (the Seller).\n\nPrepare an issues list for the supervising partner covering the matter documents. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 30 October 2026. Address the deliverable to the supervising partner.\n\n# Trajectory (24 model steps, 24 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"client_email.md\"})\n 3. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 4. [research] read_document({\"name\": \"share_purchase_agreement.md\", \"start_line\": 40, \"num_lines\": 40})\n 5. [research] read_document({\"name\": \"employment_agreement.md\"})\n 6. [research] read_document({\"name\": \"escrow_agreement.md\"})\n 7. [research] search_documents({\"query\": \"warranty\"})\n 8. [research] search_documents({\"query\": \"consideration\"})\n 9. [research] search_documents({\"query\": \"payment\"})\n10. [analysis] calculate({\"expression\": \"days_between(date('2026-10-30'), date('2026-12-16'))\"})\n11. [analysis] calculate({\"expression\": \"days_between(date('2026-10-25'), date('2026-12-16'))\"})\n12. [research] search_documents({\"query\": \"30 October 2026\"})\n13. [drafting] write_draft(<1022 words>)\n14. [verification] read_draft({})\n15. [editing] edit_draft(find='**Risk:** Significant business risk if Merrion Capital LLP r' -> '**Risk:** Significant business risk if Merrion Capital LLP r')\n16. [editing] edit_draft(find='**Issues:**\\n- **Non-compete Scope**: Clause 18.2 broadly res' -> '**Issues:**\\n- **Non-compete Scope**: Clause 18.2 broadly res')\n17. [verification] calculate({\"expression\": \"days_between(date('2026-10-30'), date('2026-12-16'))\"})\n18. [verification] read_document({\"name\": \"share_purchase_agreement.md\", \"start_line\": 19, \"num_lines\": 10})\n19. [editing] edit_draft(find='### 1.2 Inconsistent Date References\\n- **Escrow Agreement** ' -> '### 1.2 Material Adverse Change Definition\\n- **Clause 1.1**:')\n20. [editing] edit_draft(find='## 2. Escrow Arrangement Issues' -> '## 2. Escrow Arrangement Issues')\n21. [verification] read_draft({})\n22. [verification] read_document({\"name\": \"escrow_agreement.md\", \"start_line\": 5, \"num_lines\": 15})\n23. [verification] search_documents({\"query\": \"Business Days\"})\n24. [control] finish({\"summary\": \"Issues list for the acquisition of Dunmore Medical Ltd by Delamere Bioscience plc, identifying critical deficiencies in transaction documents inclu)\n\n# Final deliverable\n# Issues List: Acquisition of Dunmore Medical Ltd by Delamere Bioscience plc\n\n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Date:** 30 October 2026  \n**Matter:** Acquisition of entire issued share capital of Dunmore Medical Ltd from Penrith Energy plc  \n**Client:** Delamere Bioscience plc (Buyer)\n\n## Executive Summary\n\nThis issues list identifies critical legal and commercial concerns arising from the review of transaction documents for the proposed acquisition of Dunmore Medical Ltd. The documents reveal significant drafting deficiencies, inconsistencies, and potential risks requiring immediate attention before proceeding with the transaction scheduled for completion on 16 December 2026.\n\n## 1. Share Purchase Agreement Deficiencies\n\n### 1.1 Incomplete Agreement\nThe Share Purchase Agreement is substantially incomplete, missing critical clauses:\n- **Missing Clauses 4-8**: Likely covering conditions precedent, purchase price payment mechanism, representations and warranties (except clause 9.7), indemnities, and other fundamental terms\n- **Missing Clauses 10-11, 13-14**: Likely covering limitations on liability, dispute resolution mechanisms, and other essential provisions\n- **No Schedules Attached**: The agreement references schedules but none are provided\n\n**Risk:** Without these provisions, the Buyer lacks essential protections regarding payment mechanics, conditions to closing, comprehensive warranties, and limitations on seller liability.\n\n### 1.2 Material Adverse Change Definition\n- **Clause 1.1**: Definition excludes \"changes in general economic conditions, changes affecting the industry generally, and pandemics\"\n- **Issue**: Overly broad exclusions may render the MAC clause ineffective for Buyer protection\n- No carve-back for disproportionate impact on Company relative to industry peers\n\n**Risk:** Buyer may be unable to rely on MAC clause even if Company suffers disproportionate harm from excluded events.\n\n### 1.3 Inconsistent Date References\n- **Escrow Agreement** (clause 1.1) references a \"Share Purchase Agreement dated 30 October 2026\"\n- **Share Purchase Agreement** is dated 25 October 2026\n- **Escrow Agreement** is also dated 25 October 2026\n\n**Risk:** Creates ambiguity regarding which document governs and may lead to disputes over effective dates.\n\n## 2. Escrow Arrangement Issues\n\n### 2.1 Jurisdictional Conflict\n- **Escrow Agreement** (clause 12): Governed by New York law with ICC arbitration in New York\n- **Share Purchase Agreement** (clause 15): Governed by English law with exclusive English court jurisdiction\n\n**Risk:** Creates forum shopping opportunities and increases dispute resolution costs. The Buyer (English company) would face disadvantage in New York proceedings.\n\n### 2.2 Inconsistent Claim Notification Periods\n- **Share Purchase Agreement** (clause 9.7): 20-day notification period for warranty claims\n- **Escrow Agreement** (clause 5.2): 45-day notification period for claims against escrow\n\n**Risk:** Creates confusion over applicable deadlines and may result in missed claims if the shorter period applies.\n\n### 2.3 Currency Mismatch\n- **Share Purchase Agreement**: Purchase price $255,000,000 (US dollars)\n- **Escrow Agreement**: Escrow Amount £12,500,000 (sterling)\n\n**Risk:** Exchange rate fluctuations could significantly affect the escrow's value relative to the purchase price. No mechanism specified for currency conversion.\n\n## 3. Employment Agreement Concerns\n\n### 3.1 Founder Employment Terms\n- Dr. Eleanor Vance (\"Founder\") employed as Chief Scientific Officer since 1 September 2023\n- Base salary £78,500 with 35% target bonus\n- 6-month notice period either way\n- 12-month post-termination non-compete restriction\n\n**Issues:**\n- **Non-compete Scope**: Clause 18.2 broadly restricts competition in \"point-of-care diagnostic technologies\" - may be overly broad and unenforceable under English law\n- **Clause Numbering Gap**: Agreement jumps from clause 8 to clause 18, suggesting missing provisions\n- **Confidentiality**: Clause 5.1 extends confidentiality to Buyer and Seller information - unusual in employment context\n- **Material Customer Reference**: Specifically mentions Merrion Capital LLP, highlighting its importance\n\n### 3.2 Succession Planning\nNo provision for employment continuity post-acquisition. The Founder's departure could significantly impact business operations given her role as Chief Scientific Officer.\n\n## 4. Transaction Structure Issues\n\n### 4.1 Material Customer Concentration\n- Client email identifies Merrion Capital LLP as \"material customer\"\n- Employment agreement specifically references Merrion Capital LLP as \"Material Customer\"\n- No information provided on customer concentration risk or revenue dependency\n\n**Risk:** Significant business risk if Merrion Capital LLP relationship deteriorates post-acquisition.\n\n### 4.2 Purchase Price Payment Mechanism\n- No details on how $255,000,000 purchase price will be paid\n- No mention of escrow as part of purchase price (escrow appears separate)\n- No conditions precedent to payment specified\n\n## 5. Legal and Regulatory Compliance\n\n### 5.1 Incomplete Warranties\nOnly warranty-related provision (clause 9.7) addresses claim notification. No actual warranties provided regarding:\n- Title to shares\n- Financial statements\n- Tax compliance\n- Litigation\n- Intellectual property\n- Contracts (including with Merrion Capital LLP)\n- Regulatory compliance\n\n**Risk:** Buyer acquires company without standard seller representations regarding business condition.\n\n### 5.2 Missing Indemnities\nNo indemnity provisions for:\n- Pre-completion liabilities\n- Tax liabilities\n- Environmental matters\n- Employee claims\n- Breach of warranties\n\n## 6. Commercial Protection Gaps\n\n### 6.1 Restrictive Covenant\n- Clause 12.1: 5-year non-compete on Seller and affiliates\n- **Issue**: May be unenforceable as overly broad under English restraint of trade doctrine\n- No geographic limitation specified\n- No consideration for restriction apparent\n\n### 6.2 Confidentiality Provisions\n- Share Purchase Agreement clause 17: Standard confidentiality\n- **Issue**: No carve-out for disclosures required for regulatory compliance or financing\n- No return/destruction obligations post-termination\n\n## 7. Timing and Practical Considerations\n\n### 7.1 Completion Timeline\n- Completion scheduled for 16 December 2026 (47 days from current date)\n- Insufficient time to:\n  - Complete due diligence\n  - Draft missing SPA provisions\n  - Negotiate ancillary documents\n  - Obtain regulatory approvals (if required)\n\n### 7.2 Client Deadline\n- Client requested initial advice by 28 October 2026 (2 days ago)\n- Current review identifies fundamental issues requiring extensive re-drafting\n\n## Recommended Actions\n\n### Immediate (Next 7 Days)\n1. **Request Complete SPA Draft** from Seller's counsel with all missing clauses\n2. **Align Governing Law**: Amend Escrow Agreement to English law/English courts\n3. **Clarify Currency**: Specify escrow currency or conversion mechanism\n4. **Harmonize Claim Periods**: Standardize notification periods across documents\n\n### Short-term (Next 14 Days)\n1. **Conduct Due Diligence** on:\n   - Merrion Capital LLP relationship\n   - Founder employment continuity\n   - Financial statements and tax compliance\n   - Intellectual property portfolio\n2. **Draft Comprehensive Warranties** and indemnities\n3. **Review Non-compete Provisions** for enforceability\n4. **Negotiate Employment Continuity** arrangements\n\n### Medium-term (Before Completion)\n1. **Finalize Complete Transaction Documents**\n2. **Establish Payment Mechanics** and conditions precedent\n3. **Address Regulatory Approvals** (if applicable)\n4. **Plan Integration** including Founder retention strategy\n\n## Conclusion\n\nThe transaction documents in their current state present unacceptable risks to the Buyer. The Share Purchase Agreement is fundamentally incomplete, and material inconsistencies exist between documents. Without comprehensive revisions, the Buyer would be acquiring Dunmore Medical Ltd with inadequate legal protections regarding price payment, warranties, indemnities, and dispute resolution.\n\nUrgent action is required to re-draft the core transaction documents and conduct proper due diligence before proceeding with the scheduled 16 December 2026 completion.\n\n# Your job\nNo grades are available. Critically assess the deliverable and the work process yourself, as a demanding supervising partner would, and write reusable candidate lessons for improving the work.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|issues_list\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C1\",\n      \"what_went_wrong\": \"The agent did not verify the completeness of the document set before starting analysis, leading to assumptions about missing clauses (e.g., 'Likely covering conditions precedent') rather than definitive statements.\",\n      \"should_have\": \"Confirmed the document set was complete or explicitly noted which documents were missing as a preliminary step.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C2\",\n      \"what_went_wrong\": \"The agent flagged inconsistencies in dates but did not cross-check all date references across documents to ensure consistency in the timeline.\",\n      \"should_have\": \"Systematically mapped all date references in transaction documents to identify and resolve inconsistencies.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C3\",\n      \"what_went_wrong\": \"The agent identified a currency mismatch but did not calculate the potential financial impact of exchange rate fluctuations on the escrow amount relative to the purchase price.\",\n      \"should_have\": \"Quantified the risk of currency mismatch by calculating potential variance based on historical exchange rate data.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C4\",\n      \"what_went_wrong\": \"The agent noted missing clauses in the Share Purchase Agreement but did not prioritise them based on legal or commercial criticality (e.g., conditions precedent vs. boilerplate).\",\n      \"should_have\": \"Categorised missing clauses by their legal or commercial significance to guide prioritisation for re-drafting.\",\n      \"failure_kind\": \"task_specific\"\n    },\n    {\n      \"criterion_id\": \"C5\",\n      \"what_went_wrong\": \"The agent identified a broad non-compete clause but did not reference jurisdictional precedents or drafting standards to assess enforceability.\",\n      \"should_have\": \"Compared non-compete provisions against jurisdictional standards and precedents to assess enforceability risks.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C6\",\n      \"what_went_wrong\": \"The agent did not explicitly state whether the issues list was exhaustive or if further review of additional documents was required.\",\n      \"should_have\": \"Clarified the scope of review and noted any limitations (e.g., pending document receipt) in the deliverable.\",\n      \"failure_kind\": \"procedural\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"Before analysing transaction documents, confirm the completeness of the document set and note any missing documents or clauses explicitly in the issues list.\",\n      \"evidence\": [\"C1\"],\n      \"task_type_scope\": \"issues_list\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Create a timeline of all date references across transaction documents and flag inconsistencies or ambiguities for resolution.\",\n      \"evidence\": [\"C2\"],\n      \"task_type_scope\": \"issues_list\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"For currency mismatches in transaction documents, calculate the potential financial impact using current and historical exchange rates to quantify the risk.\",\n      \"evidence\": [\"C3\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.85\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"Prioritise issues in the issues list by legal or commercial criticality, labelling each issue with a clear risk rating (e.g., high/medium/low).\",\n      \"evidence\": [\"C4\"],\n      \"task_type_scope\": \"issues_list\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Assess restrictive covenants against jurisdictional precedents and drafting standards to evaluate enforceability and flag potential unenforceability risks.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.8\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"Explicitly state the scope of review in the deliverable, including any limitations (e.g., pending document receipt) to manage expectations.\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"issues_list\",\n      \"confidence\": 0.95\n    }\n  ],\n  \"lesson_feedback\": []\n}\n```"
+}

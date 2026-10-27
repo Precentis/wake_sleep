@@ -1,0 +1,142 @@
+{
+  "task_id": "MNA_T078",
+  "cycle": 1,
+  "lineage": "ablation_no_grading",
+  "graded": false,
+  "failures": [
+    {
+      "criterion_id": "C1",
+      "what_went_wrong": "The deliverable did not verify whether the 'pre-21 May 2026' deadline in the client email was a business day or calendar day, leading to potential misalignment with client expectations.",
+      "should_have": "Clarified whether deadlines mentioned in client communications are business days or calendar days, and flagged any ambiguity.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C2",
+      "what_went_wrong": "The analysis did not cross-check the calculation of the 180-day notice period for the material customer contract renewal against the contract's specific definition of 'days' (e.g., business days vs. calendar days).",
+      "should_have": "Reconciled all deadline calculations with the governing document's definition of 'days' to ensure accuracy.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C3",
+      "what_went_wrong": "The deliverable included a purchase price discrepancy but did not explicitly flag whether the inconsistency was a currency conversion error or a substantive drafting issue.",
+      "should_have": "Distinguished between currency conversion discrepancies and substantive drafting errors when identifying inconsistencies in financial figures.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C4",
+      "what_went_wrong": "The timeline did not account for potential 'drop-dead' dates tied to external events (e.g., regulatory filings, third-party consents) that could override contractual deadlines.",
+      "should_have": "Identified and flagged external deadlines (e.g., regulatory filing windows) that could impact or override contractual timelines.",
+      "failure_kind": "task_specific"
+    },
+    {
+      "criterion_id": "C5",
+      "what_went_wrong": "The deliverable did not include a 'no earlier than' date for closing, despite the SPA likely containing such a provision to prevent premature completion.",
+      "should_have": "Explicitly noted any 'no earlier than' dates for closing or other milestones to avoid premature action.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C6",
+      "what_went_wrong": "The analysis did not verify whether the '5 business days' pre-closing deadline for bank account designation excluded the closing date itself, which could affect the calculation.",
+      "should_have": "Confirmed whether pre-closing deadlines are inclusive or exclusive of the closing date to ensure accurate date calculations.",
+      "failure_kind": "procedural"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T078_0",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "For every deadline expressed in 'days' or 'months,' confirm whether the governing document defines the period as business days, calendar days, or another measure, and recalculate accordingly.",
+      "source_tasks": [
+        "MNA_T078"
+      ],
+      "evidence": [
+        "MNA_T078:C2"
+      ],
+      "task_type_scope": "timeline_analysis",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T078_1",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "When identifying financial discrepancies, first check if the mismatch is due to currency conversion. If not, flag it as a substantive drafting error requiring immediate clarification.",
+      "source_tasks": [
+        "MNA_T078"
+      ],
+      "evidence": [
+        "MNA_T078:C3"
+      ],
+      "task_type_scope": "timeline_analysis",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T078_2",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Include a dedicated section in the timeline analysis for external deadlines (e.g., regulatory filing windows, third-party consent periods) that could override or impact contractual timelines.",
+      "source_tasks": [
+        "MNA_T078"
+      ],
+      "evidence": [
+        "MNA_T078:C4"
+      ],
+      "task_type_scope": "timeline_analysis",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T078_3",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "For pre-closing deadlines, verify whether the countdown excludes the closing date itself. If unclear, assume exclusivity and flag the ambiguity for resolution.",
+      "source_tasks": [
+        "MNA_T078"
+      ],
+      "evidence": [
+        "MNA_T078:C6"
+      ],
+      "task_type_scope": "timeline_analysis",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T078_4",
+      "type": "checklist",
+      "category": "review",
+      "text": "Before finalising a timeline analysis, confirm that all 'no earlier than' dates for milestones (e.g., closing) are explicitly noted to prevent premature action.",
+      "source_tasks": [
+        "MNA_T078"
+      ],
+      "evidence": [
+        "MNA_T078:C5"
+      ],
+      "task_type_scope": "timeline_analysis",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.8
+    },
+    {
+      "candidate_id": "c01_MNA_T078_5",
+      "type": "practice_note",
+      "category": "general",
+      "text": "Clarify whether deadlines in client communications or ancillary documents are business days or calendar days. Flag any ambiguity and seek confirmation from the client or supervising partner.",
+      "source_tasks": [
+        "MNA_T078"
+      ],
+      "evidence": [
+        "MNA_T078:C1"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.8
+    }
+  ],
+  "lesson_feedback": [],
+  "input_tokens": 4220,
+  "output_tokens": 1148,
+  "cost_usd": 0.003832,
+  "prompt": "# Task\nType: timeline_analysis | Practice area: corporate_mna\nYou act for the Buyer, Ivybridge Retail Group plc. Ivybridge Retail Group plc (the Buyer) is acquiring the entire issued share capital of Foxley Software Ltd (the Company) from Rothley Engineering Ltd (the Seller).\n\nPrepare a timeline and deadlines analysis of all time-sensitive obligations in the matter documents. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 21 May 2026. Address the deliverable to the supervising partner.\n\n# Trajectory (38 model steps, 38 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 3. [research] read_document({\"name\": \"disclosure_letter.md\"})\n 4. [research] read_document({\"name\": \"board_minutes.md\"})\n 5. [research] read_document({\"name\": \"client_email.md\"})\n 6. [research] search_documents({\"query\": \"deadline\"})\n 7. [research] search_documents({\"query\": \"date\"})\n 8. [research] search_documents({\"query\": \"expir\"})\n 9. [research] search_documents({\"query\": \"terminat\"})\n10. [analysis] calculate({\"expression\": \"date('2026-05-01')\"})\n11. [analysis] calculate({\"expression\": \"add_days(date('2026-05-01'), 150)\"})\n12. [analysis] calculate({\"expression\": \"add_months(date('2026-06-25'), 18)\"})\n13. [analysis] calculate({\"expression\": \"add_months(date('2026-06-25'), 36)\"})\n14. [analysis] calculate({\"expression\": \"add_days(date('2026-06-25'), -5)\"})\n15. [analysis] calculate({\"expression\": \"prev_business_day(date('2026-06-20'))\"})\n16. [analysis] calculate({\"expression\": \"add_days(date('2026-12-31'), -180)\"})\n17. [analysis] calculate({\"expression\": \"prev_business_day(date('2026-07-04'))\"})\n18. [analysis] calculate({\"expression\": \"date('2026-05-21')\"})\n19. [drafting] write_draft(<1020 words>)\n20. [verification] read_draft({})\n21. [verification] read_document({\"name\": \"share_purchase_agreement.md\", \"start_line\": 40, \"num_lines\": 10})\n22. [verification] read_document({\"name\": \"disclosure_letter.md\", \"start_line\": 64, \"num_lines\": 10})\n23. [editing] edit_draft(find='### 1. Transaction Milestones\\n\\n#### 1.1 Share Purchase Agree' -> '### 1. Transaction Milestones\\n\\n#### 1.1 Share Purchase Agree')\n24. [verification] read_document({\"name\": \"disclosure_letter.md\", \"start_line\": 8, \"num_lines\": 5})\n25. [editing] edit_draft(find='### High Risk Items\\n\\n1. **Regulatory Timeline Conflict:** Ex' -> '### High Risk Items\\n\\n1. **Regulatory Timeline Conflict:** Ex')\n26. [editing] edit_draft(find='## Recommendations\\n\\n1. **Immediate Action:** Request extensi' -> '## Recommendations\\n\\n1. **Immediate Action:** Request extensi')\n27. [verification] search_documents({\"query\": \"notice\"})\n28. [verification] read_document({\"name\": \"board_minutes.md\", \"start_line\": 20, \"num_lines\": 10})\n29. [editing] edit_draft(find='#### 5.1 Juniper Pharma plc Claim\\n- **Letter Before Action D' -> '#### 5.1 Juniper Pharma plc Claim\\n- **Letter Before Action D')\n30. [verification] search_documents({\"query\": \"shareholder\"})\n31. [verification] read_document({\"name\": \"board_minutes.md\", \"start_line\": 18, \"num_lines\": 5})\n32. [editing] edit_draft(find='#### 1.5 Conditions Precedent Longstop Date\\n- **Date:** 28 S' -> '#### 1.5 Conditions Precedent Longstop Date\\n- **Date:** 28 S')\n33. [verification] read_document({\"name\": \"client_email.md\", \"start_line\": 10, \"num_lines\": 5})\n34. [editing] edit_draft(find='#### 1.3 Current Date (Analysis Date)\\n- **Date:** 21 May 202' -> '#### 1.3 Current Date (Analysis Date)\\n- **Date:** 21 May 202')\n35. [editing] edit_draft(find='### Immediate Priorities (Within Next 30 Days)\\n\\n1. **Bank Ac' -> '### Immediate Priorities (Within Next 30 Days)\\n\\n1. **Urgent ')\n36. [editing] edit_draft(find='## Recommendations\\n\\n1. **Immediate Action:** Request extensi' -> '## Recommendations\\n\\n1. **Immediate Action Today:** Submit re')\n37. [verification] read_draft({})\n38. [control] finish({\"summary\": \"Completed timeline and deadlines analysis for the acquisition of Foxley Software Ltd by Ivybridge Retail Group plc. Identified critical deadlines i)\n\n# Final deliverable\n# Timeline and Deadlines Analysis\n## Acquisition of Foxley Software Ltd by Ivybridge Retail Group plc\n\n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Date:** 21 May 2026  \n**Matter:** Acquisition of Foxley Software Ltd by Ivybridge Retail Group plc  \n**Client:** Ivybridge Retail Group plc (Buyer)\n\n---\n\n## Executive Summary\n\nThis analysis identifies all time-sensitive obligations and deadlines arising from the proposed acquisition of Foxley Software Ltd (the \"Company\") by Ivybridge Retail Group plc (the \"Buyer\") from Rothley Engineering Ltd (the \"Seller\"). The key deadlines are:\n\n1. **Closing Date:** 25 June 2026\n2. **Conditions Precedent Longstop Date:** 28 September 2026\n3. **Material Customer Contract Renewal Notice Deadline:** 3 July 2026\n4. **Warranty Survival Periods:** 18 months (General Warranties) and 36 months (Fundamental Warranties) from Closing\n5. **Regulatory Clearance Expected:** 28 October 2026\n\n## Detailed Timeline Analysis\n\n### 1. Transaction Milestones\n\n#### 1.1 Share Purchase Agreement Date\n- **Date:** 1 May 2026 (Friday)\n- **Reference:** Share Purchase Agreement, Clause 1\n- **Status:** Already occurred\n\n#### 1.2 Disclosure Letter Date\n- **Date:** 18 May 2026 (Monday)\n- **Reference:** Disclosure Letter, Date\n- **Status:** Already occurred\n\n#### 1.3 Purchase Price Discrepancy\n- **Share Purchase Agreement:** $195,000,000 (Clause 2.1)\n- **Disclosure Letter:** £14,250,000 (Clause 6.1)\n- **Issue:** Significant inconsistency requiring immediate clarification\n- **Reference:** Share Purchase Agreement Clause 2.1 vs Disclosure Letter Clause 6.1\n\n#### 1.3 Current Date (Analysis Date)\n- **Date:** 21 May 2026 (Thursday)\n- **Status:** Today\n- **Urgent Deadline:** Client requires initial drafts submitted \"pre-21 May 2026\" (Client Email, 18 May 2026)\n- **Status:** Due today\n\n#### 1.4 Closing Date\n- **Date:** 25 June 2026 (Thursday)\n- **Reference:** Share Purchase Agreement, Clause 1.1 (\"Closing Date\")\n- **Obligations:**\n  - Seller must deliver:\n    - Duly executed instruments of transfer for the Shares\n    - Share certificates representing the Shares\n    - Resignations of directors/officers appointed by Seller\n    - Corporate authorisations and consents\n  - Buyer must pay Purchase Price of $195,000,000\n- **Critical Pre-Closing Deadline:** Seller must designate bank account for payment at least 5 Business Days prior to Closing Date\n  - **Deadline:** 19 June 2026 (Friday) [5 business days before 25 June 2026]\n  - **Reference:** Share Purchase Agreement, Clause 2.2\n\n#### 1.5 Conditions Precedent Longstop Date\n- **Date:** 28 September 2026 (Monday) [150 days from 1 May 2026]\n- **Reference:** Share Purchase Agreement, Clause 4.5\n- **Consequence:** If Conditions are not satisfied or validly waived by this date, either party may terminate the Agreement\n- **Note:** Conditions precedent include regulatory clearances and shareholder approval (Board Minutes, 18 May 2026)\n\n### 2. Regulatory Timeline\n\n#### 2.1 Expected Merger Clearance\n- **Date:** 28 October 2026\n- **Reference:** Client Email, 18 May 2026\n- **Note:** Regulatory counsel confirms merger clearance expected by this date\n- **Implication:** This falls after the Conditions Precedent Longstop Date (28 September 2026), which may require extension or waiver\n\n### 3. Key Customer Contract Deadlines\n\n#### 3.1 Material Customer Contract (Quayside Retail Group plc)\n- **Contract Commencement:** 1 January 2024\n- **Initial Term Expiry:** 31 December 2026\n- **Automatic Renewal:** For successive one-year periods unless terminated\n- **Notice Period for Termination:** Not less than 180 days' written notice prior to expiry\n- **Critical Notice Deadline:** 3 July 2026 (Friday) [180 days before 31 December 2026]\n- **Reference:** Disclosure Letter, Clause 5.2\n- **Revenue Significance:** 47% of Company's total revenue for FYE 31 December 2025\n- **Current Status:** Preliminary renewal discussions commenced (Board Minutes, 18 May 2026)\n- **Renewal Date:** 1 September 2026 (Board Minutes reference ongoing renewal discussions)\n\n### 4. Warranty Survival Periods\n\n#### 4.1 General Warranties\n- **Survival Period:** 18 months from Closing Date\n- **Expiry Date:** 25 December 2027 (Saturday) [18 months from 25 June 2026]\n- **Claim Notification Deadline:** Prior to expiry of survival period\n- **Reference:** Share Purchase Agreement, Clause 10.1\n\n#### 4.2 Fundamental Warranties\n- **Survival Period:** 36 months from Closing Date\n- **Expiry Date:** 25 June 2029 (Monday) [36 months from 25 June 2026]\n- **Claim Notification Deadline:** Prior to expiry of survival period\n- **Reference:** Share Purchase Agreement, Clause 10.1\n\n### 5. Litigation Matter\n\n#### 5.1 Juniper Pharma plc Claim\n- **Letter Before Action Date:** 12 May 2026\n- **Claim Amount:** Approximately $3,400,000\n- **Allegation:** Defective deliveries under supply agreement dated 15 March 2024\n- **Current Status:** Legal counsel instructed to assess merits; management reporting biweekly to board\n- **Reporting Requirement:** Biweekly updates to board (next due approximately 1 June 2026)\n- **Reference:** Board Minutes, 18 May 2026\n- **Critical Action:** Requires ongoing monitoring and may impact due diligence\n\n### 6. Confidentiality Obligations\n\n#### 6.1 Confidentiality Agreement\n- **Date:** 12 March 2026\n- **Reference:** Disclosure Letter, Clause 8.1\n- **Obligation:** Disclosure Letter contents treated as confidential\n\n## Critical Path Analysis\n\n### Immediate Priorities (Within Next 30 Days)\n\n1. **Urgent Action Today:** Submit initial drafts of documentation as required \"pre-21 May 2026\" (Client Email)\n2. **Bank Account Designation:** Ensure Seller provides bank account details by 19 June 2026\n3. **Material Customer Contract:** Decision required on renewal/termination by 3 July 2026\n4. **Conditions Precedent:** Monitor progress against 28 September 2026 longstop date\n5. **Regulatory Clearance:** Coordinate with regulatory counsel to ensure timeline alignment\n\n### Medium-Term Priorities (1-3 Months)\n\n1. **Closing Preparation:** Complete all Closing deliverables for 25 June 2026\n2. **Integration Planning:** Align with expected regulatory clearance of 28 October 2026\n3. **Litigation Management:** Continue monitoring Juniper Pharma claim\n\n### Long-Term Considerations\n\n1. **Warranty Claims:** Maintain records for potential claims up to 25 June 2029\n2. **Customer Relationships:** Manage Quayside Retail Group relationship post-acquisition\n\n## Risk Assessment\n\n### High Risk Items\n\n1. **Regulatory Timeline Conflict:** Expected clearance (28 October 2026) exceeds Conditions Precedent longstop date (28 September 2026)\n2. **Material Customer Dependency:** 47% revenue concentration with contract expiring 31 December 2026\n3. **Litigation Exposure:** $3,400,000 claim from Juniper Pharma plc\n4. **Document Inconsistencies:** \n   - Purchase price discrepancy: $195,000,000 (SPA) vs £14,250,000 (Disclosure Letter)\n   - Agreement date discrepancy: 1 May 2026 (SPA) vs \"on or about 18 May 2026\" (Disclosure Letter)\n\n### Medium Risk Items\n\n1. **Conditions Precedent:** Unspecified conditions may delay Closing\n2. **Integration Planning:** Dependent on regulatory timeline\n\n## Recommendations\n\n1. **Immediate Action Today:** Submit required documentation drafts as per client's \"pre-21 May 2026\" requirement\n2. **Timeline Extension:** Request extension of Conditions Precedent longstop date to align with expected regulatory clearance timeline\n3. **Document Clarification:** Resolve critical inconsistencies in purchase price ($195,000,000 vs £14,250,000) and agreement dates (1 May 2026 vs 18 May 2026)\n4. **Customer Contract:** Develop strategy for Quayside Retail Group contract renewal/termination by 3 July 2026\n5. **Due Diligence:** Intensify review of Juniper Pharma claim and potential liability\n6. **Closing Preparation:** Confirm all Closing deliverables on track for 25 June 2026\n7. **Communication:** Regular updates to client on critical path items\n\n## Conclusion\n\nThe acquisition timeline presents several critical deadlines requiring immediate attention, particularly the conflict between the Conditions Precedent longstop date (28 September 2026) and the expected regulatory clearance date (28 October 2026). The material customer contract renewal decision deadline of 3 July 2026 also requires prompt strategic consideration given the customer's significant revenue contribution.\n\nAll parties should proceed with urgency to address these timeline constraints while maintaining thorough due diligence on the ongoing litigation matter.\n\n# Your job\nNo grades are available. Critically assess the deliverable and the work process yourself, as a demanding supervising partner would, and write reusable candidate lessons for improving the work.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|timeline_analysis\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C1\",\n      \"what_went_wrong\": \"The deliverable did not verify whether the 'pre-21 May 2026' deadline in the client email was a business day or calendar day, leading to potential misalignment with client expectations.\",\n      \"should_have\": \"Clarified whether deadlines mentioned in client communications are business days or calendar days, and flagged any ambiguity.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C2\",\n      \"what_went_wrong\": \"The analysis did not cross-check the calculation of the 180-day notice period for the material customer contract renewal against the contract's specific definition of 'days' (e.g., business days vs. calendar days).\",\n      \"should_have\": \"Reconciled all deadline calculations with the governing document's definition of 'days' to ensure accuracy.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C3\",\n      \"what_went_wrong\": \"The deliverable included a purchase price discrepancy but did not explicitly flag whether the inconsistency was a currency conversion error or a substantive drafting issue.\",\n      \"should_have\": \"Distinguished between currency conversion discrepancies and substantive drafting errors when identifying inconsistencies in financial figures.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C4\",\n      \"what_went_wrong\": \"The timeline did not account for potential 'drop-dead' dates tied to external events (e.g., regulatory filings, third-party consents) that could override contractual deadlines.\",\n      \"should_have\": \"Identified and flagged external deadlines (e.g., regulatory filing windows) that could impact or override contractual timelines.\",\n      \"failure_kind\": \"task_specific\"\n    },\n    {\n      \"criterion_id\": \"C5\",\n      \"what_went_wrong\": \"The deliverable did not include a 'no earlier than' date for closing, despite the SPA likely containing such a provision to prevent premature completion.\",\n      \"should_have\": \"Explicitly noted any 'no earlier than' dates for closing or other milestones to avoid premature action.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C6\",\n      \"what_went_wrong\": \"The analysis did not verify whether the '5 business days' pre-closing deadline for bank account designation excluded the closing date itself, which could affect the calculation.\",\n      \"should_have\": \"Confirmed whether pre-closing deadlines are inclusive or exclusive of the closing date to ensure accurate date calculations.\",\n      \"failure_kind\": \"procedural\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"For every deadline expressed in 'days' or 'months,' confirm whether the governing document defines the period as business days, calendar days, or another measure, and recalculate accordingly.\",\n      \"evidence\": [\"C2\"],\n      \"task_type_scope\": \"timeline_analysis\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"When identifying financial discrepancies, first check if the mismatch is due to currency conversion. If not, flag it as a substantive drafting error requiring immediate clarification.\",\n      \"evidence\": [\"C3\"],\n      \"task_type_scope\": \"timeline_analysis\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"Include a dedicated section in the timeline analysis for external deadlines (e.g., regulatory filing windows, third-party consent periods) that could override or impact contractual timelines.\",\n      \"evidence\": [\"C4\"],\n      \"task_type_scope\": \"timeline_analysis\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"For pre-closing deadlines, verify whether the countdown excludes the closing date itself. If unclear, assume exclusivity and flag the ambiguity for resolution.\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"timeline_analysis\",\n      \"confidence\": 0.85\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"review\",\n      \"text\": \"Before finalising a timeline analysis, confirm that all 'no earlier than' dates for milestones (e.g., closing) are explicitly noted to prevent premature action.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"timeline_analysis\",\n      \"confidence\": 0.8\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"general\",\n      \"text\": \"Clarify whether deadlines in client communications or ancillary documents are business days or calendar days. Flag any ambiguity and seek confirmation from the client or supervising partner.\",\n      \"evidence\": [\"C1\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.8\n    }\n  ],\n  \"lesson_feedback\": []\n}\n```"
+}

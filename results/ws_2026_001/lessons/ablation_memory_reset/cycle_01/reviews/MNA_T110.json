@@ -1,0 +1,155 @@
+{
+  "task_id": "MNA_T110",
+  "cycle": 1,
+  "lineage": "ablation_memory_reset",
+  "graded": true,
+  "failures": [
+    {
+      "criterion_id": "C4",
+      "what_went_wrong": "The agent identified the discrepancy between the stated cap and the percentage but did not explicitly show the arithmetic calculation (25% × purchase price) in the deliverable.",
+      "should_have": "Explicitly included the calculation steps and result in the memo to demonstrate the discrepancy clearly.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C5",
+      "what_went_wrong": "The agent identified inconsistencies but did not analyze or explain alternative interpretations of ambiguous terms (e.g., whether the cap percentage or the stated figure was intended to govern).",
+      "should_have": "For ambiguous terms or clauses, provided a structured analysis of each possible interpretation and its legal or commercial implications.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C6",
+      "what_went_wrong": "The agent did not include a dedicated 'Assumptions and open questions' section to flag missing information or items requiring client confirmation.",
+      "should_have": "Created a standalone section in the memo listing assumptions made and open questions for client follow-up.",
+      "failure_kind": "procedural"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T110_0",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "For any financial cap or threshold expressed as a percentage of a base figure, include the explicit arithmetic calculation in the deliverable to demonstrate the derived amount.",
+      "source_tasks": [
+        "MNA_T110"
+      ],
+      "evidence": [
+        "MNA_T110:C4"
+      ],
+      "task_type_scope": "legal_memo",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T110_1",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "When encountering ambiguous terms or clauses, analyze each plausible interpretation, explain its legal or commercial effect, and recommend the preferred reading or further clarification.",
+      "source_tasks": [
+        "MNA_T110"
+      ],
+      "evidence": [
+        "MNA_T110:C5"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T110_2",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Include an 'Assumptions and Open Questions' section in every legal memo to list information gaps, unverified facts, or items requiring client confirmation.",
+      "source_tasks": [
+        "MNA_T110"
+      ],
+      "evidence": [
+        "MNA_T110:C6"
+      ],
+      "task_type_scope": "legal_memo",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T110_3",
+      "type": "practice_note",
+      "category": "review",
+      "text": "Before finalising a legal memo, verify that all calculations, especially those involving percentages or derived figures, are explicitly shown and cross-checked for accuracy.",
+      "source_tasks": [
+        "MNA_T110"
+      ],
+      "evidence": [
+        "MNA_T110:C4"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T110_4",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "For every discrepancy between a stated figure and a percentage-based cap, recompute both directions (figure → percentage and percentage → figure) to confirm which is correct.",
+      "source_tasks": [
+        "MNA_T110"
+      ],
+      "evidence": [
+        "MNA_T110:C4"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T110_5",
+      "type": "checklist",
+      "category": "review",
+      "text": "Ensure the deliverable contains a section explicitly listing assumptions made during analysis and questions that remain unanswered for client follow-up.",
+      "source_tasks": [
+        "MNA_T110"
+      ],
+      "evidence": [
+        "MNA_T110:C6"
+      ],
+      "task_type_scope": "legal_memo",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.95
+    }
+  ],
+  "lesson_feedback": [
+    {
+      "lesson_id": "L0001",
+      "label": "HELPFUL",
+      "reason": "Directly addresses the procedural failure in C4 by ensuring calculations are shown, which is a reusable drafting practice."
+    },
+    {
+      "lesson_id": "L0002",
+      "label": "HELPFUL",
+      "reason": "Provides a clear method for handling ambiguity, which is a common issue in legal analysis and applicable beyond this task."
+    },
+    {
+      "lesson_id": "L0003",
+      "label": "HELPFUL",
+      "reason": "Ensures missing information or client follow-ups are systematically captured, improving client communication and risk management."
+    },
+    {
+      "lesson_id": "L0004",
+      "label": "HELPFUL",
+      "reason": "Reinforces the need for verification of calculations, which is a critical review step for accuracy."
+    },
+    {
+      "lesson_id": "L0005",
+      "label": "HELPFUL",
+      "reason": "Encourages thorough recomputation, which is a good practice for catching errors in financial terms."
+    },
+    {
+      "lesson_id": "L0006",
+      "label": "HELPFUL",
+      "reason": "Complements L0003 by ensuring the review process explicitly checks for this section, reducing the risk of omission."
+    }
+  ],
+  "input_tokens": 4801,
+  "output_tokens": 1133,
+  "cost_usd": 0.0041,
+  "prompt": "# Task\nType: legal_memo | Practice area: corporate_mna\nYou act for the Buyer, Quayside Engineering Ltd. Quayside Engineering Ltd (the Buyer) is acquiring the entire issued share capital of Redcliffe Marine Ltd (the Company) from Brightwater Analytics Ltd (the Seller).\n\nPrepare a legal memo for the supervising partner analysing the key legal risks in the matter documents. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 29 December 2026. Address the deliverable to the supervising partner.\n\n# Trajectory (26 model steps, 26 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"client_email.md\"})\n 3. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 4. [research] read_document({\"name\": \"disclosure_letter.md\"})\n 5. [research] read_document({\"name\": \"material_customer_contract.md\"})\n 6. [research] read_document({\"name\": \"escrow_agreement.md\"})\n 7. [research] search_documents({\"query\": \"Warranties\"})\n 8. [research] search_documents({\"query\": \"Clause 8\"})\n 9. [research] read_document({\"name\": \"share_purchase_agreement.md\", \"start_line\": 70, \"num_lines\": 20})\n10. [research] search_documents({\"query\": \"material contract\"})\n11. [research] search_documents({\"query\": \"change of control\"})\n12. [analysis] calculate({\"expression\": \"date('2026-12-29')\"})\n13. [analysis] calculate({\"expression\": \"date('2027-02-15')\"})\n14. [drafting] write_draft(<1291 words>)\n15. [verification] read_draft({})\n16. [verification] calculate({\"expression\": \"185000000 * 0.185\"})\n17. [verification] calculate({\"expression\": \"185000000 * 0.25\"})\n18. [verification] calculate({\"expression\": \"37000000 / 185000000\"})\n19. [editing] edit_draft(find='#### 3.1.1 Liability Cap\\n- Aggregate liability capped at 25%' -> '#### 3.1.1 Liability Cap\\n- Aggregate liability stated as cap')\n20. [editing] edit_draft(find='#### 3.1.2 Claim Notification Period\\n- **Extremely short**: ' -> '#### 3.1.2 Claim Notification Period\\n- **Extremely short**: ')\n21. [editing] edit_draft(find='### 5.1 Document Execution Timing\\n- SPA dated: 20 December 2' -> '### 5.1 Document Execution Timing\\n- SPA dated: 20 December 2')\n22. [verification] search_documents({\"query\": \"termination\"})\n23. [verification] search_documents({\"query\": \"indemn\"})\n24. [editing] edit_draft(find='## 6. Additional Observations\\n\\n### 6.1 Purchase Price Struct' -> \"## 6. Additional Observations\\n\\n### 6.1 Client's Specific Req\")\n25. [verification] read_draft({})\n26. [control] finish({\"summary\": \"Legal memo analyzing key legal risks in Quayside Engineering Ltd's acquisition of Redcliffe Marine Ltd, identifying critical issues including mater)\n\n# Final deliverable\n# Legal Risk Analysis Memorandum\n\n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Date:** 29 December 2026  \n**Subject:** Legal Risk Analysis - Acquisition of Redcliffe Marine Ltd by Quayside Engineering Ltd  \n**Matter:** Quayside Engineering Ltd / Redcliffe Marine Ltd Acquisition  \n\n## Executive Summary\n\nThis memorandum analyses the key legal risks in the proposed acquisition of Redcliffe Marine Ltd (\"the Company\") by Quayside Engineering Ltd (\"the Buyer\") from Brightwater Analytics Ltd (\"the Seller\"). The transaction involves a purchase price of $185,000,000 with closing scheduled for 15 February 2027.\n\nOur review of the transaction documents reveals several significant legal risks requiring immediate attention, most critically:\n1. A material misrepresentation in the Disclosure Letter regarding change of control provisions\n2. A conflict of interest in the escrow arrangement with Netherby Capital LLP\n3. Unfavourable warranty limitations and claim notification periods\n4. Risks associated with the Company's key customer contract\n\n## 1. Critical Risk: Material Misrepresentation in Disclosure Letter\n\n### 1.1 The Contradiction\nThe Disclosure Letter dated 28 December 2026 states at Clause 3.1(c): \"No material contract to which the Company is a party contains a change of control provision.\"\n\nHowever, the Material Customer Contract (the Netherby Agreement dated 14 February 2021) contains a clear change of control provision at Clause 14.2, which states:\n\n> \"Either party may terminate this Agreement on thirty (30) days' notice if the other party undergoes a change of control without the prior written consent of the Customer. For the purposes of this clause, a 'change of control' shall include the acquisition of more than fifty-one per cent (51%) of the issued share capital of the Company by a third party, including but not limited to Quayside Engineering Ltd...\"\n\n### 1.2 Legal Implications\nThis constitutes a material misrepresentation that:\n- Directly contradicts the warranty disclosure\n- Could provide grounds for warranty claims against the Seller\n- Creates immediate risk of contract termination by Netherby Capital LLP post-acquisition\n- May affect the valuation of the Company given this key customer relationship represents \"a material portion of its current revenue\" (Client Email)\n\n### 1.3 Recommended Action\n1. Immediately notify the Seller of this discrepancy\n2. Seek clarification and potentially revised disclosures\n3. Consider whether this affects the purchase price or requires additional protections\n4. Document this issue for potential warranty claims\n\n## 2. Escrow Arrangement Conflict of Interest\n\n### 2.1 The Conflict\nThe Escrow Agreement dated 27 December 2026 appoints Netherby Capital LLP as the Escrow Agent. This creates a significant conflict of interest because:\n\n1. **Netherby Capital LLP is the Company's key customer** under the Material Customer Contract\n2. **Netherby Capital LLP has termination rights** under the change of control provision\n3. **Netherby Capital LLP holds $34,225,000** (18.5% of the purchase price) in escrow\n4. The escrow arrangement gives Netherby Capital LLP leverage over both Buyer and Seller\n\n### 2.2 Specific Concerns\n- **Bias in claims handling**: Netherby Capital LLP may be influenced by its commercial relationship with the Company\n- **Confidentiality risks**: Netherby Capital LLP gains access to sensitive transaction information\n- **Undue influence**: Netherby Capital LLP could use its position to influence post-acquisition contract negotiations\n- **Regulatory concerns**: Potential breaches of fiduciary duty principles\n\n### 2.3 Recommended Action\n1. **Immediate replacement** of Netherby Capital LLP as Escrow Agent\n2. Appointment of an independent financial institution or professional escrow agent\n3. Review of all escrow terms to ensure independence and impartiality\n\n## 3. Warranty and Liability Limitations\n\n### 3.1 Unfavourable Terms\nThe Share Purchase Agreement contains several unfavourable provisions for the Buyer:\n\n#### 3.1.1 Liability Cap\n- Aggregate liability stated as capped at 25% of purchase price but calculated as $37,000,000 (which is actually 20% of $185,000,000)\n- **Mathematical discrepancy**: Either the percentage or amount is incorrect\n- This may be insufficient given the transaction size and potential risks\n\n#### 3.1.2 Claim Notification Period\n- **Extremely short**: 20 days from becoming aware of a claim (SPA Clause 9.7)\n- **Inconsistent with escrow**: Escrow Agreement allows 45 days (Clause 5.2) - creates confusion and potential disputes\n- **Practically unworkable** for complex warranty claims requiring investigation\n\n#### 3.1.3 Missing Warranties\nThe SPA appears incomplete with:\n- Missing Clause 7 and Clause 8\n- Incomplete Clause 9 (only 9.2 and 9.7 present)\n- No specific warranties regarding material contracts, assets, or liabilities\n\n### 3.2 Recommended Action\n1. **Extend claim notification period** to at least 6-12 months post-closing\n2. **Align SPA and escrow claim periods** to avoid confusion\n3. **Review and complete warranty schedule** with specific protections\n4. **Consider higher liability cap** or uncapped liability for fundamental warranties\n\n## 4. Netherby Agreement Risks\n\n### 4.1 Change of Control Provision\nClause 14.2 of the Netherby Agreement permits termination on 30 days' notice for change of control without consent. Given:\n- The acquisition constitutes a change of control (acquisition of 100% shares)\n- Netherby Capital LLP has not provided consent\n- The contract represents material revenue for the Company\n\n### 4.2 Performance Termination Risk\nThe Disclosure Letter notes (Clause 3.1(b)) that the Netherby Agreement includes \"a clause permitting termination by Netherby Capital LLP if the Company fails to meet defined service level metrics for two consecutive quarters.\"\n\n### 4.3 Contract Term\nThe Netherby Agreement commenced on 14 February 2021 for an initial 3-year term. It is unclear whether:\n- The contract has been renewed\n- It continues on a rolling basis\n- There are renewal terms or conditions\n\n### 4.4 Recommended Action\n1. **Immediate engagement** with Netherby Capital LLP to obtain change of control consent\n2. **Due diligence** on performance metrics and current compliance\n3. **Contract review** to understand renewal terms and conditions\n4. **Consider contingency planning** for potential termination\n\n## 5. Timing and Procedural Issues\n\n### 5.1 Document Execution Timing\n- SPA dated: 20 December 2026 (though Escrow Agreement references SPA dated 25 December 2026 - inconsistency)\n- Escrow Agreement dated: 27 December 2026  \n- Disclosure Letter dated: 28 December 2026\n- Our analysis date: 29 December 2026\n\n**Concerns**: \n1. Key documents were executed before our comprehensive review\n2. **Date inconsistency**: Escrow Agreement references SPA dated 25 December 2026, but SPA shows 20 December 2026\n3. Potential version control issues with transaction documents\n\n### 5.2 Closing Timeline\n- Closing Date: 15 February 2027\n- Current date: 29 December 2026\n- Time available for remediation: Approximately 7 weeks\n\n### 5.3 Recommended Action\n1. **Immediate client meeting** to discuss risks and required actions\n2. **Priority renegotiation** of critical issues identified\n3. **Documented advice** to client regarding risks of proceeding without amendments\n\n## 6. Additional Observations\n\n### 6.1 Client's Specific Request\nThe client specifically requested our assistance in reviewing \"existing commercial agreements between the Company and Netherby Capital LLP to assess any transfer restrictions or consent requirements that may impact the proposed acquisition\" (Client Email).\n\n**Our Findings**:\n1. **Transfer restriction identified**: Change of control provision in Clause 14.2 of Netherby Agreement\n2. **Consent requirement**: Implied consent requirement for change of control\n3. **Termination risk**: 30-day termination right if consent not obtained\n4. **Material revenue at risk**: Contract represents \"a material portion of its current revenue\"\n\n### 6.2 Purchase Price Structure\n- Total consideration: $185,000,000\n- Payable in full on Closing Date (15 February 2027)\n- No earn-out or performance-based elements\n- No price adjustment mechanisms for working capital or net debt\n\n### 6.3 Governing Law and Jurisdiction\nAll documents governed by English law with exclusive English jurisdiction - appropriate for UK entities.\n\n### 6.4 Confidentiality Provisions\nStandard confidentiality provisions across documents, though the escrow arrangement creates confidentiality concerns with Netherby Capital LLP.\n\n## 7. Priority Action Plan\n\n### Immediate (Next 7 days):\n1. **Client meeting** to present risk analysis\n2. **Formal notification** to Seller regarding Disclosure Letter discrepancy\n3. **Commence renegotiation** of escrow agent replacement\n4. **Engage with Netherby Capital LLP** regarding change of control consent\n\n### Short-term (Next 14 days):\n1. **Renegotiate warranty terms** including claim periods and liability caps\n2. **Complete missing SPA clauses** with comprehensive warranties\n3. **Due diligence** on Netherby Agreement performance and renewal status\n4. **Document all communications** regarding identified risks\n\n### Pre-closing (Before 15 February 2027):\n1. **Finalise amended documents**\n2. **Obtain all necessary consents**\n3. **Implement risk mitigation strategies**\n4. **Final client sign-off** on risk acceptance or further amendments\n\n## 8. Conclusion\n\nThis transaction presents significant legal risks requiring immediate attention. The most critical issues are:\n\n1. **Material misrepresentation** in the Disclosure Letter regarding change of control provisions\n2. **Conflict of interest** in the escrow arrangement\n3. **Inadequate warranty protections** for the Buyer\n\nWithout addressing these issues, the Buyer faces substantial risk of:\n- Losing its key customer relationship post-acquisition\n- Inadequate recourse for warranty breaches\n- Potential disputes with the escrow agent/customer\n\n**Recommendation**: Urgent renegotiation of key terms is required before proceeding to closing on 15 February 2027.\n\n# Expert rubric verdicts (3/6 passed)\n- C1 [PASS] Identifies that the Netherby Capital LLP contract (Clause 14.2) allows termination on a change of control without consent, that the disclosure against Warranty 6.3 says there is no such provision, and that consent should be obtained as a condition to Closing.\n    judges: PASS: The deliverable correctly identifies the contradiction between Clause 14.2 of the Netherby Agreement (allowing termination on change of control without consent) and Disclosure Letter Clause 3.1(c) (stating no such provis | PASS: The deliverable clearly identifies Clause 14.2's change of control termination right, contrasts it with Disclosure Letter Clause 3.1(c)'s statement that no such provision exists, and recommends obtaining consent from Net\n- C2 [PASS] Identifies the conflict between the 20-day claim notice period in SPA Section 9.7 and the 45-day period in Escrow Clause 5.2, and recommends the Buyer works to the shorter 20-day period or aligns the documents.\n    judges: PASS: The deliverable identifies the conflict between the 20-day claim period in SPA Clause 9.7 and the 45-day period in Escrow Clause 5.2, and recommends aligning the documents or working to the shorter period. | PASS: The deliverable explicitly identifies the conflict between SPA Clause 9.7 (20 days) and Escrow Clause 5.2 (45 days) at Section 3.1.2, noting it 'creates confusion and potential disputes,' and recommends aligning the peri\n- C3 [PASS] Identifies that the warranty cap in SPA Section 9.2 is stated as $37,000,000 but 25% of the $185,000,000 Purchase Price is $46,250,000, i.e. the stated figure is wrong.\n    judges: PASS: The deliverable identifies that the warranty cap in SPA Section 9.2 is stated as $37,000,000 but that this figure is incorrect given the stated 25% of $185,000,000 purchase price. | PASS: The deliverable correctly identifies the mathematical error at Section 3.1.1: 'Aggregate liability stated as capped at 25% of purchase price but calculated as $37,000,000 (which is actually 20% of $185,000,000)' and stat\n- C4 [FAIL] Shows the arithmetic for the cap (25% x $185,000,000 = $46,250,000) and flags the discrepancy with the stated $37,000,000.\n    judges: FAIL: The deliverable fails to show the correct arithmetic; it incorrectly states that 25% of $185,000,000 is $46,250,000 (the correct calculation is $46,250,000), but more critically, it miscalculates internally by stating $3 | FAIL: While the deliverable identifies the discrepancy and notes that $37,000,000 is 20% rather than 25%, it does not explicitly show the correct arithmetic calculation of 25% × $185,000,000 = $46,250,000. The correct figure i\n- C5 [FAIL] Where a defined term or clause is ambiguous, explains how each alternative reading would work.\n    judges: FAIL: The deliverable does not explain how alternative readings of any ambiguous defined term or clause would work; it identifies inconsistencies but does not analyze alternative interpretations of ambiguous terms. | FAIL: The deliverable does not explain alternative readings of any ambiguous defined term or clause. For example, it does not explore whether the warranty cap discrepancy could be resolved by treating '25%' as the operative li\n- C6 [FAIL] Includes an 'Assumptions and open questions' section listing information that is missing or should be confirmed with the client.\n    judges: FAIL: The deliverable lacks a dedicated 'Assumptions and open questions' section listing missing information or items to confirm with the client, which is specifically required by the rubric. | FAIL: The deliverable does not contain an 'Assumptions and open questions' section listing missing information or items to confirm with the client. While some open questions are raised in context (e.g., contract renewal status\n\n# Your job\nAnalyse each FAILED criterion: what went wrong, what the agent should have done, and whether the failure is procedural (reusable) or task-specific. Then write reusable candidate lessons that would prevent the procedural failures on other matters.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|legal_memo\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C4\",\n      \"what_went_wrong\": \"The agent identified the discrepancy between the stated cap and the percentage but did not explicitly show the arithmetic calculation (25% × purchase price) in the deliverable.\",\n      \"should_have\": \"Explicitly included the calculation steps and result in the memo to demonstrate the discrepancy clearly.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C5\",\n      \"what_went_wrong\": \"The agent identified inconsistencies but did not analyze or explain alternative interpretations of ambiguous terms (e.g., whether the cap percentage or the stated figure was intended to govern).\",\n      \"should_have\": \"For ambiguous terms or clauses, provided a structured analysis of each possible interpretation and its legal or commercial implications.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C6\",\n      \"what_went_wrong\": \"The agent did not include a dedicated 'Assumptions and open questions' section to flag missing information or items requiring client confirmation.\",\n      \"should_have\": \"Created a standalone section in the memo listing assumptions made and open questions for client follow-up.\",\n      \"failure_kind\": \"procedural\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"For any financial cap or threshold expressed as a percentage of a base figure, include the explicit arithmetic calculation in the deliverable to demonstrate the derived amount.\",\n      \"evidence\": [\"C4\"],\n      \"task_type_scope\": \"legal_memo\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"When encountering ambiguous terms or clauses, analyze each plausible interpretation, explain its legal or commercial effect, and recommend the preferred reading or further clarification.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"Include an 'Assumptions and Open Questions' section in every legal memo to list information gaps, unverified facts, or items requiring client confirmation.\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"legal_memo\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"review\",\n      \"text\": \"Before finalising a legal memo, verify that all calculations, especially those involving percentages or derived figures, are explicitly shown and cross-checked for accuracy.\",\n      \"evidence\": [\"C4\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"For every discrepancy between a stated figure and a percentage-based cap, recompute both directions (figure → percentage and percentage → figure) to confirm which is correct.\",\n      \"evidence\": [\"C4\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.85\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"review\",\n      \"text\": \"Ensure the deliverable contains a section explicitly listing assumptions made during analysis and questions that remain unanswered for client follow-up.\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"legal_memo\",\n      \"confidence\": 0.95\n    }\n  ],\n  \"lesson_feedback\": [\n    {\n      \"lesson_id\": \"L0001\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Directly addresses the procedural failure in C4 by ensuring calculations are shown, which is a reusable drafting practice.\"\n    },\n    {\n      \"lesson_id\": \"L0002\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Provides a clear method for handling ambiguity, which is a common issue in legal analysis and applicable beyond this task.\"\n    },\n    {\n      \"lesson_id\": \"L0003\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Ensures missing information or client follow-ups are systematically captured, improving client communication and risk management.\"\n    },\n    {\n      \"lesson_id\": \"L0004\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Reinforces the need for verification of calculations, which is a critical review step for accuracy.\"\n    },\n    {\n      \"lesson_id\": \"L0005\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Encourages thorough recomputation, which is a good practice for catching errors in financial terms.\"\n    },\n    {\n      \"lesson_id\": \"L0006\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Complements L0003 by ensuring the review process explicitly checks for this section, reducing the risk of omission.\"\n    }\n  ]\n}\n```"
+}

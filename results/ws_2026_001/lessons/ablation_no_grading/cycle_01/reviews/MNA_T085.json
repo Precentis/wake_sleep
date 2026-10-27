@@ -1,0 +1,143 @@
+{
+  "task_id": "MNA_T085",
+  "cycle": 1,
+  "lineage": "ablation_no_grading",
+  "graded": false,
+  "failures": [
+    {
+      "criterion_id": "C1",
+      "what_went_wrong": "The agent did not verify the completeness of the document set before starting analysis, leading to critical gaps in the issues list (e.g., missing warranty sections).",
+      "should_have": "Confirmed the document set was complete and matched the expected structure for a share purchase agreement before proceeding with analysis.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C2",
+      "what_went_wrong": "The agent relied on calculations provided in client communications without independently verifying them, leading to a discrepancy being flagged but not resolved.",
+      "should_have": "Recomputed all financial figures independently using the source documents before relying on client-provided calculations.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C3",
+      "what_went_wrong": "The agent did not cross-reference the escrow amount with the liability cap or purchase price, missing an opportunity to validate consistency across financial terms.",
+      "should_have": "Cross-checked all financial terms (escrow amount, liability cap, purchase price) for consistency and mathematical accuracy.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C4",
+      "what_went_wrong": "The agent did not prioritize issues based on a clear risk framework (e.g., likelihood vs. impact), leading to a flat list rather than a strategic hierarchy.",
+      "should_have": "Applied a risk assessment matrix to categorize issues by severity and urgency, guiding the partner’s focus.",
+      "failure_kind": "task_specific"
+    },
+    {
+      "criterion_id": "C5",
+      "what_went_wrong": "The agent did not flag the absence of a critical document (e.g., Kingsmere supply agreement) as a standalone issue, instead treating it as a secondary action item.",
+      "should_have": "Explicitly identified missing documents as a primary issue, not just an ancillary task.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C6",
+      "what_went_wrong": "The agent did not reconcile date inconsistencies with the client’s timeline, leaving ambiguity about the intended closing date.",
+      "should_have": "Clarified date discrepancies with the client or noted the ambiguity as a critical open question.",
+      "failure_kind": "task_specific"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T085_0",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "Before starting document review, verify the document set is complete by cross-referencing the table of contents or structural headings against standard transaction documents for the practice area.",
+      "source_tasks": [
+        "MNA_T085"
+      ],
+      "evidence": [
+        "MNA_T085:C1"
+      ],
+      "task_type_scope": "issues_list",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T085_1",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Recompute all financial figures (e.g., purchase price adjustments, caps, escrow amounts) independently using the source documents, even if client-provided calculations exist.",
+      "source_tasks": [
+        "MNA_T085"
+      ],
+      "evidence": [
+        "MNA_T085:C2",
+        "MNA_T085:C3"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T085_2",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "For every issue identified, assign a risk rating (e.g., Critical/High/Medium/Low) based on likelihood and impact, and group issues by severity in the deliverable.",
+      "source_tasks": [
+        "MNA_T085"
+      ],
+      "evidence": [
+        "MNA_T085:C4"
+      ],
+      "task_type_scope": "issues_list",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T085_3",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Cross-check all financial terms (e.g., liability caps, escrow amounts, purchase price adjustments) for consistency and mathematical accuracy across documents.",
+      "source_tasks": [
+        "MNA_T085"
+      ],
+      "evidence": [
+        "MNA_T085:C3"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.88
+    },
+    {
+      "candidate_id": "c01_MNA_T085_4",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Explicitly flag missing documents as a standalone issue in the deliverable, not just as an action item, to highlight gaps in the document set.",
+      "source_tasks": [
+        "MNA_T085"
+      ],
+      "evidence": [
+        "MNA_T085:C5"
+      ],
+      "task_type_scope": "issues_list",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.8
+    },
+    {
+      "candidate_id": "c01_MNA_T085_5",
+      "type": "practice_note",
+      "category": "review",
+      "text": "Before finalising the deliverable, reconcile all date inconsistencies with the client’s stated timeline or note the ambiguity as a critical open question.",
+      "source_tasks": [
+        "MNA_T085"
+      ],
+      "evidence": [
+        "MNA_T085:C6"
+      ],
+      "task_type_scope": "issues_list",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.82
+    }
+  ],
+  "lesson_feedback": [],
+  "input_tokens": 4676,
+  "output_tokens": 1090,
+  "cost_usd": 0.003973,
+  "prompt": "# Task\nType: issues_list | Practice area: corporate_mna\nYou act for the Buyer, Upton Bioscience plc. Upton Bioscience plc (the Buyer) is acquiring the entire issued share capital of Elstree Foods Ltd (the Company) from Eskdale Logistics plc (the Seller).\n\nPrepare an issues list for the supervising partner covering the matter documents. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 22 June 2027. Address the deliverable to the supervising partner.\n\n# Trajectory (35 model steps, 35 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"client_email.md\"})\n 3. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 4. [research] read_document({\"name\": \"disclosure_letter.md\"})\n 5. [research] read_document({\"name\": \"escrow_agreement.md\"})\n 6. [research] search_documents({\"query\": \"working capital\"})\n 7. [research] search_documents({\"query\": \"Kingsmere\"})\n 8. [research] search_documents({\"query\": \"intellectual property\"})\n 9. [research] search_documents({\"query\": \"warranties\"})\n10. [analysis] calculate({\"expression\": \"date('2027-06-22')\"})\n11. [analysis] calculate({\"expression\": \"days_between(date('2027-06-03'), date('2027-06-22'))\"})\n12. [analysis] calculate({\"expression\": \"230000000 - (3500000 - 2880000)\"})\n13. [analysis] calculate({\"expression\": \"230000000 - (3500000 - 2880000)\"})\n14. [analysis] calculate({\"expression\": \"230000000 - 228760000\"})\n15. [analysis] calculate({\"expression\": \"3500000 - 2880000\"})\n16. [analysis] calculate({\"expression\": \"add_months(date('2027-09-10'), 18)\"})\n17. [drafting] write_draft(<1714 words>)\n18. [verification] read_draft({})\n19. [verification] search_documents({\"query\": \"warranty 8.2\"})\n20. [verification] read_document({\"name\": \"share_purchase_agreement.md\", \"start_line\": 40, \"num_lines\": 30})\n21. [editing] edit_draft(find='## 1. Intellectual Property Risk - Core Platform Software\\n\\n#' -> '## 1. Missing Warranties - Incomplete SPA\\n\\n### Issue\\nThe pro')\n22. [editing] edit_draft(find='## 2. Material Customer Concentration - Kingsmere Foods Ltd' -> '## 3. Material Customer Concentration - Kingsmere Foods Ltd')\n23. [editing] edit_draft(find='## 3. Purchase Price Calculation Discrepancy' -> '## 4. Purchase Price Calculation Discrepancy')\n24. [editing] edit_draft(find='## 4. Document Date Inconsistencies' -> '## 5. Document Date Inconsistencies')\n25. [editing] edit_draft(find='## 5. Escrow Agreement Incompleteness' -> '## 6. Escrow Agreement Incompleteness')\n26. [editing] edit_draft(find='## 6. Liability Cap Calculation Error' -> '## 7. Liability Cap Calculation Error')\n27. [editing] edit_draft(find='## 7. Closing Date vs. Client Timeline' -> '## 8. Closing Date vs. Client Timeline')\n28. [editing] edit_draft(find='## 8. Material Adverse Change Definition' -> '## 9. Material Adverse Change Definition')\n29. [editing] edit_draft(find='## 9. Confidentiality Provisions' -> '## 10. Confidentiality Provisions')\n30. [editing] edit_draft(find='## 10. Notice Provisions' -> '## 11. Notice Provisions')\n31. [editing] edit_draft(find='## Priority Actions Required\\n\\n### Immediate (Pre-Signing)\\n1.' -> '## Priority Actions Required\\n\\n### Critical (Immediate)\\n1. **')\n32. [editing] edit_draft(find='Primary concerns include: (i) significant intellectual prope' -> 'Primary concerns include: (i) critical missing warranty sect')\n33. [editing] edit_draft(find='## Conclusion\\n\\nThis transaction presents several material ri' -> '## Conclusion\\n\\nThis transaction presents several critical ri')\n34. [verification] read_draft({})\n35. [control] finish({\"summary\": \"Issues list prepared for Upton Bioscience plc's acquisition of Elstree Foods Ltd, identifying critical risks including incomplete SPA missing warra)\n\n# Final deliverable\n# Issues List: Acquisition of Elstree Foods Ltd by Upton Bioscience plc\n\n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Date:** 22 June 2027  \n**Matter:** Acquisition of entire issued share capital of Elstree Foods Ltd from Eskdale Logistics plc  \n**Client:** Upton Bioscience plc (Buyer)\n\n## Executive Summary\n\nThis issues list identifies key legal and commercial concerns arising from the review of transaction documents for Upton Bioscience plc's acquisition of Elstree Foods Ltd. The documents reviewed include: (1) Share Purchase Agreement dated 3 June 2027; (2) Disclosure Letter dated 20 June 2027; (3) Escrow Agreement (undated draft); and (4) Client email dated 20 June 2027.\n\nPrimary concerns include: (i) critical missing warranty sections in incomplete SPA; (ii) significant intellectual property risk regarding core platform software; (iii) material customer concentration (37% revenue from Kingsmere Foods Ltd); (iv) discrepancies in purchase price calculations; (v) inconsistencies in document dates; and (vi) incomplete escrow arrangements.\n\n## 1. Missing Warranties - Incomplete SPA\n\n### Issue\nThe provided SPA is incomplete, jumping from Section 3 (Closing) to Section 8.4 (Limitations on Liability). Missing Sections 4-8.3 likely contain the actual warranties that the Disclosure Letter references. The Disclosure Letter specifically references \"Warranty 8.2 (Intellectual Property)\" but this warranty is not in the provided SPA.\n\n### Document Reference\n- SPA structure: Sections 1-3, then jumps to 8.4\n- Disclosure Letter Section 3: \"Disclosure against Warranty 8.2 (Intellectual Property)\"\n- Disclosure Letter Section 1.1: \"Warranties means the representations and warranties given by the Seller in the Share Purchase Agreement\"\n\n### Risk Assessment\n**Critical Risk.** Cannot properly assess transaction without complete warranty schedule. Issues:\n1. **Unknown exposures:** Buyer assuming risk without knowing warranty protections\n2. **Disclosure assessment:** Cannot evaluate adequacy of disclosures against missing warranties\n3. **Negotiation position:** Working from incomplete document set\n\n### Required Action\n1. Obtain complete SPA including all warranty sections\n2. Review full warranty schedule against disclosures\n3. Assess need for additional warranties based on due diligence findings\n4. Consider interim protection pending receipt of complete documents\n\n## 2. Intellectual Property Risk - Core Platform Software\n\n### Issue\nThe Disclosure Letter reveals that the Company's core platform software, developed in 2023 by Netherby Industries Ltd, lacks written assignment of intellectual property rights. This software is integral to the Company's digital ordering and inventory management systems. However, we cannot assess the corresponding Warranty 8.2 as it is missing from the SPA.\n\n### Document Reference\n- Disclosure Letter, Section 3.1: \"No written assignment of intellectual property was entered into between Netherby Industries Ltd and the Company in respect of such software.\"\n- Disclosure Letter, Section 3.4: \"The Company has not registered any intellectual property rights in respect of the core platform software.\"\n- Disclosure Letter, Section 3: \"Disclosure against Warranty 8.2 (Intellectual Property)\" (but warranty missing)\n\n### Risk Assessment\n**High Risk.** Without written assignment, the Company may not own the intellectual property rights to its core operational software. This creates:\n1. **Title risk:** Netherby Industries Ltd could claim ownership or demand additional payment\n2. **Operational risk:** Potential disruption if software rights are challenged\n3. **Valuation risk:** The software's value to the business may be overstated\n4. **Warranty gap:** Cannot assess IP warranty protection without complete SPA\n\n### Required Action\n1. Obtain complete SPA including Warranty 8.2 (Intellectual Property)\n2. Obtain written confirmation/assignment from Netherby Industries Ltd\n3. Consider warranty/indemnity specific to software IP\n4. Assess need for escrow holdback specific to IP risk\n5. Review software development agreement (if any exists)\n\n## 3. Material Customer Concentration - Kingsmere Foods Ltd\n\n### Issue\nKingsmere Foods Ltd accounts for 37% of the Company's total revenue (FY ending 31 March 2026). The client specifically highlighted concerns about representations/warranties regarding material customers.\n\n### Document Reference\n- Disclosure Letter, Section 4.1: \"The Company is a party to a supply agreement with Kingsmere Foods Ltd... which accounted for 37 per cent of the Company's total revenue...\"\n- Client Email: \"We would also appreciate your attention to any representations or warranties concerning material customers, particularly Kingsmere Foods Ltd...\"\n\n### Risk Assessment\n**High Risk.** Customer concentration exceeding 30% typically represents material dependency risk. Potential issues:\n1. **Revenue volatility:** Loss of this customer would significantly impact profitability\n2. **Pricing pressure:** Kingsmere may have disproportionate bargaining power\n3. **Contract terms:** Need to review supply agreement terms and termination rights\n\n### Required Action\n1. Obtain and review the Kingsmere Foods Ltd supply agreement\n2. Assess termination provisions, renewal terms, and pricing mechanisms\n3. Consider specific warranty regarding contract validity and non-termination\n4. Evaluate need for earn-out or price adjustment linked to Kingsmere revenue retention\n\n## 4. Purchase Price Calculation Discrepancy\n\n### Issue\nThe client's email references an \"adjusted purchase price of $228,760,000\" based on \"estimated Closing Working Capital of $2,880,000.\" However, applying the SPA formula ($230,000,000 - [$3,500,000 - $2,880,000]) yields $229,380,000 - a $620,000 discrepancy.\n\n### Document Reference\n- Client Email: \"adjusted purchase price of $228,760,000... based on an estimated Closing Working Capital of $2,880,000\"\n- SPA Section 2.3: Purchase price adjustment formula\n- SPA Section 1.1: \"Target Working Capital means $3,500,000\"\n\n### Calculation\n- Target Working Capital: $3,500,000\n- Estimated Closing Working Capital: $2,880,000\n- Shortfall: $620,000\n- Expected adjusted price: $230,000,000 - $620,000 = $229,380,000\n- Client stated price: $228,760,000\n- **Discrepancy: $620,000**\n\n### Risk Assessment\n**Medium Risk.** Financial discrepancy could lead to post-completion disputes or incorrect payment amounts.\n\n### Required Action\n1. Clarify with client the basis for $228,760,000 calculation\n2. Verify working capital definitions and adjustment mechanics\n3. Ensure SPA accurately reflects agreed pricing formula\n4. Confirm whether additional adjustments (e.g., debt, cash) are contemplated\n\n## 5. Document Date Inconsistencies\n\n### Issue\nMultiple date inconsistencies across documents create potential for confusion and contractual uncertainty.\n\n### Document Reference\n- SPA: Dated 3 June 2027 (Section: \"This Agreement is dated 3 June 2027\")\n- Disclosure Letter: References SPA dated 22 June 2027 (Sections 1.1, 2.2)\n- Client Email: Dated 20 June 2027, targets completion by 22 June 2027\n- Escrow Agreement: Undated, references \"Execution Date\"\n\n### Risk Assessment\n**Medium Risk.** Date inconsistencies could affect:\n1. **Contract interpretation:** Which version of SPA governs?\n2. **Notice periods:** Calculation of time periods\n3. **Condition precedents:** Timing of obligations\n\n### Required Action\n1. Confirm correct execution date for all documents\n2. Align all cross-references to single SPA date\n3. Update Escrow Agreement with specific date\n4. Ensure Disclosure Letter references correct SPA date\n\n## 6. Escrow Agreement Incompleteness\n\n### Issue\nThe Escrow Agreement contains multiple blanks ([●]) including: Execution Date, Escrow Agent identity, and Escrow Amount.\n\n### Document Reference\n- Escrow Agreement Line 3: \"This Escrow Agreement... is made on [●] June 2027\"\n- Line 9: \"[●], a bank or law firm appointed as escrow agent\"\n- Line 33: \"Escrow Amount... as specified in the SPA\" (but SPA doesn't specify amount)\n\n### Risk Assessment\n**High Risk.** Incomplete escrow terms create:\n1. **Uncertainty:** No agreed mechanism for warranty claims\n2. **Payment risk:** Funds may not be adequately secured\n3. **Timing issues:** Release provisions unclear without specific amount\n\n### Required Action\n1. Determine appropriate Escrow Amount (typically 10-15% of purchase price)\n2. Identify and appoint suitable Escrow Agent\n3. Specify Escrow Amount in SPA or Escrow Agreement\n4. Align release timing (18 months post-Closing) with warranty period\n\n## 7. Liability Cap Calculation Error\n\n### Issue\nSPA Section 8.4 states liability cap is \"10% of the Purchase Price, being $27,600,000.\" However, 10% of $230,000,000 is $23,000,000, not $27,600,000.\n\n### Document Reference\n- SPA Section 8.4: \"The aggregate liability of the Seller... shall not exceed an amount equal to 10% of the Purchase Price, being $27,600,000. The Purchase Price is $230,000,000...\"\n\n### Calculation\n- 10% of $230,000,000 = $23,000,000\n- Stated amount: $27,600,000\n- **Error: $4,600,000 overstatement**\n\n### Risk Assessment\n**Medium Risk.** Mathematical error could lead to:\n1. **Enforcement issues:** Which figure applies?\n2. **Negotiation misunderstanding:** Parties may have agreed different percentage\n3. **Dispute risk:** Ambiguity in contractual limitation\n\n### Required Action\n1. Clarify intended liability cap percentage (10% or ~12%)\n2. Correct mathematical error in SPA\n3. Ensure consistency with escrow amount (if related)\n\n## 8. Closing Date vs. Client Timeline\n\n### Issue\nSPA specifies Closing Date as 10 September 2027, but client email targets completion by 22 June 2027.\n\n### Document Reference\n- SPA Section 1.1: \"Closing Date means 10 September 2027\"\n- Client Email: \"We are targeting completion by 22 June 2027\"\n\n### Risk Assessment\n**High Risk.** Significant timing discrepancy (80 days) affects:\n1. **Business planning:** Integration and operational timing\n2. **Working capital:** Calculation as of different dates\n3. **Condition satisfaction:** Due diligence and approvals timeline\n\n### Required Action\n1. Confirm actual intended closing date with client\n2. Update SPA if 22 June 2027 is correct\n3. Adjust all time-sensitive provisions accordingly\n4. Review condition precedents for accelerated timeline\n\n## 9. Material Adverse Change Definition\n\n### Issue\nSPA's Material Adverse Change definition contains broad carve-outs that may limit Buyer protection.\n\n### Document Reference\n- SPA Section 1.1: \"Material Adverse Change... excluding changes in general economic conditions, changes affecting the industry generally, and pandemics\"\n\n### Risk Assessment\n**Medium Risk.** Standard carve-outs but:\n1. **COVID-19 precedent:** Pandemic exclusion particularly broad\n2. **Industry changes:** Could encompass significant market shifts\n3. **Enforcement difficulty:** Proving MAC within narrowed definition\n\n### Required Action\n1. Consider whether carve-outs are appropriate for this transaction\n2. Assess need for specific exclusions to pandemic clause\n3. Review whether \"industry generally\" should be qualified\n\n## 10. Confidentiality Provisions\n\n### Issue\nConfidentiality provisions appear in all documents but with slight variations.\n\n### Document Reference\n- SPA Section 9.1: General confidentiality\n- Disclosure Letter Section 6: Specific to Disclosure Letter\n- Escrow Agreement Section 6: General confidentiality\n\n### Risk Assessment\n**Low Risk.** Standard provisions but:\n1. **Consistency:** Ensure uniform standards across documents\n2. **Exceptions:** Confirm permitted disclosures align\n3. **Duration:** Standard post-termination period\n\n### Required Action\n1. Harmonise confidentiality language across documents\n2. Confirm permitted disclosures meet client needs\n3. Consider specific provisions for sensitive IP and customer information\n\n## 11. Notice Provisions\n\n### Issue\nNotice provisions vary across documents regarding deemed receipt timing.\n\n### Document Reference\n- SPA Section 10.2\n\n# Your job\nNo grades are available. Critically assess the deliverable and the work process yourself, as a demanding supervising partner would, and write reusable candidate lessons for improving the work.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|issues_list\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C1\",\n      \"what_went_wrong\": \"The agent did not verify the completeness of the document set before starting analysis, leading to critical gaps in the issues list (e.g., missing warranty sections).\",\n      \"should_have\": \"Confirmed the document set was complete and matched the expected structure for a share purchase agreement before proceeding with analysis.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C2\",\n      \"what_went_wrong\": \"The agent relied on calculations provided in client communications without independently verifying them, leading to a discrepancy being flagged but not resolved.\",\n      \"should_have\": \"Recomputed all financial figures independently using the source documents before relying on client-provided calculations.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C3\",\n      \"what_went_wrong\": \"The agent did not cross-reference the escrow amount with the liability cap or purchase price, missing an opportunity to validate consistency across financial terms.\",\n      \"should_have\": \"Cross-checked all financial terms (escrow amount, liability cap, purchase price) for consistency and mathematical accuracy.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C4\",\n      \"what_went_wrong\": \"The agent did not prioritize issues based on a clear risk framework (e.g., likelihood vs. impact), leading to a flat list rather than a strategic hierarchy.\",\n      \"should_have\": \"Applied a risk assessment matrix to categorize issues by severity and urgency, guiding the partner’s focus.\",\n      \"failure_kind\": \"task_specific\"\n    },\n    {\n      \"criterion_id\": \"C5\",\n      \"what_went_wrong\": \"The agent did not flag the absence of a critical document (e.g., Kingsmere supply agreement) as a standalone issue, instead treating it as a secondary action item.\",\n      \"should_have\": \"Explicitly identified missing documents as a primary issue, not just an ancillary task.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C6\",\n      \"what_went_wrong\": \"The agent did not reconcile date inconsistencies with the client’s timeline, leaving ambiguity about the intended closing date.\",\n      \"should_have\": \"Clarified date discrepancies with the client or noted the ambiguity as a critical open question.\",\n      \"failure_kind\": \"task_specific\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"Before starting document review, verify the document set is complete by cross-referencing the table of contents or structural headings against standard transaction documents for the practice area.\",\n      \"evidence\": [\"C1\"],\n      \"task_type_scope\": \"issues_list\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Recompute all financial figures (e.g., purchase price adjustments, caps, escrow amounts) independently using the source documents, even if client-provided calculations exist.\",\n      \"evidence\": [\"C2\", \"C3\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"For every issue identified, assign a risk rating (e.g., Critical/High/Medium/Low) based on likelihood and impact, and group issues by severity in the deliverable.\",\n      \"evidence\": [\"C4\"],\n      \"task_type_scope\": \"issues_list\",\n      \"confidence\": 0.85\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Cross-check all financial terms (e.g., liability caps, escrow amounts, purchase price adjustments) for consistency and mathematical accuracy across documents.\",\n      \"evidence\": [\"C3\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.88\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"Explicitly flag missing documents as a standalone issue in the deliverable, not just as an action item, to highlight gaps in the document set.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"issues_list\",\n      \"confidence\": 0.8\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"review\",\n      \"text\": \"Before finalising the deliverable, reconcile all date inconsistencies with the client’s stated timeline or note the ambiguity as a critical open question.\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"issues_list\",\n      \"confidence\": 0.82\n    }\n  ],\n  \"lesson_feedback\": []\n}\n```"
+}

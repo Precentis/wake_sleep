@@ -1,0 +1,89 @@
+{
+  "docs": [
+    {
+      "title": "share_purchase_agreement.md",
+      "attempts": [
+        {
+          "missing": [
+            "English law"
+          ],
+          "usage": {
+            "input_tokens": 728,
+            "output_tokens": 1022
+          }
+        },
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 1774,
+            "output_tokens": 1014
+          }
+        }
+      ]
+    },
+    {
+      "title": "escrow_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 581,
+            "output_tokens": 1062
+          }
+        }
+      ]
+    },
+    {
+      "title": "client_email.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 479,
+            "output_tokens": 433
+          }
+        }
+      ]
+    }
+  ],
+  "doc_facts": {
+    "share_purchase_agreement.md": {
+      "key": "spa",
+      "facts": [
+        "Parties: Oakhurst Robotics Ltd (Buyer), Pemberton Industries Ltd (Seller); the Company is Ingleby Marine Ltd.",
+        "Section 2.1: the Purchase Price is $100,000,000.",
+        "This Agreement is dated 18 March 2026; Closing is scheduled for 17 April 2026 (the 'Closing Date').",
+        "Section 1.1: 'Closing Date' means 17 April 2026.",
+        "Section 15.1: this Agreement is governed by English law and the courts of England have exclusive jurisdiction.",
+        "Section 10.1 (Survival): the General Warranties survive Closing for 12 months; the Fundamental Warranties (title, capacity, tax) survive for 36 months. Claims must be notified in writing before expiry.",
+        "Section 8.3 (Limitation of Liability): the aggregate liability of the Seller for warranty claims shall not exceed an amount equal to 25% of the Purchase Price, being $31,250,000. The Purchase Price is $100,000,000 (see Section 2.1)."
+      ],
+      "must_contain": [
+        "English law",
+        "12 months",
+        "36 months",
+        "25%",
+        "$31,250,000",
+        "$100,000,000"
+      ]
+    },
+    "escrow_agreement.md": {
+      "key": "escrow",
+      "facts": [
+        "Clause 4.1: the Escrow Amount shall be released to the Seller on the date falling 12 months after the Closing Date, save to the extent of pending claims notified before that date. 'Business Day' means a day other than a Saturday or Sunday on which banks are open in London.",
+        "The Closing Date is 17 April 2026.",
+        "Clause 12: this escrow agreement is governed by the laws of the State of New York and disputes shall be referred to arbitration in New York."
+      ],
+      "must_contain": [
+        "12 months",
+        "17 April 2026",
+        "New York"
+      ]
+    },
+    "client_email.md": {
+      "key": "client_email",
+      "facts": [],
+      "must_contain": []
+    }
+  }
+}

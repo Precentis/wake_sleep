@@ -1,0 +1,137 @@
+{
+  "docs": [
+    {
+      "title": "share_purchase_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 654,
+            "output_tokens": 1120
+          }
+        }
+      ]
+    },
+    {
+      "title": "client_email.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 486,
+            "output_tokens": 461
+          }
+        }
+      ]
+    },
+    {
+      "title": "board_minutes.md",
+      "attempts": [
+        {
+          "missing": [
+            "2 directors"
+          ],
+          "usage": {
+            "input_tokens": 525,
+            "output_tokens": 823
+          }
+        },
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 1377,
+            "output_tokens": 816
+          }
+        }
+      ]
+    },
+    {
+      "title": "articles_of_association_extract.md",
+      "attempts": [
+        {
+          "missing": [
+            "three directors"
+          ],
+          "usage": {
+            "input_tokens": 489,
+            "output_tokens": 1053
+          }
+        },
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 1566,
+            "output_tokens": 1049
+          }
+        }
+      ]
+    },
+    {
+      "title": "disclosure_letter.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 485,
+            "output_tokens": 991
+          }
+        }
+      ]
+    }
+  ],
+  "doc_facts": {
+    "share_purchase_agreement.md": {
+      "key": "spa",
+      "facts": [
+        "Parties: Lowther Foods Ltd (Buyer), Foxley Energy plc (Seller); the Company is Galloway Media Ltd.",
+        "Section 2.1: the Purchase Price is $195,000,000.",
+        "This Agreement is dated 21 September 2026; Closing is scheduled for 14 December 2026 (the 'Closing Date').",
+        "Section 4.5: if the Conditions are not satisfied by the date falling 120 days after the date of this Agreement (signed 21 September 2026), either party may terminate.",
+        "Section 10.1 (Survival): the General Warranties survive Closing for 18 months; the Fundamental Warranties (title, capacity, tax) survive for 48 months. Claims must be notified in writing before expiry."
+      ],
+      "must_contain": [
+        "120 days",
+        "21 September 2026",
+        "18 months",
+        "48 months"
+      ]
+    },
+    "client_email.md": {
+      "key": "client_email",
+      "facts": [
+        "Regulatory counsel expects merger clearance by 2 February 2027."
+      ],
+      "must_contain": [
+        "2 February 2027"
+      ]
+    },
+    "board_minutes.md": {
+      "key": "board_minutes",
+      "facts": [
+        "Present: 2 directors (of 5). The meeting was quorate. RESOLVED to approve entry into the Share Purchase Agreement.",
+        "Item 5: the board noted a letter before action from Pemberton Energy plc threatening proceedings for approximately $2,750,000 in respect of alleged defective deliveries. Management to monitor."
+      ],
+      "must_contain": [
+        "2 directors",
+        "Pemberton Energy plc",
+        "$2,750,000"
+      ]
+    },
+    "articles_of_association_extract.md": {
+      "key": "articles",
+      "facts": [
+        "Article 11: the quorum for board meetings is three directors."
+      ],
+      "must_contain": [
+        "three directors"
+      ]
+    },
+    "disclosure_letter.md": {
+      "key": "disclosure",
+      "facts": [
+        "Disclosure against Warranty 7.1 (Litigation): None."
+      ],
+      "must_contain": []
+    }
+  }
+}

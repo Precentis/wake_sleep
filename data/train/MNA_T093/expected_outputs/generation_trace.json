@@ -1,0 +1,126 @@
+{
+  "docs": [
+    {
+      "title": "share_purchase_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 633,
+            "output_tokens": 1143
+          }
+        }
+      ]
+    },
+    {
+      "title": "client_email.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 514,
+            "output_tokens": 468
+          }
+        }
+      ]
+    },
+    {
+      "title": "material_customer_contract.md",
+      "attempts": [
+        {
+          "missing": [
+            "change of control"
+          ],
+          "usage": {
+            "input_tokens": 516,
+            "output_tokens": 812
+          }
+        },
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 1353,
+            "output_tokens": 840
+          }
+        }
+      ]
+    },
+    {
+      "title": "disclosure_letter.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 496,
+            "output_tokens": 959
+          }
+        }
+      ]
+    },
+    {
+      "title": "escrow_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 500,
+            "output_tokens": 925
+          }
+        }
+      ]
+    }
+  ],
+  "doc_facts": {
+    "share_purchase_agreement.md": {
+      "key": "spa",
+      "facts": [
+        "Parties: Kestrel Medical Ltd (Buyer), Orwell Marine Ltd (Seller); the Company is Merrion Marine Ltd.",
+        "Section 2.1: the Purchase Price is $50,000,000.",
+        "This Agreement is dated 8 June 2026; Closing is scheduled for 11 September 2026 (the 'Closing Date').",
+        "Section 3.4 (Earn-out): the Earn-out Payment equals 3 times the amount by which FY2026 EBITDA exceeds $4,000,000, capped at $10,000,000.",
+        "Section 9.7: the Buyer must notify any warranty claim within 30 days of becoming aware of it."
+      ],
+      "must_contain": [
+        "$4,000,000",
+        "$10,000,000",
+        "30 days"
+      ]
+    },
+    "client_email.md": {
+      "key": "client_email",
+      "facts": [
+        "Management accounts show FY2026 EBITDA of $4,800,000; the Seller says the Earn-out Payment will therefore be $3,300,000."
+      ],
+      "must_contain": [
+        "$4,800,000",
+        "$3,300,000"
+      ]
+    },
+    "material_customer_contract.md": {
+      "key": "material_contract",
+      "facts": [
+        "Clause 14.2: either party may terminate this agreement on 30 days' notice if the other party undergoes a change of control without its prior written consent. The counterparty is Ashcombe Logistics plc."
+      ],
+      "must_contain": [
+        "change of control",
+        "prior written consent"
+      ]
+    },
+    "disclosure_letter.md": {
+      "key": "disclosure",
+      "facts": [
+        "Disclosure against Warranty 6.3 (Material Contracts): no material contract contains a change of control provision. (No further disclosure.)"
+      ],
+      "must_contain": []
+    },
+    "escrow_agreement.md": {
+      "key": "escrow",
+      "facts": [
+        "Clause 5.2: a claim against the Escrow Amount must be notified within 45 days of the Buyer becoming aware of it."
+      ],
+      "must_contain": [
+        "45 days"
+      ]
+    }
+  }
+}

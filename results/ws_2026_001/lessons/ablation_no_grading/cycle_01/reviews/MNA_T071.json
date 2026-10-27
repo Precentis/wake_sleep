@@ -1,0 +1,142 @@
+{
+  "task_id": "MNA_T071",
+  "cycle": 1,
+  "lineage": "ablation_no_grading",
+  "graded": false,
+  "failures": [
+    {
+      "criterion_id": "C1",
+      "what_went_wrong": "The agent calculated financial adjustments (working capital, earn-out) but did not cross-verify the formulas or definitions in the Share Purchase Agreement (SPA) against the calculated figures.",
+      "should_have": "Reconciled every financial adjustment formula in the SPA with the agent's calculations to ensure consistency with contractual definitions.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C2",
+      "what_went_wrong": "The agent identified a discrepancy in the earn-out calculation but did not flag whether the cap was expressed as a percentage of the purchase price or another metric, missing a potential misalignment with the SPA.",
+      "should_have": "Recomputed caps or thresholds expressed as percentages of transaction values to confirm alignment with stated figures in the SPA.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C3",
+      "what_went_wrong": "The agent noted ambiguities in contractual clauses (e.g., change of control termination) but did not propose a standardised approach to resolving interpretative risks, such as escalation to counsel or negotiation points.",
+      "should_have": "Included a standardised risk assessment framework for ambiguous clauses, such as recommending legal interpretation or specific contractual amendments.",
+      "failure_kind": "task_specific"
+    },
+    {
+      "criterion_id": "C4",
+      "what_went_wrong": "The agent listed document inconsistencies (e.g., SPA date, schedule references) but did not verify whether these were drafting errors or indicative of missing documents.",
+      "should_have": "Cross-checked all referenced schedules, annexes, or appendices in transaction documents to confirm their existence or flag their absence.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C5",
+      "what_went_wrong": "The agent did not independently verify the legal or financial significance of disclosed risks (e.g., customer concentration, litigation) against industry benchmarks or thresholds.",
+      "should_have": "Applied standardised risk thresholds (e.g., customer concentration >30% of revenue) to contextualise findings and prioritise issues.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C6",
+      "what_went_wrong": "The agent did not perform a final consistency check of the report against the original client instructions or matter scope, potentially omitting key areas of focus.",
+      "should_have": "Mapped all findings and recommendations back to the client's stated objectives or concerns to ensure alignment with the transaction's strategic goals.",
+      "failure_kind": "review"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T071_0",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "Reconcile every financial adjustment formula in the transaction documents with your calculations to confirm consistency with contractual definitions.",
+      "source_tasks": [
+        "MNA_T071"
+      ],
+      "evidence": [
+        "MNA_T071:C1"
+      ],
+      "task_type_scope": "due_diligence",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T071_1",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Recompute caps, thresholds, or adjustments expressed as percentages of transaction values (e.g., purchase price) and flag any mismatch with stated figures.",
+      "source_tasks": [
+        "MNA_T071"
+      ],
+      "evidence": [
+        "MNA_T071:C2"
+      ],
+      "task_type_scope": "due_diligence",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T071_2",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "For ambiguous contractual clauses, include a standardised recommendation (e.g., seek legal interpretation, propose specific amendments) to resolve interpretative risks.",
+      "source_tasks": [
+        "MNA_T071"
+      ],
+      "evidence": [
+        "MNA_T071:C3"
+      ],
+      "task_type_scope": "due_diligence",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T071_3",
+      "type": "checklist",
+      "category": "review",
+      "text": "Cross-check all referenced schedules, annexes, or appendices in transaction documents to confirm their existence or flag their absence before finalising the report.",
+      "source_tasks": [
+        "MNA_T071"
+      ],
+      "evidence": [
+        "MNA_T071:C4"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T071_4",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Apply standardised risk thresholds (e.g., customer concentration >30% of revenue) to contextualise findings and prioritise issues in due diligence reports.",
+      "source_tasks": [
+        "MNA_T071"
+      ],
+      "evidence": [
+        "MNA_T071:C5"
+      ],
+      "task_type_scope": "due_diligence",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.8
+    },
+    {
+      "candidate_id": "c01_MNA_T071_5",
+      "type": "checklist",
+      "category": "review",
+      "text": "Map all findings and recommendations back to the client's stated objectives or concerns to ensure the report aligns with the transaction's strategic goals.",
+      "source_tasks": [
+        "MNA_T071"
+      ],
+      "evidence": [
+        "MNA_T071:C6"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.85
+    }
+  ],
+  "lesson_feedback": [],
+  "input_tokens": 3787,
+  "output_tokens": 1121,
+  "cost_usd": 0.003575,
+  "prompt": "# Task\nType: due_diligence | Practice area: corporate_mna\nYou act for the Buyer, Thornbury Logistics plc. Thornbury Logistics plc (the Buyer) is acquiring the entire issued share capital of Corrib Bioscience plc (the Company) from Kingsmere Pharma plc (the Seller).\n\nPrepare a due diligence findings report on the matter documents. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 20 July 2026. Address the deliverable to the supervising partner.\n\n# Trajectory (26 model steps, 26 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 3. [research] read_document({\"name\": \"disclosure_letter.md\"})\n 4. [research] read_document({\"name\": \"material_customer_contract.md\"})\n 5. [research] read_document({\"name\": \"board_minutes.md\"})\n 6. [research] read_document({\"name\": \"client_email.md\"})\n 7. [research] search_documents({\"query\": \"change of control\"})\n 8. [research] search_documents({\"query\": \"Hartwell\"})\n 9. [research] search_documents({\"query\": \"Pemberton\"})\n10. [analysis] calculate({\"expression\": \"working_capital_shortfall = 3500000 - 3150000\"})\n11. [analysis] calculate({\"expression\": \"adjusted_purchase_price = 205000000 - 350000\"})\n12. [analysis] calculate({\"expression\": \"ebitda_excess = 6100000 - 4000000\"})\n13. [analysis] calculate({\"expression\": \"earn_out_payment = 2100000 * 3\"})\n14. [analysis] calculate({\"expression\": \"capped_earn_out = min(6300000, 5000000)\"})\n15. [analysis] calculate({\"expression\": \"closing_date = date('2026-08-25')\"})\n16. [analysis] calculate({\"expression\": \"current_date = date('2026-07-20')\"})\n17. [drafting] write_draft(<1140 words>)\n18. [verification] read_draft({})\n19. [verification] calculate({\"expression\": \"seller_claimed_adjustment = 205000000 - 204300000\"})\n20. [editing] edit_draft(find='**Earn-out Mechanism:**\\n- Trigger: FY2026 EBITDA exceeding $' -> '**Earn-out Mechanism:**\\n- Trigger: FY2026 EBITDA exceeding $')\n21. [editing] edit_draft(find='**Working Capital:**\\n- Target: $3,500,000 (SPA Clause 1.1)\\n-' -> '**Working Capital:**\\n- Target: $3,500,000 (SPA Clause 1.1)\\n-')\n22. [editing] edit_draft(find='#### 3.3 Corporate Governance\\n- Board meeting properly conve' -> '#### 3.3 Corporate Governance\\n- Board meeting properly conve')\n23. [editing] edit_draft(find=\"**Issue:** The Seller's Disclosure Letter (Clause 3) states \" -> \"**Issue:** The Seller's Disclosure Letter (Clause 3) states \")\n24. [editing] edit_draft(find='2. **Negotiate Protections:**\\n   - Specific indemnity for Ha' -> '2. **Negotiate Protections:**\\n   - Specific indemnity for Ha')\n25. [verification] read_draft({})\n26. [control] finish({\"summary\": \"Due diligence findings report identifying critical issues in the acquisition of Corrib Bioscience plc, including: 1) Material contract discrepancy )\n\n# Final deliverable\n# Due Diligence Findings Report\n## Acquisition of Corrib Bioscience plc by Thornbury Logistics plc\n\n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Date:** 20 July 2026  \n**Matter:** Acquisition of entire issued share capital of Corrib Bioscience plc from Kingsmere Pharma plc  \n\n---\n\n### Executive Summary\n\nThis report outlines key due diligence findings arising from the review of matter documents for the proposed acquisition of Corrib Bioscience plc (\"the Company\") by Thornbury Logistics plc (\"the Buyer\") from Kingsmere Pharma plc (\"the Seller\"). The transaction involves a purchase price of $205,000,000 with working capital adjustments and an earn-out mechanism.\n\nCritical issues identified include:\n1. **Material Contract Discrepancy**: The Arden Industries Ltd supply agreement contains a change of control termination clause contrary to Seller disclosures\n2. **Intellectual Property Risk**: Core platform software lacks proper IP assignment documentation\n3. **Litigation Exposure**: Threatened claim of $1.2 million not disclosed in Seller's disclosure letter\n4. **Financial Discrepancies**: Working capital and earn-out calculations require verification\n\n### 1. Transaction Structure and Financial Terms\n\n**Key Transaction Documents:**\n- Share Purchase Agreement dated 5 July 2026\n- Disclosure Letter dated on or about 20 July 2026\n- Material Customer Contract with Arden Industries Ltd dated 15 June 2024\n\n**Purchase Price Structure:**\n- Base Purchase Price: $205,000,000\n- Target Working Capital: $3,500,000\n- Estimated Closing Working Capital: $3,150,000 (per client email)\n- Working Capital Shortfall: $350,000\n- Adjusted Purchase Price: $204,650,000\n\n**Earn-out Mechanism:**\n- Trigger: FY2026 EBITDA exceeding $4,000,000\n- Calculation: 3 × (FY2026 EBITDA - $4,000,000)\n- Cap: $5,000,000\n- Estimated FY2026 EBITDA: $6,100,000 (per client email)\n- Calculated Earn-out: $6,300,000\n- Capped Earn-out: $5,000,000\n- Seller's Claimed Earn-out: $4,600,000 (discrepancy of $400,000 requiring clarification)\n\n**Timeline:**\n- Current Date: 20 July 2026\n- Closing Date: 25 August 2026\n- Earn-out Determination: Within 90 days following 31 December 2026\n\n### 2. Critical Due Diligence Issues\n\n#### 2.1 Material Contract - Arden Industries Ltd Agreement\n\n**Issue:** The Seller's Disclosure Letter (Clause 3) states that the Arden Industries Ltd supply agreement \"does not contain a change of control clause.\" However, the actual contract (Clause 14.2) provides that \"Either party may terminate this Agreement on 30 days' notice if the other party undergoes a change of control without its prior written consent. For the purposes of this provision, the counterparty is Arden Industries Ltd.\" \n\n**Interpretation Note:** The qualifying phrase \"For the purposes of this provision, the counterparty is Arden Industries Ltd\" creates ambiguity about whether the change of control termination right applies symmetrically to both parties or only to Arden Industries Ltd. This requires legal interpretation.\n\n**Significance:** \n- Arden Industries Ltd represents 38% of the Company's quarterly sales (per board minutes)\n- The contract has a three-year term from 15 June 2024\n- The Buyer could face termination of this critical revenue stream post-acquisition\n\n**Required Action:** \n1. Immediate renegotiation of Disclosure Letter Clause 3\n2. Consider requiring Seller to obtain Arden's written consent to the change of control\n3. Potential price adjustment to reflect termination risk\n\n#### 2.2 Intellectual Property Ownership\n\n**Issue:** The Disclosure Letter (Clause 5) discloses that the Company's core platform software was developed by Pemberton Retail Group plc under an \"oral understanding\" with no written contract or IP assignment.\n\n**Significance:**\n- Core platform software is used in the Company's principal operations\n- Seller acknowledges this \"may affect the Company's ability to assert full legal ownership\"\n- Risk of Pemberton Retail Group plc claiming ownership or demanding royalties\n\n**Required Action:**\n1. Require Seller to obtain written IP assignment from Pemberton Retail Group plc\n2. Consider escrow arrangement or price reduction for unresolved IP risk\n3. Conduct independent IP due diligence\n\n#### 2.3 Litigation Exposure\n\n**Issue:** Board minutes dated 15 July 2026 disclose a \"letter before action dated 10 July 2026\" from Hartwell Bioscience plc claiming $1,200,000 for allegedly defective product deliveries. The Disclosure Letter (Clause 4) states \"there are no pending, threatened or reasonably anticipated claims.\"\n\n**Significance:**\n- Material potential liability not disclosed by Seller\n- No provision made in financial statements\n- Legal counsel already instructed (per board minutes)\n\n**Required Action:**\n1. Require immediate amendment to Disclosure Letter\n2. Consider specific indemnity for this claim\n3. Review legal counsel's assessment of claim merits\n4. Potential price adjustment for litigation risk\n\n#### 2.4 Financial Discrepancies\n\n**Working Capital:**\n- Target: $3,500,000 (SPA Clause 1.1)\n- Estimated: $3,150,000 (client email)\n- Shortfall: $350,000\n- Calculated Adjusted Price: $204,650,000\n- Seller's Claimed Adjusted Price: $204,300,000\n- Discrepancy: $350,000 (Seller appears to be double-counting the working capital shortfall)\n\n**Earn-out Calculation:**\n- Based on $6,100,000 EBITDA: Earn-out = 3 × ($6,100,000 - $4,000,000) = $6,300,000\n- Capped at $5,000,000\n- Seller claims $4,600,000 - discrepancy of $400,000\n\n**Required Action:**\n1. Verify working capital calculation methodology\n2. Clarify earn-out calculation discrepancy\n3. Ensure robust audit rights in SPA\n\n### 3. Additional Findings\n\n#### 3.1 Customer Concentration Risk\n- Arden Industries Ltd represents 38% of quarterly sales\n- Single customer dependency creates business continuity risk\n- Integration planning already underway (per client email)\n\n#### 3.2 Transaction Timing\n- Board minutes reference completion \"on or about 20 July 2026\"\n- SPA specifies Closing Date of 25 August 2026\n- Need to align internal and contractual timelines\n\n#### 3.3 Corporate Governance\n- Board meeting properly convened with quorum present\n- Company Secretary confirms Companies House filings up to date\n- Directors aware of continuing obligations during transaction\n\n#### 3.4 Document Inconsistencies\n- **SPA Date Discrepancy**: Disclosure Letter references SPA \"dated on or about 20 July 2026\" but actual SPA is dated 5 July 2026\n- **Timing Conflicts**: Board minutes reference completion \"on or about 20 July 2026\" while SPA specifies Closing Date of 25 August 2026\n- **Definition References**: Disclosure Letter references warranties in \"Schedule 3\" of SPA, but SPA document reviewed does not include schedules\n\n### 4. Recommendations\n\n**Immediate Actions (Pre-Signing):**\n1. **Amend Disclosure Letter** to accurately reflect:\n   - Arden Industries Ltd change of control clause\n   - Hartwell Bioscience litigation threat\n   - Pemberton Retail Group IP arrangement\n\n2. **Negotiate Protections:**\n   - Specific indemnity for Hartwell claim\n   - Clarification of Arden contract clause 14.2 interpretation\n   - Requirement for Seller to obtain Arden's written consent to change of control if clause applies\n   - IP assignment from Pemberton Retail Group as condition precedent\n\n3. **Financial Verification:**\n   - Independent verification of working capital calculation\n   - Clarification of earn-out discrepancy\n   - Audit rights for post-closing adjustments\n\n**Post-Signing Considerations:**\n1. **Integration Planning:** Manage Arden Industries Ltd relationship post-acquisition\n2. **Litigation Management:** Monitor Hartwell Bioscience claim progression\n3. **IP Remediation:** Secure formal IP documentation from Pemberton Retail Group\n\n### 5. Risk Assessment\n\n**High Risk Issues:**\n1. Arden Industries Ltd contract termination right\n2. Core software IP ownership uncertainty\n3. Undisclosed $1.2 million litigation claim\n\n**Medium Risk Issues:**\n1. Working capital and earn-out calculation discrepancies\n2. Customer concentration (38% from single client)\n3. Timing inconsistencies between documents\n\n**Low Risk Issues:**\n1. Corporate governance and regulatory compliance\n2. General contractual documentation\n\n### 6. Conclusion\n\nThe due diligence review reveals several material issues requiring immediate attention before proceeding with the acquisition. The most critical concerns involve contractual misrepresentations regarding the Arden Industries Ltd agreement, undisclosed litigation, and intellectual property ownership deficiencies.\n\nThe transaction remains viable but requires:\n1. Revised disclosure letter addressing all identified discrepancies\n2. Additional contractual protections for the Buyer\n3. Verification of financial calculations\n4. Clear resolution path for IP ownership issues\n\nI recommend proceeding with caution and addressing these issues comprehensively before signing the Share Purchase Agreement.\n\n**Next Steps:**\n1. Schedule urgent call with Seller's counsel to address disclosure issues\n2. Prepare revised disclosure letter and SPA amendments\n3. Conduct follow-up due diligence on IP and litigation matters\n4. Finalise integration plan for Arden Industries Ltd relationship\n\n---\n*Prepared based on review of: Share Purchase Agreement, Disclosure Letter, Material Customer Contract, Board Minutes, and Client Email dated 20 July 2026.*\n\n# Your job\nNo grades are available. Critically assess the deliverable and the work process yourself, as a demanding supervising partner would, and write reusable candidate lessons for improving the work.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|due_diligence\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C1\",\n      \"what_went_wrong\": \"The agent calculated financial adjustments (working capital, earn-out) but did not cross-verify the formulas or definitions in the Share Purchase Agreement (SPA) against the calculated figures.\",\n      \"should_have\": \"Reconciled every financial adjustment formula in the SPA with the agent's calculations to ensure consistency with contractual definitions.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C2\",\n      \"what_went_wrong\": \"The agent identified a discrepancy in the earn-out calculation but did not flag whether the cap was expressed as a percentage of the purchase price or another metric, missing a potential misalignment with the SPA.\",\n      \"should_have\": \"Recomputed caps or thresholds expressed as percentages of transaction values to confirm alignment with stated figures in the SPA.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C3\",\n      \"what_went_wrong\": \"The agent noted ambiguities in contractual clauses (e.g., change of control termination) but did not propose a standardised approach to resolving interpretative risks, such as escalation to counsel or negotiation points.\",\n      \"should_have\": \"Included a standardised risk assessment framework for ambiguous clauses, such as recommending legal interpretation or specific contractual amendments.\",\n      \"failure_kind\": \"task_specific\"\n    },\n    {\n      \"criterion_id\": \"C4\",\n      \"what_went_wrong\": \"The agent listed document inconsistencies (e.g., SPA date, schedule references) but did not verify whether these were drafting errors or indicative of missing documents.\",\n      \"should_have\": \"Cross-checked all referenced schedules, annexes, or appendices in transaction documents to confirm their existence or flag their absence.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C5\",\n      \"what_went_wrong\": \"The agent did not independently verify the legal or financial significance of disclosed risks (e.g., customer concentration, litigation) against industry benchmarks or thresholds.\",\n      \"should_have\": \"Applied standardised risk thresholds (e.g., customer concentration >30% of revenue) to contextualise findings and prioritise issues.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C6\",\n      \"what_went_wrong\": \"The agent did not perform a final consistency check of the report against the original client instructions or matter scope, potentially omitting key areas of focus.\",\n      \"should_have\": \"Mapped all findings and recommendations back to the client's stated objectives or concerns to ensure alignment with the transaction's strategic goals.\",\n      \"failure_kind\": \"review\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"Reconcile every financial adjustment formula in the transaction documents with your calculations to confirm consistency with contractual definitions.\",\n      \"evidence\": [\"C1\"],\n      \"task_type_scope\": \"due_diligence\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Recompute caps, thresholds, or adjustments expressed as percentages of transaction values (e.g., purchase price) and flag any mismatch with stated figures.\",\n      \"evidence\": [\"C2\"],\n      \"task_type_scope\": \"due_diligence\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"For ambiguous contractual clauses, include a standardised recommendation (e.g., seek legal interpretation, propose specific amendments) to resolve interpretative risks.\",\n      \"evidence\": [\"C3\"],\n      \"task_type_scope\": \"due_diligence\",\n      \"confidence\": 0.85\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"review\",\n      \"text\": \"Cross-check all referenced schedules, annexes, or appendices in transaction documents to confirm their existence or flag their absence before finalising the report.\",\n      \"evidence\": [\"C4\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Apply standardised risk thresholds (e.g., customer concentration >30% of revenue) to contextualise findings and prioritise issues in due diligence reports.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"due_diligence\",\n      \"confidence\": 0.8\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"review\",\n      \"text\": \"Map all findings and recommendations back to the client's stated objectives or concerns to ensure the report aligns with the transaction's strategic goals.\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.85\n    }\n  ],\n  \"lesson_feedback\": []\n}\n```"
+}

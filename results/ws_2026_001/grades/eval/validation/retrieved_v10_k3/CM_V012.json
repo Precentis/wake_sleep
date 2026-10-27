@@ -1,0 +1,114 @@
+{
+  "task_id": "CM_V012",
+  "run_name": "eval/validation/retrieved_v10_k3",
+  "judgements": [
+    {
+      "judge": "judge_1",
+      "model": "zai.glm-5",
+      "results": [
+        {
+          "criterion_id": "C1",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable contains no substantive content regarding the lock-up expiration date; it is composed entirely of garbled formatting tags and incoherent text."
+        },
+        {
+          "criterion_id": "C2",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable fails to identify the mathematical error in the Over-allotment Option or mention any share calculations."
+        },
+        {
+          "criterion_id": "C3",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable does not address the comfort letter cut-off date, the 3-business-day requirement, or the need for a bring-down letter."
+        },
+        {
+          "criterion_id": "C4",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable does not identify or mention the inconsistency in share capital figures between the Prospectus and Underwriting Agreement."
+        },
+        {
+          "criterion_id": "C5",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable provides no analysis of the lock-up duration, specific dates, or days remaining."
+        },
+        {
+          "criterion_id": "C6",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable does not note the day of the week for the lock-up expiration or identify the next Business Day."
+        },
+        {
+          "criterion_id": "C7",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable lacks any executive summary, bottom line conclusion, or structured analysis; it is incoherent and fails to address the task."
+        }
+      ],
+      "input_tokens": 5282,
+      "output_tokens": 378,
+      "cost_usd": 0.0064916,
+      "latency_ms": 7256,
+      "prompt_without_documents": "# Task instructions\nYou act for the Company (issuer), Galloway Marine Ltd. Galloway Marine Ltd (the Company) is undertaking an initial public offering of ordinary shares underwritten by Rothley Foods Securities (the Underwriter).\n\nPrepare a timeline and deadlines analysis of all time-sensitive obligations in the matter documents. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 4 May 2026. Address the deliverable to the supervising partner.\n\n# Matter documents\n[see task documents]\n# Deliverable to grade\n<<<DELIVERABLE\nSo thesaurus\">I am sorry, \"asdf\">, \"Business Day\" string=\"false\">prospectus_extract.md</｜DSML｜parameter>\n<｜DSML｜parameter name=\"1\">client_email.md</｜DSML｜parameter>\n<｜DSML｜parameter name=\"time\">content\" string=\"start_line\" string=\"true\">expression\" string=\"true\">client_email.md</｜DSML｜>\n</｜DSML｜parameter>\n<｜DSML｜parameter name=\"date\">client_email.md</｜DSML｜pecific>\n</｜DSML｜parameter>\n<｜DSML｜parameter name=\"expression\" \"string\">\"string\">Galloway Marine Ltd</｜DSML｜parameter>\n<｜DSML｜parameter name=\"date\" string=\"30\"\nDELIVERABLE>>>\n\n# Rubric criteria\nC1: States that the lock-up expires on 5 June 2027 (365 days after the 5 June 2026 Prospectus date).\nC2: Identifies that 15% of 16,000,000 Firm Shares is 2,400,000 shares, not the 3,200,000 stated in the Over-allotment Option (Clause 4).\nC3: Identifies that the comfort letter cut-off of 24 May 2026 is 12 days before the 5 June 2026 pricing date, outside the 3-business-day requirement in Clause 7(b), so a bring-down letter is needed.\nC4: Identifies the inconsistency between 61,750,000 shares in issue in the Prospectus and 63,000,000 in the Underwriting Agreement recital, which must be reconciled before pricing.\nC5: Gives the lock-up as a duration (365 days) and a date (5 June 2027), with days remaining from 4 May 2026 (397 days).\nC6: Notes that 5 June 2027 is a Saturday and identifies the next Business Day, 7 June 2027, as the first trading opportunity.\nC7: Opens with a short 'Bottom line' / executive summary stating the overall conclusion and the most important risks before the detailed analysis.\n\nGrade every criterion (7 total). JSON only.",
+      "raw_response": "{\"results\": [{\"criterion_id\": \"C1\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable contains no substantive content regarding the lock-up expiration date; it is composed entirely of garbled formatting tags and incoherent text.\"}, {\"criterion_id\": \"C2\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable fails to identify the mathematical error in the Over-allotment Option or mention any share calculations.\"}, {\"criterion_id\": \"C3\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable does not address the comfort letter cut-off date, the 3-business-day requirement, or the need for a bring-down letter.\"}, {\"criterion_id\": \"C4\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable does not identify or mention the inconsistency in share capital figures between the Prospectus and Underwriting Agreement.\"}, {\"criterion_id\": \"C5\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable provides no analysis of the lock-up duration, specific dates, or days remaining.\"}, {\"criterion_id\": \"C6\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable does not note the day of the week for the lock-up expiration or identify the next Business Day.\"}, {\"criterion_id\": \"C7\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable lacks any executive summary, bottom line conclusion, or structured analysis; it is incoherent and fails to address the task.\"}]}"
+    },
+    {
+      "judge": "judge_2",
+      "model": "moonshotai.kimi-k2.5",
+      "results": [
+        {
+          "criterion_id": "C1",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable contains garbled XML/DSML tags and no coherent text. It does not state that the lock-up expires on 5 June 2027."
+        },
+        {
+          "criterion_id": "C2",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable contains no analysis of the Over-allotment Option or identification that 15% of 16,000,000 is 2,400,000, not 3,200,000."
+        },
+        {
+          "criterion_id": "C3",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable contains no analysis of the comfort letter cut-off date or the 3-business-day requirement in Clause 7(b)."
+        },
+        {
+          "criterion_id": "C4",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable contains no identification of the share capital inconsistency between 61,750,000 shares (Prospectus) and 63,000,000 shares (Underwriting Agreement)."
+        },
+        {
+          "criterion_id": "C5",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable contains no calculation of days remaining from 4 May 2026 or any coherent timeline information."
+        },
+        {
+          "criterion_id": "C6",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable contains no analysis of whether 5 June 2027 is a Business Day or identification of 7 June 2027 as the first trading opportunity."
+        },
+        {
+          "criterion_id": "C7",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable contains no 'Bottom line' or executive summary; it consists only of garbled XML/DSML tags with no substantive content."
+        }
+      ],
+      "input_tokens": 5285,
+      "output_tokens": 482,
+      "cost_usd": 0.004376,
+      "latency_ms": 6440,
+      "prompt_without_documents": "# Task instructions\nYou act for the Company (issuer), Galloway Marine Ltd. Galloway Marine Ltd (the Company) is undertaking an initial public offering of ordinary shares underwritten by Rothley Foods Securities (the Underwriter).\n\nPrepare a timeline and deadlines analysis of all time-sensitive obligations in the matter documents. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 4 May 2026. Address the deliverable to the supervising partner.\n\n# Matter documents\n[see task documents]\n# Deliverable to grade\n<<<DELIVERABLE\nSo thesaurus\">I am sorry, \"asdf\">, \"Business Day\" string=\"false\">prospectus_extract.md</｜DSML｜parameter>\n<｜DSML｜parameter name=\"1\">client_email.md</｜DSML｜parameter>\n<｜DSML｜parameter name=\"time\">content\" string=\"start_line\" string=\"true\">expression\" string=\"true\">client_email.md</｜DSML｜>\n</｜DSML｜parameter>\n<｜DSML｜parameter name=\"date\">client_email.md</｜DSML｜pecific>\n</｜DSML｜parameter>\n<｜DSML｜parameter name=\"expression\" \"string\">\"string\">Galloway Marine Ltd</｜DSML｜parameter>\n<｜DSML｜parameter name=\"date\" string=\"30\"\nDELIVERABLE>>>\n\n# Rubric criteria\nC1: States that the lock-up expires on 5 June 2027 (365 days after the 5 June 2026 Prospectus date).\nC2: Identifies that 15% of 16,000,000 Firm Shares is 2,400,000 shares, not the 3,200,000 stated in the Over-allotment Option (Clause 4).\nC3: Identifies that the comfort letter cut-off of 24 May 2026 is 12 days before the 5 June 2026 pricing date, outside the 3-business-day requirement in Clause 7(b), so a bring-down letter is needed.\nC4: Identifies the inconsistency between 61,750,000 shares in issue in the Prospectus and 63,000,000 in the Underwriting Agreement recital, which must be reconciled before pricing.\nC5: Gives the lock-up as a duration (365 days) and a date (5 June 2027), with days remaining from 4 May 2026 (397 days).\nC6: Notes that 5 June 2027 is a Saturday and identifies the next Business Day, 7 June 2027, as the first trading opportunity.\nC7: Opens with a short 'Bottom line' / executive summary stating the overall conclusion and the most important risks before the detailed analysis.\n\nGrade every criterion (7 total). JSON only.",
+      "raw_response": "{\"results\": [{\"criterion_id\": \"C1\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable contains garbled XML/DSML tags and no coherent text. It does not state that the lock-up expires on 5 June 2027.\"}, {\"criterion_id\": \"C2\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable contains no analysis of the Over-allotment Option or identification that 15% of 16,000,000 is 2,400,000, not 3,200,000.\"}, {\"criterion_id\": \"C3\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable contains no analysis of the comfort letter cut-off date or the 3-business-day requirement in Clause 7(b).\"}, {\"criterion_id\": \"C4\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable contains no identification of the share capital inconsistency between 61,750,000 shares (Prospectus) and 63,000,000 shares (Underwriting Agreement).\"}, {\"criterion_id\": \"C5\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable contains no calculation of days remaining from 4 May 2026 or any coherent timeline information.\"}, {\"criterion_id\": \"C6\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable contains no analysis of whether 5 June 2027 is a Business Day or identification of 7 June 2027 as the first trading opportunity.\"}, {\"criterion_id\": \"C7\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable contains no 'Bottom line' or executive summary; it consists only of garbled XML/DSML tags with no substantive content.\"}]}"
+    }
+  ]
+}

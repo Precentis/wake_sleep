@@ -1,0 +1,90 @@
+{
+  "docs": [
+    {
+      "title": "share_purchase_agreement.md",
+      "attempts": [
+        {
+          "missing": [
+            "4 years"
+          ],
+          "usage": {
+            "input_tokens": 673,
+            "output_tokens": 1070
+          }
+        },
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 1768,
+            "output_tokens": 1164
+          }
+        }
+      ]
+    },
+    {
+      "title": "employment_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 492,
+            "output_tokens": 945
+          }
+        }
+      ]
+    },
+    {
+      "title": "client_email.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 530,
+            "output_tokens": 435
+          }
+        }
+      ]
+    }
+  ],
+  "doc_facts": {
+    "share_purchase_agreement.md": {
+      "key": "spa",
+      "facts": [
+        "Parties: Thornbury Capital LLP (Buyer), Yarrow Capital LLP (Seller); the Company is Redcliffe Media Ltd.",
+        "Section 2.1: the Purchase Price is $25,000,000.",
+        "This Agreement is dated 1 March 2026; Closing is scheduled for 31 May 2026 (the 'Closing Date').",
+        "Section 12.1: the Seller shall not compete with the business for 4 years after Closing.",
+        "Section 3.4 (Earn-out): the Earn-out Payment equals 2 times the amount by which FY2026 EBITDA exceeds $6,500,000, capped at $3,000,000.",
+        "Section 4.5: if the Conditions are not satisfied by the date falling 150 days after the date of this Agreement (signed 1 March 2026), either party may terminate."
+      ],
+      "must_contain": [
+        "4 years",
+        "$6,500,000",
+        "$3,000,000",
+        "150 days",
+        "1 March 2026"
+      ]
+    },
+    "employment_agreement.md": {
+      "key": "employment",
+      "facts": [
+        "Clause 18: the Founder shall not compete with the business for 18 months after termination of employment."
+      ],
+      "must_contain": [
+        "18 months"
+      ]
+    },
+    "client_email.md": {
+      "key": "client_email",
+      "facts": [
+        "Management accounts show FY2026 EBITDA of $8,600,000; the Seller says the Earn-out Payment will therefore be $3,600,000.",
+        "Regulatory counsel expects merger clearance by 12 September 2026."
+      ],
+      "must_contain": [
+        "$8,600,000",
+        "$3,600,000",
+        "12 September 2026"
+      ]
+    }
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "docs": [
+    {
+      "title": "share_purchase_agreement.md",
+      "attempts": [
+        {
+          "missing": [
+            "pandemics"
+          ],
+          "usage": {
+            "input_tokens": 713,
+            "output_tokens": 1091
+          }
+        },
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 1832,
+            "output_tokens": 1088
+          }
+        }
+      ]
+    },
+    {
+      "title": "client_email.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 516,
+            "output_tokens": 435
+          }
+        }
+      ]
+    }
+  ],
+  "doc_facts": {
+    "share_purchase_agreement.md": {
+      "key": "spa",
+      "facts": [
+        "Parties: Foxley Marine Ltd (Buyer), Whitlock Bioscience plc (Seller); the Company is Netherby Engineering Ltd.",
+        "Section 2.1: the Purchase Price is $250,000,000.",
+        "This Agreement is dated 5 August 2026; Closing is scheduled for 22 October 2026 (the 'Closing Date').",
+        "Section 1.1: 'Material Adverse Change' means any event which has a material adverse effect on the business of the Company, excluding changes in general economic conditions, changes affecting the industry generally, and pandemics.",
+        "Section 10.1 (Survival): the General Warranties survive Closing for 18 months; the Fundamental Warranties (title, capacity, tax) survive for 72 months. Claims must be notified in writing before expiry.",
+        "Section 3.4 (Earn-out): the Earn-out Payment equals 2 times the amount by which FY2026 EBITDA exceeds $4,000,000, capped at $5,000,000."
+      ],
+      "must_contain": [
+        "Material Adverse Change",
+        "pandemics",
+        "18 months",
+        "72 months",
+        "$4,000,000",
+        "$5,000,000"
+      ]
+    },
+    "client_email.md": {
+      "key": "client_email",
+      "facts": [
+        "Management accounts show FY2026 EBITDA of $5,300,000; the Seller says the Earn-out Payment will therefore be $2,200,000."
+      ],
+      "must_contain": [
+        "$5,300,000",
+        "$2,200,000"
+      ]
+    }
+  }
+}

@@ -1,0 +1,169 @@
+{
+  "task_id": "MNA_T072",
+  "cycle": 1,
+  "lineage": "ablation_no_commit_gate",
+  "graded": true,
+  "failures": [
+    {
+      "criterion_id": "C2",
+      "what_went_wrong": "The agent identified the different durations of non-compete provisions but failed to assess their enforceability or flag the inconsistency as a legal risk.",
+      "should_have": "Evaluated whether the 5-year non-compete is reasonable and enforceable under applicable law, and highlighted the inconsistency with the 18-month restriction in the employment agreement as a potential legal risk.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C3",
+      "what_went_wrong": "The agent noted the IP ownership issue but did not specifically recommend obtaining a confirmatory assignment as a condition to closing, instead suggesting generic actions like due diligence or indemnity.",
+      "should_have": "Explicitly recommended securing a confirmatory IP assignment from the contractor as a condition precedent to closing to mitigate the ownership risk.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C5",
+      "what_went_wrong": "The agent accepted the stated warranty cap figure without verifying its calculation against the purchase price, missing a discrepancy.",
+      "should_have": "Recomputed the warranty cap as a percentage of the purchase price and flagged any mismatch with the stated figure.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C6",
+      "what_went_wrong": "The agent calculated days remaining to warranty expiry from the closing date rather than the current date (30 March 2026), leading to an incorrect count.",
+      "should_have": "Calculated days remaining to warranty expiry from the current date (today) to provide actionable timelines for the client.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C7",
+      "what_went_wrong": "The agent did not show the arithmetic for the warranty cap calculation or flag the discrepancy between the stated and computed figures.",
+      "should_have": "Explicitly shown the calculation (e.g., 20% of purchase price) and compared it with the stated cap to identify discrepancies.",
+      "failure_kind": "procedural"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T072_0",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "For every percentage-based cap or liability limit, recompute the figure from the base amount and flag any mismatch with the stated figure.",
+      "source_tasks": [
+        "MNA_T072"
+      ],
+      "evidence": [
+        "MNA_T072:C5",
+        "MNA_T072:C7"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T072_1",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "When calculating days remaining to a deadline, always use the current date (today) as the reference point, not an intermediate milestone.",
+      "source_tasks": [
+        "MNA_T072"
+      ],
+      "evidence": [
+        "MNA_T072:C6"
+      ],
+      "task_type_scope": "timeline_analysis",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T072_2",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "For restrictive covenants, assess enforceability under applicable law and flag any inconsistencies between related provisions (e.g., non-compete durations in SPA vs. employment agreements).",
+      "source_tasks": [
+        "MNA_T072"
+      ],
+      "evidence": [
+        "MNA_T072:C2"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T072_3",
+      "type": "practice_note",
+      "category": "drafting",
+      "text": "When identifying risks related to IP ownership, explicitly recommend securing confirmatory assignments or other curative actions as conditions precedent to closing.",
+      "source_tasks": [
+        "MNA_T072"
+      ],
+      "evidence": [
+        "MNA_T072:C3"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T072_4",
+      "type": "checklist",
+      "category": "review",
+      "text": "Before finalising a timeline analysis, verify that all derived dates and figures are computed from the correct reference points (e.g., current date, not closing date).",
+      "source_tasks": [
+        "MNA_T072"
+      ],
+      "evidence": [
+        "MNA_T072:C6"
+      ],
+      "task_type_scope": "timeline_analysis",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T072_5",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Show all calculations for derived figures (e.g., caps, deadlines) in the deliverable to enable verification and transparency.",
+      "source_tasks": [
+        "MNA_T072"
+      ],
+      "evidence": [
+        "MNA_T072:C5",
+        "MNA_T072:C7"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.8
+    }
+  ],
+  "lesson_feedback": [
+    {
+      "lesson_id": "L0001",
+      "label": "HELPFUL",
+      "reason": "Directly addresses the procedural failure to verify percentage-based figures, which is a common oversight in financial and legal analysis."
+    },
+    {
+      "lesson_id": "L0002",
+      "label": "HELPFUL",
+      "reason": "Clarifies the correct reference point for calculating days remaining, which is critical for actionable timelines in deadline analyses."
+    },
+    {
+      "lesson_id": "L0003",
+      "label": "HELPFUL",
+      "reason": "Encourages legal risk assessment of restrictive covenants, which is often overlooked in favour of factual reporting."
+    },
+    {
+      "lesson_id": "L0004",
+      "label": "HELPFUL",
+      "reason": "Provides a clear action for IP ownership risks, moving beyond generic recommendations to specific curative steps."
+    },
+    {
+      "lesson_id": "L0005",
+      "label": "HELPFUL",
+      "reason": "Ensures consistency in reference points for timeline analyses, reducing errors in deadline calculations."
+    },
+    {
+      "lesson_id": "L0006",
+      "label": "HELPFUL",
+      "reason": "Promotes transparency and verifiability in calculations, which is essential for legal and financial accuracy."
+    }
+  ],
+  "input_tokens": 5095,
+  "output_tokens": 1340,
+  "cost_usd": 0.0045575,
+  "prompt": "# Task\nType: timeline_analysis | Practice area: corporate_mna\nYou act for the Buyer, Northgate Robotics Ltd. Northgate Robotics Ltd (the Buyer) is acquiring the entire issued share capital of Juniper Systems Ltd (the Company) from Whitlock Logistics plc (the Seller).\n\nPrepare a timeline and deadlines analysis of all time-sensitive obligations in the matter documents. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 30 March 2026. Address the deliverable to the supervising partner.\n\n# Trajectory (23 model steps, 23 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 3. [research] read_document({\"name\": \"disclosure_letter.md\"})\n 4. [research] read_document({\"name\": \"employment_agreement.md\"})\n 5. [research] read_document({\"name\": \"client_email.md\"})\n 6. [analysis] calculate({\"expression\": \"agreement_date = date('2026-03-21')\\nclosing_date = date('2026-04-24')\\ntoday = date('2026-03-30')\\nregulatory_clearance = date('2026-10-02')\\nc)\n 7. [analysis] calculate({\"expression\": \"bank_account_deadline = prev_business_day(closing_date, 5)\\ndays_to_closing = days_between(today, closing_date)\\ndays_to_conditions_termination )\n 8. [analysis] calculate({\"expression\": \"agreement_date = date('2026-03-21')\\nclosing_date = date('2026-04-24')\\ntoday = date('2026-03-30')\\nregulatory_clearance = date('2026-10-02')\\nc)\n 9. [analysis] calculate({\"expression\": \"closing_date = date('2026-04-24')\\nbank_account_deadline = add_days(closing_date, -5)\\nbank_account_deadline_business = prev_business_day(bank_a)\n10. [analysis] calculate({\"expression\": \"closing_date = date('2026-04-24')\\ngeneral_warranties_end = add_months(closing_date, 12)\\nfundamental_warranties_end = add_months(closing_date, )\n11. [research] search_documents({\"query\": \"days\"})\n12. [research] search_documents({\"query\": \"months\"})\n13. [research] search_documents({\"query\": \"years\"})\n14. [drafting] write_draft(<937 words>)\n15. [verification] read_draft({})\n16. [editing] edit_draft(find='#### 3. Intellectual Property Disclosure\\n\\n**Issue:** Disclos' -> '#### 3. Intellectual Property Disclosure\\n\\n**Issue:** Disclos')\n17. [editing] edit_draft(find='**Conditions to be satisfied:**\\n1. All necessary third-party' -> '**Conditions to be satisfied:**\\n1. All necessary third-party')\n18. [editing] edit_draft(find='| **Bank Account Notification** | **17 April 2026** (Friday)' -> '| **Bank Account Notification** | **17 April 2026** (Friday)')\n19. [verification] search_documents({\"query\": \"date\"})\n20. [editing] edit_draft(find='| **Employment Effective Date** | 1 April 2025 | Founder Tho' -> '| **Employment Agreement Date** | On or about 30 March 2025 ')\n21. [editing] edit_draft(find='### Executive Summary\\n\\nThis analysis identifies and calculat' -> '### Executive Summary\\n\\nThis analysis identifies and calculat')\n22. [verification] read_draft({})\n23. [control] finish({\"summary\": \"Completed timeline and deadlines analysis for Northgate Robotics Ltd's acquisition of Juniper Systems Ltd. Identified critical timing conflict betw)\n\n# Final deliverable\n# Timeline and Deadlines Analysis\n## Acquisition of Juniper Systems Ltd by Northgate Robotics Ltd\n\n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Date:** 30 March 2026  \n**Matter:** Acquisition of Juniper Systems Ltd  \n**Client:** Northgate Robotics Ltd (Buyer)  \n**Counterparty:** Whitlock Logistics plc (Seller)\n\n---\n\n### Executive Summary\n\nThis analysis identifies and calculates all time-sensitive obligations arising from the proposed acquisition of Juniper Systems Ltd. The key documents reviewed are: Share Purchase Agreement (dated 21 March 2026), Disclosure Letter, Employment Agreement (extract), and Client Email (15 February 2026). The analysis is prepared as of 30 March 2026.\n\n#### Key Dates Summary\n| Event | Date | Criticality |\n|-------|------|-------------|\n| **Today's Date** | 30 March 2026 | Reference point |\n| **Bank Account Notification Deadline** | 17 April 2026 | High (payment prerequisite) |\n| **Closing Date** | 24 April 2026 | Critical (transaction completion) |\n| **Conditions Satisfaction Deadline** | 18 August 2026 | Critical (conflict with regulatory clearance) |\n| **Expected Regulatory Clearance** | 2 October 2026 | High (45 days after conditions deadline) |\n| **General Warranties Expiry** | 24 April 2027 | Medium (12-month survival) |\n| **Fundamental Warranties Expiry** | 24 April 2030 | Medium (48-month survival) |\n| **Seller Non-Compete Expiry** | 24 April 2031 | Low (5-year restriction) |\n\n### Critical Path Timeline\n\n#### 1. Pre-Closing Deadlines\n\n| Deadline | Date | Days from Today | Obligation | Document Reference |\n|----------|------|-----------------|------------|-------------------|\n| **Bank Account Notification** | **17 April 2026** (Friday) | 18 days | Seller must provide bank account details for Purchase Price payment (5 Business Days before Closing). Calculated as: 24 April - 5 calendar days = 19 April (Sunday), previous business day = 17 April. | SPA Clause 2.2 |\n| **Closing Date** | **24 April 2026** (Friday) | 25 days | Completion of share transfer and payment of Purchase Price ($125,000,000) | SPA Clause 3.1 |\n\n#### 2. Conditions Precedent Timeline\n\n| Deadline | Date | Days from Today | Obligation | Document Reference |\n|----------|------|-----------------|------------|-------------------|\n| **Conditions Satisfaction Deadline** | **18 August 2026** (Tuesday) | 141 days | All conditions must be satisfied or waived; otherwise either party may terminate | SPA Clause 4.5 |\n| **Key Condition: Regulatory Clearance** | **2 October 2026** (Friday) | 186 days | Expected merger clearance date per Client Email | Client Email |\n\n**Conditions to be satisfied:**\n1. All necessary third-party consents (including from Elstree Energy plc)\n2. No order or injunction prohibiting Closing\n\n**Calculation Note:** Conditions Satisfaction Deadline is 150 days from Agreement date (21 March 2026) = 18 August 2026.\n\n**Critical Timing Issue:** The Conditions Satisfaction Deadline (18 August 2026) precedes the expected Regulatory Clearance date (2 October 2026) by 45 days. This creates a timing conflict that requires immediate attention.\n\n#### 3. Post-Closing Warranty Periods\n\n| Warranty Type | Survival Period | End Date | Days from Closing | Notification Deadline |\n|---------------|----------------|----------|-------------------|----------------------|\n| **General Warranties** | 12 months | **24 April 2027** (Saturday) | 365 days | Must notify claims before expiry |\n| **Fundamental Warranties** (title, capacity, tax) | 48 months | **24 April 2030** (Wednesday) | 1,461 days | Must notify claims before expiry |\n\n**Key Limitation:** Aggregate liability capped at 20% of Purchase Price ($31,250,000) - SPA Clause 8.4\n\n#### 4. Restrictive Covenants\n\n| Covenant | Period | End Date | Document Reference |\n|----------|--------|----------|-------------------|\n| **Seller Non-Compete** | 5 years from Closing | **24 April 2031** (Thursday) | SPA Clause 12.1 |\n| **Founder (Thomas Vaughan) Non-Compete** | 18 months after termination of employment | Variable (depends on termination date) | Employment Agreement Clause 18.1 |\n| **Founder Confidentiality** | 5 years after termination of employment | Variable (depends on termination date) | Employment Agreement Clause 6.2 |\n\n#### 5. Employment Agreement Timeline\n\n| Event | Date | Notes |\n|-------|------|-------|\n| **Employment Agreement Date** | On or about 30 March 2025 | Employment agreement executed |\n| **Employment Effective Date** | 1 April 2025 | Founder Thomas Vaughan's employment commenced |\n| **Current Employment Duration** | 1 year as of 30 March 2026 | Ongoing employment |\n\n### Risk Analysis and Recommendations\n\n#### 1. Critical Timing Conflict\n\n**Issue:** The Conditions Satisfaction Deadline (18 August 2026) falls 45 days **before** the expected Regulatory Clearance date (2 October 2026).\n\n**Risk:** If regulatory clearance is not obtained by 18 August 2026, either party could terminate the Agreement, potentially jeopardising the transaction.\n\n**Recommendation:** \n1. Seek amendment to extend Conditions Satisfaction Deadline to at least 2 October 2026 plus a reasonable buffer period.\n2. Alternatively, obtain regulatory clearance on an expedited basis.\n3. Consider whether regulatory clearance should be a condition precedent or a separate undertaking.\n\n#### 2. Bank Account Notification Deadline\n\n**Deadline:** 17 April 2026 (5 Business Days before Closing)\n\n**Action Required:** Ensure Seller provides bank account details by this date to avoid payment delays.\n\n#### 3. Intellectual Property Disclosure\n\n**Issue:** Disclosure Letter reveals critical IP ownership issues with core platform software developed by Ashcombe Technologies Ltd in 2023 without formal written contract or IP assignment.\n\n**Key Disclosures:**\n- No formal written contract with Ashcombe Technologies Ltd\n- No written assignment of intellectual property rights\n- No warranties or indemnities regarding IP ownership\n- Company has been using software since 2023 without challenge\n\n**Risk:** High risk of warranty breach under Warranty 8.2 (Intellectual Property). The Company may not have clear title to its core platform software.\n\n**Action Required:** \n1. Conduct urgent due diligence on IP ownership status\n2. Consider obtaining indemnity from Seller or price adjustment\n3. Address this issue before Closing (24 April 2026)\n4. Ensure any claims are notified before warranty expiry dates (24 April 2027 for General Warranties)\n\n#### 4. Payment Terms\n\n**Payment:** $125,000,000 due on Closing Date (24 April 2026)\n**Late Payment Interest:** Rate prescribed under Late Payment of Commercial Debts (Interest) Act 1998\n\n#### 5. Notice Provisions\n\n**Deemed Service Times:**\n- First-class post: 48 hours after posting\n- Hand delivery: Time of delivery\n- Email: On transmission (if no bounce-back)\n\n### Action Items for Client\n\n1. **Immediate (Next 7 days):**\n   - Address Conditions Satisfaction Deadline conflict with regulatory clearance timeline\n   - Confirm regulatory clearance application status and expected timeline\n   - Request Seller's bank account details for payment\n\n2. **Pre-Closing (Before 17 April 2026):**\n   - Ensure all third-party consents are obtained (particularly Elstree Energy plc)\n   - Finalise closing documents and logistics\n   - Arrange funds transfer for Purchase Price\n\n3. **Post-Closing:**\n   - Maintain calendar of warranty expiry dates (24 April 2027 and 24 April 2030)\n   - Monitor Seller compliance with 5-year non-compete\n   - Review Founder employment terms and restrictive covenants\n\n### Conclusion\n\nThe acquisition timeline presents one critical risk: the mismatch between the Conditions Satisfaction Deadline (18 August 2026) and expected Regulatory Clearance (2 October 2026). This must be addressed immediately to prevent transaction failure. All other deadlines are manageable with proper planning and monitoring.\n\nThe warranty periods (12 months for General Warranties, 48 months for Fundamental Warranties) provide reasonable protection periods, though the IP disclosure requires particular attention. The restrictive covenants (5-year Seller non-compete and 18-month Founder non-compete) provide adequate post-acquisition protection.\n\n**Prepared by:** Senior Associate  \n**Date:** 30 March 2026\n\n# Expert rubric verdicts (3/8 passed)\n- C1 [PASS] States that General Warranty claims must be notified by 24 April 2027 (12 months after Closing) and Fundamental Warranty claims by 24 April 2030 (48 months after Closing).\n    judges: PASS: The deliverable clearly states General Warranty claims must be notified by 24 April 2027 and Fundamental Warranty claims by 24 April 2030, with correct calculation of 12 and 48 months from Closing. | PASS: The deliverable correctly states General Warranty claims must be notified by 24 April 2027 (12 months after Closing) and Fundamental Warranty claims by 24 April 2030 (48 months after Closing), with these dates appearing \n- C2 [FAIL] Identifies that the 5-year SPA non-compete may be unenforceable as wider than reasonably necessary and is inconsistent with the 18-month restriction in the Founder's employment agreement.\n    judges: FAIL: The deliverable notes the different durations of the two non-compete provisions but does not identify that the 5-year SPA non-compete may be unenforceable as wider than reasonably necessary or that the inconsistency with | FAIL: The deliverable notes both the 5-year Seller non-compete and 18-month Founder non-compete in the Restrictive Covenants table, but does not identify any enforceability concern about the 5-year restriction being wider than\n- C3 [FAIL] Identifies that the core platform was developed by contractor Ashcombe Technologies Ltd without a written IP assignment, so the Company may not own it, and recommends obtaining a confirmatory assignment as a condition to Closing.\n    judges: FAIL: While the deliverable identifies the IP ownership issue with Ashcombe Technologies Ltd, it recommends due diligence, indemnity, or price adjustment rather than specifically recommending obtaining a confirmatory IP assign | PASS: The deliverable correctly identifies that the core platform was developed by Ashcombe Technologies Ltd without written IP assignment (Disclosure Letter sections 2.2-2.5), notes the Company may not own it, and recommends \n- C4 [PASS] Calculates the long-stop date as 18 August 2026 (150 days after signing on 21 March 2026) and identifies that expected clearance on 2 October 2026 falls after it, recommending an extension.\n    judges: PASS: The deliverable correctly calculates the long-stop date as 18 August 2026 (150 days from 21 March 2026), identifies the 45-day gap with expected regulatory clearance on 2 October 2026, and recommends extending the deadli | PASS: The deliverable correctly calculates the long-stop date as 18 August 2026 (150 days after 21 March 2026), identifies that expected regulatory clearance on 2 October 2026 falls 45 days after this deadline, flags this as a\n- C5 [FAIL] Identifies that the warranty cap in SPA Section 8.4 is stated as $31,250,000 but 20% of the $125,000,000 Purchase Price is $25,000,000, i.e. the stated figure is wrong.\n    judges: PASS: The deliverable identifies that the warranty cap in SPA Clause 8.4 is stated as $31,250,000 but correctly notes that 20% of $125,000,000 is $25,000,000, flagging the discrepancy. | FAIL: The deliverable quotes the warranty cap as $31,250,000 (20% of Purchase Price) in the Key Limitation note without any challenge or verification. It does not identify that 20% of $125,000,000 is actually $25,000,000, not \n- C6 [FAIL] States the survival periods as durations and as dates (24 April 2027; 24 April 2030) and gives days remaining to the general-warranty expiry from 30 March 2026 (390 days).\n    judges: PASS: The deliverable states the survival periods as durations (12 months, 48 months) and dates (24 April 2027, 24 April 2030), and provides 390 days remaining to general warranty expiry from 30 March 2026. | FAIL: While the deliverable states survival periods as durations and dates (24 April 2027; 24 April 2030), it incorrectly calculates days remaining to general-warranty expiry as 365 days from Closing rather than from 30 March \n- C7 [FAIL] Shows the arithmetic for the cap (20% x $125,000,000 = $25,000,000) and flags the discrepancy with the stated $31,250,000.\n    judges: PASS: The deliverable shows the arithmetic (20% of Purchase Price = $31,250,000 cap stated, with $125,000,000 Purchase Price referenced) and flags the discrepancy between the stated $31,250,000 and the correct $25,000,000. | FAIL: The deliverable does not show the arithmetic (20% x $125,000,000 = $25,000,000) and does not flag the discrepancy with the stated $31,250,000. It accepts the $31,250,000 figure without verification.\n- C8 [PASS] Opens with a short 'Bottom line' / executive summary stating the overall conclusion and the most important risks before the detailed analysis.\n    judges: PASS: The deliverable opens with an Executive Summary that includes a Key Dates Summary table and clearly states the overall conclusion and most important risks before the detailed analysis. | PASS: The deliverable opens with an Executive Summary that states the overall conclusion and identifies the most important risk: 'The acquisition timeline presents one critical risk: the mismatch between the Conditions Satisfa\n\n# Your job\nAnalyse each FAILED criterion: what went wrong, what the agent should have done, and whether the failure is procedural (reusable) or task-specific. Then write reusable candidate lessons that would prevent the procedural failures on other matters.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|timeline_analysis\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C2\",\n      \"what_went_wrong\": \"The agent identified the different durations of non-compete provisions but failed to assess their enforceability or flag the inconsistency as a legal risk.\",\n      \"should_have\": \"Evaluated whether the 5-year non-compete is reasonable and enforceable under applicable law, and highlighted the inconsistency with the 18-month restriction in the employment agreement as a potential legal risk.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C3\",\n      \"what_went_wrong\": \"The agent noted the IP ownership issue but did not specifically recommend obtaining a confirmatory assignment as a condition to closing, instead suggesting generic actions like due diligence or indemnity.\",\n      \"should_have\": \"Explicitly recommended securing a confirmatory IP assignment from the contractor as a condition precedent to closing to mitigate the ownership risk.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C5\",\n      \"what_went_wrong\": \"The agent accepted the stated warranty cap figure without verifying its calculation against the purchase price, missing a discrepancy.\",\n      \"should_have\": \"Recomputed the warranty cap as a percentage of the purchase price and flagged any mismatch with the stated figure.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C6\",\n      \"what_went_wrong\": \"The agent calculated days remaining to warranty expiry from the closing date rather than the current date (30 March 2026), leading to an incorrect count.\",\n      \"should_have\": \"Calculated days remaining to warranty expiry from the current date (today) to provide actionable timelines for the client.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C7\",\n      \"what_went_wrong\": \"The agent did not show the arithmetic for the warranty cap calculation or flag the discrepancy between the stated and computed figures.\",\n      \"should_have\": \"Explicitly shown the calculation (e.g., 20% of purchase price) and compared it with the stated cap to identify discrepancies.\",\n      \"failure_kind\": \"procedural\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"For every percentage-based cap or liability limit, recompute the figure from the base amount and flag any mismatch with the stated figure.\",\n      \"evidence\": [\"C5\", \"C7\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"When calculating days remaining to a deadline, always use the current date (today) as the reference point, not an intermediate milestone.\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"timeline_analysis\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"For restrictive covenants, assess enforceability under applicable law and flag any inconsistencies between related provisions (e.g., non-compete durations in SPA vs. employment agreements).\",\n      \"evidence\": [\"C2\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"drafting\",\n      \"text\": \"When identifying risks related to IP ownership, explicitly recommend securing confirmatory assignments or other curative actions as conditions precedent to closing.\",\n      \"evidence\": [\"C3\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.85\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"review\",\n      \"text\": \"Before finalising a timeline analysis, verify that all derived dates and figures are computed from the correct reference points (e.g., current date, not closing date).\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"timeline_analysis\",\n      \"confidence\": 0.85\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Show all calculations for derived figures (e.g., caps, deadlines) in the deliverable to enable verification and transparency.\",\n      \"evidence\": [\"C5\", \"C7\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.8\n    }\n  ],\n  \"lesson_feedback\": [\n    {\n      \"lesson_id\": \"L0001\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Directly addresses the procedural failure to verify percentage-based figures, which is a common oversight in financial and legal analysis.\"\n    },\n    {\n      \"lesson_id\": \"L0002\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Clarifies the correct reference point for calculating days remaining, which is critical for actionable timelines in deadline analyses.\"\n    },\n    {\n      \"lesson_id\": \"L0003\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Encourages legal risk assessment of restrictive covenants, which is often overlooked in favour of factual reporting.\"\n    },\n    {\n      \"lesson_id\": \"L0004\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Provides a clear action for IP ownership risks, moving beyond generic recommendations to specific curative steps.\"\n    },\n    {\n      \"lesson_id\": \"L0005\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Ensures consistency in reference points for timeline analyses, reducing errors in deadline calculations.\"\n    },\n    {\n      \"lesson_id\": \"L0006\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Promotes transparency and verifiability in calculations, which is essential for legal and financial accuracy.\"\n    }\n  ]\n}\n```"
+}

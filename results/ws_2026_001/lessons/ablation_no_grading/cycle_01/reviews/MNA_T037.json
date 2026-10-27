@@ -1,0 +1,173 @@
+{
+  "task_id": "MNA_T037",
+  "cycle": 1,
+  "lineage": "ablation_no_grading",
+  "graded": false,
+  "failures": [
+    {
+      "criterion_id": "C1",
+      "what_went_wrong": "The agent did not verify the completeness of the SPA by cross-referencing clause numbers or schedules mentioned in the provided extract against the full document structure.",
+      "should_have": "Confirmed whether the SPA extract was complete by checking for referenced clauses (e.g., Warranty 6.3, Clause 5.1(f)) in the document metadata or table of contents.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C2",
+      "what_went_wrong": "The agent flagged currency inconsistencies but did not calculate the potential financial impact of the mismatch between USD purchase price and GBP settlement provisions.",
+      "should_have": "Quantified the exchange rate risk by calculating the potential variance based on historical rates or projected fluctuations.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C3",
+      "what_went_wrong": "The agent identified a material contract expiry 11 days post-closing but did not assess whether the contract contained automatic renewal provisions or notice requirements for termination/renewal.",
+      "should_have": "Reviewed the contract for renewal/termination mechanics to determine if the expiry risk was mitigated by built-in protections.",
+      "failure_kind": "task_specific"
+    },
+    {
+      "criterion_id": "C4",
+      "what_went_wrong": "The agent did not prioritize issues by severity or urgency in the executive summary, making it harder for the partner to allocate resources effectively.",
+      "should_have": "Categorized issues by criticality (e.g., 'deal-breaker', 'high risk', 'moderate risk') and suggested a triage order for resolution.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C5",
+      "what_went_wrong": "The agent noted a 1% indemnity basket but did not benchmark this against market standards for transactions of similar size or sector.",
+      "should_have": "Compared the basket to industry norms (e.g., 0.5%-1.5% of enterprise value) and flagged deviations as potential negotiation points.",
+      "failure_kind": "analysis"
+    },
+    {
+      "criterion_id": "C6",
+      "what_went_wrong": "The agent did not cross-check the disclosure letter's assertions against the SPA warranties to identify gaps or inconsistencies beyond the change of control provision.",
+      "should_have": "Systematically mapped disclosures to corresponding warranties to ensure all exceptions were properly documented.",
+      "failure_kind": "procedural"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T037_0",
+      "type": "checklist",
+      "category": "review",
+      "text": "Before finalizing an issues list, cross-reference all document references (e.g., clause numbers, schedules) to confirm the completeness of provided materials and flag missing sections.",
+      "source_tasks": [
+        "MNA_T037"
+      ],
+      "evidence": [
+        "MNA_T037:C1"
+      ],
+      "task_type_scope": "issues_list",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T037_1",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "For currency mismatches in transaction documents, calculate the potential financial impact using current and projected exchange rates to quantify the risk.",
+      "source_tasks": [
+        "MNA_T037"
+      ],
+      "evidence": [
+        "MNA_T037:C2"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T037_2",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "When reviewing material contracts with near-term expiry dates, check for automatic renewal clauses, notice periods, and termination rights to assess continuity risk.",
+      "source_tasks": [
+        "MNA_T037"
+      ],
+      "evidence": [
+        "MNA_T037:C3"
+      ],
+      "task_type_scope": "issues_list",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.92
+    },
+    {
+      "candidate_id": "c01_MNA_T037_3",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Prioritize issues in the executive summary by severity (e.g., 'deal-breaker', 'high risk', 'moderate risk') and include a recommended triage order for resolution.",
+      "source_tasks": [
+        "MNA_T037"
+      ],
+      "evidence": [
+        "MNA_T037:C4"
+      ],
+      "task_type_scope": "issues_list",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.88
+    },
+    {
+      "candidate_id": "c01_MNA_T037_4",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Benchmark indemnity baskets against market standards for transactions of similar size/sector, and flag deviations as potential negotiation points.",
+      "source_tasks": [
+        "MNA_T037"
+      ],
+      "evidence": [
+        "MNA_T037:C5"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T037_5",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Systematically map disclosure letter exceptions to corresponding warranties to identify gaps, inconsistencies, or undocumented risks.",
+      "source_tasks": [
+        "MNA_T037"
+      ],
+      "evidence": [
+        "MNA_T037:C6"
+      ],
+      "task_type_scope": "issues_list",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.93
+    }
+  ],
+  "lesson_feedback": [
+    {
+      "lesson_id": "L0001",
+      "label": "HELPFUL",
+      "reason": "Addresses a common procedural gap in document review that can lead to overlooked risks."
+    },
+    {
+      "lesson_id": "L0002",
+      "label": "HELPFUL",
+      "reason": "Quantifying financial impacts of currency mismatches adds actionable value to the analysis."
+    },
+    {
+      "lesson_id": "L0003",
+      "label": "HELPFUL",
+      "reason": "Proactively assessing contract renewal mechanics is critical for post-closing risk evaluation."
+    },
+    {
+      "lesson_id": "L0004",
+      "label": "HELPFUL",
+      "reason": "Prioritization frameworks improve decision-making efficiency for supervising partners."
+    },
+    {
+      "lesson_id": "L0005",
+      "label": "HELPFUL",
+      "reason": "Benchmarking indemnity terms against market standards provides context for negotiation strategy."
+    },
+    {
+      "lesson_id": "L0006",
+      "label": "HELPFUL",
+      "reason": "Systematic disclosure-warranty mapping ensures comprehensive risk identification."
+    }
+  ],
+  "input_tokens": 3966,
+  "output_tokens": 1390,
+  "cost_usd": 0.004068,
+  "prompt": "# Task\nType: issues_list | Practice area: corporate_mna\nYou act for the Buyer, Eskdale Energy plc. Eskdale Energy plc (the Buyer) is acquiring the entire issued share capital of Juniper Technologies Ltd (the Company) from Quayside Foods Ltd (the Seller).\n\nPrepare an issues list for the supervising partner covering the matter documents. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 28 December 2026. Address the deliverable to the supervising partner.\n\n# Trajectory (24 model steps, 24 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"client_email.md\"})\n 3. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 4. [research] read_document({\"name\": \"disclosure_letter.md\"})\n 5. [research] read_document({\"name\": \"material_customer_contract.md\"})\n 6. [research] search_documents({\"query\": \"Netherby\"})\n 7. [research] search_documents({\"query\": \"Material Contract\"})\n 8. [research] search_documents({\"query\": \"Warranty 6.3\"})\n 9. [analysis] calculate({\"expression\": \"date('2026-12-02')\\nadd_days(date('2026-12-02'), 90)\\ndate('2027-01-26')\\ndate('2027-04-16')\\ndays_between(date('2026-12-28'), date('2027-01-26')\n10. [analysis] calculate({\"expression\": \"days_between(date('2026-12-02'), date('2026-12-28'))\"})\n11. [research] search_documents({\"query\": \"change of control\"})\n12. [research] search_documents({\"query\": \"merger\"})\n13. [research] search_documents({\"query\": \"condition\"})\n14. [drafting] write_draft(<1357 words>)\n15. [verification] read_draft({})\n16. [editing] edit_draft(find='### 10. **Incomplete SPA Provided for Review**\\n\\n**Issue:** T' -> '### 10. **Incomplete SPA Provided for Review**\\n\\n**Issue:** T')\n17. [editing] edit_draft(find='### 12. **Regulatory Timeline Management**\\n\\n**Observation:**' -> '### 12. **Contract Role Confusion**\\n\\n**Issue:** The material')\n18. [editing] edit_draft(find='## Significant Issues Requiring Review\\n\\n### 6. **Date Discre' -> '## Significant Issues Requiring Review\\n\\n### 6. **Date Discre')\n19. [editing] edit_draft(find='## Commercial Considerations\\n\\n### 11. **Netherby Engineering' -> '## Commercial Considerations\\n\\n### 11. **Netherby Engineering')\n20. [verification] calculate({\"expression\": \"add_months(date('2024-01-15'), 36)\\ndays_between(date('2027-01-15'), date('2027-01-26'))\"})\n21. [editing] edit_draft(find='### 12. **Contract Role Confusion**\\n\\n**Issue:** The material' -> '### 12. **Contract Role Confusion**\\n\\n**Issue:** The material')\n22. [editing] edit_draft(find='### 13. **Regulatory Timeline Management**\\n\\n**Observation:**' -> '### 14. **Regulatory Timeline Management**\\n\\n**Observation:**')\n23. [verification] read_draft({})\n24. [control] finish({\"summary\": \"Issues list for Eskdale Energy plc's acquisition of Juniper Technologies Ltd, identifying critical legal and commercial risks including contradicto)\n\n# Final deliverable\n# Issues List: Acquisition of Juniper Technologies Ltd by Eskdale Energy plc\n\n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Date:** 28 December 2026  \n**Matter:** Eskdale Energy plc acquisition of Juniper Technologies Ltd from Quayside Foods Ltd  \n**Client:** Eskdale Energy plc (Buyer)\n\n## Executive Summary\n\nThis issues list identifies critical legal and commercial risks in the proposed acquisition of Juniper Technologies Ltd. Key concerns include: (1) contradictory warranties regarding the Company's relationship with Netherby Engineering Ltd; (2) missing merger control condition precedent; (3) inconsistent closing timeline with regulatory clearance; (4) problematic disclosure against change of control provisions; and (5) material contract risks that could trigger termination post-acquisition.\n\n## Critical Issues Requiring Immediate Attention\n\n### 1. **Contradictory Warranties Regarding Netherby Engineering Ltd Relationship**\n\n**Issue:** Clause 5.1(d) of the SPA warrants that \"the Company has not traded with Netherby Engineering Ltd in the 12 months prior to the date of this Agreement.\" However, the client email states that \"Juniper Technologies Ltd is a key technology services provider to Netherby Engineering Ltd,\" and a material customer contract exists between the parties dated 15 January 2024 with a 36-month term.\n\n**Risk:** This warranty is demonstrably false. If relied upon, it could constitute a breach of warranty giving rise to indemnity claims. More importantly, it suggests the Seller may be unaware of or misrepresenting a key commercial relationship.\n\n**Action Required:** \n- Immediately clarify the actual trading relationship with Netherby Engineering Ltd\n- Consider amending or deleting this warranty\n- Investigate whether other warranties may be similarly inaccurate\n\n### 2. **Missing Merger Control Condition Precedent**\n\n**Issue:** The SPA contains no condition precedent for merger control clearance, despite the client email stating: \"This transaction is subject to merger control clearance. Regulatory counsel has advised that merger clearance is expected by 16 April 2027.\"\n\n**Risk:** The Buyer could be obligated to complete the acquisition (Closing Date: 26 January 2027) before obtaining regulatory approval. If clearance is denied or subject to onerous conditions, the Buyer would be bound to an acquisition it cannot lawfully complete.\n\n**Action Required:**\n- Insert a condition precedent requiring merger control clearance\n- Align closing timeline with regulatory approval expectations\n- Consider appropriate long-stop date (currently 2 March 2027)\n\n### 3. **Inconsistent Closing Timeline**\n\n**Issue:** \n- Closing Date: 26 January 2027 (SPA Clause 1.1)\n- Merger clearance expected: 16 April 2027 (client email)\n- Conditions long-stop date: 2 March 2027 (90 days from SPA date of 2 December 2026)\n\n**Risk:** The closing is scheduled 2.5 months before expected regulatory clearance and the conditions long-stop date falls 1.5 months before expected clearance.\n\n**Action Required:**\n- Re-schedule Closing Date to occur after expected regulatory clearance\n- Extend conditions long-stop date beyond expected clearance date\n- Consider making closing conditional upon actual receipt of clearance\n\n### 4. **Material Customer Contract Contains Change of Control Termination Right**\n\n**Issue:** The material customer contract with Netherby Engineering Ltd contains Clause 14.2: \"Either party may terminate this Agreement on 30 days' written notice if the other party undergoes a change of control without the prior written consent of the counterparty.\" The disclosure letter (Clause 3.1) states there are no Material Contracts with change of control provisions.\n\n**Risk:** Netherby Engineering Ltd could terminate this key contract post-acquisition, significantly impacting the Company's value. The disclosure appears inaccurate or misleading.\n\n**Action Required:**\n- Require Seller to obtain Netherby's consent to the change of control pre-completion\n- Consider renegotiating the change of control provision\n- Assess impact on purchase price if contract is terminable\n- Review disclosure letter accuracy and consider warranty breaches\n\n### 5. **Definition of \"Material Contracts\" Missing from SPA**\n\n**Issue:** The disclosure letter references \"Material Contracts\" having \"the meaning given in Warranty 6.3 of the SPA,\" but Warranty 6.3 is not included in the provided SPA extract. The SPA Clause 1.1 defines \"Contract\" but this definition is incomplete.\n\n**Risk:** Without a clear definition, it is uncertain which contracts qualify as \"Material Contracts\" for warranty and disclosure purposes. This creates ambiguity in the Seller's obligations and the Buyer's protections.\n\n**Action Required:**\n- Obtain complete SPA to review Warranty 6.3 and Material Contracts definition\n- Ensure definition captures contracts of appropriate value/duration/importance\n- Consider whether the Netherby contract falls within the definition\n\n## Significant Issues Requiring Review\n\n### 6. **Date Discrepancies Between Documents**\n\n**Issue:** \n- SPA date: 2 December 2026\n- Disclosure letter references SPA date: \"on or about 28 December 2026\"\n- Current date of review: 28 December 2026\n\n**Risk:** Creates uncertainty about which version of documents governs and may affect interpretation of dates and timelines.\n\n**Action Required:** \n- Align all document dates\n- Confirm which SPA version is operative\n- Update disclosure letter references\n\n### 7. **Currency Inconsistencies**\n\n**Issue:** \n- Purchase Price: $160,000,000 USD (SPA Clause 2.1)\n- Disclosure letter Clause 4.1: \"Any financial settlement... shall be made in pounds sterling (GBP)\"\n\n**Risk:** Creates foreign exchange risk and uncertainty in payment obligations.\n\n**Action Required:**\n- Align currency provisions across all documents\n- Specify exchange rate mechanism if different currencies used\n- Consider hedging strategies if USD payment required\n\n### 8. **Indemnity Basket Threshold**\n\n**Issue:** Clause 9.4 provides a $1,600,000 basket (1% of purchase price) before Seller liability arises.\n\n**Risk:** This threshold may be high relative to typical market practice. The Buyer bears all losses below this amount.\n\n**Action Required:**\n- Benchmark against market practice for transactions of this size\n- Consider reducing basket amount or implementing de minimis per claim\n- Negotiate appropriate basket for this specific transaction\n\n### 9. **Conditions Precedent Framework**\n\n**Issue:** Conditions in Clause 4.1 must be satisfied by 2 March 2027, but include generic requirements like warranties being \"true and accurate in all material respects.\"\n\n**Risk:** Creates subjective conditions that may be difficult to satisfy/waive. No specific regulatory condition included.\n\n**Action Required:**\n- Make conditions more objective and measurable\n- Include specific regulatory conditions\n- Consider separate conditions for key items (e.g., third-party consents)\n\n### 10. **Incomplete SPA Provided for Review**\n\n**Issue:** The SPA extract ends at Clause 12.2, missing numerous standard provisions and referenced warranties (e.g., Warranty 6.3). Additionally, Clause 1.1 references \"Contract\" having \"the meaning given in Clause 5.1(f)\" which is not included in the extract.\n\n**Risk:** Inability to conduct comprehensive due diligence on key commercial terms, representations, and indemnities. Missing definitions create ambiguity in interpretation.\n\n**Action Required:**\n- Request complete SPA document including all clauses and schedules\n- Review missing definitions, particularly \"Contract\" definition in Clause 5.1(f)\n- Ensure all referenced warranties (including Warranty 6.3) are included and reviewed\n\n## Commercial Considerations\n\n### 11. **Netherby Engineering Ltd Relationship Criticality**\n\n**Observation:** Client email describes Juniper as \"a key technology services provider to Netherby Engineering Ltd.\" The material contract represents £8.75 million in revenue.\n\n**Implication:** This relationship likely represents significant portion of Company's revenue and value. Change of control termination right poses existential risk to transaction value.\n\n**Recommendation:**\n- Conduct commercial due diligence on revenue concentration\n- Quantify impact of Netherby contract termination\n- Consider purchase price adjustment mechanism\n\n### 12. **Contract Role Confusion**\n\n**Issue:** The material customer contract defines \"Seller\" as Eskdale Energy plc (our client/Buyer in the SPA) and \"Buyer\" as Netherby Engineering Ltd. This creates potential confusion about roles in different contractual contexts.\n\n**Risk:** Misinterpretation of contractual obligations and rights across different agreements.\n\n**Action Required:**\n- Clarify definitions in all documents to avoid confusion\n- Ensure consistent terminology across transaction documents\n- Consider adding explanatory notes about different contractual contexts\n\n### 13. **Material Contract Expiry Timing**\n\n**Issue:** The material customer contract with Netherby Engineering Ltd has Effective Date 15 January 2024 with 36-month term, expiring 15 January 2027. Closing Date is 26 January 2027, 11 days after contract expiry.\n\n**Risk:** The key commercial contract may expire before completion, requiring renegotiation or renewal. The Company's value at completion may be significantly reduced if contract is not renewed.\n\n**Action Required:**\n- Determine status of contract renewal negotiations\n- Consider making completion conditional on contract renewal\n- Assess impact on purchase price if contract expires unrenewed\n\n### 14. **Regulatory Timeline Management**\n\n**Observation:** Merger clearance expected 16 April 2027, but current documentation assumes earlier completion.\n\n**Implication:** Need to manage interim period between signing and completion, including conduct of business provisions.\n\n**Recommendation:**\n- Implement robust interim covenants\n- Consider break fee if regulatory clearance not obtained\n- Plan for potential regulatory conditions affecting deal economics\n\n## Next Steps\n\n1. **Immediate (Next 24 hours):**\n   - Contact Seller's counsel to clarify Netherby warranty contradiction\n   - Request complete SPA document including all schedules\n   - Advise client of critical timeline issues\n\n2. **Short-term (Next 3 days):**\n   - Draft amendments to address merger control condition\n   - Propose revised closing timeline aligned with regulatory clearance\n   - Negotiate change of control consent from Netherby Engineering Ltd\n\n3. **Medium-term (Next week):**\n   - Complete comprehensive due diligence on all material contracts\n   - Finalise warranty and indemnity package\n   - Coordinate with regulatory counsel on clearance strategy\n\n## Documents Reviewed\n\n1. **client_email.md** (20 lines) - Client instructions and background\n2. **share_purchase_agreement.md** (101 lines) - Incomplete SPA extract\n3. **disclosure_letter.md** (76 lines) - Disclosure against warranties\n4. **material_customer_contract.md** (61 lines) - Contract with Netherby Engineering Ltd\n\n## Assumptions\n\n1. The provided SPA extract represents the current agreed position between parties\n2. The material customer contract with Netherby Engineering Ltd is operative and represents actual trading relationship\n3. Regulatory counsel's clearance expectation of 16 April 2027 is based on preliminary assessment\n\n**Prepared by:** Senior Associate  \n**Date:** 28 December 2026  \n**Status:** Urgent attention required on multiple fronts\n\n# Your job\nNo grades are available. Critically assess the deliverable and the work process yourself, as a demanding supervising partner would, and write reusable candidate lessons for improving the work.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|issues_list\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C1\",\n      \"what_went_wrong\": \"The agent did not verify the completeness of the SPA by cross-referencing clause numbers or schedules mentioned in the provided extract against the full document structure.\",\n      \"should_have\": \"Confirmed whether the SPA extract was complete by checking for referenced clauses (e.g., Warranty 6.3, Clause 5.1(f)) in the document metadata or table of contents.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C2\",\n      \"what_went_wrong\": \"The agent flagged currency inconsistencies but did not calculate the potential financial impact of the mismatch between USD purchase price and GBP settlement provisions.\",\n      \"should_have\": \"Quantified the exchange rate risk by calculating the potential variance based on historical rates or projected fluctuations.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C3\",\n      \"what_went_wrong\": \"The agent identified a material contract expiry 11 days post-closing but did not assess whether the contract contained automatic renewal provisions or notice requirements for termination/renewal.\",\n      \"should_have\": \"Reviewed the contract for renewal/termination mechanics to determine if the expiry risk was mitigated by built-in protections.\",\n      \"failure_kind\": \"task_specific\"\n    },\n    {\n      \"criterion_id\": \"C4\",\n      \"what_went_wrong\": \"The agent did not prioritize issues by severity or urgency in the executive summary, making it harder for the partner to allocate resources effectively.\",\n      \"should_have\": \"Categorized issues by criticality (e.g., 'deal-breaker', 'high risk', 'moderate risk') and suggested a triage order for resolution.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C5\",\n      \"what_went_wrong\": \"The agent noted a 1% indemnity basket but did not benchmark this against market standards for transactions of similar size or sector.\",\n      \"should_have\": \"Compared the basket to industry norms (e.g., 0.5%-1.5% of enterprise value) and flagged deviations as potential negotiation points.\",\n      \"failure_kind\": \"analysis\"\n    },\n    {\n      \"criterion_id\": \"C6\",\n      \"what_went_wrong\": \"The agent did not cross-check the disclosure letter's assertions against the SPA warranties to identify gaps or inconsistencies beyond the change of control provision.\",\n      \"should_have\": \"Systematically mapped disclosures to corresponding warranties to ensure all exceptions were properly documented.\",\n      \"failure_kind\": \"procedural\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"review\",\n      \"text\": \"Before finalizing an issues list, cross-reference all document references (e.g., clause numbers, schedules) to confirm the completeness of provided materials and flag missing sections.\",\n      \"evidence\": [\"C1\"],\n      \"task_type_scope\": \"issues_list\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"For currency mismatches in transaction documents, calculate the potential financial impact using current and projected exchange rates to quantify the risk.\",\n      \"evidence\": [\"C2\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"When reviewing material contracts with near-term expiry dates, check for automatic renewal clauses, notice periods, and termination rights to assess continuity risk.\",\n      \"evidence\": [\"C3\"],\n      \"task_type_scope\": \"issues_list\",\n      \"confidence\": 0.92\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"Prioritize issues in the executive summary by severity (e.g., 'deal-breaker', 'high risk', 'moderate risk') and include a recommended triage order for resolution.\",\n      \"evidence\": [\"C4\"],\n      \"task_type_scope\": \"issues_list\",\n      \"confidence\": 0.88\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Benchmark indemnity baskets against market standards for transactions of similar size/sector, and flag deviations as potential negotiation points.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.85\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Systematically map disclosure letter exceptions to corresponding warranties to identify gaps, inconsistencies, or undocumented risks.\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"issues_list\",\n      \"confidence\": 0.93\n    }\n  ],\n  \"lesson_feedback\": [\n    {\n      \"lesson_id\": \"L0001\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Addresses a common procedural gap in document review that can lead to overlooked risks.\"\n    },\n    {\n      \"lesson_id\": \"L0002\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Quantifying financial impacts of currency mismatches adds actionable value to the analysis.\"\n    },\n    {\n      \"lesson_id\": \"L0003\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Proactively assessing contract renewal mechanics is critical for post-closing risk evaluation.\"\n    },\n    {\n      \"lesson_id\": \"L0004\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Prioritization frameworks improve decision-making efficiency for supervising partners.\"\n    },\n    {\n      \"lesson_id\": \"L0005\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Benchmarking indemnity terms against market standards provides context for negotiation strategy.\"\n    },\n    {\n      \"lesson_id\": \"L0006\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Systematic disclosure-warranty mapping ensures comprehensive risk identification.\"\n    }\n  ]\n}\n```"
+}

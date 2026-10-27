@@ -1,0 +1,130 @@
+{
+  "task_id": "MNA_T015",
+  "cycle": 1,
+  "lineage": "ablation_no_grading",
+  "graded": false,
+  "failures": [
+    {
+      "criterion_id": "C1",
+      "what_went_wrong": "The agent identified a missing clauses issue (Clauses 8-14) but did not verify whether this was a drafting error or an actual omission in the SPA. The agent also did not cross-check the clause numbering against standard SPA templates or request the full document.",
+      "should_have": "Confirmed whether the missing clauses were a drafting error or an actual omission by cross-referencing with standard SPA structures or requesting the full document from the matter folder.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C2",
+      "what_went_wrong": "The agent calculated the escrow percentage but did not verify the exchange rate assumption used in the transaction documents, leading to an incomplete analysis of the escrow amount discrepancy.",
+      "should_have": "Checked the exchange rate assumptions or provisions in the transaction documents to ensure the escrow amount calculation accounted for currency conversion.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C3",
+      "what_went_wrong": "The agent flagged a currency inconsistency but did not propose a specific solution or highlight the legal risks of currency fluctuations between signing and completion.",
+      "should_have": "Recommended a currency conversion mechanism or hedging strategy to mitigate exchange rate risks, and flagged the legal implications of currency fluctuations.",
+      "failure_kind": "task_specific"
+    },
+    {
+      "criterion_id": "C4",
+      "what_went_wrong": "The agent did not prioritise the issues based on legal or commercial impact, making it harder for the supervising partner to allocate resources effectively.",
+      "should_have": "Ranked issues by severity (e.g., legal risk, financial impact, or deal-breaker potential) to guide the partner's focus.",
+      "failure_kind": "content"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T015_0",
+      "type": "checklist",
+      "category": "review",
+      "text": "Before finalising a contract review, verify the completeness of clause numbering by cross-referencing with standard templates or requesting the full document if gaps are suspected.",
+      "source_tasks": [
+        "MNA_T015"
+      ],
+      "evidence": [
+        "MNA_T015:C1"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T015_1",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "When analysing financial discrepancies involving multiple currencies, check for exchange rate assumptions or conversion clauses in the transaction documents and flag any unstated assumptions.",
+      "source_tasks": [
+        "MNA_T015"
+      ],
+      "evidence": [
+        "MNA_T015:C2"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T015_2",
+      "type": "practice_note",
+      "category": "drafting",
+      "text": "For currency inconsistencies, propose a specific solution (e.g., fixed exchange rate, hedging mechanism) and highlight the legal and financial risks of currency fluctuations between signing and completion.",
+      "source_tasks": [
+        "MNA_T015"
+      ],
+      "evidence": [
+        "MNA_T015:C3"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T015_3",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Rank identified issues in the deliverable by severity (legal risk, financial impact, or deal-breaker potential) to guide the partner's prioritisation of remedial actions.",
+      "source_tasks": [
+        "MNA_T015"
+      ],
+      "evidence": [
+        "MNA_T015:C4"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T015_4",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "For earn-out or escrow calculations, recompute all derived figures using the stated formulas and flag any discrepancies with the stated amounts, including currency conversions if applicable.",
+      "source_tasks": [
+        "MNA_T015"
+      ],
+      "evidence": [
+        "MNA_T015:C2"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T015_5",
+      "type": "checklist",
+      "category": "review",
+      "text": "Before concluding a contract review, ensure all cross-references between documents (e.g., definitions, amounts, timelines) are consistent and flag any unresolved inconsistencies.",
+      "source_tasks": [
+        "MNA_T015"
+      ],
+      "evidence": [
+        "MNA_T015:C3"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    }
+  ],
+  "lesson_feedback": [],
+  "input_tokens": 3507,
+  "output_tokens": 971,
+  "cost_usd": 0.00321,
+  "prompt": "# Task\nType: contract_review | Practice area: corporate_mna\nYou act for the Buyer, Foxley Capital LLP. Foxley Capital LLP (the Buyer) is acquiring the entire issued share capital of Ingleby Pharma plc (the Company) from Pemberton Pharma plc (the Seller).\n\nReview the principal agreement against the other matter documents and report the problematic provisions. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 31 August 2026. Address the deliverable to the supervising partner.\n\n# Trajectory (26 model steps, 26 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"client_email.md\"})\n 3. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 4. [research] read_document({\"name\": \"disclosure_letter.md\"})\n 5. [research] read_document({\"name\": \"escrow_agreement.md\"})\n 6. [research] read_document({\"name\": \"material_customer_contract.md\"})\n 7. [research] search_documents({\"query\": \"warranty\"})\n 8. [research] search_documents({\"query\": \"EBITDA\"})\n 9. [research] search_documents({\"query\": \"change of control\"})\n10. [research] search_documents({\"query\": \"Material Adverse Change\"})\n11. [analysis] calculate({\"expression\": \"earnout = 2 * (4800000 - 4000000)\"})\n12. [analysis] calculate({\"expression\": \"closing_date = date('2026-11-13')\\nrelease_date = add_months(closing_date, 12)\"})\n13. [analysis] calculate({\"expression\": \"current_date = date('2026-08-31')\\ndays_to_closing = days_between(current_date, closing_date)\"})\n14. [analysis] calculate({\"expression\": \"current_date = date('2026-08-31')\\nclosing_date = date('2026-11-13')\\ndays_to_closing = days_between(current_date, closing_date)\"})\n15. [analysis] calculate({\"expression\": \"purchase_price_usd = 60000000\\nescrow_amount_gbp = 12750000\\nescrow_percentage = pct(escrow_amount_gbp, purchase_price_usd)\"})\n16. [analysis] calculate({\"expression\": \"escrow_percentage_correct = pct(12750000, 60000000)\"})\n17. [drafting] write_draft(<949 words>)\n18. [verification] read_draft({})\n19. [verification] calculate({\"expression\": \"purchase_price_usd = 60000000\\nescrow_amount_gbp = 12750000\\npercentage_of_purchase_price = pct(12750000, 60000000)\\npercentage_if_15_percent = )\n20. [editing] edit_draft(find='#### 3.2 Escrow Amount Calculation\\n**Issue:** The Escrow Agr' -> '#### 3.2 Escrow Amount Calculation\\n**Issue:** The Escrow Agr')\n21. [verification] search_documents({\"query\": \"Clause 8\"})\n22. [editing] edit_draft(find='#### 2.2 Earn-out Payment Timing (Clause 3.4)\\n**Issue:** Pay' -> '#### 2.2 Earn-out Payment Timing (Clause 3.4)\\n**Issue:** Pay')\n23. [editing] edit_draft(find='#### 5.2 Payment Currency Inconsistency\\n- SPA Purchase Price' -> '#### 5.2 Payment Currency Inconsistency\\n- SPA Purchase Price')\n24. [editing] edit_draft(find='### 6. Urgent Action Items\\n\\n1. **Immediate:** Address the Ma' -> '### 6. Urgent Action Items\\n\\n1. **Immediate:** Address the Ma')\n25. [verification] read_draft({})\n26. [control] finish({\"summary\": \"I have completed a thorough review of the Share Purchase Agreement and associated transaction documents for Foxley Capital LLP's acquisition of Ing)\n\n# Final deliverable\n# Review of Share Purchase Agreement and Associated Documents\n## Acquisition of Ingleby Pharma plc by Foxley Capital LLP\n\n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Date:** 31 August 2026  \n**Matter:** Acquisition of Ingleby Pharma plc by Foxley Capital LLP  \n\n### Executive Summary\n\nI have reviewed the principal Share Purchase Agreement (SPA) dated 5 August 2026 and the associated transaction documents in connection with Foxley Capital LLP's proposed acquisition of the entire issued share capital of Ingleby Pharma plc from Pemberton Pharma plc. My review has identified several problematic provisions that require immediate attention and amendment to protect the Buyer's interests.\n\n### 1. Material Inconsistencies Between Documents\n\n#### 1.1 Earn-out Payment Calculation Discrepancy\n**Issue:** There is a significant discrepancy between the earn-out calculation in the SPA and the Seller's representation in the client email.\n\n- **SPA Clause 3.4:** The earn-out payment is calculated as \"2 times the amount by which the audited EBITDA of the Company for FY2026 exceeds $4,000,000.\"\n- **Client Email:** The Seller has advised that with FY2026 EBITDA of $4,800,000, the Earn-out Payment will be $1,200,000.\n- **Correct Calculation:** Using the SPA formula: 2 × ($4,800,000 - $4,000,000) = $1,600,000\n\n**Risk:** The Buyer may be obligated to pay $400,000 more than anticipated based on the Seller's representation.\n\n**Recommendation:** Clarify the earn-out formula in the SPA or obtain written confirmation from the Seller accepting the $1,200,000 calculation.\n\n#### 1.2 Material Customer Contract - Change of Control Provision\n**Issue:** Direct contradiction between the Disclosure Letter and the actual Material Customer Contract.\n\n- **Disclosure Letter Clause 3.2:** \"The Seller confirms that no Material Contract to which the Company is a party contains a change of control provision.\"\n- **Material Customer Contract Clause 14.2:** Contains explicit change of control termination rights allowing Marlow Industries Ltd to terminate on 30 days' notice if Ingleby Pharma plc undergoes a change of control without prior written consent.\n\n**Risk:** The acquisition itself could trigger termination of a key customer relationship, potentially constituting a Material Adverse Change.\n\n**Recommendation:** Require amendment of the Material Customer Contract to remove the change of control provision or obtain consent from Marlow Industries Ltd prior to completion.\n\n### 2. Problematic Provisions in the Share Purchase Agreement\n\n#### 2.1 Material Adverse Change Definition (Clause 1.1)\n**Issue:** The definition is overly broad and potentially ambiguous.\n\n- The definition excludes \"changes in general economic conditions, changes affecting the industry generally, and pandemics\" but does not provide sufficient specificity.\n- No carve-outs for changes resulting from the announcement or completion of the transaction.\n\n**Risk:** This could lead to disputes about what constitutes a Material Adverse Change, particularly in volatile market conditions.\n\n**Recommendation:** Include more specific carve-outs and clarify that changes resulting from the transaction announcement are excluded.\n\n#### 2.2 Earn-out Payment Timing (Clause 3.4)\n**Issue:** Payment timing is tied to \"final audited accounts for FY2026 being approved by the Buyer's board.\"\n\n**Risk:** This creates potential for delay if the Buyer's board approval process is protracted.\n\n**Recommendation:** Specify a fixed deadline (e.g., 90 days after receipt of audited accounts) rather than tying it to board approval.\n\n#### 2.3 Missing Clauses in SPA\n**Issue:** The SPA appears to have missing clauses between Clause 7 (Entire Agreement) and Clause 15 (Governing Law and Jurisdiction). Clauses 8-14 are absent.\n\n**Risk:** Critical provisions such as warranties, indemnities, limitations of liability, termination, and other standard SPA provisions may be missing.\n\n**Recommendation:** Review the complete SPA to ensure all standard clauses are included, particularly warranties, indemnities, and limitations of liability.\n\n### 3. Escrow Agreement Issues\n\n#### 3.1 Jurisdictional Conflict\n**Issue:** The Escrow Agreement is governed by New York law with ICC arbitration in New York (Clause 12), while the SPA is governed by English law with English court jurisdiction (Clause 15.1).\n\n**Risk:** Creates potential for conflicting interpretations and increased legal costs in cross-border disputes.\n\n**Recommendation:** Align the governing law and dispute resolution provisions with the SPA (English law and jurisdiction).\n\n#### 3.2 Escrow Amount Calculation\n**Issue:** The Escrow Agreement contains a mathematical inconsistency in the escrow amount calculation.\n\n- **Escrow Agreement Clause 1.1:** Defines Escrow Amount as \"£12,750,000, representing 15% of the total consideration payable under the SPA.\"\n- **SPA Clause 2.1:** Purchase Price is $60,000,000 USD.\n- **Mathematical Discrepancy:** 15% of $60,000,000 = $9,000,000, not £12,750,000.\n- **Actual Percentage:** £12,750,000 represents approximately 21.25% of $60,000,000 (assuming 1:1 USD:GBP exchange rate).\n\n**Risk:** Significant financial miscalculation and potential dispute over the intended escrow amount.\n\n**Recommendation:** Correct the escrow amount calculation to reflect either 15% of the purchase price ($9,000,000) or clarify the intended percentage and exchange rate assumption.\n\n### 4. Disclosure Letter Concerns\n\n#### 4.1 Limited Disclosure Approach\n**Issue:** Clause 2.2 states disclosures are \"limited to the Warranties to which it expressly relates and does not constitute disclosure for any other Warranty.\"\n\n**Risk:** This restrictive approach may not provide adequate protection if a disclosed matter has implications for multiple warranties.\n\n**Recommendation:** Amend to allow disclosures to apply to all relevant warranties.\n\n#### 4.2 Material Contract Disclosure Inaccuracy\nAs noted in Section 1.2, the Disclosure Letter contains a materially inaccurate statement regarding change of control provisions.\n\n### 5. Additional Observations\n\n#### 5.1 Contract Expiry Issue\nThe Disclosure Letter references a supply agreement with Marlow Industries Ltd dated 14 May 2021 that expired on 13 May 2026. However, the Material Customer Contract extract is dated 15 March 2024 with a three-year term (until 15 March 2027).\n\n**Recommendation:** Clarify which contract is currently in force and ensure all material contracts are properly identified.\n\n#### 5.2 Payment Currency Inconsistency\n- SPA Purchase Price: $60,000,000 USD\n- Disclosure Letter Payment Clause 4.1: \"All payments due under the SPA shall be made in pounds sterling\"\n- Escrow Amount: £12,750,000 GBP\n\n**Recommendation:** Standardize currency references throughout all transaction documents.\n\n#### 5.3 Inconsistent Notice Provisions\n**Issue:** Notice provisions vary significantly across documents:\n- **SPA Clause 5:** Basic notice provision without deemed receipt timing\n- **Disclosure Letter Clause 5:** Detailed deemed receipt provisions with specific timing\n- **Escrow Agreement Clause 7:** Different notice delivery methods\n\n**Risk:** Inconsistent notice timing could lead to disputes about when notices are effectively given.\n\n**Recommendation:** Standardize notice provisions across all transaction documents.\n\n### 6. Urgent Action Items\n\n1. **Immediate:** Address the Material Customer Contract change of control provision discrepancy.\n2. **Immediate:** Review the complete SPA for missing clauses (8-14).\n3. **High Priority:** Correct the earn-out calculation discrepancy.\n4. **High Priority:** Align governing law provisions across all documents.\n5. **High Priority:** Correct the escrow amount calculation (15% vs 21.25%).\n6. **Medium Priority:** Refine Material Adverse Change definition.\n7. **Medium Priority:** Standardize currency references.\n8. **Medium Priority:** Standardize notice provisions across documents.\n\n### Conclusion\n\nThe transaction documents contain several material inconsistencies and problematic provisions that require amendment before proceeding to completion. The most critical issues relate to the inaccurate disclosure regarding change of control provisions and the earn-out calculation discrepancy. I recommend scheduling a call with the Seller's counsel to address these issues promptly.\n\nPlease let me know if you would like me to prepare draft amendments to the relevant documents.\n\n# Your job\nNo grades are available. Critically assess the deliverable and the work process yourself, as a demanding supervising partner would, and write reusable candidate lessons for improving the work.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|contract_review\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C1\",\n      \"what_went_wrong\": \"The agent identified a missing clauses issue (Clauses 8-14) but did not verify whether this was a drafting error or an actual omission in the SPA. The agent also did not cross-check the clause numbering against standard SPA templates or request the full document.\",\n      \"should_have\": \"Confirmed whether the missing clauses were a drafting error or an actual omission by cross-referencing with standard SPA structures or requesting the full document from the matter folder.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C2\",\n      \"what_went_wrong\": \"The agent calculated the escrow percentage but did not verify the exchange rate assumption used in the transaction documents, leading to an incomplete analysis of the escrow amount discrepancy.\",\n      \"should_have\": \"Checked the exchange rate assumptions or provisions in the transaction documents to ensure the escrow amount calculation accounted for currency conversion.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C3\",\n      \"what_went_wrong\": \"The agent flagged a currency inconsistency but did not propose a specific solution or highlight the legal risks of currency fluctuations between signing and completion.\",\n      \"should_have\": \"Recommended a currency conversion mechanism or hedging strategy to mitigate exchange rate risks, and flagged the legal implications of currency fluctuations.\",\n      \"failure_kind\": \"task_specific\"\n    },\n    {\n      \"criterion_id\": \"C4\",\n      \"what_went_wrong\": \"The agent did not prioritise the issues based on legal or commercial impact, making it harder for the supervising partner to allocate resources effectively.\",\n      \"should_have\": \"Ranked issues by severity (e.g., legal risk, financial impact, or deal-breaker potential) to guide the partner's focus.\",\n      \"failure_kind\": \"content\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"review\",\n      \"text\": \"Before finalising a contract review, verify the completeness of clause numbering by cross-referencing with standard templates or requesting the full document if gaps are suspected.\",\n      \"evidence\": [\"C1\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"When analysing financial discrepancies involving multiple currencies, check for exchange rate assumptions or conversion clauses in the transaction documents and flag any unstated assumptions.\",\n      \"evidence\": [\"C2\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"drafting\",\n      \"text\": \"For currency inconsistencies, propose a specific solution (e.g., fixed exchange rate, hedging mechanism) and highlight the legal and financial risks of currency fluctuations between signing and completion.\",\n      \"evidence\": [\"C3\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"Rank identified issues in the deliverable by severity (legal risk, financial impact, or deal-breaker potential) to guide the partner's prioritisation of remedial actions.\",\n      \"evidence\": [\"C4\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.85\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"For earn-out or escrow calculations, recompute all derived figures using the stated formulas and flag any discrepancies with the stated amounts, including currency conversions if applicable.\",\n      \"evidence\": [\"C2\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"review\",\n      \"text\": \"Before concluding a contract review, ensure all cross-references between documents (e.g., definitions, amounts, timelines) are consistent and flag any unresolved inconsistencies.\",\n      \"evidence\": [\"C3\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.9\n    }\n  ],\n  \"lesson_feedback\": []\n}\n```"
+}

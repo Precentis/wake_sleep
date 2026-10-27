@@ -1,0 +1,84 @@
+{
+  "docs": [
+    {
+      "title": "share_purchase_agreement.md",
+      "attempts": [
+        {
+          "missing": [
+            "English law"
+          ],
+          "usage": {
+            "input_tokens": 701,
+            "output_tokens": 977
+          }
+        },
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 1702,
+            "output_tokens": 969
+          }
+        }
+      ]
+    },
+    {
+      "title": "escrow_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 502,
+            "output_tokens": 820
+          }
+        }
+      ]
+    },
+    {
+      "title": "client_email.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 477,
+            "output_tokens": 403
+          }
+        }
+      ]
+    }
+  ],
+  "doc_facts": {
+    "share_purchase_agreement.md": {
+      "key": "spa",
+      "facts": [
+        "Parties: Upton Systems Ltd (Buyer), Bellhaven Holdings Ltd (Seller); the Company is Galloway Technologies Ltd.",
+        "Section 2.1: the Purchase Price is $60,000,000.",
+        "This Agreement is dated 17 June 2026; Closing is scheduled for 5 October 2026 (the 'Closing Date').",
+        "Section 8.5 (Limitation of Liability): the aggregate liability of the Seller for warranty claims shall not exceed an amount equal to 12% of the Purchase Price, being $9,000,000. The Purchase Price is $60,000,000 (see Section 2.1).",
+        "Section 10.1 (Survival): the General Warranties survive Closing for 12 months; the Fundamental Warranties (title, capacity, tax) survive for 72 months. Claims must be notified in writing before expiry.",
+        "Section 15.1: this Agreement is governed by English law and the courts of England have exclusive jurisdiction."
+      ],
+      "must_contain": [
+        "12%",
+        "$9,000,000",
+        "$60,000,000",
+        "12 months",
+        "72 months",
+        "English law"
+      ]
+    },
+    "escrow_agreement.md": {
+      "key": "escrow",
+      "facts": [
+        "Clause 12: this escrow agreement is governed by the laws of the State of New York and disputes shall be referred to arbitration in New York."
+      ],
+      "must_contain": [
+        "New York"
+      ]
+    },
+    "client_email.md": {
+      "key": "client_email",
+      "facts": [],
+      "must_contain": []
+    }
+  }
+}

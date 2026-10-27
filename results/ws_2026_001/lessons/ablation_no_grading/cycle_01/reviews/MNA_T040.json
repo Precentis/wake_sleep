@@ -1,0 +1,142 @@
+{
+  "task_id": "MNA_T040",
+  "cycle": 1,
+  "lineage": "ablation_no_grading",
+  "graded": false,
+  "failures": [
+    {
+      "criterion_id": "C1",
+      "what_went_wrong": "The agent did not verify the completeness of the agreement before starting the redline analysis, leading to a late discovery of missing clauses.",
+      "should_have": "Confirmed the document's completeness and structure at the outset to avoid gaps in review.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C2",
+      "what_went_wrong": "The agent relied on client-provided EBITDA figures without cross-checking against audited financials or requesting verification.",
+      "should_have": "Explicitly flagged unverified client-provided figures and recommended independent verification.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C3",
+      "what_went_wrong": "The agent proposed amendments to the earn-out mechanism without first confirming the calculation methodology with the client or financial advisors.",
+      "should_have": "Clarified the intended earn-out calculation methodology with the client before proposing amendments.",
+      "failure_kind": "task_specific"
+    },
+    {
+      "criterion_id": "C4",
+      "what_went_wrong": "The agent included specific financial figures (e.g., $250,000,000 purchase price) in the 'Commercial Considerations' section, which could leak sensitive information.",
+      "should_have": "Generalised commercial considerations to avoid including specific figures or confidential details.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C5",
+      "what_went_wrong": "The agent did not prioritise amendments based on legal risk or client instructions, leading to a flat list of proposals.",
+      "should_have": "Ranked proposed amendments by risk level and client priority to guide negotiation strategy.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C6",
+      "what_went_wrong": "The agent did not cross-reference the proposed amendments with standard market practice or precedent clauses.",
+      "should_have": "Compared proposed amendments against market-standard clauses to ensure they are defensible and balanced.",
+      "failure_kind": "content"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T040_0",
+      "type": "checklist",
+      "category": "review",
+      "text": "Before finalising a redline note, verify the completeness of the agreement by checking for missing clauses, page numbers, or structural gaps.",
+      "source_tasks": [
+        "MNA_T040"
+      ],
+      "evidence": [
+        "MNA_T040:C1"
+      ],
+      "task_type_scope": "redline",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T040_1",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Flag all client-provided financial figures as unverified and recommend independent verification before relying on them for calculations or amendments.",
+      "source_tasks": [
+        "MNA_T040"
+      ],
+      "evidence": [
+        "MNA_T040:C2"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T040_2",
+      "type": "practice_note",
+      "category": "drafting",
+      "text": "Clarify the intended calculation methodology for earn-outs or other financial mechanisms with the client before proposing amendments to avoid misalignment.",
+      "source_tasks": [
+        "MNA_T040"
+      ],
+      "evidence": [
+        "MNA_T040:C3"
+      ],
+      "task_type_scope": "redline",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T040_3",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Generalise commercial considerations in deliverables to avoid including specific financial figures, party names, or confidential details.",
+      "source_tasks": [
+        "MNA_T040"
+      ],
+      "evidence": [
+        "MNA_T040:C4"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T040_4",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Rank proposed amendments by legal risk and client priority, and include a clear negotiation strategy for each tier of amendments.",
+      "source_tasks": [
+        "MNA_T040"
+      ],
+      "evidence": [
+        "MNA_T040:C5"
+      ],
+      "task_type_scope": "redline",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T040_5",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Cross-reference proposed amendments with market-standard clauses or precedent to ensure they are balanced, defensible, and aligned with industry practice.",
+      "source_tasks": [
+        "MNA_T040"
+      ],
+      "evidence": [
+        "MNA_T040:C6"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.8
+    }
+  ],
+  "lesson_feedback": [],
+  "input_tokens": 3782,
+  "output_tokens": 994,
+  "cost_usd": 0.003382,
+  "prompt": "# Task\nType: redline | Practice area: corporate_mna\nYou act for the Buyer, Foxley Marine Ltd. Foxley Marine Ltd (the Buyer) is acquiring the entire issued share capital of Netherby Engineering Ltd (the Company) from Whitlock Bioscience plc (the Seller).\n\nPrepare a redline note proposing amendments to the principal agreement to protect our client. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 18 August 2026. Address the deliverable to the supervising partner.\n\n# Trajectory (16 model steps, 16 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"client_email.md\"})\n 3. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 4. [analysis] calculate({\"expression\": \"EBITDA = 5300000\\nthreshold = 4000000\\nexcess = EBITDA - threshold\\nearn_out = 2 * excess\\ncap = 5000000\\nactual_earn_out = min(earn_out, cap)\"})\n 5. [research] search_documents({\"query\": \"warranty\"})\n 6. [research] search_documents({\"query\": \"Upton\"})\n 7. [drafting] write_draft(<1476 words>)\n 8. [verification] read_draft({})\n 9. [editing] edit_draft(find=\"**Rationale:** There is a discrepancy between the Seller's s\" -> '**Rationale:** There is a significant discrepancy between th')\n10. [editing] edit_draft(find='**Option A (Clarify Calculation):**\\n> The Buyer shall pay to' -> '**Option A (Clarify Calculation):**\\n> The Buyer shall pay to')\n11. [verification] search_documents({\"query\": \"indemnity\"})\n12. [verification] search_documents({\"query\": \"limitation\"})\n13. [verification] search_documents({\"query\": \"liability\"})\n14. [editing] edit_draft(find='## COMMERCIAL CONSIDERATIONS\\n\\n1. **Purchase Price**: $250,00' -> '## ADDITIONAL CONSIDERATIONS\\n\\n**Incomplete Agreement Review*')\n15. [verification] read_draft({})\n16. [control] finish({\"summary\": \"Redline note proposing amendments to the Share Purchase Agreement for Foxley Marine Ltd's acquisition of Netherby Engineering Ltd. The note identif)\n\n# Final deliverable\n# REDLINE NOTE: PROPOSED AMENDMENTS TO SHARE PURCHASE AGREEMENT\n**Date:** 18 August 2026  \n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Re:** Foxley Marine Ltd Acquisition of Netherby Engineering Ltd  \n**Matter:** Share Purchase Agreement Amendments  \n\n## EXECUTIVE SUMMARY\n\nThis note proposes key amendments to the Share Purchase Agreement dated 5 August 2026 between Whitlock Bioscience plc (Seller) and Foxley Marine Ltd (Buyer) for the acquisition of Netherby Engineering Ltd. The amendments aim to protect our client's interests, address commercial risks identified in client correspondence, and ensure proper structuring of the earn-out mechanism.\n\n## KEY ISSUES IDENTIFIED\n\n1. **Earn-out Calculation Discrepancy**: Client email references FY2026 EBITDA of $5,300,000 and indicates Seller expects $2,200,000 earn-out, but agreement formula yields $2,600,000.\n\n2. **Material Adverse Change Definition**: Current definition excludes pandemics, creating significant risk exposure.\n\n3. **Critical Customer Protection**: Upton Technologies Ltd identified as material customer critical to post-acquisition business plan, but not addressed in agreement.\n\n4. **Warranty Survival Periods**: Current periods may not provide adequate protection.\n\n5. **Confidentiality Provisions**: Standard clause may require strengthening.\n\n## PROPOSED AMENDMENTS\n\n### 1. MATERIAL ADVERSE CHANGE DEFINITION (Clause 1.1)\n\n**Current Text:**\n> \"Material Adverse Change\" means any event, act, omission or circumstance which has a material adverse effect on the business, assets, financial condition or results of operations of the Company taken as a whole, excluding (i) changes in general economic, political or market conditions affecting the United Kingdom or global economy, (ii) changes affecting the engineering or marine components industry generally, whether in the United Kingdom or internationally, and (iii) the outbreak, continuation or effects of **pandemics**.\n\n**Proposed Amendment:**\n> \"Material Adverse Change\" means any event, act, omission or circumstance which has a material adverse effect on the business, assets, financial condition or results of operations of the Company taken as a whole, excluding (i) changes in general economic, political or market conditions affecting the United Kingdom or global economy, **provided such changes do not disproportionately affect the Company relative to other companies in the engineering or marine components industry**, and (ii) changes affecting the engineering or marine components industry generally, whether in the United Kingdom or internationally, **provided such changes do not disproportionately affect the Company relative to its peers**. **The exclusion for pandemics shall be deleted.**\n\n**Rationale:** The pandemic exclusion creates unacceptable risk. The \"disproportionate effect\" qualifier ensures the Buyer is protected if the Company is more severely impacted than industry peers.\n\n### 2. EARN-OUT PAYMENT MECHANISM (Clause 3.4)\n\n**Current Text:**\n> The Buyer shall pay to the Seller, within 90 days of the end of the Company's financial year ending 31 December 2026 (\"FY2026\"), an additional amount (the \"Earn-out Payment\") equal to **2 times** the amount by which the EBITDA of the Company for FY2026 exceeds **$4,000,000**, such Earn-out Payment to be capped at **$5,000,000**. The calculation of EBITDA shall be prepared in accordance with applicable UK accounting standards and audited by the Company's independent auditor.\n\n**Proposed Amendments:**\n\n**Option A (Clarify Calculation):**\n> The Buyer shall pay to the Seller, within 90 days of the end of the Company's financial year ending 31 December 2026 (\"FY2026\"), an additional amount (the \"Earn-out Payment\") equal to **2 times** the amount by which the EBITDA of the Company for FY2026 exceeds **$4,000,000**, such Earn-out Payment to be capped at **$5,000,000**. **For the avoidance of doubt, based on the Company's management accounts reflecting FY2026 EBITDA of $5,300,000, the Earn-out Payment would be $2,600,000.** The calculation of EBITDA shall be prepared in accordance with applicable UK accounting standards and audited by the Company's independent auditor. **The EBITDA figure of $5,300,000 referenced in management accounts shall be verified by the Buyer's financial advisors prior to Closing.**\n\n**Option B (Add Buyer Protections):**\n> The Buyer shall pay to the Seller, within 90 days of the end of the Company's financial year ending 31 December 2026 (\"FY2026\"), an additional amount (the \"Earn-out Payment\") equal to **2 times** the amount by which the EBITDA of the Company for FY2026 exceeds **$4,000,000**, such Earn-out Payment to be capped at **$5,000,000**. **The Earn-out Payment shall be reduced by any amounts paid by the Buyer to settle warranty claims or indemnity claims under this Agreement.** The calculation of EBITDA shall be prepared in accordance with applicable UK accounting standards and audited by the Company's independent auditor. **The Buyer shall have the right to review and approve the calculation methodology with the Company's auditor prior to finalisation.**\n\n**Rationale:** There is a significant discrepancy between the Seller's stated expectation ($2,200,000) and the actual calculation per the agreement formula ($2,600,000). This $400,000 difference requires clarification. The Seller may be using different assumptions (e.g., different EBITDA threshold or calculation methodology). Option A provides clarity by explicitly stating the expected calculation; Option B provides additional protection against warranty claims reducing the earn-out value.\n\n### 3. ADDITIONAL CLAUSE: KEY CUSTOMER PROTECTION\n\n**Proposed New Clause (to be inserted after Clause 3):**\n\n**3.5 Key Customer Undertaking**\n> **3.5.1** The Seller warrants and represents that as at the date of this Agreement, Upton Technologies Ltd (Company No. 15994499) is a material customer of the Company and the relationship is in good standing.\n> \n> **3.5.2** The Seller shall use reasonable endeavours to facilitate the transition of the relationship with Upton Technologies Ltd to the Buyer and shall not, for a period of 24 months following Closing, directly or indirectly solicit Upton Technologies Ltd for business that would compete with the Company's business.\n> \n> **3.5.3** In the event that Upton Technologies Ltd terminates its business relationship with the Company within 12 months of Closing, the Seller shall indemnify the Buyer for 50% of any reduction in EBITDA attributable to such termination, up to a maximum of $1,000,000.\n\n**Rationale:** Protects the critical post-acquisition business plan identified by the client.\n\n### 4. WARRANTY SURVIVAL PERIODS (Clause 10.1)\n\n**Current Text:**\n> The General Warranties given by the Seller under this Agreement shall survive the Closing for a period of **18 months**. The Fundamental Warranties (comprising title to the Shares, corporate capacity of the Seller to enter into this Agreement, and compliance with tax obligations) shall survive the Closing for **72 months**.\n\n**Proposed Amendment:**\n> The General Warranties given by the Seller under this Agreement shall survive the Closing for a period of **24 months**. The Fundamental Warranties (comprising title to the Shares, corporate capacity of the Seller to enter into this Agreement, and compliance with tax obligations) shall survive the Closing for **72 months**. **Tax warranties specifically shall survive until 7 years after the relevant tax year end, in line with HMRC enquiry windows.**\n\n**Rationale:** Extends general warranty period to provide additional protection. Specific tax warranty alignment with HMRC time limits provides practical protection.\n\n### 5. CONFIDENTIALITY (Clause 11)\n\n**Current Text:**\n> Each party agrees that it shall not, and shall procure that its representatives shall not, disclose to any third party any confidential information concerning the terms of this Agreement or the transactions contemplated hereby, except:  \n> (a) as required by law or any regulatory authority;  \n> (b) to its professional advisers on a need-to-know basis and under obligations of confidentiality; or  \n> (c) with the prior written consent of the other party.\n\n**Proposed Amendment:**\n> Each party agrees that it shall not, and shall procure that its representatives shall not, disclose to any third party any confidential information concerning the terms of this Agreement or the transactions contemplated hereby, except:  \n> (a) as required by law or any regulatory authority, **provided that the disclosing party shall, to the extent permitted by law, give the other party reasonable advance notice of such disclosure**;  \n> (b) to its professional advisers on a need-to-know basis and under obligations of confidentiality;  \n> (c) to its financiers, potential investors, or other parties with a legitimate business need to know, **provided such parties are bound by confidentiality obligations no less stringent than those contained herein**; or  \n> (d) with the prior written consent of the other party.\n\n**Rationale:** Provides practical flexibility for business needs while maintaining protection through advance notice and equivalent confidentiality obligations.\n\n## ADDITIONAL CONSIDERATIONS\n\n**Incomplete Agreement Review**: The provided Share Purchase Agreement appears to be incomplete, missing clauses between Clause 3 and Clause 10. A full review of the complete agreement is necessary to identify additional areas requiring amendment, including but not limited to:\n- Indemnity provisions\n- Limitation of liability clauses\n- Conditions precedent to Closing\n- Representations and warranties schedule\n- Tax provisions\n- Post-completion covenants\n\n**Due Diligence**: The significant purchase price ($250,000,000) necessitates comprehensive financial, legal, and commercial due diligence, particularly regarding:\n- Verification of FY2026 EBITDA of $5,300,000\n- Review of contracts with Upton Technologies Ltd\n- Assessment of any contingent liabilities\n- Tax position review\n\n## COMMERCIAL CONSIDERATIONS\n\n1. **Purchase Price**: $250,000,000 represents significant investment requiring robust protections.\n\n2. **Timing**: Closing Date of 22 October 2026 allows reasonable time for due diligence and amendment negotiation.\n\n3. **Relationship Management**: Amendments should be positioned as standard commercial protections rather than aggressive renegotiation.\n\n## RECOMMENDATIONS\n\n1. **Priority Amendments**:\n   - Remove pandemic exclusion from Material Adverse Change definition (critical risk)\n   - Clarify earn-out calculation discrepancy (commercial necessity)\n   - Add Key Customer Protection clause (client-identified critical risk)\n\n2. **Negotiation Strategy**:\n   - Lead with pandemic exclusion removal as market-standard position\n   - Use earn-out clarification as straightforward correction\n   - Position key customer protection as mutual interest in transaction success\n\n3. **Fallback Positions**:\n   - If pandemic exclusion cannot be removed entirely, seek \"disproportionate effect\" qualifier\n   - If extended warranty periods resisted, focus on tax warranty alignment\n   - If key customer indemnity rejected, seek non-solicitation undertaking only\n\n## NEXT STEPS\n\n1. Discuss these proposals with the client for approval\n2. Prepare marked-up version of agreement for negotiation\n3. Engage with Seller's counsel on priority amendments\n4. Coordinate with financial advisors on earn-out verification\n\nThis note provides a framework for protecting our client's interests while maintaining a constructive negotiation position.\n\n# Your job\nNo grades are available. Critically assess the deliverable and the work process yourself, as a demanding supervising partner would, and write reusable candidate lessons for improving the work.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|redline\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C1\",\n      \"what_went_wrong\": \"The agent did not verify the completeness of the agreement before starting the redline analysis, leading to a late discovery of missing clauses.\",\n      \"should_have\": \"Confirmed the document's completeness and structure at the outset to avoid gaps in review.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C2\",\n      \"what_went_wrong\": \"The agent relied on client-provided EBITDA figures without cross-checking against audited financials or requesting verification.\",\n      \"should_have\": \"Explicitly flagged unverified client-provided figures and recommended independent verification.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C3\",\n      \"what_went_wrong\": \"The agent proposed amendments to the earn-out mechanism without first confirming the calculation methodology with the client or financial advisors.\",\n      \"should_have\": \"Clarified the intended earn-out calculation methodology with the client before proposing amendments.\",\n      \"failure_kind\": \"task_specific\"\n    },\n    {\n      \"criterion_id\": \"C4\",\n      \"what_went_wrong\": \"The agent included specific financial figures (e.g., $250,000,000 purchase price) in the 'Commercial Considerations' section, which could leak sensitive information.\",\n      \"should_have\": \"Generalised commercial considerations to avoid including specific figures or confidential details.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C5\",\n      \"what_went_wrong\": \"The agent did not prioritise amendments based on legal risk or client instructions, leading to a flat list of proposals.\",\n      \"should_have\": \"Ranked proposed amendments by risk level and client priority to guide negotiation strategy.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C6\",\n      \"what_went_wrong\": \"The agent did not cross-reference the proposed amendments with standard market practice or precedent clauses.\",\n      \"should_have\": \"Compared proposed amendments against market-standard clauses to ensure they are defensible and balanced.\",\n      \"failure_kind\": \"content\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"review\",\n      \"text\": \"Before finalising a redline note, verify the completeness of the agreement by checking for missing clauses, page numbers, or structural gaps.\",\n      \"evidence\": [\"C1\"],\n      \"task_type_scope\": \"redline\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Flag all client-provided financial figures as unverified and recommend independent verification before relying on them for calculations or amendments.\",\n      \"evidence\": [\"C2\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"drafting\",\n      \"text\": \"Clarify the intended calculation methodology for earn-outs or other financial mechanisms with the client before proposing amendments to avoid misalignment.\",\n      \"evidence\": [\"C3\"],\n      \"task_type_scope\": \"redline\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"Generalise commercial considerations in deliverables to avoid including specific financial figures, party names, or confidential details.\",\n      \"evidence\": [\"C4\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"Rank proposed amendments by legal risk and client priority, and include a clear negotiation strategy for each tier of amendments.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"redline\",\n      \"confidence\": 0.85\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Cross-reference proposed amendments with market-standard clauses or precedent to ensure they are balanced, defensible, and aligned with industry practice.\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.8\n    }\n  ],\n  \"lesson_feedback\": []\n}\n```"
+}

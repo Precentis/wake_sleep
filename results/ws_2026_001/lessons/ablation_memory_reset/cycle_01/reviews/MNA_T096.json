@@ -1,0 +1,164 @@
+{
+  "task_id": "MNA_T096",
+  "cycle": 1,
+  "lineage": "ablation_memory_reset",
+  "graded": true,
+  "failures": [
+    {
+      "criterion_id": "C1",
+      "what_went_wrong": "The agent incorrectly calculated the escrow release date as 27 September 2027 instead of 11 September 2027, which is 18 months after the closing date of 11 March 2026.",
+      "should_have": "Accurately calculated the escrow release date by adding exactly 18 months to the closing date, verifying the result using a date calculator.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C2",
+      "what_went_wrong": "The agent mentioned the working capital shortfall but failed to compute the exact figure or adjust the purchase price accordingly, missing the discrepancy in the seller's funds flow figure.",
+      "should_have": "Recomputed the working capital shortfall and adjusted purchase price independently, then cross-checked against all stated figures in the documents.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C4",
+      "what_went_wrong": "The agent provided the incorrect escrow release date and miscalculated the days remaining from the analysis date, leading to an inaccurate timeline.",
+      "should_have": "Verified the escrow release date by recalculating the 18-month period and confirmed the days remaining using a date difference calculator.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C5",
+      "what_went_wrong": "The agent did not account for the fact that the escrow release date fell on a non-business day (Saturday) and failed to note the adjusted release date.",
+      "should_have": "Checked the day of the week for the escrow release date and noted any adjustments required for non-business days as per the agreement.",
+      "failure_kind": "procedural"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T096_0",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "For every date-based obligation, recompute the target date independently using a date calculator and cross-check against the stated date in the document.",
+      "source_tasks": [
+        "MNA_T096"
+      ],
+      "evidence": [
+        "MNA_T096:C1",
+        "MNA_T096:C4"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T096_1",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "When calculating financial adjustments (e.g., working capital shortfalls), recompute all figures manually and flag any discrepancies with stated amounts.",
+      "source_tasks": [
+        "MNA_T096"
+      ],
+      "evidence": [
+        "MNA_T096:C2"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T096_2",
+      "type": "checklist",
+      "category": "review",
+      "text": "Before finalising a timeline, verify whether any key dates fall on weekends or holidays and note any adjustments required by the agreement.",
+      "source_tasks": [
+        "MNA_T096"
+      ],
+      "evidence": [
+        "MNA_T096:C5"
+      ],
+      "task_type_scope": "timeline_analysis",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T096_3",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "For periods defined in months (e.g., 18 months), calculate the exact date by adding the months to the start date and confirm the result using a date tool.",
+      "source_tasks": [
+        "MNA_T096"
+      ],
+      "evidence": [
+        "MNA_T096:C1",
+        "MNA_T096:C4"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T096_4",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Include both the duration (e.g., 18 months) and the exact calculated date for every time-sensitive obligation in the deliverable.",
+      "source_tasks": [
+        "MNA_T096"
+      ],
+      "evidence": [
+        "MNA_T096:C1",
+        "MNA_T096:C4"
+      ],
+      "task_type_scope": "timeline_analysis",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T096_5",
+      "type": "practice_note",
+      "category": "review",
+      "text": "Cross-reference all derived figures (e.g., adjusted purchase prices) with the original documents to ensure consistency and flag any mismatches.",
+      "source_tasks": [
+        "MNA_T096"
+      ],
+      "evidence": [
+        "MNA_T096:C2"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    }
+  ],
+  "lesson_feedback": [
+    {
+      "lesson_id": "L0001",
+      "label": "HELPFUL",
+      "reason": "Directly addresses the procedural failure in date calculation, ensuring accuracy in future timeline analyses."
+    },
+    {
+      "lesson_id": "L0002",
+      "label": "HELPFUL",
+      "reason": "Targets the failure to recompute financial adjustments, a critical step in ensuring accuracy in transaction documents."
+    },
+    {
+      "lesson_id": "L0003",
+      "label": "HELPFUL",
+      "reason": "Ensures non-business day adjustments are considered, a common oversight in timeline drafting."
+    },
+    {
+      "lesson_id": "L0004",
+      "label": "HELPFUL",
+      "reason": "Reinforces the need for precise date calculations, particularly for periods defined in months."
+    },
+    {
+      "lesson_id": "L0005",
+      "label": "HELPFUL",
+      "reason": "Improves clarity in deliverables by requiring both duration and exact dates, reducing ambiguity."
+    },
+    {
+      "lesson_id": "L0006",
+      "label": "HELPFUL",
+      "reason": "Encourages thorough cross-checking of derived figures, preventing errors in financial adjustments."
+    }
+  ],
+  "input_tokens": 4213,
+  "output_tokens": 1259,
+  "cost_usd": 0.003995,
+  "prompt": "# Task\nType: timeline_analysis | Practice area: corporate_mna\nYou act for the Buyer, Saltash Engineering Ltd. Saltash Engineering Ltd (the Buyer) is acquiring the entire issued share capital of Ashcombe Bioscience plc (the Company) from Brightwater Robotics Ltd (the Seller).\n\nPrepare a timeline and deadlines analysis of all time-sensitive obligations in the matter documents. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 11 February 2026. Address the deliverable to the supervising partner.\n\n# Trajectory (21 model steps, 21 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"client_email.md\"})\n 3. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 4. [research] read_document({\"name\": \"escrow_agreement.md\"})\n 5. [research] search_documents({\"query\": \"days\"})\n 6. [research] search_documents({\"query\": \"month\"})\n 7. [research] search_documents({\"query\": \"date\"})\n 8. [analysis] calculate({\"expression\": \"current_date = date('2026-02-11')\"})\n 9. [analysis] calculate({\"expression\": \"closing_date = date('2026-03-11')\\ndays_to_closing = days_between(current_date, closing_date)\"})\n10. [analysis] calculate({\"expression\": \"current_date = date('2026-02-11')\\nclosing_date = date('2026-03-11')\\ndays_to_closing = days_between(current_date, closing_date)\"})\n11. [analysis] calculate({\"expression\": \"closing_date = date('2026-03-11')\\nescrow_release_date = add_months(closing_date, 18)\"})\n12. [analysis] calculate({\"expression\": \"date('2027-09-27')\"})\n13. [analysis] calculate({\"expression\": \"days_between(date('2026-03-11'), date('2027-09-27'))\"})\n14. [analysis] calculate({\"expression\": \"share_purchase_agreement_date = date('2026-01-27')\\nescrow_agreement_date = date('2026-02-10')\\nclient_email_date = date('2025-02-08')\"})\n15. [drafting] write_draft(<941 words>)\n16. [verification] read_draft({})\n17. [editing] edit_draft(find='### 1. Agreement Dates\\n- **Share Purchase Agreement Date:** ' -> '### 1. Agreement Dates\\n- **Share Purchase Agreement Date:** ')\n18. [editing] edit_draft(find='### 2. Closing Date\\n- **Closing Date:** 11 March 2026 (as de' -> '### 2. Closing Date\\n- **Closing Date:** 11 March 2026 (as de')\n19. [editing] edit_draft(find='### 3. Immediate Pre-Closing Actions\\n- **Timeframe:** 28 day' -> '### 3. Immediate Pre-Closing Actions\\n- **Timeframe:** 28 day')\n20. [verification] read_draft({})\n21. [control] finish({\"summary\": \"Timeline and deadlines analysis for Saltash Engineering Ltd's acquisition of Ashcombe Bioscience plc, identifying all time-sensitive obligations in)\n\n# Final deliverable\n# Timeline and Deadlines Analysis: Acquisition of Ashcombe Bioscience plc\n\n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Date:** 11 February 2026  \n**Matter:** Saltash Engineering Ltd acquisition of Ashcombe Bioscience plc  \n**Client:** Saltash Engineering Ltd (Buyer)  \n**Counterparty:** Brightwater Robotics Ltd (Seller)\n\n## Executive Summary\n\nThis analysis identifies and summarises all time-sensitive obligations arising from the share purchase agreement and escrow agreement for the acquisition of Ashcombe Bioscience plc. The key deadlines are:\n\n1. **Closing Date:** 11 March 2026 (28 days from today)\n2. **Warranty/Indemnity Claims Notification:** 30 days from awareness (Share Purchase Agreement)\n3. **Escrow Claims Notification:** 45 days from awareness (Escrow Agreement)\n4. **Escrow Release Date:** 27 September 2027 (18 months post-closing)\n\n## Key Dates and Deadlines\n\n### 1. Agreement Dates\n- **Share Purchase Agreement Date:** 27 January 2026 (as per SPA document)\n- **Escrow Agreement Date:** 10 February 2026\n- **Current Date (Analysis Date):** 11 February 2026\n- **Note:** The Escrow Agreement references a Share Purchase Agreement dated 10 February 2026, which differs from the SPA document date of 27 January 2026. This discrepancy should be clarified.\n\n### 2. Closing Date\n- **Closing Date:** 11 March 2026 (as defined in both Share Purchase Agreement Clause 1.1 and Escrow Agreement Clause 1.1)\n- **Time to Closing:** 28 days from today (11 February 2026)\n- **Obligations on Closing Date:**\n  - Full payment of Purchase Price ($145,000,000) to Seller (SPA Clause 2.2)\n  - Delivery of share certificates and transfer documents by Seller (SPA Clause 3.2)\n  - Deposit of Escrow Amount (£7,500,000) with Escrow Agent (Escrow Agreement Clause 2.1)\n- **Currency Note:** The Purchase Price is denominated in USD ($145,000,000) while the Escrow Amount is denominated in GBP (£7,500,000). This currency difference should be noted for financial planning purposes.\n\n### 3. Post-Closing Deadlines\n\n#### A. Warranty and Indemnity Claims (Share Purchase Agreement)\n- **Notification Period:** 30 days from becoming aware of claim (SPA Clause 9.7)\n- **Key Provision:** \"If the Buyer becomes aware of any matter giving rise to a claim under any warranty or indemnity contained in this Agreement, it must notify the Seller in writing of such claim within 30 days of becoming aware of it.\"\n- **Consequence of Delay:** Failure to give notice within 30 days invalidates the claim, unless failure was due to reasonable cause and notice is given as soon as reasonably practicable thereafter.\n\n#### B. Escrow Claims (Escrow Agreement)\n- **Notification Period:** 45 days from becoming aware of claim (Escrow Agreement Clause 5.2)\n- **Key Provision:** \"A claim against the Escrow Amount must be notified by delivery of a Claim Notice to the Seller and the Escrow Agent within 45 days of the Buyer becoming aware of the matter giving rise to the claim.\"\n- **Consequence of Delay:** Failure to deliver Claim Notice within 45 days results in the claim being time-barred and unenforceable against the Escrow Amount.\n- **Important Distinction:** This 45-day period applies specifically to claims against the Escrow Amount, while the 30-day period in the SPA applies to warranty/indemnity claims generally.\n\n#### C. Escrow Release Date\n- **Release Date:** 27 September 2027 (Escrow Agreement Clause 4.1)\n- **Calculation:** 18 months after Closing Date (11 March 2026)\n- **Release Mechanism:** The Escrow Amount shall be released to the Seller on this date, except for any portion subject to a Pending Claim (where a Claim Notice has been validly served prior to this date and remains unresolved).\n\n## Critical Observations and Action Points\n\n### 1. Conflicting Notification Periods\n- **Issue:** The Share Purchase Agreement requires notification within 30 days of awareness, while the Escrow Agreement requires notification within 45 days for claims against the Escrow Amount.\n- **Risk:** If the Buyer notifies a claim between 31-45 days after awareness, it may be valid under the Escrow Agreement but invalid under the Share Purchase Agreement.\n- **Recommendation:** To preserve all rights, the Buyer should adhere to the stricter 30-day notification period for all claims, regardless of whether they will be made against the Escrow Amount.\n\n### 2. Escrow Release Timing\n- **Observation:** The Escrow Amount provides security for the Seller's obligations for approximately 18.5 months post-closing.\n- **Action Point:** The Buyer should establish internal monitoring systems to identify potential claims well before the 27 September 2027 release date.\n\n### 3. Immediate Pre-Closing Actions\n- **Timeframe:** 28 days until Closing (11 March 2026)\n- **Critical Actions Required:**\n  1. Final verification of Closing Working Capital calculation (estimated at $4,090,000 vs Target of $5,000,000) - Note: According to SPA Clause 2.3, the Purchase Price will be reduced dollar-for-dollar by any shortfall below Target Working Capital\n  2. Review of material contracts, particularly with Galloway Technologies Ltd (identified as Material Customer in Escrow Agreement)\n  3. Finalisation of disclosure letter and schedules\n  4. Arrangements for payment of Purchase Price ($145,000,000)\n  5. Arrangements for deposit of Escrow Amount (£7,500,000)\n\n### 4. Post-Closing Monitoring System\n- **Recommendation:** Implement a claims monitoring system with:\n  - 30-day alert triggers for all potential claims\n  - Escrow-specific 45-day reminders\n  - Quarterly review of potential claims against escrow\n  - Final review 60 days before escrow release (27 July 2027)\n\n## Timeline Summary\n\n| Date | Event | Days from Today | Action Required |\n|------|-------|-----------------|-----------------|\n| 11 Feb 2026 | Current Date | 0 | Analysis prepared |\n| 11 Mar 2026 | Closing Date | 28 | Payment of Purchase Price; Deposit of Escrow Amount |\n| T + 30 days | Warranty/Indemnity Claim Deadline | N/A | Notification must be within 30 days of awareness |\n| T + 45 days | Escrow Claim Deadline | N/A | Claim Notice must be within 45 days of awareness |\n| 27 Sep 2027 | Escrow Release Date | 594 | Automatic release unless Pending Claim exists |\n\n## Conclusion\n\nThe acquisition documents establish several critical time-sensitive obligations that require careful management. The most immediate priority is preparation for the Closing Date on 11 March 2026. Post-closing, the Buyer must implement robust systems to monitor and notify claims within the strict timeframes, particularly noting the potential conflict between the 30-day and 45-day notification periods.\n\nThe escrow arrangement provides security until 27 September 2027, but the Buyer's ability to make claims against the escrow is subject to strict time limits that must be meticulously observed.\n\n# Expert rubric verdicts (2/6 passed)\n- C1 [FAIL] States that the escrow release date is 11 September 2027 (18 months after the 11 March 2026 Closing Date) and that pending claims must be notified before then.\n    judges: FAIL: The deliverable incorrectly states the escrow release date as 27 September 2027 instead of 11 September 2027, which is the correct date 18 months after the 11 March 2026 Closing Date. | FAIL: The deliverable states the escrow release date is 27 September 2027, not 11 September 2027 as required by the rubric. The correct date should be 11 September 2027 (18 months after 11 March 2026).\n- C2 [FAIL] Calculates the working capital shortfall as $910,000 and the adjusted Purchase Price as $144,090,000, identifying that the Seller's funds flow figure of $143,180,000 is wrong.\n    judges: FAIL: The deliverable fails to calculate the working capital shortfall of $910,000 or the adjusted Purchase Price of $144,090,000, and does not identify that the Seller's figure of $143,180,000 is incorrect. | FAIL: The deliverable mentions the estimated Closing Working Capital of $4,090,000 and Target of $5,000,000 but does not calculate the shortfall as $910,000 or the adjusted Purchase Price as $144,090,000, nor does it identify \n- C3 [PASS] Identifies the conflict between the 30-day claim notice period in SPA Section 9.7 and the 45-day period in Escrow Clause 5.2, and recommends the Buyer works to the shorter 30-day period or aligns the documents.\n    judges: PASS: The deliverable correctly identifies the conflict between the 30-day period in SPA Clause 9.7 and the 45-day period in Escrow Agreement Clause 5.2, and recommends adhering to the shorter 30-day period. | PASS: The deliverable clearly identifies the conflict between the 30-day claim notice period in SPA Clause 9.7 and the 45-day period in Escrow Agreement Clause 5.2, and recommends the Buyer adhere to the stricter 30-day period\n- C4 [FAIL] Gives the escrow release period as a duration (18 months) and as a date (11 September 2027), with days remaining from 11 February 2026 (577 days).\n    judges: FAIL: The deliverable gives the wrong release date (27 September 2027 instead of 11 September 2027) and the wrong days remaining (594 instead of 577). | FAIL: The deliverable gives the escrow release date as 27 September 2027 (incorrect) rather than 11 September 2027, and states 594 days remaining rather than 577 days from 11 February 2026.\n- C5 [FAIL] Notes that 11 September 2027 is a Saturday and that the release moves to the next Business Day, 13 September 2027.\n    judges: FAIL: The deliverable does not mention that 11 September 2027 falls on a Saturday or that the release would move to the next Business Day. | FAIL: The deliverable does not note that 11 September 2027 is a Saturday or that the release would move to the next Business Day, 13 September 2027.\n- C6 [PASS] Gives a pinpoint citation (document name and section/clause number) for every issue or finding.\n    judges: PASS: The deliverable provides pinpoint citations for its findings, including SPA Clause 1.1, Clause 2.2, Clause 2.3, Clause 3.2, Clause 9.7, and Escrow Agreement Clause 1.1, Clause 2.1, Clause 4.1, Clause 5.2. | PASS: The deliverable provides pinpoint citations for most issues (e.g., SPA Clause 1.1, SPA Clause 2.2, SPA Clause 9.7, Escrow Agreement Clause 4.1, Escrow Agreement Clause 5.2), though some references are slightly imprecise \n\n# Your job\nAnalyse each FAILED criterion: what went wrong, what the agent should have done, and whether the failure is procedural (reusable) or task-specific. Then write reusable candidate lessons that would prevent the procedural failures on other matters.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|timeline_analysis\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C1\",\n      \"what_went_wrong\": \"The agent incorrectly calculated the escrow release date as 27 September 2027 instead of 11 September 2027, which is 18 months after the closing date of 11 March 2026.\",\n      \"should_have\": \"Accurately calculated the escrow release date by adding exactly 18 months to the closing date, verifying the result using a date calculator.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C2\",\n      \"what_went_wrong\": \"The agent mentioned the working capital shortfall but failed to compute the exact figure or adjust the purchase price accordingly, missing the discrepancy in the seller's funds flow figure.\",\n      \"should_have\": \"Recomputed the working capital shortfall and adjusted purchase price independently, then cross-checked against all stated figures in the documents.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C4\",\n      \"what_went_wrong\": \"The agent provided the incorrect escrow release date and miscalculated the days remaining from the analysis date, leading to an inaccurate timeline.\",\n      \"should_have\": \"Verified the escrow release date by recalculating the 18-month period and confirmed the days remaining using a date difference calculator.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C5\",\n      \"what_went_wrong\": \"The agent did not account for the fact that the escrow release date fell on a non-business day (Saturday) and failed to note the adjusted release date.\",\n      \"should_have\": \"Checked the day of the week for the escrow release date and noted any adjustments required for non-business days as per the agreement.\",\n      \"failure_kind\": \"procedural\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"For every date-based obligation, recompute the target date independently using a date calculator and cross-check against the stated date in the document.\",\n      \"evidence\": [\"C1\", \"C4\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"When calculating financial adjustments (e.g., working capital shortfalls), recompute all figures manually and flag any discrepancies with stated amounts.\",\n      \"evidence\": [\"C2\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"review\",\n      \"text\": \"Before finalising a timeline, verify whether any key dates fall on weekends or holidays and note any adjustments required by the agreement.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"timeline_analysis\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"For periods defined in months (e.g., 18 months), calculate the exact date by adding the months to the start date and confirm the result using a date tool.\",\n      \"evidence\": [\"C1\", \"C4\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"Include both the duration (e.g., 18 months) and the exact calculated date for every time-sensitive obligation in the deliverable.\",\n      \"evidence\": [\"C1\", \"C4\"],\n      \"task_type_scope\": \"timeline_analysis\",\n      \"confidence\": 0.85\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"review\",\n      \"text\": \"Cross-reference all derived figures (e.g., adjusted purchase prices) with the original documents to ensure consistency and flag any mismatches.\",\n      \"evidence\": [\"C2\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    }\n  ],\n  \"lesson_feedback\": [\n    {\n      \"lesson_id\": \"L0001\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Directly addresses the procedural failure in date calculation, ensuring accuracy in future timeline analyses.\"\n    },\n    {\n      \"lesson_id\": \"L0002\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Targets the failure to recompute financial adjustments, a critical step in ensuring accuracy in transaction documents.\"\n    },\n    {\n      \"lesson_id\": \"L0003\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Ensures non-business day adjustments are considered, a common oversight in timeline drafting.\"\n    },\n    {\n      \"lesson_id\": \"L0004\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Reinforces the need for precise date calculations, particularly for periods defined in months.\"\n    },\n    {\n      \"lesson_id\": \"L0005\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Improves clarity in deliverables by requiring both duration and exact dates, reducing ambiguity.\"\n    },\n    {\n      \"lesson_id\": \"L0006\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Encourages thorough cross-checking of derived figures, preventing errors in financial adjustments.\"\n    }\n  ]\n}\n```"
+}

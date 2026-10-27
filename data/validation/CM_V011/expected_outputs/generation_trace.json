@@ -1,0 +1,100 @@
+{
+  "docs": [
+    {
+      "title": "underwriting_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 568,
+            "output_tokens": 1062
+          }
+        }
+      ]
+    },
+    {
+      "title": "prospectus_extract.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 552,
+            "output_tokens": 1072
+          }
+        }
+      ]
+    },
+    {
+      "title": "board_minutes.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 453,
+            "output_tokens": 759
+          }
+        }
+      ]
+    },
+    {
+      "title": "client_email.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 436,
+            "output_tokens": 411
+          }
+        }
+      ]
+    }
+  ],
+  "doc_facts": {
+    "underwriting_agreement.md": {
+      "key": "underwriting",
+      "facts": [
+        "Parties: Lowther Robotics Ltd (Company) and Merrion Systems Securities (Underwriter).",
+        "Clause 4: the Company grants the Underwriters an option to purchase up to 3,200,000 additional shares (the Over-allotment Option), representing 15% of the 16,000,000 Firm Shares.",
+        "Clause 3: the Company shall pay the Underwriters a commission of 7.0% of the gross proceeds of the Offering (10,000,000 shares at $22.00 per share), being $17,710,000."
+      ],
+      "must_contain": [
+        "3,200,000",
+        "16,000,000",
+        "15%",
+        "7.0%",
+        "10,000,000",
+        "$22.00",
+        "$17,710,000"
+      ]
+    },
+    "prospectus_extract.md": {
+      "key": "prospectus",
+      "facts": [
+        "Issuer: Lowther Robotics Ltd. The date of this Prospectus is 10 March 2026.",
+        "Use of Proceeds: net proceeds of $150,000,000 will be applied as follows: repayment of the revolving facility $68,000,000; capital expenditure $45,000,000; general corporate purposes $42,000,000.",
+        "Legal Proceedings: the Company is not party to any legal proceedings which may have a significant effect on its financial position."
+      ],
+      "must_contain": [
+        "$150,000,000",
+        "$68,000,000",
+        "$45,000,000",
+        "$42,000,000"
+      ]
+    },
+    "board_minutes.md": {
+      "key": "board_minutes",
+      "facts": [
+        "Item 3: the board discussed a class action filed by Kingsmere Engineering Ltd seeking $20,000,000 in damages. Counsel assesses the claim as having reasonable prospects."
+      ],
+      "must_contain": [
+        "Kingsmere Engineering Ltd",
+        "$20,000,000"
+      ]
+    },
+    "client_email.md": {
+      "key": "client_email",
+      "facts": [],
+      "must_contain": []
+    }
+  }
+}

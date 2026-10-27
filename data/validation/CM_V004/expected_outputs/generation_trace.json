@@ -1,0 +1,77 @@
+{
+  "docs": [
+    {
+      "title": "underwriting_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 567,
+            "output_tokens": 1047
+          }
+        }
+      ]
+    },
+    {
+      "title": "prospectus_extract.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 526,
+            "output_tokens": 1051
+          }
+        }
+      ]
+    },
+    {
+      "title": "client_email.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 434,
+            "output_tokens": 412
+          }
+        }
+      ]
+    }
+  ],
+  "doc_facts": {
+    "underwriting_agreement.md": {
+      "key": "underwriting",
+      "facts": [
+        "Parties: Ingleby Marine Ltd (Company) and Dunmore Retail Group Securities (Underwriter).",
+        "Clause 3: the Company shall pay the Underwriters a commission of 5.5% of the gross proceeds of the Offering (12,500,000 shares at $14.00 per share), being $11,068,750.",
+        "Clause 4: the Company grants the Underwriters an option to purchase up to 3,200,000 additional shares (the Over-allotment Option), representing 15% of the 16,000,000 Firm Shares."
+      ],
+      "must_contain": [
+        "5.5%",
+        "12,500,000",
+        "$14.00",
+        "$11,068,750",
+        "3,200,000",
+        "16,000,000",
+        "15%"
+      ]
+    },
+    "prospectus_extract.md": {
+      "key": "prospectus",
+      "facts": [
+        "Issuer: Ingleby Marine Ltd. The date of this Prospectus is 12 August 2026.",
+        "Use of Proceeds: net proceeds of $150,000,000 will be applied as follows: repayment of the revolving facility $68,000,000; capital expenditure $45,000,000; general corporate purposes $42,000,000."
+      ],
+      "must_contain": [
+        "$150,000,000",
+        "$68,000,000",
+        "$45,000,000",
+        "$42,000,000"
+      ]
+    },
+    "client_email.md": {
+      "key": "client_email",
+      "facts": [],
+      "must_contain": []
+    }
+  }
+}

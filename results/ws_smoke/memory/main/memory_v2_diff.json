@@ -1,0 +1,885 @@
+{
+  "cycle": 2,
+  "lineage": "main",
+  "from_version": 1,
+  "to_version": 2,
+  "n_active_before": 23,
+  "n_active_after": 30,
+  "counts": {
+    "added": 10,
+    "modified": 3,
+    "removed": 3,
+    "rejected": 10,
+    "review_queue": 1,
+    "proposed": 27
+  },
+  "added": [
+    {
+      "action": "ADD",
+      "lesson_ids": [],
+      "text": "For every financial cap, basket, or threshold expressed as a percentage, recompute the figure independently. Flag any mismatch with the stated figure.",
+      "type": "checklist",
+      "category": "analysis",
+      "candidate_ids": [
+        "c02_MNA_T002_0"
+      ],
+      "source_tasks": [
+        "MNA_T002"
+      ],
+      "decision": "COMMIT",
+      "reason": "Adds specific verification step for percentage-based financial terms, which is not explicitly required in existing lessons. High value in preventing calculation errors.",
+      "gate_verdict": {
+        "id": "P6",
+        "generalizable": true,
+        "matter_specific": false,
+        "too_narrow": false,
+        "sufficient_evidence": true,
+        "duplicate": false,
+        "useful": true,
+        "important": true,
+        "decision": "COMMIT",
+        "reason": "Adds specific verification step for percentage-based financial terms, which is not explicitly required in existing lessons. High value in preventing calculation errors."
+      },
+      "leakage": {
+        "hard": [],
+        "soft": [],
+        "leak": false
+      },
+      "lesson_id": "L0024"
+    },
+    {
+      "action": "ADD",
+      "lesson_ids": [],
+      "text": "For undefined critical terms (e.g., 'Business Days'), propose a standard definition based on jurisdiction norms. Flag any deviations from this standard in transaction documents.",
+      "type": "practice_note",
+      "category": "analysis",
+      "candidate_ids": [
+        "c02_MNA_T005_3"
+      ],
+      "source_tasks": [
+        "MNA_T005"
+      ],
+      "decision": "COMMIT",
+      "reason": "Complements existing definition audit lesson by focusing on critical undefined terms and proposing standard definitions based on jurisdiction norms.",
+      "gate_verdict": {
+        "id": "P7",
+        "generalizable": true,
+        "matter_specific": false,
+        "too_narrow": false,
+        "sufficient_evidence": true,
+        "duplicate": false,
+        "useful": true,
+        "important": true,
+        "decision": "COMMIT",
+        "reason": "Complements existing definition audit lesson by focusing on critical undefined terms and proposing standard definitions based on jurisdiction norms."
+      },
+      "leakage": {
+        "hard": [],
+        "soft": [],
+        "leak": false
+      },
+      "lesson_id": "L0025"
+    },
+    {
+      "action": "ADD",
+      "lesson_ids": [],
+      "text": "For discrepancies between computed and stated figures, create a dedicated sub-issue labeled 'Mathematical Inconsistency.' Recommend correction or clarification.",
+      "type": "practice_note",
+      "category": "drafting",
+      "candidate_ids": [
+        "c02_MNA_T002_3"
+      ],
+      "source_tasks": [
+        "MNA_T002"
+      ],
+      "decision": "COMMIT",
+      "reason": "Introduces a standardized label for mathematical inconsistencies, improving clarity and consistency in issue reporting.",
+      "gate_verdict": {
+        "id": "P9",
+        "generalizable": true,
+        "matter_specific": false,
+        "too_narrow": false,
+        "sufficient_evidence": true,
+        "duplicate": false,
+        "useful": true,
+        "important": true,
+        "decision": "COMMIT",
+        "reason": "Introduces a standardized label for mathematical inconsistencies, improving clarity and consistency in issue reporting."
+      },
+      "leakage": {
+        "hard": [],
+        "soft": [],
+        "leak": false
+      },
+      "lesson_id": "L0026"
+    },
+    {
+      "action": "ADD",
+      "lesson_ids": [],
+      "text": "For every proposed amendment, present the current wording, proposed wording, and a one-line rationale. Use a consistent format: 'Current: [text] → Proposed: [text] | Rationale: [explanation]'.",
+      "type": "checklist",
+      "category": "drafting",
+      "candidate_ids": [
+        "c02_MNA_T004_2"
+      ],
+      "source_tasks": [
+        "MNA_T004"
+      ],
+      "decision": "COMMIT",
+      "reason": "Standardizes amendment presentation, improving clarity and client understanding; applicable across matter types.",
+      "gate_verdict": {
+        "id": "P1",
+        "generalizable": true,
+        "matter_specific": false,
+        "too_narrow": false,
+        "sufficient_evidence": true,
+        "duplicate": false,
+        "useful": true,
+        "important": true,
+        "decision": "COMMIT",
+        "reason": "Standardizes amendment presentation, improving clarity and client understanding; applicable across matter types."
+      },
+      "leakage": {
+        "hard": [],
+        "soft": [],
+        "leak": false
+      },
+      "lesson_id": "L0027"
+    },
+    {
+      "action": "ADD",
+      "lesson_ids": [],
+      "text": "For discrepancies in numerical calculations, state the expected value, observed value, and delta. Include the formula used and explain the discrepancy's impact.",
+      "type": "checklist",
+      "category": "drafting",
+      "candidate_ids": [
+        "c02_MNA_T005_0"
+      ],
+      "source_tasks": [
+        "MNA_T005"
+      ],
+      "decision": "COMMIT",
+      "reason": "Ensures transparency and accuracy in numerical discrepancies, critical for financial and deadline calculations.",
+      "gate_verdict": {
+        "id": "P2",
+        "generalizable": true,
+        "matter_specific": false,
+        "too_narrow": false,
+        "sufficient_evidence": true,
+        "duplicate": false,
+        "useful": true,
+        "important": true,
+        "decision": "COMMIT",
+        "reason": "Ensures transparency and accuracy in numerical discrepancies, critical for financial and deadline calculations."
+      },
+      "leakage": {
+        "hard": [],
+        "soft": [],
+        "leak": false
+      },
+      "lesson_id": "L0028"
+    },
+    {
+      "action": "ADD",
+      "lesson_ids": [],
+      "text": "Include a dedicated subsection comparing key contractual mechanisms to standard alternatives. Assess favourability to the client and recommend adjustments where necessary.",
+      "type": "checklist",
+      "category": "drafting",
+      "candidate_ids": [
+        "c02_MNA_T006_1",
+        "c02_MNA_T006_5"
+      ],
+      "source_tasks": [
+        "MNA_T006"
+      ],
+      "decision": "COMMIT",
+      "reason": "Encourages benchmarking against market standards, enhancing strategic value of deliverables.",
+      "gate_verdict": {
+        "id": "P4",
+        "generalizable": true,
+        "matter_specific": false,
+        "too_narrow": false,
+        "sufficient_evidence": true,
+        "duplicate": false,
+        "useful": true,
+        "important": true,
+        "decision": "COMMIT",
+        "reason": "Encourages benchmarking against market standards, enhancing strategic value of deliverables."
+      },
+      "leakage": {
+        "hard": [],
+        "soft": [],
+        "leak": false
+      },
+      "lesson_id": "L0029"
+    },
+    {
+      "action": "ADD",
+      "lesson_ids": [],
+      "text": "Before finalising a deliverable, recompute all derived financial figures (e.g., percentages, pro-rata amounts) using a calculator tool. Cross-check against stated figures in the documents and document the recomputation in work notes.",
+      "type": "practice_note",
+      "category": "review",
+      "candidate_ids": [
+        "c02_MNA_T002_2",
+        "c02_MNA_T002_5"
+      ],
+      "source_tasks": [
+        "MNA_T002"
+      ],
+      "decision": "COMMIT",
+      "reason": "Mitigates risk of calculation errors in financial figures; verification step with documented audit trail improves reliability.",
+      "gate_verdict": {
+        "id": "P5",
+        "generalizable": true,
+        "matter_specific": false,
+        "too_narrow": false,
+        "sufficient_evidence": true,
+        "duplicate": false,
+        "useful": true,
+        "important": true,
+        "decision": "COMMIT",
+        "reason": "Mitigates risk of calculation errors in financial figures; verification step with documented audit trail improves reliability."
+      },
+      "leakage": {
+        "hard": [],
+        "soft": [],
+        "leak": false
+      },
+      "lesson_id": "L0030"
+    },
+    {
+      "action": "ADD",
+      "lesson_ids": [],
+      "text": "Before finalising a due diligence report, verify every required third-party consent is listed with its status (obtained/pending/missing) and the document clause requiring it.",
+      "type": "checklist",
+      "category": "review",
+      "candidate_ids": [
+        "c02_MNA_T005_4"
+      ],
+      "source_tasks": [
+        "MNA_T005"
+      ],
+      "decision": "COMMIT",
+      "reason": "Ensures completeness in third-party consent tracking, a common source of transaction risk.",
+      "gate_verdict": {
+        "id": "P6",
+        "generalizable": true,
+        "matter_specific": false,
+        "too_narrow": false,
+        "sufficient_evidence": true,
+        "duplicate": false,
+        "useful": true,
+        "important": true,
+        "decision": "COMMIT",
+        "reason": "Ensures completeness in third-party consent tracking, a common source of transaction risk."
+      },
+      "leakage": {
+        "hard": [],
+        "soft": [],
+        "leak": false
+      },
+      "lesson_id": "L0031"
+    },
+    {
+      "action": "ADD",
+      "lesson_ids": [],
+      "text": "After drafting the deliverable, cross-check that every issue, recommendation, and status update aligns with the client's best interests. Revise ambiguous or neutral language.",
+      "type": "checklist",
+      "category": "review",
+      "candidate_ids": [
+        "c02_MNA_T003_5"
+      ],
+      "source_tasks": [
+        "MNA_T003"
+      ],
+      "decision": "COMMIT",
+      "reason": "Ensures client-centric framing of all content, reducing risk of misaligned advice.",
+      "gate_verdict": {
+        "id": "P10",
+        "generalizable": true,
+        "matter_specific": false,
+        "too_narrow": false,
+        "sufficient_evidence": true,
+        "duplicate": false,
+        "useful": true,
+        "important": true,
+        "decision": "COMMIT",
+        "reason": "Ensures client-centric framing of all content, reducing risk of misaligned advice."
+      },
+      "leakage": {
+        "hard": [],
+        "soft": [],
+        "leak": false
+      },
+      "lesson_id": "L0032"
+    },
+    {
+      "action": "ADD",
+      "lesson_ids": [],
+      "text": "Verify that all contractual mechanisms are described accurately and their implications for the client's risk exposure are clearly stated. Cross-check against standard market practices.",
+      "type": "checklist",
+      "category": "review",
+      "candidate_ids": [
+        "c02_MNA_T006_3"
+      ],
+      "source_tasks": [
+        "MNA_T006"
+      ],
+      "decision": "COMMIT",
+      "reason": "Strengthens accuracy and risk communication for contractual mechanisms, aligning with market practice benchmarks.",
+      "gate_verdict": {
+        "id": "P11",
+        "generalizable": true,
+        "matter_specific": false,
+        "too_narrow": false,
+        "sufficient_evidence": true,
+        "duplicate": false,
+        "useful": true,
+        "important": true,
+        "decision": "COMMIT",
+        "reason": "Strengthens accuracy and risk communication for contractual mechanisms, aligning with market practice benchmarks."
+      },
+      "leakage": {
+        "hard": [],
+        "soft": [],
+        "leak": false
+      },
+      "lesson_id": "L0033"
+    }
+  ],
+  "modified": [
+    {
+      "action": "UPDATE",
+      "lesson_ids": [
+        "L0006"
+      ],
+      "text": "Scan documents for ambiguous defined terms or clauses. For each, note at least two alternative readings and explain how they affect the client's legal or financial position.",
+      "type": "practice_note",
+      "category": "analysis",
+      "candidate_ids": [
+        "c02_MNA_T004_1"
+      ],
+      "source_tasks": [
+        "MNA_T004"
+      ],
+      "decision": "COMMIT",
+      "reason": "Improves on existing lesson by requiring at least two alternative readings, enhancing rigor in ambiguity analysis.",
+      "gate_verdict": {
+        "id": "P3",
+        "generalizable": true,
+        "matter_specific": false,
+        "too_narrow": false,
+        "sufficient_evidence": true,
+        "duplicate": false,
+        "useful": true,
+        "important": true,
+        "decision": "COMMIT",
+        "reason": "Improves on existing lesson by requiring at least two alternative readings, enhancing rigor in ambiguity analysis."
+      },
+      "leakage": {
+        "hard": [],
+        "soft": [],
+        "leak": false
+      },
+      "lesson_id": "L0006",
+      "before": {
+        "L0006": "Scan documents for ambiguous defined terms or clauses. For each, note alternative readings and explain how they affect the client's position."
+      }
+    },
+    {
+      "action": "UPDATE",
+      "lesson_ids": [
+        "L0017"
+      ],
+      "text": "Create a dedicated section for required approvals, conditions precedent, or third-party consents. List each item and explicitly state its status (e.g., 'not validly obtained,' 'missing,' 'pending') and the legal consequence (e.g., 'invalid,' 'unenforceable,' 'requires ratification').",
+      "type": "checklist",
+      "category": "drafting",
+      "candidate_ids": [
+        "c02_MNA_T003_1",
+        "c02_MNA_T003_4"
+      ],
+      "source_tasks": [
+        "MNA_T003"
+      ],
+      "decision": "COMMIT",
+      "reason": "Enhances existing lesson by requiring explicit statement of legal consequences for missing consents, adding critical risk context.",
+      "gate_verdict": {
+        "id": "P11",
+        "generalizable": true,
+        "matter_specific": false,
+        "too_narrow": false,
+        "sufficient_evidence": true,
+        "duplicate": false,
+        "useful": true,
+        "important": true,
+        "decision": "COMMIT",
+        "reason": "Enhances existing lesson by requiring explicit statement of legal consequences for missing consents, adding critical risk context."
+      },
+      "leakage": {
+        "hard": [],
+        "soft": [],
+        "leak": false
+      },
+      "lesson_id": "L0017",
+      "before": {
+        "L0017": "Create a dedicated section for required approvals, conditions precedent, or third-party consents. List each item and explicitly state whether it has been obtained or satisfied."
+      }
+    },
+    {
+      "action": "UPDATE",
+      "lesson_ids": [
+        "L0019"
+      ],
+      "text": "Before finalizing an issues list, ensure every issue includes: (1) a pinpoint citation, (2) an explicit risk rating, (3) an actionable recommendation, (4) flags for inconsistencies between related provisions, and (5) enforceability assessments for restrictive covenants. Recommend legal advice if enforceability is uncertain.",
+      "type": "practice_note",
+      "category": "review",
+      "candidate_ids": [
+        "c02_MNA_T001_3"
+      ],
+      "source_tasks": [
+        "MNA_T001"
+      ],
+      "decision": "COMMIT",
+      "reason": "Adds enforceability assessment for restrictive covenants, a critical risk area not fully covered in existing lessons.",
+      "gate_verdict": {
+        "id": "P9",
+        "generalizable": true,
+        "matter_specific": false,
+        "too_narrow": false,
+        "sufficient_evidence": true,
+        "duplicate": false,
+        "useful": true,
+        "important": true,
+        "decision": "COMMIT",
+        "reason": "Adds enforceability assessment for restrictive covenants, a critical risk area not fully covered in existing lessons."
+      },
+      "leakage": {
+        "hard": [],
+        "soft": [],
+        "leak": false
+      },
+      "lesson_id": "L0019",
+      "before": {
+        "L0019": "Before finalizing an issues list, ensure every issue includes: (1) a pinpoint citation, (2) an explicit risk rating, (3) an actionable recommendation, and (4) flags for inconsistencies between related provisions. Use a checklist to maintain consistency."
+      }
+    }
+  ],
+  "removed": [
+    {
+      "lesson_id": "L0004",
+      "text": "After identifying key risks, list all information gaps or uncertainties encountered during review. Flag them for client follow-up with clear explanations.",
+      "reason": "Redundant with more specific lessons; low helpfulness and high unhelpfulness."
+    },
+    {
+      "lesson_id": "L0009",
+      "text": "For every threshold or basket in transaction documents, compare the structure to alternatives. Note implications for the client's risk exposure.",
+      "reason": "Merged into updated lesson covering thresholds and baskets."
+    },
+    {
+      "lesson_id": "L0015",
+      "text": "Include an 'Assumptions and Open Questions' section in every legal memo. Explicitly mention critical assumptions or open questions in the executive summary if they impact transaction viability.",
+      "reason": "Low helpfulness statistics and overly narrow scope (legal_memo only)."
+    }
+  ],
+  "rejected": [
+    {
+      "action": "ADD",
+      "lesson_ids": [],
+      "text": "For restrictive covenants, consult jurisdiction-specific guidelines or precedents to determine acceptable durations and scopes. Use these benchmarks to assess enforceability.",
+      "type": "practice_note",
+      "category": "general",
+      "candidate_ids": [
+        "c02_MNA_T001_5"
+      ],
+      "source_tasks": [
+        "MNA_T001"
+      ],
+      "decision": "REJECT",
+      "reason": "Redundant with existing lesson: 'Review all restrictive covenants across transaction documents and employment agreements. Identify and flag inconsistencies in scope, duration, or enforceability under relevant jurisdiction law.'",
+      "gate_verdict": {
+        "id": "P0",
+        "generalizable": true,
+        "matter_specific": false,
+        "too_narrow": false,
+        "sufficient_evidence": true,
+        "duplicate": true,
+        "useful": true,
+        "important": false,
+        "decision": "REJECT",
+        "reason": "Redundant with existing lesson: 'Review all restrictive covenants across transaction documents and employment agreements. Identify and flag inconsistencies in scope, duration, or enforceability under relevant jurisdiction law.'"
+      },
+      "leakage": {
+        "hard": [],
+        "soft": [],
+        "leak": false
+      }
+    },
+    {
+      "action": "MERGE",
+      "lesson_ids": [
+        "L0003"
+      ],
+      "text": "Review all restrictive covenants across transaction documents. Assess enforceability under the governing jurisdiction's law, flagging provisions that may be unenforceable due to excessive duration, scope, or lack of legitimate business interest. Compare scope, duration, and territorial reach for inconsistencies and justify enforceability assessments.",
+      "type": "practice_note",
+      "category": "analysis",
+      "candidate_ids": [
+        "c02_MNA_T001_0",
+        "c02_MNA_T001_1",
+        "c02_MNA_T005_5"
+      ],
+      "source_tasks": [
+        "MNA_T001",
+        "MNA_T005"
+      ],
+      "decision": "REJECT",
+      "reason": "Subsumed by existing lesson: 'Review all restrictive covenants across transaction documents and employment agreements. Identify and flag inconsistencies in scope, duration, or enforceability under relevant jurisdiction law.' P1 adds detail but does not introduce a new principle.",
+      "gate_verdict": {
+        "id": "P1",
+        "generalizable": true,
+        "matter_specific": false,
+        "too_narrow": false,
+        "sufficient_evidence": true,
+        "duplicate": true,
+        "useful": true,
+        "important": true,
+        "decision": "REJECT",
+        "reason": "Subsumed by existing lesson: 'Review all restrictive covenants across transaction documents and employment agreements. Identify and flag inconsistencies in scope, duration, or enforceability under relevant jurisdiction law.' P1 adds detail but does not introduce a new principle."
+      },
+      "leakage": {
+        "hard": [],
+        "soft": [],
+        "leak": false
+      }
+    },
+    {
+      "action": "UPDATE",
+      "lesson_ids": [
+        "L0005"
+      ],
+      "text": "When identifying conflicts between documents, specify which provision should govern or recommend alignment. Compare the client's risk exposure under each option and recommend the option that minimises risk or propose alignment to the stricter standard. Note practical implications of shorter/longer periods or stricter/looser standards.",
+      "type": "practice_note",
+      "category": "analysis",
+      "candidate_ids": [
+        "c02_MNA_T003_3"
+      ],
+      "source_tasks": [
+        "MNA_T003"
+      ],
+      "decision": "REJECT",
+      "reason": "Already covered by existing lesson: 'When identifying conflicts between documents, specify which provision should govern or recommend alignment. Note practical implications of shorter/longer periods or stricter/looser standards.'",
+      "gate_verdict": {
+        "id": "P2",
+        "generalizable": true,
+        "matter_specific": false,
+        "too_narrow": false,
+        "sufficient_evidence": true,
+        "duplicate": true,
+        "useful": true,
+        "important": true,
+        "decision": "REJECT",
+        "reason": "Already covered by existing lesson: 'When identifying conflicts between documents, specify which provision should govern or recommend alignment. Note practical implications of shorter/longer periods or stricter/looser standards.'"
+      },
+      "leakage": {
+        "hard": [],
+        "soft": [],
+        "leak": false
+      }
+    },
+    {
+      "action": "UPDATE",
+      "lesson_ids": [
+        "L0010"
+      ],
+      "text": "When identifying notice periods or deadlines, check for conflicts between documents. Compare wording differences (e.g., '48 hours' vs. 'two Business Days') and note how they could affect the client's rights or obligations. Recommend the most conservative approach or alignment to protect client interests.",
+      "type": "practice_note",
+      "category": "analysis",
+      "candidate_ids": [
+        "c02_MNA_T004_5"
+      ],
+      "source_tasks": [
+        "MNA_T004"
+      ],
+      "decision": "REJECT",
+      "reason": "Duplicative of existing lesson: 'When identifying notice periods or deadlines, check for conflicts between documents. Recommend the most conservative approach or alignment to protect client interests.'",
+      "gate_verdict": {
+        "id": "P4",
+        "generalizable": true,
+        "matter_specific": false,
+        "too_narrow": false,
+        "sufficient_evidence": true,
+        "duplicate": true,
+        "useful": true,
+        "important": true,
+        "decision": "REJECT",
+        "reason": "Duplicative of existing lesson: 'When identifying notice periods or deadlines, check for conflicts between documents. Recommend the most conservative approach or alignment to protect client interests.'"
+      },
+      "leakage": {
+        "hard": [],
+        "soft": [],
+        "leak": false
+      }
+    },
+    {
+      "action": "MERGE",
+      "lesson_ids": [
+        "L0009"
+      ],
+      "text": "For every threshold, basket, or financial limit in transaction documents, compare its structure to standard alternatives (e.g., deductible vs. tipping basket). Note the legal or market standard name and explain how it differs from alternatives in terms of risk allocation. Flag deviations from market standards and their implications for risk exposure. State which structure is more favourable to the client and why.",
+      "type": "practice_note",
+      "category": "analysis",
+      "candidate_ids": [
+        "c02_MNA_T002_4",
+        "c02_MNA_T006_0",
+        "c02_MNA_T006_4"
+      ],
+      "source_tasks": [
+        "MNA_T002",
+        "MNA_T006"
+      ],
+      "decision": "REJECT",
+      "reason": "Fully captured by existing lesson: 'For every threshold or basket in transaction documents, compare the structure to alternatives. Note implications for the client's risk exposure.'",
+      "gate_verdict": {
+        "id": "P5",
+        "generalizable": true,
+        "matter_specific": false,
+        "too_narrow": false,
+        "sufficient_evidence": true,
+        "duplicate": true,
+        "useful": true,
+        "important": true,
+        "decision": "REJECT",
+        "reason": "Fully captured by existing lesson: 'For every threshold or basket in transaction documents, compare the structure to alternatives. Note implications for the client's risk exposure.'"
+      },
+      "leakage": {
+        "hard": [],
+        "soft": [],
+        "leak": false
+      }
+    },
+    {
+      "action": "ADD",
+      "lesson_ids": [],
+      "text": "For every issue involving restrictive covenants, include: (1) a comparison of scope and duration, (2) an enforceability assessment, and (3) a recommendation for alignment or amendment.",
+      "type": "checklist",
+      "category": "drafting",
+      "candidate_ids": [
+        "c02_MNA_T001_2"
+      ],
+      "source_tasks": [
+        "MNA_T001"
+      ],
+      "decision": "REJECT",
+      "reason": "Redundant with existing checklist principles and P1's substance. The required elements are already implied in comprehensive issue reporting standards.",
+      "gate_verdict": {
+        "id": "P8",
+        "generalizable": true,
+        "matter_specific": false,
+        "too_narrow": false,
+        "sufficient_evidence": true,
+        "duplicate": true,
+        "useful": true,
+        "important": true,
+        "decision": "REJECT",
+        "reason": "Redundant with existing checklist principles and P1's substance. The required elements are already implied in comprehensive issue reporting standards."
+      },
+      "leakage": {
+        "hard": [],
+        "soft": [],
+        "leak": false
+      }
+    },
+    {
+      "action": "UPDATE",
+      "lesson_ids": [
+        "L0012"
+      ],
+      "text": "For every inconsistency between related provisions across documents, explicitly flag it as a separate issue. State which document governs and recommend harmonisation or further review. Justify the recommendation with enforceability or commercial rationale.",
+      "type": "checklist",
+      "category": "drafting",
+      "candidate_ids": [
+        "c02_MNA_T005_2"
+      ],
+      "source_tasks": [
+        "MNA_T005"
+      ],
+      "decision": "REJECT",
+      "reason": "Already covered by existing lesson: 'For every inconsistency between related provisions across documents, explicitly flag it as a separate issue. Include a recommendation for harmonisation or further review.'",
+      "gate_verdict": {
+        "id": "P10",
+        "generalizable": true,
+        "matter_specific": false,
+        "too_narrow": false,
+        "sufficient_evidence": true,
+        "duplicate": true,
+        "useful": true,
+        "important": true,
+        "decision": "REJECT",
+        "reason": "Already covered by existing lesson: 'For every inconsistency between related provisions across documents, explicitly flag it as a separate issue. Include a recommendation for harmonisation or further review.'"
+      },
+      "leakage": {
+        "hard": [],
+        "soft": [],
+        "leak": false
+      }
+    },
+    {
+      "action": "MERGE",
+      "lesson_ids": [
+        "L0018"
+      ],
+      "text": "Provide a pinpoint citation (document name and section/clause) for every issue, factual assertion, or proposed amendment. If no citation exists, state 'Not addressed in [document name].' In the executive summary, flag any issues where pinpoint citations could not be provided and explain why.",
+      "type": "checklist",
+      "category": "drafting",
+      "candidate_ids": [
+        "c02_MNA_T004_0",
+        "c02_MNA_T004_4"
+      ],
+      "source_tasks": [
+        "MNA_T004"
+      ],
+      "decision": "REJECT",
+      "reason": "Duplicates existing lesson on pinpoint citations and executive summary flagging.",
+      "gate_verdict": {
+        "id": "P0",
+        "generalizable": true,
+        "matter_specific": false,
+        "too_narrow": false,
+        "sufficient_evidence": true,
+        "duplicate": true,
+        "useful": true,
+        "important": false,
+        "decision": "REJECT",
+        "reason": "Duplicates existing lesson on pinpoint citations and executive summary flagging."
+      },
+      "leakage": {
+        "hard": [],
+        "soft": [],
+        "leak": false
+      }
+    },
+    {
+      "action": "MERGE",
+      "lesson_ids": [
+        "L0016"
+      ],
+      "text": "For every identified issue, provide an explicit, actionable recommendation. Specify the exact remedy (e.g., 'amend to align with shorter notice period') and justify it with risk exposure analysis. Prioritise client protection in recommendations.",
+      "type": "checklist",
+      "category": "drafting",
+      "candidate_ids": [
+        "c02_MNA_T003_0"
+      ],
+      "source_tasks": [
+        "MNA_T003"
+      ],
+      "decision": "REJECT",
+      "reason": "Duplicates existing lesson on actionable recommendations and risk exposure analysis.",
+      "gate_verdict": {
+        "id": "P3",
+        "generalizable": true,
+        "matter_specific": false,
+        "too_narrow": false,
+        "sufficient_evidence": true,
+        "duplicate": true,
+        "useful": true,
+        "important": false,
+        "decision": "REJECT",
+        "reason": "Duplicates existing lesson on actionable recommendations and risk exposure analysis."
+      },
+      "leakage": {
+        "hard": [],
+        "soft": [],
+        "leak": false
+      }
+    },
+    {
+      "action": "MERGE",
+      "lesson_ids": [
+        "L0019",
+        "L0022"
+      ],
+      "text": "Before finalising the deliverable, verify that every identified issue includes: (1) a pinpoint citation (use descriptive references if clause numbers are absent), (2) a comparison to contractual or legal standards, (3) an explicit risk assessment, (4) an actionable recommendation, and (5) flags for inconsistencies between related provisions.",
+      "type": "checklist",
+      "category": "review",
+      "candidate_ids": [
+        "c02_MNA_T003_2"
+      ],
+      "source_tasks": [
+        "MNA_T003"
+      ],
+      "decision": "REJECT",
+      "reason": "Duplicates and slightly extends existing checklist lesson; redundant with P8 and prior comprehensive checklist items.",
+      "gate_verdict": {
+        "id": "P8",
+        "generalizable": true,
+        "matter_specific": false,
+        "too_narrow": false,
+        "sufficient_evidence": true,
+        "duplicate": true,
+        "useful": true,
+        "important": false,
+        "decision": "REJECT",
+        "reason": "Duplicates and slightly extends existing checklist lesson; redundant with P8 and prior comprehensive checklist items."
+      },
+      "leakage": {
+        "hard": [],
+        "soft": [],
+        "leak": false
+      }
+    }
+  ],
+  "review_queue": [
+    {
+      "action": "ADD",
+      "lesson_ids": [],
+      "text": "Before finalizing a redline note, ensure every proposed amendment includes the original text, revised text, and a clear rationale. Use a checklist for consistency.",
+      "type": "practice_note",
+      "category": "review",
+      "candidate_ids": [
+        "c02_MNA_T004_3"
+      ],
+      "source_tasks": [
+        "MNA_T004"
+      ],
+      "decision": "REVIEW",
+      "reason": "single-source lesson (sources=1); Promotes consistency in redline notes; minor overlap with P1 but focused on process rather than format.",
+      "gate_verdict": {
+        "id": "P7",
+        "generalizable": true,
+        "matter_specific": false,
+        "too_narrow": false,
+        "sufficient_evidence": true,
+        "duplicate": false,
+        "useful": true,
+        "important": false,
+        "decision": "COMMIT",
+        "reason": "Promotes consistency in redline notes; minor overlap with P1 but focused on process rather than format."
+      },
+      "leakage": {
+        "hard": [],
+        "soft": [],
+        "leak": false
+      }
+    }
+  ],
+  "gate_traces": [
+    {
+      "prompt": "# Existing committed lessons (for duplicate checks)\n- Adopt a consistent risk rating scale (e.g., High/Medium/Low) for all issues. Define the criteria for each rating in the methodology section of the deliverable.\n- For every calculation or derived figure, specify its source: client-provided data, document-extracted data, or assumptions. Flag any uncertainties or limitations.\n- Review all restrictive covenants across transaction documents and employment agreements. Identify and flag inconsistencies in scope, duration, or enforceability under relevant jurisdiction law.\n- After identifying key risks, list all information gaps or uncertainties encountered during review. Flag them for client follow-up with clear explanations.\n- When identifying conflicts between documents, specify which provision should govern or recommend alignment. Note practical implications of shorter/longer periods or stricter/looser standards.\n- Scan documents for ambiguous defined terms or clauses. For each, note alternative readings and explain how they affect the client's position.\n- Extract numerical or factual data from board minutes or emails. Cross-check against warranties or disclosures and flag discrepancies with pinpoint citations.\n- For every change-of-control provision, confirm third-party consent requirements. Note the status (obtained/pending/missing) in findings.\n- For every threshold or basket in transaction documents, compare the structure to alternatives. Note implications for the client's risk exposure.\n- When identifying notice periods or deadlines, check for conflicts between documents. Recommend the most conservative approach or alignment to protect client interests.\n- Calculate and include days remaining to all critical deadlines from the analysis date, not just from reference points like the Closing Date.\n- For every inconsistency between related provisions across documents, explicitly flag it as a separate issue. Include a recommendation for harmonisation or further review.\n- Assign a standardised risk rating (High/Medium/Low) to every issue. Use a consistent format (e.g., '**Risk Rating: High**') and justify the rating in the analysis.\n- In the executive summary, list the top 3-5 risks by severity (High) and explicitly state their implications for the client, prioritised by urgency.\n- Include an 'Assumptions and Open Questions' section in every legal memo. Explicitly mention critical assumptions or open questions in the executive summary if they impact transaction viability.\n- For every identified issue, provide an explicit, actionable recommendation. Specify the exact remedy (e.g., 'amend Clause X to Y' or 'obtain a ratifying resolution').\n- Create a dedicated section for required approvals, conditions precedent, or third-party consents. List each item and explicitly state whether it has been obtained or satisfied.\n- Provide a pinpoint citation (document name and section/clause) for every issue, factual assertion, or proposed amendment. If no citation exists, state 'Not addressed in [document name].'\n- Before finalizing an issues list, ensure every issue includes: (1) a pinpoint citation, (2) an explicit risk rating, (3) an actionable recommendation, and (4) flags for inconsistencies between related provisions. Use a checklist to maintain consistency.\n- Before finalising a legal memo, verify that all assumptions are explicitly stated and open questions are clearly identified for the client.\n- Audit the document for undefined or ambiguous terms. Define them explicitly in a definitions schedule or proposed clause if missing.\n- Before finalising the deliverable, verify that every identified issue includes a comparison to contractual or legal standards and a risk assessment.\n- Before finalizing a timeline analysis, ensure all calculations of days remaining are computed from the analysis date, not from intermediate dates.\n\n# Proposed lessons\n- P0: [ADD; practice_note; category=general; source_tasks=1] For restrictive covenants, consult jurisdiction-specific guidelines or precedents to determine acceptable durations and scopes. Use these benchmarks to assess enforceability.\n- P1: [MERGE; practice_note; category=analysis; source_tasks=2] Review all restrictive covenants across transaction documents. Assess enforceability under the governing jurisdiction's law, flagging provisions that may be unenforceable due to excessive duration, scope, or lack of legitimate business interest. Compare scope, duration, and territorial reach for inconsistencies and justify enforceability assessments.\n- P2: [UPDATE; practice_note; category=analysis; source_tasks=1] When identifying conflicts between documents, specify which provision should govern or recommend alignment. Compare the client's risk exposure under each option and recommend the option that minimises risk or propose alignment to the stricter standard. Note practical implications of shorter/longer periods or stricter/looser standards.\n- P3: [UPDATE; practice_note; category=analysis; source_tasks=1] Scan documents for ambiguous defined terms or clauses. For each, note at least two alternative readings and explain how they affect the client's legal or financial position.\n- P4: [UPDATE; practice_note; category=analysis; source_tasks=2] When identifying notice periods or deadlines, check for conflicts between documents. Compare wording differences (e.g., '48 hours' vs. 'two Business Days') and note how they could affect the client's rights or obligations. Recommend the most conservative approach or alignment to protect client interests.\n- P5: [MERGE; practice_note; category=analysis; source_tasks=2] For every threshold, basket, or financial limit in transaction documents, compare its structure to standard alternatives (e.g., deductible vs. tipping basket). Note the legal or market standard name and explain how it differs from alternatives in terms of risk allocation. Flag deviations from market standards and their implications for risk exposure. State which structure is more favourable to the client and why.\n- P6: [ADD; checklist; category=analysis; source_tasks=1] For every financial cap, basket, or threshold expressed as a percentage, recompute the figure independently. Flag any mismatch with the stated figure.\n- P7: [ADD; practice_note; category=analysis; source_tasks=1] For undefined critical terms (e.g., 'Business Days'), propose a standard definition based on jurisdiction norms. Flag any deviations from this standard in transaction documents.\n- P8: [ADD; checklist; category=drafting; source_tasks=1] For every issue involving restrictive covenants, include: (1) a comparison of scope and duration, (2) an enforceability assessment, and (3) a recommendation for alignment or amendment.\n- P9: [ADD; practice_note; category=drafting; source_tasks=1] For discrepancies between computed and stated figures, create a dedicated sub-issue labeled 'Mathematical Inconsistency.' Recommend correction or clarification.\n- P10: [UPDATE; checklist; category=drafting; source_tasks=2] For every inconsistency between related provisions across documents, explicitly flag it as a separate issue. State which document governs and recommend harmonisation or further review. Justify the recommendation with enforceability or commercial rationale.\n- P11: [UPDATE; checklist; category=drafting; source_tasks=2] Create a dedicated section for required approvals, conditions precedent, or third-party consents. List each item and explicitly state its status (e.g., 'not validly obtained,' 'missing,' 'pending') and the legal consequence (e.g., 'invalid,' 'unenforceable,' 'requires ratification').\n\nJSON schema: {\"verdicts\": [{\"id\": \"P0\", \"generalizable\": true, \"matter_specific\": false, \"too_narrow\": false, \"sufficient_evidence\": true, \"duplicate\": false, \"useful\": true, \"important\": false, \"decision\": \"COMMIT|REJECT|REVIEW\", \"reason\": \"short\"}]}",
+      "raw_response": "{\n  \"verdicts\": [\n    {\n      \"id\": \"P0\",\n      \"generalizable\": true,\n      \"matter_specific\": false,\n      \"too_narrow\": false,\n      \"sufficient_evidence\": true,\n      \"duplicate\": true,\n      \"useful\": true,\n      \"important\": false,\n      \"decision\": \"REJECT\",\n      \"reason\": \"Redundant with existing lesson: 'Review all restrictive covenants across transaction documents and employment agreements. Identify and flag inconsistencies in scope, duration, or enforceability under relevant jurisdiction law.'\"\n    },\n    {\n      \"id\": \"P1\",\n      \"generalizable\": true,\n      \"matter_specific\": false,\n      \"too_narrow\": false,\n      \"sufficient_evidence\": true,\n      \"duplicate\": true,\n      \"useful\": true,\n      \"important\": true,\n      \"decision\": \"REJECT\",\n      \"reason\": \"Subsumed by existing lesson: 'Review all restrictive covenants across transaction documents and employment agreements. Identify and flag inconsistencies in scope, duration, or enforceability under relevant jurisdiction law.' P1 adds detail but does not introduce a new principle.\"\n    },\n    {\n      \"id\": \"P2\",\n      \"generalizable\": true,\n      \"matter_specific\": false,\n      \"too_narrow\": false,\n      \"sufficient_evidence\": true,\n      \"duplicate\": true,\n      \"useful\": true,\n      \"important\": true,\n      \"decision\": \"REJECT\",\n      \"reason\": \"Already covered by existing lesson: 'When identifying conflicts between documents, specify which provision should govern or recommend alignment. Note practical implications of shorter/longer periods or stricter/looser standards.'\"\n    },\n    {\n      \"id\": \"P3\",\n      \"generalizable\": true,\n      \"matter_specific\": false,\n      \"too_narrow\": false,\n      \"sufficient_evidence\": true,\n      \"duplicate\": false,\n      \"useful\": true,\n      \"important\": true,\n      \"decision\": \"COMMIT\",\n      \"reason\": \"Improves on existing lesson by requiring at least two alternative readings, enhancing rigor in ambiguity analysis.\"\n    },\n    {\n      \"id\": \"P4\",\n      \"generalizable\": true,\n      \"matter_specific\": false,\n      \"too_narrow\": false,\n      \"sufficient_evidence\": true,\n      \"duplicate\": true,\n      \"useful\": true,\n      \"important\": true,\n      \"decision\": \"REJECT\",\n      \"reason\": \"Duplicative of existing lesson: 'When identifying notice periods or deadlines, check for conflicts between documents. Recommend the most conservative approach or alignment to protect client interests.'\"\n    },\n    {\n      \"id\": \"P5\",\n      \"generalizable\": true,\n      \"matter_specific\": false,\n      \"too_narrow\": false,\n      \"sufficient_evidence\": true,\n      \"duplicate\": true,\n      \"useful\": true,\n      \"important\": true,\n      \"decision\": \"REJECT\",\n      \"reason\": \"Fully captured by existing lesson: 'For every threshold or basket in transaction documents, compare the structure to alternatives. Note implications for the client's risk exposure.'\"\n    },\n    {\n      \"id\": \"P6\",\n      \"generalizable\": true,\n      \"matter_specific\": false,\n      \"too_narrow\": false,\n      \"sufficient_evidence\": true,\n      \"duplicate\": false,\n      \"useful\": true,\n      \"important\": true,\n      \"decision\": \"COMMIT\",\n      \"reason\": \"Adds specific verification step for percentage-based financial terms, which is not explicitly required in existing lessons. High value in preventing calculation errors.\"\n    },\n    {\n      \"id\": \"P7\",\n      \"generalizable\": true,\n      \"matter_specific\": false,\n      \"too_narrow\": false,\n      \"sufficient_evidence\": true,\n      \"duplicate\": false,\n      \"useful\": true,\n      \"important\": true,\n      \"decision\": \"COMMIT\",\n      \"reason\": \"Complements existing definition audit lesson by focusing on critical undefined terms and proposing standard definitions based on jurisdiction norms.\"\n    },\n    {\n      \"id\": \"P8\",\n      \"generalizable\": true,\n      \"matter_specific\": false,\n      \"too_narrow\": false,\n      \"sufficient_evidence\": true,\n      \"duplicate\": true,\n      \"useful\": true,\n      \"important\": true,\n      \"decision\": \"REJECT\",\n      \"reason\": \"Redundant with existing checklist principles and P1's substance. The required elements are already implied in comprehensive issue reporting standards.\"\n    },\n    {\n      \"id\": \"P9\",\n      \"generalizable\": true,\n      \"matter_specific\": false,\n      \"too_narrow\": false,\n      \"sufficient_evidence\": true,\n      \"duplicate\": false,\n      \"useful\": true,\n      \"important\": true,\n      \"decision\": \"COMMIT\",\n      \"reason\": \"Introduces a standardized label for mathematical inconsistencies, improving clarity and consistency in issue reporting.\"\n    },\n    {\n      \"id\": \"P10\",\n      \"generalizable\": true,\n      \"matter_specific\": false,\n      \"too_narrow\": false,\n      \"sufficient_evidence\": true,\n      \"duplicate\": true,\n      \"useful\": true,\n      \"important\": true,\n      \"decision\": \"REJECT\",\n      \"reason\": \"Already covered by existing lesson: 'For every inconsistency between related provisions across documents, explicitly flag it as a separate issue. Include a recommendation for harmonisation or further review.'\"\n    },\n    {\n      \"id\": \"P11\",\n      \"generalizable\": true,\n      \"matter_specific\": false,\n      \"too_narrow\": false,\n      \"sufficient_evidence\": true,\n      \"duplicate\": false,\n      \"useful\": true,\n      \"important\": true,\n      \"decision\": \"COMMIT\",\n      \"reason\": \"Enhances existing lesson by requiring explicit statement of legal consequences for missing consents, adding critical risk context.\"\n    }\n  ]\n}",
+      "input_tokens": 1810,
+      "output_tokens": 1273,
+      "cost_usd": 0.00151844
+    },
+    {
+      "prompt": "# Existing committed lessons (for duplicate checks)\n- Adopt a consistent risk rating scale (e.g., High/Medium/Low) for all issues. Define the criteria for each rating in the methodology section of the deliverable.\n- For every calculation or derived figure, specify its source: client-provided data, document-extracted data, or assumptions. Flag any uncertainties or limitations.\n- Review all restrictive covenants across transaction documents and employment agreements. Identify and flag inconsistencies in scope, duration, or enforceability under relevant jurisdiction law.\n- After identifying key risks, list all information gaps or uncertainties encountered during review. Flag them for client follow-up with clear explanations.\n- When identifying conflicts between documents, specify which provision should govern or recommend alignment. Note practical implications of shorter/longer periods or stricter/looser standards.\n- Scan documents for ambiguous defined terms or clauses. For each, note alternative readings and explain how they affect the client's position.\n- Extract numerical or factual data from board minutes or emails. Cross-check against warranties or disclosures and flag discrepancies with pinpoint citations.\n- For every change-of-control provision, confirm third-party consent requirements. Note the status (obtained/pending/missing) in findings.\n- For every threshold or basket in transaction documents, compare the structure to alternatives. Note implications for the client's risk exposure.\n- When identifying notice periods or deadlines, check for conflicts between documents. Recommend the most conservative approach or alignment to protect client interests.\n- Calculate and include days remaining to all critical deadlines from the analysis date, not just from reference points like the Closing Date.\n- For every inconsistency between related provisions across documents, explicitly flag it as a separate issue. Include a recommendation for harmonisation or further review.\n- Assign a standardised risk rating (High/Medium/Low) to every issue. Use a consistent format (e.g., '**Risk Rating: High**') and justify the rating in the analysis.\n- In the executive summary, list the top 3-5 risks by severity (High) and explicitly state their implications for the client, prioritised by urgency.\n- Include an 'Assumptions and Open Questions' section in every legal memo. Explicitly mention critical assumptions or open questions in the executive summary if they impact transaction viability.\n- For every identified issue, provide an explicit, actionable recommendation. Specify the exact remedy (e.g., 'amend Clause X to Y' or 'obtain a ratifying resolution').\n- Create a dedicated section for required approvals, conditions precedent, or third-party consents. List each item and explicitly state whether it has been obtained or satisfied.\n- Provide a pinpoint citation (document name and section/clause) for every issue, factual assertion, or proposed amendment. If no citation exists, state 'Not addressed in [document name].'\n- Before finalizing an issues list, ensure every issue includes: (1) a pinpoint citation, (2) an explicit risk rating, (3) an actionable recommendation, and (4) flags for inconsistencies between related provisions. Use a checklist to maintain consistency.\n- Before finalising a legal memo, verify that all assumptions are explicitly stated and open questions are clearly identified for the client.\n- Audit the document for undefined or ambiguous terms. Define them explicitly in a definitions schedule or proposed clause if missing.\n- Before finalising the deliverable, verify that every identified issue includes a comparison to contractual or legal standards and a risk assessment.\n- Before finalizing a timeline analysis, ensure all calculations of days remaining are computed from the analysis date, not from intermediate dates.\n\n# Proposed lessons\n- P0: [MERGE; checklist; category=drafting; source_tasks=3] Provide a pinpoint citation (document name and section/clause) for every issue, factual assertion, or proposed amendment. If no citation exists, state 'Not addressed in [document name].' In the executive summary, flag any issues where pinpoint citations could not be provided and explain why.\n- P1: [ADD; checklist; category=drafting; source_tasks=1] For every proposed amendment, present the current wording, proposed wording, and a one-line rationale. Use a consistent format: 'Current: [text] → Proposed: [text] | Rationale: [explanation]'.\n- P2: [ADD; checklist; category=drafting; source_tasks=1] For discrepancies in numerical calculations, state the expected value, observed value, and delta. Include the formula used and explain the discrepancy's impact.\n- P3: [MERGE; checklist; category=drafting; source_tasks=1] For every identified issue, provide an explicit, actionable recommendation. Specify the exact remedy (e.g., 'amend to align with shorter notice period') and justify it with risk exposure analysis. Prioritise client protection in recommendations.\n- P4: [ADD; checklist; category=drafting; source_tasks=1] Include a dedicated subsection comparing key contractual mechanisms to standard alternatives. Assess favourability to the client and recommend adjustments where necessary.\n- P5: [ADD; practice_note; category=review; source_tasks=1] Before finalising a deliverable, recompute all derived financial figures (e.g., percentages, pro-rata amounts) using a calculator tool. Cross-check against stated figures in the documents and document the recomputation in work notes.\n- P6: [ADD; checklist; category=review; source_tasks=1] Before finalising a due diligence report, verify every required third-party consent is listed with its status (obtained/pending/missing) and the document clause requiring it.\n- P7: [ADD; practice_note; category=review; source_tasks=1] Before finalizing a redline note, ensure every proposed amendment includes the original text, revised text, and a clear rationale. Use a checklist for consistency.\n- P8: [MERGE; checklist; category=review; source_tasks=3] Before finalising the deliverable, verify that every identified issue includes: (1) a pinpoint citation (use descriptive references if clause numbers are absent), (2) a comparison to contractual or legal standards, (3) an explicit risk assessment, (4) an actionable recommendation, and (5) flags for inconsistencies between related provisions.\n- P9: [UPDATE; practice_note; category=review; source_tasks=2] Before finalizing an issues list, ensure every issue includes: (1) a pinpoint citation, (2) an explicit risk rating, (3) an actionable recommendation, (4) flags for inconsistencies between related provisions, and (5) enforceability assessments for restrictive covenants. Recommend legal advice if enforceability is uncertain.\n- P10: [ADD; checklist; category=review; source_tasks=1] After drafting the deliverable, cross-check that every issue, recommendation, and status update aligns with the client's best interests. Revise ambiguous or neutral language.\n- P11: [ADD; checklist; category=review; source_tasks=1] Verify that all contractual mechanisms are described accurately and their implications for the client's risk exposure are clearly stated. Cross-check against standard market practices.\n\nJSON schema: {\"verdicts\": [{\"id\": \"P0\", \"generalizable\": true, \"matter_specific\": false, \"too_narrow\": false, \"sufficient_evidence\": true, \"duplicate\": false, \"useful\": true, \"important\": false, \"decision\": \"COMMIT|REJECT|REVIEW\", \"reason\": \"short\"}]}",
+      "raw_response": "{\"verdicts\": [{\"id\": \"P0\", \"generalizable\": true, \"matter_specific\": false, \"too_narrow\": false, \"sufficient_evidence\": true, \"duplicate\": true, \"useful\": true, \"important\": false, \"decision\": \"REJECT\", \"reason\": \"Duplicates existing lesson on pinpoint citations and executive summary flagging.\"}, {\"id\": \"P1\", \"generalizable\": true, \"matter_specific\": false, \"too_narrow\": false, \"sufficient_evidence\": true, \"duplicate\": false, \"useful\": true, \"important\": true, \"decision\": \"COMMIT\", \"reason\": \"Standardizes amendment presentation, improving clarity and client understanding; applicable across matter types.\"}, {\"id\": \"P2\", \"generalizable\": true, \"matter_specific\": false, \"too_narrow\": false, \"sufficient_evidence\": true, \"duplicate\": false, \"useful\": true, \"important\": true, \"decision\": \"COMMIT\", \"reason\": \"Ensures transparency and accuracy in numerical discrepancies, critical for financial and deadline calculations.\"}, {\"id\": \"P3\", \"generalizable\": true, \"matter_specific\": false, \"too_narrow\": false, \"sufficient_evidence\": true, \"duplicate\": true, \"useful\": true, \"important\": false, \"decision\": \"REJECT\", \"reason\": \"Duplicates existing lesson on actionable recommendations and risk exposure analysis.\"}, {\"id\": \"P4\", \"generalizable\": true, \"matter_specific\": false, \"too_narrow\": false, \"sufficient_evidence\": true, \"duplicate\": false, \"useful\": true, \"important\": true, \"decision\": \"COMMIT\", \"reason\": \"Encourages benchmarking against market standards, enhancing strategic value of deliverables.\"}, {\"id\": \"P5\", \"generalizable\": true, \"matter_specific\": false, \"too_narrow\": false, \"sufficient_evidence\": true, \"duplicate\": false, \"useful\": true, \"important\": true, \"decision\": \"COMMIT\", \"reason\": \"Mitigates risk of calculation errors in financial figures; verification step with documented audit trail improves reliability.\"}, {\"id\": \"P6\", \"generalizable\": true, \"matter_specific\": false, \"too_narrow\": false, \"sufficient_evidence\": true, \"duplicate\": false, \"useful\": true, \"important\": true, \"decision\": \"COMMIT\", \"reason\": \"Ensures completeness in third-party consent tracking, a common source of transaction risk.\"}, {\"id\": \"P7\", \"generalizable\": true, \"matter_specific\": false, \"too_narrow\": false, \"sufficient_evidence\": true, \"duplicate\": false, \"useful\": true, \"important\": false, \"decision\": \"COMMIT\", \"reason\": \"Promotes consistency in redline notes; minor overlap with P1 but focused on process rather than format.\"}, {\"id\": \"P8\", \"generalizable\": true, \"matter_specific\": false, \"too_narrow\": false, \"sufficient_evidence\": true, \"duplicate\": true, \"useful\": true, \"important\": false, \"decision\": \"REJECT\", \"reason\": \"Duplicates and slightly extends existing checklist lesson; redundant with P8 and prior comprehensive checklist items.\"}, {\"id\": \"P9\", \"generalizable\": true, \"matter_specific\": false, \"too_narrow\": false, \"sufficient_evidence\": true, \"duplicate\": false, \"useful\": true, \"important\": true, \"decision\": \"COMMIT\", \"reason\": \"Adds enforceability assessment for restrictive covenants, a critical risk area not fully covered in existing lessons.\"}, {\"id\": \"P10\", \"generalizable\": true, \"matter_specific\": false, \"too_narrow\": false, \"sufficient_evidence\": true, \"duplicate\": false, \"useful\": true, \"important\": true, \"decision\": \"COMMIT\", \"reason\": \"Ensures client-centric framing of all content, reducing risk of misaligned advice.\"}, {\"id\": \"P11\", \"generalizable\": true, \"matter_specific\": false, \"too_narrow\": false, \"sufficient_evidence\": true, \"duplicate\": false, \"useful\": true, \"important\": true, \"decision\": \"COMMIT\", \"reason\": \"Strengthens accuracy and risk communication for contractual mechanisms, aligning with market practice benchmarks.\"}]}",
+      "input_tokens": 1776,
+      "output_tokens": 953,
+      "cost_usd": 0.00122936
+    }
+  ],
+  "helpfulness_feedback": {
+    "HELPFUL": 39,
+    "HARMFUL": 2,
+    "IRRELEVANT": 5
+  }
+}

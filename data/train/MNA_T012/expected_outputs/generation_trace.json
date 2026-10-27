@@ -1,0 +1,104 @@
+{
+  "docs": [
+    {
+      "title": "share_purchase_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 686,
+            "output_tokens": 949
+          }
+        }
+      ]
+    },
+    {
+      "title": "escrow_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 549,
+            "output_tokens": 914
+          }
+        }
+      ]
+    },
+    {
+      "title": "client_email.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 530,
+            "output_tokens": 397
+          }
+        }
+      ]
+    },
+    {
+      "title": "employment_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 494,
+            "output_tokens": 1037
+          }
+        }
+      ]
+    }
+  ],
+  "doc_facts": {
+    "share_purchase_agreement.md": {
+      "key": "spa",
+      "facts": [
+        "Parties: Elstree Robotics Ltd (Buyer), Glenrock Analytics Ltd (Seller); the Company is Kingsmere Medical Ltd.",
+        "Section 2.1: the Purchase Price is $160,000,000.",
+        "This Agreement is dated 11 June 2026; Closing is scheduled for 11 September 2026 (the 'Closing Date').",
+        "Section 1.1: 'Closing Date' means 11 September 2026.",
+        "Section 2.3: the Purchase Price shall be reduced dollar-for-dollar by any shortfall of Closing Working Capital below the Target Working Capital of $2,000,000.",
+        "Section 12.1: the Seller shall not compete with the business for 4 years after Closing.",
+        "Section 4.5: if the Conditions are not satisfied by the date falling 150 days after the date of this Agreement (signed 11 June 2026), either party may terminate."
+      ],
+      "must_contain": [
+        "$2,000,000",
+        "4 years",
+        "150 days",
+        "11 June 2026"
+      ]
+    },
+    "escrow_agreement.md": {
+      "key": "escrow",
+      "facts": [
+        "Clause 4.1: the Escrow Amount shall be released to the Seller on the date falling 18 months after the Closing Date, save to the extent of pending claims notified before that date. 'Business Day' means a day other than a Saturday or Sunday on which banks are open in London.",
+        "The Closing Date is 11 September 2026."
+      ],
+      "must_contain": [
+        "18 months",
+        "11 September 2026"
+      ]
+    },
+    "client_email.md": {
+      "key": "client_email",
+      "facts": [
+        "The estimated Closing Working Capital is $1,650,000. The Seller's draft funds flow shows an adjusted purchase price of $159,300,000.",
+        "Regulatory counsel expects merger clearance by 8 December 2026."
+      ],
+      "must_contain": [
+        "$1,650,000",
+        "$159,300,000",
+        "8 December 2026"
+      ]
+    },
+    "employment_agreement.md": {
+      "key": "employment",
+      "facts": [
+        "Clause 18: the Founder shall not compete with the business for 18 months after termination of employment."
+      ],
+      "must_contain": [
+        "18 months"
+      ]
+    }
+  }
+}

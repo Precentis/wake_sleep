@@ -1,0 +1,157 @@
+{
+  "task_id": "MNA_T066",
+  "cycle": 1,
+  "lineage": "ablation_no_merge",
+  "graded": true,
+  "failures": [
+    {
+      "criterion_id": "C5",
+      "what_went_wrong": "The agent calculated the days remaining until the escrow release date incorrectly (757 days instead of 759 days).",
+      "should_have": "Recomputed the days between the current date (6 August 2026) and the escrow release date (3 September 2028) accurately using a reliable date calculator.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C6",
+      "what_went_wrong": "The agent failed to account for the fact that the escrow release date (3 September 2028) falls on a Sunday and did not verify if the agreement required adjustment to the next Business Day.",
+      "should_have": "Checked whether the escrow release date falls on a non-Business Day and applied any contractual provisions for adjusting deadlines to the next Business Day.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C7",
+      "what_went_wrong": "The agent did not consistently provide pinpoint citations (document name and clause/section numbers) for every issue or finding in the deliverable.",
+      "should_have": "Ensured every issue or finding in the deliverable included a pinpoint citation to the relevant document and clause/section number.",
+      "failure_kind": "procedural"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T066_0",
+      "type": "checklist",
+      "category": "review",
+      "text": "Verify all date calculations by recomputing them using a date calculator tool before finalising the timeline.",
+      "source_tasks": [
+        "MNA_T066"
+      ],
+      "evidence": [
+        "MNA_T066:C5"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T066_1",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "For every deadline date, check if it falls on a non-Business Day and apply any contractual provisions for adjusting to the next Business Day.",
+      "source_tasks": [
+        "MNA_T066"
+      ],
+      "evidence": [
+        "MNA_T066:C6"
+      ],
+      "task_type_scope": "timeline_analysis",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T066_2",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Include a pinpoint citation (document name and clause/section number) for every issue, deadline, or obligation identified in the deliverable.",
+      "source_tasks": [
+        "MNA_T066"
+      ],
+      "evidence": [
+        "MNA_T066:C7"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T066_3",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Cross-reference all calculated deadlines with the original contractual provisions to confirm alignment and flag discrepancies.",
+      "source_tasks": [
+        "MNA_T066"
+      ],
+      "evidence": [
+        "MNA_T066:C5",
+        "MNA_T066:C6"
+      ],
+      "task_type_scope": "timeline_analysis",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T066_4",
+      "type": "checklist",
+      "category": "review",
+      "text": "Before finalising a timeline, validate that all derived dates (e.g., 'X days after signing') match the contractual language and recompute them manually.",
+      "source_tasks": [
+        "MNA_T066"
+      ],
+      "evidence": [
+        "MNA_T066:C5"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T066_5",
+      "type": "practice_note",
+      "category": "general",
+      "text": "Use a standardised template for timeline deliverables that includes columns for pinpoint citations, date calculations, and Business Day adjustments.",
+      "source_tasks": [
+        "MNA_T066"
+      ],
+      "evidence": [
+        "MNA_T066:C6",
+        "MNA_T066:C7"
+      ],
+      "task_type_scope": "timeline_analysis",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.8
+    }
+  ],
+  "lesson_feedback": [
+    {
+      "lesson_id": "L0001",
+      "label": "HELPFUL",
+      "reason": "Directly addresses the procedural failure in date calculation and promotes accuracy."
+    },
+    {
+      "lesson_id": "L0002",
+      "label": "HELPFUL",
+      "reason": "Ensures compliance with contractual provisions regarding Business Days, which was missed in the original task."
+    },
+    {
+      "lesson_id": "L0003",
+      "label": "HELPFUL",
+      "reason": "Improves the clarity and defensibility of the deliverable by requiring pinpoint citations for all findings."
+    },
+    {
+      "lesson_id": "L0004",
+      "label": "HELPFUL",
+      "reason": "Encourages thorough cross-checking of deadlines, which could prevent calculation errors and Business Day oversights."
+    },
+    {
+      "lesson_id": "L0005",
+      "label": "HELPFUL",
+      "reason": "Reinforces the need for manual verification of derived dates, reducing reliance on potentially flawed automated calculations."
+    },
+    {
+      "lesson_id": "L0006",
+      "label": "HELPFUL",
+      "reason": "Standardisation reduces the risk of omitting critical details like pinpoint citations or Business Day adjustments."
+    }
+  ],
+  "input_tokens": 5651,
+  "output_tokens": 1143,
+  "cost_usd": 0.00454,
+  "prompt": "# Task\nType: timeline_analysis | Practice area: corporate_mna\nYou act for the Buyer, Ingleby Robotics Ltd. Ingleby Robotics Ltd (the Buyer) is acquiring the entire issued share capital of Arden Medical Ltd (the Company) from Northgate Capital LLP (the Seller).\n\nPrepare a timeline and deadlines analysis of all time-sensitive obligations in the matter documents. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 6 August 2026. Address the deliverable to the supervising partner.\n\n# Trajectory (37 model steps, 37 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"client_email.md\"})\n 3. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 4. [research] read_document({\"name\": \"disclosure_letter.md\"})\n 5. [research] read_document({\"name\": \"escrow_agreement.md\"})\n 6. [research] read_document({\"name\": \"material_customer_contract.md\"})\n 7. [research] search_documents({\"query\": \"deadline\"})\n 8. [research] search_documents({\"query\": \"date\"})\n 9. [research] search_documents({\"query\": \"termination\"})\n10. [research] search_documents({\"query\": \"notice\"})\n11. [research] search_documents({\"query\": \"days\"})\n12. [analysis] calculate({\"expression\": \"Closing Date = date('2026-09-03')\"})\n13. [analysis] calculate({\"expression\": \"ClosingDate = date('2026-09-03')\"})\n14. [analysis] calculate({\"expression\": \"SPADate = date('2026-07-07')\\nTerminationDeadline = add_days(SPADate, 150)\"})\n15. [analysis] calculate({\"expression\": \"EscrowReleaseDate = add_months(ClosingDate, 24)\"})\n16. [analysis] calculate({\"expression\": \"EscrowReleaseDate = add_months(date('2026-09-03'), 24)\"})\n17. [analysis] calculate({\"expression\": \"LastClaimDate = add_months(date('2026-09-03'), 24)\"})\n18. [analysis] calculate({\"expression\": \"NextRenewalDate = date('2026-12-31')\\nNoticeDeadlineForRenewal = add_days(NextRenewalDate, -90)\"})\n19. [analysis] calculate({\"expression\": \"MergerClearanceDeadline = date('2026-12-18')\"})\n20. [analysis] calculate({\"expression\": \"CurrentDate = date('2026-08-06')\\nDaysToClosing = days_between(CurrentDate, date('2026-09-03'))\\nDaysToMergerClearance = days_between(CurrentDat)\n21. [analysis] calculate({\"expression\": \"PaymentDueDays = 30\"})\n22. [analysis] calculate({\"expression\": \"BreachRemedyPeriod = 30\"})\n23. [analysis] calculate({\"expression\": \"ChangeOfControlNoticePeriod = 30\"})\n24. [drafting] write_draft(<1452 words>)\n25. [verification] read_draft({})\n26. [verification] calculate({\"expression\": \"SPADate = date('2026-07-07')\\nTerminationDeadline = add_days(SPADate, 150)\\nTerminationDeadline2 = date('2027-04-01')\"})\n27. [verification] read_document({\"name\": \"share_purchase_agreement.md\", \"start_line\": 48, \"num_lines\": 5})\n28. [verification] calculate({\"expression\": \"DaysToApril2027 = days_between(date('2026-07-07'), date('2027-04-01'))\"})\n29. [editing] edit_draft(find='**Analysis:**\\n- The Closing Date of 3 September 2026 is immi' -> '**Analysis:**\\n- The Closing Date of 3 September 2026 is immi')\n30. [editing] edit_draft(find='**Critical Analysis:**\\n- **Change of Control Provision:** Cl' -> '**Critical Analysis:**\\n- **Change of Control Provision:** Cl')\n31. [verification] search_documents({\"query\": \"month\"})\n32. [verification] search_documents({\"query\": \"year\"})\n33. [verification] search_documents({\"query\": \"warranty\"})\n34. [editing] edit_draft(find='### Executive Summary\\n\\nThis analysis identifies and evaluate' -> '### Executive Summary\\n\\nThis analysis identifies and evaluate')\n35. [editing] edit_draft(find='#### Future Deadlines to Monitor:\\n\\n6. **Escrow and Claims Ti' -> '#### Future Deadlines to Monitor:\\n\\n6. **Escrow and Claims Ti')\n36. [verification] read_draft({})\n37. [control] finish({\"summary\": \"Completed timeline and deadlines analysis for the acquisition of Arden Medical Ltd by Ingleby Robotics Ltd. Identified all time-sensitive obligatio)\n\n# Final deliverable\n# Timeline and Deadlines Analysis\n## Acquisition of Arden Medical Ltd by Ingleby Robotics Ltd\n\n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Date:** 6 August 2026  \n**Matter:** Acquisition of Arden Medical Ltd  \n**Client:** Ingleby Robotics Ltd (Buyer)  \n**Counterparty:** Northgate Capital LLP (Seller)\n\n### Executive Summary\n\nThis analysis identifies and evaluates all time-sensitive obligations arising from the transaction documents for the acquisition of Arden Medical Ltd. The key deadlines are:\n\n1. **Closing Date:** 3 September 2026 (28 days from current date) - **HIGH PRIORITY**\n2. **Material Customer Contract Renewal Notice:** 2 October 2026 (57 days) - **HIGH PRIORITY**\n3. **SPA Termination Deadline:** 4 December 2026 (120 days) - **MEDIUM PRIORITY**\n4. **Merger Clearance Deadline:** 18 December 2026 (134 days) - **HIGH PRIORITY**\n5. **Material Customer Contract Renewal:** 31 December 2026 (147 days) - **HIGH PRIORITY**\n6. **Claims Notification Deadline:** 3 September 2028 (24 months post-closing) - **FUTURE**\n7. **Escrow Release Date:** 3 September 2028 (24 months post-closing) - **FUTURE**\n\n**Critical Finding:** The Disclosure Letter is dated 5 August 2026, which is 29 days after the SPA date (7 July 2026). This post-signing disclosure timing should be reviewed for compliance with standard practice.\n\n### Detailed Timeline Analysis\n\n#### 1. Share Purchase Agreement (SPA) - Dated 7 July 2026\n\n**Key Dates and Deadlines:**\n\n| Obligation | Date/Period | Deadline | Days from Current Date (6 Aug 2026) | Criticality |\n|------------|-------------|----------|-------------------------------------|-------------|\n| Closing Date | 3 September 2026 | 3 September 2026 | 28 | High |\n| Payment Deadline | By 5:00 p.m. on Closing Date | 3 September 2026, 5:00 p.m. | 28 | High |\n| Conditions Precedent Satisfaction | By termination deadline | 4 December 2026 | 120 | High |\n| SPA Termination Right | 150 days from SPA date | 4 December 2026 | 120 | Medium |\n\n**Analysis:**\n- The Closing Date of 3 September 2026 is imminent (28 days away). All closing preparations must be completed by this date.\n- The Purchase Price of $200,000,000 must be paid in cleared funds by 5:00 p.m. on the Closing Date.\n- **Note on Termination Deadline Discrepancy:** Clause 4.5 states \"150 days after the date of this Agreement, being 1 April 2027.\" There is a mathematical inconsistency: 150 days from 7 July 2026 is 4 December 2026, not 1 April 2027 (which is 268 days). This drafting error should be clarified with the Seller.\n- If Conditions Precedent are not satisfied or waived by the termination deadline, either party may terminate the SPA.\n- The Conditions Precedent include obtaining all necessary corporate and regulatory approvals, no injunctions preventing completion, and representations/warranties being true as of Closing Date.\n\n#### 2. Escrow Agreement\n\n**Key Dates and Deadlines:**\n\n| Obligation | Date/Period | Deadline | Days from Current Date | Criticality |\n|------------|-------------|----------|-----------------------|-------------|\n| Escrow Deposit | On or prior to Closing Date | 3 September 2026 | 28 | High |\n| Escrow Release to Seller | 24 months after Closing Date | 3 September 2028 | 757 | Low (future) |\n| Claims Notification Deadline | Prior to escrow release date | 3 September 2028 | 757 | Medium (future) |\n\n**Analysis:**\n- 10% of the Purchase Price ($20,000,000) must be deposited into escrow on or before the Closing Date.\n- The escrow amount will be released to the Seller on 3 September 2028 unless there are pending claims.\n- The Buyer has until 3 September 2028 to notify the Seller and Escrow Agent of any claims under the SPA.\n- Claims must be specified in reasonable detail with factual basis and amount claimed.\n\n#### 3. Material Customer Contract with Saltash Marine Ltd\n\n**Key Dates and Deadlines:**\n\n| Obligation | Date/Period | Deadline | Days from Current Date | Criticality |\n|------------|-------------|----------|-----------------------|-------------|\n| Contract Renewal Notice | 90 days prior to renewal | 2 October 2026 | 57 | High |\n| Next Renewal Date | 31 December 2026 | 31 December 2026 | 147 | High |\n| Payment Terms | Within 30 days of invoice | Ongoing | N/A | Medium |\n| Breach Remedy Period | 30 days from notice | Ongoing | N/A | Medium |\n| Change of Control Termination Notice | 30 days' notice | Ongoing | N/A | High |\n\n**Critical Analysis:**\n- **Change of Control Provision:** Clause 14.2 allows either party to terminate the agreement on 30 days' notice if the other party undergoes a change of control without prior written consent.\n- **Definition of Change of Control:** Specifically includes \"acquisition of more than 50 per cent of the issued share capital of Arden Medical Ltd by a third party, including but not limited to Northgate Capital LLP or Ingleby Robotics Ltd.\"\n- **Immediate Risk:** Saltash Marine Ltd could terminate the contract with 30 days' notice upon completion of the acquisition. This represents a significant business continuity risk given that Saltash Marine Ltd accounts for 42% of the Company's annual revenue.\n- **Renewal Notice Deadline:** To prevent automatic renewal for another year, notice must be given by 2 October 2026 (90 days before 31 December 2026 renewal).\n- **Confidentiality Period:** Confidentiality obligations survive termination or expiry for five years (Clause 4.2).\n\n#### 4. Regulatory and Corporate Timelines\n\n**Key Dates and Deadlines:**\n\n| Obligation | Date/Period | Deadline | Days from Current Date | Criticality |\n|------------|-------------|----------|-----------------------|-------------|\n| Merger Clearance | Expected by | 18 December 2026 | 134 | High |\n| Client Email Date | 5 August 2025 | Historical | N/A | Reference |\n| Disclosure Letter Date | 5 August 2026 | Current | 0 | Reference |\n\n**Analysis:**\n- Merger clearance is expected by 18 December 2026, which is after the Closing Date (3 September 2026).\n- This creates a regulatory risk: the transaction may close before formal merger clearance is obtained.\n- The Conditions Precedent in the SPA require \"all necessary corporate and regulatory approvals,\" suggesting merger clearance is a condition to closing.\n\n### Risk Assessment and Recommendations\n\n#### High Priority Risks (Immediate Action Required):\n\n1. **Change of Control Risk in Material Customer Contract**\n   - **Risk:** Saltash Marine Ltd can terminate with 30 days' notice upon acquisition completion.\n   - **Impact:** Loss of 42% of Company's annual revenue.\n   - **Recommendation:** \n     - Engage with Saltash Marine Ltd immediately to obtain written consent to the change of control.\n     - Consider renegotiating the change of control provision as part of acquisition due diligence.\n     - Develop contingency plans for potential termination.\n\n2. **Closing Date Imminence**\n   - **Risk:** Only 28 days until Closing Date (3 September 2026).\n   - **Impact:** Potential failure to meet closing conditions.\n   - **Recommendation:**\n     - Expedite all closing preparations.\n     - Confirm merger clearance timeline with regulatory counsel.\n     - Ensure payment arrangements are in place for the $200,000,000 Purchase Price.\n\n3. **Contract Renewal Notice Deadline**\n   - **Risk:** Must decide by 2 October 2026 whether to prevent automatic renewal.\n   - **Impact:** Company could be locked into another year of contract terms.\n   - **Recommendation:**\n     - Conduct thorough review of contract terms before 2 October 2026.\n     - Consider negotiation of improved terms during renewal.\n     - Coordinate with commercial team on renewal strategy.\n\n#### Medium Priority Risks:\n\n4. **Merger Clearance Timing**\n   - **Risk:** Closing scheduled for 3 September 2026, but merger clearance expected by 18 December 2026.\n   - **Impact:** Regulatory approval may not be obtained before closing.\n   - **Recommendation:**\n     - Clarify with regulatory counsel whether merger clearance is a condition precedent.\n     - Consider extending Closing Date or making closing conditional on merger clearance.\n     - Monitor regulatory approval process closely.\n\n5. **SPA Termination Deadline**\n   - **Risk:** Conditions must be satisfied by 4 December 2026 or SPA may be terminated.\n   - **Impact:** Transaction could fail if conditions not met.\n   - **Recommendation:**\n     - Track progress against all Conditions Precedent.\n     - Consider whether any conditions should be waived.\n     - Prepare for potential termination scenarios.\n\n#### Future Deadlines to Monitor:\n\n6. **Escrow and Claims Timeline**\n   - **Risk:** $20,000,000 held in escrow until 3 September 2028.\n   - **Impact:** Working capital tied up for 24 months.\n   - **Additional Consideration:** Warranty claims are subject to a $1,000,000 de minimis threshold (0.5% of Purchase Price).\n   - **Recommendation:**\n     - Establish claims monitoring system.\n     - Document all potential warranty claims during due diligence.\n     - Plan for escrow release in September 2028.\n     - Aggregate potential claims to exceed the $1,000,000 threshold where possible.\n\n### Action Plan\n\n**Immediate Actions (Next 7 Days):**\n1. Contact Saltash Marine Ltd regarding change of control consent.\n2. Confirm merger clearance status and timeline with regulatory counsel.\n3. Review all closing checklist items for 3 September 2026 deadline.\n4. Schedule meeting with client to discuss contract renewal strategy (deadline: 2 October 2026).\n\n**Short-term Actions (Next 30 Days):**\n1. Complete due diligence on material customer contract.\n2. Finalize all closing documents.\n3. Arrange payment of $200,000,000 Purchase Price.\n4. Deposit $20,000,000 into escrow.\n\n**Medium-term Actions (Next 90 Days):**\n1. Make decision on material customer contract renewal by 2 October 2026.\n2. Monitor merger clearance progress.\n3. Track Conditions Precedent satisfaction.\n\n**Long-term Monitoring:**\n1. Claims notification deadline: 3 September 2028.\n2. Escrow release date: 3 September 2028.\n\n### Conclusion\n\nThe acquisition of Arden Medical Ltd presents several critical time-sensitive obligations requiring immediate attention. The most pressing issues are the imminent Closing Date (3 September 2026) and the change of control risk in the material customer contract with Saltash Marine Ltd. Proactive management of these deadlines is essential to ensure successful completion of the transaction and preservation of the Company's key revenue stream.\n\nAll dates have been calculated based on the transaction documents as at 6 August 2026. Regular updates to this timeline should be maintained as the transaction progresses.\n\n# Expert rubric verdicts (4/7 passed)\n- C1 [PASS] States that the escrow release date is 3 September 2028 (24 months after the 3 September 2026 Closing Date) and that pending claims must be notified before then.\n    judges: PASS: The deliverable correctly states the escrow release date is 3 September 2028 (24 months after the Closing Date) and that claims must be notified prior to that date. | PASS: The deliverable correctly states the escrow release date as 3 September 2028 (24 months after 3 September 2026 Closing Date) and notes that pending claims must be notified before that date, citing Escrow Agreement clause\n- C2 [PASS] Identifies that the basket in SPA Section 9.4 ($1,000,000) operates as a deductible (Seller liable only for the excess), not a tipping basket, and explains that this is less favourable to the Buyer.\n    judges: PASS: The deliverable correctly identifies the $1,000,000 basket as a deductible (Seller liable only for the excess) and notes this is less favourable to the Buyer. | PASS: The deliverable correctly identifies the $1,000,000 basket as a deductible (Seller liable only for excess) in SPA Section 9.4, and notes this is less favourable to the Buyer, though it does not explicitly use the term 'd\n- C3 [PASS] Identifies that the Saltash Marine Ltd contract (Clause 14.2) allows termination on a change of control without consent, that the disclosure against Warranty 6.3 says there is no such provision, and that consent should be obtained as a condition to Closing.\n    judges: PASS: The deliverable identifies the change of control termination right in Clause 14.2, notes the disclosure letter's incorrect statement regarding such provisions, and recommends obtaining consent. | PASS: The deliverable identifies the Clause 14.2 change of control termination right in the Saltash Marine contract and the conflict with Disclosure Letter section 3.2 stating no change of control provisions exist, and recomme\n- C4 [PASS] Calculates the long-stop date as 4 December 2026 (150 days after signing on 7 July 2026) and identifies that expected clearance on 18 December 2026 falls after it, recommending an extension.\n    judges: PASS: The deliverable calculates the long-stop date as 4 December 2026 (150 days from 7 July 2026), notes the merger clearance deadline of 18 December 2026 falls after it, and recommends an extension. | PASS: The deliverable calculates the long-stop date as 4 December 2026 (150 days from 7 July 2026), identifies the discrepancy with the document's stated 1 April 2027, and notes that expected merger clearance on 18 December 20\n- C5 [FAIL] Gives the escrow release period as a duration (24 months) and as a date (3 September 2028), with days remaining from 6 August 2026 (759 days).\n    judges: FAIL: While the deliverable correctly states the duration (24 months) and date (3 September 2028), it calculates 757 days remaining instead of 759 days (3 September 2028 is 759 days from 6 August 2026). | FAIL: While the deliverable gives the escrow release period as 24 months and the date as 3 September 2028, it incorrectly calculates days remaining as 757 days rather than 759 days from 6 August 2026 to 3 September 2028.\n- C6 [FAIL] Notes that 3 September 2028 is a Sunday and that the release moves to the next Business Day, 4 September 2028.\n    judges: FAIL: The deliverable does not mention that 3 September 2028 falls on a Sunday or that the release would move to the next Business Day (4 September 2028). | FAIL: The deliverable fails to note that 3 September 2028 is a Sunday and that the release would move to the next Business Day (4 September 2028) per the Escrow Agreement's Business Day definition.\n- C7 [FAIL] Gives a pinpoint citation (document name and section/clause number) for every issue or finding.\n    judges: PASS: The deliverable provides pinpoint citations (document name and clause number) for all key findings, including SPA Clause 4.5, Escrow Agreement Clause 4.1, and Material Customer Contract Clause 14.2. | FAIL: The deliverable does not provide pinpoint citations (document name and specific clause/section numbers) for every issue or finding. While some citations are present (e.g., SPA Section 9.4, Escrow Agreement clause 5.1), m\n\n# Your job\nAnalyse each FAILED criterion: what went wrong, what the agent should have done, and whether the failure is procedural (reusable) or task-specific. Then write reusable candidate lessons that would prevent the procedural failures on other matters.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|timeline_analysis\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C5\",\n      \"what_went_wrong\": \"The agent calculated the days remaining until the escrow release date incorrectly (757 days instead of 759 days).\",\n      \"should_have\": \"Recomputed the days between the current date (6 August 2026) and the escrow release date (3 September 2028) accurately using a reliable date calculator.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C6\",\n      \"what_went_wrong\": \"The agent failed to account for the fact that the escrow release date (3 September 2028) falls on a Sunday and did not verify if the agreement required adjustment to the next Business Day.\",\n      \"should_have\": \"Checked whether the escrow release date falls on a non-Business Day and applied any contractual provisions for adjusting deadlines to the next Business Day.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C7\",\n      \"what_went_wrong\": \"The agent did not consistently provide pinpoint citations (document name and clause/section numbers) for every issue or finding in the deliverable.\",\n      \"should_have\": \"Ensured every issue or finding in the deliverable included a pinpoint citation to the relevant document and clause/section number.\",\n      \"failure_kind\": \"procedural\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"review\",\n      \"text\": \"Verify all date calculations by recomputing them using a date calculator tool before finalising the timeline.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"For every deadline date, check if it falls on a non-Business Day and apply any contractual provisions for adjusting to the next Business Day.\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"timeline_analysis\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"Include a pinpoint citation (document name and clause/section number) for every issue, deadline, or obligation identified in the deliverable.\",\n      \"evidence\": [\"C7\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Cross-reference all calculated deadlines with the original contractual provisions to confirm alignment and flag discrepancies.\",\n      \"evidence\": [\"C5\", \"C6\"],\n      \"task_type_scope\": \"timeline_analysis\",\n      \"confidence\": 0.85\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"review\",\n      \"text\": \"Before finalising a timeline, validate that all derived dates (e.g., 'X days after signing') match the contractual language and recompute them manually.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"general\",\n      \"text\": \"Use a standardised template for timeline deliverables that includes columns for pinpoint citations, date calculations, and Business Day adjustments.\",\n      \"evidence\": [\"C6\", \"C7\"],\n      \"task_type_scope\": \"timeline_analysis\",\n      \"confidence\": 0.8\n    }\n  ],\n  \"lesson_feedback\": [\n    {\n      \"lesson_id\": \"L0001\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Directly addresses the procedural failure in date calculation and promotes accuracy.\"\n    },\n    {\n      \"lesson_id\": \"L0002\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Ensures compliance with contractual provisions regarding Business Days, which was missed in the original task.\"\n    },\n    {\n      \"lesson_id\": \"L0003\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Improves the clarity and defensibility of the deliverable by requiring pinpoint citations for all findings.\"\n    },\n    {\n      \"lesson_id\": \"L0004\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Encourages thorough cross-checking of deadlines, which could prevent calculation errors and Business Day oversights.\"\n    },\n    {\n      \"lesson_id\": \"L0005\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Reinforces the need for manual verification of derived dates, reducing reliance on potentially flawed automated calculations.\"\n    },\n    {\n      \"lesson_id\": \"L0006\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Standardisation reduces the risk of omitting critical details like pinpoint citations or Business Day adjustments.\"\n    }\n  ]\n}\n```"
+}

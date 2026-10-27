@@ -1,0 +1,161 @@
+{
+  "task_id": "MNA_T051",
+  "cycle": 1,
+  "lineage": "ablation_no_merge",
+  "graded": true,
+  "failures": [
+    {
+      "criterion_id": "C1",
+      "what_went_wrong": "The agent misinterpreted the escrow agreement's claim notification requirement, stating that claims must be notified 'prior to the Release Date' instead of within 60 days of becoming aware of the claim.",
+      "should_have": "The agent should have precisely quoted the escrow agreement's claim notification period (60 days from awareness) and contrasted it with the SPA's 30-day period, rather than implying claims must be notified before the release date.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C3",
+      "what_went_wrong": "The agent recommended extending the SPA's claim notification period to align with the escrow agreement, rather than advising the client to work to the shorter period or align the documents.",
+      "should_have": "The agent should have advised the client to either (1) work to the shorter 30-day period to avoid missing deadlines, or (2) negotiate alignment of both documents to the longer period, explicitly stating the risks of misalignment.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C6",
+      "what_went_wrong": "The agent identified the quorum issue but failed to explicitly list 'valid board approval' as a missing condition precedent in the SPA, despite recognizing the approval may be invalid.",
+      "should_have": "The agent should have explicitly flagged 'valid board approval' as a required condition precedent that had not been validly obtained, linking it to the quorum issue and recommending a fresh resolution.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C8",
+      "what_went_wrong": "The agent did not assign a risk rating (High/Medium/Low) to any of the identified issues, despite this being a requirement for the deliverable.",
+      "should_have": "The agent should have included a risk rating for each issue, based on factors like legal exposure, financial impact, and likelihood of occurrence, to prioritize client actions.",
+      "failure_kind": "procedural"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T051_0",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "For every identified issue, assign a risk rating (High/Medium/Low) based on legal exposure, financial impact, and likelihood of occurrence, and include it in the deliverable.",
+      "source_tasks": [
+        "MNA_T051"
+      ],
+      "evidence": [
+        "MNA_T051:C8"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T051_1",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "When comparing claim notification periods across documents, explicitly state the exact deadline (e.g., 'within X days of awareness') rather than using vague terms like 'prior to'.",
+      "source_tasks": [
+        "MNA_T051"
+      ],
+      "evidence": [
+        "MNA_T051:C1"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T051_2",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "For inconsistent claim notification periods, advise the client to either (1) work to the shorter period to avoid missing deadlines, or (2) negotiate alignment of all documents to the longer period, with clear risk warnings.",
+      "source_tasks": [
+        "MNA_T051"
+      ],
+      "evidence": [
+        "MNA_T051:C3"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T051_3",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Explicitly list all required conditions precedent in the SPA, including valid board approvals, and flag any that have not been validly obtained or documented.",
+      "source_tasks": [
+        "MNA_T051"
+      ],
+      "evidence": [
+        "MNA_T051:C6"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T051_4",
+      "type": "practice_note",
+      "category": "review",
+      "text": "Before finalising a contract review, verify that every identified issue is linked to a specific clause or document reference, and that the analysis includes precise language from the source.",
+      "source_tasks": [
+        "MNA_T051"
+      ],
+      "evidence": [
+        "MNA_T051:C1"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.8
+    },
+    {
+      "candidate_id": "c01_MNA_T051_5",
+      "type": "checklist",
+      "category": "review",
+      "text": "Ensure the deliverable includes a clear recommendation for each issue, specifying whether the client should negotiate changes, work to existing terms, or seek further clarification.",
+      "source_tasks": [
+        "MNA_T051"
+      ],
+      "evidence": [
+        "MNA_T051:C3"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.85
+    }
+  ],
+  "lesson_feedback": [
+    {
+      "lesson_id": "L0001",
+      "label": "HELPFUL",
+      "reason": "Risk ratings are a standard requirement for legal deliverables and help clients prioritize actions."
+    },
+    {
+      "lesson_id": "L0002",
+      "label": "HELPFUL",
+      "reason": "Precise language avoids ambiguity and ensures the client understands exact deadlines or requirements."
+    },
+    {
+      "lesson_id": "L0003",
+      "label": "HELPFUL",
+      "reason": "Clear guidance on handling inconsistencies helps the client make informed decisions and reduces legal risk."
+    },
+    {
+      "lesson_id": "L0004",
+      "label": "HELPFUL",
+      "reason": "Explicitly listing conditions precedent ensures nothing is overlooked, especially for critical approvals like board resolutions."
+    },
+    {
+      "lesson_id": "L0005",
+      "label": "HELPFUL",
+      "reason": "Linking issues to precise language in source documents strengthens the analysis and avoids misinterpretation."
+    },
+    {
+      "lesson_id": "L0006",
+      "label": "HELPFUL",
+      "reason": "Actionable recommendations are essential for legal deliverables to guide the client on next steps."
+    }
+  ],
+  "input_tokens": 5135,
+  "output_tokens": 1348,
+  "cost_usd": 0.0045895,
+  "prompt": "# Task\nType: contract_review | Practice area: corporate_mna\nYou act for the Buyer, Ivybridge Medical Ltd. Ivybridge Medical Ltd (the Buyer) is acquiring the entire issued share capital of Delamere Technologies Ltd (the Company) from Oakhurst Robotics Ltd (the Seller).\n\nReview the principal agreement against the other matter documents and report the problematic provisions. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 2 March 2026. Address the deliverable to the supervising partner.\n\n# Trajectory (29 model steps, 29 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"client_email.md\"})\n 3. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 4. [research] read_document({\"name\": \"articles_of_association_extract.md\"})\n 5. [research] read_document({\"name\": \"board_minutes.md\"})\n 6. [research] read_document({\"name\": \"employment_agreement.md\"})\n 7. [research] read_document({\"name\": \"escrow_agreement.md\"})\n 8. [research] search_documents({\"query\": \"warranty\"})\n 9. [research] search_documents({\"query\": \"Schedule\"})\n10. [research] search_documents({\"query\": \"Holloway\"})\n11. [analysis] calculate({\"expression\": \"date('2026-02-16')\"})\n12. [analysis] calculate({\"expression\": \"date('2026-03-02')\"})\n13. [analysis] calculate({\"expression\": \"date('2026-05-28')\"})\n14. [analysis] calculate({\"expression\": \"days_between(date('2026-02-16'), date('2026-05-28'))\"})\n15. [analysis] calculate({\"expression\": \"add_months(date('2026-05-28'), 24)\"})\n16. [drafting] write_draft(<1182 words>)\n17. [verification] search_documents({\"query\": \"quorum\"})\n18. [verification] search_documents({\"query\": \"condition\"})\n19. [verification] search_documents({\"query\": \"$\"})\n20. [verification] read_document({\"name\": \"share_purchase_agreement.md\", \"start_line\": 34, \"num_lines\": 5})\n21. [verification] read_draft({})\n22. [editing] edit_draft(find='### 5. Closing Date Timing Issues\\n\\n**Issue:** The SPA define' -> '### 5. Closing Date Timing Issues\\n\\n**Issue:** The SPA define')\n23. [editing] edit_draft(find='### 6. Clause Numbering Inconsistencies\\n\\n**Issue:** The SPA ' -> '### 6. Payment Terms and Currency Issues\\n\\n**Issue 1 - Full P')\n24. [editing] edit_draft(find='## Executive Summary\\n\\nI have reviewed the Share Purchase Agr' -> '## Executive Summary\\n\\nI have reviewed the Share Purchase Agr')\n25. [editing] edit_draft(find='**Contrast with Escrow Agreement:** The Escrow Agreement pro' -> '**Contrast with Escrow Agreement:** The Escrow Agreement pro')\n26. [editing] edit_draft(find='**Recommendation:** Extend the notification period to at lea' -> '**Recommendation:** Extend the notification period to at lea')\n27. [editing] edit_draft(find='## Recommendations\\n\\n1. **Immediate Actions:**\\n   - Draft com' -> '## Recommendations\\n\\n1. **Immediate Actions:**\\n   - Draft com')\n28. [verification] read_draft({})\n29. [control] finish({\"summary\": \"Comprehensive review of the Share Purchase Agreement dated 16 February 2026 identifying eight major problematic provisions: missing warranty schedu)\n\n# Final deliverable\n# Review of Share Purchase Agreement: Problematic Provisions\n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Date:** 2 March 2026  \n**Matter:** Acquisition of Delamere Technologies Ltd by Ivybridge Medical Ltd  \n**Client:** Ivybridge Medical Ltd (Buyer)  \n**Subject:** Analysis of Problematic Provisions in Share Purchase Agreement dated 16 February 2026\n\n## Executive Summary\n\nI have reviewed the Share Purchase Agreement (SPA) dated 16 February 2026 against the other matter documents. The SPA contains numerous problematic provisions that require substantial amendment to protect the Buyer's interests. Key issues include: (1) missing warranty schedule, (2) unreasonably short claim notification period, (3) mathematical error in limitation of liability calculation, (4) overly broad non-compete clause, (5) timing inconsistencies with client expectations, (6) payment terms requiring full upfront payment, (7) missing conditions precedent, and (8) structural deficiencies in clause numbering.\n\n## Detailed Analysis of Problematic Provisions\n\n### 1. Missing Warranty Schedule (Clause 6.1)\n\n**Issue:** Clause 6.1 of the SPA states: \"The Seller warrants to the Buyer that as at the date of this Agreement and as at the Closing Date, the warranties set out in Schedule 1 are true and accurate in all respects.\" However, no Schedule 1 is included in the SPA document.\n\n**Risk:** Without a defined warranty schedule, the Buyer has no substantive warranty protection. The Seller could argue that no warranties were actually given, leaving the Buyer exposed to post-completion liabilities.\n\n**Recommendation:** A comprehensive warranty schedule must be drafted and appended to the SPA. Given the material customer relationship with Holloway Technologies Ltd (accounting for 37.5%-38% of revenue), specific warranties should address:\n- Continuity of the Holloway Technologies relationship\n- Accuracy of revenue figures\n- No undisclosed liabilities\n- Compliance with all material contracts\n- Intellectual property ownership\n\n### 2. Unreasonably Short Claim Notification Period (Clause 9.7)\n\n**Issue:** Clause 9.7 provides: \"Any claim by the Buyer in respect of a breach of warranty must be notified in writing to the Seller within 30 days of the Buyer becoming aware of the matter giving rise to the claim.\"\n\n**Risk:** A 30-day notification period is commercially unreasonable. Complex warranty breaches may not be fully understood within this timeframe, especially given the technical nature of the Company's diagnostic software business.\n\n**Contrast with Escrow Agreement:** The Escrow Agreement provides a 60-day notification period for claims against the escrow amount (Clause 5.2). This inconsistency creates confusion and potential disputes. Furthermore, the SPA does not explicitly reference or incorporate the Escrow Agreement's claim procedures.\n\n**Recommendation:** Extend the notification period to at least 60 days (aligning with the Escrow Agreement) or preferably 90 days. Consider a longer period for tax-related claims. Additionally, the SPA should explicitly reference and incorporate the Escrow Agreement's claim procedures to ensure consistency.\n\n### 3. Limitation of Liability Calculation (Clause 8.4)\n\n**Issue:** Clause 8.4 states: \"The aggregate liability of the Seller for all claims arising under or in connection with any breach of warranty shall not exceed an amount equal to 20% of the Purchase Price, being $39,600,000. For the avoidance of doubt, the Purchase Price is $220,000,000 as set out in Section 2.1.\"\n\n**Mathematical Error:** 20% of $220,000,000 is $44,000,000, not $39,600,000. The clause contains an incorrect calculation.\n\n**Risk:** This discrepancy creates ambiguity and could lead to disputes over the actual cap on liability.\n\n**Recommendation:** Correct the calculation to $44,000,000 or specify the percentage clearly without the incorrect dollar amount.\n\n### 4. Overly Broad Non-Compete Clause (Clause 12.1)\n\n**Issue:** Clause 12.1 provides: \"The Seller undertakes that for a period of 4 years from the Closing Date, it shall not, directly or indirectly, carry on, be engaged in, or have any interest in any business which competes with the business of the Company as carried on at the date of this Agreement.\"\n\n**Risk Assessment:**\n- **Duration:** 4 years is potentially excessive under English law for a non-compete in a share purchase agreement. English courts typically require such restrictions to be reasonable in duration, geographical scope, and subject matter.\n- **Scope:** The clause lacks geographical limitation and covers \"any interest in any business,\" which could be construed too broadly.\n- **Contrast with Employment Agreement:** The Founder's non-compete in the Employment Agreement is limited to 12 months and a 50-mile radius (Clause 18.2-18.4). The Seller's restriction is significantly more onerous.\n\n**Recommendation:** Reduce the duration to 2-3 years and add reasonable geographical and scope limitations. Consider whether such a broad restriction is necessary given the Seller is a corporate entity (Oakhurst Robotics Ltd) rather than an individual.\n\n### 5. Closing Date Timing Issues\n\n**Issue:** The SPA defines Closing Date as 28 May 2026 (Clause 1.1), which is 101 days after the agreement date (16 February 2026).\n\n**Client Instruction:** The client email states: \"We anticipate that the acquisition will be completed prior to 2 March 2026.\"\n\n**Risk:** The current Closing Date of 28 May 2026 contradicts the client's stated timeline and expectations. Additionally, the long gap between signing (16 February 2026) and completion (28 May 2026) exposes the Buyer to significant interim risk without corresponding protections.\n\n**Date Inconsistency:** The Board Minutes reference a draft SPA \"dated on or about 28 February 2026,\" but the actual SPA is dated 16 February 2026. This discrepancy requires clarification.\n\n**Recommendation:** Clarify with the client whether the 28 May 2026 date is acceptable or whether an earlier completion is required. If maintaining 28 May 2026, ensure robust conditions precedent and interim covenants are included to protect the Buyer during the extended period.\n\n### 6. Payment Terms and Currency Issues\n\n**Issue 1 - Full Payment on Closing:** Clause 2.1 requires the full Purchase Price of $220,000,000 to be paid on the Closing Date with no retention or escrow for warranty claims (except for the separate Escrow Agreement).\n\n**Risk:** Paying the entire consideration upfront leaves the Buyer with reduced leverage for post-completion warranty claims. While there is a separate Escrow Agreement, the SPA itself does not reference escrow arrangements.\n\n**Issue 2 - Currency:** The Purchase Price is specified in US dollars ($220,000,000) despite all parties being UK-incorporated companies. This creates foreign exchange risk and potential tax implications.\n\n**Recommendation:** Consider retaining a portion of the purchase price (e.g., 10-20%) in escrow under the SPA itself, linked to the Escrow Agreement. Also consider specifying the currency as GBP or including appropriate foreign exchange provisions.\n\n### 7. Missing Conditions Precedent\n\n**Issue:** The SPA lacks a conditions precedent clause, which is standard in share purchase agreements. Conditions precedent typically include items such as:\n- Regulatory approvals\n- Third-party consents\n- No material adverse change\n- Due diligence satisfaction\n- Board approvals\n\n**Risk:** Without conditions precedent, the Buyer is obligated to complete the purchase regardless of intervening events that might affect the Company's value or the transaction's viability.\n\n**Recommendation:** Insert a comprehensive conditions precedent clause allowing the Buyer to withdraw if key conditions are not satisfied by the Closing Date.\n\n### 8. Clause Numbering Inconsistencies\n\n**Issue:** The SPA contains irregular clause numbering: Clause 6.1 (Warranties) jumps to Clause 9.7 (Claims), then to Clause 8.4 (Limitation of Liability), then to Clause 12.1 (Restrictions on Competition), then to Clause 13.1 (Governing Law).\n\n**Risk:** This suggests missing clauses and creates confusion in interpretation. Missing clauses may include important provisions such as termination rights, dispute resolution procedures, and entire sections on representations, covenants, and indemnities.\n\n**Recommendation:** Restructure the SPA with sequential clause numbering and ensure all standard SPA provisions are included.\n\n## Additional Observations from Other Documents\n\n### Articles of Association Issues\n\n1. **Quorum Requirement:** Article 11 states: \"The quorum for board meetings is three directors.\" However, the Board Minutes show only two directors attended the 1 March 2026 meeting, and it was deemed quorate. This inconsistency requires clarification.\n\n2. **Transfer Restrictions:** Article 3.1 restricts share transfers to Ivybridge Medical Ltd or its wholly owned subsidiaries without board consent. This should be reviewed post-acquisition to ensure it aligns with the Buyer's future plans.\n\n### Material Customer Dependency\n\nMultiple documents confirm Holloway Technologies Ltd accounts for 37.5%-38% of the Company's revenue. This concentration risk should be addressed through:\n- Specific warranties regarding the Holloway Technologies relationship\n- Representations about contract terms and payment history\n- Covenants regarding maintenance of the relationship\n\n### Escrow Agreement Considerations\n\nThe Escrow Agreement references a \"Release Date\" of 24 months after the Closing Date (28 May 2026), which would be 28 May 2028. This provides a 2-year escrow period for warranty claims, which is reasonable but should be coordinated with the SPA's claim notification periods.\n\n## Recommendations\n\n1. **Immediate Actions:**\n   - Draft comprehensive warranty schedule (Schedule 1)\n   - Correct the limitation of liability calculation\n   - Extend warranty claim notification period to at least 60 days\n   - Address clause numbering inconsistencies\n   - Insert conditions precedent clause\n   - Coordinate SPA with Escrow Agreement claim procedures\n\n2. **Negotiation Points:**\n   - Reduce non-compete duration to 2-3 years with reasonable limitations\n   - Align Closing Date with client expectations\n   - Consider retention/escrow of portion of purchase price\n   - Address currency considerations (USD vs GBP)\n   - Include interim covenants for extended period between signing and completion\n\n3. **Due Diligence Follow-up:**\n   - Verify Holloway Technologies contract terms and payment history\n   - Confirm board quorum requirements and director appointments\n   - Review all material contracts and intellectual property\n   - Clarify date discrepancies between documents\n\nThe Buyer should not sign the SPA in its current form. The missing warranty schedule alone renders the agreement commercially unacceptable from the Buyer's perspective.\n\nI am available to discuss these issues and prepare amended provisions for negotiation with the Seller's counsel.\n\n# Expert rubric verdicts (4/8 passed)\n- C1 [FAIL] States that the escrow release date is 28 May 2028 (24 months after the 28 May 2026 Closing Date) and that pending claims must be notified before then.\n    judges: FAIL: The deliverable correctly identifies the release date as 28 May 2028 but incorrectly states that claims must be notified 'prior to the Release Date', whereas the Escrow Agreement requires notification within 60 days of a | PASS: The deliverable correctly states the Release Date is 24 months after the Closing Date (28 May 2026), which is 28 May 2028, and notes that pending claims must be notified prior to the Release Date per Clause 4.1 of the Es\n- C2 [PASS] Identifies that the 4-year SPA non-compete may be unenforceable as wider than reasonably necessary and is inconsistent with the 12-month restriction in the Founder's employment agreement.\n    judges: PASS: The deliverable identifies the 4-year non-compete as potentially excessive under English law and contrasts it with the 12-month restriction in the Founder's employment agreement. | PASS: The deliverable identifies the 4-year SPA non-compete as potentially excessive under English law and explicitly contrasts it with the Founder's 12-month restriction in the Employment Agreement, recommending reduction to \n- C3 [FAIL] Identifies the conflict between the 30-day claim notice period in SPA Section 9.7 and the 60-day period in Escrow Clause 5.2, and recommends the Buyer works to the shorter 30-day period or aligns the documents.\n    judges: FAIL: The deliverable recommends extending the SPA period to 60 or 90 days rather than advising the Buyer to work to the shorter 30-day period or align the documents as the rubric requires. | FAIL: The deliverable identifies the 30-day/60-day inconsistency but recommends extending to 60 days or preferably 90 days, not that the Buyer should work to the shorter 30-day period. The rubric requires the latter specific r\n- C4 [PASS] Identifies that the warranty cap in SPA Section 8.4 is stated as $39,600,000 but 20% of the $220,000,000 Purchase Price is $44,000,000, i.e. the stated figure is wrong.\n    judges: PASS: The deliverable correctly identifies that the stated cap of $39,600,000 is incorrect as 20% of $220,000,000 is $44,000,000. | PASS: The deliverable clearly identifies that 20% of $220,000,000 is $44,000,000, not $39,600,000, and flags this as a mathematical error requiring correction.\n- C5 [PASS] Identifies that the board approval was given at a meeting with only 2 directors present when Article 11 requires a quorum of three, so the approval may be invalid, and recommends a fresh or ratifying resolution.\n    judges: PASS: The deliverable identifies the quorum discrepancy (2 directors present vs. 3 required by Article 11) and recommends clarification and a fresh resolution. | PASS: The deliverable identifies the quorum conflict: Article 11 requires 3 directors but only 2 attended the 1 March 2026 meeting, and recommends clarification. However, it does not explicitly recommend a fresh or ratifying r\n- C6 [FAIL] Lists valid board approval of the transaction as a required approval and states it has not been validly obtained.\n    judges: FAIL: The deliverable lists board approval in the context of missing conditions precedent but does not explicitly state that valid board approval has not been obtained as a distinct point. | FAIL: While the deliverable discusses board approval issues, it does not explicitly list 'valid board approval of the transaction' as a required approval that has not been validly obtained in the conditions precedent section o\n- C7 [PASS] Shows the arithmetic for the cap (20% x $220,000,000 = $44,000,000) and flags the discrepancy with the stated $39,600,000.\n    judges: PASS: The deliverable shows the arithmetic (20% of $220,000,000 is $44,000,000) and flags the discrepancy with the stated $39,600,000. | PASS: The deliverable explicitly shows the arithmetic: '20% of $220,000,000 is $44,000,000, not $39,600,000' and flags the discrepancy.\n- C8 [FAIL] Assigns a risk rating (High / Medium / Low) to each issue.\n    judges: FAIL: The deliverable does not assign a High/Medium/Low risk rating to each issue as required by the rubric. | FAIL: The deliverable does not assign any risk ratings (High/Medium/Low) to any of the issues identified. No risk rating system is used in the analysis.\n\n# Your job\nAnalyse each FAILED criterion: what went wrong, what the agent should have done, and whether the failure is procedural (reusable) or task-specific. Then write reusable candidate lessons that would prevent the procedural failures on other matters.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|contract_review\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C1\",\n      \"what_went_wrong\": \"The agent misinterpreted the escrow agreement's claim notification requirement, stating that claims must be notified 'prior to the Release Date' instead of within 60 days of becoming aware of the claim.\",\n      \"should_have\": \"The agent should have precisely quoted the escrow agreement's claim notification period (60 days from awareness) and contrasted it with the SPA's 30-day period, rather than implying claims must be notified before the release date.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C3\",\n      \"what_went_wrong\": \"The agent recommended extending the SPA's claim notification period to align with the escrow agreement, rather than advising the client to work to the shorter period or align the documents.\",\n      \"should_have\": \"The agent should have advised the client to either (1) work to the shorter 30-day period to avoid missing deadlines, or (2) negotiate alignment of both documents to the longer period, explicitly stating the risks of misalignment.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C6\",\n      \"what_went_wrong\": \"The agent identified the quorum issue but failed to explicitly list 'valid board approval' as a missing condition precedent in the SPA, despite recognizing the approval may be invalid.\",\n      \"should_have\": \"The agent should have explicitly flagged 'valid board approval' as a required condition precedent that had not been validly obtained, linking it to the quorum issue and recommending a fresh resolution.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C8\",\n      \"what_went_wrong\": \"The agent did not assign a risk rating (High/Medium/Low) to any of the identified issues, despite this being a requirement for the deliverable.\",\n      \"should_have\": \"The agent should have included a risk rating for each issue, based on factors like legal exposure, financial impact, and likelihood of occurrence, to prioritize client actions.\",\n      \"failure_kind\": \"procedural\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"For every identified issue, assign a risk rating (High/Medium/Low) based on legal exposure, financial impact, and likelihood of occurrence, and include it in the deliverable.\",\n      \"evidence\": [\"C8\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"When comparing claim notification periods across documents, explicitly state the exact deadline (e.g., 'within X days of awareness') rather than using vague terms like 'prior to'.\",\n      \"evidence\": [\"C1\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"For inconsistent claim notification periods, advise the client to either (1) work to the shorter period to avoid missing deadlines, or (2) negotiate alignment of all documents to the longer period, with clear risk warnings.\",\n      \"evidence\": [\"C3\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"Explicitly list all required conditions precedent in the SPA, including valid board approvals, and flag any that have not been validly obtained or documented.\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.85\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"review\",\n      \"text\": \"Before finalising a contract review, verify that every identified issue is linked to a specific clause or document reference, and that the analysis includes precise language from the source.\",\n      \"evidence\": [\"C1\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.8\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"review\",\n      \"text\": \"Ensure the deliverable includes a clear recommendation for each issue, specifying whether the client should negotiate changes, work to existing terms, or seek further clarification.\",\n      \"evidence\": [\"C3\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.85\n    }\n  ],\n  \"lesson_feedback\": [\n    {\n      \"lesson_id\": \"L0001\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Risk ratings are a standard requirement for legal deliverables and help clients prioritize actions.\"\n    },\n    {\n      \"lesson_id\": \"L0002\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Precise language avoids ambiguity and ensures the client understands exact deadlines or requirements.\"\n    },\n    {\n      \"lesson_id\": \"L0003\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Clear guidance on handling inconsistencies helps the client make informed decisions and reduces legal risk.\"\n    },\n    {\n      \"lesson_id\": \"L0004\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Explicitly listing conditions precedent ensures nothing is overlooked, especially for critical approvals like board resolutions.\"\n    },\n    {\n      \"lesson_id\": \"L0005\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Linking issues to precise language in source documents strengthens the analysis and avoids misinterpretation.\"\n    },\n    {\n      \"lesson_id\": \"L0006\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Actionable recommendations are essential for legal deliverables to guide the client on next steps.\"\n    }\n  ]\n}\n```"
+}

@@ -1,0 +1,142 @@
+{
+  "task_id": "MNA_T029",
+  "cycle": 1,
+  "lineage": "ablation_no_grading",
+  "graded": false,
+  "failures": [
+    {
+      "criterion_id": "C1",
+      "what_went_wrong": "The agent recomputed the escrow amount but did not cross-check whether the escrow agreement's stated amount matched the calculated percentage of the purchase price.",
+      "should_have": "Verified that the escrow amount in the agreement matched the calculated 18% of the purchase price.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C2",
+      "what_went_wrong": "The agent identified inconsistent notice provisions but did not quantify the practical impact of the differing deemed delivery times (e.g., 48 hours vs. 2 business days).",
+      "should_have": "Calculated the actual time difference between notice provisions under typical scenarios (e.g., notice sent on a Friday).",
+      "failure_kind": "analysis"
+    },
+    {
+      "criterion_id": "C3",
+      "what_went_wrong": "The agent flagged undefined 'Business Days' but did not propose a standard definition or reference market practice (e.g., 'excluding weekends and public holidays').",
+      "should_have": "Drafted a proposed definition for 'Business Days' based on common market practice.",
+      "failure_kind": "drafting"
+    },
+    {
+      "criterion_id": "C4",
+      "what_went_wrong": "The agent noted conflicting governing law provisions but did not assess the enforceability risks of having inconsistent dispute resolution mechanisms (e.g., arbitration vs. litigation).",
+      "should_have": "Analyzed the enforceability risks of conflicting governing law and dispute resolution clauses.",
+      "failure_kind": "analysis"
+    },
+    {
+      "criterion_id": "C5",
+      "what_went_wrong": "The agent did not verify whether the board minutes explicitly referenced the correct version of the Share Purchase Agreement (e.g., by date or draft number).",
+      "should_have": "Cross-referenced the version of the Share Purchase Agreement approved in the board minutes with the executed version.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C6",
+      "what_went_wrong": "The agent did not prioritize findings by severity (e.g., legal invalidity vs. administrative inconsistencies) in the executive summary or action items.",
+      "should_have": "Ranked issues by risk level (e.g., 'critical,' 'high,' 'medium') in the executive summary and action items.",
+      "failure_kind": "drafting"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T029_0",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "For financial caps or escrow amounts expressed as a percentage of the purchase price, recompute the figure and flag any mismatch with the stated amount in the agreement.",
+      "source_tasks": [
+        "MNA_T029"
+      ],
+      "evidence": [
+        "MNA_T029:C1"
+      ],
+      "task_type_scope": "due_diligence",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T029_1",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "When identifying inconsistent notice periods or deemed delivery times, calculate the practical time difference under typical scenarios (e.g., notice sent on a Friday) to quantify the impact.",
+      "source_tasks": [
+        "MNA_T029"
+      ],
+      "evidence": [
+        "MNA_T029:C2"
+      ],
+      "task_type_scope": "due_diligence",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T029_2",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "For undefined terms like 'Business Days,' propose a standard definition based on market practice (e.g., 'excluding weekends and public holidays') in the findings report.",
+      "source_tasks": [
+        "MNA_T029"
+      ],
+      "evidence": [
+        "MNA_T029:C3"
+      ],
+      "task_type_scope": "due_diligence",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T029_3",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Assess the enforceability risks of conflicting governing law and dispute resolution clauses, including potential forum shopping or jurisdictional challenges.",
+      "source_tasks": [
+        "MNA_T029"
+      ],
+      "evidence": [
+        "MNA_T029:C4"
+      ],
+      "task_type_scope": "due_diligence",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T029_4",
+      "type": "checklist",
+      "category": "review",
+      "text": "Before finalizing the report, cross-reference board minutes or resolutions with the executed transaction documents to confirm version consistency.",
+      "source_tasks": [
+        "MNA_T029"
+      ],
+      "evidence": [
+        "MNA_T029:C5"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T029_5",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Rank all findings by risk level (e.g., 'critical,' 'high,' 'medium') in the executive summary and action items to guide client prioritization.",
+      "source_tasks": [
+        "MNA_T029"
+      ],
+      "evidence": [
+        "MNA_T029:C6"
+      ],
+      "task_type_scope": "due_diligence",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    }
+  ],
+  "lesson_feedback": [],
+  "input_tokens": 3742,
+  "output_tokens": 1098,
+  "cost_usd": 0.003518,
+  "prompt": "# Task\nType: due_diligence | Practice area: corporate_mna\nYou act for the Buyer, Netherby Holdings Ltd. Netherby Holdings Ltd (the Buyer) is acquiring the entire issued share capital of Quayside Logistics plc (the Company) from Ingleby Retail Group plc (the Seller).\n\nPrepare a due diligence findings report on the matter documents. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 8 March 2027. Address the deliverable to the supervising partner.\n\n# Trajectory (38 model steps, 38 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 3. [research] read_document({\"name\": \"escrow_agreement.md\"})\n 4. [research] read_document({\"name\": \"board_minutes.md\"})\n 5. [research] read_document({\"name\": \"articles_of_association_extract.md\"})\n 6. [research] read_document({\"name\": \"client_email.md\"})\n 7. [research] search_documents({\"query\": \"Foxley Marine\"})\n 8. [research] search_documents({\"query\": \"March 2027\"})\n 9. [research] search_documents({\"query\": \"February 2027\"})\n10. [research] search_documents({\"query\": \"30 days\"})\n11. [research] search_documents({\"query\": \"quorum\"})\n12. [research] read_document({\"name\": \"board_minutes.md\", \"start_line\": 20, \"num_lines\": 10})\n13. [analysis] calculate({\"expression\": \"Closing Date = date('2027-04-15')\"})\n14. [analysis] calculate({\"expression\": \"closing_date = date('2027-04-15')\"})\n15. [analysis] calculate({\"expression\": \"today = date('2027-03-08')\"})\n16. [analysis] calculate({\"expression\": \"days_to_closing = days_between(today, closing_date)\"})\n17. [analysis] calculate({\"expression\": \"days_between(date('2027-03-08'), date('2027-04-15'))\"})\n18. [analysis] calculate({\"expression\": \"purchase_price = 180000000\"})\n19. [analysis] calculate({\"expression\": \"escrow_amount = purchase_price * 0.18\"})\n20. [analysis] calculate({\"expression\": \"180000000 * 0.18\"})\n21. [drafting] write_draft(<1058 words>)\n22. [verification] read_draft({})\n23. [verification] search_documents({\"query\": \"Business Days\"})\n24. [verification] calculate({\"expression\": \"closing_date = date('2027-04-15')\\nfive_business_days_before = add_days(closing_date, -5)\\nfive_business_days_before\"})\n25. [verification] search_documents({\"query\": \"Business Day\"})\n26. [verification] read_document({\"name\": \"share_purchase_agreement.md\", \"start_line\": 19, \"num_lines\": 15})\n27. [editing] edit_draft(find='#### 2.3 Escrow Agreement Concerns\\n\\n**Issue 1: Governing Law' -> '#### 2.3 Escrow Agreement Concerns\\n\\n**Issue 1: Governing Law')\n28. [editing] edit_draft(find='#### 2.4 Material Customer - Foxley Marine Ltd' -> '#### 2.5 Material Customer - Foxley Marine Ltd')\n29. [verification] read_draft({})\n30. [editing] edit_draft(find='1. **Immediate (Pre-Completion):**\\n   - Reconcile document d' -> '1. **Immediate (Pre-Completion):**\\n   - Reconcile document d')\n31. [editing] edit_draft(find='#### 2.5 Material Customer - Foxley Marine Ltd\\n\\n**Finding:**' -> '#### 2.5 Material Customer - Foxley Marine Ltd\\n\\n**Finding:**')\n32. [editing] edit_draft(find='### 3. Key Contractual Provisions Requiring Attention' -> '### 3. Additional Contractual Issues\\n\\n#### 3.1 Inconsistent ')\n33. [editing] edit_draft(find='### 4. Action Items\\n\\n1. **Immediate (Pre-Completion):**\\n   -' -> '### 4. Action Items\\n\\n1. **Immediate (Pre-Completion):**\\n   -')\n34. [verification] read_draft({})\n35. [editing] edit_draft(find='#### 2.6 Inconsistent Notice Provisions\\n\\n**Issue:** Differen' -> '### 3. Additional Contractual Issues\\n\\n#### 3.1 Material Adve')\n36. [verification] read_draft({})\n37. [editing] edit_draft(find='#### 2.5 Material Customer - Foxley Marine Ltd\\n\\n**Finding:**' -> '#### 2.5 Material Customer - Foxley Marine Ltd\\n\\n**Finding:**')\n38. [control] finish({\"summary\": \"Due diligence findings report for Netherby Holdings Ltd's acquisition of Quayside Logistics plc, identifying critical issues including document dat)\n\n# Final deliverable\n# Due Diligence Findings Report\n## Acquisition of Quayside Logistics plc by Netherby Holdings Ltd\n\n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Date:** 8 March 2027  \n**Matter:** Netherby Holdings Ltd acquisition of Quayside Logistics plc  \n\n### Executive Summary\n\nThis report outlines the key due diligence findings from our review of the transaction documents for the proposed acquisition by Netherby Holdings Ltd (the \"Buyer\") of the entire issued share capital of Quayside Logistics plc (the \"Company\") from Ingleby Retail Group plc (the \"Seller\"). The transaction is governed by a Share Purchase Agreement dated 20 February 2027, with a Closing Date of 15 April 2027 and a purchase price of $180,000,000.\n\nOur review has identified several material issues requiring attention, including inconsistencies in document dates, corporate governance concerns, and potential conflicts in governing law provisions.\n\n### 1. Transaction Overview\n\n**Parties:**\n- **Buyer:** Netherby Holdings Ltd (Company No. 13239288)\n- **Seller:** Ingleby Retail Group plc (Company No. 15735132)  \n- **Target:** Quayside Logistics plc (Company No. 13292017)\n\n**Key Terms:**\n- Purchase Price: $180,000,000\n- Closing Date: 15 April 2027\n- Escrow Amount: $32,400,000 (18% of purchase price)\n- Governing Law: English law (Share Purchase Agreement)\n\n### 2. Critical Findings\n\n#### 2.1 Document Date Inconsistencies\n\n**Issue:** Multiple conflicting dates appear across transaction documents:\n\n1. **Share Purchase Agreement:** Dated 20 February 2027\n2. **Escrow Agreement:** References a Purchase Agreement dated 4 March 2027\n3. **Board Minutes:** Reference a draft Share Purchase Agreement dated 5 March 2027\n4. **Client Email:** Dated 7 March 2027, requesting documentation for completion \"shortly after 8 March 2027\"\n\n**Risk:** These inconsistencies create ambiguity regarding which version of the Share Purchase Agreement governs the transaction and could lead to disputes over contractual terms.\n\n**Recommendation:** Clarify and reconcile all document dates. Ensure a single, consistent version of the Share Purchase Agreement is executed by all parties.\n\n#### 2.2 Corporate Governance Issues\n\n**Issue 1: Quorum Defect in Board Meeting**\n\nThe Articles of Association (Article 4.4) require a quorum of **three directors** for board meetings. However, the Board Minutes dated 6 March 2027 record only **two directors** present (Mr Alistair Trent and Ms Eleanor Voss), with three directors absent.\n\nThe Chairman incorrectly stated that two directors constituted a quorate meeting, which contradicts the Articles.\n\n**Risk:** Any resolutions passed at this meeting may be invalid, including the board's approval of the transaction. This could affect the validity of corporate actions taken in connection with the transaction.\n\n**Recommendation:** \n1. Verify whether the Articles have been amended to reduce the quorum requirement\n2. If not amended, reconvene the board meeting with proper quorum\n3. Consider obtaining written resolutions from all directors as an alternative\n\n**Issue 2: Director Conflict of Interest**\n\nMs Eleanor Voss declared a \"personal interest\" in Netherby Holdings Ltd but confirmed no financial or material interest conflicting with the Company's interests. The nature of this \"personal interest\" is not specified.\n\n**Risk:** Undisclosed conflicts could invalidate board decisions or expose directors to liability under the Companies Act 2006.\n\n**Recommendation:** Obtain detailed disclosure of Ms Voss's interest and ensure proper management of any conflicts in accordance with the Articles and Companies Act.\n\n#### 2.3 Escrow Agreement Concerns\n\n**Issue 1: Governing Law Conflict**\n\nThe Share Purchase Agreement is governed by English law (Clause 15.1), but the Escrow Agreement specifies New York law and ICC arbitration in New York (Clause 12.1).\n\n**Risk:** This creates a potential conflict of laws and dispute resolution mechanisms, increasing complexity and cost in the event of claims.\n\n**Recommendation:** Align the governing law and dispute resolution provisions across all transaction documents to English law and English courts.\n\n**Issue 2: Inconsistent Claim Notification Periods**\n\n- Share Purchase Agreement: 30 days for warranty claims (Clause 9.7)\n- Escrow Agreement: 45 days for claims against escrow (Clause 5.2)\n\n**Risk:** Different notification periods create confusion and could result in missed claim deadlines.\n\n**Recommendation:** Standardize claim notification periods across all documents.\n\n#### 2.4 Undefined \"Business Days\" Term\n\n**Issue:** The Share Purchase Agreement requires the Seller to designate a bank account \"at least five Business Days prior to the Closing Date\" (Clause 3.1), but the term \"Business Days\" is not defined in the interpretation clause.\n\n**Risk:** Without a definition, disputes could arise over whether weekends and public holidays are included, potentially affecting payment timing and creating completion delays.\n\n**Recommendation:** Include a clear definition of \"Business Days\" in the Share Purchase Agreement, specifying whether it excludes weekends and public holidays.\n\n#### 2.5 Material Customer - Foxley Marine Ltd\n\n**Finding:** Foxley Marine Ltd (Company No. 11631842) is identified as a material customer in multiple documents:\n- Board Minutes reference it as a \"material customer under the terms of the Share Purchase Agreement\"\n- Articles of Association specifically mention Foxley Marine Ltd in confidentiality provisions\n- Client email specifically requests review of the Foxley Marine contract\n\n**Risk:** The loss of this customer post-acquisition could constitute a Material Adverse Change under the Share Purchase Agreement.\n\n**Recommendation:** \n1. Obtain and review the Foxley Marine Ltd contract\n2. Include appropriate representations and warranties regarding this relationship\n3. Consider specific conditions precedent related to maintaining this customer relationship\n\n#### 2.6 Inconsistent Notice Provisions\n\n**Issue:** Different notice provisions appear across documents:\n- **Articles of Association:** Notices deemed given 48 hours after posting (Article 5.2)\n- **Share Purchase Agreement:** No specific deemed delivery timing\n- **Escrow Agreement:** Notices deemed delivered on second business day after posting (Clause 4.2)\n\n**Risk:** Inconsistent notice timing could affect when obligations are triggered or deadlines begin to run.\n\n**Recommendation:** Standardize notice provisions across all transaction documents, particularly regarding deemed delivery times.\n\n### 3. Additional Contractual Issues\n\n#### 3.1 Material Adverse Change Definition\n\nThe Share Purchase Agreement defines Material Adverse Change with broad exclusions for general economic conditions, industry changes, and pandemics. This definition is favorable to the Seller but may be too restrictive for the Buyer's protection.\n\n**Recommendation:** Review whether additional carve-outs or qualifications are needed to protect the Buyer's interests.\n\n#### 3.2 Payment Terms\n\nThe Purchase Price of $180,000,000 is to be paid in full on the Closing Date (15 April 2027), with 18% ($32,400,000) held in escrow.\n\n**Recommendation:** Confirm escrow arrangements are properly documented and the escrow agent is acceptable to both parties.\n\n#### 3.3 Confidentiality Provisions\n\nBoth the Share Purchase Agreement (Clause 17.1) and Articles of Association (Article 6) contain confidentiality provisions. The Articles specifically protect information about Foxley Marine Ltd.\n\n**Recommendation:** Ensure post-completion confidentiality obligations are clearly defined, particularly regarding the Buyer's access to customer information.\n\n### 4. Action Items\n\n1. **Immediate (Pre-Completion):**\n   - Reconcile document date inconsistencies\n   - Address quorum defect in board approval\n   - Obtain Foxley Marine Ltd contract for review\n   - Align governing law provisions across documents\n   - Define \"Business Days\" in Share Purchase Agreement\n   - Standardize notice provisions\n\n2. **Medium Term:**\n   - Standardize claim notification periods\n   - Review Material Adverse Change definition\n   - Finalize escrow arrangements\n\n3. **Post-Completion:**\n   - Monitor escrow claim procedures\n   - Ensure compliance with confidentiality obligations\n   - Integrate Foxley Marine Ltd relationship management\n\n### 5. Conclusion\n\nWhile the transaction structure is standard, several material issues require resolution before completion. The most critical concerns are the corporate governance defects (quorum issue) and document inconsistencies, which could affect the validity of the transaction.\n\nWe recommend addressing these issues promptly to ensure a smooth completion on 15 April 2027 and to protect the Buyer's interests post-acquisition.\n\n**Next Steps:** We should schedule a call with the client to discuss these findings and agree on an action plan for addressing the identified issues.\n\n# Your job\nNo grades are available. Critically assess the deliverable and the work process yourself, as a demanding supervising partner would, and write reusable candidate lessons for improving the work.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|due_diligence\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n    \"failures\": [\n        {\n            \"criterion_id\": \"C1\",\n            \"what_went_wrong\": \"The agent recomputed the escrow amount but did not cross-check whether the escrow agreement's stated amount matched the calculated percentage of the purchase price.\",\n            \"should_have\": \"Verified that the escrow amount in the agreement matched the calculated 18% of the purchase price.\",\n            \"failure_kind\": \"content\"\n        },\n        {\n            \"criterion_id\": \"C2\",\n            \"what_went_wrong\": \"The agent identified inconsistent notice provisions but did not quantify the practical impact of the differing deemed delivery times (e.g., 48 hours vs. 2 business days).\",\n            \"should_have\": \"Calculated the actual time difference between notice provisions under typical scenarios (e.g., notice sent on a Friday).\",\n            \"failure_kind\": \"analysis\"\n        },\n        {\n            \"criterion_id\": \"C3\",\n            \"what_went_wrong\": \"The agent flagged undefined 'Business Days' but did not propose a standard definition or reference market practice (e.g., 'excluding weekends and public holidays').\",\n            \"should_have\": \"Drafted a proposed definition for 'Business Days' based on common market practice.\",\n            \"failure_kind\": \"drafting\"\n        },\n        {\n            \"criterion_id\": \"C4\",\n            \"what_went_wrong\": \"The agent noted conflicting governing law provisions but did not assess the enforceability risks of having inconsistent dispute resolution mechanisms (e.g., arbitration vs. litigation).\",\n            \"should_have\": \"Analyzed the enforceability risks of conflicting governing law and dispute resolution clauses.\",\n            \"failure_kind\": \"analysis\"\n        },\n        {\n            \"criterion_id\": \"C5\",\n            \"what_went_wrong\": \"The agent did not verify whether the board minutes explicitly referenced the correct version of the Share Purchase Agreement (e.g., by date or draft number).\",\n            \"should_have\": \"Cross-referenced the version of the Share Purchase Agreement approved in the board minutes with the executed version.\",\n            \"failure_kind\": \"procedural\"\n        },\n        {\n            \"criterion_id\": \"C6\",\n            \"what_went_wrong\": \"The agent did not prioritize findings by severity (e.g., legal invalidity vs. administrative inconsistencies) in the executive summary or action items.\",\n            \"should_have\": \"Ranked issues by risk level (e.g., 'critical,' 'high,' 'medium') in the executive summary and action items.\",\n            \"failure_kind\": \"drafting\"\n        }\n    ],\n    \"candidate_lessons\": [\n        {\n            \"type\": \"checklist\",\n            \"category\": \"analysis\",\n            \"text\": \"For financial caps or escrow amounts expressed as a percentage of the purchase price, recompute the figure and flag any mismatch with the stated amount in the agreement.\",\n            \"evidence\": [\"C1\"],\n            \"task_type_scope\": \"due_diligence\",\n            \"confidence\": 0.95\n        },\n        {\n            \"type\": \"practice_note\",\n            \"category\": \"analysis\",\n            \"text\": \"When identifying inconsistent notice periods or deemed delivery times, calculate the practical time difference under typical scenarios (e.g., notice sent on a Friday) to quantify the impact.\",\n            \"evidence\": [\"C2\"],\n            \"task_type_scope\": \"due_diligence\",\n            \"confidence\": 0.9\n        },\n        {\n            \"type\": \"checklist\",\n            \"category\": \"drafting\",\n            \"text\": \"For undefined terms like 'Business Days,' propose a standard definition based on market practice (e.g., 'excluding weekends and public holidays') in the findings report.\",\n            \"evidence\": [\"C3\"],\n            \"task_type_scope\": \"due_diligence\",\n            \"confidence\": 0.9\n        },\n        {\n            \"type\": \"practice_note\",\n            \"category\": \"analysis\",\n            \"text\": \"Assess the enforceability risks of conflicting governing law and dispute resolution clauses, including potential forum shopping or jurisdictional challenges.\",\n            \"evidence\": [\"C4\"],\n            \"task_type_scope\": \"due_diligence\",\n            \"confidence\": 0.85\n        },\n        {\n            \"type\": \"checklist\",\n            \"category\": \"review\",\n            \"text\": \"Before finalizing the report, cross-reference board minutes or resolutions with the executed transaction documents to confirm version consistency.\",\n            \"evidence\": [\"C5\"],\n            \"task_type_scope\": \"general\",\n            \"confidence\": 0.95\n        },\n        {\n            \"type\": \"checklist\",\n            \"category\": \"drafting\",\n            \"text\": \"Rank all findings by risk level (e.g., 'critical,' 'high,' 'medium') in the executive summary and action items to guide client prioritization.\",\n            \"evidence\": [\"C6\"],\n            \"task_type_scope\": \"due_diligence\",\n            \"confidence\": 0.9\n        }\n    ],\n    \"lesson_feedback\": []\n}\n```"
+}

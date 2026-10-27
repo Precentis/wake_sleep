@@ -1,0 +1,173 @@
+{
+  "task_id": "MNA_T030",
+  "cycle": 1,
+  "lineage": "ablation_no_grading",
+  "graded": false,
+  "failures": [
+    {
+      "criterion_id": "C1",
+      "what_went_wrong": "The agent identified a discrepancy between the SPA and Escrow Agreement closing dates but did not verify which document supersedes the other in case of conflict, nor did it recommend a legal interpretation of the governing document.",
+      "should_have": "Analysed the hierarchy of documents and provided guidance on which closing date likely prevails, considering standard contractual principles (e.g., later document or specific vs. general provisions).",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C2",
+      "what_went_wrong": "The agent calculated deadlines based on dates mentioned in documents but did not cross-check business day conventions (e.g., whether 'days' means calendar or business days) for each obligation.",
+      "should_have": "Explicitly noted whether each deadline uses calendar or business days and adjusted calculations accordingly, flagging ambiguities for clarification.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C3",
+      "what_went_wrong": "The agent included a 'Key Deadline Summary Table' but did not distinguish between client-controlled deadlines and counterparty-controlled deadlines, which affects risk allocation.",
+      "should_have": "Added a column to the summary table indicating whether the deadline is client-controlled, counterparty-controlled, or joint, to clarify responsibility and risk.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C4",
+      "what_went_wrong": "The agent noted a discrepancy in the SPA's condition satisfaction timeline (150 days vs. 1 May 2027) but did not recommend a method to resolve such ambiguities (e.g., contra proferentem or negotiation).",
+      "should_have": "Suggested a default interpretation rule (e.g., specific dates prevail over general periods) and recommended seeking clarification from the drafting party.",
+      "failure_kind": "task_specific"
+    },
+    {
+      "criterion_id": "C5",
+      "what_went_wrong": "The agent did not verify whether the 'today' date (18 March 2027) was a business day, which could affect deadlines tied to 'immediate' obligations.",
+      "should_have": "Checked if the reference date was a business day and noted any implications for deadlines requiring actions 'on or prior to' that date.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C6",
+      "what_went_wrong": "The agent listed 'Critical Issues Requiring Attention' but did not prioritise them by urgency or legal risk, leaving the partner to infer which issues demand immediate action.",
+      "should_have": "Ranked critical issues by urgency (e.g., 'immediate', 'high', 'medium') and legal risk (e.g., breach vs. procedural delay).",
+      "failure_kind": "drafting"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T030_0",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "For every deadline discrepancy between documents, determine and note which document likely governs based on contractual hierarchy (e.g., later document, specific vs. general provisions).",
+      "source_tasks": [
+        "MNA_T030"
+      ],
+      "evidence": [
+        "MNA_T030:C1"
+      ],
+      "task_type_scope": "timeline_analysis",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T030_1",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Explicitly confirm whether each deadline uses calendar or business days. Adjust calculations for business days if required, and flag ambiguities for client clarification.",
+      "source_tasks": [
+        "MNA_T030"
+      ],
+      "evidence": [
+        "MNA_T030:C2"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T030_2",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "In deadline summary tables, include a column indicating whether each deadline is client-controlled, counterparty-controlled, or joint to clarify responsibility and risk.",
+      "source_tasks": [
+        "MNA_T030"
+      ],
+      "evidence": [
+        "MNA_T030:C3"
+      ],
+      "task_type_scope": "timeline_analysis",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T030_3",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "For ambiguities in deadlines (e.g., conflicting dates or periods), apply default interpretation rules (e.g., specific dates prevail over general periods) and recommend seeking clarification from the drafting party.",
+      "source_tasks": [
+        "MNA_T030"
+      ],
+      "evidence": [
+        "MNA_T030:C4"
+      ],
+      "task_type_scope": "timeline_analysis",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T030_4",
+      "type": "checklist",
+      "category": "review",
+      "text": "Verify whether the reference date ('today') is a business day. Note any implications for deadlines requiring actions 'on or prior to' that date, especially for 'immediate' obligations.",
+      "source_tasks": [
+        "MNA_T030"
+      ],
+      "evidence": [
+        "MNA_T030:C5"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.8
+    },
+    {
+      "candidate_id": "c01_MNA_T030_5",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Rank critical issues in deliverables by urgency (e.g., 'immediate', 'high', 'medium') and legal risk (e.g., breach vs. procedural delay) to guide partner prioritisation.",
+      "source_tasks": [
+        "MNA_T030"
+      ],
+      "evidence": [
+        "MNA_T030:C6"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    }
+  ],
+  "lesson_feedback": [
+    {
+      "lesson_id": "L0001",
+      "label": "HELPFUL",
+      "reason": "Addresses a common issue in transactional work where document discrepancies arise, and provides a clear rule for resolving them."
+    },
+    {
+      "lesson_id": "L0002",
+      "label": "HELPFUL",
+      "reason": "Critical for accurate deadline calculations, as business day conventions vary across jurisdictions and contracts."
+    },
+    {
+      "lesson_id": "L0003",
+      "label": "HELPFUL",
+      "reason": "Improves clarity in deliverables by making responsibility explicit, which is essential for risk allocation."
+    },
+    {
+      "lesson_id": "L0004",
+      "label": "HELPFUL",
+      "reason": "Provides a structured approach to resolving ambiguities, which is a frequent pain point in contract interpretation."
+    },
+    {
+      "lesson_id": "L0005",
+      "label": "HELPFUL",
+      "reason": "Ensures deadlines tied to 'today' are actionable, especially in time-sensitive transactions."
+    },
+    {
+      "lesson_id": "L0006",
+      "label": "HELPFUL",
+      "reason": "Prioritisation is key for partners managing multiple matters; this lesson makes deliverables more actionable."
+    }
+  ],
+  "input_tokens": 4456,
+  "output_tokens": 1533,
+  "cost_usd": 0.0045275,
+  "prompt": "# Task\nType: timeline_analysis | Practice area: corporate_mna\nYou act for the Buyer, Pemberton Systems Ltd. Pemberton Systems Ltd (the Buyer) is acquiring the entire issued share capital of Dunmore Energy plc (the Company) from Whitlock Systems Ltd (the Seller).\n\nPrepare a timeline and deadlines analysis of all time-sensitive obligations in the matter documents. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 18 March 2027. Address the deliverable to the supervising partner.\n\n# Trajectory (31 model steps, 31 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 3. [research] read_document({\"name\": \"escrow_agreement.md\"})\n 4. [research] read_document({\"name\": \"articles_of_association_extract.md\"})\n 5. [research] read_document({\"name\": \"board_minutes.md\"})\n 6. [research] read_document({\"name\": \"client_email.md\"})\n 7. [analysis] calculate({\"expression\": \"date('2027-03-18')\"})\n 8. [analysis] calculate({\"expression\": \"add_days(date('2027-03-02'), 150)\"})\n 9. [analysis] calculate({\"expression\": \"add_days(date('2027-03-02'), 60)\"})\n10. [analysis] calculate({\"expression\": \"days_between(date('2027-03-02'), date('2027-05-01'))\"})\n11. [analysis] calculate({\"expression\": \"date('2027-05-02')\"})\n12. [analysis] calculate({\"expression\": \"add_months(date('2027-03-18'), 12)\"})\n13. [analysis] calculate({\"expression\": \"date('2027-09-13')\"})\n14. [analysis] calculate({\"expression\": \"date('2027-03-16')\"})\n15. [analysis] calculate({\"expression\": \"date('2027-03-17')\"})\n16. [analysis] calculate({\"expression\": \"prev_business_day(date('2027-05-02'), 5)\"})\n17. [analysis] calculate({\"expression\": \"next_business_day(date('2027-04-25'))\"})\n18. [analysis] calculate({\"expression\": \"prev_business_day(date('2027-04-30'))\"})\n19. [drafting] write_draft(<1261 words>)\n20. [verification] search_documents({\"query\": \"days\"})\n21. [verification] search_documents({\"query\": \"month\"})\n22. [verification] search_documents({\"query\": \"year\"})\n23. [editing] edit_draft(find='**Critical Issues Requiring Attention**\\n\\n1. **Closing Date D' -> '**Critical Issues Requiring Attention**\\n\\n1. **Closing Date D')\n24. [verification] read_draft({})\n25. [editing] edit_draft(find='## Critical Issues Requiring Attention\\n\\n1. **Closing Date Di' -> '## Critical Issues Requiring Attention\\n\\n1. **Closing Date Di')\n26. [editing] edit_draft(find='4. **Regulatory Clearance**: The 13 September 2027 deadline ' -> '5. **Regulatory Clearance**: The 13 September 2027 deadline ')\n27. [editing] edit_draft(find='1. **Immediate (Today)**:\\n   - Clarify the Closing Date disc' -> '1. **Immediate (Today)**:\\n   - Clarify the Closing Date disc')\n28. [verification] calculate({\"expression\": \"weekday(date('2027-05-02'))\"})\n29. [editing] edit_draft(find='**Invoice Settlement (Articles of Association Clause 4.2)**\\n' -> '**Invoice Settlement (Articles of Association Clause 4.2)**\\n')\n30. [editing] edit_draft(find='## Executive Summary\\n\\nThis analysis identifies all time-sens' -> '## Executive Summary\\n\\nThis analysis identifies all time-sens')\n31. [control] finish({\"summary\": \"Timeline and deadlines analysis for the acquisition of Dunmore Energy plc by Pemberton Systems Ltd, identifying all time-sensitive obligations incl)\n\n# Final deliverable\n# Timeline and Deadlines Analysis: Acquisition of Dunmore Energy plc\n\n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Date:** 18 March 2027  \n**Matter:** Acquisition of Dunmore Energy plc by Pemberton Systems Ltd  \n**Client:** Pemberton Systems Ltd (Buyer)  \n**Counterparty:** Whitlock Systems Ltd (Seller)  \n**Target:** Dunmore Energy plc (Company)\n\n## Executive Summary\n\nThis analysis identifies all time-sensitive obligations arising from the proposed acquisition of Dunmore Energy plc by Pemberton Systems Ltd. Key deadlines include:\n\n1. **Immediate deadlines** (March 2027): Escrow deposit, board approvals\n2. **Pre-closing deadlines** (April-May 2027): Payment arrangements, condition satisfaction\n3. **Closing date**: 2 May 2027 (per SPA) or 18 March 2027 (per Escrow Agreement - discrepancy noted)\n4. **Post-closing deadlines**: Warranty claims (30 days), escrow claims (45 days), regulatory clearance (13 September 2027)\n5. **Long-term obligations**: Confidentiality (6 years), escrow release (12 months)\n\n### Key Deadline Summary Table\n\n| Deadline | Date | Responsibility | Source Document | Consequence of Missed Deadline |\n|----------|------|---------------|-----------------|--------------------------------|\n| Escrow Deposit | 18 Mar 2027 | Buyer | Escrow Agreement Cl. 2.1 | Potential breach of Escrow Agreement |\n| Seller Account Details | 23 Apr 2027 | Seller | SPA Cl. 2.2 | May delay payment and closing |\n| Condition Satisfaction | 1 May 2027 | Both Parties | SPA Cl. 4.5 | Either party may terminate SPA |\n| SPA Closing | 2 May 2027 | Both Parties | SPA Cl. 1.1(5) | Fundamental transaction milestone |\n| Warranty Claim Notice | 30 days from awareness | Buyer | SPA Cl. 9.7 | Claim may be barred |\n| Escrow Claim Notice | 45 days from awareness | Buyer | Escrow Agreement Cl. 5.2 | Claim may be barred |\n| Regulatory Clearance | 13 Sep 2027 | Buyer | Client Email | May impact transaction completion |\n| Invoice Settlement | 60 days from invoice | Company | Articles Cl. 4.2 | Contractual breach with material customer |\n| Escrow Release (earliest) | 18 Mar 2028 | Escrow Agent | Escrow Agreement Cl. 3.1 | Funds held until this date without joint instruction |\n| Confidentiality Period | 6 years from completion | Both Parties | SPA Cl. 10.2 | Ongoing obligation |\n\n## Document Review Summary\n\nThe following documents contain time-sensitive provisions:\n\n1. **Share Purchase Agreement (SPA)** - dated 2 March 2027\n2. **Escrow Agreement** - Effective Date 15 March 2027, Closing Date 18 March 2027\n3. **Articles of Association of Dunmore Energy plc**\n4. **Board Minutes** - 16 March 2027\n5. **Client Email** - 17 March 2027\n\n## Detailed Timeline Analysis\n\n### 1. Immediate Deadlines (March 2027)\n\n**18 March 2027 (Today)**\n- **Escrow Deposit Deadline**: Per Clause 2.1 of the Escrow Agreement, the Buyer must pay £7,500,000 into the escrow account \"on or prior to the Closing Date\" (18 March 2027).\n- **Status**: Due today.\n\n**16 March 2027 (Past - 2 days ago)**\n- **Board Meeting**: The Board of Dunmore Energy plc approved entry into the SPA.\n- **Status**: Completed.\n\n**17 March 2027 (Past - yesterday)**\n- **Client Instructions**: Nadia Okonkwo (Pemberton Systems Ltd) provided instructions regarding regulatory clearance deadline.\n- **Status**: Received.\n\n### 2. Pre-Closing Deadlines\n\n**23 April 2027 (Approximately 5 weeks from today)**\n- **Seller Account Details**: Per Clause 2.2 of the SPA, the Seller must provide written designation of the payment account to the Buyer \"at least five (5) Business Days prior to the Closing Date\" (2 May 2027). Counting back 5 business days from 30 April 2027 (last business day before 2 May 2027) gives 23 April 2027.\n- **Responsibility**: Seller\n- **Consequence**: Failure to provide details may delay payment and potentially breach the SPA.\n\n**1 May 2027 (44 days from today)**\n- **Condition Satisfaction Deadline**: Per Clause 4.5 of the SPA, Conditions must be satisfied \"by the date falling 150 days after the date of this Agreement, being 1 May 2027\". \n- **Note**: There is an inconsistency in the SPA. 150 days from 2 March 2027 would be 30 July 2027, but the document specifically states \"being 1 May 2027\", which is actually 60 days from 2 March 2027.\n- **Interpretation**: The specific date (1 May 2027) likely prevails over the general \"150 days\" reference.\n- **Consequence**: If Conditions are not satisfied or waived by this date, either party may terminate the SPA by written notice.\n\n### 3. Closing Date\n\n**Primary Closing Date: 2 May 2027 (45 days from today)**\n- **SPA Closing Date**: Per Clause 1.1(5) of the SPA, the Closing Date is defined as \"2 May 2027, or such other date as the parties may agree in writing\".\n- **Obligations at Closing** (Clause 3):\n  - Seller to deliver share certificates, stock transfer forms, and other transfer documents\n  - Buyer to pay Purchase Price of $185,000,000\n  - Closing to occur at Buyer's offices or agreed location\n\n**Alternative Closing Date: 18 March 2027 (Today)**\n- **Escrow Agreement Closing Date**: Per Clause 1.1(19) of the Escrow Agreement, Closing Date is defined as \"18 March 2027\".\n- **Discrepancy**: There is a significant discrepancy between the SPA Closing Date (2 May 2027) and the Escrow Agreement Closing Date (18 March 2027). This requires clarification and potential amendment.\n- **Current Status**: Today is 18 March 2027, so if the Escrow Agreement date controls, closing obligations may be due immediately.\n\n### 4. Post-Closing Deadlines\n\n**Warranty Claims (SPA Clause 9.7)**\n- **Notification Period**: 30 days from when Buyer first becomes aware of matter giving rise to claim\n- **Requirements**: Written notice specifying nature, factual basis, and amount claimed\n- **Basket Threshold**: Claims only actionable if aggregate exceeds $1,850,000 (1% of Purchase Price)\n- **Practical Consideration**: This is a relatively short notification period requiring prompt internal processes for identifying potential breaches.\n\n**Escrow Claims (Escrow Agreement Clause 5.2)**\n- **Notification Period**: 45 days from when Buyer becomes aware of matter giving rise to claim\n- **Requirements**: Claim Notice served on Seller and Escrow Agent\n- **Escrow Amount**: £7,500,000\n- **Release Timing**: Funds cannot be released before 18 March 2028 (12 months from Escrow Closing Date) without joint written instruction\n\n**Regulatory Clearance**\n- **Deadline**: 13 September 2027 (180 days from today)\n- **Source**: Client email dated 17 March 2027\n- **Note**: This is not referenced in the SPA but is a practical deadline for merger clearance\n- **Importance**: Failure to obtain clearance by this date could impact the transaction\n\n**Invoice Settlement (Articles of Association Clause 4.2)**\n- **Deadline**: 60 days from date of invoice for invoices issued to Pemberton Logistics plc\n- **Ongoing Obligation**: Continues post-acquisition\n- **Material Customer**: Pemberton Logistics plc is identified as a material customer in multiple documents\n\n**Notice Periods**\n- **SPA Notices (Clause 11)**: Deemed received when delivered (if by hand), 48 hours after posting (if by post), or upon electronic confirmation (if by email)\n- **Escrow Agreement Notices (Clause 4)**: Deemed received when delivered personally, 48 hours after posting, or at time of email transmission (if no delivery failure)\n- **Articles of Association Notices (Clause 5)**: Deemed served 48 hours after posting\n- **Practical Implication**: These notice periods affect the effective timing of communications and should be considered when serving time-sensitive notices\n\n### 5. Long-Term Obligations\n\n**Confidentiality (SPA Clause 10.2)**\n- **Duration**: 6 years from termination or completion\n- **Scope**: All information received in connection with the transaction\n- **Parties**: Both Buyer and Seller\n\n**Board Meetings (Articles of Association Clause 3.3)**\n- **Frequency**: At least once every calendar quarter\n- **Ongoing Obligation**: Post-acquisition governance requirement\n\n**Escrow Release (Escrow Agreement Clause 3.1)**\n- **Earliest Release Date**: 18 March 2028 (12 months from Escrow Closing Date)\n- **Early Release**: Requires joint written instruction from Buyer and Seller\n\n## Critical Issues Requiring Attention\n\n1. **Closing Date Discrepancy**: The SPA specifies 2 May 2027 while the Escrow Agreement specifies 18 March 2027. This fundamental inconsistency must be resolved immediately.\n\n2. **SPA Date Discrepancy**: The SPA is dated 2 March 2027, but the Board Minutes reference a \"Share Purchase Agreement dated 18 March 2027\". This may indicate an amended or updated version that needs to be reviewed.\n\n3. **Condition Satisfaction Timeline**: The SPA contains an internal inconsistency regarding the condition satisfaction deadline (150 days vs. 1 May 2027). Clarification is needed.\n\n4. **Immediate Escrow Obligation**: If the Escrow Agreement Closing Date (18 March 2027) controls, the £7,500,000 escrow deposit is due today.\n\n5. **Regulatory Clearance**: The 13 September 2027 deadline is not reflected in the SPA but is critical for transaction completion.\n\n6. **Short Claim Periods**: Both warranty claims (30 days) and escrow claims (45 days) have relatively short notification periods requiring robust internal monitoring processes.\n\n## Recommended Actions\n\n1. **Immediate (Today)**:\n   - Clarify the Closing Date discrepancy with the Seller's counsel\n   - Confirm whether escrow deposit is due today\n   - Check if there is an amended SPA dated 18 March 2027 as referenced in the Board Minutes\n   - Document the board approval obtained on 16 March 2027\n\n2. **Short-term (Next 2 weeks)**:\n   - Coordinate with regulatory counsel on merger clearance timeline\n   - Establish internal processes for monitoring warranty and escrow claim deadlines\n   - Review material contracts with Pemberton Logistics plc\n\n3. **Medium-term (April 2027)**:\n   - Ensure Seller provides payment account details by 23 April 2027\n   - Monitor satisfaction of Conditions precedent\n   - Prepare for Closing on 2 May 2027 (assuming this is the correct date)\n\n4. **Long-term (Post-closing)**:\n   - Implement systems to track warranty and escrow claim deadlines\n   - Monitor quarterly board meeting requirements\n   - Track escrow release timeline (earliest 18 March 2028)\n\n## Conclusion\n\nThe acquisition involves multiple overlapping timelines with critical deadlines in March, April, and May 2027. The most urgent issue is the discrepancy between the SPA and Escrow Agreement closing dates, which must be resolved immediately to avoid breach. The short claim notification periods (30 and 45 days) require the client to establish robust post-acquisition monitoring processes. All deadlines should be tracked on a centralized timeline with clear responsibility assignments.\n\n# Your job\nNo grades are available. Critically assess the deliverable and the work process yourself, as a demanding supervising partner would, and write reusable candidate lessons for improving the work.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|timeline_analysis\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C1\",\n      \"what_went_wrong\": \"The agent identified a discrepancy between the SPA and Escrow Agreement closing dates but did not verify which document supersedes the other in case of conflict, nor did it recommend a legal interpretation of the governing document.\",\n      \"should_have\": \"Analysed the hierarchy of documents and provided guidance on which closing date likely prevails, considering standard contractual principles (e.g., later document or specific vs. general provisions).\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C2\",\n      \"what_went_wrong\": \"The agent calculated deadlines based on dates mentioned in documents but did not cross-check business day conventions (e.g., whether 'days' means calendar or business days) for each obligation.\",\n      \"should_have\": \"Explicitly noted whether each deadline uses calendar or business days and adjusted calculations accordingly, flagging ambiguities for clarification.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C3\",\n      \"what_went_wrong\": \"The agent included a 'Key Deadline Summary Table' but did not distinguish between client-controlled deadlines and counterparty-controlled deadlines, which affects risk allocation.\",\n      \"should_have\": \"Added a column to the summary table indicating whether the deadline is client-controlled, counterparty-controlled, or joint, to clarify responsibility and risk.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C4\",\n      \"what_went_wrong\": \"The agent noted a discrepancy in the SPA's condition satisfaction timeline (150 days vs. 1 May 2027) but did not recommend a method to resolve such ambiguities (e.g., contra proferentem or negotiation).\",\n      \"should_have\": \"Suggested a default interpretation rule (e.g., specific dates prevail over general periods) and recommended seeking clarification from the drafting party.\",\n      \"failure_kind\": \"task_specific\"\n    },\n    {\n      \"criterion_id\": \"C5\",\n      \"what_went_wrong\": \"The agent did not verify whether the 'today' date (18 March 2027) was a business day, which could affect deadlines tied to 'immediate' obligations.\",\n      \"should_have\": \"Checked if the reference date was a business day and noted any implications for deadlines requiring actions 'on or prior to' that date.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C6\",\n      \"what_went_wrong\": \"The agent listed 'Critical Issues Requiring Attention' but did not prioritise them by urgency or legal risk, leaving the partner to infer which issues demand immediate action.\",\n      \"should_have\": \"Ranked critical issues by urgency (e.g., 'immediate', 'high', 'medium') and legal risk (e.g., breach vs. procedural delay).\",\n      \"failure_kind\": \"drafting\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"For every deadline discrepancy between documents, determine and note which document likely governs based on contractual hierarchy (e.g., later document, specific vs. general provisions).\",\n      \"evidence\": [\"C1\"],\n      \"task_type_scope\": \"timeline_analysis\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Explicitly confirm whether each deadline uses calendar or business days. Adjust calculations for business days if required, and flag ambiguities for client clarification.\",\n      \"evidence\": [\"C2\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"In deadline summary tables, include a column indicating whether each deadline is client-controlled, counterparty-controlled, or joint to clarify responsibility and risk.\",\n      \"evidence\": [\"C3\"],\n      \"task_type_scope\": \"timeline_analysis\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"For ambiguities in deadlines (e.g., conflicting dates or periods), apply default interpretation rules (e.g., specific dates prevail over general periods) and recommend seeking clarification from the drafting party.\",\n      \"evidence\": [\"C4\"],\n      \"task_type_scope\": \"timeline_analysis\",\n      \"confidence\": 0.85\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"review\",\n      \"text\": \"Verify whether the reference date ('today') is a business day. Note any implications for deadlines requiring actions 'on or prior to' that date, especially for 'immediate' obligations.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.8\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"Rank critical issues in deliverables by urgency (e.g., 'immediate', 'high', 'medium') and legal risk (e.g., breach vs. procedural delay) to guide partner prioritisation.\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    }\n  ],\n  \"lesson_feedback\": [\n    {\n      \"lesson_id\": \"L0001\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Addresses a common issue in transactional work where document discrepancies arise, and provides a clear rule for resolving them.\"\n    },\n    {\n      \"lesson_id\": \"L0002\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Critical for accurate deadline calculations, as business day conventions vary across jurisdictions and contracts.\"\n    },\n    {\n      \"lesson_id\": \"L0003\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Improves clarity in deliverables by making responsibility explicit, which is essential for risk allocation.\"\n    },\n    {\n      \"lesson_id\": \"L0004\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Provides a structured approach to resolving ambiguities, which is a frequent pain point in contract interpretation.\"\n    },\n    {\n      \"lesson_id\": \"L0005\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Ensures deadlines tied to 'today' are actionable, especially in time-sensitive transactions.\"\n    },\n    {\n      \"lesson_id\": \"L0006\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Prioritisation is key for partners managing multiple matters; this lesson makes deliverables more actionable.\"\n    }\n  ]\n}\n```"
+}

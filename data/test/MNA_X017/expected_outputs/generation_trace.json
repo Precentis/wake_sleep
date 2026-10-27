@@ -1,0 +1,132 @@
+{
+  "docs": [
+    {
+      "title": "share_purchase_agreement.md",
+      "attempts": [
+        {
+          "missing": [
+            "pandemics"
+          ],
+          "usage": {
+            "input_tokens": 638,
+            "output_tokens": 1050
+          }
+        },
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 1716,
+            "output_tokens": 1040
+          }
+        }
+      ]
+    },
+    {
+      "title": "disclosure_letter.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 550,
+            "output_tokens": 989
+          }
+        }
+      ]
+    },
+    {
+      "title": "board_minutes.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 487,
+            "output_tokens": 726
+          }
+        }
+      ]
+    },
+    {
+      "title": "client_email.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 479,
+            "output_tokens": 373
+          }
+        }
+      ]
+    },
+    {
+      "title": "material_customer_contract.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 511,
+            "output_tokens": 1042
+          }
+        }
+      ]
+    }
+  ],
+  "doc_facts": {
+    "share_purchase_agreement.md": {
+      "key": "spa",
+      "facts": [
+        "Parties: Brightwater Logistics plc (Buyer), Fenwick Holdings Ltd (Seller); the Company is Oakhurst Medical Ltd.",
+        "Section 2.1: the Purchase Price is $105,000,000.",
+        "This Agreement is dated 2 January 2026; Closing is scheduled for 25 March 2026 (the 'Closing Date').",
+        "Section 4.5: if the Conditions are not satisfied by the date falling 120 days after the date of this Agreement (signed 2 January 2026), either party may terminate.",
+        "Section 1.1: 'Material Adverse Change' means any event which has a material adverse effect on the business of the Company, excluding changes in general economic conditions, changes affecting the industry generally, and pandemics."
+      ],
+      "must_contain": [
+        "120 days",
+        "2 January 2026",
+        "Material Adverse Change",
+        "pandemics"
+      ]
+    },
+    "disclosure_letter.md": {
+      "key": "disclosure",
+      "facts": [
+        "Disclosure against Warranty 8.2 (IP): the Company's core platform software was developed in 2023 by an independent contractor, Yarrow Energy plc. No written assignment of intellectual property was entered into.",
+        "Disclosure against Warranty 7.1 (Litigation): None.",
+        "Disclosure against Warranty 6.3 (Material Contracts): no material contract contains a change of control provision. (No further disclosure.)"
+      ],
+      "must_contain": [
+        "Yarrow Energy plc",
+        "No written assignment"
+      ]
+    },
+    "board_minutes.md": {
+      "key": "board_minutes",
+      "facts": [
+        "Item 5: the board noted a letter before action from Lowther Engineering Ltd threatening proceedings for approximately $450,000 in respect of alleged defective deliveries. Management to monitor."
+      ],
+      "must_contain": [
+        "Lowther Engineering Ltd",
+        "$450,000"
+      ]
+    },
+    "client_email.md": {
+      "key": "client_email",
+      "facts": [
+        "Regulatory counsel expects merger clearance by 16 June 2026."
+      ],
+      "must_contain": [
+        "16 June 2026"
+      ]
+    },
+    "material_customer_contract.md": {
+      "key": "material_contract",
+      "facts": [
+        "Clause 14.2: either party may terminate this agreement on 30 days' notice if the other party undergoes a change of control without its prior written consent. The counterparty is Oakhurst Technologies Ltd."
+      ],
+      "must_contain": [
+        "change of control",
+        "prior written consent"
+      ]
+    }
+  }
+}

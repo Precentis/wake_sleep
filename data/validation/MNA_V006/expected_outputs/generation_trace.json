@@ -1,0 +1,90 @@
+{
+  "docs": [
+    {
+      "title": "share_purchase_agreement.md",
+      "attempts": [
+        {
+          "missing": [
+            "18 months",
+            "72 months"
+          ],
+          "usage": {
+            "input_tokens": 681,
+            "output_tokens": 1042
+          }
+        },
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 1754,
+            "output_tokens": 1161
+          }
+        }
+      ]
+    },
+    {
+      "title": "escrow_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 546,
+            "output_tokens": 1190
+          }
+        }
+      ]
+    },
+    {
+      "title": "client_email.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 510,
+            "output_tokens": 445
+          }
+        }
+      ]
+    }
+  ],
+  "doc_facts": {
+    "share_purchase_agreement.md": {
+      "key": "spa",
+      "facts": [
+        "Parties: Redcliffe Medical Ltd (Buyer), Ivybridge Pharma plc (Seller); the Company is Saltash Foods Ltd.",
+        "Section 2.1: the Purchase Price is $190,000,000.",
+        "This Agreement is dated 10 April 2027; Closing is scheduled for 17 June 2027 (the 'Closing Date').",
+        "Section 1.1: 'Closing Date' means 17 June 2027.",
+        "Section 3.4 (Earn-out): the Earn-out Payment equals 2 times the amount by which FY2026 EBITDA exceeds $5,000,000, capped at $3,000,000.",
+        "Section 10.1 (Survival): the General Warranties survive Closing for 18 months; the Fundamental Warranties (title, capacity, tax) survive for 72 months. Claims must be notified in writing before expiry."
+      ],
+      "must_contain": [
+        "$5,000,000",
+        "$3,000,000",
+        "18 months",
+        "72 months"
+      ]
+    },
+    "escrow_agreement.md": {
+      "key": "escrow",
+      "facts": [
+        "Clause 4.1: the Escrow Amount shall be released to the Seller on the date falling 12 months after the Closing Date, save to the extent of pending claims notified before that date. 'Business Day' means a day other than a Saturday or Sunday on which banks are open in London.",
+        "The Closing Date is 17 June 2027."
+      ],
+      "must_contain": [
+        "12 months",
+        "17 June 2027"
+      ]
+    },
+    "client_email.md": {
+      "key": "client_email",
+      "facts": [
+        "Management accounts show FY2026 EBITDA of $5,800,000; the Seller says the Earn-out Payment will therefore be $2,200,000."
+      ],
+      "must_contain": [
+        "$5,800,000",
+        "$2,200,000"
+      ]
+    }
+  }
+}

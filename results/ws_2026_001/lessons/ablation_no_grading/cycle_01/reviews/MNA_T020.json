@@ -1,0 +1,142 @@
+{
+  "task_id": "MNA_T020",
+  "cycle": 1,
+  "lineage": "ablation_no_grading",
+  "graded": false,
+  "failures": [
+    {
+      "criterion_id": "C1",
+      "what_went_wrong": "The memo did not verify the completeness of the SPA by cross-referencing the table of contents or clause numbering with the actual document provided.",
+      "should_have": "Systematically checked for missing clauses or schedules by comparing the document's structure against its references.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C2",
+      "what_went_wrong": "The memo flagged a date discrepancy (150 days vs. 23 October 2027) but did not independently calculate the correct date to confirm the error.",
+      "should_have": "Recomputed the termination date from the SPA date to verify the stated termination date's accuracy.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C3",
+      "what_went_wrong": "The memo identified a jurisdictional conflict but did not cross-check the governing law clauses in all ancillary agreements (e.g., escrow, disclosure letter) for consistency.",
+      "should_have": "Reviewed governing law and dispute resolution clauses in all transaction documents to ensure uniformity.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C4",
+      "what_went_wrong": "The memo noted a currency mismatch (USD purchase price vs. GBP escrow) but did not assess whether the escrow amount was correctly calculated as a percentage of the purchase price.",
+      "should_have": "Recomputed the escrow amount as a percentage of the purchase price to verify its accuracy.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C5",
+      "what_went_wrong": "The memo did not explicitly state whether the escrow period (18 months) was aligned with the warranty survival period in the SPA.",
+      "should_have": "Compared the escrow period with the warranty survival period to identify any gaps or overlaps.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C6",
+      "what_went_wrong": "The memo listed risks but did not prioritise them based on a clear methodology (e.g., likelihood vs. impact).",
+      "should_have": "Applied a consistent risk assessment framework (e.g., high/medium/low) with explicit criteria for each rating.",
+      "failure_kind": "task_specific"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T020_0",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "Before finalising a risk assessment, cross-reference all governing law and dispute resolution clauses across transaction documents to identify inconsistencies.",
+      "source_tasks": [
+        "MNA_T020"
+      ],
+      "evidence": [
+        "MNA_T020:C3"
+      ],
+      "task_type_scope": "legal_memo",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T020_1",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Recompute every date-based condition (e.g., termination dates, escrow periods) from the reference date using calendar calculations to verify stated deadlines.",
+      "source_tasks": [
+        "MNA_T020"
+      ],
+      "evidence": [
+        "MNA_T020:C2"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T020_2",
+      "type": "checklist",
+      "category": "review",
+      "text": "For every financial figure derived from another (e.g., escrow as a percentage of purchase price), recalculate the figure independently to confirm accuracy.",
+      "source_tasks": [
+        "MNA_T020"
+      ],
+      "evidence": [
+        "MNA_T020:C4"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T020_3",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Compare the escrow period with the warranty survival period in the SPA to ensure alignment and flag any discrepancies.",
+      "source_tasks": [
+        "MNA_T020"
+      ],
+      "evidence": [
+        "MNA_T020:C5"
+      ],
+      "task_type_scope": "legal_memo",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T020_4",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "When listing risks, apply a consistent risk assessment framework (e.g., likelihood vs. impact) and include the criteria used for each rating.",
+      "source_tasks": [
+        "MNA_T020"
+      ],
+      "evidence": [
+        "MNA_T020:C6"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T020_5",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Verify document completeness by cross-referencing the table of contents, clause numbering, and internal references to identify missing provisions.",
+      "source_tasks": [
+        "MNA_T020"
+      ],
+      "evidence": [
+        "MNA_T020:C1"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.95
+    }
+  ],
+  "lesson_feedback": [],
+  "input_tokens": 3395,
+  "output_tokens": 1056,
+  "cost_usd": 0.0032815,
+  "prompt": "# Task\nType: legal_memo | Practice area: corporate_mna\nYou act for the Buyer, Redcliffe Media Ltd. Redcliffe Media Ltd (the Buyer) is acquiring the entire issued share capital of Ingleby Energy plc (the Company) from Kingsmere Retail Group plc (the Seller).\n\nPrepare a legal memo for the supervising partner analysing the key legal risks in the matter documents. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 10 June 2027. Address the deliverable to the supervising partner.\n\n# Trajectory (25 model steps, 25 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"client_email.md\"})\n 3. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 4. [research] read_document({\"name\": \"disclosure_letter.md\"})\n 5. [research] read_document({\"name\": \"escrow_agreement.md\"})\n 6. [research] search_documents({\"query\": \"warranty\"})\n 7. [research] search_documents({\"query\": \"clause 8\"})\n 8. [research] search_documents({\"query\": \"Eskdale\"})\n 9. [research] search_documents({\"query\": \"Lowther\"})\n10. [analysis] calculate({\"expression\": \"date('2027-06-04')\"})\n11. [analysis] calculate({\"expression\": \"add_days(date('2027-06-04'), 150)\"})\n12. [analysis] calculate({\"expression\": \"add_days(date('2027-06-04'), 150)\"})\n13. [analysis] calculate({\"expression\": \"date('2027-11-15')\"})\n14. [drafting] write_draft(<1046 words>)\n15. [verification] read_draft({})\n16. [verification] calculate({\"expression\": \"add_days(date('2027-06-04'), 150)\"})\n17. [verification] calculate({\"expression\": \"days_between(date('2027-06-04'), date('2027-10-23'))\"})\n18. [editing] edit_draft(find='**Legal Implications:**\\n1. **Automatic Termination Risk:** S' -> '**Legal Implications:**\\n1. **Automatic Termination Risk:** S')\n19. [verification] calculate({\"expression\": \"add_months(date('2027-07-12'), 18)\"})\n20. [editing] edit_draft(find='**Legal Implications:**\\n1. **Forum Shopping Risk:** Parties ' -> '**Legal Implications:**\\n1. **Forum Shopping Risk:** Parties ')\n21. [editing] edit_draft(find='**Legal Implications:**\\n1. **Forum Shopping Risk:** Parties ' -> '**Legal Implications:**\\n1. **Forum Shopping Risk:** Parties ')\n22. [editing] edit_draft(find='### 4.2 Escrow Agreement Revisions\\n\\n1. **Jurisdictional Alig' -> '### 4.2 Escrow Agreement Revisions\\n\\n1. **Jurisdictional Alig')\n23. [editing] edit_draft(find='3. **Timeline Alignment:**\\n   - Extend SPA termination date ' -> '3. **Timeline Alignment:**\\n   - Extend SPA termination date ')\n24. [verification] read_draft({})\n25. [control] finish({\"summary\": \"Legal memo analyzing key legal risks in Redcliffe Media Ltd's acquisition of Ingleby Energy plc, identifying five major risk areas: 1) Intellectual)\n\n# Final deliverable\n# LEGAL MEMORANDUM\n\n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Date:** 10 June 2027  \n**Re:** Acquisition of Ingleby Energy plc by Redcliffe Media Ltd – Key Legal Risks Analysis  \n**Matter:** Redcliffe Media Ltd / Ingleby Energy plc Acquisition  \n\n## 1. EXECUTIVE SUMMARY\n\nThis memorandum analyses the key legal risks arising from the proposed acquisition by Redcliffe Media Ltd (the \"Buyer\") of the entire issued share capital of Ingleby Energy plc (the \"Company\") from Kingsmere Retail Group plc (the \"Seller\"). The transaction documents reveal several significant legal risks requiring immediate attention, particularly concerning intellectual property ownership, escrow arrangements, and regulatory timelines.\n\n## 2. TRANSACTION OVERVIEW\n\n- **Parties:** Buyer (Redcliffe Media Ltd), Seller (Kingsmere Retail Group plc), Target (Ingleby Energy plc)\n- **Purchase Price:** $75,000,000 (seventy-five million US dollars)\n- **Closing Date:** 12 July 2027\n- **Key Conditions:** Regulatory approvals, accuracy of representations and warranties, performance of obligations\n- **Termination Date:** 23 October 2027 (150 days from SPA date of 4 June 2027)\n\n## 3. KEY LEGAL RISKS IDENTIFIED\n\n### 3.1 Intellectual Property Ownership Defect\n\n**Risk:** The Company's core platform software, developed in 2023 by Lowther Foods Ltd, lacks formal written assignment of intellectual property rights.\n\n**Documentary Evidence:**\n- Disclosure Letter dated 8 June 2027, Section 3\n- Development conducted without written agreement assigning IP rights\n- No written assignment executed between Company and Lowther Foods Ltd\n- Company operates on basis of implied licence only\n\n**Legal Implications:**\n1. **Title Risk:** The Company may not have legal title to its core operational software\n2. **Infringement Risk:** Continued use could constitute copyright infringement\n3. **Valuation Impact:** Core business asset may be significantly overvalued\n4. **Future Claims Risk:** Lowther Foods Ltd could assert ownership rights at any time\n\n**Risk Level:** HIGH – This affects fundamental business operations and asset valuation\n\n### 3.2 Escrow Agreement Jurisdictional Conflict\n\n**Risk:** The Escrow Agreement is governed by New York law with ICC arbitration in New York, while the SPA is governed by English law with English court jurisdiction.\n\n**Documentary Evidence:**\n- SPA Clause 15.1: English law and English court jurisdiction\n- Escrow Agreement Clause 12.1: New York law and ICC arbitration in New York\n- Escrow Amount: £1,750,000 (7.5% of purchase price)\n\n**Legal Implications:**\n1. **Forum Shopping Risk:** Parties could engage in strategic forum selection\n2. **Conflict of Laws:** Potential for inconsistent legal interpretations\n3. **Enforcement Complexity:** Cross-border enforcement of arbitration awards\n4. **Increased Costs:** Dual legal systems and arbitration proceedings\n5. **Timing Inconsistency:** Escrow period stated as commencing 10 June 2027 (before completion on 12 July 2027)\n6. **Currency Risk:** Purchase price in USD ($75,000,000) vs escrow in GBP (£1,750,000) creates FX exposure\n\n**Risk Level:** MEDIUM-HIGH – Creates procedural complexity and potential disputes\n\n### 3.3 Regulatory Approval Timeline Conflict\n\n**Risk:** The SPA termination date (23 October 2027) precedes the expected merger clearance date (15 November 2027).\n\n**Documentary Evidence:**\n- Client Email: Merger clearance expected by 15 November 2027\n- SPA Clause 4.5: Termination date 23 October 2027 (150 days from 4 June 2027)\n- SPA Clause 3.1: Conditions must be fulfilled within 150 days\n\n**Legal Implications:**\n1. **Automatic Termination Risk:** SPA may terminate before regulatory approval obtained\n2. **Date Discrepancy:** SPA states 150 days but specifies 23 October 2027 (141 days) - creates ambiguity\n3. **Wasted Costs:** Due diligence and transaction costs incurred without completion\n4. **Renegotiation Leverage:** Seller may seek better terms if renegotiation required\n5. **Market Uncertainty:** Extended timeline could affect business operations\n\n**Risk Level:** HIGH – Fundamental timing mismatch and date ambiguity threaten transaction completion\n\n### 3.4 Material Customer Relationship (Eskdale Pharma plc)\n\n**Risk:** Despite disclosures stating no material financial arrangements, significant escrow established specifically for Eskdale Pharma-related liabilities.\n\n**Documentary Evidence:**\n- Disclosure Letter Section 4: No outstanding loans/guarantees exceeding £100,000\n- Escrow Agreement Recital B: Escrow secures obligations for Eskdale Pharma-related liabilities\n- Client Email: Request for advice on implications of Company's relationship with Eskdale Pharma\n\n**Legal Implications:**\n1. **Contradictory Signals:** Significant escrow suggests unstated concerns\n2. **Due Diligence Gap:** Potential undisclosed liabilities or contingent exposures\n3. **Post-Completion Claims:** Buyer may face unexpected liabilities\n4. **Relationship Risk:** Material customer dependency not fully addressed\n\n**Risk Level:** MEDIUM – Requires enhanced due diligence on customer relationships\n\n### 3.5 Incomplete SPA Documentation\n\n**Risk:** The SPA provided is incomplete, missing key provisions including warranties, indemnities, and limitations of liability.\n\n**Documentary Evidence:**\n- SPA references Clause 8 (warranties) and Clause 8.2 (specific warranty) but not included\n- Disclosure Letter references Warranties in Clause 8 of SPA\n- Escrow Agreement references Clause 8.2 of SPA for indemnification\n\n**Legal Implications:**\n1. **Uncertain Obligations:** Buyer's rights and Seller's obligations unclear\n2. **Enforcement Risk:** Missing provisions may be unenforceable\n3. **Negotiation Disadvantage:** Critical terms not documented\n4. **Due Diligence Deficiency:** Incomplete risk assessment possible\n\n**Risk Level:** HIGH – Transaction lacks fundamental contractual protections\n\n## 4. RECOMMENDATIONS\n\n### 4.1 Immediate Actions Required\n\n1. **IP Remediation:** \n   - Negotiate retroactive assignment from Lowther Foods Ltd\n   - Conduct IP valuation assessment\n   - Consider price adjustment or specific indemnity\n\n2. **Document Completion:**\n   - Obtain complete SPA including all schedules and annexures\n   - Review and negotiate warranty and indemnity provisions\n   - Ensure consistency across all transaction documents\n\n3. **Timeline Alignment:**\n   - Extend SPA termination date beyond 15 November 2027\n   - Correct date discrepancy (150 days vs 23 October 2027)\n   - Consider regulatory approval as condition precedent\n   - Negotiate extension mechanism for regulatory delays\n\n### 4.2 Escrow Agreement Revisions\n\n1. **Jurisdictional Alignment:**\n   - Align governing law with SPA (English law)\n   - Consider English arbitration or court jurisdiction\n   - Ensure consistent dispute resolution mechanisms\n\n2. **Clarity on Claims:**\n   - Define specific Eskdale Pharma-related triggers\n   - Establish clear claims process and evidence requirements\n   - Review escrow amount adequacy (£1,750,000)\n\n3. **Timing Correction:**\n   - Align escrow commencement date with actual completion date\n   - Clarify escrow period calculation (18 months from completion)\n\n4. **Currency Consistency:**\n   - Consider aligning escrow currency with purchase price currency (USD)\n   - Address foreign exchange risk in escrow arrangements\n\n### 4.3 Enhanced Due Diligence\n\n1. **Customer Relationships:**\n   - Comprehensive review of Eskdale Pharma contracts\n   - Assessment of revenue concentration risk\n   - Analysis of contractual termination rights\n\n2. **Software Due Diligence:**\n   - Technical audit of core platform software\n   - Assessment of alternative software options\n   - Review of maintenance and support arrangements\n\n## 5. CONCLUSION\n\nThe acquisition presents several material legal risks requiring immediate attention. The intellectual property defect represents the most significant risk, potentially affecting the fundamental value proposition of the transaction. The jurisdictional conflict in dispute resolution mechanisms and the regulatory timeline mismatch also pose substantial completion risks.\n\n**Priority Actions:**\n1. Address IP ownership issue before completion\n2. Obtain complete transaction documentation\n3. Align regulatory and contractual timelines\n4. Harmonise dispute resolution mechanisms\n\nWithout addressing these issues, the Buyer faces significant post-completion liabilities and operational risks. Immediate renegotiation of key terms is recommended to protect the Buyer's interests and ensure transaction viability.\n\n**Next Steps:** Request urgent meeting with Seller's counsel to address identified issues and negotiate necessary amendments to transaction documents.\n\n# Your job\nNo grades are available. Critically assess the deliverable and the work process yourself, as a demanding supervising partner would, and write reusable candidate lessons for improving the work.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|legal_memo\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C1\",\n      \"what_went_wrong\": \"The memo did not verify the completeness of the SPA by cross-referencing the table of contents or clause numbering with the actual document provided.\",\n      \"should_have\": \"Systematically checked for missing clauses or schedules by comparing the document's structure against its references.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C2\",\n      \"what_went_wrong\": \"The memo flagged a date discrepancy (150 days vs. 23 October 2027) but did not independently calculate the correct date to confirm the error.\",\n      \"should_have\": \"Recomputed the termination date from the SPA date to verify the stated termination date's accuracy.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C3\",\n      \"what_went_wrong\": \"The memo identified a jurisdictional conflict but did not cross-check the governing law clauses in all ancillary agreements (e.g., escrow, disclosure letter) for consistency.\",\n      \"should_have\": \"Reviewed governing law and dispute resolution clauses in all transaction documents to ensure uniformity.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C4\",\n      \"what_went_wrong\": \"The memo noted a currency mismatch (USD purchase price vs. GBP escrow) but did not assess whether the escrow amount was correctly calculated as a percentage of the purchase price.\",\n      \"should_have\": \"Recomputed the escrow amount as a percentage of the purchase price to verify its accuracy.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C5\",\n      \"what_went_wrong\": \"The memo did not explicitly state whether the escrow period (18 months) was aligned with the warranty survival period in the SPA.\",\n      \"should_have\": \"Compared the escrow period with the warranty survival period to identify any gaps or overlaps.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C6\",\n      \"what_went_wrong\": \"The memo listed risks but did not prioritise them based on a clear methodology (e.g., likelihood vs. impact).\",\n      \"should_have\": \"Applied a consistent risk assessment framework (e.g., high/medium/low) with explicit criteria for each rating.\",\n      \"failure_kind\": \"task_specific\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"Before finalising a risk assessment, cross-reference all governing law and dispute resolution clauses across transaction documents to identify inconsistencies.\",\n      \"evidence\": [\"C3\"],\n      \"task_type_scope\": \"legal_memo\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Recompute every date-based condition (e.g., termination dates, escrow periods) from the reference date using calendar calculations to verify stated deadlines.\",\n      \"evidence\": [\"C2\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"review\",\n      \"text\": \"For every financial figure derived from another (e.g., escrow as a percentage of purchase price), recalculate the figure independently to confirm accuracy.\",\n      \"evidence\": [\"C4\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Compare the escrow period with the warranty survival period in the SPA to ensure alignment and flag any discrepancies.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"legal_memo\",\n      \"confidence\": 0.85\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"When listing risks, apply a consistent risk assessment framework (e.g., likelihood vs. impact) and include the criteria used for each rating.\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Verify document completeness by cross-referencing the table of contents, clause numbering, and internal references to identify missing provisions.\",\n      \"evidence\": [\"C1\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.95\n    }\n  ],\n  \"lesson_feedback\": []\n}\n```"
+}

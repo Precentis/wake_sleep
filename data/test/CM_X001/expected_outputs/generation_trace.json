@@ -1,0 +1,94 @@
+{
+  "docs": [
+    {
+      "title": "underwriting_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 513,
+            "output_tokens": 1091
+          }
+        }
+      ]
+    },
+    {
+      "title": "prospectus_extract.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 499,
+            "output_tokens": 1078
+          }
+        }
+      ]
+    },
+    {
+      "title": "board_minutes.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 491,
+            "output_tokens": 838
+          }
+        }
+      ]
+    },
+    {
+      "title": "client_email.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 439,
+            "output_tokens": 355
+          }
+        }
+      ]
+    }
+  ],
+  "doc_facts": {
+    "underwriting_agreement.md": {
+      "key": "underwriting",
+      "facts": [
+        "Parties: Whitlock Holdings Ltd (Company) and Elstree Logistics Securities (Underwriter).",
+        "Clause 3: the Company shall pay the Underwriters a commission of 6.0% of the gross proceeds of the Offering (10,000,000 shares at $22.00 per share), being $15,180,000."
+      ],
+      "must_contain": [
+        "6.0%",
+        "10,000,000",
+        "$22.00",
+        "$15,180,000"
+      ]
+    },
+    "prospectus_extract.md": {
+      "key": "prospectus",
+      "facts": [
+        "Issuer: Whitlock Holdings Ltd. The date of this Prospectus is 25 April 2027.",
+        "Legal Proceedings: the Company is not party to any legal proceedings which may have a significant effect on its financial position.",
+        "Related Party Transactions: there are no related party transactions other than directors' service agreements."
+      ],
+      "must_contain": []
+    },
+    "board_minutes.md": {
+      "key": "board_minutes",
+      "facts": [
+        "Item 3: the board discussed a class action filed by Yarrow Holdings Ltd seeking $8,000,000 in damages. Counsel assesses the claim as having reasonable prospects.",
+        "Item 7: the board approved a loan of $2,500,000 from the Company to Marcus Rosenthal, a director, on interest-free terms."
+      ],
+      "must_contain": [
+        "Yarrow Holdings Ltd",
+        "$8,000,000",
+        "Marcus Rosenthal",
+        "$2,500,000"
+      ]
+    },
+    "client_email.md": {
+      "key": "client_email",
+      "facts": [],
+      "must_contain": []
+    }
+  }
+}

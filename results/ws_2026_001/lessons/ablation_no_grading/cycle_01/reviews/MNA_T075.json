@@ -1,0 +1,142 @@
+{
+  "task_id": "MNA_T075",
+  "cycle": 1,
+  "lineage": "ablation_no_grading",
+  "graded": false,
+  "failures": [
+    {
+      "criterion_id": "C1",
+      "what_went_wrong": "The agent performed redundant calculations (steps 11-18) for the working capital shortfall without consolidating or verifying the results against the client's stated figures.",
+      "should_have": "Consolidated calculations into a single step and cross-checked the derived shortfall against the client's email for consistency before proceeding.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C2",
+      "what_went_wrong": "The agent identified a purchase price discrepancy but did not reconcile the conflicting figures (SPA vs. client email vs. calculated adjusted price) or propose a methodology for resolving such discrepancies.",
+      "should_have": "Established a clear rule for resolving purchase price discrepancies, such as prioritizing the SPA figure unless overridden by a working capital adjustment clause.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C3",
+      "what_went_wrong": "The agent flagged date inconsistencies across documents but did not verify which document's date should govern or propose a standard approach for handling such inconsistencies.",
+      "should_have": "Applied a hierarchy (e.g., SPA date prevails over ancillary documents) and recommended a standard clause to resolve ambiguities.",
+      "failure_kind": "task_specific"
+    },
+    {
+      "criterion_id": "C4",
+      "what_went_wrong": "The agent noted a quorum inconsistency in the board minutes but did not cross-reference the Articles of Association to confirm the quorum requirement or assess the validity of the board's approval.",
+      "should_have": "Verified the quorum requirement against the full Articles and flagged invalid resolutions as a separate risk.",
+      "failure_kind": "analysis"
+    },
+    {
+      "criterion_id": "C5",
+      "what_went_wrong": "The agent identified missing warranties but did not prioritize them by materiality or link them to specific client instructions (e.g., Bellhaven Medical Ltd).",
+      "should_have": "Categorized warranties by risk level and aligned them with client priorities, such as material contracts.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C6",
+      "what_went_wrong": "The agent did not systematically verify whether all client requests (e.g., Bellhaven Medical Ltd representations) were addressed in the deliverable.",
+      "should_have": "Created a checklist of client instructions and cross-referenced them against the draft to ensure full coverage.",
+      "failure_kind": "review"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T075_0",
+      "type": "checklist",
+      "category": "review",
+      "text": "Before finalizing the deliverable, cross-reference every client instruction or request (e.g., specific representations, risk priorities) against the draft to ensure all are addressed.",
+      "source_tasks": [
+        "MNA_T075"
+      ],
+      "evidence": [
+        "MNA_T075:C6"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T075_1",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "When calculating financial adjustments (e.g., working capital shortfalls), consolidate calculations into a single step and cross-check results against client-provided figures to identify discrepancies early.",
+      "source_tasks": [
+        "MNA_T075"
+      ],
+      "evidence": [
+        "MNA_T075:C1"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T075_2",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "For document inconsistencies (e.g., dates, quorum requirements), verify the governing document hierarchy (e.g., SPA prevails) and recommend standard clauses to resolve ambiguities.",
+      "source_tasks": [
+        "MNA_T075"
+      ],
+      "evidence": [
+        "MNA_T075:C3"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T075_3",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Prioritize warranties and representations by materiality, linking high-risk items (e.g., litigation, material contracts) to client instructions or disclosed risks.",
+      "source_tasks": [
+        "MNA_T075"
+      ],
+      "evidence": [
+        "MNA_T075:C5"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T075_4",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "For corporate approvals (e.g., board resolutions), cross-reference quorum requirements against governing documents (e.g., Articles of Association) and flag invalid approvals as a separate risk.",
+      "source_tasks": [
+        "MNA_T075"
+      ],
+      "evidence": [
+        "MNA_T075:C4"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.8
+    },
+    {
+      "candidate_id": "c01_MNA_T075_5",
+      "type": "practice_note",
+      "category": "drafting",
+      "text": "When identifying purchase price discrepancies, propose a resolution methodology (e.g., SPA figure prevails unless adjusted by working capital clause) and flag unresolved conflicts for client instructions.",
+      "source_tasks": [
+        "MNA_T075"
+      ],
+      "evidence": [
+        "MNA_T075:C2"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.85
+    }
+  ],
+  "lesson_feedback": [],
+  "input_tokens": 3896,
+  "output_tokens": 1143,
+  "cost_usd": 0.0036625,
+  "prompt": "# Task\nType: contract_review | Practice area: corporate_mna\nYou act for the Buyer, Arden Bioscience plc. Arden Bioscience plc (the Buyer) is acquiring the entire issued share capital of Orwell Marine Ltd (the Company) from Elstree Retail Group plc (the Seller).\n\nReview the principal agreement against the other matter documents and report the problematic provisions. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 9 September 2026. Address the deliverable to the supervising partner.\n\n# Trajectory (29 model steps, 29 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 3. [research] read_document({\"name\": \"client_email.md\"})\n 4. [research] read_document({\"name\": \"disclosure_letter.md\"})\n 5. [research] read_document({\"name\": \"board_minutes.md\"})\n 6. [research] read_document({\"name\": \"articles_of_association_extract.md\"})\n 7. [research] search_documents({\"query\": \"warranty\"})\n 8. [research] search_documents({\"query\": \"representation\"})\n 9. [research] search_documents({\"query\": \"material adverse\"})\n10. [research] search_documents({\"query\": \"condition\"})\n11. [analysis] calculate({\"expression\": \"Target Working Capital = 3500000\"})\n12. [analysis] calculate({\"expression\": \"target_working_capital = 3500000\"})\n13. [analysis] calculate({\"expression\": \"estimated_closing_working_capital = 2880000\"})\n14. [analysis] calculate({\"expression\": \"shortfall = target_working_capital - estimated_closing_working_capital\"})\n15. [analysis] calculate({\"expression\": \"target = 3500000\"})\n16. [analysis] calculate({\"expression\": \"estimated = 2880000\"})\n17. [analysis] calculate({\"expression\": \"shortfall = target - estimated\"})\n18. [analysis] calculate({\"expression\": \"3500000 - 2880000\"})\n19. [analysis] calculate({\"expression\": \"45000000 - 620000\"})\n20. [analysis] calculate({\"expression\": \"days_between(date('2026-08-16'), date('2026-09-09'))\"})\n21. [analysis] calculate({\"expression\": \"days_between(date('2026-09-09'), date('2026-11-09'))\"})\n22. [drafting] write_draft(<1245 words>)\n23. [verification] read_draft({})\n24. [editing] edit_draft(find='### 6. Material Customer Representation Omission\\n\\n**Issue:**' -> '### 6. Material Customer Representation Omission\\n\\n**Issue:**')\n25. [editing] edit_draft(find='### 7. Document Date Inconsistencies\\n\\n**Issue:** Significant' -> '### 7. Document Date Inconsistencies\\n\\n**Issue:** Significant')\n26. [editing] edit_draft(find='### 8. Share Transfer Formalities\\n\\n**Issue:** Articles 2.3 r' -> '### 8. Share Transfer Formalities\\n\\n**Issue:** Articles 2.3 r')\n27. [editing] edit_draft(find='## Executive Summary\\n\\nI have reviewed the draft Share Purcha' -> '## Executive Summary\\n\\nI have reviewed the draft Share Purcha')\n28. [verification] read_draft({})\n29. [control] finish({\"summary\": \"Comprehensive legal review of the Share Purchase Agreement for Arden Bioscience plc's acquisition of Orwell Marine Ltd, identifying 9 major problem)\n\n# Final deliverable\n# Legal Review: Share Purchase Agreement for Acquisition of Orwell Marine Ltd\n\n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Date:** 9 September 2026  \n**Matter:** Acquisition of Orwell Marine Ltd by Arden Bioscience plc  \n**Client:** Arden Bioscience plc (Buyer)  \n**Counterparty:** Elstree Retail Group plc (Seller)  \n**Target:** Orwell Marine Ltd (Company)\n\n## Executive Summary\n\nI have reviewed the draft Share Purchase Agreement (SPA) dated 16 August 2026 and related matter documents. The SPA contains several significant deficiencies that require urgent attention before execution. Most critically:\n\n1. **The SPA lacks essential warranties and representations** despite the existence of a disclosure letter that references them.\n2. **There is a material inconsistency** between the disclosure letter (which states no threatened litigation) and board minutes (which reveal a $1.2 million threatened claim).\n3. **The working capital adjustment mechanism** is heavily weighted against the Buyer, with inadequate protections.\n4. **Key conditions precedent** mentioned in board minutes are absent from the SPA.\n5. **Multiple document inconsistencies** create uncertainty about dates, board authority, and share transfer procedures.\n6. **Missing specific protections** for the key Bellhaven Medical Ltd customer relationship as requested by the client.\n\nThe transaction carries substantial risk in its current form and requires material amendments to protect the Buyer's interests.\n\n## Detailed Analysis of Problematic Provisions\n\n### 1. Missing Warranties and Representations\n\n**Issue:** The SPA contains no warranties or representations section, yet:\n- The Disclosure Letter (lines 15, 25, 33) explicitly references \"Warranty 7.1 (Litigation)\"\n- The Disclosure Letter defines \"Warranty\" as \"any warranty, representation or undertaking given by the Seller in the Agreement\"\n- The Client Email (line 11) specifically requests that \"any representations concerning material contracts should reflect\" the Bellhaven Medical Ltd relationship\n\n**Risk:** Without warranties, the Buyer has no contractual recourse if:\n- The Company's financial position differs from what was represented\n- There are undisclosed liabilities\n- Material contracts (like the Bellhaven supply agreement) contain unfavorable terms\n- The Company's assets are not as represented\n\n**Recommendation:** Insert comprehensive warranties covering:\n- Title to shares\n- Accounts and financial position\n- Taxation\n- Litigation\n- Material contracts (specifically referencing Bellhaven Medical Ltd)\n- Compliance with laws\n- Assets and intellectual property\n- Employees\n- Environmental matters\n\n### 2. Litigation Disclosure Inconsistency\n\n**Issue:** Critical discrepancy between documents:\n- **Disclosure Letter (lines 27-33):** \"The Seller discloses that there are no actual, pending or, to the best of the Seller's knowledge, threatened claims... The Seller confirms that no litigation... is current or anticipated.\"\n- **Board Minutes (lines 30-31):** \"The board noted a letter before action dated 1 September 2026... threatening legal proceedings in the amount of approximately $1,200,000... The Company denies liability and considers the claim to be without merit.\"\n\n**Risk:** The Buyer may acquire a company facing a $1.2 million claim without contractual protection. Even if the claim is without merit, defense costs could be substantial.\n\n**Recommendation:**\n1. Require full disclosure of the Foxley Marine Ltd claim in the Disclosure Letter\n2. Include specific warranty regarding absence of threatened litigation\n3. Consider retention or indemnity for this specific claim\n4. Conduct further due diligence on the merits of the claim\n\n### 3. Working Capital Adjustment Mechanism (Clause 2.3)\n\n**Issue:** The adjustment mechanism in Clause 2.3 is problematic:\n- **Unilateral Preparation:** \"to be prepared by the Buyer\"\n- **Limited Seller Involvement:** \"reasonably agreed by the Seller\"\n- **No Dispute Resolution:** No mechanism specified for resolving disagreements\n- **Timing:** 30 days may be insufficient for proper review\n\n**Financial Impact:** Based on Client Email information:\n- Target Working Capital: $3,500,000 (SPA Clause 1.1)\n- Estimated Closing Working Capital: $2,880,000 (Client Email)\n- **Shortfall:** $620,000\n- **Adjusted Purchase Price:** $44,380,000 (not $43,760,000 as mentioned in Client Email)\n\n**Risk:** The Seller could unreasonably withhold agreement, delaying or preventing price adjustment. The Buyer bears all preparation costs and burden of proof.\n\n**Recommendation:**\n1. Replace with joint preparation or independent accountant determination\n2. Include detailed dispute resolution mechanism (e.g., reference to independent expert)\n3. Specify accounting principles and methodology in detail\n4. Extend timeline for review and agreement\n5. Include interest provisions for late payments\n\n### 4. Missing Conditions Precedent\n\n**Issue:** Board Minutes (line 34) mention the transaction is \"conditional upon, among other things, board approval by the Company, confirmation of no material adverse change, and due completion of disclosures,\" but these conditions are absent from the SPA.\n\n**Risk:** The Buyer could be obligated to complete the purchase even if:\n- The Company's board withdraws approval\n- A material adverse change occurs\n- Disclosures are incomplete or inaccurate\n\n**Recommendation:** Insert conditions precedent including:\n- Board approval of Orwell Marine Ltd\n- No material adverse change between signing and completion\n- Accuracy of disclosures at completion\n- Regulatory approvals (if applicable)\n- Due diligence satisfaction\n\n### 5. Confidentiality Clause Overbreadth (Clause 5)\n\n**Issue:** Clause 5.1 prohibits disclosure of \"any Confidential Information\" which is broadly defined in Clause 5.2 as \"all information... disclosed by one Party to the other in connection with this Agreement.\"\n\n**Risk:** This could prevent the Buyer from:\n- Operating the acquired business (using \"operational information\")\n- Disclosing financial information to lenders or investors\n- Sharing commercial information with suppliers or customers\n- Complying with securities disclosure requirements\n\n**Recommendation:** Include standard carve-outs for:\n- Information required to operate the acquired business\n- Disclosure to professional advisors\n- Regulatory and securities law requirements\n- Information already in public domain\n- Information independently developed\n\n### 6. Material Customer Representation Omission\n\n**Issue:** Client Email (line 11) specifically requests: \"any representations concerning material contracts should reflect this relationship\" regarding Bellhaven Medical Ltd, but no such representations exist.\n\n**Background:** Bellhaven Medical Ltd is:\n- Referenced as \"Material Customer\" in Articles of Association (line 11)\n- Party to a supply agreement dated 15 November 2023 (Disclosure Letter lines 37-43)\n- Generates £2,190,000 annual revenue (approximately 25% of implied enterprise value)\n\n**Risk:** Without specific warranties on this key customer relationship, the Buyer assumes risk regarding:\n- Contract validity and enforceability\n- Renewal terms and termination rights\n- Payment terms and credit risk\n- Exclusivity or non-compete provisions\n\n**Recommendation:** Include specific warranties regarding:\n- Validity and enforceability of the Bellhaven supply agreement\n- No breaches or defaults\n- No termination notices received or given\n- Accuracy of revenue figures disclosed\n\n### 7. Document Date Inconsistencies\n\n**Issue:** Significant date discrepancies across documents:\n- **SPA Date:** 16 August 2026 (line 3)\n- **Disclosure Letter Reference Date:** \"on or about 9 September 2026\" (line 5)\n- **Board Minutes Date:** 6 September 2026 (line 3)\n- **Deliverable Date:** 9 September 2026 (today)\n- **Target Completion Date:** \"prior to 9 September 2026\" per Client Email\n\n**Risk:** Creates uncertainty about which version of documents govern and when obligations commence.\n\n**Recommendation:** Align all document dates and ensure consistency in effective dates.\n\n### 8. Share Transfer Formalities\n\n**Issue:** Articles 2.3 requires that \"No transfer of shares in the Company shall be registered unless accompanied by a duly executed instrument of transfer and such evidence as the Directors may reasonably require to demonstrate title.\"\n\n**Risk:** The SPA only requires \"share transfer forms... duly executed in blank\" (Clause 3.2(a)). The Directors (who may be appointed by Seller) could unreasonably withhold registration by demanding additional evidence.\n\n**Recommendation:** Include specific provision that:\n1. The Buyer will have power to appoint new directors at completion\n2. The outgoing directors will provide all necessary cooperation for share registration\n3. Any additional evidence required will be provided by Seller at its cost\n\n### 9. Board Meeting Quorum Inconsistency\n\n**Issue:** Articles 5.1 states: \"The quorum for board meetings is three directors.\" However, Board Minutes (lines 12-13) state: \"2 directors were present, constituting a quorate meeting.\"\n\n**Risk:** Raises questions about the validity of board resolutions, including the approval of the SPA transaction.\n\n**Recommendation:** \n1. Verify the actual Articles in force (not just the extract)\n2. Require Seller to confirm validity of all board resolutions\n3. Include warranty regarding corporate authority and validity of proceedings\n\n## Additional Observations\n\n### 1. Purchase Price Discrepancy\n- SPA Purchase Price: $45,000,000 (Clause 2.1)\n- Client Email mentions \"adjusted purchase price of $43,760,000\"\n- My calculation based on working capital shortfall: $44,380,000\n- **Action:** Clarify the actual expected purchase price with client\n\n### 2. Closing Date Timing\n- SPA Closing Date: 9 November 2026 (Clause 1.1)\n- Client Email targets completion \"prior to 9 September 2026\"\n- **Action:** Confirm actual intended completion date\n\n### 3. Articles of Association\n- Articles have been amended specifically for this transaction (line 2)\n- Include specific reference to Bellhaven as \"Material Customer\"\n- Include confidentiality obligations that survive the transaction\n- **Action:** Review full Articles to ensure they align with Buyer's post-acquisition plans\n\n## Urgent Next Steps\n\n1. **Immediate Client Meeting:** Discuss the litigation discrepancy and obtain instructions.\n2. **Amend SPA:** Insert comprehensive warranties and representations.\n3. **Revise Disclosure Letter:** Ensure accurate disclosure of Foxley Marine claim.\n4. **Strengthen Working Capital Mechanism:** Implement fair dispute resolution.\n5. **Add Conditions Precedent:** Protect Buyer with appropriate conditions.\n6. **Clarify Financial Terms:** Confirm purchase price expectations.\n\n## Conclusion\n\nThe current SPA exposes Arden Bioscience plc to unacceptable risks, particularly regarding undisclosed litigation and the absence of contractual protections. The document requires substantial revision before any consideration of execution. The most critical issues requiring immediate attention are the missing warranties and the litigation disclosure inconsistency.\n\nI recommend we schedule an urgent call with the client to discuss these findings and agree on negotiation strategy.\n\n# Your job\nNo grades are available. Critically assess the deliverable and the work process yourself, as a demanding supervising partner would, and write reusable candidate lessons for improving the work.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|contract_review\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C1\",\n      \"what_went_wrong\": \"The agent performed redundant calculations (steps 11-18) for the working capital shortfall without consolidating or verifying the results against the client's stated figures.\",\n      \"should_have\": \"Consolidated calculations into a single step and cross-checked the derived shortfall against the client's email for consistency before proceeding.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C2\",\n      \"what_went_wrong\": \"The agent identified a purchase price discrepancy but did not reconcile the conflicting figures (SPA vs. client email vs. calculated adjusted price) or propose a methodology for resolving such discrepancies.\",\n      \"should_have\": \"Established a clear rule for resolving purchase price discrepancies, such as prioritizing the SPA figure unless overridden by a working capital adjustment clause.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C3\",\n      \"what_went_wrong\": \"The agent flagged date inconsistencies across documents but did not verify which document's date should govern or propose a standard approach for handling such inconsistencies.\",\n      \"should_have\": \"Applied a hierarchy (e.g., SPA date prevails over ancillary documents) and recommended a standard clause to resolve ambiguities.\",\n      \"failure_kind\": \"task_specific\"\n    },\n    {\n      \"criterion_id\": \"C4\",\n      \"what_went_wrong\": \"The agent noted a quorum inconsistency in the board minutes but did not cross-reference the Articles of Association to confirm the quorum requirement or assess the validity of the board's approval.\",\n      \"should_have\": \"Verified the quorum requirement against the full Articles and flagged invalid resolutions as a separate risk.\",\n      \"failure_kind\": \"analysis\"\n    },\n    {\n      \"criterion_id\": \"C5\",\n      \"what_went_wrong\": \"The agent identified missing warranties but did not prioritize them by materiality or link them to specific client instructions (e.g., Bellhaven Medical Ltd).\",\n      \"should_have\": \"Categorized warranties by risk level and aligned them with client priorities, such as material contracts.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C6\",\n      \"what_went_wrong\": \"The agent did not systematically verify whether all client requests (e.g., Bellhaven Medical Ltd representations) were addressed in the deliverable.\",\n      \"should_have\": \"Created a checklist of client instructions and cross-referenced them against the draft to ensure full coverage.\",\n      \"failure_kind\": \"review\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"review\",\n      \"text\": \"Before finalizing the deliverable, cross-reference every client instruction or request (e.g., specific representations, risk priorities) against the draft to ensure all are addressed.\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"When calculating financial adjustments (e.g., working capital shortfalls), consolidate calculations into a single step and cross-check results against client-provided figures to identify discrepancies early.\",\n      \"evidence\": [\"C1\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"For document inconsistencies (e.g., dates, quorum requirements), verify the governing document hierarchy (e.g., SPA prevails) and recommend standard clauses to resolve ambiguities.\",\n      \"evidence\": [\"C3\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.85\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"Prioritize warranties and representations by materiality, linking high-risk items (e.g., litigation, material contracts) to client instructions or disclosed risks.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"For corporate approvals (e.g., board resolutions), cross-reference quorum requirements against governing documents (e.g., Articles of Association) and flag invalid approvals as a separate risk.\",\n      \"evidence\": [\"C4\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.8\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"drafting\",\n      \"text\": \"When identifying purchase price discrepancies, propose a resolution methodology (e.g., SPA figure prevails unless adjusted by working capital clause) and flag unresolved conflicts for client instructions.\",\n      \"evidence\": [\"C2\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.85\n    }\n  ],\n  \"lesson_feedback\": []\n}\n```"
+}

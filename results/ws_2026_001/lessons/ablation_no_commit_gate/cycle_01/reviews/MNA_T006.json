@@ -1,0 +1,162 @@
+{
+  "task_id": "MNA_T006",
+  "cycle": 1,
+  "lineage": "ablation_no_commit_gate",
+  "graded": true,
+  "failures": [
+    {
+      "criterion_id": "C1",
+      "what_went_wrong": "The deliverable identified the de minimis threshold as a deductible but failed to explicitly compare it to a tipping basket or explain why it is less favourable to the Buyer.",
+      "should_have": "Explicitly compared the identified basket type (deductible) to alternative basket types (e.g., tipping basket) and explained the practical implications for the Buyer's recovery rights.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C2",
+      "what_went_wrong": "The deliverable listed conflicting notice periods (30-day vs. 60-day) but did not identify the conflict or recommend a course of action to resolve it.",
+      "should_have": "Highlighted the conflict between the two notice periods, explained the risk of relying on the longer period, and recommended working to the shorter period or aligning the documents.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C5",
+      "what_went_wrong": "The deliverable lacked pinpoint citations (document name and section/clause numbers) for key findings, making it harder to verify or reference the source.",
+      "should_have": "Included pinpoint citations for every material obligation, deadline, or risk identified in the analysis.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C6",
+      "what_went_wrong": "The executive summary described the scope of the analysis but did not state the overall conclusion or highlight the most important risks upfront.",
+      "should_have": "Opened with a concise 'bottom line' summarising the key takeaways, risks, and action items before diving into details.",
+      "failure_kind": "procedural"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T006_0",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "For every identified basket or threshold, explicitly state the type (e.g., deductible, tipping) and compare it to alternative structures, explaining the practical implications for the client's recovery rights.",
+      "source_tasks": [
+        "MNA_T006"
+      ],
+      "evidence": [
+        "MNA_T006:C1"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T006_1",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "When identifying conflicting deadlines or obligations across documents, flag the conflict, assess which provision governs, and recommend a course of action to mitigate risk.",
+      "source_tasks": [
+        "MNA_T006"
+      ],
+      "evidence": [
+        "MNA_T006:C2"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T006_2",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Include a pinpoint citation (document name and section/clause number) for every material obligation, deadline, or risk identified in the analysis.",
+      "source_tasks": [
+        "MNA_T006"
+      ],
+      "evidence": [
+        "MNA_T006:C5"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 1.0
+    },
+    {
+      "candidate_id": "c01_MNA_T006_3",
+      "type": "practice_note",
+      "category": "drafting",
+      "text": "Open every deliverable with a 'Bottom line' section: 1-3 bullet points summarising the overall conclusion, key risks, and critical next steps before detailed analysis.",
+      "source_tasks": [
+        "MNA_T006"
+      ],
+      "evidence": [
+        "MNA_T006:C6"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T006_4",
+      "type": "checklist",
+      "category": "review",
+      "text": "Before finalising a timeline or deadlines analysis, verify that every deadline or obligation is cross-referenced to its source document and clause number.",
+      "source_tasks": [
+        "MNA_T006"
+      ],
+      "evidence": [
+        "MNA_T006:C5"
+      ],
+      "task_type_scope": "timeline_analysis",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T006_5",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "For every percentage-based figure (e.g., escrow amounts, caps), recompute the percentage against the stated base value and flag any discrepancies.",
+      "source_tasks": [
+        "MNA_T006"
+      ],
+      "evidence": [
+        "MNA_T006:C1",
+        "MNA_T006:deliverable currency discrepancy"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.85
+    }
+  ],
+  "lesson_feedback": [
+    {
+      "lesson_id": "L0001",
+      "label": "HELPFUL",
+      "reason": "Directly addresses the failure to explain basket types and their implications, a common issue in M&A analysis."
+    },
+    {
+      "lesson_id": "L0002",
+      "label": "HELPFUL",
+      "reason": "Ensures conflicts between provisions are not just identified but also resolved, which is critical for risk mitigation."
+    },
+    {
+      "lesson_id": "L0003",
+      "label": "HELPFUL",
+      "reason": "Pinpoint citations are essential for verifiability and future reference, a core drafting standard."
+    },
+    {
+      "lesson_id": "L0004",
+      "label": "HELPFUL",
+      "reason": "A 'Bottom line' section forces clarity and prioritisation, improving usability for busy partners."
+    },
+    {
+      "lesson_id": "L0005",
+      "label": "HELPFUL",
+      "reason": "Reinforces the need for traceability in timeline analyses, which is often overlooked in drafting."
+    },
+    {
+      "lesson_id": "L0006",
+      "label": "HELPFUL",
+      "reason": "Addresses a specific gap (percentage-based figures) that can lead to material errors if unchecked."
+    }
+  ],
+  "input_tokens": 4459,
+  "output_tokens": 1274,
+  "cost_usd": 0.0041405,
+  "prompt": "# Task\nType: timeline_analysis | Practice area: corporate_mna\nYou act for the Buyer, Delamere Energy plc. Delamere Energy plc (the Buyer) is acquiring the entire issued share capital of Brightwater Bioscience plc (the Company) from Orwell Energy plc (the Seller).\n\nPrepare a timeline and deadlines analysis of all time-sensitive obligations in the matter documents. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 17 December 2026. Address the deliverable to the supervising partner.\n\n# Trajectory (25 model steps, 25 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"client_email.md\"})\n 3. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 4. [research] read_document({\"name\": \"escrow_agreement.md\"})\n 5. [research] search_documents({\"query\": \"days\"})\n 6. [research] search_documents({\"query\": \"months\"})\n 7. [research] search_documents({\"query\": \"business\"})\n 8. [analysis] calculate({\"expression\": \"closing_date = date('2027-03-15')\\nescrow_effective_date = date('2026-12-15')\\nspa_date = date('2026-11-27')\\ncurrent_date = date('2026-12-17')\")\n 9. [analysis] calculate({\"expression\": \"bank_account_deadline = prev_business_day(closing_date, 5)\\ndays_until_bank_account_deadline = days_between(current_date, bank_account_deadline))\n10. [analysis] calculate({\"expression\": \"closing_date = date('2027-03-15')\\ncurrent_date = date('2026-12-17')\\nbank_account_deadline = prev_business_day(closing_date, 5)\\ndays_until_ban)\n11. [analysis] calculate({\"expression\": \"closing_date = date('2027-03-15')\\ncurrent_date = date('2026-12-17')\\nbank_account_deadline = add_days(closing_date, -5)\\nbank_account_deadline )\n12. [analysis] calculate({\"expression\": \"closing_date = date('2027-03-15')\\ncurrent_date = date('2026-12-17')\\n\\n# General warranties survive for 12 months after closing\\ngeneral_warran)\n13. [analysis] calculate({\"expression\": \"escrow_effective_date = date('2026-12-15')\\ncurrent_date = date('2026-12-17')\\n\\n# Escrow period is 18 months from effective date\\nescrow_period)\n14. [analysis] calculate({\"expression\": \"closing_date = date('2027-03-15')\\ncurrent_date = date('2026-12-17')\\ndays_until_closing = days_between(current_date, closing_date)\"})\n15. [drafting] write_draft(<865 words>)\n16. [verification] read_draft({})\n17. [verification] calculate({\"expression\": \"closing_date = date('2027-03-15')\\n# Calculate 5 business days before closing\\n# Let's work backward\\nday1 = add_days(closing_date, -1)  # March)\n18. [editing] edit_draft(find='| Bank Account Specification Deadline | 10 March 2027 | 83 d' -> '| Bank Account Specification Deadline | 8 March 2027 | 81 da')\n19. [editing] edit_draft(find='#### 4. De Minimis Threshold\\n\\n- **De Minimis Amount:** $325,' -> '#### 4. De Minimis Threshold\\n\\n- **De Minimis Amount:** $325,')\n20. [verification] calculate({\"expression\": \"current_date = date('2026-12-17')\\nbank_account_deadline = date('2027-03-08')\\ndays_until_bank_account_deadline = days_between(current_date, ban)\n21. [editing] edit_draft(find='#### 3. Escrow Amount Coverage\\n- **Risk:** £2,350,000 escrow' -> '#### 3. Escrow Amount Coverage and Currency\\n- **Risk:** £2,3')\n22. [editing] edit_draft(find='The transaction documents establish a comprehensive framewor' -> 'The transaction documents establish a comprehensive framewor')\n23. [verification] read_draft({})\n24. [editing] edit_draft(find=\"2. **Bank Account Follow-up:** Monitor for Seller's bank acc\" -> \"2. **Bank Account Follow-up:** Monitor for Seller's bank acc\")\n25. [control] finish({\"summary\": \"Completed comprehensive timeline and deadlines analysis for Delamere Energy plc's acquisition of Brightwater Bioscience plc. The analysis identifie)\n\n# Final deliverable\n# Timeline and Deadlines Analysis\n## Acquisition of Brightwater Bioscience plc by Delamere Energy plc\n\n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Date:** 17 December 2026  \n**Matter:** Acquisition of Brightwater Bioscience plc  \n**Client:** Delamere Energy plc (Buyer)\n\n### Executive Summary\n\nThis analysis sets out all time-sensitive obligations arising from the Share Purchase Agreement dated 27 November 2026 and the Escrow Agreement with an Effective Date of 15 December 2026. The Closing Date is scheduled for 15 March 2027. Key deadlines include warranty claim notification periods, escrow arrangements, and pre-closing obligations.\n\n### Key Dates and Deadlines\n\n#### 1. Transaction Milestones\n\n| Event | Date | Days from Today (17 Dec 2026) | Notes |\n|-------|------|-----------------------------|-------|\n| Share Purchase Agreement executed | 27 November 2026 | -20 days | Already occurred |\n| Escrow Agreement Effective Date | 15 December 2026 | -2 days | Already occurred |\n| **Today's Date** | **17 December 2026** | **0 days** | **Current date for analysis** |\n| Closing Date | 15 March 2027 | 88 days | Transaction completion |\n| Bank Account Specification Deadline | 8 March 2027 | 81 days | Seller must specify bank account at least 5 business days before Closing (5 business days before 15 March 2027) |\n\n#### 2. Warranty Claim Deadlines\n\n| Warranty Type | Survival Period | Expiry Date | Days from Today | Claim Notification Period |\n|---------------|----------------|-------------|----------------|--------------------------|\n| General Warranties | 12 months from Closing | 15 March 2028 | 454 days | Must be notified before expiry |\n| Fundamental Warranties | 72 months from Closing | 15 March 2033 | 2,280 days | Must be notified before expiry |\n| **All Warranty Claims** | N/A | N/A | N/A | Must be notified within **30 days** of becoming aware of facts giving rise to claim |\n\n#### 3. Escrow Arrangement Deadlines\n\n| Escrow Obligation | Period/Duration | End Date | Days from Today | Notes |\n|-------------------|-----------------|----------|----------------|-------|\n| Escrow Amount Holding Period | 18 months from Effective Date | 15 June 2028 | 546 days | Security for Seller's obligations under SPA |\n| Escrow Claim Notification | N/A | N/A | N/A | Must be notified within **60 days** of Buyer becoming aware of claim |\n\n#### 4. De Minimis Threshold\n\n- **De Minimis Amount:** $325,000 (0.5% of $65,000,000 Purchase Price)\n- **Basket:** Seller not liable for claims unless aggregate exceeds $325,000\n- **Liability:** Seller liable only for excess over $325,000 threshold\n\n#### 5. Currency Considerations\n\n- **Purchase Price:** $65,000,000 USD\n- **Escrow Amount:** £2,350,000 GBP (stated as 7.5% of total consideration)\n- **Note:** There is a currency discrepancy between the USD-denominated Purchase Price and GBP-denominated Escrow Amount. The Escrow Agreement states the amount represents 7.5% of total consideration, but this percentage calculation appears to use different currency bases.\n\n### Critical Action Points for the Buyer\n\n#### Immediate Actions (Next 30 Days)\n\n1. **Escrow Amount Deposit:** Confirm that the £2,350,000 Escrow Amount has been deposited with the Escrow Agent as required by Clause 3.1 of the Escrow Agreement (due on Effective Date: 15 December 2026).\n\n2. **Bank Account Follow-up:** Monitor for Seller's bank account specification, which must be provided at least 5 business days before Closing (deadline: 8 March 2027).\n\n#### Pre-Closing Actions (Before 15 March 2027)\n\n1. **Payment Preparation:** Prepare wire transfer of $65,000,000 Purchase Price for Closing on 15 March 2027.\n\n2. **Closing Documentation Review:** Review all documents to be delivered at Closing under Clause 3.2 of the SPA:\n   - Duly executed instruments of transfer for the Shares\n   - Share certificates representing the Shares\n   - Resignations of directors and secretary of the Company\n   - Corporate authorisations evidencing Seller's authority\n\n#### Post-Closing Monitoring Framework\n\n1. **Warranty Claim Management System:**\n   - Establish internal process to identify potential warranty breaches\n   - Implement 30-day notification clock from date of awareness\n   - Maintain records of all claims and notifications\n\n2. **Escrow Claim Procedures:**\n   - Implement 60-day notification system for escrow claims\n   - Coordinate with Escrow Agent on claim procedures\n   - Monitor 18-month escrow period ending 15 June 2028\n\n### Risk Analysis and Recommendations\n\n#### 1. Short Notification Periods\n- **Risk:** Both warranty claims (30 days) and escrow claims (60 days) have relatively short notification periods from date of awareness.\n- **Recommendation:** Implement formal internal processes to ensure timely identification and notification of potential claims. Consider calendar reminders and designated personnel responsibilities.\n\n#### 2. De Minimis Threshold\n- **Risk:** $325,000 threshold may preclude recovery of smaller claims.\n- **Recommendation:** Aggregate related claims where possible to exceed threshold. Maintain detailed records of all potential breaches.\n\n#### 3. Escrow Amount Coverage and Currency\n- **Risk:** £2,350,000 escrow represents only approximately 3.6% of total consideration ($65,000,000) based on current exchange rates, not the stated 7.5%.\n- **Additional Risk:** Currency discrepancy between USD Purchase Price and GBP Escrow Amount creates exchange rate risk.\n- **Recommendation:** Clarify currency basis for percentage calculation with Seller. Monitor potential claims against escrow amount and consider whether additional security may be needed for larger potential liabilities.\n\n#### 4. Long-Term Warranties\n- **Risk:** Fundamental warranties survive for 6 years (72 months), creating long-term exposure.\n- **Recommendation:** Maintain records and monitoring systems for the full 6-year period, particularly for tax-related matters.\n\n### Conclusion\n\nThe transaction documents establish a comprehensive framework with clear time-sensitive obligations. The key dates to monitor are:\n1. **8 March 2027:** Bank account specification deadline (5 business days before Closing)\n2. **15 March 2027:** Closing Date\n3. **15 March 2028:** General warranties expiry (12 months post-Closing)\n4. **15 June 2028:** Escrow period ends (18 months from 15 December 2026)\n5. **15 March 2033:** Fundamental warranties expiry (72 months post-Closing)\n\nAll warranty claims must be notified within 30 days of awareness, and escrow claims within 60 days of awareness. The Buyer should implement robust internal processes to ensure compliance with these deadlines and protect its rights under the agreements.\n\n**Prepared by:** Senior Associate  \n**Date:** 17 December 2026\n\n# Expert rubric verdicts (2/6 passed)\n- C1 [FAIL] Identifies that the basket in SPA Section 9.4 ($325,000) operates as a deductible (Seller liable only for the excess), not a tipping basket, and explains that this is less favourable to the Buyer.\n    judges: FAIL: The deliverable correctly identifies that the Seller is liable only for the excess over $325,000, but it does not explain that this is less favourable to the Buyer compared to a tipping basket. | PASS: The deliverable correctly identifies at Section 4 'De Minimis Threshold' that the Seller is liable only for the excess over $325,000, and at 'Risk Analysis' notes this is 'less favourable to the Buyer' as it operates as \n- C2 [FAIL] Identifies the conflict between the 30-day claim notice period in SPA Section 9.7 and the 60-day period in Escrow Clause 5.2, and recommends the Buyer works to the shorter 30-day period or aligns the documents.\n    judges: FAIL: The deliverable identifies both the 30-day and 60-day periods but does not identify the conflict between them or recommend that the Buyer work to the shorter 30-day period or align the documents. | FAIL: The deliverable separately lists the 30-day and 60-day notification periods in different tables but never identifies the conflict between them or recommends working to the shorter period or aligning the documents. This c\n- C3 [PASS] States that General Warranty claims must be notified by 15 March 2028 (12 months after Closing) and Fundamental Warranty claims by 15 March 2033 (72 months after Closing).\n    judges: PASS: The deliverable correctly states that General Warranty claims must be notified by 15 March 2028 and Fundamental Warranty claims by 15 March 2033. | PASS: The deliverable correctly states at 'Warranty Claim Deadlines' table and 'Conclusion' that General Warranty claims expire 15 March 2028 and Fundamental Warranty claims expire 15 March 2033, with correct 12-month and 72-m\n- C4 [PASS] States the survival periods as durations and as dates (15 March 2028; 15 March 2033) and gives days remaining to the general-warranty expiry from 17 December 2026 (454 days).\n    judges: PASS: The deliverable provides the survival periods as durations (12 months and 72 months), as specific dates (15 March 2028 and 15 March 2033), and states 454 days remaining to the general-warranty expiry. | PASS: The deliverable states survival periods as durations (12 months; 72 months) and as dates (15 March 2028; 15 March 2033), and gives 454 days remaining to general-warranty expiry from 17 December 2026 in the table.\n- C5 [FAIL] Gives a pinpoint citation (document name and section/clause number) for every issue or finding.\n    judges: PASS: The deliverable provides pinpoint citations for key findings, including SPA Clause 3.2, Escrow Agreement Clause 3.1, and references to SPA Sections 9.4 and 9.7 and Escrow Clause 5.2. | FAIL: The deliverable lacks pinpoint citations for most findings. For example, the 30-day notification period, 60-day escrow claim period, 12/72 month survival periods, and $325,000 de minimis are stated without citing SPA Sec\n- C6 [FAIL] Opens with a short 'Bottom line' / executive summary stating the overall conclusion and the most important risks before the detailed analysis.\n    judges: PASS: The deliverable opens with an Executive Summary that states the overall conclusion and identifies key deadlines and risks before the detailed analysis. | FAIL: The deliverable has an 'Executive Summary' but it does not state the overall conclusion or most important risks before detailed analysis. It merely describes what the analysis covers. The 'Bottom line' format with key ri\n\n# Your job\nAnalyse each FAILED criterion: what went wrong, what the agent should have done, and whether the failure is procedural (reusable) or task-specific. Then write reusable candidate lessons that would prevent the procedural failures on other matters.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|timeline_analysis\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C1\",\n      \"what_went_wrong\": \"The deliverable identified the de minimis threshold as a deductible but failed to explicitly compare it to a tipping basket or explain why it is less favourable to the Buyer.\",\n      \"should_have\": \"Explicitly compared the identified basket type (deductible) to alternative basket types (e.g., tipping basket) and explained the practical implications for the Buyer's recovery rights.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C2\",\n      \"what_went_wrong\": \"The deliverable listed conflicting notice periods (30-day vs. 60-day) but did not identify the conflict or recommend a course of action to resolve it.\",\n      \"should_have\": \"Highlighted the conflict between the two notice periods, explained the risk of relying on the longer period, and recommended working to the shorter period or aligning the documents.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C5\",\n      \"what_went_wrong\": \"The deliverable lacked pinpoint citations (document name and section/clause numbers) for key findings, making it harder to verify or reference the source.\",\n      \"should_have\": \"Included pinpoint citations for every material obligation, deadline, or risk identified in the analysis.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C6\",\n      \"what_went_wrong\": \"The executive summary described the scope of the analysis but did not state the overall conclusion or highlight the most important risks upfront.\",\n      \"should_have\": \"Opened with a concise 'bottom line' summarising the key takeaways, risks, and action items before diving into details.\",\n      \"failure_kind\": \"procedural\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"For every identified basket or threshold, explicitly state the type (e.g., deductible, tipping) and compare it to alternative structures, explaining the practical implications for the client's recovery rights.\",\n      \"evidence\": [\"C1\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"When identifying conflicting deadlines or obligations across documents, flag the conflict, assess which provision governs, and recommend a course of action to mitigate risk.\",\n      \"evidence\": [\"C2\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"Include a pinpoint citation (document name and section/clause number) for every material obligation, deadline, or risk identified in the analysis.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 1.0\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"drafting\",\n      \"text\": \"Open every deliverable with a 'Bottom line' section: 1-3 bullet points summarising the overall conclusion, key risks, and critical next steps before detailed analysis.\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"review\",\n      \"text\": \"Before finalising a timeline or deadlines analysis, verify that every deadline or obligation is cross-referenced to its source document and clause number.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"timeline_analysis\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"For every percentage-based figure (e.g., escrow amounts, caps), recompute the percentage against the stated base value and flag any discrepancies.\",\n      \"evidence\": [\"C1\", \"deliverable currency discrepancy\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.85\n    }\n  ],\n  \"lesson_feedback\": [\n    {\n      \"lesson_id\": \"L0001\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Directly addresses the failure to explain basket types and their implications, a common issue in M&A analysis.\"\n    },\n    {\n      \"lesson_id\": \"L0002\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Ensures conflicts between provisions are not just identified but also resolved, which is critical for risk mitigation.\"\n    },\n    {\n      \"lesson_id\": \"L0003\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Pinpoint citations are essential for verifiability and future reference, a core drafting standard.\"\n    },\n    {\n      \"lesson_id\": \"L0004\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"A 'Bottom line' section forces clarity and prioritisation, improving usability for busy partners.\"\n    },\n    {\n      \"lesson_id\": \"L0005\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Reinforces the need for traceability in timeline analyses, which is often overlooked in drafting.\"\n    },\n    {\n      \"lesson_id\": \"L0006\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Addresses a specific gap (percentage-based figures) that can lead to material errors if unchecked.\"\n    }\n  ]\n}\n```"
+}

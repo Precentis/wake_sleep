@@ -1,0 +1,142 @@
+{
+  "task_id": "MNA_T021",
+  "cycle": 1,
+  "lineage": "ablation_no_grading",
+  "graded": false,
+  "failures": [
+    {
+      "criterion_id": "C1",
+      "what_went_wrong": "The agent identified missing clauses (5 and 6) but did not cross-check the disclosure letter's references to these clauses against the SPA's clause numbering scheme to confirm whether the omission was intentional or a drafting error.",
+      "should_have": "Verified whether the missing clauses were renumbered elsewhere in the SPA or intentionally omitted by comparing the disclosure letter's references to the SPA's structure.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C2",
+      "what_went_wrong": "The agent flagged timeline conflicts but did not calculate the business days between critical dates, which could affect contractual deadlines (e.g., termination notices).",
+      "should_have": "Recomputed all date intervals in business days, not calendar days, to ensure alignment with contractual definitions of 'Business Days.'",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C3",
+      "what_went_wrong": "The agent noted a currency mismatch but did not quantify the potential exchange rate risk or suggest mitigation strategies (e.g., hedging clauses).",
+      "should_have": "Calculated the potential financial impact of currency fluctuations and proposed specific contractual protections (e.g., fixed exchange rates or adjustment mechanisms).",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C4",
+      "what_went_wrong": "The agent identified missing indemnity and limitation of liability clauses but did not cross-reference these omissions with standard market practice or the client's risk appetite.",
+      "should_have": "Compared the SPA's liability framework against standard M&A market practice and flagged deviations as either intentional or requiring negotiation.",
+      "failure_kind": "task_specific"
+    },
+    {
+      "criterion_id": "C5",
+      "what_went_wrong": "The agent did not verify whether the disclosed IP ownership issues were already addressed in other transaction documents (e.g., side letters or schedules).",
+      "should_have": "Cross-checked all disclosed IP risks against ancillary documents to confirm whether they were already mitigated or required further action.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C6",
+      "what_went_wrong": "The agent listed recommendations but did not prioritize them by urgency or materiality, leaving the client unclear on immediate next steps.",
+      "should_have": "Ranked recommendations by risk severity and time sensitivity to guide the client's decision-making process.",
+      "failure_kind": "drafting"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T021_0",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "Cross-check all disclosure letter references against the principal agreement's clause numbering to confirm whether omissions are intentional or drafting errors.",
+      "source_tasks": [
+        "MNA_T021"
+      ],
+      "evidence": [
+        "MNA_T021:C1"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T021_1",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Recompute all date intervals in both calendar and business days, using the contract's definition of 'Business Days,' to verify compliance with deadlines.",
+      "source_tasks": [
+        "MNA_T021"
+      ],
+      "evidence": [
+        "MNA_T021:C2"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T021_2",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "For currency mismatches, quantify potential exchange rate risk and propose specific contractual protections (e.g., fixed rates or adjustment clauses).",
+      "source_tasks": [
+        "MNA_T021"
+      ],
+      "evidence": [
+        "MNA_T021:C3"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T021_3",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Compare liability frameworks (indemnities, caps, thresholds) against standard market practice and flag deviations as intentional or requiring negotiation.",
+      "source_tasks": [
+        "MNA_T021"
+      ],
+      "evidence": [
+        "MNA_T021:C4"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T021_4",
+      "type": "checklist",
+      "category": "review",
+      "text": "Before finalizing risk assessments, cross-check disclosed risks against all ancillary documents to confirm whether they are already mitigated.",
+      "source_tasks": [
+        "MNA_T021"
+      ],
+      "evidence": [
+        "MNA_T021:C5"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T021_5",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Rank recommendations in the deliverable by risk severity and time sensitivity to guide the client's prioritization of next steps.",
+      "source_tasks": [
+        "MNA_T021"
+      ],
+      "evidence": [
+        "MNA_T021:C6"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.8
+    }
+  ],
+  "lesson_feedback": [],
+  "input_tokens": 3156,
+  "output_tokens": 1091,
+  "cost_usd": 0.0032145,
+  "prompt": "# Task\nType: contract_review | Practice area: corporate_mna\nYou act for the Buyer, Ivybridge Foods Ltd. Ivybridge Foods Ltd (the Buyer) is acquiring the entire issued share capital of Kingsmere Engineering Ltd (the Company) from Pemberton Marine Ltd (the Seller).\n\nReview the principal agreement against the other matter documents and report the problematic provisions. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 3 March 2026. Address the deliverable to the supervising partner.\n\n# Trajectory (28 model steps, 28 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"client_email.md\"})\n 3. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 4. [research] read_document({\"name\": \"disclosure_letter.md\"})\n 5. [research] read_document({\"name\": \"material_customer_contract.md\"})\n 6. [research] search_documents({\"query\": \"warranty\"})\n 7. [research] search_documents({\"query\": \"indemnity\"})\n 8. [research] search_documents({\"query\": \"limitation\"})\n 9. [research] search_documents({\"query\": \"liability\"})\n10. [research] search_documents({\"query\": \"Clause 5\"})\n11. [research] search_documents({\"query\": \"Clause 6\"})\n12. [analysis] calculate({\"expression\": \"date('2026-02-12')\"})\n13. [analysis] calculate({\"expression\": \"add_days(date('2026-02-12'), 120)\"})\n14. [analysis] calculate({\"expression\": \"date('2026-07-27')\"})\n15. [analysis] calculate({\"expression\": \"date('2026-03-23')\"})\n16. [analysis] calculate({\"expression\": \"days_between(date('2026-02-12'), date('2026-03-23'))\"})\n17. [drafting] write_draft(<1053 words>)\n18. [verification] read_draft({})\n19. [editing] edit_draft(find='**Risk:** Corrib Engineering Ltd could assert ownership righ' -> '**Risk:** Corrib Engineering Ltd could assert ownership righ')\n20. [verification] search_documents({\"query\": \"Business Days\"})\n21. [verification] read_document({\"name\": \"share_purchase_agreement.md\", \"start_line\": 23, \"num_lines\": 20})\n22. [editing] edit_draft(find='**Problem:** The absence of these warranty clauses means the' -> '**Problem:** The absence of these warranty clauses means the')\n23. [verification] read_document({\"name\": \"share_purchase_agreement.md\", \"start_line\": 96, \"num_lines\": 20})\n24. [verification] calculate({\"expression\": \"days_between(date('2026-03-23'), date('2026-07-27'))\"})\n25. [editing] edit_draft(find='**Problem:** The Closing Date (23 March 2026) precedes the e' -> '**Problem:** The Closing Date (23 March 2026) precedes the e')\n26. [verification] calculate({\"expression\": \"days_between(date('2026-06-12'), date('2026-07-27'))\"})\n27. [verification] search_documents({\"query\": \"schedule\"})\n28. [control] finish({\"summary\": \"Comprehensive review of the share purchase agreement identifying critical deficiencies including missing warranty clauses, conflicting timelines, m)\n\n# Final deliverable\n# Memorandum\n\n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Date:** 3 March 2026  \n**Subject:** Review of Share Purchase Agreement for Acquisition of Kingsmere Engineering Ltd by Ivybridge Foods Ltd  \n**Matter:** Acquisition of Kingsmere Engineering Ltd  \n\n## Executive Summary\n\nI have reviewed the principal share purchase agreement (SPA) dated 12 February 2026 against the other matter documents. The review reveals several problematic provisions that require urgent attention, including missing warranty clauses, conflicting timelines, material contractual issues, intellectual property concerns, and drafting inconsistencies. These issues pose significant risks to the Buyer's position and the successful completion of the transaction.\n\n## 1. Missing Clauses and Incomplete Agreement\n\n### 1.1 Missing Warranty Clauses\nThe SPA jumps from Clause 4 (Conditions) to Clause 7 (Confidentiality), omitting Clauses 5 and 6 entirely. The disclosure letter references:\n- **Warranty 6.3 (Material Contracts)** - Paragraph 3 of disclosure letter\n- **Warranty 8.2 (IP)** - Paragraph 4 of disclosure letter\n\n**Problem:** The absence of these warranty clauses means the Buyer has no contractual protections regarding material contracts or intellectual property, despite the Seller making disclosures against these non-existent warranties. The disclosure letter purports to qualify warranties that do not exist in the SPA.\n\n**Risk:** The Buyer would have no recourse if representations about material contracts or IP prove false, despite the Seller's disclosures suggesting such warranties were intended to be included.\n\n## 2. Timeline Conflicts and Condition Precedent Issues\n\n### 2.1 Conflicting Timelines\n- **SPA Closing Date:** 23 March 2026 (Clause 1.1)\n- **Merger Clearance:** Expected by 27 July 2026 (client email)\n- **SPA Termination Date:** 12 June 2026 (120 days from 12 February 2026, per Clause 4.5)\n\n**Problem:** The Closing Date (23 March 2026) precedes the expected merger clearance date (27 July 2026) by 126 days (over four months). The SPA would terminate on 12 June 2026 if conditions aren't satisfied, which is 45 days before the expected merger clearance (27 July 2026).\n\n**Risk:** The transaction cannot complete without merger clearance, yet the SPA timelines are fundamentally misaligned with regulatory expectations.\n\n### 2.2 Condition Precedent Drafting\nClause 4.3(a) references \"receipt of all necessary third-party consents and approvals, including any required under agreements with Eskdale Energy plc.\" However, the condition is drafted as inclusive (\"include, but are not limited to\") rather than exhaustive.\n\n**Problem:** This creates uncertainty about what constitutes satisfaction of conditions.\n\n**Risk:** The Seller could argue that other unspecified conditions must be satisfied, potentially delaying or preventing completion.\n\n## 3. Material Customer Contract Issues\n\n### 3.1 Eskdale Energy Change of Control Provision\nThe material customer contract with Eskdale Energy plc contains at Clause 14.2:\n> \"Either party may terminate this agreement on 30 days' notice if the other party undergoes a change of control without its prior written consent.\"\n\n**Contradiction:** The disclosure letter at Paragraph 3.1 states:\n> \"no Material Contract to which the Company is a party contains any provision requiring consent, notice, or amendment as a result of a change of control of the Company.\"\n\n**Problem:** The disclosure directly contradicts the actual contractual provision, creating a fundamental misrepresentation.\n\n**Risk:** Eskdale Energy could terminate the contract post-acquisition, potentially destroying the Company's value. The Buyer would have limited recourse due to the missing warranty clauses.\n\n## 4. Intellectual Property Ownership Issues\n\n### 4.1 Core Platform Software IP\nThe disclosure letter reveals (Paragraphs 4.1-4.4):\n- Core platform software developed in 2023 by Corrib Engineering Ltd\n- No written assignment of intellectual property rights\n- IP ownership \"may not be fully enforceable under English law\"\n\n**Problem:** The Company's fundamental operational software lacks clear IP ownership, yet this critical asset is central to the Company's value.\n\n**Risk:** Corrib Engineering Ltd could assert ownership rights over the software, potentially requiring redevelopment or licensing payments. The $120 million purchase price may be significantly overstated given this fundamental IP defect.\n\n## 5. Drafting Inconsistencies and Technical Issues\n\n### 5.1 Currency Mismatch\n- **Purchase Price:** $120,000,000 (USD) - Clause 2.1\n- **All Parties:** UK companies operating in pounds sterling\n- **Customer Contract:** Fees payable in pounds sterling (Clause 4.1 of material contract)\n\n**Problem:** Currency risk and conversion costs not addressed.\n\n**Risk:** Exchange rate fluctuations could significantly affect the actual purchase price.\n\n### 5.2 Date Inconsistencies\n- **SPA Date:** 12 February 2026\n- **Disclosure Letter Reference:** \"dated on or about 3 March 2026\"\n- **Our Deliverable Date:** 3 March 2026\n\n**Problem:** Creates confusion about which document governs.\n\n### 5.3 Incomplete Definitions\nClause 1.1 defines \"Business Days\" but this term is used in Clause 2.2 without definition.\n\n**Problem:** Creates uncertainty about payment timing.\n\n## 6. Additional Omissions\n\n### 6.1 No Indemnity Provisions\nThe SPA contains no indemnity clauses to protect the Buyer against post-completion liabilities.\n\n### 6.2 No Limitation of Liability\nNo caps on liability, time limits for claims, or financial thresholds.\n\n### 6.3 No Tax Provisions\nNo tax indemnities or provisions for tax liabilities.\n\n### 6.4 No Restrictive Covenants\nNo non-compete or non-solicitation provisions to protect the acquired business.\n\n## Recommendations\n\n1. **Immediate Redrafting Required:** The SPA requires complete redrafting to include:\n   - Comprehensive warranty clauses (including for material contracts and IP)\n   - Indemnity provisions\n   - Limitation of liability clauses\n   - Tax provisions\n\n2. **Timeline Realignment:** \n   - Extend Closing Date beyond expected merger clearance (post-27 July 2026)\n   - Extend termination date accordingly\n   - Consider making merger clearance a specific condition precedent\n\n3. **Eskdale Energy Consent:** \n   - Require Eskdale Energy change of control consent as a condition precedent\n   - Address the contradictory disclosure\n   - Consider renegotiating the disclosure letter\n\n4. **IP Due Diligence:** \n   - Conduct urgent IP due diligence\n   - Require Seller to obtain proper IP assignments from Corrib Engineering Ltd\n   - Consider price adjustment or escrow arrangement\n\n5. **Currency Correction:** \n   - Specify purchase price in pounds sterling\n   - Include exchange rate mechanism if USD intended\n\n6. **Comprehensive Review:** Engage specialist counsel for:\n   - IP due diligence and remediation\n   - Competition law advice on merger clearance timing\n   - Tax structuring advice\n\n## Conclusion\n\nThe current SPA is fundamentally deficient and poses unacceptable risks to the Buyer. The missing warranty clauses alone would leave the Buyer exposed to significant post-completion liabilities without recourse. The timeline conflicts, material contract issues, and IP ownership concerns compound these risks.\n\nI recommend we immediately advise the client not to sign the current SPA and commence negotiations for a comprehensively redrafted agreement that properly protects the Buyer's interests.\n\n**Next Steps:**\n1. Schedule urgent client meeting to discuss findings\n2. Prepare mark-up of required SPA amendments\n3. Engage specialist IP counsel\n4. Commence negotiations with Seller's representatives\n\nPlease advise on your preferred approach.\n\n# Your job\nNo grades are available. Critically assess the deliverable and the work process yourself, as a demanding supervising partner would, and write reusable candidate lessons for improving the work.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|contract_review\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C1\",\n      \"what_went_wrong\": \"The agent identified missing clauses (5 and 6) but did not cross-check the disclosure letter's references to these clauses against the SPA's clause numbering scheme to confirm whether the omission was intentional or a drafting error.\",\n      \"should_have\": \"Verified whether the missing clauses were renumbered elsewhere in the SPA or intentionally omitted by comparing the disclosure letter's references to the SPA's structure.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C2\",\n      \"what_went_wrong\": \"The agent flagged timeline conflicts but did not calculate the business days between critical dates, which could affect contractual deadlines (e.g., termination notices).\",\n      \"should_have\": \"Recomputed all date intervals in business days, not calendar days, to ensure alignment with contractual definitions of 'Business Days.'\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C3\",\n      \"what_went_wrong\": \"The agent noted a currency mismatch but did not quantify the potential exchange rate risk or suggest mitigation strategies (e.g., hedging clauses).\",\n      \"should_have\": \"Calculated the potential financial impact of currency fluctuations and proposed specific contractual protections (e.g., fixed exchange rates or adjustment mechanisms).\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C4\",\n      \"what_went_wrong\": \"The agent identified missing indemnity and limitation of liability clauses but did not cross-reference these omissions with standard market practice or the client's risk appetite.\",\n      \"should_have\": \"Compared the SPA's liability framework against standard M&A market practice and flagged deviations as either intentional or requiring negotiation.\",\n      \"failure_kind\": \"task_specific\"\n    },\n    {\n      \"criterion_id\": \"C5\",\n      \"what_went_wrong\": \"The agent did not verify whether the disclosed IP ownership issues were already addressed in other transaction documents (e.g., side letters or schedules).\",\n      \"should_have\": \"Cross-checked all disclosed IP risks against ancillary documents to confirm whether they were already mitigated or required further action.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C6\",\n      \"what_went_wrong\": \"The agent listed recommendations but did not prioritize them by urgency or materiality, leaving the client unclear on immediate next steps.\",\n      \"should_have\": \"Ranked recommendations by risk severity and time sensitivity to guide the client's decision-making process.\",\n      \"failure_kind\": \"drafting\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"Cross-check all disclosure letter references against the principal agreement's clause numbering to confirm whether omissions are intentional or drafting errors.\",\n      \"evidence\": [\"C1\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Recompute all date intervals in both calendar and business days, using the contract's definition of 'Business Days,' to verify compliance with deadlines.\",\n      \"evidence\": [\"C2\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"For currency mismatches, quantify potential exchange rate risk and propose specific contractual protections (e.g., fixed rates or adjustment clauses).\",\n      \"evidence\": [\"C3\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.85\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Compare liability frameworks (indemnities, caps, thresholds) against standard market practice and flag deviations as intentional or requiring negotiation.\",\n      \"evidence\": [\"C4\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"review\",\n      \"text\": \"Before finalizing risk assessments, cross-check disclosed risks against all ancillary documents to confirm whether they are already mitigated.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"Rank recommendations in the deliverable by risk severity and time sensitivity to guide the client's prioritization of next steps.\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.8\n    }\n  ],\n  \"lesson_feedback\": []\n}\n```"
+}

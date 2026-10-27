@@ -1,0 +1,128 @@
+{
+  "docs": [
+    {
+      "title": "share_purchase_agreement.md",
+      "attempts": [
+        {
+          "missing": [
+            "30 days",
+            "English law"
+          ],
+          "usage": {
+            "input_tokens": 620,
+            "output_tokens": 995
+          }
+        },
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 1644,
+            "output_tokens": 1003
+          }
+        }
+      ]
+    },
+    {
+      "title": "escrow_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 605,
+            "output_tokens": 956
+          }
+        }
+      ]
+    },
+    {
+      "title": "material_customer_contract.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 512,
+            "output_tokens": 1067
+          }
+        }
+      ]
+    },
+    {
+      "title": "disclosure_letter.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 491,
+            "output_tokens": 1207
+          }
+        }
+      ]
+    },
+    {
+      "title": "client_email.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 473,
+            "output_tokens": 415
+          }
+        }
+      ]
+    }
+  ],
+  "doc_facts": {
+    "share_purchase_agreement.md": {
+      "key": "spa",
+      "facts": [
+        "Parties: Arden Pharma plc (Buyer), Foxley Holdings Ltd (Seller); the Company is Lowther Engineering Ltd.",
+        "Section 2.1: the Purchase Price is $240,000,000.",
+        "This Agreement is dated 20 December 2025; Closing is scheduled for 18 March 2026 (the 'Closing Date').",
+        "Section 1.1: 'Closing Date' means 18 March 2026.",
+        "Section 9.7: the Buyer must notify any warranty claim within 30 days of becoming aware of it.",
+        "Section 15.1: this Agreement is governed by English law and the courts of England have exclusive jurisdiction."
+      ],
+      "must_contain": [
+        "30 days",
+        "English law"
+      ]
+    },
+    "escrow_agreement.md": {
+      "key": "escrow",
+      "facts": [
+        "Clause 4.1: the Escrow Amount shall be released to the Seller on the date falling 18 months after the Closing Date, save to the extent of pending claims notified before that date. 'Business Day' means a day other than a Saturday or Sunday on which banks are open in London.",
+        "The Closing Date is 18 March 2026.",
+        "Clause 5.2: a claim against the Escrow Amount must be notified within 60 days of the Buyer becoming aware of it.",
+        "Clause 12: this escrow agreement is governed by the laws of the State of New York and disputes shall be referred to arbitration in New York."
+      ],
+      "must_contain": [
+        "18 months",
+        "18 March 2026",
+        "60 days",
+        "New York"
+      ]
+    },
+    "material_customer_contract.md": {
+      "key": "material_contract",
+      "facts": [
+        "Clause 14.2: either party may terminate this agreement on 30 days' notice if the other party undergoes a change of control without its prior written consent. The counterparty is Kestrel Engineering Ltd."
+      ],
+      "must_contain": [
+        "change of control",
+        "prior written consent"
+      ]
+    },
+    "disclosure_letter.md": {
+      "key": "disclosure",
+      "facts": [
+        "Disclosure against Warranty 6.3 (Material Contracts): no material contract contains a change of control provision. (No further disclosure.)"
+      ],
+      "must_contain": []
+    },
+    "client_email.md": {
+      "key": "client_email",
+      "facts": [],
+      "must_contain": []
+    }
+  }
+}

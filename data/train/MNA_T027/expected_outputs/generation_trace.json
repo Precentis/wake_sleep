@@ -1,0 +1,121 @@
+{
+  "docs": [
+    {
+      "title": "share_purchase_agreement.md",
+      "attempts": [
+        {
+          "missing": [
+            "5 years"
+          ],
+          "usage": {
+            "input_tokens": 673,
+            "output_tokens": 1059
+          }
+        },
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 1757,
+            "output_tokens": 1189
+          }
+        }
+      ]
+    },
+    {
+      "title": "disclosure_letter.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 515,
+            "output_tokens": 1087
+          }
+        }
+      ]
+    },
+    {
+      "title": "employment_agreement.md",
+      "attempts": [
+        {
+          "missing": [
+            "18 months"
+          ],
+          "usage": {
+            "input_tokens": 494,
+            "output_tokens": 1011
+          }
+        },
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 1535,
+            "output_tokens": 1046
+          }
+        }
+      ]
+    },
+    {
+      "title": "client_email.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 557,
+            "output_tokens": 435
+          }
+        }
+      ]
+    }
+  ],
+  "doc_facts": {
+    "share_purchase_agreement.md": {
+      "key": "spa",
+      "facts": [
+        "Parties: Brightwater Holdings Ltd (Buyer), Glenrock Capital LLP (Seller); the Company is Foxley Holdings Ltd.",
+        "Section 2.1: the Purchase Price is $115,000,000.",
+        "This Agreement is dated 21 January 2027; Closing is scheduled for 14 March 2027 (the 'Closing Date').",
+        "Section 12.1: the Seller shall not compete with the business for 5 years after Closing.",
+        "Section 2.3: the Purchase Price shall be reduced dollar-for-dollar by any shortfall of Closing Working Capital below the Target Working Capital of $2,000,000.",
+        "Section 3.4 (Earn-out): the Earn-out Payment equals 2 times the amount by which FY2026 EBITDA exceeds $4,000,000, capped at $5,000,000."
+      ],
+      "must_contain": [
+        "5 years",
+        "$2,000,000",
+        "$4,000,000",
+        "$5,000,000"
+      ]
+    },
+    "disclosure_letter.md": {
+      "key": "disclosure",
+      "facts": [
+        "Disclosure against Warranty 8.2 (IP): the Company's core platform software was developed in 2023 by an independent contractor, Foxley Pharma plc. No written assignment of intellectual property was entered into."
+      ],
+      "must_contain": [
+        "Foxley Pharma plc",
+        "No written assignment"
+      ]
+    },
+    "employment_agreement.md": {
+      "key": "employment",
+      "facts": [
+        "Clause 18: the Founder shall not compete with the business for 18 months after termination of employment."
+      ],
+      "must_contain": [
+        "18 months"
+      ]
+    },
+    "client_email.md": {
+      "key": "client_email",
+      "facts": [
+        "The estimated Closing Working Capital is $1,090,000. The Seller's draft funds flow shows an adjusted purchase price of $113,180,000.",
+        "Management accounts show FY2026 EBITDA of $6,100,000; the Seller says the Earn-out Payment will therefore be $3,800,000."
+      ],
+      "must_contain": [
+        "$1,090,000",
+        "$113,180,000",
+        "$6,100,000",
+        "$3,800,000"
+      ]
+    }
+  }
+}

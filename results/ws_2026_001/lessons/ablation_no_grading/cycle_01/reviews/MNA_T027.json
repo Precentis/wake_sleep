@@ -1,0 +1,142 @@
+{
+  "task_id": "MNA_T027",
+  "cycle": 1,
+  "lineage": "ablation_no_grading",
+  "graded": false,
+  "failures": [
+    {
+      "criterion_id": "C1",
+      "what_went_wrong": "The agent identified a $400,000 earn-out discrepancy but did not verify whether the cap in the SPA matched the percentage-based cap implied by the formula.",
+      "should_have": "Recomputed the cap as a percentage of the target EBITDA and compared it to the stated cap to identify potential drafting errors.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C2",
+      "what_went_wrong": "The agent flagged missing schedules but did not cross-check the SPA's definition section or annexes to confirm whether the schedules were truly absent or merely mislabeled.",
+      "should_have": "Searched the SPA's definition section and annexes for any reference to the missing schedules before concluding they were absent.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C3",
+      "what_went_wrong": "The agent noted a working capital shortfall but did not verify whether the SPA included a de minimis threshold or materiality qualifier for adjustments.",
+      "should_have": "Checked the SPA for any de minimis thresholds or materiality qualifiers that might limit the working capital adjustment.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C4",
+      "what_went_wrong": "The agent identified inconsistent restrictive covenants but did not assess whether the SPA's 'no-undue restraint' clause or governing law might render the longer restriction unenforceable.",
+      "should_have": "Reviewed the SPA for any 'no-undue restraint' clauses or governing law provisions that could affect the enforceability of restrictive covenants.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C5",
+      "what_went_wrong": "The agent calculated the working capital shortfall but did not flag whether the SPA required the shortfall to be funded via escrow or price reduction.",
+      "should_have": "Specified the mechanism (escrow, price reduction, or other) for addressing working capital shortfalls as required by the SPA.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C6",
+      "what_went_wrong": "The agent noted date inconsistencies but did not verify whether the SPA's 'entire agreement' clause superseded prior or conflicting dates in ancillary documents.",
+      "should_have": "Checked the SPA's 'entire agreement' clause to confirm whether it superseded conflicting dates in ancillary documents.",
+      "failure_kind": "content"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T027_0",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "For earn-out clauses, recompute caps expressed as a percentage of target metrics and flag any mismatch with the stated cap figure.",
+      "source_tasks": [
+        "MNA_T027"
+      ],
+      "evidence": [
+        "MNA_T027:C1"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T027_1",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Before concluding a schedule is missing, search the agreement's definition section and annexes for alternative labels or embedded content.",
+      "source_tasks": [
+        "MNA_T027"
+      ],
+      "evidence": [
+        "MNA_T027:C2"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T027_2",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "For working capital adjustments, verify whether the agreement includes de minimis thresholds or materiality qualifiers that limit adjustments.",
+      "source_tasks": [
+        "MNA_T027"
+      ],
+      "evidence": [
+        "MNA_T027:C3"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T027_3",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "When reviewing restrictive covenants, check for 'no-undue restraint' clauses or governing law provisions that may affect enforceability.",
+      "source_tasks": [
+        "MNA_T027"
+      ],
+      "evidence": [
+        "MNA_T027:C4"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T027_4",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "For financial adjustments, specify the mechanism (escrow, price reduction, or other) required by the agreement to address shortfalls.",
+      "source_tasks": [
+        "MNA_T027"
+      ],
+      "evidence": [
+        "MNA_T027:C5"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T027_5",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "For date inconsistencies, cross-check the agreement's 'entire agreement' clause to confirm whether it supersedes conflicting dates in ancillary documents.",
+      "source_tasks": [
+        "MNA_T027"
+      ],
+      "evidence": [
+        "MNA_T027:C6"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.85
+    }
+  ],
+  "lesson_feedback": [],
+  "input_tokens": 3788,
+  "output_tokens": 1097,
+  "cost_usd": 0.0035395,
+  "prompt": "# Task\nType: contract_review | Practice area: corporate_mna\nYou act for the Buyer, Brightwater Holdings Ltd. Brightwater Holdings Ltd (the Buyer) is acquiring the entire issued share capital of Foxley Holdings Ltd (the Company) from Glenrock Capital LLP (the Seller).\n\nReview the principal agreement against the other matter documents and report the problematic provisions. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 8 February 2027. Address the deliverable to the supervising partner.\n\n# Trajectory (25 model steps, 25 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"client_email.md\"})\n 3. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 4. [research] read_document({\"name\": \"disclosure_letter.md\"})\n 5. [research] read_document({\"name\": \"employment_agreement.md\"})\n 6. [research] search_documents({\"query\": \"warranty\"})\n 7. [research] search_documents({\"query\": \"schedule\"})\n 8. [research] search_documents({\"query\": \"indemnity\"})\n 9. [analysis] calculate({\"expression\": \"date('2027-02-08')\"})\n10. [analysis] calculate({\"expression\": \"days_between(date('2027-02-08'), date('2027-03-14'))\"})\n11. [analysis] calculate({\"expression\": \"6100000 - 4000000\"})\n12. [analysis] calculate({\"expression\": \"2100000 * 2\"})\n13. [analysis] calculate({\"expression\": \"4200000 - 3800000\"})\n14. [drafting] write_draft(<1101 words>)\n15. [verification] read_draft({})\n16. [editing] edit_draft(find='### 6. Material Customer Relationship\\n\\n**Issue:** Larkspur T' -> '### 6. Material Customer Relationship\\n\\n**Issue:** Larkspur T')\n17. [editing] edit_draft(find='6. **Additional Protections**\\n   - Include specific warranty' -> '6. **Date Consistency**\\n   - Correct Disclosure Letter refer')\n18. [editing] edit_draft(find='**Risk:** Customer concentration risk not addressed in SPA w' -> '**Risk:** Customer concentration risk not addressed in SPA w')\n19. [editing] edit_draft(find='6. **Date Consistency**\\n   - Correct Disclosure Letter refer' -> '6. **Date Consistency**\\n   - Correct Disclosure Letter refer')\n20. [editing] edit_draft(find='**Risk:** Disputes could arise regarding whether and when no' -> '**Risk:** Disputes could arise regarding whether and when no')\n21. [editing] edit_draft(find='7. **Notice Provisions**\\n   - Specify email addresses for se' -> '7. **Notice Provisions**\\n   - Specify email addresses for se')\n22. [verification] read_draft({})\n23. [editing] edit_draft(find='**Consideration:** 5 years is standard but should be assesse' -> '**Consideration:** 5 years is standard but should be assesse')\n24. [verification] read_draft({})\n25. [control] finish({\"summary\": \"Comprehensive review of the Share Purchase Agreement identifying problematic provisions including: $400,000 Earn-out payment discrepancy, material )\n\n# Final deliverable\n# Review of Share Purchase Agreement for Acquisition of Foxley Holdings Ltd\n\n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Date:** 8 February 2027  \n**Matter:** Acquisition of Foxley Holdings Ltd by Brightwater Holdings Ltd  \n**Client:** Brightwater Holdings Ltd  \n\n## Executive Summary\n\nI have reviewed the principal Share Purchase Agreement (SPA) dated 21 January 2027 against the other matter documents (Disclosure Letter, Employment Agreement, and Client Email). Several problematic provisions require immediate attention, particularly concerning:\n\n1. **Earn-out Payment Calculation Discrepancy** - A $400,000 discrepancy between the SPA formula and the Seller's advised amount\n2. **Intellectual Property Risk** - Material disclosure regarding unassigned IP rights in core platform software\n3. **Restrictive Covenant Issues** - Potential conflict between SPA and Employment Agreement non-compete provisions\n4. **Working Capital Adjustment** - Significant shortfall from Target Working Capital\n5. **Missing Schedules** - Critical calculation methodologies absent from the SPA\n\n## Detailed Analysis of Problematic Provisions\n\n### 1. Earn-out Payment Calculation Discrepancy\n\n**Issue:** The SPA contains a material discrepancy in the Earn-out Payment calculation.\n\n**SPA Provision (Clause 3.4):**\n- Earn-out Payment = 2 × (FY2026 EBITDA - $4,000,000)\n- Maximum cap: $5,000,000\n\n**Client Email Information:**\n- FY2026 EBITDA: $6,100,000\n- Seller's advised Earn-out Payment: $3,800,000\n\n**Calculation Discrepancy:**\n- SPA formula: 2 × ($6,100,000 - $4,000,000) = 2 × $2,100,000 = **$4,200,000**\n- Seller's advised amount: **$3,800,000**\n- **Discrepancy: $400,000**\n\n**Risk:** The Buyer may be obligated to pay $400,000 more than anticipated under the SPA formula. This represents either a drafting error or undisclosed adjustment methodology.\n\n### 2. Intellectual Property Risk from Disclosure Letter\n\n**Issue:** The Disclosure Letter reveals material deficiencies in the Company's intellectual property rights.\n\n**Key Disclosure (Clause 3):**\n- Core platform software developed in 2023 by Foxley Pharma plc as independent contractor\n- No written assignment of intellectual property rights executed\n- Development conducted pursuant to oral instructions and informal specifications\n- No formal contract governing creation, ownership, or transfer of IP rights\n- No warranty, indemnity, or assurance obtained regarding non-infringement, title, or originality\n\n**Risk Assessment:**\n1. **Title Defect:** The Company may not have clear legal title to its core platform software\n2. **Infringement Risk:** Potential third-party claims from Foxley Pharma plc or others\n3. **Enforceability Issues:** Difficulty protecting IP rights without proper documentation\n4. **Valuation Impact:** Core business asset may be significantly impaired\n\n**SPA Gap:** The SPA does not contain specific indemnities or price adjustments for this material IP risk.\n\n### 3. Restrictive Covenant Conflicts\n\n**Issue:** Inconsistent non-compete provisions between SPA and Employment Agreement.\n\n**SPA Restriction (Clause 12.1):**\n- Seller restricted for **5 years** post-Closing\n- Geographic scope: UK and any jurisdiction where Company operates\n- Applies to Seller (Glenrock Capital LLP)\n\n**Employment Agreement Restriction (Clause 18):**\n- Employee (Julian Thorne, Founder/CEO) restricted for **18 months** post-termination\n- Geographic scope: England and Wales only\n- Specifically mentions Larkspur Technologies Ltd (material customer)\n\n**Analysis:**\n1. **Duration Discrepancy:** 5 years vs 18 months creates potential enforcement issues\n2. **Geographic Scope:** SPA restriction broader than employment restriction\n3. **Key Personnel Risk:** Founder/CEO has shorter restriction period than Seller entity\n4. **Customer Protection:** Employment agreement specifically protects relationship with Larkspur Technologies Ltd\n\n**Risk:** The Company's key personnel (Founder/CEO) could compete after 18 months while Seller entity remains restricted for 5 years, creating operational and competitive risks.\n\n### 4. Working Capital Adjustment Issue\n\n**Issue:** Significant shortfall between estimated and target working capital.\n\n**SPA Provisions:**\n- Target Working Capital: $2,000,000 (Clause 1.1)\n- Purchase Price reduction: Dollar-for-dollar shortfall below Target (Clause 2.3)\n\n**Client Email Information:**\n- Estimated Closing Working Capital: $1,090,000\n\n**Calculated Shortfall:**\n- $2,000,000 (Target) - $1,090,000 (Estimated) = **$910,000 shortfall**\n- Purchase Price reduction: **$910,000**\n\n**Risk:** While the adjustment mechanism exists, the magnitude of the shortfall ($910,000) represents approximately 0.8% of the $113,180,000 adjusted purchase price. The Buyer should verify the accuracy of this estimate and ensure robust verification procedures in Schedule 3.\n\n### 5. Missing Schedules and Calculation Methodologies\n\n**Issue:** The SPA references critical schedules that are absent from the documents provided.\n\n**Missing Schedules Referenced in SPA:**\n1. **Schedule 1:** Accounting principles for Closing Working Capital calculation\n2. **Schedule 2:** EBITDA calculation methodology\n3. **Schedule 3:** Procedure for verifying Working Capital adjustments\n4. **Schedule 4:** Procedure for verifying Earn-out Payment\n\n**Risk:** Without these schedules, key financial calculations lack defined methodologies, creating ambiguity and potential disputes. The absence of these schedules prevents proper review of calculation mechanics and verification procedures.\n\n### 6. Material Customer Relationship\n\n**Issue:** Larkspur Technologies Ltd identified as material customer in Client Email.\n\n**Relevance:**\n- Employment Agreement specifically restricts competition with Larkspur Technologies Ltd\n- SPA restrictive covenant should protect this relationship\n- Due diligence required on concentration risk\n\n**Risk:** Customer concentration risk not addressed in SPA warranties or disclosures.\n\n### 7. Date Discrepancies and Document Consistency\n\n**Issue:** Inconsistent dates across transaction documents.\n\n**Discrepancies Identified:**\n1. **SPA Date:** 21 January 2027 (actual SPA date)\n2. **Disclosure Letter Reference:** References SPA \"dated on or about 8 February 2027\" (incorrect)\n3. **Employment Agreement:** Dated 5 February 2027 with Effective Date of 8 February 2027\n4. **Client Email Date:** Implied current date is 8 February 2027\n\n**Risk:** Inconsistent dating creates ambiguity about which documents form the complete agreement and could lead to disputes about document hierarchy and effectiveness dates.\n\n### 8. Notice Provisions\n\n**Issue:** Ambiguous notice provisions in SPA Clause 14.1.\n\n**Problems Identified:**\n1. **Email Notice Timing:** Deemed served \"upon confirmation of receipt\" - ambiguous and potentially disputed\n2. **Missing Email Addresses:** No specified email addresses for service of notices\n3. **No Acknowledgment Requirement:** No mechanism to confirm receipt of email notices\n\n**Risk:** Disputes could arise regarding whether and when notices have been properly served, particularly for time-sensitive matters like working capital disputes or earn-out payments.\n\n### 9. Confidentiality Provisions\n\n**Issue:** Standard but should be reviewed for business appropriateness.\n\n**SPA Provision (Clause 13):**\n- 5-year confidentiality period post-completion\n- Standard exceptions for legal requirements and with consent\n\n**Consideration:** 5 years is standard but should be assessed against the business's need for longer protection of sensitive information, particularly given the IP risks identified.\n\n## Recommendations\n\n### Immediate Actions Required:\n\n1. **Earn-out Payment Clarification**\n   - Request explanation for $400,000 discrepancy\n   - Amend Clause 3.4 to reflect agreed calculation or include explanatory note\n   - Consider cap reduction to $3,800,000 if that is the agreed amount\n\n2. **IP Risk Mitigation**\n   - Require specific indemnity from Seller for IP title defects\n   - Consider purchase price reduction reflecting IP risk\n   - Conduct thorough IP due diligence on core platform software\n   - Obtain representations regarding absence of third-party claims\n\n3. **Restrictive Covenant Alignment**\n   - Align duration between SPA and Employment Agreement\n   - Consider extending employee restriction to match Seller restriction\n   - Ensure geographic scope consistency\n   - Strengthen protection for Larkspur Technologies Ltd relationship\n\n4. **Working Capital Verification**\n   - Ensure Schedule 3 provides robust verification mechanism\n   - Consider independent accountant review provisions\n   - Verify accuracy of $1,090,000 estimate\n\n5. **Missing Schedules**\n   - Request all referenced schedules for review\n   - Ensure calculation methodologies are clear and commercially reasonable\n   - Include dispute resolution mechanisms for calculations\n\n6. **Date Consistency**\n   - Correct Disclosure Letter reference to SPA date (21 January 2027)\n   - Ensure all documents reference consistent dates\n   - Clarify document hierarchy and effectiveness dates\n\n7. **Notice Provisions**\n   - Specify email addresses for service of notices\n   - Define \"confirmation of receipt\" for email notices (e.g., read receipt, reply acknowledgment)\n   - Include fallback provisions for disputed receipt\n\n8. **Confidentiality Review**\n   - Assess whether 5-year period is sufficient given IP risks\n   - Consider specific protections for highly sensitive information\n   - Ensure alignment with Employment Agreement confidentiality provisions\n\n9. **Additional Protections**\n   - Include specific warranty regarding Larkspur Technologies Ltd relationship\n   - Consider customer concentration representations\n   - Include material adverse change provisions\n\n## Conclusion\n\nThe Share Purchase Agreement contains several material issues requiring immediate attention. The $400,000 Earn-out Payment discrepancy and the significant IP risk disclosed in the Disclosure Letter represent the most urgent concerns. The inconsistent restrictive covenants create enforcement risks, and the missing schedules prevent proper review of financial calculation mechanics.\n\nI recommend engaging with the Seller's counsel to address these issues before proceeding to signing. The Buyer should not proceed without:\n1. Resolution of the Earn-out Payment discrepancy\n2. Adequate protection for the disclosed IP risks\n3. Complete schedules with clear calculation methodologies\n4. Alignment of restrictive covenants\n\nThe transaction timeline (Closing Date: 14 March 2027) allows sufficient time to address these issues, but prompt action is required.\n\nPlease advise on next steps and whether you would like me to prepare draft amendments or engage directly with Seller's counsel.\n\n# Your job\nNo grades are available. Critically assess the deliverable and the work process yourself, as a demanding supervising partner would, and write reusable candidate lessons for improving the work.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|contract_review\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C1\",\n      \"what_went_wrong\": \"The agent identified a $400,000 earn-out discrepancy but did not verify whether the cap in the SPA matched the percentage-based cap implied by the formula.\",\n      \"should_have\": \"Recomputed the cap as a percentage of the target EBITDA and compared it to the stated cap to identify potential drafting errors.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C2\",\n      \"what_went_wrong\": \"The agent flagged missing schedules but did not cross-check the SPA's definition section or annexes to confirm whether the schedules were truly absent or merely mislabeled.\",\n      \"should_have\": \"Searched the SPA's definition section and annexes for any reference to the missing schedules before concluding they were absent.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C3\",\n      \"what_went_wrong\": \"The agent noted a working capital shortfall but did not verify whether the SPA included a de minimis threshold or materiality qualifier for adjustments.\",\n      \"should_have\": \"Checked the SPA for any de minimis thresholds or materiality qualifiers that might limit the working capital adjustment.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C4\",\n      \"what_went_wrong\": \"The agent identified inconsistent restrictive covenants but did not assess whether the SPA's 'no-undue restraint' clause or governing law might render the longer restriction unenforceable.\",\n      \"should_have\": \"Reviewed the SPA for any 'no-undue restraint' clauses or governing law provisions that could affect the enforceability of restrictive covenants.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C5\",\n      \"what_went_wrong\": \"The agent calculated the working capital shortfall but did not flag whether the SPA required the shortfall to be funded via escrow or price reduction.\",\n      \"should_have\": \"Specified the mechanism (escrow, price reduction, or other) for addressing working capital shortfalls as required by the SPA.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C6\",\n      \"what_went_wrong\": \"The agent noted date inconsistencies but did not verify whether the SPA's 'entire agreement' clause superseded prior or conflicting dates in ancillary documents.\",\n      \"should_have\": \"Checked the SPA's 'entire agreement' clause to confirm whether it superseded conflicting dates in ancillary documents.\",\n      \"failure_kind\": \"content\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"For earn-out clauses, recompute caps expressed as a percentage of target metrics and flag any mismatch with the stated cap figure.\",\n      \"evidence\": [\"C1\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Before concluding a schedule is missing, search the agreement's definition section and annexes for alternative labels or embedded content.\",\n      \"evidence\": [\"C2\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"For working capital adjustments, verify whether the agreement includes de minimis thresholds or materiality qualifiers that limit adjustments.\",\n      \"evidence\": [\"C3\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"When reviewing restrictive covenants, check for 'no-undue restraint' clauses or governing law provisions that may affect enforceability.\",\n      \"evidence\": [\"C4\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.85\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"For financial adjustments, specify the mechanism (escrow, price reduction, or other) required by the agreement to address shortfalls.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"For date inconsistencies, cross-check the agreement's 'entire agreement' clause to confirm whether it supersedes conflicting dates in ancillary documents.\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.85\n    }\n  ],\n  \"lesson_feedback\": []\n}\n```"
+}

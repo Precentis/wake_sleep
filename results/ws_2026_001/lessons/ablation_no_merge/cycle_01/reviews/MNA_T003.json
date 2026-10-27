@@ -1,0 +1,162 @@
+{
+  "task_id": "MNA_T003",
+  "cycle": 1,
+  "lineage": "ablation_no_merge",
+  "graded": true,
+  "failures": [
+    {
+      "criterion_id": "C1",
+      "what_went_wrong": "The deliverable identified the conflicting notice periods but failed to recommend that the Buyer work to the shorter period or align the documents.",
+      "should_have": "Explicitly recommended that the Buyer either adhere to the shorter notice period or negotiate alignment of the conflicting periods in the documents.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C4",
+      "what_went_wrong": "The deliverable discussed the board approval defect but did not explicitly list 'valid board approval' as a required approval in a structured conditions precedent or approvals section.",
+      "should_have": "Included a distinct section listing all required approvals (e.g., regulatory, board, third-party) and clearly stated whether each had been validly obtained.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C5",
+      "what_went_wrong": "Pinpoint citations were not consistently provided for every issue, particularly for risks like revenue concentration.",
+      "should_have": "Ensured every issue or finding included a precise citation (document name and clause/section number).",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C6",
+      "what_went_wrong": "No risk ratings (High/Medium/Low) were assigned to any issues, despite the requirement to do so.",
+      "should_have": "Assigned a risk rating to each identified issue based on severity and likelihood of impact.",
+      "failure_kind": "procedural"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T003_0",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "For every identified inconsistency between documents, explicitly recommend whether the client should adhere to the stricter provision or negotiate alignment.",
+      "source_tasks": [
+        "MNA_T003"
+      ],
+      "evidence": [
+        "MNA_T003:C1"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T003_1",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Include a dedicated section listing all required approvals (e.g., regulatory, board, third-party) and state whether each has been validly obtained.",
+      "source_tasks": [
+        "MNA_T003"
+      ],
+      "evidence": [
+        "MNA_T003:C4"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T003_2",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Provide a pinpoint citation (document name and clause/section number) for every issue or finding in the deliverable.",
+      "source_tasks": [
+        "MNA_T003"
+      ],
+      "evidence": [
+        "MNA_T003:C5"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.98
+    },
+    {
+      "candidate_id": "c01_MNA_T003_3",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Assign a risk rating (High/Medium/Low) to each identified issue based on severity and likelihood of impact.",
+      "source_tasks": [
+        "MNA_T003"
+      ],
+      "evidence": [
+        "MNA_T003:C6"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.97
+    },
+    {
+      "candidate_id": "c01_MNA_T003_4",
+      "type": "practice_note",
+      "category": "review",
+      "text": "Before finalising the deliverable, verify that every issue includes a pinpoint citation and a risk rating.",
+      "source_tasks": [
+        "MNA_T003"
+      ],
+      "evidence": [
+        "MNA_T003:C5",
+        "MNA_T003:C6"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T003_5",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "When identifying conflicting provisions, compare their implications and recommend the client adopt the provision that minimises risk.",
+      "source_tasks": [
+        "MNA_T003"
+      ],
+      "evidence": [
+        "MNA_T003:C1"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    }
+  ],
+  "lesson_feedback": [
+    {
+      "lesson_id": "L0001",
+      "label": "HELPFUL",
+      "reason": "Directly addresses the procedural failure in C1 by ensuring actionable recommendations are made for inconsistencies."
+    },
+    {
+      "lesson_id": "L0002",
+      "label": "HELPFUL",
+      "reason": "Ensures required approvals are explicitly listed, addressing the omission in C4."
+    },
+    {
+      "lesson_id": "L0003",
+      "label": "HELPFUL",
+      "reason": "Prevents the citation omission in C5 by mandating pinpoint citations for all issues."
+    },
+    {
+      "lesson_id": "L0004",
+      "label": "HELPFUL",
+      "reason": "Addresses the risk rating omission in C6, ensuring consistent risk assessment."
+    },
+    {
+      "lesson_id": "L0005",
+      "label": "HELPFUL",
+      "reason": "Provides a final review step to catch missing citations or risk ratings, reinforcing lessons L0003 and L0004."
+    },
+    {
+      "lesson_id": "L0006",
+      "label": "HELPFUL",
+      "reason": "Encourages proactive analysis of conflicting provisions, aligning with the requirement in C1."
+    }
+  ],
+  "input_tokens": 3705,
+  "output_tokens": 1178,
+  "cost_usd": 0.0036195,
+  "prompt": "# Task\nType: contract_review | Practice area: corporate_mna\nYou act for the Buyer, Eskdale Marine Ltd. Eskdale Marine Ltd (the Buyer) is acquiring the entire issued share capital of Larkspur Industries Ltd (the Company) from Ivybridge Holdings Ltd (the Seller).\n\nReview the principal agreement against the other matter documents and report the problematic provisions. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 23 April 2026. Address the deliverable to the supervising partner.\n\n# Trajectory (19 model steps, 19 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"client_email.md\"})\n 3. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 4. [research] read_document({\"name\": \"share_purchase_agreement.md\", \"start_line\": 60, \"num_lines\": 20})\n 5. [research] read_document({\"name\": \"articles_of_association_extract.md\"})\n 6. [research] read_document({\"name\": \"board_minutes.md\"})\n 7. [research] read_document({\"name\": \"escrow_agreement.md\"})\n 8. [analysis] calculate({\"expression\": \"date('2026-04-23')\"})\n 9. [analysis] calculate({\"expression\": \"145000000 * 0.15\"})\n10. [drafting] write_draft(<986 words>)\n11. [verification] read_draft({})\n12. [editing] edit_draft(find='#### 3.2 Escrow Agreement Issues\\n- Escrow Amount is 15% of p' -> '#### 3.2 Escrow Agreement Issues\\n- Escrow Amount is 15% of p')\n13. [verification] search_documents({\"query\": \"warranty\"})\n14. [verification] search_documents({\"query\": \"indemnity\"})\n15. [verification] search_documents({\"query\": \"condition\"})\n16. [verification] search_documents({\"query\": \"$145,000,000\"})\n17. [editing] edit_draft(find='#### 1.2 Inconsistent Clause Numbering\\nThe SPA jumps from cl' -> '#### 1.2 Inconsistent Clause Numbering\\nThe SPA jumps from cl')\n18. [verification] read_draft({})\n19. [control] finish({\"summary\": \"Completed review of share purchase agreement and related documents for Eskdale Marine Ltd's acquisition of Larkspur Industries Ltd. Identified mult)\n\n# Final deliverable\n# Review of Share Purchase Agreement and Related Documents\n## Acquisition of Larkspur Industries Ltd by Eskdale Marine Ltd\n\n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Date:** 23 April 2026  \n**Matter:** Eskdale Marine Ltd acquisition of Larkspur Industries Ltd  \n**Client:** Eskdale Marine Ltd (Buyer)\n\n### Executive Summary\n\nI have reviewed the principal share purchase agreement (SPA) and related matter documents for the proposed acquisition of Larkspur Industries Ltd by our client, Eskdale Marine Ltd. The review reveals multiple problematic provisions and inconsistencies that require urgent attention. The SPA is incomplete and contains significant gaps, while ancillary documents contain contradictory terms regarding timing, jurisdiction, and procedural requirements. Most critically, the transaction timeline appears unworkable given the current date of 23 April 2026.\n\n### 1. Principal Agreement Deficiencies\n\n#### 1.1 Incomplete Share Purchase Agreement\nThe SPA (dated 9 April 2026) is materially incomplete:\n- Missing clauses 6-8, 10-14, and most of clause 9\n- Contains only one warranty provision (clause 9.7) with a 30-day notification period\n- No comprehensive warranties and indemnities section\n- No conditions precedent, termination provisions, or post-completion obligations\n- No tax covenants or specific indemnities\n\n**Risk:** The Buyer lacks essential protections typically included in share purchase agreements, exposing our client to significant post-acquisition risks.\n\n#### 1.2 Inconsistent Clause Numbering\nThe SPA jumps from clause 5.1 (Confidentiality) directly to clause 9.7 (Warranties and Indemnities), then to clause 15.1 (Governing Law). This suggests either a drafting error or missing material provisions.\n\n#### 1.3 Currency Inconsistency\nThe SPA specifies the purchase price in US dollars ($145,000,000) rather than pounds sterling, which is unusual for an acquisition of an English company between English parties. This may create foreign exchange risk and tax implications.\n\n### 2. Critical Timing Issues\n\n#### 2.1 Conflicting Completion Dates\n- **SPA:** Closing Date is 5 June 2026 (clause 1.1)\n- **Articles of Association:** Transfer \"shall take effect on a date prior to 23 April 2026\" (clause 2.2)\n- **Board Minutes:** Completion \"expected to occur no later than 23 April 2026\" (clause 3.4)\n- **Current Date:** 23 April 2026 (today)\n\n**Problem:** The SPA completion date of 5 June 2026 contradicts both the Articles and Board Minutes, which require completion by today. This creates legal uncertainty and potential breach of corporate governance requirements.\n\n#### 2.2 Unworkable Timeline\nGiven today's date (23 April 2026), completion cannot occur \"prior to 23 April 2026\" as required by the Articles. The SPA's 5 June 2026 date would require amendment of the Articles and potentially new board resolutions.\n\n### 3. Jurisdictional Conflicts\n\n#### 3.1 Governing Law Inconsistency\n- **SPA:** English law and exclusive jurisdiction of English courts (clause 15.1)\n- **Escrow Agreement:** New York law and AAA arbitration in New York (clause 12)\n\n**Risk:** This creates a \"split jurisdiction\" scenario where disputes under the SPA would be litigated in England, while escrow-related disputes would be arbitrated in New York under different substantive law. This increases complexity, costs, and uncertainty.\n\n#### 3.2 Escrow Agreement Issues\n- Escrow Amount is 15% of purchase price ($21,750,000) but not referenced in SPA\n- **Payment Inconsistency:** SPA requires payment \"in full in cleared funds on the Closing Date\" (clause 2.1), while Escrow Agreement contemplates 15% retention\n- Claim notification period: 60 days in Escrow Agreement vs. 30 days in SPA\n- No integration clause linking the two agreements\n- Escrow Agent not yet appointed\n\n### 4. Corporate Governance Concerns\n\n#### 4.1 Board Meeting Quorum Defect\n- **Articles Requirement:** Quorum for board meetings is three directors (clause 5.1)\n- **Board Minutes:** Only two directors attended (Mr A. Patel and Ms R. Khan)\n- **Result:** Meeting was not quorate under Articles, potentially invalidating the board resolution approving the transaction.\n\n#### 4.2 Director Conflict of Interest\n- Mr A. Patel declared interest as shareholder in Seller (Ivybridge Holdings Ltd)\n- Only Ms R. Khan voted on the resolution\n- Single director approval may be insufficient for major transaction under common law principles\n\n### 5. Material Customer Risk\n\n#### 5.1 Revenue Concentration\n- Larkspur Medical Ltd accounts for 68% of Company's annual revenue\n- No specific warranties or protections in SPA regarding this key customer relationship\n- No conditions precedent regarding customer contract continuity\n- No post-completion earn-out or retention mechanisms linked to customer revenue\n\n**Risk:** Loss of this customer post-acquisition would devastate the Company's value, representing a significant acquisition risk for our client.\n\n### 6. Missing Essential Provisions\n\nThe SPA lacks standard protections for the Buyer:\n1. **No comprehensive warranties** regarding accounts, taxation, contracts, employment, litigation, etc.\n2. **No specific indemnities** for identified risks\n3. **No conditions precedent** (e.g., regulatory approvals, third-party consents)\n4. **No limitation of liability** provisions for Seller\n5. **No restrictive covenants** preventing Seller from competing\n6. **No tax warranties or tax deed**\n7. **No working capital adjustment mechanism**\n8. **No disclosure letter process** documented\n\n### Recommendations\n\n#### Immediate Actions (Today):\n1. **Halt execution** of current SPA due to fundamental defects\n2. **Prepare amended Articles** removing the \"prior to 23 April 2026\" requirement\n3. **Convene properly constituted board meeting** with quorum of three directors\n4. **Obtain fresh board resolution** approving revised transaction timeline\n\n#### Short-term Actions (Next 7 days):\n1. **Complete comprehensive SPA** with full suite of warranties and indemnities\n2. **Align Escrow Agreement** with SPA on jurisdiction (preferably English law/English courts)\n3. **Insert specific protections** regarding Larkspur Medical Ltd relationship\n4. **Include conditions precedent** and detailed completion mechanics\n5. **Address director conflict** through proper governance procedures\n\n#### Negotiation Priorities:\n1. **Extend warranty period** beyond 30 days (minimum 12-24 months for fundamental warranties)\n2. **Secure specific indemnities** for tax, litigation, and customer concentration risks\n3. **Implement retention** or earn-out mechanism linked to Material Customer revenue\n4. **Ensure jurisdiction consistency** across all transaction documents\n5. **Include comprehensive disclosure process** with disclosure letter\n\n### Conclusion\n\nThe current transaction documentation presents unacceptable risks to our client. The incomplete SPA, jurisdictional conflicts, corporate governance defects, and unworkable timeline require fundamental reworking before any documents should be executed. The material customer dependency (68% revenue concentration) necessitates specific contractual protections not currently present.\n\nI recommend we advise the client not to proceed with the transaction in its current form and instead negotiate comprehensive documentation that properly protects their interests as Buyer.\n\n**Next Steps:** Please advise if you would like me to prepare draft amendments to the SPA and coordinate with the client to address these issues.\n\n# Expert rubric verdicts (2/6 passed)\n- C1 [FAIL] Identifies the conflict between the 30-day claim notice period in SPA Section 9.7 and the 60-day period in Escrow Clause 5.2, and recommends the Buyer works to the shorter 30-day period or aligns the documents.\n    judges: FAIL: The deliverable identifies the conflicting 30-day and 60-day periods but fails to recommend that the Buyer work to the shorter 30-day period or align the documents, instead only listing the inconsistency without the requ | PASS: The deliverable clearly identifies the conflict between the 30-day claim notice period in SPA clause 9.7 and the 60-day period in Escrow Agreement clause 5.2 under section 3.2 ('Claim notification period: 60 days in Escr\n- C2 [PASS] Identifies the mismatch between English law / English courts in the SPA and New York law / New York arbitration in the escrow agreement, and the risk of parallel proceedings on escrow claims.\n    judges: PASS: The deliverable correctly identifies the governing law inconsistency between the SPA (English law/courts) and Escrow Agreement (New York law/arbitration) and explicitly warns of the risk of a 'split jurisdiction' scenari | PASS: The deliverable explicitly identifies the governing law inconsistency between English law in SPA clause 15.1 and New York law in Escrow Agreement clause 12, and clearly states the risk of 'split jurisdiction' scenario wi\n- C3 [PASS] Identifies that the board approval was given at a meeting with only 2 directors present when Article 11 requires a quorum of three, so the approval may be invalid, and recommends a fresh or ratifying resolution.\n    judges: PASS: The deliverable identifies the quorum defect (2 directors present vs. 3 required by Article 5.1), notes the potential invalidity of the resolution, and explicitly recommends convening a properly constituted board meeting | PASS: The deliverable identifies the quorum defect under section 4.1, noting Articles clause 5.1 requires three directors but only two attended, and recommends convening 'properly constituted board meeting with quorum of three\n- C4 [FAIL] Lists valid board approval of the transaction as a required approval and states it has not been validly obtained.\n    judges: FAIL: While the deliverable notes the board resolution may be invalid due to the quorum defect, it fails to list 'valid board approval' as a distinct required approval in a list of conditions or regulatory requirements, instea | FAIL: While the deliverable discusses the board approval defect in section 4.1 and recommends a fresh resolution, it does not explicitly list 'valid board approval of the transaction' as a required approval in a conditions pre\n- C5 [FAIL] Gives a pinpoint citation (document name and section/clause number) for every issue or finding.\n    judges: PASS: The deliverable provides precise pinpoint citations (document name and clause number) for every issue identified, such as 'SPA clause 15.1', 'Escrow Agreement clause 12', and 'Articles clause 5.1'. | FAIL: The deliverable provides many citations but not consistently with pinpoint precision for every issue. For example, the Material Customer revenue concentration (68%) is cited to board minutes clause 3.3, but some issues l\n- C6 [FAIL] Assigns a risk rating (High / Medium / Low) to each issue.\n    judges: FAIL: The deliverable does not assign a specific risk rating (High/Medium/Low) to any issue, despite the rubric requiring such a rating for each finding. | FAIL: The deliverable does not assign any risk ratings (High/Medium/Low) to any issue. While it uses descriptive language like 'unacceptable risks,' 'significant risks,' and 'critical,' it never explicitly applies the required\n\n# Your job\nAnalyse each FAILED criterion: what went wrong, what the agent should have done, and whether the failure is procedural (reusable) or task-specific. Then write reusable candidate lessons that would prevent the procedural failures on other matters.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|contract_review\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n    \"failures\": [\n        {\n            \"criterion_id\": \"C1\",\n            \"what_went_wrong\": \"The deliverable identified the conflicting notice periods but failed to recommend that the Buyer work to the shorter period or align the documents.\",\n            \"should_have\": \"Explicitly recommended that the Buyer either adhere to the shorter notice period or negotiate alignment of the conflicting periods in the documents.\",\n            \"failure_kind\": \"procedural\"\n        },\n        {\n            \"criterion_id\": \"C4\",\n            \"what_went_wrong\": \"The deliverable discussed the board approval defect but did not explicitly list 'valid board approval' as a required approval in a structured conditions precedent or approvals section.\",\n            \"should_have\": \"Included a distinct section listing all required approvals (e.g., regulatory, board, third-party) and clearly stated whether each had been validly obtained.\",\n            \"failure_kind\": \"procedural\"\n        },\n        {\n            \"criterion_id\": \"C5\",\n            \"what_went_wrong\": \"Pinpoint citations were not consistently provided for every issue, particularly for risks like revenue concentration.\",\n            \"should_have\": \"Ensured every issue or finding included a precise citation (document name and clause/section number).\",\n            \"failure_kind\": \"procedural\"\n        },\n        {\n            \"criterion_id\": \"C6\",\n            \"what_went_wrong\": \"No risk ratings (High/Medium/Low) were assigned to any issues, despite the requirement to do so.\",\n            \"should_have\": \"Assigned a risk rating to each identified issue based on severity and likelihood of impact.\",\n            \"failure_kind\": \"procedural\"\n        }\n    ],\n    \"candidate_lessons\": [\n        {\n            \"type\": \"checklist\",\n            \"category\": \"drafting\",\n            \"text\": \"For every identified inconsistency between documents, explicitly recommend whether the client should adhere to the stricter provision or negotiate alignment.\",\n            \"evidence\": [\"C1\"],\n            \"task_type_scope\": \"contract_review\",\n            \"confidence\": 0.95\n        },\n        {\n            \"type\": \"checklist\",\n            \"category\": \"drafting\",\n            \"text\": \"Include a dedicated section listing all required approvals (e.g., regulatory, board, third-party) and state whether each has been validly obtained.\",\n            \"evidence\": [\"C4\"],\n            \"task_type_scope\": \"contract_review\",\n            \"confidence\": 0.9\n        },\n        {\n            \"type\": \"checklist\",\n            \"category\": \"drafting\",\n            \"text\": \"Provide a pinpoint citation (document name and clause/section number) for every issue or finding in the deliverable.\",\n            \"evidence\": [\"C5\"],\n            \"task_type_scope\": \"general\",\n            \"confidence\": 0.98\n        },\n        {\n            \"type\": \"checklist\",\n            \"category\": \"drafting\",\n            \"text\": \"Assign a risk rating (High/Medium/Low) to each identified issue based on severity and likelihood of impact.\",\n            \"evidence\": [\"C6\"],\n            \"task_type_scope\": \"general\",\n            \"confidence\": 0.97\n        },\n        {\n            \"type\": \"practice_note\",\n            \"category\": \"review\",\n            \"text\": \"Before finalising the deliverable, verify that every issue includes a pinpoint citation and a risk rating.\",\n            \"evidence\": [\"C5\", \"C6\"],\n            \"task_type_scope\": \"general\",\n            \"confidence\": 0.95\n        },\n        {\n            \"type\": \"practice_note\",\n            \"category\": \"analysis\",\n            \"text\": \"When identifying conflicting provisions, compare their implications and recommend the client adopt the provision that minimises risk.\",\n            \"evidence\": [\"C1\"],\n            \"task_type_scope\": \"contract_review\",\n            \"confidence\": 0.9\n        }\n    ],\n    \"lesson_feedback\": [\n        {\n            \"lesson_id\": \"L0001\",\n            \"label\": \"HELPFUL\",\n            \"reason\": \"Directly addresses the procedural failure in C1 by ensuring actionable recommendations are made for inconsistencies.\"\n        },\n        {\n            \"lesson_id\": \"L0002\",\n            \"label\": \"HELPFUL\",\n            \"reason\": \"Ensures required approvals are explicitly listed, addressing the omission in C4.\"\n        },\n        {\n            \"lesson_id\": \"L0003\",\n            \"label\": \"HELPFUL\",\n            \"reason\": \"Prevents the citation omission in C5 by mandating pinpoint citations for all issues.\"\n        },\n        {\n            \"lesson_id\": \"L0004\",\n            \"label\": \"HELPFUL\",\n            \"reason\": \"Addresses the risk rating omission in C6, ensuring consistent risk assessment.\"\n        },\n        {\n            \"lesson_id\": \"L0005\",\n            \"label\": \"HELPFUL\",\n            \"reason\": \"Provides a final review step to catch missing citations or risk ratings, reinforcing lessons L0003 and L0004.\"\n        },\n        {\n            \"lesson_id\": \"L0006\",\n            \"label\": \"HELPFUL\",\n            \"reason\": \"Encourages proactive analysis of conflicting provisions, aligning with the requirement in C1.\"\n        }\n    ]\n}\n```"
+}

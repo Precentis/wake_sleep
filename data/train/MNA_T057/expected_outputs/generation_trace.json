@@ -1,0 +1,80 @@
+{
+  "docs": [
+    {
+      "title": "share_purchase_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 646,
+            "output_tokens": 1010
+          }
+        }
+      ]
+    },
+    {
+      "title": "escrow_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 578,
+            "output_tokens": 975
+          }
+        }
+      ]
+    },
+    {
+      "title": "client_email.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 486,
+            "output_tokens": 423
+          }
+        }
+      ]
+    }
+  ],
+  "doc_facts": {
+    "share_purchase_agreement.md": {
+      "key": "spa",
+      "facts": [
+        "Parties: Juniper Systems Ltd (Buyer), Elstree Logistics plc (Seller); the Company is Bellhaven Foods Ltd.",
+        "Section 2.1: the Purchase Price is $170,000,000.",
+        "This Agreement is dated 15 November 2026; Closing is scheduled for 8 January 2027 (the 'Closing Date').",
+        "Section 1.1: 'Closing Date' means 8 January 2027.",
+        "Section 4.5: if the Conditions are not satisfied by the date falling 150 days after the date of this Agreement (signed 15 November 2026), either party may terminate.",
+        "Section 9.7: the Buyer must notify any warranty claim within 30 days of becoming aware of it."
+      ],
+      "must_contain": [
+        "150 days",
+        "15 November 2026",
+        "30 days"
+      ]
+    },
+    "escrow_agreement.md": {
+      "key": "escrow",
+      "facts": [
+        "Clause 4.1: the Escrow Amount shall be released to the Seller on the date falling 18 months after the Closing Date, save to the extent of pending claims notified before that date. 'Business Day' means a day other than a Saturday or Sunday on which banks are open in London.",
+        "The Closing Date is 8 January 2027.",
+        "Clause 5.2: a claim against the Escrow Amount must be notified within 45 days of the Buyer becoming aware of it."
+      ],
+      "must_contain": [
+        "18 months",
+        "8 January 2027",
+        "45 days"
+      ]
+    },
+    "client_email.md": {
+      "key": "client_email",
+      "facts": [
+        "Regulatory counsel expects merger clearance by 29 May 2027."
+      ],
+      "must_contain": [
+        "29 May 2027"
+      ]
+    }
+  }
+}

@@ -1,0 +1,168 @@
+{
+  "task_id": "MNA_T084",
+  "cycle": 1,
+  "lineage": "ablation_no_commit_gate",
+  "graded": true,
+  "failures": [
+    {
+      "criterion_id": "C1",
+      "what_went_wrong": "The agent identified conflicting claim notification periods (30-day in SPA vs. 45-day in Escrow Agreement) but failed to recognize the conflict or recommend aligning them to the shorter period.",
+      "should_have": "Compared the two notification periods, flagged the conflict, and recommended working to the shorter period or aligning the documents.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C2",
+      "what_went_wrong": "The agent noted the long-stop date (29 August 2026) and merger clearance date (12 September 2026) but failed to identify that clearance falls after the long-stop date, creating a conflict.",
+      "should_have": "Explicitly flagged that the merger clearance deadline exceeds the long-stop date and recommended extending the long-stop date.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C4",
+      "what_went_wrong": "The agent listed restrictive covenants (5-year SPA non-compete vs. 18-month employment agreement non-compete) but failed to analyze enforceability or inconsistency between them.",
+      "should_have": "Assessed the enforceability of the longer non-compete and flagged the inconsistency between the two agreements.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C6",
+      "what_went_wrong": "The agent missed pinpoint citations for key findings, such as the merger clearance date and days remaining calculation.",
+      "should_have": "Ensured every deadline or obligation in the deliverable included a document name and clause/section reference.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C7",
+      "what_went_wrong": "The agent noted that the long-stop date (29 August 2026) fell on a weekend but failed to adjust it to the next business day per the document's 'Business Day' definition.",
+      "should_have": "Applied the 'Business Day' definition to adjust weekend/holiday deadlines to the next valid business day.",
+      "failure_kind": "procedural"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T084_0",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "For every deadline or obligation, compare all related provisions across documents to identify and flag conflicts in time periods or requirements.",
+      "source_tasks": [
+        "MNA_T084"
+      ],
+      "evidence": [
+        "MNA_T084:C1",
+        "MNA_T084:C4"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T084_1",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "When a computed deadline falls on a weekend or holiday, check the document's 'Business Day' definition and adjust the deadline to the next valid business day.",
+      "source_tasks": [
+        "MNA_T084"
+      ],
+      "evidence": [
+        "MNA_T084:C7"
+      ],
+      "task_type_scope": "timeline_analysis",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T084_2",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Ensure every deadline, obligation, or finding in the deliverable includes a pinpoint citation (document name and clause/section number).",
+      "source_tasks": [
+        "MNA_T084"
+      ],
+      "evidence": [
+        "MNA_T084:C6"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T084_3",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "For restrictive covenants, assess enforceability by comparing duration, scope, and geographic reach against jurisdictional standards and flag inconsistencies between agreements.",
+      "source_tasks": [
+        "MNA_T084"
+      ],
+      "evidence": [
+        "MNA_T084:C4"
+      ],
+      "task_type_scope": "timeline_analysis",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T084_4",
+      "type": "checklist",
+      "category": "review",
+      "text": "Before finalizing a timeline analysis, verify that all external deadlines (e.g., regulatory clearances) fall within contractual long-stop dates and flag any conflicts.",
+      "source_tasks": [
+        "MNA_T084"
+      ],
+      "evidence": [
+        "MNA_T084:C2"
+      ],
+      "task_type_scope": "timeline_analysis",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T084_5",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "For rolling deadlines (e.g., claim notification periods), calculate the expiry date from the trigger event and include both the period and absolute deadline in the deliverable.",
+      "source_tasks": [
+        "MNA_T084"
+      ],
+      "evidence": [
+        "MNA_T084:C1"
+      ],
+      "task_type_scope": "timeline_analysis",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.8
+    }
+  ],
+  "lesson_feedback": [
+    {
+      "lesson_id": "L0001",
+      "label": "HELPFUL",
+      "reason": "Generalizes conflict identification across documents, which is critical for timeline analysis and avoids oversights like C1."
+    },
+    {
+      "lesson_id": "L0002",
+      "label": "HELPFUL",
+      "reason": "Directly addresses the procedural failure in C7 by ensuring business day adjustments are applied consistently."
+    },
+    {
+      "lesson_id": "L0003",
+      "label": "HELPFUL",
+      "reason": "Prevents citation omissions like those in C6, ensuring traceability and defensibility of the analysis."
+    },
+    {
+      "lesson_id": "L0004",
+      "label": "HELPFUL",
+      "reason": "Encourages enforceability analysis for restrictive covenants, which was missing in C4."
+    },
+    {
+      "lesson_id": "L0005",
+      "label": "HELPFUL",
+      "reason": "Proactively flags conflicts between external and contractual deadlines, addressing the oversight in C2."
+    },
+    {
+      "lesson_id": "L0006",
+      "label": "HELPFUL",
+      "reason": "Clarifies how to handle rolling deadlines, which could improve clarity for obligations like those in C1."
+    }
+  ],
+  "input_tokens": 4738,
+  "output_tokens": 1372,
+  "cost_usd": 0.004427,
+  "prompt": "# Task\nType: timeline_analysis | Practice area: corporate_mna\nYou act for the Buyer, Corrib Capital LLP. Corrib Capital LLP (the Buyer) is acquiring the entire issued share capital of Pemberton Technologies Ltd (the Company) from Marlow Robotics Ltd (the Seller).\n\nPrepare a timeline and deadlines analysis of all time-sensitive obligations in the matter documents. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 12 May 2026. Address the deliverable to the supervising partner.\n\n# Trajectory (29 model steps, 29 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"client_email.md\"})\n 3. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 4. [research] read_document({\"name\": \"escrow_agreement.md\"})\n 5. [research] read_document({\"name\": \"employment_agreement.md\"})\n 6. [research] search_documents({\"query\": \"days\"})\n 7. [research] search_documents({\"query\": \"months\"})\n 8. [research] search_documents({\"query\": \"years\"})\n 9. [analysis] calculate({\"expression\": \"spa_date = date('2026-05-01')\\nclosing_date = date('2026-06-29')\\nconditions_deadline = add_days(spa_date, 120)\\nconditions_deadline\"})\n10. [analysis] calculate({\"expression\": \"general_warranties_end = add_months(closing_date, 24)\\nfundamental_warranties_end = add_months(closing_date, 48)\\ngeneral_warranties_end\"})\n11. [analysis] calculate({\"expression\": \"closing_date = date('2026-06-29')\\ngeneral_warranties_end = add_months(closing_date, 24)\\nfundamental_warranties_end = add_months(closing_date, )\n12. [analysis] calculate({\"expression\": \"seller_noncomp_end = add_years(closing_date, 5)\\nseller_noncomp_end\"})\n13. [analysis] calculate({\"expression\": \"closing_date = date('2026-06-29')\\nseller_noncomp_end = add_years(closing_date, 5)\\nseller_noncomp_end\"})\n14. [analysis] calculate({\"expression\": \"escrow_effective_date = date('2026-05-12')\\nescrow_release_date = add_months(escrow_effective_date, 18)\\nescrow_release_date\"})\n15. [analysis] calculate({\"expression\": \"escrow_effective_date = date('2026-05-12')\\nescrow_deposit_deadline = add_days(escrow_effective_date, 5)\\nescrow_deposit_deadline\"})\n16. [analysis] calculate({\"expression\": \"weekday(date('2026-05-17'))\"})\n17. [analysis] calculate({\"expression\": \"escrow_effective_date = date('2026-05-12')\\nescrow_deposit_deadline = next_business_day(add_days(escrow_effective_date, 5))\\nescrow_deposit_dead)\n18. [analysis] calculate({\"expression\": \"merger_clearance_deadline = date('2026-09-12')\\nmerger_clearance_deadline\"})\n19. [drafting] write_draft(<1014 words>)\n20. [verification] read_draft({})\n21. [verification] search_documents({\"query\": \"5:00\"})\n22. [verification] search_documents({\"query\": \"termination\"})\n23. [verification] calculate({\"expression\": \"effective_date = date('2026-05-12')\\nrelease_date = add_months(effective_date, 18)\\nrelease_date\"})\n24. [editing] edit_draft(find='| **29 August 2026** | Conditions satisfaction/waiver deadli' -> '| **29 August 2026** | Conditions satisfaction/waiver deadli')\n25. [editing] edit_draft(find='| **Founder non-competition** | 18 months after termination ' -> '| **Founder non-competition** | 18 months after termination ')\n26. [editing] edit_draft(find='| **29 June 2026** | Closing Date | SPA: Clause 1.1 | Transa' -> '| **29 June 2026** | Closing Date | SPA: Clause 1.1 | Transa')\n27. [editing] edit_draft(find='| **18 May 2026** | Escrow deposit deadline (5 business days' -> '| **18 May 2026** | Escrow deposit deadline (5 business days')\n28. [verification] read_draft({})\n29. [control] finish({\"summary\": \"Completed timeline and deadlines analysis for Corrib Capital LLP's acquisition of Pemberton Technologies Ltd. The analysis identifies all time-sens)\n\n# Final deliverable\n# Timeline and Deadlines Analysis: Acquisition of Pemberton Technologies Ltd by Corrib Capital LLP\n\n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Date:** 12 May 2026  \n**Matter:** Acquisition of Pemberton Technologies Ltd by Corrib Capital LLP  \n**Client:** Corrib Capital LLP (Buyer)\n\n## Executive Summary\n\nThis analysis sets out all time-sensitive obligations arising from the transaction documents for the acquisition of Pemberton Technologies Ltd (the \"Company\") by Corrib Capital LLP (the \"Buyer\") from Marlow Robotics Ltd (the \"Seller\"). The key documents reviewed are:\n\n1. Share Purchase Agreement (SPA) dated 1 May 2026\n2. Escrow Agreement (anticipated execution around 12 May 2026)\n3. Employment Agreement with Founder (Effective Date: 12 May 2026)\n4. Client email dated [pre-12 May 2026]\n\nThe analysis identifies critical deadlines spanning from immediate obligations to long-term commitments extending to 2031.\n\n## Key Dates and Deadlines\n\n### 1. Transaction Completion Timeline\n\n| Date | Event | Document Reference | Implications |\n|------|-------|-------------------|--------------|\n| **1 May 2026** | SPA execution date | SPA: Date | Agreement becomes effective; conditions period begins |\n| **12 May 2026** | Employment Agreement Effective Date; Anticipated Escrow Agreement Effective Date | Employment Agreement: Clause 1.1; Escrow Agreement Recitals | Founder employment commences; Escrow arrangements take effect |\n| **18 May 2026** | Escrow deposit deadline (5 business days after Effective Date) | Escrow Agreement: Clause 2.1 | Seller must deposit Escrow Amount (15% of purchase price = $30,000,000) into escrow account |\n| **29 June 2026** | Closing Date | SPA: Clause 1.1 | Transaction completion; purchase price ($200,000,000) payment due by 5:00 p.m. in cleared funds |\n| **12 September 2026** | Merger clearance expected date | Client email | All transaction documents must be finalised and capable of execution prior to this date |\n| **29 August 2026** | Conditions satisfaction/waiver deadline (120 days from SPA date) | SPA: Clause 4.5 | Either party may terminate if conditions not satisfied/waived by this date (note: falls on a Saturday) |\n\n### 2. Post-Completion Obligations and Deadlines\n\n#### A. Warranty Claims (SPA)\n\n| Obligation | Time Period | Document Reference | Deadline/Expiry |\n|------------|-------------|-------------------|----------------|\n| **Warranty claim notification** | Within 30 days of becoming aware of facts giving rise to claim | SPA: Clause 9.7 | Rolling deadline - must be monitored continuously post-Closing |\n| **General Warranties survival** | 24 months from Closing | SPA: Clause 10.1 | Expires: **29 June 2028** (all claims must be notified before this date) |\n| **Fundamental Warranties survival** | 48 months from Closing | SPA: Clause 10.1 | Expires: **29 June 2030** (all claims must be notified before this date) |\n\n#### B. Escrow Arrangements\n\n| Obligation | Time Period | Document Reference | Deadline/Expiry |\n|------------|-------------|-------------------|----------------|\n| **Escrow deposit** | Within 5 business days of Effective Date | Escrow Agreement: Clause 2.1 | Due: **18 May 2026** (Monday) |\n| **Escrow claim notification** | Within 45 days of Buyer becoming aware of claim | Escrow Agreement: Clause 4.2 | Rolling deadline - must be monitored continuously |\n| **Escrow release** | 18 months from Effective Date | Escrow Agreement: Clause 3.1 | Release Date: **12 November 2027** (balance released to Seller, less pending claims) |\n\n#### C. Restrictive Covenants\n\n| Obligation | Time Period | Document Reference | Expiry Date |\n|------------|-------------|-------------------|-------------|\n| **Seller non-competition** | 5 years from Closing Date | SPA: Clause 12.1 | Expires: **29 June 2031** |\n| **Founder non-competition** | 18 months after termination of employment | Employment Agreement: Clause 18.2 | Date depends on termination date (applies within 25-mile radius and to clients with material business relationship during 12 months preceding termination, including Galloway Foods Ltd) |\n| **Founder confidentiality** | 5 years after termination of employment | Employment Agreement: Clause 7.2 | Date depends on termination date |\n\n### 3. Critical Path Analysis\n\n#### Immediate Priorities (Next 30 Days):\n1. **By 18 May 2026**: Ensure Seller deposits $30,000,000 (15% of purchase price) into escrow account\n2. **Continuous monitoring**: Begin tracking potential warranty claim notification deadlines (30-day clock starts when facts become known)\n3. **By 12 September 2026**: Finalise all transaction documents for merger clearance\n\n#### Medium-Term Milestones (Next 24 Months):\n1. **29 June 2028**: General Warranties expire - all related claims must be notified before this date\n2. **12 November 2027**: Escrow release date - balance (less pending claims) payable to Seller\n3. **Continuous**: Monitor 45-day escrow claim notification deadlines\n\n#### Long-Term Considerations (Beyond 24 Months):\n1. **29 June 2030**: Fundamental Warranties expire - all related claims must be notified before this date\n2. **29 June 2031**: Seller non-competition period ends\n3. **Variable**: Founder restrictive covenants (18-month non-compete, 5-year confidentiality) triggered upon termination\n\n## Risk Assessment and Recommendations\n\n### 1. Critical Risk Areas:\n- **30-day warranty claim notification**: This is a short window that requires immediate attention upon discovery of any potential breach. Recommend implementing a systematic monitoring process.\n- **45-day escrow claim notification**: Similar tight deadline for claims against escrow funds.\n- **Merger clearance deadline (12 September 2026)**: All documentation must be finalised well before this date to avoid transaction delays.\n\n### 2. Documentation Gaps:\n- The Escrow Agreement shows \"[●] May 2026\" as execution date and references SPA dated \"on or about 12 May 2026\" - these should be aligned with actual execution dates.\n- The Employment Agreement references \"[Full Name of Founder]\" and \"[Address]\" - these require completion.\n\n### 3. Practical Recommendations:\n1. Establish a calendar/diary system tracking all rolling deadlines (30-day and 45-day claim notifications)\n2. Implement a post-completion review process to monitor potential warranty breaches\n3. Ensure proper documentation of all claim notifications to preserve rights\n4. Monitor the Founder's employment status as termination triggers restrictive covenant clocks\n5. Prepare for escrow release process in November 2027\n\n## Conclusion\n\nThe transaction involves multiple layered deadlines extending from immediate post-signing obligations through to long-term commitments ending in 2031. The most critical immediate deadlines are the escrow deposit (18 May 2026) and merger clearance preparation (by 12 September 2026). The rolling 30-day and 45-day claim notification periods require vigilant ongoing monitoring to preserve the Buyer's rights under the warranties and escrow arrangements.\n\nAll dates calculated assume the documented dates are accurate and should be verified upon final execution of the Escrow Agreement.\n\n# Expert rubric verdicts (2/7 passed)\n- C1 [FAIL] Identifies the conflict between the 30-day claim notice period in SPA Section 9.7 and the 45-day period in Escrow Clause 5.2, and recommends the Buyer works to the shorter 30-day period or aligns the documents.\n    judges: FAIL: The deliverable identifies both the 30-day (SPA Clause 9.7) and 45-day (Escrow Agreement Clause 4.2) claim periods but fails to identify the conflict between them or recommend that the Buyer work to the shorter period. | FAIL: The deliverable identifies both the 30-day SPA warranty claim period (Clause 9.7) and the 45-day escrow claim period (Clause 4.2), but fails to identify any conflict between them or recommend working to the shorter perio\n- C2 [FAIL] Calculates the long-stop date as 29 August 2026 (120 days after signing on 1 May 2026) and identifies that expected clearance on 12 September 2026 falls after it, recommending an extension.\n    judges: FAIL: The deliverable correctly calculates the long-stop date as 29 August 2026 and notes the merger clearance date of 12 September 2026, but fails to identify the conflict that clearance falls after the long-stop date or reco | PASS: The deliverable correctly calculates the long-stop date as 29 August 2026 (120 days after 1 May 2026), notes that merger clearance is expected on 12 September 2026 which falls after it, and includes this in the 'Critical\n- C3 [PASS] States that General Warranty claims must be notified by 29 June 2028 (24 months after Closing) and Fundamental Warranty claims by 29 June 2030 (48 months after Closing).\n    judges: PASS: The deliverable correctly states that General Warranty claims must be notified by 29 June 2028 and Fundamental Warranty claims by 29 June 2030, consistent with SPA Clause 10.1. | PASS: The deliverable correctly states General Warranty claims expire 29 June 2028 (24 months after Closing on 29 June 2026) and Fundamental Warranty claims expire 29 June 2030 (48 months after Closing), with accurate document\n- C4 [FAIL] Identifies that the 5-year SPA non-compete may be unenforceable as wider than reasonably necessary and is inconsistent with the 18-month restriction in the Founder's employment agreement.\n    judges: FAIL: The deliverable lists both restrictive covenant periods but fails to identify the inconsistency between the 5-year SPA non-compete and the 18-month employment agreement restriction, or analyze enforceability. | FAIL: The deliverable notes both the 5-year SPA non-compete (Clause 12.1) and 18-month Founder non-compete (Clause 18.2), but does not identify any potential unenforceability of the 5-year restriction as wider than reasonably \n- C5 [PASS] Gives the long-stop period as 120 days and as the date 29 August 2026, with days remaining from 12 May 2026 (109 days).\n    judges: PASS: The deliverable correctly gives the long-stop period as 120 days, the date as 29 August 2026, and calculates 109 days remaining from 12 May 2026. | PASS: The deliverable gives the long-stop period as 120 days and the date as 29 August 2026, and calculates days remaining from 12 May 2026 as 109 days (implied by the date calculation and context, though not explicitly stated\n- C6 [FAIL] Gives a pinpoint citation (document name and section/clause number) for every issue or finding.\n    judges: PASS: The deliverable provides pinpoint citations (document name and clause number) for every issue, such as 'SPA: Clause 9.7', 'Escrow Agreement: Clause 2.1', and 'Employment Agreement: Clause 18.2'. | FAIL: While many citations are present, the deliverable fails to provide pinpoint citations for several key findings: the merger clearance date (12 September 2026) has no document citation, the 109 days remaining calculation h\n- C7 [FAIL] Checks whether computed deadlines fall on a weekend and adjusts them under the documents' Business Day definition.\n    judges: FAIL: The deliverable notes that 29 August 2026 falls on a Saturday but fails to adjust the deadline to the next Business Day, despite the SPA defining 'Business Day' and requiring adjustment. | PASS: The deliverable identifies that 29 August 2026 falls on a Saturday (noting 'falls on a Saturday' in the table), and uses the Escrow Agreement's Business Day definition for the 18 May 2026 escrow deposit deadline (calcula\n\n# Your job\nAnalyse each FAILED criterion: what went wrong, what the agent should have done, and whether the failure is procedural (reusable) or task-specific. Then write reusable candidate lessons that would prevent the procedural failures on other matters.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|timeline_analysis\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C1\",\n      \"what_went_wrong\": \"The agent identified conflicting claim notification periods (30-day in SPA vs. 45-day in Escrow Agreement) but failed to recognize the conflict or recommend aligning them to the shorter period.\",\n      \"should_have\": \"Compared the two notification periods, flagged the conflict, and recommended working to the shorter period or aligning the documents.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C2\",\n      \"what_went_wrong\": \"The agent noted the long-stop date (29 August 2026) and merger clearance date (12 September 2026) but failed to identify that clearance falls after the long-stop date, creating a conflict.\",\n      \"should_have\": \"Explicitly flagged that the merger clearance deadline exceeds the long-stop date and recommended extending the long-stop date.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C4\",\n      \"what_went_wrong\": \"The agent listed restrictive covenants (5-year SPA non-compete vs. 18-month employment agreement non-compete) but failed to analyze enforceability or inconsistency between them.\",\n      \"should_have\": \"Assessed the enforceability of the longer non-compete and flagged the inconsistency between the two agreements.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C6\",\n      \"what_went_wrong\": \"The agent missed pinpoint citations for key findings, such as the merger clearance date and days remaining calculation.\",\n      \"should_have\": \"Ensured every deadline or obligation in the deliverable included a document name and clause/section reference.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C7\",\n      \"criterion_id\": \"C7\",\n      \"what_went_wrong\": \"The agent noted that the long-stop date (29 August 2026) fell on a weekend but failed to adjust it to the next business day per the document's 'Business Day' definition.\",\n      \"should_have\": \"Applied the 'Business Day' definition to adjust weekend/holiday deadlines to the next valid business day.\",\n      \"failure_kind\": \"procedural\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"For every deadline or obligation, compare all related provisions across documents to identify and flag conflicts in time periods or requirements.\",\n      \"evidence\": [\"C1\", \"C4\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"When a computed deadline falls on a weekend or holiday, check the document's 'Business Day' definition and adjust the deadline to the next valid business day.\",\n      \"evidence\": [\"C7\"],\n      \"task_type_scope\": \"timeline_analysis\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"Ensure every deadline, obligation, or finding in the deliverable includes a pinpoint citation (document name and clause/section number).\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"For restrictive covenants, assess enforceability by comparing duration, scope, and geographic reach against jurisdictional standards and flag inconsistencies between agreements.\",\n      \"evidence\": [\"C4\"],\n      \"task_type_scope\": \"timeline_analysis\",\n      \"confidence\": 0.85\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"review\",\n      \"text\": \"Before finalizing a timeline analysis, verify that all external deadlines (e.g., regulatory clearances) fall within contractual long-stop dates and flag any conflicts.\",\n      \"evidence\": [\"C2\"],\n      \"task_type_scope\": \"timeline_analysis\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"For rolling deadlines (e.g., claim notification periods), calculate the expiry date from the trigger event and include both the period and absolute deadline in the deliverable.\",\n      \"evidence\": [\"C1\"],\n      \"task_type_scope\": \"timeline_analysis\",\n      \"confidence\": 0.8\n    }\n  ],\n  \"lesson_feedback\": [\n    {\n      \"lesson_id\": \"L0001\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Generalizes conflict identification across documents, which is critical for timeline analysis and avoids oversights like C1.\"\n    },\n    {\n      \"lesson_id\": \"L0002\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Directly addresses the procedural failure in C7 by ensuring business day adjustments are applied consistently.\"\n    },\n    {\n      \"lesson_id\": \"L0003\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Prevents citation omissions like those in C6, ensuring traceability and defensibility of the analysis.\"\n    },\n    {\n      \"lesson_id\": \"L0004\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Encourages enforceability analysis for restrictive covenants, which was missing in C4.\"\n    },\n    {\n      \"lesson_id\": \"L0005\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Proactively flags conflicts between external and contractual deadlines, addressing the oversight in C2.\"\n    },\n    {\n      \"lesson_id\": \"L0006\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Clarifies how to handle rolling deadlines, which could improve clarity for obligations like those in C1.\"\n    }\n  ]\n}\n```"
+}

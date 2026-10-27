@@ -1,0 +1,143 @@
+{
+  "docs": [
+    {
+      "title": "share_purchase_agreement.md",
+      "attempts": [
+        {
+          "missing": [
+            "pandemics"
+          ],
+          "usage": {
+            "input_tokens": 693,
+            "output_tokens": 1037
+          }
+        },
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 1758,
+            "output_tokens": 1041
+          }
+        }
+      ]
+    },
+    {
+      "title": "board_minutes.md",
+      "attempts": [
+        {
+          "missing": [
+            "2 directors"
+          ],
+          "usage": {
+            "input_tokens": 480,
+            "output_tokens": 800
+          }
+        },
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 1306,
+            "output_tokens": 876
+          }
+        }
+      ]
+    },
+    {
+      "title": "articles_of_association_extract.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 486,
+            "output_tokens": 839
+          }
+        }
+      ]
+    },
+    {
+      "title": "disclosure_letter.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 513,
+            "output_tokens": 1046
+          }
+        }
+      ]
+    },
+    {
+      "title": "client_email.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 552,
+            "output_tokens": 440
+          }
+        }
+      ]
+    }
+  ],
+  "doc_facts": {
+    "share_purchase_agreement.md": {
+      "key": "spa",
+      "facts": [
+        "Parties: Northgate Medical Ltd (Buyer), Whitlock Energy plc (Seller); the Company is Rothley Capital LLP.",
+        "Section 2.1: the Purchase Price is $65,000,000.",
+        "This Agreement is dated 3 March 2027; Closing is scheduled for 28 April 2027 (the 'Closing Date').",
+        "Section 3.4 (Earn-out): the Earn-out Payment equals 3 times the amount by which FY2026 EBITDA exceeds $6,500,000, capped at $10,000,000.",
+        "Section 1.1: 'Material Adverse Change' means any event which has a material adverse effect on the business of the Company, excluding changes in general economic conditions, changes affecting the industry generally, and pandemics.",
+        "Section 2.3: the Purchase Price shall be reduced dollar-for-dollar by any shortfall of Closing Working Capital below the Target Working Capital of $2,000,000."
+      ],
+      "must_contain": [
+        "$6,500,000",
+        "$10,000,000",
+        "Material Adverse Change",
+        "pandemics",
+        "$2,000,000"
+      ]
+    },
+    "board_minutes.md": {
+      "key": "board_minutes",
+      "facts": [
+        "Present: 2 directors (of 5). The meeting was quorate. RESOLVED to approve entry into the Share Purchase Agreement."
+      ],
+      "must_contain": [
+        "2 directors"
+      ]
+    },
+    "articles_of_association_extract.md": {
+      "key": "articles",
+      "facts": [
+        "Article 11: the quorum for board meetings is three directors."
+      ],
+      "must_contain": [
+        "three directors"
+      ]
+    },
+    "disclosure_letter.md": {
+      "key": "disclosure",
+      "facts": [
+        "Disclosure against Warranty 8.2 (IP): the Company's core platform software was developed in 2023 by an independent contractor, Hartwell Robotics Ltd. No written assignment of intellectual property was entered into."
+      ],
+      "must_contain": [
+        "Hartwell Robotics Ltd",
+        "No written assignment"
+      ]
+    },
+    "client_email.md": {
+      "key": "client_email",
+      "facts": [
+        "Management accounts show FY2026 EBITDA of $7,800,000; the Seller says the Earn-out Payment will therefore be $4,800,000.",
+        "The estimated Closing Working Capital is $1,090,000. The Seller's draft funds flow shows an adjusted purchase price of $63,180,000."
+      ],
+      "must_contain": [
+        "$7,800,000",
+        "$4,800,000",
+        "$1,090,000",
+        "$63,180,000"
+      ]
+    }
+  }
+}

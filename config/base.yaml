@@ -1,0 +1,62 @@
+# Wake-sleep legal agent experiment — base configuration.
+experiment_id: ws_2026_001
+seed: 42
+dataset_version: lab_synth_v1
+prompt_version: p1
+results_dir: results
+
+models:
+  # Role separation: agent, judges, sleep/merge, commit gate and dataset author are
+  # different model families wherever possible, so no model grades or gates its own work.
+  # Agent moved from Azure DeepSeek-V4-Flash (125k tokens/min quota — too low for ~4k runs) to Bedrock.
+  agent:      {provider: bedrock, model: deepseek.v3.2}
+  judge_1:    {provider: bedrock, model: zai.glm-5}
+  judge_2:    {provider: bedrock, model: moonshotai.kimi-k2.5}
+  sleep:      {provider: bedrock, model: mistral.mistral-large-3-675b-instruct}  # review + merge + helpfulness
+  commit:     {provider: bedrock, model: qwen.qwen3-235b-a22b-2507}  # commit gate ("Jev" role)
+  retrieval:  {provider: bedrock, model: qwen.qwen3-235b-a22b-2507}  # lesson relevance scorer
+  author:     {provider: bedrock, model: qwen.qwen3-235b-a22b-2507}  # synthetic dataset author
+embedding_model: sentence-transformers/all-MiniLM-L6-v2
+
+# USD per 1M tokens. ASSUMED list prices — used for relative cost comparison only.
+prices:
+  DeepSeek-V4-Flash: {input: 0.14, output: 0.28}
+  mistral.mistral-large-3-675b-instruct: {input: 0.50, output: 1.50}
+  zai.glm-5: {input: 1.00, output: 3.20}
+  moonshotai.kimi-k2.5: {input: 0.60, output: 2.50}
+  deepseek.v3.2: {input: 0.62, output: 1.85}
+  qwen.qwen3-235b-a22b-2507: {input: 0.22, output: 0.88}
+
+agent:
+  temperature: 0
+  max_steps: 50
+  max_tokens_per_call: 8192
+  max_input_tokens: 0        # 0 = unlimited (natural comparison)
+
+wake:
+  workers: 16
+
+grading:
+  workers: 16
+  judges: [judge_1, judge_2]
+  aggregation: both_pass     # criterion passes only if every judge passes it
+
+sleep:
+  workers: 12
+  generate_from_grades: true
+  helpfulness_from_cycle: 2
+  merge: true
+  merge_chunk: 40
+  max_lessons_per_category: 40
+
+commit_gate:
+  enabled: true
+  min_sources_for_auto_commit: 2
+
+memory:
+  mode: full                 # none | full | retrieved | oracle | placebo
+  retrieval_k: 10
+  retrieval_weights: {semantic: 0.40, task_type: 0.20, practice_area: 0.15, helpfulness: 0.15, general: 0.10}
+  llm_rerank: true
+
+cycles: 10

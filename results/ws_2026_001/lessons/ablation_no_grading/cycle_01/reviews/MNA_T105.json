@@ -1,0 +1,142 @@
+{
+  "task_id": "MNA_T105",
+  "cycle": 1,
+  "lineage": "ablation_no_grading",
+  "graded": false,
+  "failures": [
+    {
+      "criterion_id": "C1",
+      "what_went_wrong": "The agent failed to verify the completeness of the Share Purchase Agreement before proceeding with analysis, leading to wasted effort on missing clauses (5-9).",
+      "should_have": "Confirmed the document's structural integrity and completeness immediately after reading it.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C2",
+      "what_went_wrong": "The agent did not cross-check the earn-out calculation formula against the Seller's representation until after drafting the issue, risking incorrect assumptions.",
+      "should_have": "Reconciled the contractual formula with the Seller's stated figures before drafting the earn-out analysis.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C3",
+      "what_went_wrong": "The agent did not flag the undefined 'Business Day' term during initial document review, only addressing it after drafting the jurisdictional conflicts section.",
+      "should_have": "Identified and flagged all undefined terms during the first pass of the agreement.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C4",
+      "what_went_wrong": "The agent did not verify the escrow funding timeline against the closing date until late in the process, missing an early opportunity to flag the inconsistency.",
+      "should_have": "Compared all dates and timelines across documents immediately after reading them.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C5",
+      "what_went_wrong": "The agent did not independently verify the currency conversion for the purchase price discrepancy, relying solely on stated figures.",
+      "should_have": "Cross-checked currency figures using a reliable exchange rate source for the transaction date.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C6",
+      "what_went_wrong": "The agent did not prioritise issues by severity in the executive summary, burying the IP assignment risk (a deal-breaker) among less critical items.",
+      "should_have": "Ranked issues by materiality and deal impact in the executive summary.",
+      "failure_kind": "task_specific"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T105_0",
+      "type": "checklist",
+      "category": "review",
+      "text": "Before analysing any contract, verify its completeness by checking for missing clauses, sections, or annexes against the table of contents or standard agreement structure.",
+      "source_tasks": [
+        "MNA_T105"
+      ],
+      "evidence": [
+        "MNA_T105:C1"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T105_1",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Reconcile all financial formulas in agreements with counterparty representations immediately after identifying them, flagging discrepancies before drafting.",
+      "source_tasks": [
+        "MNA_T105"
+      ],
+      "evidence": [
+        "MNA_T105:C2"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T105_2",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "List all undefined terms in agreements during initial review, flagging them for clarification before proceeding with substantive analysis.",
+      "source_tasks": [
+        "MNA_T105"
+      ],
+      "evidence": [
+        "MNA_T105:C3"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T105_3",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Compare all dates, timelines, and funding requirements across transaction documents immediately after reading them, flagging inconsistencies.",
+      "source_tasks": [
+        "MNA_T105"
+      ],
+      "evidence": [
+        "MNA_T105:C4"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T105_4",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Verify currency conversions for multi-currency transactions using a reliable exchange rate source for the relevant date before relying on stated figures.",
+      "source_tasks": [
+        "MNA_T105"
+      ],
+      "evidence": [
+        "MNA_T105:C5"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T105_5",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Rank issues in executive summaries by materiality and deal impact, placing deal-breaker risks first and lesser issues later.",
+      "source_tasks": [
+        "MNA_T105"
+      ],
+      "evidence": [
+        "MNA_T105:C6"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    }
+  ],
+  "lesson_feedback": [],
+  "input_tokens": 4115,
+  "output_tokens": 1009,
+  "cost_usd": 0.003571,
+  "prompt": "# Task\nType: contract_review | Practice area: corporate_mna\nYou act for the Buyer, Foxley Technologies Ltd. Foxley Technologies Ltd (the Buyer) is acquiring the entire issued share capital of Orwell Marine Ltd (the Company) from Upton Pharma plc (the Seller).\n\nReview the principal agreement against the other matter documents and report the problematic provisions. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 21 January 2027. Address the deliverable to the supervising partner.\n\n# Trajectory (32 model steps, 32 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"client_email.md\"})\n 3. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 4. [research] read_document({\"name\": \"disclosure_letter.md\"})\n 5. [research] read_document({\"name\": \"escrow_agreement.md\"})\n 6. [research] search_documents({\"query\": \"warranty\"})\n 7. [research] search_documents({\"query\": \"EBITDA\"})\n 8. [research] search_documents({\"query\": \"Material Adverse Change\"})\n 9. [analysis] calculate({\"expression\": \"earn_out = 3 * (7100000 - 5000000)\"})\n10. [analysis] calculate({\"expression\": \"capped_earn_out = min(earn_out, 5000000)\"})\n11. [analysis] calculate({\"expression\": \"earn_out_calc = 3 * (7100000 - 5000000)\\ncapped_earn_out = min(earn_out_calc, 5000000)\"})\n12. [analysis] calculate({\"expression\": \"days_between(date('2026-12-29'), date('2027-01-21'))\"})\n13. [analysis] calculate({\"expression\": \"days_between(date('2027-01-21'), date('2027-03-11'))\"})\n14. [analysis] calculate({\"expression\": \"escrow_amount = 0.15 * 12500000\"})\n15. [analysis] calculate({\"expression\": \"days_between(date('2027-01-21'), add_months(date('2027-01-21'), 12))\"})\n16. [analysis] calculate({\"expression\": \"days_between(date('2027-01-21'), add_months(date('2027-01-21'), 18))\"})\n17. [drafting] write_draft(<1082 words>)\n18. [verification] read_draft({})\n19. [verification] search_documents({\"query\": \"8.2\"})\n20. [verification] read_document({\"name\": \"share_purchase_agreement.md\", \"start_line\": 44, \"num_lines\": 20})\n21. [verification] read_document({\"name\": \"share_purchase_agreement.md\", \"start_line\": 1, \"num_lines\": 63})\n22. [editing] edit_draft(find='#### 3. Intellectual Property Risks\\n\\n**Issue:** The Disclosu' -> '#### 3. Intellectual Property Risks and Missing Warranties\\n\\n')\n23. [editing] edit_draft(find='2. **Document Date Inconsistencies:** \\n   - Share Purchase A' -> '2. **Document Date and Reference Inconsistencies:** \\n   - Sh')\n24. [editing] edit_draft(find='#### 8. Escrow Funding Discrepancy\\n\\n**Issue:** The Escrow Ag' -> '#### 8. Escrow Funding and Calculation Discrepancies\\n\\n**Issu')\n25. [verification] search_documents({\"query\": \"Business Day\"})\n26. [editing] edit_draft(find='#### 5. Jurisdictional and Governing Law Conflicts\\n\\n**Issue:' -> '#### 5. Jurisdictional and Governing Law Conflicts\\n\\n**Issue ')\n27. [verification] read_draft({})\n28. [editing] edit_draft(find='**Risk:** \\n1. The absence of written IP assignment creates s' -> '**Risk:** \\n1. The absence of written IP assignment creates s')\n29. [editing] edit_draft(find='**Risk:** The discrepancy between the contractual formula an' -> '**Risk:** \\n1. The discrepancy between the contractual formul')\n30. [editing] edit_draft(find='**Risk:** The \"no later than\" formulation for payment create' -> '**Risk:** \\n1. The \"no later than\" formulation for payment cr')\n31. [verification] read_draft({})\n32. [control] finish({\"summary\": \"Completed review of Share Purchase Agreement and related documents for Foxley Technologies Ltd's acquisition of Orwell Marine Ltd. Identified multi)\n\n# Final deliverable\n# Review of Share Purchase Agreement and Related Documents\n## Acquisition of Orwell Marine Ltd by Foxley Technologies Ltd\n\n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Date:** 21 January 2027  \n**Matter:** Acquisition of Orwell Marine Ltd  \n\n### Executive Summary\n\nI have reviewed the principal agreement (Share Purchase Agreement dated 29 December 2026) against the other matter documents and identified several problematic provisions that require urgent attention. The key issues include:\n\n1. **Material inconsistencies** between the Share Purchase Agreement and Escrow Agreement regarding purchase price and currency\n2. **Problematic earn-out mechanism** with calculation discrepancies\n3. **Inadequate intellectual property protection** based on disclosures\n4. **Conflicting warranty survival periods** between agreements\n5. **Jurisdictional conflicts** between governing laws\n6. **Insufficient material adverse change protection**\n\n### Detailed Analysis of Problematic Provisions\n\n#### 1. Purchase Price and Currency Inconsistencies\n\n**Issue:** The Share Purchase Agreement specifies a purchase price of **$40,000,000** (Clause 2.1), while the Escrow Agreement references a purchase price of **£12,500,000** (Clause 1.1). This represents a fundamental inconsistency in both amount and currency.\n\n**Risk:** This discrepancy creates uncertainty about the actual consideration payable and could lead to disputes regarding the transaction value. The currency difference (USD vs GBP) further complicates the matter.\n\n**Recommendation:** The purchase price must be harmonised across all documents, with clear specification of currency. Given the client email references USD figures, we should ensure consistency with USD throughout.\n\n#### 2. Earn-out Payment Calculation Issues\n\n**Issue:** The Share Purchase Agreement (Clause 3.4) calculates the earn-out as:\n- Three times the amount by which FY2026 EBITDA exceeds $5,000,000\n- Capped at $5,000,000\n\nBased on the Seller's provided FY2026 EBITDA of $7,100,000 (client email), the calculation would be:\n- $7,100,000 - $5,000,000 = $2,100,000 excess\n- $2,100,000 × 3 = $6,300,000\n- Capped at $5,000,000\n\nHowever, the Seller has advised an earn-out payment of $5,600,000 (client email), which is inconsistent with the contractual formula.\n\n**Risk:** \n1. The discrepancy between the contractual formula and the Seller's calculation creates ambiguity and potential for dispute\n2. Earn-out payment timing depends on Buyer's board approval of audited financials, which could be delayed\n\n**Recommendation:** \n1. Clarify the earn-out calculation formula and ensure it aligns with the Seller's representations\n2. Consider whether the cap should be adjusted or the formula revised\n3. Include specific timelines for financial statement preparation and board approval to prevent delays\n\n#### 3. Intellectual Property Risks and Missing Warranties\n\n**Issue 1:** The Disclosure Letter (Clause 3) reveals critical intellectual property vulnerabilities:\n- Core platform software developed by Larkspur Energy plc in 2023\n- Development pursuant to **verbal understanding only**\n- **No written assignment** of intellectual property rights\n- Continuous use since 2023 without challenge\n\n**Issue 2:** The Share Purchase Agreement appears to be **incomplete** - it jumps from Clause 4 (Closing) directly to Clause 10 (Warranties and Indemnities), missing Clauses 5-9. The Disclosure Letter references \"Warranty 8.2 (Intellectual Property)\", suggesting there should be detailed warranty provisions in Clause 8 that are not included in the provided document.\n\n**Risk:** \n1. The absence of written IP assignment creates significant risk that Larkspur Energy plc could assert ownership rights over the Company's core software platform\n2. **Verbal understanding** for software development provides no legal protection and is inherently risky\n3. The missing warranty clauses mean we cannot properly assess the Seller's representations and warranties, particularly regarding intellectual property\n4. We cannot determine what specific warranties have been given under Clause 8.2\n\n**Recommendation:** \n1. **Immediately request** the complete Share Purchase Agreement including all missing clauses (5-9)\n2. Require written assignment of IP rights from Larkspur Energy plc as a condition precedent\n3. Obtain indemnity from Seller for any IP claims\n4. Consider escrow holdback for IP-related risks\n5. Conduct thorough IP due diligence\n\n#### 4. Conflicting Warranty Survival Periods\n\n**Issue:** Inconsistent warranty mechanisms across documents:\n- Share Purchase Agreement (Clause 10.1): General warranties survive 12 months; Fundamental warranties survive 72 months\n- Escrow Agreement (Clause 3.1): Claim period is 18 months from 21 January 2027\n\n**Risk:** The 18-month escrow claim period exceeds the 12-month general warranty survival period, creating a mismatch where claims could be made under escrow after warranties have expired.\n\n**Recommendation:** Align warranty survival periods with escrow claim period. Either extend general warranty survival to 18 months or reduce escrow period to 12 months.\n\n#### 5. Jurisdictional and Governing Law Conflicts\n\n**Issue 1:** Conflicting governing law provisions:\n- Share Purchase Agreement (Clause 15.1): English law, English courts exclusive jurisdiction\n- Escrow Agreement (Clause 12.1): New York law, ICC arbitration in New York\n- Disclosure Letter (Clause 8.1): English law, English courts exclusive jurisdiction\n\n**Issue 2:** Undefined \"Business Day\" in Escrow Agreement:\n- Clause 3.2 gives Seller \"20 Business Days\" to object to claims\n- No definition of \"Business Day\" provided\n- Creates ambiguity about response timelines\n\n**Risk:** \n1. Disputes could arise regarding which forum and governing law apply to different aspects of the transaction\n2. Ambiguous \"Business Day\" definition could lead to disputes about claim response deadlines\n3. Inconsistent dispute resolution mechanisms (court vs arbitration) create procedural complexity\n\n**Recommendation:** \n1. Harmonise governing law and dispute resolution provisions across all documents\n2. Include clear definition of \"Business Day\" (typically excluding weekends and public holidays)\n3. Given English incorporation of all parties, English law and jurisdiction would be most appropriate\n\n#### 6. Material Adverse Change Definition\n\n**Issue:** The Material Adverse Change definition (Clause 1.1) contains broad exclusions:\n- Changes in general economic conditions\n- Changes affecting the industry generally  \n- Pandemics\n\n**Risk:** These exclusions are overly broad and could prevent the Buyer from terminating the agreement even if significant adverse events affect the Company's business.\n\n**Recommendation:** Narrow the exclusions to be more specific and reasonable. Consider including materiality thresholds and timeframes.\n\n#### 7. Payment Terms and Closing Date\n\n**Issue:** Payment is due \"no later than 11 March 2027\" (Clause 3.1) and Closing is on \"11 March 2027\" (Clause 4.1), with \"time for payment is of the essence\" (Clause 3.3).\n\n**Risk:** \n1. The \"no later than\" formulation for payment creates ambiguity about whether payment can be made before closing\n2. The \"time is of the essence\" provision creates strict liability for timing - even minor delays could constitute breach allowing termination\n3. This is particularly risky given potential banking or administrative delays\n\n**Recommendation:** \n1. Clarify that payment is due on the Closing Date, not before\n2. Consider softening the \"time is of the essence\" language or including grace periods (e.g., 3-5 business days) for technical delays\n3. Specify that delays caused by banking systems or force majeure events do not constitute breach\n\n#### 8. Escrow Funding and Calculation Discrepancies\n\n**Issue 1:** The Escrow Agreement (Clause 2.2) requires funding on 20 January 2027, but the Share Purchase Agreement is dated 29 December 2026 with closing on 11 March 2027.\n\n**Issue 2:** Escrow calculation based on inconsistent purchase price:\n- Escrow Agreement calculates 15% of £12,500,000 = £1,875,000\n- If actual purchase price is $40,000,000, escrow should be $6,000,000 (15% of $40m)\n- Significant discrepancy in both amount and currency\n\n**Risk:** \n1. Funding escrow before closing creates cash flow implications and risk if transaction fails\n2. Incorrect escrow amount may provide insufficient protection for warranty claims\n3. Currency mismatch creates foreign exchange risk\n\n**Recommendation:** \n1. Align escrow funding with closing date\n2. Harmonise purchase price across all documents\n3. Calculate escrow based on correct purchase price\n4. Include provisions for return of escrow funds if transaction fails\n\n### Additional Observations\n\n1. **Material Customer Relationship:** The client email notes Orwell Marine's significant contract with Ingleby Logistics plc. No specific protections for this relationship appear in the agreements.\n\n2. **Document Date and Reference Inconsistencies:** \n   - Share Purchase Agreement: Dated 29 December 2026\n   - Disclosure Letter: Dated 20 January 2027  \n   - Escrow Agreement: References \"Share Purchase Agreement dated 18 January 2027\" (different from actual date)\n   - Client email requests signing no later than 21 January 2027\n   - Escrow Agreement also references different purchase price (£12.5m vs $40m in SPA)\n\n3. **Notice Provisions:** Different notice addresses across documents create administrative complexity.\n\n### Urgent Action Items\n\n1. **Immediate:** Resolve purchase price and currency inconsistencies\n2. **High Priority:** Address intellectual property risks through written assignments\n3. **High Priority:** Harmonise warranty survival periods and escrow claim period\n4. **Medium Priority:** Align governing law and dispute resolution provisions\n5. **Medium Priority:** Refine Material Adverse Change definition\n6. **Medium Priority:** Clarify payment and closing timing\n\n### Conclusion\n\nThe Share Purchase Agreement contains several problematic provisions that require renegotiation before signing. The most critical issues are the purchase price inconsistency, intellectual property risks, and conflicting warranty mechanisms. I recommend we seek amendments to address these issues before proceeding with the transaction.\n\nThe Seller's position on these matters should be tested in negotiations, particularly regarding the IP assignment and earn-out calculation discrepancies.\n\n# Your job\nNo grades are available. Critically assess the deliverable and the work process yourself, as a demanding supervising partner would, and write reusable candidate lessons for improving the work.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|contract_review\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C1\",\n      \"what_went_wrong\": \"The agent failed to verify the completeness of the Share Purchase Agreement before proceeding with analysis, leading to wasted effort on missing clauses (5-9).\",\n      \"should_have\": \"Confirmed the document's structural integrity and completeness immediately after reading it.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C2\",\n      \"what_went_wrong\": \"The agent did not cross-check the earn-out calculation formula against the Seller's representation until after drafting the issue, risking incorrect assumptions.\",\n      \"should_have\": \"Reconciled the contractual formula with the Seller's stated figures before drafting the earn-out analysis.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C3\",\n      \"what_went_wrong\": \"The agent did not flag the undefined 'Business Day' term during initial document review, only addressing it after drafting the jurisdictional conflicts section.\",\n      \"should_have\": \"Identified and flagged all undefined terms during the first pass of the agreement.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C4\",\n      \"what_went_wrong\": \"The agent did not verify the escrow funding timeline against the closing date until late in the process, missing an early opportunity to flag the inconsistency.\",\n      \"should_have\": \"Compared all dates and timelines across documents immediately after reading them.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C5\",\n      \"what_went_wrong\": \"The agent did not independently verify the currency conversion for the purchase price discrepancy, relying solely on stated figures.\",\n      \"should_have\": \"Cross-checked currency figures using a reliable exchange rate source for the transaction date.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C6\",\n      \"what_went_wrong\": \"The agent did not prioritise issues by severity in the executive summary, burying the IP assignment risk (a deal-breaker) among less critical items.\",\n      \"should_have\": \"Ranked issues by materiality and deal impact in the executive summary.\",\n      \"failure_kind\": \"task_specific\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"review\",\n      \"text\": \"Before analysing any contract, verify its completeness by checking for missing clauses, sections, or annexes against the table of contents or standard agreement structure.\",\n      \"evidence\": [\"C1\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Reconcile all financial formulas in agreements with counterparty representations immediately after identifying them, flagging discrepancies before drafting.\",\n      \"evidence\": [\"C2\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"List all undefined terms in agreements during initial review, flagging them for clarification before proceeding with substantive analysis.\",\n      \"evidence\": [\"C3\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Compare all dates, timelines, and funding requirements across transaction documents immediately after reading them, flagging inconsistencies.\",\n      \"evidence\": [\"C4\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Verify currency conversions for multi-currency transactions using a reliable exchange rate source for the relevant date before relying on stated figures.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.85\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"Rank issues in executive summaries by materiality and deal impact, placing deal-breaker risks first and lesser issues later.\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.9\n    }\n  ],\n  \"lesson_feedback\": []\n}\n```"
+}

@@ -1,0 +1,151 @@
+{
+  "docs": [
+    {
+      "title": "share_purchase_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 701,
+            "output_tokens": 1038
+          }
+        }
+      ]
+    },
+    {
+      "title": "escrow_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 580,
+            "output_tokens": 996
+          }
+        }
+      ]
+    },
+    {
+      "title": "employment_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 495,
+            "output_tokens": 994
+          }
+        }
+      ]
+    },
+    {
+      "title": "board_minutes.md",
+      "attempts": [
+        {
+          "missing": [
+            "2 directors"
+          ],
+          "usage": {
+            "input_tokens": 483,
+            "output_tokens": 774
+          }
+        },
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 1281,
+            "output_tokens": 776
+          }
+        }
+      ]
+    },
+    {
+      "title": "articles_of_association_extract.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 489,
+            "output_tokens": 958
+          }
+        }
+      ]
+    },
+    {
+      "title": "client_email.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 479,
+            "output_tokens": 417
+          }
+        }
+      ]
+    }
+  ],
+  "doc_facts": {
+    "share_purchase_agreement.md": {
+      "key": "spa",
+      "facts": [
+        "Parties: Ivybridge Medical Ltd (Buyer), Oakhurst Robotics Ltd (Seller); the Company is Delamere Technologies Ltd.",
+        "Section 2.1: the Purchase Price is $220,000,000.",
+        "This Agreement is dated 16 February 2026; Closing is scheduled for 28 May 2026 (the 'Closing Date').",
+        "Section 1.1: 'Closing Date' means 28 May 2026.",
+        "Section 12.1: the Seller shall not compete with the business for 4 years after Closing.",
+        "Section 9.7: the Buyer must notify any warranty claim within 30 days of becoming aware of it.",
+        "Section 8.4 (Limitation of Liability): the aggregate liability of the Seller for warranty claims shall not exceed an amount equal to 20% of the Purchase Price, being $39,600,000. The Purchase Price is $220,000,000 (see Section 2.1)."
+      ],
+      "must_contain": [
+        "4 years",
+        "30 days",
+        "20%",
+        "$39,600,000",
+        "$220,000,000"
+      ]
+    },
+    "escrow_agreement.md": {
+      "key": "escrow",
+      "facts": [
+        "Clause 4.1: the Escrow Amount shall be released to the Seller on the date falling 24 months after the Closing Date, save to the extent of pending claims notified before that date. 'Business Day' means a day other than a Saturday or Sunday on which banks are open in London.",
+        "The Closing Date is 28 May 2026.",
+        "Clause 5.2: a claim against the Escrow Amount must be notified within 60 days of the Buyer becoming aware of it."
+      ],
+      "must_contain": [
+        "24 months",
+        "28 May 2026",
+        "60 days"
+      ]
+    },
+    "employment_agreement.md": {
+      "key": "employment",
+      "facts": [
+        "Clause 18: the Founder shall not compete with the business for 12 months after termination of employment."
+      ],
+      "must_contain": [
+        "12 months"
+      ]
+    },
+    "board_minutes.md": {
+      "key": "board_minutes",
+      "facts": [
+        "Present: 2 directors (of 5). The meeting was quorate. RESOLVED to approve entry into the Share Purchase Agreement."
+      ],
+      "must_contain": [
+        "2 directors"
+      ]
+    },
+    "articles_of_association_extract.md": {
+      "key": "articles",
+      "facts": [
+        "Article 11: the quorum for board meetings is three directors."
+      ],
+      "must_contain": [
+        "three directors"
+      ]
+    },
+    "client_email.md": {
+      "key": "client_email",
+      "facts": [],
+      "must_contain": []
+    }
+  }
+}

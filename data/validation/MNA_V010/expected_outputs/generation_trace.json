@@ -1,0 +1,130 @@
+{
+  "docs": [
+    {
+      "title": "share_purchase_agreement.md",
+      "attempts": [
+        {
+          "missing": [
+            "30 days"
+          ],
+          "usage": {
+            "input_tokens": 704,
+            "output_tokens": 1094
+          }
+        },
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 1824,
+            "output_tokens": 1172
+          }
+        }
+      ]
+    },
+    {
+      "title": "material_customer_contract.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 517,
+            "output_tokens": 1027
+          }
+        }
+      ]
+    },
+    {
+      "title": "disclosure_letter.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 496,
+            "output_tokens": 1058
+          }
+        }
+      ]
+    },
+    {
+      "title": "client_email.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 512,
+            "output_tokens": 426
+          }
+        }
+      ]
+    },
+    {
+      "title": "escrow_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 500,
+            "output_tokens": 1017
+          }
+        }
+      ]
+    }
+  ],
+  "doc_facts": {
+    "share_purchase_agreement.md": {
+      "key": "spa",
+      "facts": [
+        "Parties: Eskdale Robotics Ltd (Buyer), Holloway Robotics Ltd (Seller); the Company is Merrion Energy plc.",
+        "Section 2.1: the Purchase Price is $45,000,000.",
+        "This Agreement is dated 3 July 2026; Closing is scheduled for 29 August 2026 (the 'Closing Date').",
+        "Section 8.4 (Limitation of Liability): the aggregate liability of the Seller for warranty claims shall not exceed an amount equal to 12% of the Purchase Price, being $6,750,000. The Purchase Price is $45,000,000 (see Section 2.1).",
+        "Section 3.4 (Earn-out): the Earn-out Payment equals 2 times the amount by which FY2026 EBITDA exceeds $6,500,000, capped at $3,000,000.",
+        "Section 9.7: the Buyer must notify any warranty claim within 30 days of becoming aware of it."
+      ],
+      "must_contain": [
+        "12%",
+        "$6,750,000",
+        "$45,000,000",
+        "$6,500,000",
+        "$3,000,000",
+        "30 days"
+      ]
+    },
+    "material_customer_contract.md": {
+      "key": "material_contract",
+      "facts": [
+        "Clause 14.2: either party may terminate this agreement on 30 days' notice if the other party undergoes a change of control without its prior written consent. The counterparty is Redcliffe Retail Group plc."
+      ],
+      "must_contain": [
+        "change of control",
+        "prior written consent"
+      ]
+    },
+    "disclosure_letter.md": {
+      "key": "disclosure",
+      "facts": [
+        "Disclosure against Warranty 6.3 (Material Contracts): no material contract contains a change of control provision. (No further disclosure.)"
+      ],
+      "must_contain": []
+    },
+    "client_email.md": {
+      "key": "client_email",
+      "facts": [
+        "Management accounts show FY2026 EBITDA of $7,300,000; the Seller says the Earn-out Payment will therefore be $2,200,000."
+      ],
+      "must_contain": [
+        "$7,300,000",
+        "$2,200,000"
+      ]
+    },
+    "escrow_agreement.md": {
+      "key": "escrow",
+      "facts": [
+        "Clause 5.2: a claim against the Escrow Amount must be notified within 60 days of the Buyer becoming aware of it."
+      ],
+      "must_contain": [
+        "60 days"
+      ]
+    }
+  }
+}

@@ -1,0 +1,175 @@
+{
+  "task_id": "MNA_T030",
+  "cycle": 1,
+  "lineage": "main",
+  "graded": true,
+  "failures": [
+    {
+      "criterion_id": "C1",
+      "what_went_wrong": "The agent read the board minutes and the articles of association but failed to cross-check the quorum requirement against the number of directors present at the meeting.",
+      "should_have": "Compared the quorum requirement in the articles (3 directors) with the actual number of directors present (2) and flagged the invalidity of the approval.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C2",
+      "what_went_wrong": "The agent identified the conflicting claim notice periods but did not explicitly recommend aligning the documents or working to the shorter period to protect the client's interests.",
+      "should_have": "Explicitly recommended that the client work to the shorter notice period or seek alignment of the documents to avoid ambiguity.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C3",
+      "what_went_wrong": "The agent accepted the stated deadline in the SPA ('1 May 2027') without recalculating the long-stop date based on the 150-day period, missing the discrepancy with the regulatory clearance deadline.",
+      "should_have": "Recalculated the long-stop date independently and flagged the inconsistency with the regulatory clearance deadline, recommending an extension if necessary.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C4",
+      "what_went_wrong": "The agent noted the basket threshold but did not analyze or explain its legal effect (deductible vs. tipping basket) or its implications for the client.",
+      "should_have": "Analyzed the basket's operation (deductible) and explained its less favorable impact on the client compared to alternatives like a tipping basket.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C5",
+      "what_went_wrong": "The agent relied on the stated date ('1 May 2027') in the SPA without independently calculating the long-stop date (150 days from signing), leading to incorrect days remaining.",
+      "should_have": "Independently calculated the long-stop date and days remaining from the current date to ensure accuracy.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C7",
+      "what_went_wrong": "The agent calculated deadlines but did not check whether they fell on weekends or apply the documents' business day definitions to adjust them.",
+      "should_have": "Checked each computed deadline against the business day definition in the documents and adjusted for weekends/holidays as required.",
+      "failure_kind": "procedural"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T030_0",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "For every board or committee approval, cross-check the quorum requirement in the governing documents against the number of attendees and flag any shortfall.",
+      "source_tasks": [
+        "MNA_T030"
+      ],
+      "evidence": [
+        "MNA_T030:C1"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T030_1",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Recompute every deadline expressed as a period (e.g., '150 days') from the reference date using a calendar tool, and flag any mismatch with stated dates in the documents.",
+      "source_tasks": [
+        "MNA_T030"
+      ],
+      "evidence": [
+        "MNA_T030:C3",
+        "MNA_T030:C5"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T030_2",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "For conflicting notice periods or deadlines, explicitly recommend which period the client should adhere to or propose alignment of the documents to avoid ambiguity.",
+      "source_tasks": [
+        "MNA_T030"
+      ],
+      "evidence": [
+        "MNA_T030:C2"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T030_3",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Analyze and explain the legal effect of basket thresholds (e.g., deductible vs. tipping basket) and their implications for the client's risk exposure.",
+      "source_tasks": [
+        "MNA_T030"
+      ],
+      "evidence": [
+        "MNA_T030:C4"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.8
+    },
+    {
+      "candidate_id": "c01_MNA_T030_4",
+      "type": "checklist",
+      "category": "review",
+      "text": "Before finalizing any deadline, verify whether it falls on a weekend or holiday and adjust it according to the documents' business day definition.",
+      "source_tasks": [
+        "MNA_T030"
+      ],
+      "evidence": [
+        "MNA_T030:C7"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T030_5",
+      "type": "practice_note",
+      "category": "general",
+      "text": "When documents reference both a specific date and a period (e.g., '150 days'), treat the specific date as controlling but flag the inconsistency for clarification.",
+      "source_tasks": [
+        "MNA_T030"
+      ],
+      "evidence": [
+        "MNA_T030:C3",
+        "MNA_T030:C5"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.8
+    }
+  ],
+  "lesson_feedback": [
+    {
+      "lesson_id": "L0001",
+      "label": "HELPFUL",
+      "reason": "Directly addresses the procedural failure in C1 by ensuring quorum requirements are cross-checked in future matters."
+    },
+    {
+      "lesson_id": "L0002",
+      "label": "HELPFUL",
+      "reason": "Prevents reliance on stated dates without independent verification, addressing failures in C3 and C5."
+    },
+    {
+      "lesson_id": "L0003",
+      "label": "HELPFUL",
+      "reason": "Ensures conflicting deadlines are not just noted but actively managed, addressing the gap in C2."
+    },
+    {
+      "lesson_id": "L0004",
+      "label": "HELPFUL",
+      "reason": "Encourages deeper analysis of basket thresholds, addressing the omission in C4."
+    },
+    {
+      "lesson_id": "L0005",
+      "label": "HELPFUL",
+      "reason": "Directly addresses the failure in C7 by ensuring deadlines are adjusted for business days."
+    },
+    {
+      "lesson_id": "L0006",
+      "label": "HELPFUL",
+      "reason": "Provides a rule of thumb for resolving inconsistencies between dates and periods, useful for C3 and C5."
+    }
+  ],
+  "input_tokens": 5599,
+  "output_tokens": 1459,
+  "cost_usd": 0.004988,
+  "prompt": "# Task\nType: timeline_analysis | Practice area: corporate_mna\nYou act for the Buyer, Pemberton Systems Ltd. Pemberton Systems Ltd (the Buyer) is acquiring the entire issued share capital of Dunmore Energy plc (the Company) from Whitlock Systems Ltd (the Seller).\n\nPrepare a timeline and deadlines analysis of all time-sensitive obligations in the matter documents. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 18 March 2027. Address the deliverable to the supervising partner.\n\n# Trajectory (31 model steps, 31 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 3. [research] read_document({\"name\": \"escrow_agreement.md\"})\n 4. [research] read_document({\"name\": \"articles_of_association_extract.md\"})\n 5. [research] read_document({\"name\": \"board_minutes.md\"})\n 6. [research] read_document({\"name\": \"client_email.md\"})\n 7. [analysis] calculate({\"expression\": \"date('2027-03-18')\"})\n 8. [analysis] calculate({\"expression\": \"add_days(date('2027-03-02'), 150)\"})\n 9. [analysis] calculate({\"expression\": \"add_days(date('2027-03-02'), 60)\"})\n10. [analysis] calculate({\"expression\": \"days_between(date('2027-03-02'), date('2027-05-01'))\"})\n11. [analysis] calculate({\"expression\": \"date('2027-05-02')\"})\n12. [analysis] calculate({\"expression\": \"add_months(date('2027-03-18'), 12)\"})\n13. [analysis] calculate({\"expression\": \"date('2027-09-13')\"})\n14. [analysis] calculate({\"expression\": \"date('2027-03-16')\"})\n15. [analysis] calculate({\"expression\": \"date('2027-03-17')\"})\n16. [analysis] calculate({\"expression\": \"prev_business_day(date('2027-05-02'), 5)\"})\n17. [analysis] calculate({\"expression\": \"next_business_day(date('2027-04-25'))\"})\n18. [analysis] calculate({\"expression\": \"prev_business_day(date('2027-04-30'))\"})\n19. [drafting] write_draft(<1261 words>)\n20. [verification] search_documents({\"query\": \"days\"})\n21. [verification] search_documents({\"query\": \"month\"})\n22. [verification] search_documents({\"query\": \"year\"})\n23. [editing] edit_draft(find='**Critical Issues Requiring Attention**\\n\\n1. **Closing Date D' -> '**Critical Issues Requiring Attention**\\n\\n1. **Closing Date D')\n24. [verification] read_draft({})\n25. [editing] edit_draft(find='## Critical Issues Requiring Attention\\n\\n1. **Closing Date Di' -> '## Critical Issues Requiring Attention\\n\\n1. **Closing Date Di')\n26. [editing] edit_draft(find='4. **Regulatory Clearance**: The 13 September 2027 deadline ' -> '5. **Regulatory Clearance**: The 13 September 2027 deadline ')\n27. [editing] edit_draft(find='1. **Immediate (Today)**:\\n   - Clarify the Closing Date disc' -> '1. **Immediate (Today)**:\\n   - Clarify the Closing Date disc')\n28. [verification] calculate({\"expression\": \"weekday(date('2027-05-02'))\"})\n29. [editing] edit_draft(find='**Invoice Settlement (Articles of Association Clause 4.2)**\\n' -> '**Invoice Settlement (Articles of Association Clause 4.2)**\\n')\n30. [editing] edit_draft(find='## Executive Summary\\n\\nThis analysis identifies all time-sens' -> '## Executive Summary\\n\\nThis analysis identifies all time-sens')\n31. [control] finish({\"summary\": \"Timeline and deadlines analysis for the acquisition of Dunmore Energy plc by Pemberton Systems Ltd, identifying all time-sensitive obligations incl)\n\n# Final deliverable\n# Timeline and Deadlines Analysis: Acquisition of Dunmore Energy plc\n\n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Date:** 18 March 2027  \n**Matter:** Acquisition of Dunmore Energy plc by Pemberton Systems Ltd  \n**Client:** Pemberton Systems Ltd (Buyer)  \n**Counterparty:** Whitlock Systems Ltd (Seller)  \n**Target:** Dunmore Energy plc (Company)\n\n## Executive Summary\n\nThis analysis identifies all time-sensitive obligations arising from the proposed acquisition of Dunmore Energy plc by Pemberton Systems Ltd. Key deadlines include:\n\n1. **Immediate deadlines** (March 2027): Escrow deposit, board approvals\n2. **Pre-closing deadlines** (April-May 2027): Payment arrangements, condition satisfaction\n3. **Closing date**: 2 May 2027 (per SPA) or 18 March 2027 (per Escrow Agreement - discrepancy noted)\n4. **Post-closing deadlines**: Warranty claims (30 days), escrow claims (45 days), regulatory clearance (13 September 2027)\n5. **Long-term obligations**: Confidentiality (6 years), escrow release (12 months)\n\n### Key Deadline Summary Table\n\n| Deadline | Date | Responsibility | Source Document | Consequence of Missed Deadline |\n|----------|------|---------------|-----------------|--------------------------------|\n| Escrow Deposit | 18 Mar 2027 | Buyer | Escrow Agreement Cl. 2.1 | Potential breach of Escrow Agreement |\n| Seller Account Details | 23 Apr 2027 | Seller | SPA Cl. 2.2 | May delay payment and closing |\n| Condition Satisfaction | 1 May 2027 | Both Parties | SPA Cl. 4.5 | Either party may terminate SPA |\n| SPA Closing | 2 May 2027 | Both Parties | SPA Cl. 1.1(5) | Fundamental transaction milestone |\n| Warranty Claim Notice | 30 days from awareness | Buyer | SPA Cl. 9.7 | Claim may be barred |\n| Escrow Claim Notice | 45 days from awareness | Buyer | Escrow Agreement Cl. 5.2 | Claim may be barred |\n| Regulatory Clearance | 13 Sep 2027 | Buyer | Client Email | May impact transaction completion |\n| Invoice Settlement | 60 days from invoice | Company | Articles Cl. 4.2 | Contractual breach with material customer |\n| Escrow Release (earliest) | 18 Mar 2028 | Escrow Agent | Escrow Agreement Cl. 3.1 | Funds held until this date without joint instruction |\n| Confidentiality Period | 6 years from completion | Both Parties | SPA Cl. 10.2 | Ongoing obligation |\n\n## Document Review Summary\n\nThe following documents contain time-sensitive provisions:\n\n1. **Share Purchase Agreement (SPA)** - dated 2 March 2027\n2. **Escrow Agreement** - Effective Date 15 March 2027, Closing Date 18 March 2027\n3. **Articles of Association of Dunmore Energy plc**\n4. **Board Minutes** - 16 March 2027\n5. **Client Email** - 17 March 2027\n\n## Detailed Timeline Analysis\n\n### 1. Immediate Deadlines (March 2027)\n\n**18 March 2027 (Today)**\n- **Escrow Deposit Deadline**: Per Clause 2.1 of the Escrow Agreement, the Buyer must pay £7,500,000 into the escrow account \"on or prior to the Closing Date\" (18 March 2027).\n- **Status**: Due today.\n\n**16 March 2027 (Past - 2 days ago)**\n- **Board Meeting**: The Board of Dunmore Energy plc approved entry into the SPA.\n- **Status**: Completed.\n\n**17 March 2027 (Past - yesterday)**\n- **Client Instructions**: Nadia Okonkwo (Pemberton Systems Ltd) provided instructions regarding regulatory clearance deadline.\n- **Status**: Received.\n\n### 2. Pre-Closing Deadlines\n\n**23 April 2027 (Approximately 5 weeks from today)**\n- **Seller Account Details**: Per Clause 2.2 of the SPA, the Seller must provide written designation of the payment account to the Buyer \"at least five (5) Business Days prior to the Closing Date\" (2 May 2027). Counting back 5 business days from 30 April 2027 (last business day before 2 May 2027) gives 23 April 2027.\n- **Responsibility**: Seller\n- **Consequence**: Failure to provide details may delay payment and potentially breach the SPA.\n\n**1 May 2027 (44 days from today)**\n- **Condition Satisfaction Deadline**: Per Clause 4.5 of the SPA, Conditions must be satisfied \"by the date falling 150 days after the date of this Agreement, being 1 May 2027\". \n- **Note**: There is an inconsistency in the SPA. 150 days from 2 March 2027 would be 30 July 2027, but the document specifically states \"being 1 May 2027\", which is actually 60 days from 2 March 2027.\n- **Interpretation**: The specific date (1 May 2027) likely prevails over the general \"150 days\" reference.\n- **Consequence**: If Conditions are not satisfied or waived by this date, either party may terminate the SPA by written notice.\n\n### 3. Closing Date\n\n**Primary Closing Date: 2 May 2027 (45 days from today)**\n- **SPA Closing Date**: Per Clause 1.1(5) of the SPA, the Closing Date is defined as \"2 May 2027, or such other date as the parties may agree in writing\".\n- **Obligations at Closing** (Clause 3):\n  - Seller to deliver share certificates, stock transfer forms, and other transfer documents\n  - Buyer to pay Purchase Price of $185,000,000\n  - Closing to occur at Buyer's offices or agreed location\n\n**Alternative Closing Date: 18 March 2027 (Today)**\n- **Escrow Agreement Closing Date**: Per Clause 1.1(19) of the Escrow Agreement, Closing Date is defined as \"18 March 2027\".\n- **Discrepancy**: There is a significant discrepancy between the SPA Closing Date (2 May 2027) and the Escrow Agreement Closing Date (18 March 2027). This requires clarification and potential amendment.\n- **Current Status**: Today is 18 March 2027, so if the Escrow Agreement date controls, closing obligations may be due immediately.\n\n### 4. Post-Closing Deadlines\n\n**Warranty Claims (SPA Clause 9.7)**\n- **Notification Period**: 30 days from when Buyer first becomes aware of matter giving rise to claim\n- **Requirements**: Written notice specifying nature, factual basis, and amount claimed\n- **Basket Threshold**: Claims only actionable if aggregate exceeds $1,850,000 (1% of Purchase Price)\n- **Practical Consideration**: This is a relatively short notification period requiring prompt internal processes for identifying potential breaches.\n\n**Escrow Claims (Escrow Agreement Clause 5.2)**\n- **Notification Period**: 45 days from when Buyer becomes aware of matter giving rise to claim\n- **Requirements**: Claim Notice served on Seller and Escrow Agent\n- **Escrow Amount**: £7,500,000\n- **Release Timing**: Funds cannot be released before 18 March 2028 (12 months from Escrow Closing Date) without joint written instruction\n\n**Regulatory Clearance**\n- **Deadline**: 13 September 2027 (180 days from today)\n- **Source**: Client email dated 17 March 2027\n- **Note**: This is not referenced in the SPA but is a practical deadline for merger clearance\n- **Importance**: Failure to obtain clearance by this date could impact the transaction\n\n**Invoice Settlement (Articles of Association Clause 4.2)**\n- **Deadline**: 60 days from date of invoice for invoices issued to Pemberton Logistics plc\n- **Ongoing Obligation**: Continues post-acquisition\n- **Material Customer**: Pemberton Logistics plc is identified as a material customer in multiple documents\n\n**Notice Periods**\n- **SPA Notices (Clause 11)**: Deemed received when delivered (if by hand), 48 hours after posting (if by post), or upon electronic confirmation (if by email)\n- **Escrow Agreement Notices (Clause 4)**: Deemed received when delivered personally, 48 hours after posting, or at time of email transmission (if no delivery failure)\n- **Articles of Association Notices (Clause 5)**: Deemed served 48 hours after posting\n- **Practical Implication**: These notice periods affect the effective timing of communications and should be considered when serving time-sensitive notices\n\n### 5. Long-Term Obligations\n\n**Confidentiality (SPA Clause 10.2)**\n- **Duration**: 6 years from termination or completion\n- **Scope**: All information received in connection with the transaction\n- **Parties**: Both Buyer and Seller\n\n**Board Meetings (Articles of Association Clause 3.3)**\n- **Frequency**: At least once every calendar quarter\n- **Ongoing Obligation**: Post-acquisition governance requirement\n\n**Escrow Release (Escrow Agreement Clause 3.1)**\n- **Earliest Release Date**: 18 March 2028 (12 months from Escrow Closing Date)\n- **Early Release**: Requires joint written instruction from Buyer and Seller\n\n## Critical Issues Requiring Attention\n\n1. **Closing Date Discrepancy**: The SPA specifies 2 May 2027 while the Escrow Agreement specifies 18 March 2027. This fundamental inconsistency must be resolved immediately.\n\n2. **SPA Date Discrepancy**: The SPA is dated 2 March 2027, but the Board Minutes reference a \"Share Purchase Agreement dated 18 March 2027\". This may indicate an amended or updated version that needs to be reviewed.\n\n3. **Condition Satisfaction Timeline**: The SPA contains an internal inconsistency regarding the condition satisfaction deadline (150 days vs. 1 May 2027). Clarification is needed.\n\n4. **Immediate Escrow Obligation**: If the Escrow Agreement Closing Date (18 March 2027) controls, the £7,500,000 escrow deposit is due today.\n\n5. **Regulatory Clearance**: The 13 September 2027 deadline is not reflected in the SPA but is critical for transaction completion.\n\n6. **Short Claim Periods**: Both warranty claims (30 days) and escrow claims (45 days) have relatively short notification periods requiring robust internal monitoring processes.\n\n## Recommended Actions\n\n1. **Immediate (Today)**:\n   - Clarify the Closing Date discrepancy with the Seller's counsel\n   - Confirm whether escrow deposit is due today\n   - Check if there is an amended SPA dated 18 March 2027 as referenced in the Board Minutes\n   - Document the board approval obtained on 16 March 2027\n\n2. **Short-term (Next 2 weeks)**:\n   - Coordinate with regulatory counsel on merger clearance timeline\n   - Establish internal processes for monitoring warranty and escrow claim deadlines\n   - Review material contracts with Pemberton Logistics plc\n\n3. **Medium-term (April 2027)**:\n   - Ensure Seller provides payment account details by 23 April 2027\n   - Monitor satisfaction of Conditions precedent\n   - Prepare for Closing on 2 May 2027 (assuming this is the correct date)\n\n4. **Long-term (Post-closing)**:\n   - Implement systems to track warranty and escrow claim deadlines\n   - Monitor quarterly board meeting requirements\n   - Track escrow release timeline (earliest 18 March 2028)\n\n## Conclusion\n\nThe acquisition involves multiple overlapping timelines with critical deadlines in March, April, and May 2027. The most urgent issue is the discrepancy between the SPA and Escrow Agreement closing dates, which must be resolved immediately to avoid breach. The short claim notification periods (30 and 45 days) require the client to establish robust post-acquisition monitoring processes. All deadlines should be tracked on a centralized timeline with clear responsibility assignments.\n\n# Expert rubric verdicts (1/7 passed)\n- C1 [FAIL] Identifies that the board approval was given at a meeting with only 2 directors present when Article 11 requires a quorum of three, so the approval may be invalid, and recommends a fresh or ratifying resolution.\n    judges: FAIL: The deliverable notes the presence of 2 directors but fails to identify the quorum issue arising from Article 11.2 (requiring 3 directors) or recommend a ratifying resolution. | FAIL: The deliverable notes the board meeting with 2 directors on 16 March 2027 but fails to identify that Article 11.2 requires a quorum of three directors, meaning the approval may be invalid. No recommendation for a fresh o\n- C2 [FAIL] Identifies the conflict between the 30-day claim notice period in SPA Section 9.7 and the 45-day period in Escrow Clause 5.2, and recommends the Buyer works to the shorter 30-day period or aligns the documents.\n    judges: FAIL: The deliverable notes the different periods (30 vs 45 days) but fails to recommend that the Buyer work to the shorter period or align the documents. | PASS: The deliverable clearly identifies the conflict between SPA Clause 9.7 (30 days) and Escrow Agreement Clause 5.2 (45 days) for claim notice periods, and recommends robust internal monitoring processes, implicitly recogni\n- C3 [FAIL] Calculates the long-stop date as 30 July 2027 (150 days after signing on 2 March 2027) and identifies that expected clearance on 13 September 2027 falls after it, recommending an extension.\n    judges: FAIL: The deliverable accepts the incorrect '1 May 2027' date in the SPA rather than calculating the correct 150-day deadline of 30 July 2027, and thus fails to identify the gap with the 13 September 2027 clearance date. | FAIL: While the deliverable calculates 150 days from 2 March 2027 as 30 July 2027, it fails to identify that the expected regulatory clearance of 13 September 2027 falls after this long-stop date, and makes no recommendation t\n- C4 [FAIL] Identifies that the basket in SPA Section 9.4 ($1,850,000) operates as a deductible (Seller liable only for the excess), not a tipping basket, and explains that this is less favourable to the Buyer.\n    judges: FAIL: The deliverable mentions the basket threshold but does not explain that it operates as a deductible (less favourable to the Buyer) rather than a tipping basket. | FAIL: The deliverable mentions the $1,850,000 basket threshold in SPA Clause 9.4 but does not explain that it operates as a deductible (Seller liable only for the excess) rather than a tipping basket, nor does it explain this \n- C5 [FAIL] Gives the long-stop period as 150 days and as the date 30 July 2027, with days remaining from 18 March 2027 (134 days).\n    judges: FAIL: The deliverable states the long-stop date is 1 May 2027 rather than correctly calculating it as 30 July 2027, and consequently provides incorrect days remaining. | FAIL: The deliverable gives the long-stop period as 150 days but incorrectly states the date as 1 May 2027 (following the SPA's erroneous 'being 1 May 2027' language) rather than 30 July 2027, and does not calculate 134 days r\n- C6 [PASS] Gives a pinpoint citation (document name and section/clause number) for every issue or finding.\n    judges: PASS: The deliverable provides pinpoint citations (document name and clause number) for all issues, such as SPA Cl. 4.5, Escrow Agreement Cl. 2.1, and Articles Cl. 4.2. | PASS: The deliverable consistently provides pinpoint citations with document names and clause numbers (e.g., 'SPA Cl. 2.2', 'Escrow Agreement Cl. 3.1', 'Articles Cl. 4.2') for virtually all issues and findings.\n- C7 [FAIL] Checks whether computed deadlines fall on a weekend and adjusts them under the documents' Business Day definition.\n    judges: FAIL: The deliverable fails to check whether computed deadlines (e.g., 2 May 2027) fall on a weekend or to apply a Business Day definition. | FAIL: The deliverable calculates 23 April 2027 for Seller account details (5 business days before 2 May 2027) but does not explicitly check whether computed deadlines fall on weekends or adjust them under any Business Day defi\n\n# Your job\nAnalyse each FAILED criterion: what went wrong, what the agent should have done, and whether the failure is procedural (reusable) or task-specific. Then write reusable candidate lessons that would prevent the procedural failures on other matters.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|timeline_analysis\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C1\",\n      \"what_went_wrong\": \"The agent read the board minutes and the articles of association but failed to cross-check the quorum requirement against the number of directors present at the meeting.\",\n      \"should_have\": \"Compared the quorum requirement in the articles (3 directors) with the actual number of directors present (2) and flagged the invalidity of the approval.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C2\",\n      \"what_went_wrong\": \"The agent identified the conflicting claim notice periods but did not explicitly recommend aligning the documents or working to the shorter period to protect the client's interests.\",\n      \"should_have\": \"Explicitly recommended that the client work to the shorter notice period or seek alignment of the documents to avoid ambiguity.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C3\",\n      \"what_went_wrong\": \"The agent accepted the stated deadline in the SPA ('1 May 2027') without recalculating the long-stop date based on the 150-day period, missing the discrepancy with the regulatory clearance deadline.\",\n      \"should_have\": \"Recalculated the long-stop date independently and flagged the inconsistency with the regulatory clearance deadline, recommending an extension if necessary.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C4\",\n      \"what_went_wrong\": \"The agent noted the basket threshold but did not analyze or explain its legal effect (deductible vs. tipping basket) or its implications for the client.\",\n      \"should_have\": \"Analyzed the basket's operation (deductible) and explained its less favorable impact on the client compared to alternatives like a tipping basket.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C5\",\n      \"what_went_wrong\": \"The agent relied on the stated date ('1 May 2027') in the SPA without independently calculating the long-stop date (150 days from signing), leading to incorrect days remaining.\",\n      \"should_have\": \"Independently calculated the long-stop date and days remaining from the current date to ensure accuracy.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C7\",\n      \"what_went_wrong\": \"The agent calculated deadlines but did not check whether they fell on weekends or apply the documents' business day definitions to adjust them.\",\n      \"should_have\": \"Checked each computed deadline against the business day definition in the documents and adjusted for weekends/holidays as required.\",\n      \"failure_kind\": \"procedural\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"For every board or committee approval, cross-check the quorum requirement in the governing documents against the number of attendees and flag any shortfall.\",\n      \"evidence\": [\"C1\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Recompute every deadline expressed as a period (e.g., '150 days') from the reference date using a calendar tool, and flag any mismatch with stated dates in the documents.\",\n      \"evidence\": [\"C3\", \"C5\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"For conflicting notice periods or deadlines, explicitly recommend which period the client should adhere to or propose alignment of the documents to avoid ambiguity.\",\n      \"evidence\": [\"C2\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.85\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Analyze and explain the legal effect of basket thresholds (e.g., deductible vs. tipping basket) and their implications for the client's risk exposure.\",\n      \"evidence\": [\"C4\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.8\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"review\",\n      \"text\": \"Before finalizing any deadline, verify whether it falls on a weekend or holiday and adjust it according to the documents' business day definition.\",\n      \"evidence\": [\"C7\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"general\",\n      \"text\": \"When documents reference both a specific date and a period (e.g., '150 days'), treat the specific date as controlling but flag the inconsistency for clarification.\",\n      \"evidence\": [\"C3\", \"C5\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.8\n    }\n  ],\n  \"lesson_feedback\": [\n    {\n      \"lesson_id\": \"L0001\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Directly addresses the procedural failure in C1 by ensuring quorum requirements are cross-checked in future matters.\"\n    },\n    {\n      \"lesson_id\": \"L0002\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Prevents reliance on stated dates without independent verification, addressing failures in C3 and C5.\"\n    },\n    {\n      \"lesson_id\": \"L0003\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Ensures conflicting deadlines are not just noted but actively managed, addressing the gap in C2.\"\n    },\n    {\n      \"lesson_id\": \"L0004\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Encourages deeper analysis of basket thresholds, addressing the omission in C4.\"\n    },\n    {\n      \"lesson_id\": \"L0005\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Directly addresses the failure in C7 by ensuring deadlines are adjusted for business days.\"\n    },\n    {\n      \"lesson_id\": \"L0006\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Provides a rule of thumb for resolving inconsistencies between dates and periods, useful for C3 and C5.\"\n    }\n  ]\n}\n```"
+}

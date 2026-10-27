@@ -1,0 +1,76 @@
+{
+  "docs": [
+    {
+      "title": "underwriting_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 529,
+            "output_tokens": 863
+          }
+        }
+      ]
+    },
+    {
+      "title": "prospectus_extract.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 554,
+            "output_tokens": 986
+          }
+        }
+      ]
+    },
+    {
+      "title": "client_email.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 435,
+            "output_tokens": 403
+          }
+        }
+      ]
+    }
+  ],
+  "doc_facts": {
+    "underwriting_agreement.md": {
+      "key": "underwriting",
+      "facts": [
+        "Parties: Merrion Logistics plc (Company) and Whitlock Energy Securities (Underwriter).",
+        "Clause 4: the Company grants the Underwriters an option to purchase up to 3,200,000 additional shares (the Over-allotment Option), representing 15% of the 16,000,000 Firm Shares.",
+        "Recital C: the Company has 46,450,000 ordinary shares in issue."
+      ],
+      "must_contain": [
+        "3,200,000",
+        "16,000,000",
+        "15%",
+        "46,450,000"
+      ]
+    },
+    "prospectus_extract.md": {
+      "key": "prospectus",
+      "facts": [
+        "Issuer: Merrion Logistics plc. The date of this Prospectus is 3 June 2026.",
+        "Use of Proceeds: net proceeds of $120,000,000 will be applied as follows: repayment of the revolving facility $54,000,000; capital expenditure $36,000,000; general corporate purposes $35,000,000.",
+        "Capitalisation: 45,200,000 ordinary shares are in issue at the date of this Prospectus."
+      ],
+      "must_contain": [
+        "$120,000,000",
+        "$54,000,000",
+        "$36,000,000",
+        "$35,000,000",
+        "45,200,000"
+      ]
+    },
+    "client_email.md": {
+      "key": "client_email",
+      "facts": [],
+      "must_contain": []
+    }
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "task_id": "RES_X002",
+  "run_name": "eval/test/vanilla",
+  "judgements": [
+    {
+      "judge": "judge_1",
+      "model": "zai.glm-5",
+      "results": [
+        {
+          "criterion_id": "C1",
+          "result": "FAIL",
+          "confidence": 0.95,
+          "reason": "The deliverable does not state that the burden of proof lies with the party invoking the MAC clause; this key principle is absent from the analysis."
+        },
+        {
+          "criterion_id": "C2",
+          "result": "PASS",
+          "confidence": 0.95,
+          "reason": "The deliverable clearly explains that a MAC must be material in both nature and duration, citing HIH Casualty, and states that temporary or speculative impacts are insufficient."
+        },
+        {
+          "criterion_id": "C3",
+          "result": "FAIL",
+          "confidence": 0.95,
+          "reason": "The deliverable omits the principle that changes known to the party at the time of signing generally cannot be relied upon to invoke a MAC clause."
+        },
+        {
+          "criterion_id": "C4",
+          "result": "PASS",
+          "confidence": 0.9,
+          "reason": "The deliverable states that MAC clauses are 'fact-specific provisions that must be construed in light of the contract as a whole' and that outcomes turn on specific contractual wording, consistent with the criterion."
+        },
+        {
+          "criterion_id": "C5",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable lacks an 'Assumptions and open questions' section identifying missing information or matters to confirm with the client."
+        },
+        {
+          "criterion_id": "C6",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable opens with an Introduction section rather than a 'Bottom line' or executive summary stating the overall conclusion and key risks upfront."
+        }
+      ],
+      "input_tokens": 2248,
+      "output_tokens": 355,
+      "cost_usd": 0.003384,
+      "latency_ms": 11002,
+      "prompt_without_documents": "# Task instructions\nYou act for the client, Holloway Capital LLP. Holloway Capital LLP has asked a general legal question.\n\nThe client asks: How do English courts interpret a 'material adverse change' clause?\n\nPrepare a short research note answering the client's question. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 3 June 2026. Address the deliverable to the supervising partner.\n\n# Matter documents\n[see task documents]\n# Deliverable to grade\n<<<DELIVERABLE\n# Research Note: Interpretation of 'Material Adverse Change' Clauses under English Law\n\n**To:** Supervising Partner, Corporate Department  \n**From:** Senior Associate  \n**Date:** 3 June 2026  \n**Subject:** Interpretation of 'Material Adverse Change' Clauses – Analysis for Holloway Capital LLP  \n\n## 1. Introduction\n\nThis note addresses the query from Holloway Capital LLP regarding how English courts interpret 'material adverse change' (MAC) clauses, as raised by their client Glenrock Bioscience plc (incorporated in England and Wales, company number 13288230, registered office at 118 Fleet Street, London).\n\n## 2. Judicial Approach to Interpretation\n\nEnglish courts adopt a strict, fact-specific approach to interpreting MAC clauses, construing them in light of the contract as a whole pursuant to the principles established in *Investors Compensation Scheme Ltd v West Bromwich Building Society* [1998] 1 WLR 896. Courts will not imply a MAC unless the language clearly supports such a finding.\n\n## 3. Key Principles from Case Law\n\n### 3.1 Materiality and Duration\nIn *HIH Casualty and General Insurance Ltd (in liq) v Chase Manhattan Bank NA* [2003] EWHC 1064 (Comm), the court established that a MAC must be 'material' both in nature and duration. Temporary or speculative impacts are insufficient. The judgment referenced a change lasting six months as potentially relevant, though the outcome turned on specific contractual wording.\n\n### 3.2 Substantial Adverse Effect\n*Portigon AG v Pakistan* [2020] EWHC 2268 (Comm) reaffirmed that MAC clauses require a substantial adverse effect on the borrower's ability to perform its obligations. The court considered (though did not determine) that a 15% decline in revenue over a nine-month period could be relevant in assessing materiality.\n\n## 4. Thresholds for Enforceability\n\nEnglish courts interpret MAC clauses narrowly, requiring clear evidence of:\n- A **significant** adverse effect (not merely minor or temporary)\n- A **lasting** impact (not transient fluctuations)\n- A change that **materially affects** the party's ability to perform contractual obligations\n\n## 5. Distinctions Between Different Types of Changes\n\n### 5.1 Economic Downturns vs. Operational Setbacks\n- **General market fluctuations** or **industry-wide developments** are typically insufficient to trigger a MAC clause\n- **Company-specific operational setbacks** are more likely to qualify if they are material and lasting\n- The adverse change must be **specific to the party** rather than affecting the broader market\n\n### 5.2 Broader Market Conditions\nCourts generally distinguish between:\n- **Systemic market conditions** affecting all participants (usually insufficient)\n- **Idiosyncratic risks** specific to the party (more likely to qualify)\n\n## 6. Practical Implications for Drafting and Negotiation\n\n1. **Precision in Drafting**: Given the narrow judicial interpretation, precise drafting is critical\n2. **Specificity**: Clearly define what constitutes a 'material' change\n3. **Duration**: Specify timeframes for assessing whether a change is temporary or lasting\n4. **Benchmarks**: Consider including objective benchmarks or thresholds\n\n## 7. Conclusion\n\nEnglish courts interpret MAC clauses narrowly, requiring clear evidence of a significant, lasting adverse effect that materially impacts a party's ability to perform its obligations. General market fluctuations are typically insufficient, while company-specific operational setbacks may qualify if they meet the materiality and duration thresholds. Drafting precision remains paramount for effective risk allocation.\n\n**Prepared for:** Holloway Capital LLP (incorporated in England and Wales, company number 12889183, registered office: 157 Queen Victoria Street, London)  \n**Client Reference:** Glenrock Bioscience plc transaction involving commitments extending over a 12-month period commencing 1 September 2025, with financial instrument valued at 117% of adjusted asset base as of 31 March 2025.\nDELIVERABLE>>>\n\n# Rubric criteria\nC1: States that the burden is on the party invoking the MAC to prove it.\nC2: Explains that the change must be material and durationally significant, not short-term.\nC3: Notes that changes known to the party at signing generally cannot be relied on.\nC4: Notes that courts construe MAC clauses according to their wording and context rather than a fixed threshold.\nC5: Includes an 'Assumptions and open questions' section listing information that is missing or should be confirmed with the client.\nC6: Opens with a short 'Bottom line' / executive summary stating the overall conclusion and the most important risks before the detailed analysis.\n\nGrade every criterion (6 total). JSON only.",
+      "raw_response": "{\"results\": [{\"criterion_id\": \"C1\", \"result\": \"FAIL\", \"confidence\": 0.95, \"reason\": \"The deliverable does not state that the burden of proof lies with the party invoking the MAC clause; this key principle is absent from the analysis.\"}, {\"criterion_id\": \"C2\", \"result\": \"PASS\", \"confidence\": 0.95, \"reason\": \"The deliverable clearly explains that a MAC must be material in both nature and duration, citing HIH Casualty, and states that temporary or speculative impacts are insufficient.\"}, {\"criterion_id\": \"C3\", \"result\": \"FAIL\", \"confidence\": 0.95, \"reason\": \"The deliverable omits the principle that changes known to the party at the time of signing generally cannot be relied upon to invoke a MAC clause.\"}, {\"criterion_id\": \"C4\", \"result\": \"PASS\", \"confidence\": 0.9, \"reason\": \"The deliverable states that MAC clauses are 'fact-specific provisions that must be construed in light of the contract as a whole' and that outcomes turn on specific contractual wording, consistent with the criterion.\"}, {\"criterion_id\": \"C5\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable lacks an 'Assumptions and open questions' section identifying missing information or matters to confirm with the client.\"}, {\"criterion_id\": \"C6\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable opens with an Introduction section rather than a 'Bottom line' or executive summary stating the overall conclusion and key risks upfront.\"}]}"
+    },
+    {
+      "judge": "judge_2",
+      "model": "moonshotai.kimi-k2.5",
+      "results": [
+        {
+          "criterion_id": "C1",
+          "result": "FAIL",
+          "confidence": 0.9,
+          "reason": "The deliverable does not mention that the burden of proof lies on the party invoking the MAC clause. This is a significant omission from the judicial principles discussed."
+        },
+        {
+          "criterion_id": "C2",
+          "result": "PASS",
+          "confidence": 0.95,
+          "reason": "The deliverable clearly explains that the change must be material in nature and duration, with temporary or speculative impacts being insufficient. Section 3.1 and 4 explicitly address duration and lasting impact requirements."
+        },
+        {
+          "criterion_id": "C3",
+          "result": "FAIL",
+          "confidence": 0.9,
+          "reason": "The deliverable does not mention that changes known to the party at the time of signing generally cannot be relied upon as a MAC. This is a well-established principle in MAC interpretation that is absent."
+        },
+        {
+          "criterion_id": "C4",
+          "result": "PASS",
+          "confidence": 0.85,
+          "reason": "The deliverable states that courts construe MAC clauses as 'fact-specific provisions' in light of 'the contract as a whole' and that outcomes 'turn on specific contractual wording,' indicating interpretation depends on wording and context rather than fixed thresholds."
+        },
+        {
+          "criterion_id": "C5",
+          "result": "FAIL",
+          "confidence": 0.95,
+          "reason": "The deliverable contains no 'Assumptions and open questions' section listing missing information or items to confirm with the client. This is a complete omission of the required section."
+        },
+        {
+          "criterion_id": "C6",
+          "result": "FAIL",
+          "confidence": 0.95,
+          "reason": "The deliverable opens with an 'Introduction' section rather than a 'Bottom line' or executive summary. The conclusion appears only at the end in section 7, not at the beginning as required."
+        }
+      ],
+      "input_tokens": 2238,
+      "output_tokens": 457,
+      "cost_usd": 0.0024853,
+      "latency_ms": 8115,
+      "prompt_without_documents": "# Task instructions\nYou act for the client, Holloway Capital LLP. Holloway Capital LLP has asked a general legal question.\n\nThe client asks: How do English courts interpret a 'material adverse change' clause?\n\nPrepare a short research note answering the client's question. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 3 June 2026. Address the deliverable to the supervising partner.\n\n# Matter documents\n[see task documents]\n# Deliverable to grade\n<<<DELIVERABLE\n# Research Note: Interpretation of 'Material Adverse Change' Clauses under English Law\n\n**To:** Supervising Partner, Corporate Department  \n**From:** Senior Associate  \n**Date:** 3 June 2026  \n**Subject:** Interpretation of 'Material Adverse Change' Clauses – Analysis for Holloway Capital LLP  \n\n## 1. Introduction\n\nThis note addresses the query from Holloway Capital LLP regarding how English courts interpret 'material adverse change' (MAC) clauses, as raised by their client Glenrock Bioscience plc (incorporated in England and Wales, company number 13288230, registered office at 118 Fleet Street, London).\n\n## 2. Judicial Approach to Interpretation\n\nEnglish courts adopt a strict, fact-specific approach to interpreting MAC clauses, construing them in light of the contract as a whole pursuant to the principles established in *Investors Compensation Scheme Ltd v West Bromwich Building Society* [1998] 1 WLR 896. Courts will not imply a MAC unless the language clearly supports such a finding.\n\n## 3. Key Principles from Case Law\n\n### 3.1 Materiality and Duration\nIn *HIH Casualty and General Insurance Ltd (in liq) v Chase Manhattan Bank NA* [2003] EWHC 1064 (Comm), the court established that a MAC must be 'material' both in nature and duration. Temporary or speculative impacts are insufficient. The judgment referenced a change lasting six months as potentially relevant, though the outcome turned on specific contractual wording.\n\n### 3.2 Substantial Adverse Effect\n*Portigon AG v Pakistan* [2020] EWHC 2268 (Comm) reaffirmed that MAC clauses require a substantial adverse effect on the borrower's ability to perform its obligations. The court considered (though did not determine) that a 15% decline in revenue over a nine-month period could be relevant in assessing materiality.\n\n## 4. Thresholds for Enforceability\n\nEnglish courts interpret MAC clauses narrowly, requiring clear evidence of:\n- A **significant** adverse effect (not merely minor or temporary)\n- A **lasting** impact (not transient fluctuations)\n- A change that **materially affects** the party's ability to perform contractual obligations\n\n## 5. Distinctions Between Different Types of Changes\n\n### 5.1 Economic Downturns vs. Operational Setbacks\n- **General market fluctuations** or **industry-wide developments** are typically insufficient to trigger a MAC clause\n- **Company-specific operational setbacks** are more likely to qualify if they are material and lasting\n- The adverse change must be **specific to the party** rather than affecting the broader market\n\n### 5.2 Broader Market Conditions\nCourts generally distinguish between:\n- **Systemic market conditions** affecting all participants (usually insufficient)\n- **Idiosyncratic risks** specific to the party (more likely to qualify)\n\n## 6. Practical Implications for Drafting and Negotiation\n\n1. **Precision in Drafting**: Given the narrow judicial interpretation, precise drafting is critical\n2. **Specificity**: Clearly define what constitutes a 'material' change\n3. **Duration**: Specify timeframes for assessing whether a change is temporary or lasting\n4. **Benchmarks**: Consider including objective benchmarks or thresholds\n\n## 7. Conclusion\n\nEnglish courts interpret MAC clauses narrowly, requiring clear evidence of a significant, lasting adverse effect that materially impacts a party's ability to perform its obligations. General market fluctuations are typically insufficient, while company-specific operational setbacks may qualify if they meet the materiality and duration thresholds. Drafting precision remains paramount for effective risk allocation.\n\n**Prepared for:** Holloway Capital LLP (incorporated in England and Wales, company number 12889183, registered office: 157 Queen Victoria Street, London)  \n**Client Reference:** Glenrock Bioscience plc transaction involving commitments extending over a 12-month period commencing 1 September 2025, with financial instrument valued at 117% of adjusted asset base as of 31 March 2025.\nDELIVERABLE>>>\n\n# Rubric criteria\nC1: States that the burden is on the party invoking the MAC to prove it.\nC2: Explains that the change must be material and durationally significant, not short-term.\nC3: Notes that changes known to the party at signing generally cannot be relied on.\nC4: Notes that courts construe MAC clauses according to their wording and context rather than a fixed threshold.\nC5: Includes an 'Assumptions and open questions' section listing information that is missing or should be confirmed with the client.\nC6: Opens with a short 'Bottom line' / executive summary stating the overall conclusion and the most important risks before the detailed analysis.\n\nGrade every criterion (6 total). JSON only.",
+      "raw_response": "{\"results\": [{\"criterion_id\": \"C1\", \"result\": \"FAIL\", \"confidence\": 0.9, \"reason\": \"The deliverable does not mention that the burden of proof lies on the party invoking the MAC clause. This is a significant omission from the judicial principles discussed.\"}, {\"criterion_id\": \"C2\", \"result\": \"PASS\", \"confidence\": 0.95, \"reason\": \"The deliverable clearly explains that the change must be material in nature and duration, with temporary or speculative impacts being insufficient. Section 3.1 and 4 explicitly address duration and lasting impact requirements.\"}, {\"criterion_id\": \"C3\", \"result\": \"FAIL\", \"confidence\": 0.9, \"reason\": \"The deliverable does not mention that changes known to the party at the time of signing generally cannot be relied upon as a MAC. This is a well-established principle in MAC interpretation that is absent.\"}, {\"criterion_id\": \"C4\", \"result\": \"PASS\", \"confidence\": 0.85, \"reason\": \"The deliverable states that courts construe MAC clauses as 'fact-specific provisions' in light of 'the contract as a whole' and that outcomes 'turn on specific contractual wording,' indicating interpretation depends on wording and context rather than fixed thresholds.\"}, {\"criterion_id\": \"C5\", \"result\": \"FAIL\", \"confidence\": 0.95, \"reason\": \"The deliverable contains no 'Assumptions and open questions' section listing missing information or items to confirm with the client. This is a complete omission of the required section.\"}, {\"criterion_id\": \"C6\", \"result\": \"FAIL\", \"confidence\": 0.95, \"reason\": \"The deliverable opens with an 'Introduction' section rather than a 'Bottom line' or executive summary. The conclusion appears only at the end in section 7, not at the beginning as required.\"}]}"
+    }
+  ]
+}

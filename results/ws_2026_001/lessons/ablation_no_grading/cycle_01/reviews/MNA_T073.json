@@ -1,0 +1,174 @@
+{
+  "task_id": "MNA_T073",
+  "cycle": 1,
+  "lineage": "ablation_no_grading",
+  "graded": false,
+  "failures": [
+    {
+      "criterion_id": "C1",
+      "what_went_wrong": "The agent did not verify the consistency of numerical calculations across all referenced documents before flagging discrepancies.",
+      "should_have": "Cross-checked all numerical values and formulas in the SPA, disclosure letter, and client emails to ensure calculations were consistent before raising issues.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C2",
+      "what_went_wrong": "The agent did not explicitly flag the absence of a standard 'entire agreement' clause in the SPA, which is critical for limiting liability and defining document hierarchy.",
+      "should_have": "Included a checklist item to verify the presence of an 'entire agreement' clause in all transaction documents.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C3",
+      "what_went_wrong": "The agent did not prioritise issues by legal or commercial criticality, making it harder for the supervising partner to allocate resources effectively.",
+      "should_have": "Ranked issues by risk level (e.g., high, medium, low) and potential impact on the transaction, with clear justification for each ranking.",
+      "failure_kind": "task_specific"
+    },
+    {
+      "criterion_id": "C4",
+      "what_went_wrong": "The agent did not propose specific drafting language or fallback positions for key issues, such as the IP ownership risk or purchase price adjustment mechanism.",
+      "should_have": "Included proposed wording or alternative solutions for high-risk issues to expedite negotiations.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C5",
+      "what_went_wrong": "The agent did not cross-reference the disclosure letter against the SPA to ensure all disclosures were properly tied to specific warranties.",
+      "should_have": "Mapped each disclosure in the letter to the corresponding warranty in the SPA to confirm alignment and completeness.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C6",
+      "what_went_wrong": "The agent did not flag the absence of a material adverse change (MAC) clause, which is standard in SPAs to protect the buyer from unforeseen risks.",
+      "should_have": "Included a checklist item to verify the presence of a MAC clause and assessed its scope and carve-outs.",
+      "failure_kind": "content"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T073_0",
+      "type": "checklist",
+      "category": "review",
+      "text": "Before finalising an issues list, cross-check all numerical values and formulas in transaction documents to ensure consistency and accuracy.",
+      "source_tasks": [
+        "MNA_T073"
+      ],
+      "evidence": [
+        "MNA_T073:C1"
+      ],
+      "task_type_scope": "issues_list",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T073_1",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Include a risk ranking (high, medium, low) for each issue in the issues list, with a brief justification for the ranking.",
+      "source_tasks": [
+        "MNA_T073"
+      ],
+      "evidence": [
+        "MNA_T073:C3"
+      ],
+      "task_type_scope": "issues_list",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T073_2",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "For high-risk issues, propose specific drafting language or fallback positions to expedite resolution during negotiations.",
+      "source_tasks": [
+        "MNA_T073"
+      ],
+      "evidence": [
+        "MNA_T073:C4"
+      ],
+      "task_type_scope": "issues_list",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T073_3",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "Verify that all disclosures in the disclosure letter are tied to specific warranties in the SPA and flag any orphaned disclosures.",
+      "source_tasks": [
+        "MNA_T073"
+      ],
+      "evidence": [
+        "MNA_T073:C5"
+      ],
+      "task_type_scope": "issues_list",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T073_4",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "Confirm the presence of standard clauses (e.g., entire agreement, MAC, governing law) in all transaction documents and flag any omissions.",
+      "source_tasks": [
+        "MNA_T073"
+      ],
+      "evidence": [
+        "MNA_T073:C2",
+        "MNA_T073:C6"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T073_5",
+      "type": "practice_note",
+      "category": "review",
+      "text": "Recompute all derived figures (e.g., purchase price adjustments, working capital shortfalls) independently before relying on them in the issues list.",
+      "source_tasks": [
+        "MNA_T073"
+      ],
+      "evidence": [
+        "MNA_T073:C1"
+      ],
+      "task_type_scope": "issues_list",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.88
+    }
+  ],
+  "lesson_feedback": [
+    {
+      "lesson_id": "L0001",
+      "label": "HELPFUL",
+      "reason": "Addresses a common procedural gap in verifying numerical consistency, which is critical for accuracy in transaction documents."
+    },
+    {
+      "lesson_id": "L0002",
+      "label": "HELPFUL",
+      "reason": "Prioritisation of issues by risk level is essential for effective resource allocation and client communication."
+    },
+    {
+      "lesson_id": "L0003",
+      "label": "HELPFUL",
+      "reason": "Providing proposed solutions for high-risk issues demonstrates proactive problem-solving and accelerates negotiations."
+    },
+    {
+      "lesson_id": "L0004",
+      "label": "HELPFUL",
+      "reason": "Ensures alignment between disclosures and warranties, reducing the risk of gaps in protection for the client."
+    },
+    {
+      "lesson_id": "L0005",
+      "label": "HELPFUL",
+      "reason": "Standard clauses are often overlooked but are critical for legal protection and document completeness."
+    },
+    {
+      "lesson_id": "L0006",
+      "label": "HELPFUL",
+      "reason": "Independent verification of calculations reduces the risk of errors propagating into the issues list and client advice."
+    }
+  ],
+  "input_tokens": 3142,
+  "output_tokens": 1356,
+  "cost_usd": 0.003605,
+  "prompt": "# Task\nType: issues_list | Practice area: corporate_mna\nYou act for the Buyer, Saltash Software Ltd. Saltash Software Ltd (the Buyer) is acquiring the entire issued share capital of Ashcombe Technologies Ltd (the Company) from Oakhurst Holdings Ltd (the Seller).\n\nPrepare an issues list for the supervising partner covering the matter documents. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 22 June 2026. Address the deliverable to the supervising partner.\n\n# Trajectory (19 model steps, 19 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"client_email.md\"})\n 3. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 4. [research] read_document({\"name\": \"disclosure_letter.md\"})\n 5. [research] search_documents({\"query\": \"Holloway\"})\n 6. [research] search_documents({\"query\": \"warranty\"})\n 7. [research] search_documents({\"query\": \"5.3\"})\n 8. [analysis] calculate({\"expression\": \"date('2026-06-22')\\ndays_between(date('2026-06-22'), date('2026-08-04'))\\ndays_between(date('2026-05-26'), date('2026-06-22'))\"})\n 9. [analysis] calculate({\"expression\": \"Target Working Capital = 3500000\\nEstimated Closing Working Capital = 2880000\\nShortfall = Target Working Capital - Estimated Closing Working Ca)\n10. [analysis] calculate({\"expression\": \"3500000 - 2880000\"})\n11. [analysis] calculate({\"expression\": \"100000000 - 620000\"})\n12. [analysis] calculate({\"expression\": \"100000000 - 98800000\"})\n13. [analysis] calculate({\"expression\": \"100000000 - 98760000\"})\n14. [analysis] calculate({\"expression\": \"3500000 - 1240000\"})\n15. [drafting] write_draft(<1167 words>)\n16. [verification] read_draft({})\n17. [editing] edit_draft(find='### 6. Disclosure Letter Dating and References\\n\\n**Issue:** D' -> '### 6. Inconsistent Document References and Version Control\\n')\n18. [verification] calculate({\"expression\": \"date('2026-08-04')\\nadd_days(date('2026-08-04'), 90)\\nadd_days(date('2026-08-04'), 120)\"})\n19. [control] finish({\"summary\": \"Issues list for supervising partner covering the acquisition of Ashcombe Technologies Ltd by Saltash Software Ltd. Identifies 7 key issues: 1) Purc)\n\n# Final deliverable\n# Issues List: Acquisition of Ashcombe Technologies Ltd\n## For: Supervising Partner\n## From: Senior Associate\n## Date: 22 June 2026\n## Matter: Saltash Software Ltd acquisition of Ashcombe Technologies Ltd from Oakhurst Holdings Ltd\n\n---\n\n## Executive Summary\n\nThis issues list addresses key concerns identified in the review of the draft Share Purchase Agreement (SPA) dated 26 May 2026, the Disclosure Letter, and client instructions received via email dated 18 June 2026. The transaction involves Saltash Software Ltd (Buyer) acquiring the entire issued share capital of Ashcombe Technologies Ltd (Company) from Oakhurst Holdings Ltd (Seller) for a base purchase price of $100,000,000, subject to working capital adjustments.\n\n## Key Issues Requiring Attention\n\n### 1. Purchase Price Adjustment Mechanism (Clause 2.3)\n\n**Issue:** The purchase price adjustment mechanism in clause 2.3 of the SPA requires careful review and potential amendment.\n\n**Analysis:**\n- Clause 2.3 provides for dollar-for-dollar reduction of the Purchase Price by any shortfall of Closing Working Capital below the Target Working Capital of $3,500,000.\n- The adjustment is to be determined \"in good faith\" by the Buyer within 90 days post-closing, with the Seller having 30 days to dispute.\n- The client email indicates a discrepancy: Seller's draft funds flow shows an adjusted purchase price of $98,760,000 based on estimated Closing Working Capital of $2,880,000.\n- Mathematical inconsistency: If Target Working Capital is $3,500,000 and estimated Closing Working Capital is $2,880,000, the shortfall would be $620,000, resulting in an adjusted purchase price of $99,380,000, not $98,760,000.\n- Alternatively, if the adjusted purchase price is $98,760,000, the implied estimated Closing Working Capital would be $2,260,000 (shortfall of $1,240,000).\n\n**Action Required:** Clarify the working capital figures with the client and Seller. Consider strengthening the adjustment mechanism to include:\n- Detailed accounting principles for calculating Closing Working Capital\n- Dispute resolution mechanism (potentially involving independent accountants)\n- Clear timelines and procedures\n\n### 2. Intellectual Property Ownership Risk (Disclosure Letter)\n\n**Issue:** Significant risk regarding ownership of the Company's core platform software.\n\n**Analysis:**\n- Disclosure Letter reveals that the Company's core platform software was developed in 2023 by independent contractor Calloway Robotics Ltd.\n- Development was on a time-and-materials basis without a written agreement providing for IP assignment.\n- No written assignment of intellectual property was entered into.\n- The software forms the technical foundation of the Company's service offering and is deployed for key customers.\n- Legal title may remain with Calloway Robotics Ltd despite Company's treatment of it as proprietary asset.\n- The software has been licensed to Holloway Energy plc under a non-exclusive, perpetual licence granted 15 April 2024.\n\n**Action Required:** \n- Conduct due diligence on IP ownership status\n- Require Seller to obtain proper assignment from Calloway Robotics Ltd pre-closing\n- Consider warranty and indemnity protection for IP risks\n- Assess impact on Holloway Energy plc relationship\n\n### 3. Missing Warranties and Representations\n\n**Issue:** The SPA appears incomplete, lacking standard warranties and representations.\n\n**Analysis:**\n- The SPA provided contains only basic clauses (sale/purchase, closing, confidentiality, notices, governing law).\n- No warranties section is included, though Disclosure Letter references \"Warranty 8.2 (IP)\".\n- Client specifically requested confirmation that representations, warranties and covenants adequately address relationship with Holloway Energy plc.\n- Standard SPA would include comprehensive warranties covering accounts, assets, liabilities, contracts, employees, litigation, compliance, etc.\n\n**Action Required:**\n- Draft comprehensive warranties schedule\n- Include specific warranty addressing Holloway Energy plc relationship\n- Ensure IP warranties address the disclosed issues\n- Consider appropriate limitations (time limits, financial caps, de minimis thresholds)\n\n### 4. Holloway Energy plc Relationship\n\n**Issue:** Client specifically highlighted need to address commercial relationship with Holloway Energy plc.\n\n**Analysis:**\n- Holloway Energy plc is identified as a material customer of the Company.\n- The Company has licensed its software to Holloway Energy under a non-exclusive, perpetual licence.\n- No details of this licence agreement are provided in the documents.\n- The relationship represents significant commercial value that must be protected.\n\n**Action Required:**\n- Review Holloway Energy licence agreement\n- Include warranty regarding validity and enforceability of customer contracts\n- Consider change of control provisions in customer contracts\n- Address revenue concentration risk\n\n### 5. Incomplete SPA Structure\n\n**Issue:** The SPA is substantially incomplete, missing critical commercial and legal provisions.\n\n**Analysis:**\n- Missing standard SPA sections: conditions precedent, warranties, indemnities, restrictive covenants, limitations of liability, tax provisions, employee matters.\n- No mechanism for escrow or retention for potential claims.\n- No provisions for post-closing access to information.\n- Limited confidentiality provisions (only one-way from each party).\n\n**Action Required:**\n- Draft comprehensive SPA including all standard provisions\n- Consider appropriate protections for Buyer given IP risks\n- Include detailed schedules for disclosure, completion accounts, etc.\n\n### 6. Inconsistent Document References and Version Control\n\n**Issue:** Multiple inconsistencies suggest documents may be from different versions or incomplete.\n\n**Analysis:**\n- Disclosure Letter references SPA dated \"on or about 22 June 2026\" but SPA is dated 26 May 2026.\n- Disclosure Letter references \"Warranty 8.2 (IP)\" but no clause 8 exists in provided SPA.\n- Client email references \"mechanics in clause 5.3\" but SPA ends at clause 6.\n- Suggests either: (1) documents are from different SPA versions, (2) SPA is incomplete, or (3) references are incorrect.\n\n**Action Required:**\n- Obtain complete, final versions of all documents\n- Align dates and references between documents\n- Verify all cross-references are accurate\n- Ensure Disclosure Letter properly references final SPA clauses\n\n### 7. Closing Date and Timeline\n\n**Issue:** Closing Date is 4 August 2026, providing limited time for due diligence and documentation.\n\n**Analysis:**\n- Current date: 22 June 2026\n- Closing Date: 4 August 2026 (43 days from now)\n- SPA executed: 26 May 2026 (27 days ago)\n- Limited time to address significant issues identified.\n\n**Action Required:**\n- Assess feasibility of meeting 4 August closing date\n- Consider extending closing date if necessary to address issues\n- Prioritise critical path items (IP due diligence, warranty drafting)\n\n## Recommended Next Steps\n\n1. **Immediate Client Meeting:** Discuss discrepancies in working capital calculations and obtain clarification on commercial expectations.\n\n2. **IP Due Diligence:** Commence urgent due diligence on IP ownership, including:\n   - Review of all development agreements\n   - Assessment of current IP portfolio\n   - Engagement with Calloway Robotics Ltd regarding assignment\n\n3. **SPA Redrafting:** Prepare comprehensive SPA including:\n   - Full warranties schedule\n   - Detailed purchase price adjustment mechanism\n   - IP-specific protections and indemnities\n   - Conditions precedent addressing IP assignment\n\n4. **Customer Contract Review:** Obtain and review Holloway Energy plc licence agreement and other key customer contracts.\n\n5. **Negotiation Strategy:** Develop positions on key issues including:\n   - Purchase price adjustment mechanism\n   - IP warranty and indemnity coverage\n   - Limitations on liability\n   - Escrow/retention arrangements\n\n## Risk Assessment\n\n**High Risk Issues:**\n- IP ownership uncertainty (critical to business value)\n- Incomplete SPA with missing fundamental protections\n- Discrepancies in purchase price calculations\n\n**Medium Risk Issues:**\n- Holloway Energy relationship dependencies\n- Limited time for due diligence and documentation\n- Absence of standard SPA protections\n\n**Low Risk Issues:**\n- Basic corporate structure appears sound\n- Parties are all UK incorporated entities\n- Governing law and jurisdiction appropriately English\n\n---\n\n*Prepared based on review of: client_email.md, disclosure_letter.md, share_purchase_agreement.md*\n*All statements based on document review as of 22 June 2026*\n\n# Your job\nNo grades are available. Critically assess the deliverable and the work process yourself, as a demanding supervising partner would, and write reusable candidate lessons for improving the work.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|issues_list\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C1\",\n      \"what_went_wrong\": \"The agent did not verify the consistency of numerical calculations across all referenced documents before flagging discrepancies.\",\n      \"should_have\": \"Cross-checked all numerical values and formulas in the SPA, disclosure letter, and client emails to ensure calculations were consistent before raising issues.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C2\",\n      \"what_went_wrong\": \"The agent did not explicitly flag the absence of a standard 'entire agreement' clause in the SPA, which is critical for limiting liability and defining document hierarchy.\",\n      \"should_have\": \"Included a checklist item to verify the presence of an 'entire agreement' clause in all transaction documents.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C3\",\n      \"what_went_wrong\": \"The agent did not prioritise issues by legal or commercial criticality, making it harder for the supervising partner to allocate resources effectively.\",\n      \"should_have\": \"Ranked issues by risk level (e.g., high, medium, low) and potential impact on the transaction, with clear justification for each ranking.\",\n      \"failure_kind\": \"task_specific\"\n    },\n    {\n      \"criterion_id\": \"C4\",\n      \"what_went_wrong\": \"The agent did not propose specific drafting language or fallback positions for key issues, such as the IP ownership risk or purchase price adjustment mechanism.\",\n      \"should_have\": \"Included proposed wording or alternative solutions for high-risk issues to expedite negotiations.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C5\",\n      \"what_went_wrong\": \"The agent did not cross-reference the disclosure letter against the SPA to ensure all disclosures were properly tied to specific warranties.\",\n      \"should_have\": \"Mapped each disclosure in the letter to the corresponding warranty in the SPA to confirm alignment and completeness.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C6\",\n      \"what_went_wrong\": \"The agent did not flag the absence of a material adverse change (MAC) clause, which is standard in SPAs to protect the buyer from unforeseen risks.\",\n      \"should_have\": \"Included a checklist item to verify the presence of a MAC clause and assessed its scope and carve-outs.\",\n      \"failure_kind\": \"content\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"review\",\n      \"text\": \"Before finalising an issues list, cross-check all numerical values and formulas in transaction documents to ensure consistency and accuracy.\",\n      \"evidence\": [\"C1\"],\n      \"task_type_scope\": \"issues_list\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"Include a risk ranking (high, medium, low) for each issue in the issues list, with a brief justification for the ranking.\",\n      \"evidence\": [\"C3\"],\n      \"task_type_scope\": \"issues_list\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"For high-risk issues, propose specific drafting language or fallback positions to expedite resolution during negotiations.\",\n      \"evidence\": [\"C4\"],\n      \"task_type_scope\": \"issues_list\",\n      \"confidence\": 0.85\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"Verify that all disclosures in the disclosure letter are tied to specific warranties in the SPA and flag any orphaned disclosures.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"issues_list\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"Confirm the presence of standard clauses (e.g., entire agreement, MAC, governing law) in all transaction documents and flag any omissions.\",\n      \"evidence\": [\"C2\", \"C6\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"review\",\n      \"text\": \"Recompute all derived figures (e.g., purchase price adjustments, working capital shortfalls) independently before relying on them in the issues list.\",\n      \"evidence\": [\"C1\"],\n      \"task_type_scope\": \"issues_list\",\n      \"confidence\": 0.88\n    }\n  ],\n  \"lesson_feedback\": [\n    {\n      \"lesson_id\": \"L0001\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Addresses a common procedural gap in verifying numerical consistency, which is critical for accuracy in transaction documents.\"\n    },\n    {\n      \"lesson_id\": \"L0002\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Prioritisation of issues by risk level is essential for effective resource allocation and client communication.\"\n    },\n    {\n      \"lesson_id\": \"L0003\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Providing proposed solutions for high-risk issues demonstrates proactive problem-solving and accelerates negotiations.\"\n    },\n    {\n      \"lesson_id\": \"L0004\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Ensures alignment between disclosures and warranties, reducing the risk of gaps in protection for the client.\"\n    },\n    {\n      \"lesson_id\": \"L0005\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Standard clauses are often overlooked but are critical for legal protection and document completeness.\"\n    },\n    {\n      \"lesson_id\": \"L0006\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Independent verification of calculations reduces the risk of errors propagating into the issues list and client advice.\"\n    }\n  ]\n}\n```"
+}

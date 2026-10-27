@@ -1,0 +1,168 @@
+{
+  "task_id": "MNA_T102",
+  "cycle": 1,
+  "lineage": "ablation_no_commit_gate",
+  "graded": true,
+  "failures": [
+    {
+      "criterion_id": "C2",
+      "what_went_wrong": "The agent identified the governing law mismatch but failed to explicitly highlight the risk of parallel proceedings arising from the differing dispute resolution mechanisms (English courts vs. New York arbitration).",
+      "should_have": "Explicitly flagged the risk of parallel proceedings when governing law and dispute resolution mechanisms differ between related agreements, and recommended mitigation strategies.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C4",
+      "what_went_wrong": "The agent quoted the warranty cap figure without verifying its mathematical accuracy against the stated percentage of the purchase price.",
+      "should_have": "Recomputed the warranty cap as a percentage of the purchase price and flagged any discrepancy with the stated figure.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C5",
+      "what_went_wrong": "The agent provided the escrow release date and duration but omitted the calculation of days remaining from the current date.",
+      "should_have": "Calculated and included the days remaining from the current date to all critical deadlines.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C6",
+      "what_went_wrong": "The agent noted the deadline fell on a non-business day but incorrectly assumed the obligation deadline moved, rather than confirming the escrow release date itself moved to the next business day.",
+      "should_have": "Verified whether the deadline or the underlying event (escrow release) moves to the next business day when falling on a non-business day, and stated the correct adjusted date.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C7",
+      "what_went_wrong": "The executive summary described the analysis scope rather than providing a concise 'bottom line' with the overall conclusion and most important risks.",
+      "should_have": "Opened with a short, high-impact executive summary stating the overall conclusion and top risks before detailed analysis.",
+      "failure_kind": "procedural"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T102_0",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Begin every timeline analysis with a 'Bottom line' section stating the overall conclusion, top 3 risks, and most urgent deadlines in 3 bullet points or fewer.",
+      "source_tasks": [
+        "MNA_T102"
+      ],
+      "evidence": [
+        "MNA_T102:C7"
+      ],
+      "task_type_scope": "timeline_analysis",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T102_1",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "For every monetary cap expressed as a percentage, recompute the figure from the base amount and flag any mismatch with the stated cap.",
+      "source_tasks": [
+        "MNA_T102"
+      ],
+      "evidence": [
+        "MNA_T102:C4"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T102_2",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Calculate and include the days remaining from the current date to every critical deadline in the timeline.",
+      "source_tasks": [
+        "MNA_T102"
+      ],
+      "evidence": [
+        "MNA_T102:C5"
+      ],
+      "task_type_scope": "timeline_analysis",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T102_3",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "When a deadline falls on a non-business day, check the agreement to determine if the deadline or the underlying event moves to the next business day, and state the correct adjusted date.",
+      "source_tasks": [
+        "MNA_T102"
+      ],
+      "evidence": [
+        "MNA_T102:C6"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T102_4",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "For related agreements with differing governing laws or dispute resolution mechanisms, explicitly flag the risk of parallel proceedings and recommend mitigation strategies.",
+      "source_tasks": [
+        "MNA_T102"
+      ],
+      "evidence": [
+        "MNA_T102:C2"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T102_5",
+      "type": "practice_note",
+      "category": "review",
+      "text": "Before finalising a timeline, verify that every derived date (e.g., 'X months after Closing') has been independently recalculated and cross-checked against the agreement.",
+      "source_tasks": [
+        "MNA_T102"
+      ],
+      "evidence": [
+        "MNA_T102:C4",
+        "MNA_T102:C5",
+        "MNA_T102:C6"
+      ],
+      "task_type_scope": "timeline_analysis",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    }
+  ],
+  "lesson_feedback": [
+    {
+      "lesson_id": "L0001",
+      "label": "HELPFUL",
+      "reason": "Directly addresses the failure to provide a concise 'bottom line' summary, which is a common drafting gap in legal analyses."
+    },
+    {
+      "lesson_id": "L0002",
+      "label": "HELPFUL",
+      "reason": "Prevents mathematical errors in financial caps, a critical analysis step for transactional work."
+    },
+    {
+      "lesson_id": "L0003",
+      "label": "Ensures practical utility of the timeline by including days remaining, which is essential for client actionability."
+    },
+    {
+      "lesson_id": "L0004",
+      "label": "HELPFUL",
+      "reason": "Clarifies a common ambiguity in agreements about whether deadlines or events move on non-business days, reducing misinterpretation risk."
+    },
+    {
+      "lesson_id": "L0005",
+      "label": "HELPFUL",
+      "reason": "Highlights a significant but often overlooked risk in multi-agreement transactions, improving risk identification."
+    },
+    {
+      "lesson_id": "L0006",
+      "label": "HELPFUL",
+      "reason": "Encourages thorough verification of derived dates, reducing errors in timeline analyses."
+    }
+  ],
+  "input_tokens": 4531,
+  "output_tokens": 1332,
+  "cost_usd": 0.0042635,
+  "prompt": "# Task\nType: timeline_analysis | Practice area: corporate_mna\nYou act for the Buyer, Oakhurst Robotics Ltd. Oakhurst Robotics Ltd (the Buyer) is acquiring the entire issued share capital of Ingleby Marine Ltd (the Company) from Pemberton Industries Ltd (the Seller).\n\nPrepare a timeline and deadlines analysis of all time-sensitive obligations in the matter documents. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 24 March 2026. Address the deliverable to the supervising partner.\n\n# Trajectory (28 model steps, 28 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"client_email.md\"})\n 3. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 4. [research] read_document({\"name\": \"escrow_agreement.md\"})\n 5. [analysis] calculate({\"expression\": \"Closing Date = date('2026-04-17')\"})\n 6. [analysis] calculate({\"expression\": \"date('2026-04-17')\"})\n 7. [analysis] calculate({\"expression\": \"Closing_Date = date('2026-04-17')\\nCurrent_Date = date('2026-03-24')\\nDays_to_Closing = days_between(Current_Date, Closing_Date)\"})\n 8. [analysis] calculate({\"expression\": \"Closing_Date = date('2026-04-17')\\nAccount_Notification_Deadline = prev_business_day(prev_business_day(prev_business_day(prev_business_day(prev_)\n 9. [analysis] calculate({\"expression\": \"Closing_Date = date('2026-04-17')\\nd1 = prev_business_day(Closing_Date)\\nd2 = prev_business_day(d1)\\nd3 = prev_business_day(d2)\\nd4 = prev_busin)\n10. [analysis] calculate({\"expression\": \"Closing_Date = date('2026-04-17')\\nFive_Business_Days_Before = add_days(Closing_Date, -5)\\nFive_Business_Days_Before\"})\n11. [analysis] calculate({\"expression\": \"weekday(date('2026-04-12'))\"})\n12. [analysis] calculate({\"expression\": \"Closing_Date = date('2026-04-17')\\nGeneral_Warranties_Expiry = add_months(Closing_Date, 12)\\nFundamental_Warranties_Expiry = add_months(Closing_)\n13. [analysis] calculate({\"expression\": \"Closing_Date = date('2026-04-17')\\nEscrow_Release_Date = add_months(Closing_Date, 12)\\nEscrow_Release_Date\"})\n14. [research] search_documents({\"query\": \"days\"})\n15. [research] search_documents({\"query\": \"months\"})\n16. [research] search_documents({\"query\": \"notice\"})\n17. [drafting] write_draft(<846 words>)\n18. [verification] read_draft({})\n19. [verification] calculate({\"expression\": \"date('2026-04-10')\"})\n20. [verification] search_documents({\"query\": \"Business Day\"})\n21. [editing] edit_draft(find=\"**A. Seller's Account Notification Deadline**\\n- **Requiremen\" -> \"**A. Seller's Account Notification Deadline**\\n- **Requiremen\")\n22. [editing] edit_draft(find='### Risk Management Recommendations\\n\\n1. **Pre-Closing Checkl' -> '### Risk Management Recommendations\\n\\n1. **Pre-Closing Checkl')\n23. [editing] edit_draft(find='#### Upcoming Critical Milestones\\n\\n1. **By 10 April 2026:** ' -> '#### Upcoming Critical Milestones\\n\\n1. **By 9 April 2026 (rec')\n24. [verification] read_draft({})\n25. [editing] edit_draft(find='### Conclusion\\n\\nThe transaction involves a tightly sequenced' -> '### Conclusion\\n\\nThe transaction involves a tightly sequenced')\n26. [editing] edit_draft(find='**B. Fundamental Warranties Survival Period**\\n- **Duration:*' -> '**B. Fundamental Warranties Survival Period**\\n- **Duration:*')\n27. [verification] read_draft({})\n28. [control] finish({\"summary\": \"Completed timeline and deadlines analysis for Oakhurst Robotics Ltd's acquisition of Ingleby Marine Ltd. The analysis identifies all time-sensitive)\n\n# Final deliverable\n# Timeline and Deadlines Analysis\n## Acquisition of Ingleby Marine Ltd by Oakhurst Robotics Ltd\n\n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Date:** 24 March 2026  \n**Matter:** Acquisition of Ingleby Marine Ltd  \n**Client:** Oakhurst Robotics Ltd (Buyer)\n\n### Executive Summary\n\nThis analysis sets out all time-sensitive obligations arising from the Share Purchase Agreement dated 18 March 2026 and the Escrow Agreement dated 20 March 2026. The key deadlines revolve around the Closing Date of 17 April 2026, with subsequent deadlines for warranty claims and escrow release extending through to April 2029.\n\n### Key Dates and Deadlines\n\n#### 1. Immediate Pre-Closing Deadlines\n\n**A. Seller's Account Notification Deadline**\n- **Requirement:** Seller must notify Buyer of payment account details\n- **Deadline:** At least 5 Business Days before Closing Date\n- **Calculated Date:** **Ambiguous - requires clarification**\n  - Literal count: Friday, 10 April 2026 (5 calendar days before Sunday, 12 April 2026)\n  - Business days excluding weekends: Friday, 10 April 2026\n  - **CRITICAL ISSUE:** 10 April 2026 is Good Friday (UK bank holiday)\n  - Likely intended date: Thursday, 9 April 2026 (last business day before bank holiday)\n- **Source:** SPA Clause 3.1\n- **Risk:** SPA does not define \"Business Day\" - creates ambiguity\n- **Action Required:** \n  1. Seek clarification from Seller on interpretation\n  2. Request account details by 9 April 2026 to be safe\n  3. Consider amending SPA to define \"Business Day\"\n\n**B. Closing Date**\n- **Date:** Friday, 17 April 2026\n- **Source:** SPA Clause 1.1 (definition of \"Closing Date\")\n- **Key Obligations:**\n  1. Buyer must pay Purchase Price of $100,000,000\n  2. Seller must deliver:\n     - Duly executed share transfer forms\n     - Resignations of all directors and secretaries\n     - Other documents reasonably required for transfer\n- **Location:** Buyer's offices or as otherwise agreed\n\n#### 2. Post-Closing Deadlines\n\n**A. General Warranties Survival Period**\n- **Duration:** 12 months from Closing Date\n- **Expiry Date:** Saturday, 17 April 2027\n- **Source:** SPA Clause 10.1\n- **Critical Requirement:** Any claim for breach of General Warranties must be notified in writing to Seller BEFORE this expiry date\n- **Note:** Since expiry falls on a Saturday, notification should be made by Friday, 16 April 2027\n\n**B. Fundamental Warranties Survival Period**\n- **Duration:** 36 months from Closing Date\n- **Expiry Date:** Tuesday, 17 April 2029\n- **Source:** SPA Clause 10.1\n- **Critical Requirement:** Any claim for breach of Fundamental Warranties (title, capacity, tax) must be notified in writing to Seller BEFORE this expiry date\n- **Financial Cap:** Seller's aggregate liability for warranty claims capped at $31,250,000 (25% of Purchase Price) - SPA Clause 8.3\n\n**C. Escrow Release Date**\n- **Date:** Saturday, 17 April 2027 (12 months after Closing Date)\n- **Source:** Escrow Agreement Clause 4.1\n- **Key Provision:** £2,500,000 escrow amount will be released to Seller on this date UNLESS Buyer has delivered a valid Claim Notice before expiry\n- **Claim Notice Deadline:** Must be delivered to both Escrow Agent AND Seller before 17 April 2027\n- **Note:** Since expiry falls on a Saturday, Claim Notice should be delivered by Friday, 16 April 2027\n\n#### 3. Notice Delivery Timelines\n\n**A. Share Purchase Agreement Notices**\n- **Effective Dates:**\n  - Hand delivery: Upon receipt\n  - Post (UK): 2 Business Days after posting\n  - Courier: 1 Business Day after dispatch\n- **Source:** SPA Clause 5.2\n- **Implication:** Critical notices (warranty claims, etc.) must account for delivery time\n\n**B. Escrow Agreement Notices**\n- **Delivery Methods:** Hand, first-class pre-paid post, or email\n- **Addresses:**\n  - Seller: 173 Ludgate Hill, London, Attn: Company Secretary\n  - Buyer: 92 Bishopsgate, London, Attn: Legal Director\n- **Source:** Escrow Agreement Clauses 9.1-9.3\n\n### Critical Path Analysis\n\n#### Current Status (24 March 2026)\n- **Days to Closing:** 24 calendar days\n- **Business Days to Closing:** Approximately 17 business days (assuming standard UK business days)\n\n#### Upcoming Critical Milestones\n\n1. **By 9 April 2026 (recommended):** Confirm receipt of Seller's payment account details (to account for Good Friday holiday)\n2. **17 April 2026:** Closing - ensure funds available and coordinate document exchange\n3. **16 April 2027:** Final date for General Warranty claims and Escrow Claim Notices\n4. **17 April 2029:** Final date for Fundamental Warranty claims\n\n### Risk Management Recommendations\n\n1. **Pre-Closing Checklist:**\n   - **Urgent:** Clarify \"Business Day\" definition with Seller - target account details by 9 April 2026\n   - Confirm receipt of Seller's account details well before Closing\n   - Prepare payment instructions for 17 April 2026\n   - Verify all closing documents are in order\n\n2. **Post-Closing Monitoring:**\n   - Implement calendar reminders for warranty claim deadlines\n   - Establish internal process for monitoring potential claims\n   - Maintain organized records of all transaction documents\n\n3. **Escrow Management:**\n   - Monitor escrow account statements\n   - Establish process for timely Claim Notice submission if needed\n   - Coordinate with Seller on any joint instructions for escrow release\n\n4. **Notice Protocol:**\n   - Use tracked delivery methods for critical notices\n   - Maintain proof of delivery for all time-sensitive communications\n   - Allow buffer time for notice effectiveness periods\n\n### Governing Law Considerations\n\n1. **Share Purchase Agreement:** English law, English courts jurisdiction\n2. **Escrow Agreement:** New York law, arbitration in New York\n3. **Implication:** Different dispute resolution mechanisms apply to different aspects of the transaction\n\n### Conclusion\n\nThe transaction involves a tightly sequenced set of deadlines beginning with the 17 April 2026 Closing Date and extending through to 17 April 2029 for Fundamental Warranty claims. The most immediate priority is **resolving the ambiguity around \"Business Day\" definition** and ensuring the Seller provides payment account details with sufficient lead time (recommended by 9 April 2026 to account for Good Friday). Post-closing, diligent monitoring of the 12-month and 36-month warranty periods is essential to preserve the Buyer's rights under the agreements.\n\nThe escrow arrangement provides additional security but requires proactive management, particularly as the 17 April 2027 release date approaches. All time-sensitive communications should be sent via tracked methods with adequate lead time to account for notice effectiveness periods. The differing governing law provisions between the SPA (English law) and Escrow Agreement (New York law) add complexity that should be monitored throughout the relationship.\n\n# Expert rubric verdicts (2/7 passed)\n- C1 [PASS] States that the escrow release date is 17 April 2027 (12 months after the 17 April 2026 Closing Date) and that pending claims must be notified before then.\n    judges: PASS: The deliverable correctly states the escrow release date as 17 April 2027 (12 months after Closing) and notes that a Claim Notice must be delivered before this date to prevent release. | PASS: The deliverable correctly states the escrow release date as 17 April 2027 (12 months after Closing Date) and that Claim Notice must be delivered before expiry, citing Escrow Agreement Clause 4.1.\n- C2 [FAIL] Identifies the mismatch between English law / English courts in the SPA and New York law / New York arbitration in the escrow agreement, and the risk of parallel proceedings on escrow claims.\n    judges: PASS: The deliverable identifies the governing law mismatch (English law/English courts for SPA vs. New York law/arbitration for Escrow Agreement) and notes the complexity of different dispute resolution mechanisms. | FAIL: While the deliverable identifies the governing law mismatch (English law for SPA, New York law for Escrow Agreement), it fails to identify the specific risk of parallel proceedings on escrow claims that the rubric requir\n- C3 [PASS] States that General Warranty claims must be notified by 17 April 2027 (12 months after Closing) and Fundamental Warranty claims by 17 April 2029 (36 months after Closing).\n    judges: PASS: The deliverable correctly states the General Warranty claims deadline as 17 April 2027 (12 months) and Fundamental Warranty claims deadline as 17 April 2029 (36 months). | PASS: The deliverable correctly states General Warranty claims expire 17 April 2027 (12 months) and Fundamental Warranty claims expire 17 April 2029 (36 months), citing SPA Clause 10.1.\n- C4 [FAIL] Identifies that the warranty cap in SPA Section 8.3 is stated as $31,250,000 but 25% of the $100,000,000 Purchase Price is $25,000,000, i.e. the stated figure is wrong.\n    judges: FAIL: The deliverable quotes the $31,250,000 cap figure but fails to identify the mathematical error that 25% of $100,000,000 is actually $25,000,000, not $31,250,000. | FAIL: The deliverable repeats the $31,250,000 figure from SPA Clause 8.3 without identifying that 25% of $100,000,000 is actually $25,000,000, not $31,250,000. This mathematical error in the SPA is not flagged.\n- C5 [FAIL] Gives the escrow release period as a duration (12 months) and as a date (17 April 2027), with days remaining from 24 March 2026 (389 days).\n    judges: FAIL: The deliverable provides the duration (12 months) and date (17 April 2027) but omits the required calculation of days remaining from 24 March 2026 (389 days). | FAIL: While the deliverable gives the 12-month duration and 17 April 2027 date, it does not calculate or state the days remaining from 24 March 2026 (389 days) as required.\n- C6 [FAIL] Notes that 17 April 2027 is a Saturday and that the release moves to the next Business Day, 19 April 2027.\n    judges: FAIL: The deliverable notes that 17 April 2027 is a Saturday but incorrectly advises notification by Friday 16 April 2027, rather than stating that the release moves to Monday 19 April 2027. | FAIL: The deliverable notes 17 April 2027 is a Saturday and suggests Claim Notice should be delivered by 16 April 2027, but it does not state that the escrow release moves to the next Business Day (19 April 2027) as required.\n- C7 [FAIL] Opens with a short 'Bottom line' / executive summary stating the overall conclusion and the most important risks before the detailed analysis.\n    judges: PASS: The deliverable opens with an Executive Summary that states the overall conclusion and identifies the most important risks before the detailed analysis. | FAIL: The deliverable has an 'Executive Summary' but it describes what the analysis covers rather than providing a concise 'bottom line' with overall conclusion and most important risks before the detailed analysis.\n\n# Your job\nAnalyse each FAILED criterion: what went wrong, what the agent should have done, and whether the failure is procedural (reusable) or task-specific. Then write reusable candidate lessons that would prevent the procedural failures on other matters.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|timeline_analysis\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C2\",\n      \"what_went_wrong\": \"The agent identified the governing law mismatch but failed to explicitly highlight the risk of parallel proceedings arising from the differing dispute resolution mechanisms (English courts vs. New York arbitration).\",\n      \"should_have\": \"Explicitly flagged the risk of parallel proceedings when governing law and dispute resolution mechanisms differ between related agreements, and recommended mitigation strategies.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C4\",\n      \"what_went_wrong\": \"The agent quoted the warranty cap figure without verifying its mathematical accuracy against the stated percentage of the purchase price.\",\n      \"should_have\": \"Recomputed the warranty cap as a percentage of the purchase price and flagged any discrepancy with the stated figure.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C5\",\n      \"what_went_wrong\": \"The agent provided the escrow release date and duration but omitted the calculation of days remaining from the current date.\",\n      \"should_have\": \"Calculated and included the days remaining from the current date to all critical deadlines.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C6\",\n      \"what_went_wrong\": \"The agent noted the deadline fell on a non-business day but incorrectly assumed the obligation deadline moved, rather than confirming the escrow release date itself moved to the next business day.\",\n      \"should_have\": \"Verified whether the deadline or the underlying event (escrow release) moves to the next business day when falling on a non-business day, and stated the correct adjusted date.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C7\",\n      \"what_went_wrong\": \"The executive summary described the analysis scope rather than providing a concise 'bottom line' with the overall conclusion and most important risks.\",\n      \"should_have\": \"Opened with a short, high-impact executive summary stating the overall conclusion and top risks before detailed analysis.\",\n      \"failure_kind\": \"procedural\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"Begin every timeline analysis with a 'Bottom line' section stating the overall conclusion, top 3 risks, and most urgent deadlines in 3 bullet points or fewer.\",\n      \"evidence\": [\"C7\"],\n      \"task_type_scope\": \"timeline_analysis\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"For every monetary cap expressed as a percentage, recompute the figure from the base amount and flag any mismatch with the stated cap.\",\n      \"evidence\": [\"C4\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Calculate and include the days remaining from the current date to every critical deadline in the timeline.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"timeline_analysis\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"When a deadline falls on a non-business day, check the agreement to determine if the deadline or the underlying event moves to the next business day, and state the correct adjusted date.\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.85\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"For related agreements with differing governing laws or dispute resolution mechanisms, explicitly flag the risk of parallel proceedings and recommend mitigation strategies.\",\n      \"evidence\": [\"C2\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.85\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"review\",\n      \"text\": \"Before finalising a timeline, verify that every derived date (e.g., 'X months after Closing') has been independently recalculated and cross-checked against the agreement.\",\n      \"evidence\": [\"C4\", \"C5\", \"C6\"],\n      \"task_type_scope\": \"timeline_analysis\",\n      \"confidence\": 0.9\n    }\n  ],\n  \"lesson_feedback\": [\n    {\n      \"lesson_id\": \"L0001\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Directly addresses the failure to provide a concise 'bottom line' summary, which is a common drafting gap in legal analyses.\"\n    },\n    {\n      \"lesson_id\": \"L0002\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Prevents mathematical errors in financial caps, a critical analysis step for transactional work.\"\n    },\n    {\n      \"lesson_id\": \"L0003\",\n      \"label\": \"HELPFUL\",\n      \"label\": \"Ensures practical utility of the timeline by including days remaining, which is essential for client actionability.\"\n    },\n    {\n      \"lesson_id\": \"L0004\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Clarifies a common ambiguity in agreements about whether deadlines or events move on non-business days, reducing misinterpretation risk.\"\n    },\n    {\n      \"lesson_id\": \"L0005\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Highlights a significant but often overlooked risk in multi-agreement transactions, improving risk identification.\"\n    },\n    {\n      \"lesson_id\": \"L0006\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Encourages thorough verification of derived dates, reducing errors in timeline analyses.\"\n    }\n  ]\n}\n```"
+}

@@ -1,0 +1,134 @@
+{
+  "docs": [
+    {
+      "title": "share_purchase_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 573,
+            "output_tokens": 1016
+          }
+        }
+      ]
+    },
+    {
+      "title": "escrow_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 546,
+            "output_tokens": 967
+          }
+        }
+      ]
+    },
+    {
+      "title": "material_customer_contract.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 515,
+            "output_tokens": 886
+          }
+        }
+      ]
+    },
+    {
+      "title": "disclosure_letter.md",
+      "attempts": [
+        {
+          "missing": [
+            "No written assignment"
+          ],
+          "usage": {
+            "input_tokens": 539,
+            "output_tokens": 1009
+          }
+        },
+        {
+          "missing": [
+            "No written assignment"
+          ],
+          "usage": {
+            "input_tokens": 1577,
+            "output_tokens": 1039
+          }
+        },
+        {
+          "missing": [
+            "No written assignment"
+          ],
+          "usage": {
+            "input_tokens": 1607,
+            "output_tokens": 1080
+          }
+        }
+      ],
+      "appended_facts": true
+    },
+    {
+      "title": "client_email.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 475,
+            "output_tokens": 393
+          }
+        }
+      ]
+    }
+  ],
+  "doc_facts": {
+    "share_purchase_agreement.md": {
+      "key": "spa",
+      "facts": [
+        "Parties: Rothley Capital LLP (Buyer), Northgate Media Ltd (Seller); the Company is Pemberton Engineering Ltd.",
+        "Section 2.1: the Purchase Price is $140,000,000.",
+        "This Agreement is dated 8 March 2027; Closing is scheduled for 29 April 2027 (the 'Closing Date').",
+        "Section 1.1: 'Closing Date' means 29 April 2027."
+      ],
+      "must_contain": []
+    },
+    "escrow_agreement.md": {
+      "key": "escrow",
+      "facts": [
+        "Clause 4.1: the Escrow Amount shall be released to the Seller on the date falling 12 months after the Closing Date, save to the extent of pending claims notified before that date. 'Business Day' means a day other than a Saturday or Sunday on which banks are open in London.",
+        "The Closing Date is 29 April 2027."
+      ],
+      "must_contain": [
+        "12 months",
+        "29 April 2027"
+      ]
+    },
+    "material_customer_contract.md": {
+      "key": "material_contract",
+      "facts": [
+        "Clause 14.2: either party may terminate this agreement on 30 days' notice if the other party undergoes a change of control without its prior written consent. The counterparty is Calloway Media Ltd."
+      ],
+      "must_contain": [
+        "change of control",
+        "prior written consent"
+      ]
+    },
+    "disclosure_letter.md": {
+      "key": "disclosure",
+      "facts": [
+        "Disclosure against Warranty 6.3 (Material Contracts): no material contract contains a change of control provision. (No further disclosure.)",
+        "Disclosure against Warranty 8.2 (IP): the Company's core platform software was developed in 2023 by an independent contractor, Yarrow Systems Ltd. No written assignment of intellectual property was entered into."
+      ],
+      "must_contain": [
+        "Yarrow Systems Ltd",
+        "No written assignment"
+      ]
+    },
+    "client_email.md": {
+      "key": "client_email",
+      "facts": [],
+      "must_contain": []
+    }
+  }
+}

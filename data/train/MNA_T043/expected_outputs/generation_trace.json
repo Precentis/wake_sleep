@@ -1,0 +1,133 @@
+{
+  "docs": [
+    {
+      "title": "share_purchase_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 667,
+            "output_tokens": 1065
+          }
+        }
+      ]
+    },
+    {
+      "title": "escrow_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 544,
+            "output_tokens": 1108
+          }
+        }
+      ]
+    },
+    {
+      "title": "client_email.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 553,
+            "output_tokens": 444
+          }
+        }
+      ]
+    },
+    {
+      "title": "board_minutes.md",
+      "attempts": [
+        {
+          "missing": [
+            "2 directors"
+          ],
+          "usage": {
+            "input_tokens": 478,
+            "output_tokens": 720
+          }
+        },
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 1227,
+            "output_tokens": 719
+          }
+        }
+      ]
+    },
+    {
+      "title": "articles_of_association_extract.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 484,
+            "output_tokens": 908
+          }
+        }
+      ]
+    }
+  ],
+  "doc_facts": {
+    "share_purchase_agreement.md": {
+      "key": "spa",
+      "facts": [
+        "Parties: Netherby Pharma plc (Buyer), Arden Marine Ltd (Seller); the Company is Ivybridge Industries Ltd.",
+        "Section 2.1: the Purchase Price is $95,000,000.",
+        "This Agreement is dated 10 July 2026; Closing is scheduled for 1 October 2026 (the 'Closing Date').",
+        "Section 1.1: 'Closing Date' means 1 October 2026.",
+        "Section 2.3: the Purchase Price shall be reduced dollar-for-dollar by any shortfall of Closing Working Capital below the Target Working Capital of $5,000,000.",
+        "Section 3.4 (Earn-out): the Earn-out Payment equals 2 times the amount by which FY2026 EBITDA exceeds $4,000,000, capped at $10,000,000."
+      ],
+      "must_contain": [
+        "$5,000,000",
+        "$4,000,000",
+        "$10,000,000"
+      ]
+    },
+    "escrow_agreement.md": {
+      "key": "escrow",
+      "facts": [
+        "Clause 4.1: the Escrow Amount shall be released to the Seller on the date falling 24 months after the Closing Date, save to the extent of pending claims notified before that date. 'Business Day' means a day other than a Saturday or Sunday on which banks are open in London.",
+        "The Closing Date is 1 October 2026."
+      ],
+      "must_contain": [
+        "24 months",
+        "1 October 2026"
+      ]
+    },
+    "client_email.md": {
+      "key": "client_email",
+      "facts": [
+        "The estimated Closing Working Capital is $4,650,000. The Seller's draft funds flow shows an adjusted purchase price of $94,300,000.",
+        "Management accounts show FY2026 EBITDA of $5,300,000; the Seller says the Earn-out Payment will therefore be $2,200,000."
+      ],
+      "must_contain": [
+        "$4,650,000",
+        "$94,300,000",
+        "$5,300,000",
+        "$2,200,000"
+      ]
+    },
+    "board_minutes.md": {
+      "key": "board_minutes",
+      "facts": [
+        "Present: 2 directors (of 5). The meeting was quorate. RESOLVED to approve entry into the Share Purchase Agreement."
+      ],
+      "must_contain": [
+        "2 directors"
+      ]
+    },
+    "articles_of_association_extract.md": {
+      "key": "articles",
+      "facts": [
+        "Article 11: the quorum for board meetings is three directors."
+      ],
+      "must_contain": [
+        "three directors"
+      ]
+    }
+  }
+}

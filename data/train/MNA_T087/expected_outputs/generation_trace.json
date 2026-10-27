@@ -1,0 +1,122 @@
+{
+  "docs": [
+    {
+      "title": "share_purchase_agreement.md",
+      "attempts": [
+        {
+          "missing": [
+            "English law"
+          ],
+          "usage": {
+            "input_tokens": 746,
+            "output_tokens": 860
+          }
+        },
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 1630,
+            "output_tokens": 878
+          }
+        }
+      ]
+    },
+    {
+      "title": "escrow_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 508,
+            "output_tokens": 1043
+          }
+        }
+      ]
+    },
+    {
+      "title": "disclosure_letter.md",
+      "attempts": [
+        {
+          "missing": [
+            "No written assignment"
+          ],
+          "usage": {
+            "input_tokens": 520,
+            "output_tokens": 968
+          }
+        },
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 1513,
+            "output_tokens": 1001
+          }
+        }
+      ]
+    },
+    {
+      "title": "client_email.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 516,
+            "output_tokens": 470
+          }
+        }
+      ]
+    }
+  ],
+  "doc_facts": {
+    "share_purchase_agreement.md": {
+      "key": "spa",
+      "facts": [
+        "Parties: Galloway Robotics Ltd (Buyer), Ivybridge Industries Ltd (Seller); the Company is Northgate Retail Group plc.",
+        "Section 2.1: the Purchase Price is $180,000,000.",
+        "This Agreement is dated 14 January 2026; Closing is scheduled for 10 April 2026 (the 'Closing Date').",
+        "Section 15.1: this Agreement is governed by English law and the courts of England have exclusive jurisdiction.",
+        "Section 1.1: 'Material Adverse Change' means any event which has a material adverse effect on the business of the Company, excluding changes in general economic conditions, changes affecting the industry generally, and pandemics.",
+        "Section 2.3: the Purchase Price shall be reduced dollar-for-dollar by any shortfall of Closing Working Capital below the Target Working Capital of $2,000,000.",
+        "Section 8.4 (Limitation of Liability): the aggregate liability of the Seller for warranty claims shall not exceed an amount equal to 10% of the Purchase Price, being $14,400,000. The Purchase Price is $180,000,000 (see Section 2.1)."
+      ],
+      "must_contain": [
+        "English law",
+        "Material Adverse Change",
+        "pandemics",
+        "$2,000,000",
+        "10%",
+        "$14,400,000",
+        "$180,000,000"
+      ]
+    },
+    "escrow_agreement.md": {
+      "key": "escrow",
+      "facts": [
+        "Clause 12: this escrow agreement is governed by the laws of the State of New York and disputes shall be referred to arbitration in New York."
+      ],
+      "must_contain": [
+        "New York"
+      ]
+    },
+    "disclosure_letter.md": {
+      "key": "disclosure",
+      "facts": [
+        "Disclosure against Warranty 8.2 (IP): the Company's core platform software was developed in 2023 by an independent contractor, Arden Pharma plc. No written assignment of intellectual property was entered into."
+      ],
+      "must_contain": [
+        "Arden Pharma plc",
+        "No written assignment"
+      ]
+    },
+    "client_email.md": {
+      "key": "client_email",
+      "facts": [
+        "The estimated Closing Working Capital is $1,090,000. The Seller's draft funds flow shows an adjusted purchase price of $178,180,000."
+      ],
+      "must_contain": [
+        "$1,090,000",
+        "$178,180,000"
+      ]
+    }
+  }
+}

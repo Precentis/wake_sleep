@@ -1,0 +1,168 @@
+{
+  "task_id": "MNA_T042",
+  "cycle": 1,
+  "lineage": "ablation_no_merge",
+  "graded": true,
+  "failures": [
+    {
+      "criterion_id": "C2",
+      "what_went_wrong": "The agent identified the warranty cap figure but did not verify its correctness against the Purchase Price by performing a calculation.",
+      "should_have": "Recomputed the warranty cap as a percentage of the Purchase Price and flagged any discrepancy with the stated figure.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C3",
+      "what_went_wrong": "The agent noted the long-stop date and regulatory clearance date but did not explicitly recommend extending the long-stop date to accommodate the regulatory clearance timeline.",
+      "should_have": "Compared the long-stop date with external deadlines (e.g., regulatory clearance) and recommended adjustments to align them.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C4",
+      "what_went_wrong": "The agent calculated days remaining to the Closing Date but did not calculate days remaining to the general-warranty expiry date from the current date.",
+      "should_have": "Calculated and included days remaining to all critical deadlines, including warranty expiry dates, from the current date.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C5",
+      "what_went_wrong": "The agent mentioned the warranty cap figure but did not show the arithmetic calculation or flag the discrepancy with the expected percentage of the Purchase Price.",
+      "should_have": "Explicitly showed the arithmetic for derived figures (e.g., caps as percentages of Purchase Price) and flagged discrepancies.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C6",
+      "what_went_wrong": "The agent did not check whether computed deadlines fell on weekends or holidays and did not adjust them under the document's Business Day definition.",
+      "should_have": "Verified if deadlines fell on non-Business Days and adjusted them according to the document's Business Day definition or standard practice.",
+      "failure_kind": "procedural"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T042_0",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "For every monetary cap expressed as a percentage of a base figure (e.g., Purchase Price), recompute the cap and flag any mismatch with the stated figure.",
+      "source_tasks": [
+        "MNA_T042"
+      ],
+      "evidence": [
+        "MNA_T042:C2",
+        "MNA_T042:C5"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T042_1",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Compare all critical deadlines (e.g., long-stop dates) with external deadlines (e.g., regulatory clearances) and recommend adjustments to align them if necessary.",
+      "source_tasks": [
+        "MNA_T042"
+      ],
+      "evidence": [
+        "MNA_T042:C3"
+      ],
+      "task_type_scope": "timeline_analysis",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T042_2",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Include days remaining from the current date to every critical deadline (e.g., Closing, warranty expiry) in the timeline deliverable.",
+      "source_tasks": [
+        "MNA_T042"
+      ],
+      "evidence": [
+        "MNA_T042:C4"
+      ],
+      "task_type_scope": "timeline_analysis",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T042_3",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Show the arithmetic for all derived figures (e.g., percentages, pro-rata amounts) in your workings and flag discrepancies with stated figures.",
+      "source_tasks": [
+        "MNA_T042"
+      ],
+      "evidence": [
+        "MNA_T042:C5"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T042_4",
+      "type": "checklist",
+      "category": "review",
+      "text": "Before finalising a timeline, verify if any computed deadlines fall on weekends or holidays and adjust them under the document's Business Day definition.",
+      "source_tasks": [
+        "MNA_T042"
+      ],
+      "evidence": [
+        "MNA_T042:C6"
+      ],
+      "task_type_scope": "timeline_analysis",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T042_5",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "When documents lack a Business Day definition, apply standard practice (e.g., next Business Day) and note the assumption in your deliverable.",
+      "source_tasks": [
+        "MNA_T042"
+      ],
+      "evidence": [
+        "MNA_T042:C6"
+      ],
+      "task_type_scope": "timeline_analysis",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.8
+    }
+  ],
+  "lesson_feedback": [
+    {
+      "lesson_id": "L0001",
+      "label": "HELPFUL",
+      "reason": "Directly addresses the procedural failure to verify caps against base figures, a common issue in transactional work."
+    },
+    {
+      "lesson_id": "L0002",
+      "label": "HELPFUL",
+      "reason": "Encourages proactive alignment of deadlines, which is critical for timeline analysis and risk mitigation."
+    },
+    {
+      "lesson_id": "L0003",
+      "label": "HELPFUL",
+      "reason": "Ensures the deliverable provides actionable information by including days remaining to all deadlines."
+    },
+    {
+      "lesson_id": "L0004",
+      "label": "HELPFUL",
+      "reason": "Promotes transparency and accuracy by requiring arithmetic workings for derived figures."
+    },
+    {
+      "lesson_id": "L0005",
+      "label": "HELPFUL",
+      "reason": "Prevents oversight of weekend/holiday deadlines, which can have legal implications for compliance."
+    },
+    {
+      "lesson_id": "L0006",
+      "label": "HELPFUL",
+      "reason": "Provides a practical solution for handling missing Business Day definitions, a common drafting gap."
+    }
+  ],
+  "input_tokens": 4202,
+  "output_tokens": 1308,
+  "cost_usd": 0.004063,
+  "prompt": "# Task\nType: timeline_analysis | Practice area: corporate_mna\nYou act for the Buyer, Brightwater Energy plc. Brightwater Energy plc (the Buyer) is acquiring the entire issued share capital of Foxley Robotics Ltd (the Company) from Whitlock Industries Ltd (the Seller).\n\nPrepare a timeline and deadlines analysis of all time-sensitive obligations in the matter documents. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 2 March 2026. Address the deliverable to the supervising partner.\n\n# Trajectory (21 model steps, 21 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"client_email.md\"})\n 3. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 4. [research] search_documents({\"query\": \"deadline\"})\n 5. [research] search_documents({\"query\": \"date\"})\n 6. [research] search_documents({\"query\": \"month\"})\n 7. [research] search_documents({\"query\": \"day\"})\n 8. [analysis] calculate({\"expression\": \"agreement_date = date('2026-02-18')\"})\n 9. [analysis] calculate({\"expression\": \"closing_date = date('2026-04-29')\"})\n10. [analysis] calculate({\"expression\": \"conditions_deadline = add_days(agreement_date, 90)\"})\n11. [analysis] calculate({\"expression\": \"agreement_date = date('2026-02-18')\\nclosing_date = date('2026-04-29')\\nconditions_deadline = add_days(agreement_date, 90)\"})\n12. [analysis] calculate({\"expression\": \"general_warranties_end = add_months(closing_date, 12)\\nfundamental_warranties_end = add_months(closing_date, 72)\"})\n13. [analysis] calculate({\"expression\": \"closing_date = date('2026-04-29')\\ngeneral_warranties_end = add_months(closing_date, 12)\\nfundamental_warranties_end = add_months(closing_date, )\n14. [analysis] calculate({\"expression\": \"merger_clearance_date = date('2026-06-18')\"})\n15. [analysis] calculate({\"expression\": \"days_to_closing = days_between(date('2026-03-02'), closing_date)\\ndays_to_conditions_deadline = days_between(date('2026-03-02'), conditions_dead)\n16. [analysis] calculate({\"expression\": \"current_date = date('2026-03-02')\\nagreement_date = date('2026-02-18')\\nclosing_date = date('2026-04-29')\\nconditions_deadline = add_days(agreem)\n17. [drafting] write_draft(<974 words>)\n18. [verification] read_draft({})\n19. [editing] edit_draft(find='**Source:** Client Email (11 June 2026 expected clearance)' -> '**Source:** Client Email (18 June 2026 expected clearance)')\n20. [verification] read_draft({})\n21. [control] finish({\"summary\": \"Timeline and deadlines analysis for Brightwater Energy plc's acquisition of Foxley Robotics Ltd, identifying all time-sensitive obligations includi)\n\n# Final deliverable\n# Timeline and Deadlines Analysis: Acquisition of Foxley Robotics Ltd by Brightwater Energy plc\n\n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Date:** 2 March 2026  \n**Matter:** Acquisition of Foxley Robotics Ltd by Brightwater Energy plc  \n**Client:** Brightwater Energy plc (Buyer)  \n\n## Executive Summary\n\nThis analysis identifies and analyses all time-sensitive obligations arising from the Share Purchase Agreement dated 18 February 2026 and related matter documents. The transaction involves Brightwater Energy plc's acquisition of 100% of Foxley Robotics Ltd from Whitlock Industries Ltd. Key deadlines include the Closing Date (29 April 2026), Conditions Precedent deadline (19 May 2026), and regulatory merger clearance (18 June 2026).\n\n## Key Dates and Deadlines\n\n### 1. Agreement Date\n- **Date:** 18 February 2026 (Wednesday)\n- **Status:** Already occurred (12 days ago)\n- **Significance:** Date from which various time periods commence\n\n### 2. Current Date (Analysis Date)\n- **Date:** 2 March 2026 (Monday)\n- **Significance:** Reference point for all upcoming deadlines\n\n### 3. Closing Date (Primary Transaction Deadline)\n- **Date:** 29 April 2026 (Wednesday)\n- **Days from Today:** 58 days\n- **Source:** Share Purchase Agreement Clause 1.1 and 3.1\n- **Obligations:**\n  - Seller must deliver:\n    - Duly executed share transfer forms\n    - Share certificates\n    - Other documents to vest legal and beneficial ownership\n  - Buyer must pay Purchase Price of $55,000,000 in cash\n- **Critical Action:** All closing deliverables and payment must be completed on this date\n\n### 4. Conditions Precedent Deadline\n- **Date:** 19 May 2026 (Tuesday) - 90 days after Agreement Date\n- **Days from Today:** 78 days\n- **Days from Closing:** 20 days after Closing\n- **Source:** Share Purchase Agreement Clause 4.5\n- **Significance:** If Conditions are not satisfied or waived by this date, either party may terminate the Agreement\n- **Conditions to be Satisfied:**\n  1. Buyer obtaining all necessary corporate approvals\n  2. Seller providing audited financial statements for FY ending 31 December 2025\n  3. No Material Adverse Change occurring in the Company\n\n### 5. Regulatory Merger Clearance\n- **Date:** 18 June 2026 (Thursday)\n- **Days from Today:** 108 days\n- **Days from Closing:** 50 days after Closing\n- **Source:** Client Email (18 June 2026 expected clearance)\n- **Significance:** Regulatory counsel expects merger clearance by this date\n- **Note:** This is an external regulatory deadline not explicitly referenced in the SPA but critical for transaction planning\n\n### 6. Warranty Survival Periods\n\n#### General Warranties\n- **Commencement:** Closing Date (29 April 2026)\n- **Duration:** 12 months\n- **Expiry Date:** 29 April 2027 (Thursday)\n- **Source:** Share Purchase Agreement Clause 10.1\n- **Significance:** Any claim under General Warranties must be notified in writing to Seller before this date\n\n#### Fundamental Warranties (Title, Capacity, Tax)\n- **Commencement:** Closing Date (29 April 2026)\n- **Duration:** 72 months (6 years)\n- **Expiry Date:** 29 April 2032 (Thursday)\n- **Source:** Share Purchase Agreement Clause 10.1\n- **Significance:** Any claim under Fundamental Warranties must be notified in writing to Seller before this date\n\n## Critical Path Analysis\n\n### Pre-Closing Timeline (Next 58 Days)\n1. **Immediate Actions (Next 7 Days):**\n   - Confirm all necessary corporate approvals for Buyer are in process\n   - Request audited financial statements from Seller for FY 2025\n   - Monitor for any Material Adverse Changes\n\n2. **By 29 April 2026 (Closing Date):**\n   - All Conditions Precedent should ideally be satisfied\n   - Prepare for payment of $55,000,000 Purchase Price\n   - Verify Seller's closing deliverables are ready\n\n### Post-Closing Critical Dates\n1. **19 May 2026:** Final deadline for Conditions Precedent satisfaction/waiver\n2. **18 June 2026:** Expected merger clearance (regulatory)\n3. **29 April 2027:** General Warranties claim notification deadline\n4. **29 April 2032:** Fundamental Warranties claim notification deadline\n\n## Risk Assessment and Recommendations\n\n### 1. Timing Risks\n- **Closing (29 April) vs Conditions Deadline (19 May):** Closing is scheduled 20 days before the Conditions Precedent deadline. This creates risk if any Condition fails after Closing but before the deadline.\n- **Recommendation:** Seek to satisfy all Conditions Precedent well before Closing Date to mitigate termination risk.\n\n### 2. Regulatory Risk\n- **Merger Clearance (18 June) vs Closing (29 April):** Regulatory clearance is expected 50 days after Closing. The transaction appears to proceed without regulatory clearance as a Condition Precedent.\n- **Recommendation:** Consider whether regulatory clearance should be added as a Condition Precedent or whether closing should be conditional upon regulatory approval.\n\n### 3. Documentation Risk\n- **Audited Financial Statements:** Required for FY ending 31 December 2025. As of 2 March 2026, these should be available or imminent.\n- **Recommendation:** Request these statements immediately to allow time for review and address any issues.\n\n### 4. Corporate Approval Risk\n- **Buyer Corporate Approvals:** No specific timeline provided in SPA.\n- **Recommendation:** Confirm all internal approval processes are completed well before Closing.\n\n## Action Items for Client\n\n1. **Immediate (Week of 2 March 2026):**\n   - Confirm corporate approval process and timeline\n   - Request FY 2025 audited financial statements from Seller\n   - Establish monitoring process for Material Adverse Changes\n\n2. **By 15 April 2026 (2 weeks before Closing):**\n   - Ensure all Conditions Precedent are satisfied or capable of satisfaction\n   - Prepare funds for $55,000,000 payment\n   - Finalise closing checklist\n\n3. **Ongoing:**\n   - Monitor regulatory clearance progress\n   - Maintain records for potential warranty claims\n   - Calendar all critical dates with reminders\n\n## Conclusion\n\nThe transaction has several critical time-sensitive obligations, with the most immediate being the Closing Date of 29 April 2026 (58 days from today). The Conditions Precedent deadline of 19 May 2026 provides a 20-day buffer after Closing, but early satisfaction of all Conditions is recommended. Regulatory merger clearance expected by 18 June 2026 should be monitored closely as it occurs post-closing. Warranty claim notification deadlines extend for 12 months (General) and 72 months (Fundamental) post-closing, requiring diligent record-keeping.\n\nAll parties should work toward satisfying Conditions Precedent well in advance of Closing to ensure a smooth transaction completion and mitigate termination risks under Clause 4.5 of the Share Purchase Agreement.\n\n# Expert rubric verdicts (1/6 passed)\n- C1 [PASS] States that General Warranty claims must be notified by 29 April 2027 (12 months after Closing) and Fundamental Warranty claims by 29 April 2032 (72 months after Closing).\n    judges: PASS: The deliverable correctly states that General Warranty claims must be notified by 29 April 2027 (12 months after Closing) and Fundamental Warranty claims by 29 April 2032 (72 months after Closing). | PASS: The deliverable correctly states General Warranty claims must be notified by 29 April 2027 (12 months after Closing) and Fundamental Warranty claims by 29 April 2032 (72 months after Closing), with both dates explicitly \n- C2 [FAIL] Identifies that the warranty cap in SPA Section 9.5 is stated as $4,950,000 but 10% of the $55,000,000 Purchase Price is $5,500,000, i.e. the stated figure is wrong.\n    judges: FAIL: The deliverable does not identify the discrepancy between the stated cap of $4,950,000 in SPA Section 9.5 and the correct 10% of $55,000,000 ($5,500,000). | FAIL: The deliverable does not identify the discrepancy between the stated warranty cap of $4,950,000 and the correct calculation of 10% of $55,000,000 being $5,500,000. The deliverable mentions the $4,950,000 figure without f\n- C3 [FAIL] Calculates the long-stop date as 19 May 2026 (90 days after signing on 18 February 2026) and identifies that expected clearance on 18 June 2026 falls after it, recommending an extension.\n    judges: PASS: The deliverable correctly calculates the long-stop date as 19 May 2026 (90 days after signing on 18 February 2026) and identifies that expected clearance on 18 June 2026 falls after it, recommending consideration of whet | FAIL: While the deliverable correctly calculates the long-stop date as 19 May 2026 and notes that merger clearance (18 June 2026) falls after Closing, it does not explicitly recommend an extension of the long-stop date to acco\n- C4 [FAIL] States the survival periods as durations and as dates (29 April 2027; 29 April 2032) and gives days remaining to the general-warranty expiry from 2 March 2026 (423 days).\n    judges: FAIL: While the deliverable states the survival periods as durations and dates, it calculates 58 days to Closing rather than the required days remaining to the general-warranty expiry from 2 March 2026 (423 days). | FAIL: The deliverable states the survival periods as durations and dates but does not calculate or state the days remaining to the general-warranty expiry from 2 March 2026 (423 days). The deliverable only shows '58 days' to C\n- C5 [FAIL] Shows the arithmetic for the cap (10% x $55,000,000 = $5,500,000) and flags the discrepancy with the stated $4,950,000.\n    judges: FAIL: The deliverable does not show the arithmetic for the cap (10% x $55,000,000 = $5,500,000) or flag the discrepancy with the stated $4,950,000. | FAIL: The deliverable does not show the arithmetic for the cap (10% x $55,000,000 = $5,500,000) or flag the discrepancy with the stated $4,950,000. The $4,950,000 figure is mentioned in passing without any calculation or flagg\n- C6 [FAIL] Checks whether computed deadlines fall on a weekend and adjusts them under the documents' Business Day definition.\n    judges: FAIL: The deliverable does not check whether computed deadlines fall on a weekend or adjust them under a Business Day definition; the SPA does not contain a Business Day definition to apply. | FAIL: The deliverable does not check whether computed deadlines fall on weekends or adjust them under any Business Day definition. The document includes day-of-week labels (e.g., 'Wednesday', 'Thursday') but does not indicate \n\n# Your job\nAnalyse each FAILED criterion: what went wrong, what the agent should have done, and whether the failure is procedural (reusable) or task-specific. Then write reusable candidate lessons that would prevent the procedural failures on other matters.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|timeline_analysis\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C2\",\n      \"what_went_wrong\": \"The agent identified the warranty cap figure but did not verify its correctness against the Purchase Price by performing a calculation.\",\n      \"should_have\": \"Recomputed the warranty cap as a percentage of the Purchase Price and flagged any discrepancy with the stated figure.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C3\",\n      \"what_went_wrong\": \"The agent noted the long-stop date and regulatory clearance date but did not explicitly recommend extending the long-stop date to accommodate the regulatory clearance timeline.\",\n      \"should_have\": \"Compared the long-stop date with external deadlines (e.g., regulatory clearance) and recommended adjustments to align them.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C4\",\n      \"what_went_wrong\": \"The agent calculated days remaining to the Closing Date but did not calculate days remaining to the general-warranty expiry date from the current date.\",\n      \"should_have\": \"Calculated and included days remaining to all critical deadlines, including warranty expiry dates, from the current date.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C5\",\n      \"what_went_wrong\": \"The agent mentioned the warranty cap figure but did not show the arithmetic calculation or flag the discrepancy with the expected percentage of the Purchase Price.\",\n      \"should_have\": \"Explicitly showed the arithmetic for derived figures (e.g., caps as percentages of Purchase Price) and flagged discrepancies.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C6\",\n      \"what_went_wrong\": \"The agent did not check whether computed deadlines fell on weekends or holidays and did not adjust them under the document's Business Day definition.\",\n      \"should_have\": \"Verified if deadlines fell on non-Business Days and adjusted them according to the document's Business Day definition or standard practice.\",\n      \"failure_kind\": \"procedural\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"For every monetary cap expressed as a percentage of a base figure (e.g., Purchase Price), recompute the cap and flag any mismatch with the stated figure.\",\n      \"evidence\": [\"C2\", \"C5\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Compare all critical deadlines (e.g., long-stop dates) with external deadlines (e.g., regulatory clearances) and recommend adjustments to align them if necessary.\",\n      \"evidence\": [\"C3\"],\n      \"task_type_scope\": \"timeline_analysis\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"Include days remaining from the current date to every critical deadline (e.g., Closing, warranty expiry) in the timeline deliverable.\",\n      \"evidence\": [\"C4\"],\n      \"task_type_scope\": \"timeline_analysis\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Show the arithmetic for all derived figures (e.g., percentages, pro-rata amounts) in your workings and flag discrepancies with stated figures.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"review\",\n      \"text\": \"Before finalising a timeline, verify if any computed deadlines fall on weekends or holidays and adjust them under the document's Business Day definition.\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"timeline_analysis\",\n      \"confidence\": 0.85\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"When documents lack a Business Day definition, apply standard practice (e.g., next Business Day) and note the assumption in your deliverable.\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"timeline_analysis\",\n      \"confidence\": 0.8\n    }\n  ],\n  \"lesson_feedback\": [\n    {\n      \"lesson_id\": \"L0001\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Directly addresses the procedural failure to verify caps against base figures, a common issue in transactional work.\"\n    },\n    {\n      \"lesson_id\": \"L0002\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Encourages proactive alignment of deadlines, which is critical for timeline analysis and risk mitigation.\"\n    },\n    {\n      \"lesson_id\": \"L0003\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Ensures the deliverable provides actionable information by including days remaining to all deadlines.\"\n    },\n    {\n      \"lesson_id\": \"L0004\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Promotes transparency and accuracy by requiring arithmetic workings for derived figures.\"\n    },\n    {\n      \"lesson_id\": \"L0005\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Prevents oversight of weekend/holiday deadlines, which can have legal implications for compliance.\"\n    },\n    {\n      \"lesson_id\": \"L0006\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Provides a practical solution for handling missing Business Day definitions, a common drafting gap.\"\n    }\n  ]\n}\n```"
+}

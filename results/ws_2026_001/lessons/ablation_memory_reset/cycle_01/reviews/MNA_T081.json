@@ -1,0 +1,162 @@
+{
+  "task_id": "MNA_T081",
+  "cycle": 1,
+  "lineage": "ablation_memory_reset",
+  "graded": true,
+  "failures": [
+    {
+      "criterion_id": "C3",
+      "what_went_wrong": "The agent identified the survival periods (24 months for General Warranties, 48 months for Fundamental Warranties) but failed to calculate and state the specific deadline dates (23 June 2029 and 23 June 2031) based on the Closing Date.",
+      "should_have": "Calculated and explicitly stated the exact deadline dates by adding the survival periods to the Closing Date, ensuring clarity for future claims.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C4",
+      "what_went_wrong": "The agent identified the MAC carve-outs but did not specifically flag the absence of a 'disproportionate effect' exception, nor did it recommend adding one to mitigate Buyer risk.",
+      "should_have": "Explicitly identified the lack of a 'disproportionate effect' exception in MAC carve-outs and recommended its inclusion to address Buyer risk.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C6",
+      "what_went_wrong": "The agent stated the escrow release period as 24 months and the release date (23 June 2029) but failed to calculate and include the days remaining from the review date (27 May 2027).",
+      "should_have": "Calculated and included the days remaining from the review date to the escrow release date to provide actionable timeline clarity.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C7",
+      "what_went_wrong": "The agent provided pinpoint citations for most issues but omitted them for some findings, such as the IP risk disclosure analysis and MAC definition issue.",
+      "should_have": "Ensured every issue or finding included a pinpoint citation (document name and section/clause number) for traceability and verification.",
+      "failure_kind": "procedural"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T081_0",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "For every deadline expressed as a period (e.g., '24 months'), calculate and state the exact calendar date by adding the period to the reference date (e.g., Closing Date).",
+      "source_tasks": [
+        "MNA_T081"
+      ],
+      "evidence": [
+        "MNA_T081:C3"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T081_1",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "When reviewing Material Adverse Change (MAC) clauses, explicitly check for and flag the absence of a 'disproportionate effect' exception in carve-outs, and recommend its inclusion if missing.",
+      "source_tasks": [
+        "MNA_T081"
+      ],
+      "evidence": [
+        "MNA_T081:C4"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T081_2",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "For every time-bound obligation or deadline, calculate and include the days remaining from the review date to the deadline to provide actionable timeline clarity.",
+      "source_tasks": [
+        "MNA_T081"
+      ],
+      "evidence": [
+        "MNA_T081:C6"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T081_3",
+      "type": "checklist",
+      "category": "review",
+      "text": "Before finalising the deliverable, verify that every issue or finding includes a pinpoint citation (document name and section/clause number) for traceability.",
+      "source_tasks": [
+        "MNA_T081"
+      ],
+      "evidence": [
+        "MNA_T081:C7"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.98
+    },
+    {
+      "candidate_id": "c01_MNA_T081_4",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "When identifying risks related to intellectual property, explicitly cite the disclosure letter or relevant document section where the risk is disclosed to ensure traceability.",
+      "source_tasks": [
+        "MNA_T081"
+      ],
+      "evidence": [
+        "MNA_T081:C7"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T081_5",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Recompute all derived dates (e.g., survival periods, escrow release dates) using the calculator tool to ensure accuracy before including them in the deliverable.",
+      "source_tasks": [
+        "MNA_T081"
+      ],
+      "evidence": [
+        "MNA_T081:C3",
+        "MNA_T081:C6"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.95
+    }
+  ],
+  "lesson_feedback": [
+    {
+      "lesson_id": "L0001",
+      "label": "HELPFUL",
+      "reason": "This lesson directly addresses the procedural failure in C3 by ensuring deadlines are explicitly stated as calendar dates, which is a reusable behaviour for contract reviews."
+    },
+    {
+      "lesson_id": "L0002",
+      "label": "HELPFUL",
+      "reason": "This lesson targets the specific oversight in C4 by making the 'disproportionate effect' exception a standard check in MAC clause reviews, which is broadly applicable."
+    },
+    {
+      "lesson_id": "L0003",
+      "label": "HELPFUL",
+      "reason": "This lesson ensures actionable timeline clarity, addressing the failure in C6, and is useful for any matter involving deadlines."
+    },
+    {
+      "lesson_id": "L0004",
+      "label": "HELPFUL",
+      "reason": "This lesson prevents the omission of pinpoint citations (C7) and is a critical quality control step for all deliverables."
+    },
+    {
+      "lesson_id": "L0005",
+      "label": "HELPFUL",
+      "reason": "This lesson ensures traceability for IP-related risks, addressing a gap in C7, and is particularly useful for contract reviews involving IP disclosures."
+    },
+    {
+      "lesson_id": "L0006",
+      "label": "HELPFUL",
+      "reason": "This lesson reinforces the importance of verifying derived dates, addressing failures in C3 and C6, and is a good general practice for accuracy."
+    }
+  ],
+  "input_tokens": 4519,
+  "output_tokens": 1384,
+  "cost_usd": 0.0043355,
+  "prompt": "# Task\nType: contract_review | Practice area: corporate_mna\nYou act for the Buyer, Thornbury Medical Ltd. Thornbury Medical Ltd (the Buyer) is acquiring the entire issued share capital of Pemberton Logistics plc (the Company) from Bellhaven Energy plc (the Seller).\n\nReview the principal agreement against the other matter documents and report the problematic provisions. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 27 May 2027. Address the deliverable to the supervising partner.\n\n# Trajectory (27 model steps, 27 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"client_email.md\"})\n 3. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 4. [research] read_document({\"name\": \"disclosure_letter.md\"})\n 5. [research] read_document({\"name\": \"escrow_agreement.md\"})\n 6. [research] search_documents({\"query\": \"Schedule\"})\n 7. [research] search_documents({\"query\": \"warranty\"})\n 8. [research] search_documents({\"query\": \"clause\"})\n 9. [research] search_documents({\"query\": \"consideration\"})\n10. [research] search_documents({\"query\": \"adjustment\"})\n11. [research] read_document({\"name\": \"share_purchase_agreement.md\", \"start_line\": 60, \"num_lines\": 20})\n12. [research] search_documents({\"query\": \"7.\"})\n13. [research] search_documents({\"query\": \"8.\"})\n14. [research] search_documents({\"query\": \"9.\"})\n15. [analysis] calculate({\"expression\": \"date('2027-05-27')\"})\n16. [analysis] calculate({\"expression\": \"days_between(date('2027-05-27'), date('2027-06-23'))\"})\n17. [drafting] write_draft(<1005 words>)\n18. [verification] read_draft({})\n19. [verification] search_documents({\"query\": \"Business Day\"})\n20. [editing] edit_draft(find='### 8. Confidentiality Duration\\n\\n**Issue:** Clause 6.2 impos' -> '### 8. Undefined \"Business Day\" Term\\n\\n**Issue:** Clause 4.1 ')\n21. [editing] edit_draft(find='**Recommendation:** Align all dates and ensure consistency a' -> '**Recommendation:** Align all dates and ensure consistency a')\n22. [editing] edit_draft(find='### 11. Inconsistent Notice Provisions\\n\\n**Issue:** The SPA (' -> '### 11. Contradictory Payment Timing\\n\\n**Issue:** Clause 2.2 ')\n23. [verification] read_draft({})\n24. [editing] edit_draft(find='## Commercial Implications\\n\\nThe acquisition of Pemberton Log' -> '## Commercial Implications\\n\\nThe acquisition of Pemberton Log')\n25. [verification] search_documents({\"query\": \"tax\"})\n26. [verification] search_documents({\"query\": \"jurisdiction\"})\n27. [control] finish({\"summary\": \"Completed legal review of share purchase agreement and associated documents for Thornbury Medical Ltd's acquisition of Pemberton Logistics plc. Ide)\n\n# Final deliverable\n# Legal Review: Share Purchase Agreement for Acquisition of Pemberton Logistics plc\n\n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Date:** 27 May 2027  \n**Matter:** Thornbury Medical Ltd acquisition of Pemberton Logistics plc  \n**Reference:** SPA Review  \n\n## Executive Summary\n\nI have reviewed the principal share purchase agreement (SPA) dated 21 May 2027 against the associated disclosure letter and escrow agreement. The review reveals several significant problematic provisions and inconsistencies that require urgent attention before completion, scheduled for 23 June 2027. The principal issues include:\n\n1. **Missing Schedules and Clauses**: The SPA references Schedule 1 (warranties) and clauses 7-9 that are absent from the document\n2. **Price Inconsistency**: Discrepancy between $115 million in SPA and £47 million in disclosure letter\n3. **Incomplete Disclosure Mechanism**: Disclosure letter references non-existent SPA clauses\n4. **Escrow Arrangement Issues**: Escrow agreement lacks key commercial terms\n5. **Intellectual Property Risk**: Disclosure reveals unassigned IP rights in core software\n\n## Detailed Analysis\n\n### 1. Missing Schedules and Incomplete Agreement\n\n**Issue:** The SPA is materially incomplete:\n- **Schedule 1 Missing**: Clause 1.1 defines \"General Warranties\" as \"the warranties set out in Schedule 1\" and \"Fundamental Warranties\" as \"the warranties relating to title, capacity, and tax as specified in Schedule 1.\" However, Schedule 1 is not included in the document.\n- **Clauses 7-9 Missing**: The agreement jumps from Clause 6 (Confidentiality) to Clause 10 (Survival of Warranties), omitting Clauses 7, 8, and 9 entirely.\n- **Warranty 8.2 Reference**: The disclosure letter refers to \"Warranty 8.2 (Intellectual Property)\" which does not exist in the current SPA.\n\n**Risk:** Without the warranty schedule and missing clauses, the Buyer has no contractual protection regarding:\n- Representations and warranties about the Company's business\n- Specific intellectual property warranties\n- Indemnities and limitations of liability\n- Conditions precedent to completion\n- Post-completion obligations\n\n**Recommendation:** Insist on inclusion of complete warranty schedule and all missing clauses before execution.\n\n### 2. Purchase Price Inconsistency\n\n**Issue:** Material discrepancy in purchase consideration:\n- SPA Clause 2.1: \"$115,000,000\"\n- Disclosure Letter Clause 3.1: \"£47,000,000\"\n\n**Risk:** This creates fundamental ambiguity about the transaction value. The discrepancy (approximately $115M vs £47M, with current exchange rates making £47M ≈ $58M) represents a difference of approximately $57 million.\n\n**Recommendation:** Clarify and reconcile the purchase price immediately. Ensure currency is specified consistently (USD vs GBP).\n\n### 3. Disclosure Against Non-Existent Provisions\n\n**Issue:** The disclosure letter purports to disclose against \"Warranty 8.2\" and references \"Clause 4.2\" for price adjustment, neither of which exist in the current SPA.\n\n**Risk:** The disclosure may be ineffective, and the Buyer could be deemed to have waived rights without proper contractual framework.\n\n**Recommendation:** Align disclosure letter with actual SPA provisions once complete.\n\n### 4. Intellectual Property Risk Disclosure\n\n**Issue:** The disclosure letter reveals that the Company's core platform software \"Pemberton Connect\" was developed by Galloway Logistics plc without a written IP assignment.\n\n**Specific Concerns:**\n- No formal IP assignment from developer to Company\n- Reliance on \"informal arrangement\" and lack of ownership claims to date\n- Software is core to operations and licensed to key customers including Saltash Engineering Ltd\n- Disclosure attempts to make Buyer waive claims related to absence of formal assignment\n\n**Risk:** The Company may not own critical IP assets, creating fundamental business risk post-acquisition.\n\n**Recommendation:** \n1. Require formal IP assignment from Galloway Logistics plc as condition precedent\n2. Obtain warranties regarding IP ownership and validity\n3. Consider escrow of portion of purchase price pending resolution\n4. Resist waiver language in disclosure letter\n\n### 5. Escrow Agreement Deficiencies\n\n**Issue:** The escrow agreement lacks essential commercial terms:\n- No specified \"Escrow Amount\" (Clause 1.1 defines term but doesn't state amount)\n- Release after 24 months without clear claims mechanism\n- References dispute resolution in SPA that may not exist\n\n**Risk:** Unclear financial protection for warranty claims.\n\n**Recommendation:** Specify escrow amount (typically 10-15% of purchase price) and establish clear claims process.\n\n### 6. Survival Periods Without Underlying Warranties\n\n**Issue:** Clause 10.1 establishes survival periods (24 months for General Warranties, 48 months for Fundamental Warranties) but the warranties themselves are missing.\n\n**Risk:** Survival provisions are meaningless without underlying warranties.\n\n**Recommendation:** Complete warranty schedule before agreeing to survival terms.\n\n### 7. Material Adverse Change Definition\n\n**Issue:** Clause 1.1 defines \"Material Adverse Change\" with broad exclusions for general economic conditions, industry changes, and pandemics.\n\n**Risk:** Overly broad exclusions could prevent Buyer from walking away if Company suffers material deterioration.\n\n**Recommendation:** Narrow exclusions to be more balanced.\n\n### 8. Undefined \"Business Day\" Term\n\n**Issue:** Clause 4.1 of the SPA requires payment \"at least three Business Days prior to the Closing Date\" but \"Business Day\" is not defined in the SPA (though defined in the escrow agreement).\n\n**Risk:** Ambiguity in payment timing could lead to disputes about whether payment was made timely.\n\n**Recommendation:** Include consistent definition of \"Business Day\" in SPA.\n\n### 9. Confidentiality Duration\n\n**Issue:** Clause 6.2 imposes 5-year confidentiality obligation post-completion.\n\n**Risk:** May be overly restrictive for Buyer's operational needs.\n\n**Recommendation:** Consider mutual exceptions for regulatory compliance and business operations.\n\n### 10. Date Inconsistencies\n\n**Issue:** \n- SPA dated 21 May 2027\n- Disclosure letter references agreement \"dated on or about 27 May 2027\"\n- Client email requests completion before 27 May 2027, but Closing Date is 23 June 2027\n\n**Risk:** Creates confusion about effective dates and timelines.\n\n**Recommendation:** Align all dates and ensure consistency across documents.\n\n### 11. Contradictory Payment Timing\n\n**Issue:** Clause 2.2 requires payment \"no later than 3:00 p.m. on the Closing Date\" while Clause 4.1 requires payment \"at least three Business Days prior to the Closing Date.\"\n\n**Risk:** Creates fundamental ambiguity about when payment is due, potentially causing breach.\n\n**Recommendation:** Clarify and reconcile payment timing provisions.\n\n### 12. Inconsistent Notice Provisions\n\n**Issue:** The SPA (Clauses 5.1-5.3) and disclosure letter (Clauses 4.1-4.2) contain different notice provisions regarding delivery methods and deemed receipt times.\n\n**Risk:** Conflicting notice requirements could affect the validity of communications between parties.\n\n**Recommendation:** Standardize notice provisions across all transaction documents.\n\n## Urgent Action Items\n\n1. **Immediate (Before 30 May 2027):**\n   - Demand complete SPA with all schedules and clauses\n   - Resolve purchase price discrepancy\n   - Require IP assignment from Galloway Logistics plc\n\n2. **Short-term (Before 6 June 2027):**\n   - Negotiate warranty package\n   - Finalize escrow terms\n   - Align disclosure letter with final SPA\n\n3. **Pre-completion (Before 16 June 2027):**\n   - Due diligence on IP position\n   - Final documentation review\n   - Completion preparations\n\n## Commercial Implications\n\nThe acquisition of Pemberton Logistics plc is strategically important for Thornbury Medical Ltd. As noted in the client email, the Company holds a \"material contract with Saltash Engineering Ltd\" which is described as \"of strategic importance to the ongoing operations of the Company post-acquisition.\" This relationship underscores the importance of securing clear IP ownership of the \"Pemberton Connect\" platform, which is licensed to Saltash Engineering Ltd.\n\nHowever, the current documentation exposes the Buyer to unacceptable risks, particularly regarding IP ownership.\n\nThe missing warranty schedule is particularly concerning as it represents the core of the Seller's representations about the Company's condition. Without these protections, the Buyer assumes all undisclosed liabilities.\n\n## Conclusion\n\nThe current SPA and associated documents are not in a state suitable for execution. The numerous omissions, inconsistencies, and problematic provisions create significant legal and commercial risks for Thornbury Medical Ltd.\n\nI recommend withholding signature on all documents until:\n1. A complete SPA with all schedules is provided\n2. The purchase price is clarified and reconciled\n3. IP ownership issues are properly addressed\n4. All cross-references between documents are corrected\n\nGiven the 23 June 2027 completion target, urgent action is required to address these issues within the next week.\n\nPlease instruct on how you would like to proceed with the Seller's representatives.\n\n# Expert rubric verdicts (3/7 passed)\n- C1 [PASS] States that the escrow release date is 23 June 2029 (24 months after the 23 June 2027 Closing Date) and that pending claims must be notified before then.\n    judges: PASS: The deliverable states in section 5 that the escrow release is 'after 24 months' and 'Release after 24 months without clear claims mechanism', and section 1 confirms the Closing Date is 23 June 2027, from which 24 months | PASS: The deliverable correctly states the escrow release date is 23 June 2029 (24 months after 23 June 2027 Closing Date) and that pending claims must be notified before that date, citing escrow agreement clause 4.1.\n- C2 [PASS] Identifies that the core platform was developed by contractor Galloway Logistics plc without a written IP assignment, so the Company may not own it, and recommends obtaining a confirmatory assignment as a condition to Closing.\n    judges: PASS: Section 4 identifies that 'Pemberton Connect' was developed by Galloway Logistics plc without a written IP assignment and recommends 'Require formal IP assignment from Galloway Logistics plc as condition precedent'. | PASS: The deliverable clearly identifies that 'Pemberton Connect' was developed by Galloway Logistics plc without written IP assignment, notes the Company may not own the IP, and recommends requiring formal IP assignment as a \n- C3 [FAIL] States that General Warranty claims must be notified by 23 June 2029 (24 months after Closing) and Fundamental Warranty claims by 23 June 2031 (48 months after Closing).\n    judges: FAIL: The deliverable correctly identifies the 24-month and 48-month survival periods but does not calculate or state the specific deadline dates of 23 June 2029 and 23 June 2031. | PASS: The deliverable correctly states General Warranty claims must be notified by 23 June 2029 (24 months after Closing) and Fundamental Warranty claims by 23 June 2031 (48 months after Closing), citing SPA clause 10.1.\n- C4 [FAIL] Identifies that the MAC carve-outs (general economic, industry-wide and pandemic changes) contain no 'disproportionate effect' exception, so the Buyer bears those risks even where the Company is disproportionately affected, and recommends adding one.\n    judges: PASS: Section 7 identifies the MAC exclusions for economic conditions, industry changes, and pandemics, and recommends 'Narrow exclusions to be more balanced', implicitly addressing the lack of a disproportionate effect except | FAIL: While the deliverable identifies the MAC carve-outs for general economic conditions, industry changes and pandemics, it does not specifically identify the absence of a 'disproportionate effect' exception or recommend add\n- C5 [PASS] Lists a confirmatory IP assignment from Galloway Logistics plc as a required third-party action not yet obtained.\n    judges: PASS: The deliverable lists 'Require IP assignment from Galloway Logistics plc' under 'Immediate' action items and as recommendation #1 in section 4, identifying it as a required third-party action not yet obtained. | PASS: The deliverable explicitly lists obtaining a confirmatory IP assignment from Galloway Logistics plc as a required third-party action, including as an immediate action item and in recommendations.\n- C6 [FAIL] Gives the escrow release period as a duration (24 months) and as a date (23 June 2029), with days remaining from 27 May 2027 (758 days).\n    judges: FAIL: The deliverable gives the 24-month duration but does not state the specific release date of 23 June 2029 or calculate the days remaining from 27 May 2027. | FAIL: The deliverable gives the escrow release period as 24 months and the date as 23 June 2029, but does not calculate or state the days remaining from 27 May 2027 (758 days).\n- C7 [FAIL] Gives a pinpoint citation (document name and section/clause number) for every issue or finding.\n    judges: PASS: Every issue identified includes a pinpoint citation, such as 'SPA Clause 2.1', 'Disclosure Letter Clause 3.1', 'Clause 10.1', and 'Clause 1.1' of the SPA. | FAIL: While many issues have citations, several findings lack pinpoint citations. For example, the IP risk disclosure analysis (section 4) lacks specific citation to disclosure letter section 2, the MAC definition issue (secti\n\n# Your job\nAnalyse each FAILED criterion: what went wrong, what the agent should have done, and whether the failure is procedural (reusable) or task-specific. Then write reusable candidate lessons that would prevent the procedural failures on other matters.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|contract_review\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C3\",\n      \"what_went_wrong\": \"The agent identified the survival periods (24 months for General Warranties, 48 months for Fundamental Warranties) but failed to calculate and state the specific deadline dates (23 June 2029 and 23 June 2031) based on the Closing Date.\",\n      \"should_have\": \"Calculated and explicitly stated the exact deadline dates by adding the survival periods to the Closing Date, ensuring clarity for future claims.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C4\",\n      \"what_went_wrong\": \"The agent identified the MAC carve-outs but did not specifically flag the absence of a 'disproportionate effect' exception, nor did it recommend adding one to mitigate Buyer risk.\",\n      \"should_have\": \"Explicitly identified the lack of a 'disproportionate effect' exception in MAC carve-outs and recommended its inclusion to address Buyer risk.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C6\",\n      \"what_went_wrong\": \"The agent stated the escrow release period as 24 months and the release date (23 June 2029) but failed to calculate and include the days remaining from the review date (27 May 2027).\",\n      \"should_have\": \"Calculated and included the days remaining from the review date to the escrow release date to provide actionable timeline clarity.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C7\",\n      \"what_went_wrong\": \"The agent provided pinpoint citations for most issues but omitted them for some findings, such as the IP risk disclosure analysis and MAC definition issue.\",\n      \"should_have\": \"Ensured every issue or finding included a pinpoint citation (document name and section/clause number) for traceability and verification.\",\n      \"failure_kind\": \"procedural\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"For every deadline expressed as a period (e.g., '24 months'), calculate and state the exact calendar date by adding the period to the reference date (e.g., Closing Date).\",\n      \"evidence\": [\"C3\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"When reviewing Material Adverse Change (MAC) clauses, explicitly check for and flag the absence of a 'disproportionate effect' exception in carve-outs, and recommend its inclusion if missing.\",\n      \"evidence\": [\"C4\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"For every time-bound obligation or deadline, calculate and include the days remaining from the review date to the deadline to provide actionable timeline clarity.\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"review\",\n      \"text\": \"Before finalising the deliverable, verify that every issue or finding includes a pinpoint citation (document name and section/clause number) for traceability.\",\n      \"evidence\": [\"C7\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.98\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"When identifying risks related to intellectual property, explicitly cite the disclosure letter or relevant document section where the risk is disclosed to ensure traceability.\",\n      \"evidence\": [\"C7\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Recompute all derived dates (e.g., survival periods, escrow release dates) using the calculator tool to ensure accuracy before including them in the deliverable.\",\n      \"evidence\": [\"C3\", \"C6\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.95\n    }\n  ],\n  \"lesson_feedback\": [\n    {\n      \"lesson_id\": \"L0001\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"This lesson directly addresses the procedural failure in C3 by ensuring deadlines are explicitly stated as calendar dates, which is a reusable behaviour for contract reviews.\"\n    },\n    {\n      \"lesson_id\": \"L0002\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"This lesson targets the specific oversight in C4 by making the 'disproportionate effect' exception a standard check in MAC clause reviews, which is broadly applicable.\"\n    },\n    {\n      \"lesson_id\": \"L0003\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"This lesson ensures actionable timeline clarity, addressing the failure in C6, and is useful for any matter involving deadlines.\"\n    },\n    {\n      \"lesson_id\": \"L0004\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"This lesson prevents the omission of pinpoint citations (C7) and is a critical quality control step for all deliverables.\"\n    },\n    {\n      \"lesson_id\": \"L0005\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"This lesson ensures traceability for IP-related risks, addressing a gap in C7, and is particularly useful for contract reviews involving IP disclosures.\"\n    },\n    {\n      \"lesson_id\": \"L0006\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"This lesson reinforces the importance of verifying derived dates, addressing failures in C3 and C6, and is a good general practice for accuracy.\"\n    }\n  ]\n}\n```"
+}

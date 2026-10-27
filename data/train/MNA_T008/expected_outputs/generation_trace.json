@@ -1,0 +1,139 @@
+{
+  "docs": [
+    {
+      "title": "share_purchase_agreement.md",
+      "attempts": [
+        {
+          "missing": [
+            "excess"
+          ],
+          "usage": {
+            "input_tokens": 682,
+            "output_tokens": 1041
+          }
+        },
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 1746,
+            "output_tokens": 1065
+          }
+        }
+      ]
+    },
+    {
+      "title": "escrow_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 549,
+            "output_tokens": 922
+          }
+        }
+      ]
+    },
+    {
+      "title": "client_email.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 486,
+            "output_tokens": 411
+          }
+        }
+      ]
+    },
+    {
+      "title": "board_minutes.md",
+      "attempts": [
+        {
+          "missing": [
+            "2 directors"
+          ],
+          "usage": {
+            "input_tokens": 482,
+            "output_tokens": 698
+          }
+        },
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 1204,
+            "output_tokens": 700
+          }
+        }
+      ]
+    },
+    {
+      "title": "articles_of_association_extract.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 488,
+            "output_tokens": 990
+          }
+        }
+      ]
+    }
+  ],
+  "doc_facts": {
+    "share_purchase_agreement.md": {
+      "key": "spa",
+      "facts": [
+        "Parties: Yarrow Retail Group plc (Buyer), Kingsmere Systems Ltd (Seller); the Company is Foxley Marine Ltd.",
+        "Section 2.1: the Purchase Price is $125,000,000.",
+        "This Agreement is dated 1 February 2026; Closing is scheduled for 28 February 2026 (the 'Closing Date').",
+        "Section 1.1: 'Closing Date' means 28 February 2026.",
+        "Section 4.5: if the Conditions are not satisfied by the date falling 150 days after the date of this Agreement (signed 1 February 2026), either party may terminate.",
+        "Section 9.4 (De Minimis and Basket): the Seller shall not be liable unless the aggregate of all claims exceeds $625,000 (0.5% of the Purchase Price), in which case the Seller shall be liable only for the excess over that amount."
+      ],
+      "must_contain": [
+        "150 days",
+        "1 February 2026",
+        "$625,000",
+        "excess"
+      ]
+    },
+    "escrow_agreement.md": {
+      "key": "escrow",
+      "facts": [
+        "Clause 4.1: the Escrow Amount shall be released to the Seller on the date falling 12 months after the Closing Date, save to the extent of pending claims notified before that date. 'Business Day' means a day other than a Saturday or Sunday on which banks are open in London.",
+        "The Closing Date is 28 February 2026."
+      ],
+      "must_contain": [
+        "12 months",
+        "28 February 2026"
+      ]
+    },
+    "client_email.md": {
+      "key": "client_email",
+      "facts": [
+        "Regulatory counsel expects merger clearance by 15 July 2026."
+      ],
+      "must_contain": [
+        "15 July 2026"
+      ]
+    },
+    "board_minutes.md": {
+      "key": "board_minutes",
+      "facts": [
+        "Present: 2 directors (of 5). The meeting was quorate. RESOLVED to approve entry into the Share Purchase Agreement."
+      ],
+      "must_contain": [
+        "2 directors"
+      ]
+    },
+    "articles_of_association_extract.md": {
+      "key": "articles",
+      "facts": [
+        "Article 11: the quorum for board meetings is three directors."
+      ],
+      "must_contain": [
+        "three directors"
+      ]
+    }
+  }
+}

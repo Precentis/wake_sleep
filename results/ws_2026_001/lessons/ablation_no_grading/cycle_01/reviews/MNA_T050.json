@@ -1,0 +1,142 @@
+{
+  "task_id": "MNA_T050",
+  "cycle": 1,
+  "lineage": "ablation_no_grading",
+  "graded": false,
+  "failures": [
+    {
+      "criterion_id": "C1",
+      "what_went_wrong": "The agent did not verify whether the disclosed warranties (8.2 and 6.3) actually exist in the full SPA before drafting risk sections.",
+      "should_have": "Confirmed the presence and exact wording of every warranty cited in the Disclosure Letter by reviewing the full SPA or requesting missing sections.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C2",
+      "what_went_wrong": "The agent relied on a client-provided EBITDA projection without cross-checking the calculation methodology in the SPA.",
+      "should_have": "Reconciled every earn-out formula in the SPA with client projections and flagged any discrepancies in the memo.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C3",
+      "what_went_wrong": "The agent did not flag that the LLP structure of the target might trigger partnership-specific tax or liability rules not covered in the standard SPA.",
+      "should_have": "Explicitly noted any entity-type risks (e.g., LLP vs. Ltd) that could affect liability, tax, or regulatory treatment.",
+      "failure_kind": "task_specific"
+    },
+    {
+      "criterion_id": "C4",
+      "what_went_wrong": "The agent did not quantify the financial impact of the IP ownership risk (e.g., cost of re-acquiring rights or potential litigation).",
+      "should_have": "Included a financial exposure estimate for each high-risk issue where possible.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C5",
+      "what_went_wrong": "The agent did not cross-reference the gross-up provision with the tax indemnity clause to assess cumulative liability.",
+      "should_have": "Mapped all overlapping indemnities, caps, and gross-up provisions to identify potential double-counting or gaps.",
+      "failure_kind": "analysis"
+    },
+    {
+      "criterion_id": "C6",
+      "what_went_wrong": "The agent did not prioritise risks based on both legal severity and business impact (e.g., revenue loss from contract termination).",
+      "should_have": "Ranked risks using a matrix combining legal likelihood and financial/material impact.",
+      "failure_kind": "drafting"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T050_0",
+      "type": "checklist",
+      "category": "review",
+      "text": "Before finalising a risk memo, verify that every warranty, clause, or section cited in disclosures or ancillary documents exists in the main agreement and matches the referenced version.",
+      "source_tasks": [
+        "MNA_T050"
+      ],
+      "evidence": [
+        "MNA_T050:C1"
+      ],
+      "task_type_scope": "legal_memo",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T050_1",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Recompute every earn-out, cap, or financial metric in transaction documents using the stated formula and flag any mismatch with client-provided figures.",
+      "source_tasks": [
+        "MNA_T050"
+      ],
+      "evidence": [
+        "MNA_T050:C2"
+      ],
+      "task_type_scope": "legal_memo",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T050_2",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "For each high-risk issue, include a financial exposure estimate (e.g., cost of cure, litigation risk, or revenue impact) where quantifiable.",
+      "source_tasks": [
+        "MNA_T050"
+      ],
+      "evidence": [
+        "MNA_T050:C4"
+      ],
+      "task_type_scope": "legal_memo",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T050_3",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Map all indemnities, liability caps, and gross-up provisions in transaction documents to identify cumulative exposure or gaps before assessing risk.",
+      "source_tasks": [
+        "MNA_T050"
+      ],
+      "evidence": [
+        "MNA_T050:C5"
+      ],
+      "task_type_scope": "legal_memo",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.8
+    },
+    {
+      "candidate_id": "c01_MNA_T050_4",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Rank risks in legal memos using a matrix combining legal likelihood (high/medium/low) and financial/material impact (quantified where possible).",
+      "source_tasks": [
+        "MNA_T050"
+      ],
+      "evidence": [
+        "MNA_T050:C6"
+      ],
+      "task_type_scope": "legal_memo",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.8
+    },
+    {
+      "candidate_id": "c01_MNA_T050_5",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Flag entity-type risks (e.g., LLP, Ltd, PLC) that may trigger jurisdiction-specific tax, liability, or regulatory rules not covered in standard agreements.",
+      "source_tasks": [
+        "MNA_T050"
+      ],
+      "evidence": [
+        "MNA_T050:C3"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    }
+  ],
+  "lesson_feedback": [],
+  "input_tokens": 3793,
+  "output_tokens": 1073,
+  "cost_usd": 0.003506,
+  "prompt": "# Task\nType: legal_memo | Practice area: corporate_mna\nYou act for the Buyer, Merrion Industries Ltd. Merrion Industries Ltd (the Buyer) is acquiring the entire issued share capital of Elstree Capital LLP (the Company) from Penrith Energy plc (the Seller).\n\nPrepare a legal memo for the supervising partner analysing the key legal risks in the matter documents. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 7 January 2026. Address the deliverable to the supervising partner.\n\n# Trajectory (20 model steps, 20 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"client_email.md\"})\n 3. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 4. [research] read_document({\"name\": \"disclosure_letter.md\"})\n 5. [research] read_document({\"name\": \"material_customer_contract.md\"})\n 6. [research] search_documents({\"query\": \"warranty\"})\n 7. [research] search_documents({\"query\": \"earn-out\"})\n 8. [research] search_documents({\"query\": \"condition\"})\n 9. [analysis] calculate({\"expression\": \"agreement_date = date('2025-12-28')\\nclosing_date = date('2026-02-13')\\nconditions_deadline = add_days(agreement_date, 120)\\nmerger_clearance_da)\n10. [analysis] calculate({\"expression\": \"projected_ebitda = 4800000\\nthreshold = 4000000\\nexcess = projected_ebitda - threshold\\nearn_out_calculation = excess * 3\\nearn_out_cap = 300000)\n11. [drafting] write_draft(<1160 words>)\n12. [verification] read_draft({})\n13. [editing] edit_draft(find='### 2.6 Document Inconsistencies (LOW RISK)\\n\\n**Issue:** Date' -> '### 2.6 Payment Mechanics Gross-up Provision (MEDIUM RISK)\\n\\n')\n14. [verification] read_document({\"name\": \"share_purchase_agreement.md\", \"start_line\": 60, \"num_lines\": 20})\n15. [editing] edit_draft(find='**Risk Analysis:** Creates potential ambiguity about which d' -> '**Risk Analysis:** Creates potential ambiguity about which d')\n16. [editing] edit_draft(find='### Immediate (Pre-Completion):\\n1. **IP Due Diligence:** Obt' -> '### Immediate (Pre-Completion):\\n1. **Complete Documentation:')\n17. [verification] read_draft({})\n18. [editing] edit_draft(find='## 1. EXECUTIVE SUMMARY\\n\\nThis memorandum analyses the key le' -> '## 1. EXECUTIVE SUMMARY\\n\\nThis memorandum analyses the key le')\n19. [verification] search_documents({\"query\": \"LLP\"})\n20. [control] finish({\"summary\": \"Legal memo analysing key risks in Merrion Industries Ltd's acquisition of Elstree Capital LLP, identifying high risks in intellectual property owne)\n\n# Final deliverable\n# LEGAL MEMORANDUM\n\n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Date:** 7 January 2026  \n**Subject:** Legal Risk Analysis - Acquisition of Elstree Capital LLP by Merrion Industries Ltd  \n**Matter:** Acquisition of entire issued share capital of Elstree Capital LLP from Penrith Energy plc  \n\n## 1. EXECUTIVE SUMMARY\n\nThis memorandum analyses the key legal risks identified in the transaction documents for Merrion Industries Ltd's (\"Buyer\") proposed acquisition of Elstree Capital LLP (\"Company\") from Penrith Energy plc (\"Seller\"). The Company is a limited liability partnership incorporated in England and Wales, which may have specific legal implications distinct from corporate acquisitions. The analysis reveals several significant risks requiring immediate attention, particularly concerning intellectual property ownership, material customer contracts, earn-out payment calculations, and timing inconsistencies.\n\n## 2. KEY LEGAL RISKS IDENTIFIED\n\n### 2.1 Intellectual Property Ownership Risk (HIGH RISK)\n\n**Issue:** The Disclosure Letter reveals that the Company's core platform software, which underpins its primary operational functionality, was developed in 2023 by Whitlock Systems Ltd under a verbal arrangement with no formal written agreement or intellectual property assignment.\n\n**Documentary Evidence:**\n- Disclosure Letter, Clause 2.2: \"The development of the software was carried out pursuant to a verbal arrangement between the Company and Whitlock Systems Ltd. No formal written agreement was executed governing the scope of work, deliverables, or intellectual property rights arising from the engagement.\"\n- Disclosure Letter, Clause 2.3: \"No written assignment of intellectual property was entered into between the Company and Whitlock Systems Ltd.\"\n\n**Risk Analysis:**\n1. **Uncertain Ownership:** Without formal documentation, the Company's claim to ownership of its core operational software is legally precarious.\n2. **Future Claims Risk:** Whitlock Systems Ltd could assert ownership rights over the software at any time, potentially disrupting operations or requiring substantial settlement payments.\n3. **Warranty Breach:** This disclosure likely breaches Warranty 8.2 concerning intellectual property in the Share Purchase Agreement (\"SPA\").\n\n**Recommendation:** \n- Require formal assignment of IP rights from Whitlock Systems Ltd prior to completion.\n- Consider escrow arrangement or reduction in purchase price to reflect this risk.\n- Strengthen indemnity provisions specifically addressing IP claims.\n\n### 2.2 Material Customer Contract Risk (HIGH RISK)\n\n**Issue:** The material customer contract with Redcliffe Robotics Ltd contains a change of control termination clause that contradicts the Seller's disclosure.\n\n**Documentary Evidence:**\n- Material Customer Contract, Clause 14.2: \"Either party may terminate this Agreement on 30 days' notice if the other party undergoes a change of control without its prior written consent.\"\n- Disclosure Letter, Clause 3.3: \"The Seller further confirms that no material contract to which the Company is a party contains a change of control provision that would be triggered by the transaction contemplated under the Agreement.\"\n\n**Risk Analysis:**\n1. **Contract Termination Risk:** Redcliffe Robotics Ltd could terminate the contract upon change of control, potentially jeopardising a significant revenue stream.\n2. **Disclosure Inaccuracy:** The Seller's disclosure appears inaccurate, raising concerns about other undisclosed contractual risks.\n3. **Warranty Breach:** This likely breaches Warranty 6.3 concerning material contracts.\n\n**Recommendation:**\n- Require written consent from Redcliffe Robotics Ltd prior to completion.\n- Consider renegotiation of the change of control clause.\n- Investigate whether other material contracts contain similar undisclosed provisions.\n\n### 2.3 Earn-out Payment Discrepancies (MEDIUM RISK)\n\n**Issue:** Multiple inconsistencies exist regarding the earn-out payment calculation and timing.\n\n**Documentary Evidence:**\n- Client Email: Projects FY2026 EBITDA of $4,800,000 and earn-out payment of $3,300,000.\n- SPA Clause 3.4: Earn-out equals 3 × (EBITDA - $4,000,000), capped at $3,000,000.\n- Our Calculation: Based on projected EBITDA of $4,800,000, earn-out would be $2,400,000 (not $3,300,000).\n\n**Risk Analysis:**\n1. **Calculation Discrepancy:** $900,000 difference between client projection ($3,300,000) and SPA cap ($3,000,000), plus $600,000 difference between SPA cap and actual calculation ($2,400,000).\n2. **Timing Issues:** Merger clearance expected 11 June 2026, but earn-out payment due 30 days after FY2026 audit (potentially before clearance).\n3. **Regulatory Risk:** Client email notes need to address timing of merger clearance in relation to earn-out release.\n\n**Recommendation:**\n- Clarify earn-out calculation methodology with client.\n- Amend SPA to link earn-out payment timing to merger clearance if required.\n- Ensure audit process for EBITDA calculation is clearly defined.\n\n### 2.4 Timing and Condition Precedent Issues (MEDIUM RISK)\n\n**Issue:** Inconsistent timing between various transaction milestones.\n\n**Documentary Evidence:**\n- SPA Closing Date: 13 February 2026\n- Merger Clearance Expected: 11 June 2026 (per client email)\n- Conditions Precedent Deadline: 27 April 2026 (120 days from SPA date 28 December 2025)\n- SPA Clause 4.5: Conditions must be satisfied or waived by 27 April 2026\n\n**Risk Analysis:**\n1. **Completion Before Clearance:** Closing scheduled for 13 February 2026, but merger clearance not expected until 11 June 2026.\n2. **Condition Deadline:** Conditions precedent deadline (27 April 2026) falls before expected merger clearance (11 June 2026).\n3. **Termination Risk:** If conditions not satisfied by 27 April 2026, either party can terminate under Clause 4.5.\n\n**Recommendation:**\n- Amend SPA to extend conditions precedent deadline beyond expected merger clearance date.\n- Consider making merger clearance a condition precedent to completion.\n- Review whether completion should be deferred until after regulatory approval.\n\n### 2.5 Limitation of Liability (MEDIUM RISK)\n\n**Issue:** Seller liability capped at 15% of purchase price ($8,100,000).\n\n**Documentary Evidence:**\n- SPA Clause 9.3: \"The aggregate liability of the Seller for any claims arising under or in connection with the warranties contained in this Agreement shall not exceed an amount equal to fifteen per cent (15%) of the Purchase Price, being $8,100,000.\"\n\n**Risk Analysis:**\n1. **Insufficient Coverage:** Given the IP risks and potential contract termination risks, $8.1 million cap may be inadequate.\n2. **Exclusions:** Need to review what claims are excluded from the cap (e.g., fraud, tax, fundamental breaches).\n\n**Recommendation:**\n- Negotiate higher liability cap or carve-outs for specific risks (IP, material contracts).\n- Consider specific indemnities for identified high-risk areas.\n- Review insurance coverage for post-completion risks.\n\n### 2.6 Payment Mechanics Gross-up Provision (MEDIUM RISK)\n\n**Issue:** SPA Clause 5.1 contains a gross-up provision requiring the paying party to increase payments if deductions or withholdings are required by law.\n\n**Documentary Evidence:**\n- SPA Clause 5.1: \"All payments under this Agreement shall be made in USD, free and clear of any deductions or withholdings, unless the deduction or withholding is required by law, in which case the paying Party shall increase the payment to ensure the recipient receives the full amount it would have received had no deduction or withholding been required.\"\n\n**Risk Analysis:**\n1. **Unlimited Liability:** This creates potentially unlimited liability for the Buyer if tax authorities require withholding on any payments.\n2. **Earn-out Implications:** Could apply to the $45 million purchase price and any earn-out payments.\n3. **Tax Uncertainty:** Difficult to predict future tax law changes that might trigger withholding obligations.\n\n**Recommendation:**\n- Limit gross-up provision to specific circumstances or cap the amount.\n- Exclude purchase price from gross-up provision.\n- Clarify that each party bears its own tax liabilities.\n\n### 2.7 Document Inconsistencies (LOW RISK)\n\n**Issue:** Date inconsistencies between documents.\n\n**Documentary Evidence:**\n- Disclosure Letter: References SPA dated \"on or about 5 January 2026\"\n- Actual SPA: Dated 28 December 2025\n\n**Risk Analysis:** Creates potential ambiguity about which document governs.\n\n**Recommendation:** Ensure all documents reference consistent dates and versions.\n\n### 2.8 Missing Warranties Reference (HIGH RISK)\n\n**Issue:** The Disclosure Letter references Warranties 8.2 (Intellectual Property) and 6.3 (Material Contracts), but these warranties are not contained in the provided SPA extract.\n\n**Documentary Evidence:**\n- Disclosure Letter references Warranty 8.2 and Warranty 6.3\n- Provided SPA extract does not contain these warranty clauses\n- Likely indicates incomplete SPA document provided for review\n\n**Risk Analysis:**\n1. **Incomplete Review:** Cannot properly assess the scope and limitations of key warranties.\n2. **Unknown Obligations:** Critical protections for the Buyer may be missing or inadequate.\n3. **Due Diligence Gap:** Unable to verify that warranties align with disclosures.\n\n**Recommendation:**\n- Obtain complete SPA including all warranty schedules.\n- Review full warranty package before proceeding.\n- Ensure warranties provide adequate protection for identified risks.\n\n## 3. PRIORITY ACTIONS REQUIRED\n\n### Immediate (Pre-Completion):\n1. **Complete Documentation:** Obtain full SPA including all warranty schedules and schedules.\n2. **IP Due Diligence:** Obtain formal IP assignment from Whitlock Systems Ltd.\n3. **Contract Consent:** Secure written consent from Redcliffe Robotics Ltd regarding change of control.\n4. **SPA Amendments:** Address timing inconsistencies between completion, merger clearance, and conditions precedent.\n\n### Short-term:\n1. **Earn-out Clarification:** Resolve discrepancies in earn-out calculation methodology.\n2. **Liability Review:** Negotiate appropriate liability cap and carve-outs.\n3. **Document Consistency:** Align all document dates and references.\n\n## 4. CONCLUSION\n\nThe transaction presents several material legal risks requiring immediate attention. The intellectual property ownership issue and material customer contract termination risk are particularly concerning and could significantly impact the Company's value post-acquisition. The timing inconsistencies between completion, regulatory clearance, and earn-out payments also require resolution to avoid contractual breaches or termination rights.\n\nWe recommend addressing these issues through SPA amendments, additional due diligence, and specific indemnities before proceeding to completion on 13 February 2026.\n\n**Next Steps:** I recommend scheduling a call with the client to discuss these findings and agree on negotiation strategy with the Seller.\n\n# Your job\nNo grades are available. Critically assess the deliverable and the work process yourself, as a demanding supervising partner would, and write reusable candidate lessons for improving the work.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|legal_memo\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C1\",\n      \"what_went_wrong\": \"The agent did not verify whether the disclosed warranties (8.2 and 6.3) actually exist in the full SPA before drafting risk sections.\",\n      \"should_have\": \"Confirmed the presence and exact wording of every warranty cited in the Disclosure Letter by reviewing the full SPA or requesting missing sections.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C2\",\n      \"what_went_wrong\": \"The agent relied on a client-provided EBITDA projection without cross-checking the calculation methodology in the SPA.\",\n      \"should_have\": \"Reconciled every earn-out formula in the SPA with client projections and flagged any discrepancies in the memo.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C3\",\n      \"what_went_wrong\": \"The agent did not flag that the LLP structure of the target might trigger partnership-specific tax or liability rules not covered in the standard SPA.\",\n      \"should_have\": \"Explicitly noted any entity-type risks (e.g., LLP vs. Ltd) that could affect liability, tax, or regulatory treatment.\",\n      \"failure_kind\": \"task_specific\"\n    },\n    {\n      \"criterion_id\": \"C4\",\n      \"what_went_wrong\": \"The agent did not quantify the financial impact of the IP ownership risk (e.g., cost of re-acquiring rights or potential litigation).\",\n      \"should_have\": \"Included a financial exposure estimate for each high-risk issue where possible.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C5\",\n      \"what_went_wrong\": \"The agent did not cross-reference the gross-up provision with the tax indemnity clause to assess cumulative liability.\",\n      \"should_have\": \"Mapped all overlapping indemnities, caps, and gross-up provisions to identify potential double-counting or gaps.\",\n      \"failure_kind\": \"analysis\"\n    },\n    {\n      \"criterion_id\": \"C6\",\n      \"what_went_wrong\": \"The agent did not prioritise risks based on both legal severity and business impact (e.g., revenue loss from contract termination).\",\n      \"should_have\": \"Ranked risks using a matrix combining legal likelihood and financial/material impact.\",\n      \"failure_kind\": \"drafting\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"review\",\n      \"text\": \"Before finalising a risk memo, verify that every warranty, clause, or section cited in disclosures or ancillary documents exists in the main agreement and matches the referenced version.\",\n      \"evidence\": [\"C1\"],\n      \"task_type_scope\": \"legal_memo\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Recompute every earn-out, cap, or financial metric in transaction documents using the stated formula and flag any mismatch with client-provided figures.\",\n      \"evidence\": [\"C2\"],\n      \"task_type_scope\": \"legal_memo\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"For each high-risk issue, include a financial exposure estimate (e.g., cost of cure, litigation risk, or revenue impact) where quantifiable.\",\n      \"evidence\": [\"C4\"],\n      \"task_type_scope\": \"legal_memo\",\n      \"confidence\": 0.85\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Map all indemnities, liability caps, and gross-up provisions in transaction documents to identify cumulative exposure or gaps before assessing risk.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"legal_memo\",\n      \"confidence\": 0.8\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"Rank risks in legal memos using a matrix combining legal likelihood (high/medium/low) and financial/material impact (quantified where possible).\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"legal_memo\",\n      \"confidence\": 0.8\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Flag entity-type risks (e.g., LLP, Ltd, PLC) that may trigger jurisdiction-specific tax, liability, or regulatory rules not covered in standard agreements.\",\n      \"evidence\": [\"C3\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    }\n  ],\n  \"lesson_feedback\": []\n}\n```"
+}

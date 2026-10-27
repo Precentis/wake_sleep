@@ -1,0 +1,142 @@
+{
+  "task_id": "MNA_T048",
+  "cycle": 1,
+  "lineage": "ablation_no_grading",
+  "graded": false,
+  "failures": [
+    {
+      "criterion_id": "C1",
+      "what_went_wrong": "The deliverable included calculations for 'Business Days' without first confirming the definition of 'Business Day' in the SPA or applicable jurisdiction.",
+      "should_have": "Clarified the definition of 'Business Day' before performing any date calculations relying on it.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C2",
+      "what_went_wrong": "The timeline analysis did not explicitly flag or resolve inconsistencies in document dates (e.g., SPA dated 28 July vs. 9 August vs. 'on or about 14 August').",
+      "should_have": "Explicitly identified and resolved document date inconsistencies as a critical risk item in the timeline analysis.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C3",
+      "what_went_wrong": "The deliverable included a detailed summary of IP disclosure issues, which, while relevant, distracted from the core timeline and deadlines analysis.",
+      "should_have": "Focused strictly on time-sensitive obligations and flagged non-temporal risks separately to avoid diluting the primary analysis.",
+      "failure_kind": "task_specific"
+    },
+    {
+      "criterion_id": "C4",
+      "what_went_wrong": "The analysis of regulatory clearance timing risk did not quantify the gap between the conditions precedent deadline (26 Oct) and regulatory clearance deadline (10 Dec).",
+      "should_have": "Calculated and highlighted the exact number of days between critical deadlines to underscore the severity of timing risks.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C5",
+      "what_went_wrong": "The deliverable did not verify whether the escrow claim submission window (18 months from 10 Aug 2026) aligned with the warranty claim period in the SPA.",
+      "should_have": "Cross-checked all overlapping time periods (e.g., escrow window vs. warranty period) to identify potential gaps or conflicts.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C6",
+      "what_went_wrong": "The draft included a 'Critical Timeline of Obligations' section but did not prioritize deadlines by risk level (e.g., 'showstopper' vs. 'administrative').",
+      "should_have": "Categorized deadlines by risk level (e.g., transaction-critical, operational, long-term) to guide client prioritization.",
+      "failure_kind": "content"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T048_0",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "Before calculating any deadline expressed in 'Business Days', confirm and document the definition of 'Business Day' in the governing agreement or applicable law.",
+      "source_tasks": [
+        "MNA_T048"
+      ],
+      "evidence": [
+        "MNA_T048:C1"
+      ],
+      "task_type_scope": "timeline_analysis",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T048_1",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "For every timeline analysis, include a dedicated section flagging all document date inconsistencies and their potential impact on deadlines.",
+      "source_tasks": [
+        "MNA_T048"
+      ],
+      "evidence": [
+        "MNA_T048:C2"
+      ],
+      "task_type_scope": "timeline_analysis",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T048_2",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "When identifying time-sensitive obligations, strictly limit the scope to temporal requirements and flag non-temporal risks in a separate 'Key Risks' section.",
+      "source_tasks": [
+        "MNA_T048"
+      ],
+      "evidence": [
+        "MNA_T048:C3"
+      ],
+      "task_type_scope": "timeline_analysis",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T048_3",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "For every pair of related deadlines (e.g., conditions precedent vs. regulatory clearance), calculate and highlight the exact number of days between them to assess timing risks.",
+      "source_tasks": [
+        "MNA_T048"
+      ],
+      "evidence": [
+        "MNA_T048:C4"
+      ],
+      "task_type_scope": "timeline_analysis",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T048_4",
+      "type": "practice_note",
+      "category": "review",
+      "text": "Cross-check all overlapping time periods (e.g., escrow windows, warranty periods) to identify gaps, conflicts, or redundancies before finalizing the timeline.",
+      "source_tasks": [
+        "MNA_T048"
+      ],
+      "evidence": [
+        "MNA_T048:C5"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.88
+    },
+    {
+      "candidate_id": "c01_MNA_T048_5",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Categorize all deadlines in the timeline by risk level (e.g., 'transaction-critical', 'operational', 'long-term') and highlight the highest-risk items in the executive summary.",
+      "source_tasks": [
+        "MNA_T048"
+      ],
+      "evidence": [
+        "MNA_T048:C6"
+      ],
+      "task_type_scope": "timeline_analysis",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.92
+    }
+  ],
+  "lesson_feedback": [],
+  "input_tokens": 4845,
+  "output_tokens": 1138,
+  "cost_usd": 0.0041295,
+  "prompt": "# Task\nType: timeline_analysis | Practice area: corporate_mna\nYou act for the Buyer, Dunmore Media Ltd. Dunmore Media Ltd (the Buyer) is acquiring the entire issued share capital of Orwell Foods Ltd (the Company) from Corrib Robotics Ltd (the Seller).\n\nPrepare a timeline and deadlines analysis of all time-sensitive obligations in the matter documents. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 14 August 2026. Address the deliverable to the supervising partner.\n\n# Trajectory (41 model steps, 41 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"client_email.md\"})\n 3. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 4. [research] read_document({\"name\": \"escrow_agreement.md\"})\n 5. [research] read_document({\"name\": \"disclosure_letter.md\"})\n 6. [research] search_documents({\"query\": \"days\"})\n 7. [research] search_documents({\"query\": \"month\"})\n 8. [research] search_documents({\"query\": \"year\"})\n 9. [analysis] calculate({\"expression\": \"date('2026-08-14')\"})\n10. [analysis] calculate({\"expression\": \"add_days(date('2026-07-28'), 90)\"})\n11. [analysis] calculate({\"expression\": \"weekday(date('2026-11-11'))\"})\n12. [analysis] calculate({\"expression\": \"prev_business_day(date('2026-11-11'))\"})\n13. [analysis] calculate({\"expression\": \"prev_business_day(date('2026-11-11'))\"})\n14. [analysis] calculate({\"expression\": \"next_business_day(date('2026-11-11'))\"})\n15. [analysis] calculate({\"expression\": \"date('2026-11-11')\"})\n16. [analysis] calculate({\"expression\": \"add_months(date('2026-08-10'), 18)\"})\n17. [analysis] calculate({\"expression\": \"weekday(date('2026-12-10'))\"})\n18. [drafting] write_draft(<1158 words>)\n19. [verification] read_draft({})\n20. [verification] search_documents({\"query\": \"business day\"})\n21. [verification] search_documents({\"query\": \"Business Day\"})\n22. [verification] read_document({\"name\": \"share_purchase_agreement.md\", \"start_line\": 17, \"num_lines\": 30})\n23. [verification] search_documents({\"query\": \"period\"})\n24. [editing] edit_draft(find='**C. Confidentiality Obligations**\\n- **Duration:** 3 years a' -> '**C. Notice Timing Considerations**\\n- **Email Notices:** Dee')\n25. [editing] edit_draft(find='### 4. Intellectual Property Disclosure\\n- Disclosure letter ' -> '### 4. Missing Definition of \"Business Day\"\\n- **Issue:** SPA')\n26. [editing] edit_draft(find='### Immediate Actions (Next 7 Days):\\n1. Confirm final execut' -> '### Immediate Actions (Next 7 Days):\\n1. Confirm final execut')\n27. [verification] read_document({\"name\": \"escrow_agreement.md\", \"start_line\": 39, \"num_lines\": 10})\n28. [editing] edit_draft(find='### 3. Escrow vs. SPA Jurisdictional Conflict\\n- **SPA:** Gov' -> '### 3. Escrow vs. SPA Jurisdictional and Procedural Conflict')\n29. [verification] search_documents({\"query\": \"2023\"})\n30. [verification] search_documents({\"query\": \"48\"})\n31. [editing] edit_draft(find='## Critical Timeline of Obligations' -> '## Summary Timeline Visualization\\n\\n```\\nKey Deadlines from Cu')\n32. [editing] edit_draft(find='## Critical Timeline of Obligations\\n\\n### 1. Immediate and Ne' -> '## Critical Timeline of Obligations\\n\\n### Summary Table of Ke')\n33. [editing] edit_draft(find='**A. Bank Account Designation**\\n- **Deadline:** 4 November 2' -> '**A. Bank Account Designation**\\n- **Deadline:** 4 November 2')\n34. [verification] read_draft({})\n35. [verification] search_documents({\"query\": \"condition\"})\n36. [verification] read_document({\"name\": \"share_purchase_agreement.md\", \"start_line\": 49, \"num_lines\": 10})\n37. [editing] edit_draft(find='### 5. Intellectual Property Disclosure\\n- Disclosure letter ' -> '### 5. Unspecified Conditions Precedent\\n- **Issue:** SPA ref')\n38. [editing] edit_draft(find='### Immediate Actions (Next 7 Days):\\n1. Confirm final execut' -> '### Immediate Actions (Next 7 Days):\\n1. Confirm final execut')\n39. [editing] edit_draft(find='### 6. Intellectual Property Disclosure\\n- Disclosure letter ' -> '### 6. Currency Inconsistency\\n- **Issue:** SPA specifies Pur')\n40. [verification] read_document({\"name\": \"client_email.md\"})\n41. [control] finish({\"summary\": \"Comprehensive timeline and deadlines analysis for Dunmore Media Ltd's acquisition of Orwell Foods Ltd, identifying all time-sensitive obligations a)\n\n# Final deliverable\n# Timeline and Deadlines Analysis: Acquisition of Orwell Foods Ltd by Dunmore Media Ltd\n\n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Date:** 14 August 2026  \n**Matter:** Acquisition of Orwell Foods Ltd by Dunmore Media Ltd  \n**Client:** Dunmore Media Ltd (Buyer)  \n**Counterparty:** Corrib Robotics Ltd (Seller)  \n\n## Executive Summary\n\nThis analysis identifies and calculates all time-sensitive obligations arising from the transaction documents for the acquisition of Orwell Foods Ltd by Dunmore Media Ltd. The key documents reviewed are:\n\n1. Share Purchase Agreement (SPA) dated 28 July 2026\n2. Escrow Agreement dated 10 August 2026\n3. Disclosure Letter (referencing SPA dated on or about 14 August 2026)\n4. Client email dated 14 August 2026\n\nThe analysis reveals critical deadlines spanning from immediate obligations to long-term post-completion commitments, with particular attention to regulatory clearance requirements, payment deadlines, warranty claim periods, and escrow arrangements.\n\n## Summary Timeline Visualization\n\n```\nKey Deadlines from Current Date (14 August 2026):\n\n┌─────────────────────────────────────────────────────────────┐\n│                   2026                                      │\n├─────────┬─────────┬─────────┬─────────┬─────────┬─────────┤\n│ Aug     │ Sep     │ Oct     │ Nov     │ Dec     │ 2027+   │\n├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤\n│ • Doc finalisation                                         │\n│ • Escrow effective (10 Aug)                                │\n│                                                             │\n│                     • Conditions precedent                  │\n│                       termination right                     │\n│                       (26 Oct)                             │\n│                                                             │\n│                                     • Bank account          │\n│                                       designation          │\n│                                       (4 Nov)              │\n│                                     • Closing              │\n│                                       (11 Nov)             │\n│                                                             │\n│                                             • Regulatory    │\n│                                               clearance     │\n│                                               (10 Dec)      │\n│                                                             │\n│ Escrow claim period: 10 Aug 2026 - 10 Feb 2028             │\n│ (18 months)                                                │\n│                                                             │\n│ Confidentiality: 3 years post-completion                    │\n└─────────────────────────────────────────────────────────────┘\n```\n\n## Critical Timeline of Obligations\n\n### Summary Table of Key Deadlines\n\n| Deadline | Date | Days from Today | Source Document | Obligation | Consequence of Miss |\n|----------|------|-----------------|----------------|------------|---------------------|\n| Documentation Finalisation | Immediate | 0 | Various | Confirm execution dates | Potential inconsistencies |\n| Escrow Effective Date | 10 Aug 2026 | -4 | Escrow Agreement | Escrow period begins | N/A (already passed) |\n| Conditions Precedent Termination | 26 Oct 2026 | 73 | SPA Clause 4.5 | Satisfy/waive conditions | Either party may terminate |\n| Bank Account Designation | 4 Nov 2026 | 82 | SPA Clause 2.1 | Seller designates account | May delay payment |\n| Closing Date | 11 Nov 2026 | 89 | SPA Clause 1.1 | Payment & share transfer | Transaction completion |\n| Regulatory Clearance | 10 Dec 2026 | 118 | Client email | Merger clearance | Condition precedent |\n| Warranty Claim Notification | 30 days from awareness | Rolling | SPA Clause 9.7 | Notify Seller of claim | Claim barred if missed |\n| Escrow Claim Notification | 45 days from awareness | Rolling | Escrow Clause 5.2 | Notify claim | Potential loss of claim |\n| Escrow Claim Submission Window | Until 10 Feb 2028 | 545 | Escrow Clause 5.1 | Submit claims | Window closes |\n| Confidentiality Period | 3 years post-completion | ~1095 | SPA Clause 17.2 | Maintain confidentiality | Potential breach claims |\n\n### 1. Immediate and Near-Term Deadlines (August-October 2026)\n\n**A. Documentation Finalisation**\n- **Current Status:** Documents show varying dates (28 July, 9 August, 14 August 2026), suggesting finalisation is ongoing\n- **Action Required:** Confirm final execution dates for all documents\n\n**B. Regulatory Clearance**\n- **Deadline:** 10 December 2026 (per client email)\n- **Source:** Client email states \"Regulatory counsel expects merger clearance by 10 December 2026\"\n- **Days from Today:** 118 days\n- **Critical Path:** This is a key condition precedent that must be satisfied for Closing\n\n**C. Conditions Precedent Termination Right**\n- **Deadline:** 26 October 2026\n- **Source:** SPA Clause 4.5 - Conditions must be satisfied or waived within 90 days of SPA date (28 July 2026)\n- **Calculation:** 28 July 2026 + 90 days = 26 October 2026\n- **Consequence:** Either party may terminate if Conditions not satisfied/waived by this date\n- **Days from Today:** 73 days\n\n### 2. Closing and Payment Deadlines (November 2026)\n\n**A. Bank Account Designation**\n- **Deadline:** 4 November 2026 (5 Business Days before Closing)\n- **Source:** SPA Clause 2.1 - Seller must designate bank account in writing at least 5 Business Days prior to Closing Date\n- **Calculation:** Closing Date (11 November 2026, Wednesday) minus 5 Business Days:\n  - 10 November 2026 (Tuesday) - 1 Business Day\n  - 9 November 2026 (Monday) - 2 Business Days\n  - 6 November 2026 (Friday) - 3 Business Days\n  - 5 November 2026 (Thursday) - 4 Business Days\n  - 4 November 2026 (Wednesday) - 5 Business Days\n- **Note:** Assuming \"Business Day\" excludes weekends only (standard interpretation)\n- **Responsibility:** Seller\n- **Consequence:** Failure may delay payment on Closing Date\n\n**B. Closing Date**\n- **Deadline:** 11 November 2026\n- **Source:** SPA Clause 1.1 definition of \"Closing Date\"\n- **Day of Week:** Wednesday\n- **Key Obligations:**\n  1. Buyer pays Purchase Price of $105,000,000 to Seller\n  2. Seller transfers full legal and beneficial ownership of Shares to Buyer\n- **Days from Today:** 89 days\n\n### 3. Post-Completion Deadlines and Time Limits\n\n**A. Warranty Claims Notification**\n- **Time Limit:** 30 days from becoming aware of claim\n- **Source:** SPA Clause 9.7\n- **Consequence:** Failure to notify within 30 days bars claim (except for fraud or wilful concealment)\n- **Practical Note:** This is a rolling deadline that applies throughout the warranty period\n\n**B. Escrow Agreement Claims**\n1. **Claim Submission Window:**\n   - **Period:** From Effective Date (10 August 2026) to 10 February 2028\n   - **Source:** Escrow Agreement Clause 5.1 - Claims may be made \"prior to the date falling 18 months after the Effective Date\"\n   - **Calculation:** 10 August 2026 + 18 months = 10 February 2028\n   - **Total Duration:** 18 months from escrow establishment\n\n2. **Claim Notification Deadline:**\n   - **Time Limit:** 45 days from Buyer becoming aware of claim\n   - **Source:** Escrow Agreement Clause 5.2\n   - **Consequence:** Must be notified within 45 days of awareness\n\n3. **Seller Response Period:**\n   - **Time Limit:** 30 days from receipt of Claim\n   - **Source:** Escrow Agreement Clause 5.3\n   - **Seller Options:** Accept, reject, or negotiate in good faith\n\n**C. Notice Timing Considerations**\n- **Email Notices:** Deemed received at time of transmission if sent during business hours on a Business Day, otherwise at 9:00 a.m. next Business Day\n- **Postal Notices:** Deemed received 48 hours after posting by first-class pre-paid post\n- **Personal Delivery:** Deemed received when delivered personally\n- **Source:** SPA Clause 16.2\n- **Importance:** Affects calculation of response deadlines for claims and other notices\n\n**D. Confidentiality Obligations**\n- **Duration:** 3 years after termination or completion of SPA\n- **Source:** SPA Clause 17.2\n- **Applies to:** All parties\n- **Scope:** All information received in connection with the Agreement\n\n## Key Observations and Risk Areas\n\n### 1. Regulatory Clearance Timing Risk\n- The regulatory clearance deadline (10 December 2026) falls **AFTER** the Conditions Precedent termination date (26 October 2026)\n- **Risk:** If regulatory clearance is not obtained by 26 October 2026, either party could terminate the SPA despite expecting clearance by 10 December 2026\n- **Mitigation:** Consider seeking waiver or extension of the 90-day condition period if regulatory clearance appears likely but may take until early December\n\n### 2. Document Date Inconsistencies\n- SPA referenced in escrow agreement is dated 9 August 2026\n- SPA in our review copy is dated 28 July 2026\n- Disclosure letter references SPA dated \"on or about 14 August 2026\"\n- **Action Required:** Confirm which version is operative and ensure all parties are working from the same executed documents\n\n### 3. Escrow vs. SPA Jurisdictional and Procedural Conflicts\n- **Jurisdiction:** SPA - English law/English courts; Escrow - New York law/ICC arbitration in New York\n- **Notice Provisions:** SPA has detailed deemed receipt rules; Escrow Agreement lacks specific timing provisions\n- **Risk:** Inconsistent dispute resolution and notice timing for related claims\n- **Recommendation:** Review whether jurisdictional split is intentional and consider aligning notice provisions\n\n### 4. Missing Definition of \"Business Day\"\n- **Issue:** SPA references \"Business Days\" for bank account designation deadline but does not define the term\n- **Risk:** Potential disputes over calculation of deadlines, especially around weekends and public holidays\n- **Recommendation:** Clarify definition or apply standard English law interpretation (typically excludes Saturdays, Sundays, and public holidays in England)\n\n### 5. Unspecified Conditions Precedent\n- **Issue:** SPA references \"Conditions\" in Clause 4 but specific conditions are not detailed in provided excerpt\n- **Risk:** Uncertainty about what conditions must be satisfied by 26 October 2026\n- **Known Condition:** Regulatory clearance (from client email)\n- **Action:** Obtain full Clause 4 to identify all conditions precedent\n\n### 6. Currency Inconsistency\n- **Issue:** SPA specifies Purchase Price as $105,000,000 (US dollars)\n- **Issue:** Escrow Agreement specifies Escrow Amount as £1,750,000 (British pounds)\n- **Risk:** Potential confusion or exchange rate risk if not properly addressed\n- **Note:** This may be intentional (portion held back in local currency) but should be confirmed\n\n### 7. Intellectual Property Disclosure\n- Disclosure letter reveals significant IP issues with core platform software developed by Northgate Medical Ltd\n- No written assignment of IP rights exists\n- **Risk:** Potential future claims by Northgate Medical Ltd could impact business continuity, especially with material customer Elstree Analytics Ltd (32% of revenue)\n- **Action:** Due diligence required on informal understanding with Northgate Medical Ltd and potential need for IP remediation\n\n## Recommended Action Plan\n\n### Immediate Actions (Next 7 Days):\n1. Confirm final execution dates for all transaction documents\n2. Establish single source of truth for document versions\n3. Initiate regulatory clearance process with urgency given tight timeline\n4. Clarify definition of \"Business Day\" in SPA or confirm standard interpretation applies\n5. Obtain full Clause 4 of SPA to identify all conditions precedent\n6. Review IP issues with Northgate Medical Ltd for potential pre-closing resolution\n\n### Short-Term Actions (Next 30 Days):\n1. Monitor regulatory clearance progress against 26 October 2026 deadline\n2. Consider negotiating extension of Conditions Precedent period if regulatory clearance timing is tight\n3. Prepare internal processes for warranty claim notifications (30-day clock starts upo\n\n# Your job\nNo grades are available. Critically assess the deliverable and the work process yourself, as a demanding supervising partner would, and write reusable candidate lessons for improving the work.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|timeline_analysis\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C1\",\n      \"what_went_wrong\": \"The deliverable included calculations for 'Business Days' without first confirming the definition of 'Business Day' in the SPA or applicable jurisdiction.\",\n      \"should_have\": \"Clarified the definition of 'Business Day' before performing any date calculations relying on it.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C2\",\n      \"what_went_wrong\": \"The timeline analysis did not explicitly flag or resolve inconsistencies in document dates (e.g., SPA dated 28 July vs. 9 August vs. 'on or about 14 August').\",\n      \"should_have\": \"Explicitly identified and resolved document date inconsistencies as a critical risk item in the timeline analysis.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C3\",\n      \"what_went_wrong\": \"The deliverable included a detailed summary of IP disclosure issues, which, while relevant, distracted from the core timeline and deadlines analysis.\",\n      \"should_have\": \"Focused strictly on time-sensitive obligations and flagged non-temporal risks separately to avoid diluting the primary analysis.\",\n      \"failure_kind\": \"task_specific\"\n    },\n    {\n      \"criterion_id\": \"C4\",\n      \"what_went_wrong\": \"The analysis of regulatory clearance timing risk did not quantify the gap between the conditions precedent deadline (26 Oct) and regulatory clearance deadline (10 Dec).\",\n      \"should_have\": \"Calculated and highlighted the exact number of days between critical deadlines to underscore the severity of timing risks.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C5\",\n      \"what_went_wrong\": \"The deliverable did not verify whether the escrow claim submission window (18 months from 10 Aug 2026) aligned with the warranty claim period in the SPA.\",\n      \"should_have\": \"Cross-checked all overlapping time periods (e.g., escrow window vs. warranty period) to identify potential gaps or conflicts.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C6\",\n      \"what_went_wrong\": \"The draft included a 'Critical Timeline of Obligations' section but did not prioritize deadlines by risk level (e.g., 'showstopper' vs. 'administrative').\",\n      \"should_have\": \"Categorized deadlines by risk level (e.g., transaction-critical, operational, long-term) to guide client prioritization.\",\n      \"failure_kind\": \"content\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"Before calculating any deadline expressed in 'Business Days', confirm and document the definition of 'Business Day' in the governing agreement or applicable law.\",\n      \"evidence\": [\"C1\"],\n      \"task_type_scope\": \"timeline_analysis\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"For every timeline analysis, include a dedicated section flagging all document date inconsistencies and their potential impact on deadlines.\",\n      \"evidence\": [\"C2\"],\n      \"task_type_scope\": \"timeline_analysis\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"When identifying time-sensitive obligations, strictly limit the scope to temporal requirements and flag non-temporal risks in a separate 'Key Risks' section.\",\n      \"evidence\": [\"C3\"],\n      \"task_type_scope\": \"timeline_analysis\",\n      \"confidence\": 0.85\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"For every pair of related deadlines (e.g., conditions precedent vs. regulatory clearance), calculate and highlight the exact number of days between them to assess timing risks.\",\n      \"evidence\": [\"C4\"],\n      \"task_type_scope\": \"timeline_analysis\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"review\",\n      \"text\": \"Cross-check all overlapping time periods (e.g., escrow windows, warranty periods) to identify gaps, conflicts, or redundancies before finalizing the timeline.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.88\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"Categorize all deadlines in the timeline by risk level (e.g., 'transaction-critical', 'operational', 'long-term') and highlight the highest-risk items in the executive summary.\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"timeline_analysis\",\n      \"confidence\": 0.92\n    }\n  ],\n  \"lesson_feedback\": []\n}\n```"
+}

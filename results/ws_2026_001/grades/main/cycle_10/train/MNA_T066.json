@@ -1,0 +1,114 @@
+{
+  "task_id": "MNA_T066",
+  "run_name": "main/cycle_10/train",
+  "judgements": [
+    {
+      "judge": "judge_1",
+      "model": "zai.glm-5",
+      "results": [
+        {
+          "criterion_id": "C1",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable contains no substantive content, only garbled formatting instructions, and does not mention the escrow release date or claim notification deadline."
+        },
+        {
+          "criterion_id": "C2",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable does not identify the basket mechanism in SPA Section 9.4 or explain its effect on the Buyer."
+        },
+        {
+          "criterion_id": "C3",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable fails to identify the discrepancy between the Saltash Marine contract's change of control provision and the disclosure letter, or recommend obtaining consent."
+        },
+        {
+          "criterion_id": "C4",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable does not calculate the long-stop date or address the timing gap with the expected merger clearance date."
+        },
+        {
+          "criterion_id": "C5",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable does not provide the escrow release period, specific date, or days remaining calculation."
+        },
+        {
+          "criterion_id": "C6",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable does not note that the escrow release date falls on a Sunday or calculate the adjusted Business Day."
+        },
+        {
+          "criterion_id": "C7",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable contains no analysis or findings, and therefore provides no pinpoint citations to any document or clause."
+        }
+      ],
+      "input_tokens": 5262,
+      "output_tokens": 368,
+      "cost_usd": 0.0064396,
+      "latency_ms": 4500,
+      "prompt_without_documents": "# Task instructions\nYou act for the Buyer, Ingleby Robotics Ltd. Ingleby Robotics Ltd (the Buyer) is acquiring the entire issued share capital of Arden Medical Ltd (the Company) from Northgate Capital LLP (the Seller).\n\nPrepare a timeline and deadlines analysis of all time-sensitive obligations in the matter documents. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 6 August 2026. Address the deliverable to the supervising partner.\n\n# Matter documents\n[see task documents]\n# Deliverable to grade\n<<<DELIVERABLE\nNow, and (a) the legal test for each risk, (4) a 'Jurisdictional Risks' subsection, (4) a 'Jurisdiction' heading, and (3) a one-sentence action requirement, (4) a one-sensitive issue, (4) the legal test for breach and document, (5) the legal test for breach and recommended resolution', (4) the legal test for deadline, (4) {\"name\": \"read_draft\", \"string\": {\"type\": {\"type\": \"string\"}} and (15) for Business Day adjustments, explicitly state the original deadline, adjusted deadline, \"string\": {\"type\": {\"type\": object}}\nDELIVERABLE>>>\n\n# Rubric criteria\nC1: States that the escrow release date is 3 September 2028 (24 months after the 3 September 2026 Closing Date) and that pending claims must be notified before then.\nC2: Identifies that the basket in SPA Section 9.4 ($1,000,000) operates as a deductible (Seller liable only for the excess), not a tipping basket, and explains that this is less favourable to the Buyer.\nC3: Identifies that the Saltash Marine Ltd contract (Clause 14.2) allows termination on a change of control without consent, that the disclosure against Warranty 6.3 says there is no such provision, and that consent should be obtained as a condition to Closing.\nC4: Calculates the long-stop date as 4 December 2026 (150 days after signing on 7 July 2026) and identifies that expected clearance on 18 December 2026 falls after it, recommending an extension.\nC5: Gives the escrow release period as a duration (24 months) and as a date (3 September 2028), with days remaining from 6 August 2026 (759 days).\nC6: Notes that 3 September 2028 is a Sunday and that the release moves to the next Business Day, 4 September 2028.\nC7: Gives a pinpoint citation (document name and section/clause number) for every issue or finding.\n\nGrade every criterion (7 total). JSON only.",
+      "raw_response": "{\"results\": [{\"criterion_id\": \"C1\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable contains no substantive content, only garbled formatting instructions, and does not mention the escrow release date or claim notification deadline.\"}, {\"criterion_id\": \"C2\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable does not identify the basket mechanism in SPA Section 9.4 or explain its effect on the Buyer.\"}, {\"criterion_id\": \"C3\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable fails to identify the discrepancy between the Saltash Marine contract's change of control provision and the disclosure letter, or recommend obtaining consent.\"}, {\"criterion_id\": \"C4\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable does not calculate the long-stop date or address the timing gap with the expected merger clearance date.\"}, {\"criterion_id\": \"C5\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable does not provide the escrow release period, specific date, or days remaining calculation.\"}, {\"criterion_id\": \"C6\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable does not note that the escrow release date falls on a Sunday or calculate the adjusted Business Day.\"}, {\"criterion_id\": \"C7\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable contains no analysis or findings, and therefore provides no pinpoint citations to any document or clause.\"}]}"
+    },
+    {
+      "judge": "judge_2",
+      "model": "moonshotai.kimi-k2.5",
+      "results": [
+        {
+          "criterion_id": "C1",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable contains garbled, nonsensical text with fragments like 'Now, and (a) the legal test for each risk' and JSON-like syntax errors. It does not contain any clear statement about the escrow release date of 3 September 2028 or the notification deadline for pending claims."
+        },
+        {
+          "criterion_id": "C2",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable is incoherent and does not identify the $1,000,000 basket in SPA Section 9.4, explain its operation as a deductible, or note this is less favourable to the Buyer."
+        },
+        {
+          "criterion_id": "C3",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable does not identify the Saltash Marine Ltd contract termination right on change of control, the contradictory disclosure in the Disclosure Letter, or recommend obtaining consent as a condition to Closing."
+        },
+        {
+          "criterion_id": "C4",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable does not calculate the long-stop date as 4 December 2026 (150 days after 7 July 2026), identify that expected clearance on 18 December 2026 falls after it, or recommend an extension."
+        },
+        {
+          "criterion_id": "C5",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable does not give the escrow release period as 24 months, the date as 3 September 2028, or calculate days remaining from 6 August 2026 as 759 days."
+        },
+        {
+          "criterion_id": "C6",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable does not note that 3 September 2028 is a Sunday or that the release moves to the next Business Day, 4 September 2028."
+        },
+        {
+          "criterion_id": "C7",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable contains no coherent legal analysis or pinpoint citations to document names and section/clause numbers for any issues."
+        }
+      ],
+      "input_tokens": 5244,
+      "output_tokens": 547,
+      "cost_usd": 0.0045138999999999995,
+      "latency_ms": 7478,
+      "prompt_without_documents": "# Task instructions\nYou act for the Buyer, Ingleby Robotics Ltd. Ingleby Robotics Ltd (the Buyer) is acquiring the entire issued share capital of Arden Medical Ltd (the Company) from Northgate Capital LLP (the Seller).\n\nPrepare a timeline and deadlines analysis of all time-sensitive obligations in the matter documents. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 6 August 2026. Address the deliverable to the supervising partner.\n\n# Matter documents\n[see task documents]\n# Deliverable to grade\n<<<DELIVERABLE\nNow, and (a) the legal test for each risk, (4) a 'Jurisdictional Risks' subsection, (4) a 'Jurisdiction' heading, and (3) a one-sentence action requirement, (4) a one-sensitive issue, (4) the legal test for breach and document, (5) the legal test for breach and recommended resolution', (4) the legal test for deadline, (4) {\"name\": \"read_draft\", \"string\": {\"type\": {\"type\": \"string\"}} and (15) for Business Day adjustments, explicitly state the original deadline, adjusted deadline, \"string\": {\"type\": {\"type\": object}}\nDELIVERABLE>>>\n\n# Rubric criteria\nC1: States that the escrow release date is 3 September 2028 (24 months after the 3 September 2026 Closing Date) and that pending claims must be notified before then.\nC2: Identifies that the basket in SPA Section 9.4 ($1,000,000) operates as a deductible (Seller liable only for the excess), not a tipping basket, and explains that this is less favourable to the Buyer.\nC3: Identifies that the Saltash Marine Ltd contract (Clause 14.2) allows termination on a change of control without consent, that the disclosure against Warranty 6.3 says there is no such provision, and that consent should be obtained as a condition to Closing.\nC4: Calculates the long-stop date as 4 December 2026 (150 days after signing on 7 July 2026) and identifies that expected clearance on 18 December 2026 falls after it, recommending an extension.\nC5: Gives the escrow release period as a duration (24 months) and as a date (3 September 2028), with days remaining from 6 August 2026 (759 days).\nC6: Notes that 3 September 2028 is a Sunday and that the release moves to the next Business Day, 4 September 2028.\nC7: Gives a pinpoint citation (document name and section/clause number) for every issue or finding.\n\nGrade every criterion (7 total). JSON only.",
+      "raw_response": "{\"results\": [{\"criterion_id\": \"C1\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable contains garbled, nonsensical text with fragments like 'Now, and (a) the legal test for each risk' and JSON-like syntax errors. It does not contain any clear statement about the escrow release date of 3 September 2028 or the notification deadline for pending claims.\"}, {\"criterion_id\": \"C2\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable is incoherent and does not identify the $1,000,000 basket in SPA Section 9.4, explain its operation as a deductible, or note this is less favourable to the Buyer.\"}, {\"criterion_id\": \"C3\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable does not identify the Saltash Marine Ltd contract termination right on change of control, the contradictory disclosure in the Disclosure Letter, or recommend obtaining consent as a condition to Closing.\"}, {\"criterion_id\": \"C4\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable does not calculate the long-stop date as 4 December 2026 (150 days after 7 July 2026), identify that expected clearance on 18 December 2026 falls after it, or recommend an extension.\"}, {\"criterion_id\": \"C5\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable does not give the escrow release period as 24 months, the date as 3 September 2028, or calculate days remaining from 6 August 2026 as 759 days.\"}, {\"criterion_id\": \"C6\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable does not note that 3 September 2028 is a Sunday or that the release moves to the next Business Day, 4 September 2028.\"}, {\"criterion_id\": \"C7\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable contains no coherent legal analysis or pinpoint citations to document names and section/clause numbers for any issues.\"}]}"
+    }
+  ]
+}

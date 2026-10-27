@@ -1,0 +1,130 @@
+{
+  "docs": [
+    {
+      "title": "share_purchase_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 700,
+            "output_tokens": 1018
+          }
+        }
+      ]
+    },
+    {
+      "title": "escrow_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 578,
+            "output_tokens": 1116
+          }
+        }
+      ]
+    },
+    {
+      "title": "board_minutes.md",
+      "attempts": [
+        {
+          "missing": [
+            "2 directors"
+          ],
+          "usage": {
+            "input_tokens": 481,
+            "output_tokens": 796
+          }
+        },
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 1301,
+            "output_tokens": 788
+          }
+        }
+      ]
+    },
+    {
+      "title": "articles_of_association_extract.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 487,
+            "output_tokens": 1042
+          }
+        }
+      ]
+    },
+    {
+      "title": "client_email.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 477,
+            "output_tokens": 380
+          }
+        }
+      ]
+    }
+  ],
+  "doc_facts": {
+    "share_purchase_agreement.md": {
+      "key": "spa",
+      "facts": [
+        "Parties: Pemberton Pharma plc (Buyer), Brightwater Energy plc (Seller); the Company is Dunmore Retail Group plc.",
+        "Section 2.1: the Purchase Price is $115,000,000.",
+        "This Agreement is dated 19 August 2026; Closing is scheduled for 27 November 2026 (the 'Closing Date').",
+        "Section 1.1: 'Closing Date' means 27 November 2026.",
+        "Section 10.1 (Survival): the General Warranties survive Closing for 24 months; the Fundamental Warranties (title, capacity, tax) survive for 36 months. Claims must be notified in writing before expiry.",
+        "Section 1.1: 'Material Adverse Change' means any event which has a material adverse effect on the business of the Company, excluding changes in general economic conditions, changes affecting the industry generally, and pandemics.",
+        "Section 9.7: the Buyer must notify any warranty claim within 30 days of becoming aware of it."
+      ],
+      "must_contain": [
+        "24 months",
+        "36 months",
+        "Material Adverse Change",
+        "pandemics",
+        "30 days"
+      ]
+    },
+    "escrow_agreement.md": {
+      "key": "escrow",
+      "facts": [
+        "Clause 4.1: the Escrow Amount shall be released to the Seller on the date falling 12 months after the Closing Date, save to the extent of pending claims notified before that date. 'Business Day' means a day other than a Saturday or Sunday on which banks are open in London.",
+        "The Closing Date is 27 November 2026.",
+        "Clause 5.2: a claim against the Escrow Amount must be notified within 60 days of the Buyer becoming aware of it."
+      ],
+      "must_contain": [
+        "12 months",
+        "27 November 2026",
+        "60 days"
+      ]
+    },
+    "board_minutes.md": {
+      "key": "board_minutes",
+      "facts": [
+        "Present: 2 directors (of 5). The meeting was quorate. RESOLVED to approve entry into the Share Purchase Agreement."
+      ],
+      "must_contain": [
+        "2 directors"
+      ]
+    },
+    "articles_of_association_extract.md": {
+      "key": "articles",
+      "facts": [
+        "Article 11: the quorum for board meetings is three directors."
+      ],
+      "must_contain": [
+        "three directors"
+      ]
+    },
+    "client_email.md": {
+      "key": "client_email",
+      "facts": [],
+      "must_contain": []
+    }
+  }
+}

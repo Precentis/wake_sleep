@@ -1,0 +1,143 @@
+{
+  "task_id": "MNA_T061",
+  "cycle": 1,
+  "lineage": "ablation_no_grading",
+  "graded": false,
+  "failures": [
+    {
+      "criterion_id": "C1",
+      "what_went_wrong": "The agent did not verify the consistency of the de minimis threshold calculation across all references in the documents.",
+      "should_have": "Recomputed the de minimis threshold as a percentage of the purchase price and cross-checked it with all stated figures in the agreements.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C2",
+      "what_went_wrong": "The agent identified a discrepancy in the purchase price but did not cross-reference the working capital adjustment methodology with standard market practice or the client's internal guidelines.",
+      "should_have": "Compared the working capital adjustment methodology against standard market practice and client-specific requirements to identify non-standard terms.",
+      "failure_kind": "analysis"
+    },
+    {
+      "criterion_id": "C3",
+      "what_went_wrong": "The agent noted missing clauses but did not flag the absence of standard limitation of liability provisions (e.g., basket, cap) beyond the de minimis threshold.",
+      "should_have": "Explicitly listed all standard limitation of liability provisions (basket, cap, time limits) and flagged their absence or incompleteness.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C4",
+      "what_went_wrong": "The agent did not verify whether the escrow period aligns with the warranty claim periods in the SPA, despite noting the escrow release timing.",
+      "should_have": "Cross-referenced the escrow release timing with the warranty claim periods in the SPA to ensure alignment.",
+      "failure_kind": "analysis"
+    },
+    {
+      "criterion_id": "C5",
+      "what_went_wrong": "The agent did not confirm whether the definition of 'Business Day' in the escrow agreement aligns with the SPA or other transaction documents.",
+      "should_have": "Checked for consistency in the definition of 'Business Day' across all transaction documents to avoid timing discrepancies.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C6",
+      "what_went_wrong": "The agent did not flag the absence of a material adverse change (MAC) clause, a standard provision in SPAs.",
+      "should_have": "Noted the absence of standard clauses like MAC and recommended their inclusion if appropriate.",
+      "failure_kind": "content"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T061_0",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "List all standard limitation of liability provisions (de minimis, basket, cap, time limits) and flag any missing or incomplete provisions in the issues list.",
+      "source_tasks": [
+        "MNA_T061"
+      ],
+      "evidence": [
+        "MNA_T061:C3",
+        "MNA_T061:C6"
+      ],
+      "task_type_scope": "issues_list",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T061_1",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Recompute all financial thresholds (e.g., de minimis, basket, cap) as percentages of the purchase price and flag any mismatches with stated figures.",
+      "source_tasks": [
+        "MNA_T061"
+      ],
+      "evidence": [
+        "MNA_T061:C1"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T061_2",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Cross-reference escrow release timings with warranty claim periods in the SPA to ensure alignment and flag any discrepancies.",
+      "source_tasks": [
+        "MNA_T061"
+      ],
+      "evidence": [
+        "MNA_T061:C4"
+      ],
+      "task_type_scope": "issues_list",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T061_3",
+      "type": "checklist",
+      "category": "review",
+      "text": "Before finalising an issues list, verify the consistency of defined terms (e.g., 'Business Day') across all transaction documents.",
+      "source_tasks": [
+        "MNA_T061"
+      ],
+      "evidence": [
+        "MNA_T061:C5"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.8
+    },
+    {
+      "candidate_id": "c01_MNA_T061_4",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Compare working capital adjustment methodologies against standard market practice and client-specific requirements to identify non-standard terms.",
+      "source_tasks": [
+        "MNA_T061"
+      ],
+      "evidence": [
+        "MNA_T061:C2"
+      ],
+      "task_type_scope": "issues_list",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T061_5",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Include a section in the issues list for standard clauses (e.g., MAC, sandbagging, anti-sandbagging) and flag their absence if material to the transaction.",
+      "source_tasks": [
+        "MNA_T061"
+      ],
+      "evidence": [
+        "MNA_T061:C6"
+      ],
+      "task_type_scope": "issues_list",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.85
+    }
+  ],
+  "lesson_feedback": [],
+  "input_tokens": 4480,
+  "output_tokens": 1064,
+  "cost_usd": 0.003836,
+  "prompt": "# Task\nType: issues_list | Practice area: corporate_mna\nYou act for the Buyer, Orwell Systems Ltd. Orwell Systems Ltd (the Buyer) is acquiring the entire issued share capital of Corrib Medical Ltd (the Company) from Quayside Robotics Ltd (the Seller).\n\nPrepare an issues list for the supervising partner covering the matter documents. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 25 March 2026. Address the deliverable to the supervising partner.\n\n# Trajectory (24 model steps, 24 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"client_email.md\"})\n 3. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 4. [research] read_document({\"name\": \"escrow_agreement.md\"})\n 5. [research] search_documents({\"query\": \"disclosure letter\"})\n 6. [research] search_documents({\"query\": \"Clause 8.2\"})\n 7. [research] search_documents({\"query\": \"Schedule 2\"})\n 8. [research] search_documents({\"query\": \"$2,880,000\"})\n 9. [research] search_documents({\"query\": \"$83,760,000\"})\n10. [research] search_documents({\"query\": \"Escrow Amount\"})\n11. [analysis] calculate({\"expression\": \"date('2026-02-28')\\nadd_days(date('2026-02-28'), 150)\\ndate('2026-05-20')\\ndate('2026-03-25')\\ndays_between(date('2026-03-25'), date('2026-05-20)\n12. [analysis] calculate({\"expression\": \"$85,000,000 - $83,760,000\\n$3,500,000 - $2,880,000\\n$85,000,000 * 0.005\"})\n13. [analysis] calculate({\"expression\": \"date('2026-08-11')\\ndays_between(date('2026-05-20'), date('2026-08-11'))\\nadd_months(date('2026-05-20'), 24)\"})\n14. [drafting] write_draft(<1375 words>)\n15. [verification] read_draft({})\n16. [editing] edit_draft(find='### 1.1 Discrepancy in Purchase Price Calculations\\n- **Issue' -> '### 1.1 Discrepancy in Purchase Price Calculations\\n- **Issue')\n17. [editing] edit_draft(find='### 2.1 Timing of Merger Clearance\\n- **Issue:** Regulatory c' -> '### 2.1 Timing of Merger Clearance\\n- **Issue:** Regulatory c')\n18. [editing] edit_draft(find='### 4.3 Disclosure Letter Preparation\\n- **Issue:** The clien' -> '### 4.3 Disclosure Letter Preparation and Missing Clause 8.2')\n19. [verification] calculate({\"expression\": \"next_business_day(date('2026-05-20'))\\nadd_days(date('2026-05-20'), 3)\\nnext_business_day(date('2026-05-20'))\\nadd_days(date('2026-05-20'), 3)\\n)\n20. [verification] calculate({\"expression\": \"weekday(date('2026-05-23'))\"})\n21. [editing] edit_draft(find='### 5.2 Escrow Funding Timing\\n- **Issue:** Clause 3.1 of the' -> '### 5.2 Escrow Funding Timing\\n- **Issue:** Clause 3.1 of the')\n22. [editing] edit_draft(find='## Recommendations\\n\\n1. **Purchase Price:** Insist on using t' -> '## Recommendations\\n\\n1. **Purchase Price:** Insist on using t')\n23. [verification] read_draft({})\n24. [control] finish({\"summary\": \"Issues list for the acquisition of Corrib Medical Ltd by Orwell Systems Ltd, identifying key legal and commercial concerns including purchase price)\n\n# Final deliverable\n# Issues List: Acquisition of Corrib Medical Ltd by Orwell Systems Ltd\n\n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Date:** 25 March 2026  \n**Matter:** Acquisition of entire issued share capital of Corrib Medical Ltd from Quayside Robotics Ltd  \n**Client:** Orwell Systems Ltd (Buyer)  \n**Our Reference:** [To be assigned]\n\n## Executive Summary\n\nThis issues list identifies key legal and commercial concerns arising from the proposed acquisition of Corrib Medical Ltd by Orwell Systems Ltd. The transaction involves the purchase of the entire issued share capital from Quayside Robotics Ltd for a base purchase price of $85,000,000, subject to working capital adjustments. Key issues identified include discrepancies in purchase price calculations, timing of regulatory approvals, incomplete documentation, and several material drafting deficiencies in the agreements.\n\n## 1. Purchase Price and Working Capital Adjustments\n\n### 1.1 Discrepancy in Purchase Price Calculations\n- **Issue:** The Share Purchase Agreement (SPA) specifies a base purchase price of $85,000,000 (Clause 2.1), while the client email indicates the Seller's draft funds flow calculates an adjusted purchase price of $83,760,000 based on estimated Closing Working Capital of $2,880,000.\n- **Analysis:** The SPA provides for dollar-for-dollar reduction of the purchase price for any shortfall of Closing Working Capital below the Target Working Capital of $3,500,000 (Clause 2.3). The estimated shortfall of $620,000 ($3,500,000 - $2,880,000) should result in an adjusted purchase price of $84,380,000 ($85,000,000 - $620,000), not $83,760,000.\n- **Financial Analysis:**\n  - Base Purchase Price: $85,000,000\n  - Target Working Capital: $3,500,000\n  - Estimated Closing Working Capital: $2,880,000\n  - Expected shortfall: $620,000\n  - **Expected adjusted price:** $84,380,000\n  - **Seller's claimed adjusted price:** $83,760,000\n  - **Discrepancy:** $620,000 (exactly equal to the working capital shortfall)\n- **Possible Explanations:** The Seller may be applying the working capital adjustment twice, or there may be additional adjustments not accounted for in the SPA.\n- **Action Required:** \n  1. Clarify the basis for the Seller's $83,760,000 calculation\n  2. Review Schedule 2 methodology for working capital adjustments (referenced in Clause 2.3 but not provided)\n  3. Ensure alignment between SPA calculations and Seller's funds flow\n  4. Verify no double-counting of working capital adjustments\n\n### 1.2 Missing Schedule 2\n- **Issue:** Clause 2.3 of the SPA references Schedule 2 for the methodology of calculating Closing Working Capital adjustments, but Schedule 2 is not included in the provided documents.\n- **Risk:** Without the detailed methodology, the working capital adjustment process is ambiguous and may lead to disputes.\n- **Action Required:** Obtain and review Schedule 2 to ensure it provides clear, objective criteria for calculating Closing Working Capital.\n\n## 2. Regulatory Approvals and Conditions Precedent\n\n### 2.1 Timing of Merger Clearance\n- **Issue:** Regulatory counsel advises that merger clearance is expected by 11 August 2026 (client email), which is 83 days after the Closing Date of 20 May 2026 specified in the SPA.\n- **Analysis:** Clause 4.1(b) of the SPA makes completion conditional on \"the receipt of all necessary regulatory approvals.\" Clause 4.5 allows termination if Conditions are not satisfied within 150 days of the Agreement date (28 February 2026), i.e., by 28 July 2026.\n- **Date Analysis:**\n  - SPA Date: 28 February 2026\n  - Termination Date (150 days later): 28 July 2026\n  - Closing Date: 20 May 2026\n  - Expected Regulatory Clearance: 11 August 2026\n  - **Critical Issue:** Regulatory clearance expected 14 days after termination date and 83 days after closing date\n- **Risk:** The expected clearance date (11 August 2026) falls after both the Closing Date (20 May 2026) and the termination date (28 July 2026), creating an impossibility unless the SPA is amended.\n- **Action Required:**\n  1. Consider amending the SPA to extend the termination date or provide for conditional completion\n  2. Draft post-closing undertakings for regulatory compliance\n  3. Assess whether completion can proceed subject to regulatory approval\n  4. Consider a \"hell or high water\" clause requiring parties to use reasonable efforts to obtain regulatory approval\n\n### 2.2 Saltash Retail Group Confirmation\n- **Issue:** Clause 4.1(c) requires written confirmation from Saltash Retail Group plc confirming continuation of its existing supply agreement with the Company.\n- **Analysis:** The client email confirms Saltash Retail Group is a material customer and requests appropriate referencing in the disclosure letter and warranty provisions.\n- **Action Required:** \n  1. Ensure the confirmation is obtained as a condition precedent\n  2. Include appropriate warranties regarding this key customer relationship\n  3. Address this relationship in the disclosure letter\n\n## 3. Escrow Agreement Deficiencies\n\n### 3.1 Undefined Escrow Amount\n- **Issue:** The Escrow Agreement defines \"Escrow Amount\" as \"the amount of funds and/or securities held under this Agreement\" (Clause 1.1) but does not specify the actual amount or percentage of the purchase price to be held in escrow.\n- **Risk:** The agreement is incomplete without specifying the escrow amount, making it unenforceable.\n- **Action Required:** Determine and specify the escrow amount, typically a percentage of the purchase price (commonly 10-15% in similar transactions).\n\n### 3.2 Escrow Release Timing\n- **Issue:** Clause 4.1 provides for release of the Escrow Amount to the Seller 24 months after the Closing Date (20 May 2026), i.e., 20 May 2028.\n- **Analysis:** This is a standard escrow period for warranty claims but should be coordinated with the SPA's limitation periods.\n- **Action Required:** Ensure the escrow period aligns with warranty claim periods in the SPA (not fully provided in the documents).\n\n### 3.3 Missing Escrow Agent Details\n- **Issue:** Clause 5.1(c) leaves the Escrow Agent's contact details blank (\"[designated address/email to be inserted upon appointment]\").\n- **Action Required:** Identify and appoint a suitable escrow agent and complete the agreement details.\n\n## 4. Share Purchase Agreement Drafting Issues\n\n### 4.1 Missing Clauses\n- **Issue:** The SPA references Clause 8.2 in the client email, but the provided document ends at Clause 12.2. Key commercial provisions (warranties, indemnities, tax covenants, restrictive covenants, etc.) appear to be missing.\n- **Risk:** The SPA is substantially incomplete without these standard provisions.\n- **Action Required:** \n  1. Obtain the complete SPA including all missing schedules and clauses\n  2. Draft comprehensive warranties and indemnities\n  3. Include appropriate limitations on liability (Clause 9.4 provides a de minimis threshold of $425,000 but lacks other standard limitations)\n\n### 4.2 De Minimis Threshold Calculation\n- **Issue:** Clause 9.4 sets a de minimis threshold of $425,000 (0.5% of the $85,000,000 purchase price).\n- **Analysis:** This is a standard provision but should be reviewed in conjunction with other limitations (basket, cap, time limits) which appear to be missing.\n- **Action Required:** Ensure comprehensive limitation provisions including:\n  - Basket (minimum claim aggregate before liability arises)\n  - Cap (maximum total liability, typically 10-100% of purchase price)\n  - Time limits for different types of claims\n\n### 4.3 Disclosure Letter Preparation and Missing Clause 8.2\n- **Issue:** The client email requests preparation of a draft disclosure letter and confirmation of compliance with Clause 8.2 obligations, but Clause 8.2 is not included in the provided SPA.\n- **Analysis:** Clause 8.2 likely contains provisions regarding disclosure against warranties, which is a standard SPA provision. Its absence prevents proper assessment of disclosure obligations.\n- **Action Required:** \n  1. Obtain the complete SPA including Clause 8.2 and all related provisions\n  2. Draft a comprehensive disclosure letter in accordance with Clause 8.2 requirements\n  3. Ensure all material disclosures are made, particularly regarding Saltash Retail Group\n  4. Coordinate disclosures with warranty provisions\n\n## 5. Closing Timeline and Practical Considerations\n\n### 5.1 Closing Date vs. Regulatory Timeline\n- **Issue:** The client email mentions \"expected closing prior to 25 March 2026\" but the SPA specifies Closing Date as 20 May 2026.\n- **Analysis:** Today's date is 25 March 2026. The SPA Closing Date is 56 days from today.\n- **Action Required:** \n  1. Clarify the intended closing timeline with the client\n  2. Ensure all conditions precedent can be satisfied by the chosen closing date\n  3. Consider whether an earlier closing is feasible given regulatory approval timing\n\n### 5.2 Escrow Funding Timing\n- **Issue:** Clause 3.1 of the Escrow Agreement requires the Buyer to deposit the Escrow Amount within three Business Days of the Closing Date (20 May 2026).\n- **Analysis:** \"Business Day\" is defined as a day other than Saturday or Sunday when banks are open in London. Since 20 May 2026 is a Wednesday, three Business Days would be by Monday, 25 May 2026 (assuming no bank holidays).\n- **Action Required:** \n  1. Ensure funding arrangements are in place to meet this deadline\n  2. Coordinate with completion mechanics\n  3. Confirm there are no bank holidays during this period that would affect the timeline\n\n## 6. Jurisdiction and Governing Law\n\n### 6.1 Consistency Across Agreements\n- **Issue:** Both the SPA (Clause 12.1-12.2) and Escrow Agreement (Clause 7.1-7.2) specify English governing law and exclusive jurisdiction of English courts, consistent with client instructions.\n- **Action Required:** Confirm all related documents maintain this consistency.\n\n## Priority Actions\n\n1. **Immediate (Next 7 days):**\n   - Obtain complete SPA with all schedules and missing clauses\n   - Clarify purchase price calculation discrepancy\n   - Address regulatory approval timing issue\n   - Draft disclosure letter\n\n2. **Short-term (Next 14 days):**\n   - Complete Escrow Agreement with specified amount and agent details\n   - Draft comprehensive warranty package\n   - Finalize working capital adjustment methodology\n\n3. **Medium-term (Before Closing):**\n   - Negotiate and finalize all agreements\n   - Coordinate satisfaction of conditions precedent\n   - Arrange completion mechanics and funding\n\n## Recommendations\n\n1. **Purchase Price:** Insist on using the SPA's working capital adjustment formula ($85,000,000 minus any shortfall below $3,500,000) rather than accepting the Seller's $83,760,000 figure without verification. The $620,000 discrepancy suggests either double-counting of the working capital adjustment or an error in the Seller's calculation.\n\n2. **Regulatory Approval:** Consider amending the SPA to allow completion conditional upon regulatory approval, with appropriate safeguards for the Buyer.\n\n3. **Escrow:** Recommend an escrow amount of 10-15% of the purchase price held for 24 months, consistent with market practice.\n\n4. **Documentation:** Urgently request all missing schedules and clauses to properly assess the transaction risks.\n\n5. **Timeline:** Given regulatory approval timing, recommend aligning the closing date with expected clearance (August 2026) or implementing a conditional completion structure.\n\nThis issues list will be updated as further documentation is received and negotiations progress.\n\n# Your job\nNo grades are available. Critically assess the deliverable and the work process yourself, as a demanding supervising partner would, and write reusable candidate lessons for improving the work.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|issues_list\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C1\",\n      \"what_went_wrong\": \"The agent did not verify the consistency of the de minimis threshold calculation across all references in the documents.\",\n      \"should_have\": \"Recomputed the de minimis threshold as a percentage of the purchase price and cross-checked it with all stated figures in the agreements.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C2\",\n      \"what_went_wrong\": \"The agent identified a discrepancy in the purchase price but did not cross-reference the working capital adjustment methodology with standard market practice or the client's internal guidelines.\",\n      \"should_have\": \"Compared the working capital adjustment methodology against standard market practice and client-specific requirements to identify non-standard terms.\",\n      \"failure_kind\": \"analysis\"\n    },\n    {\n      \"criterion_id\": \"C3\",\n      \"what_went_wrong\": \"The agent noted missing clauses but did not flag the absence of standard limitation of liability provisions (e.g., basket, cap) beyond the de minimis threshold.\",\n      \"should_have\": \"Explicitly listed all standard limitation of liability provisions (basket, cap, time limits) and flagged their absence or incompleteness.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C4\",\n      \"what_went_wrong\": \"The agent did not verify whether the escrow period aligns with the warranty claim periods in the SPA, despite noting the escrow release timing.\",\n      \"should_have\": \"Cross-referenced the escrow release timing with the warranty claim periods in the SPA to ensure alignment.\",\n      \"failure_kind\": \"analysis\"\n    },\n    {\n      \"criterion_id\": \"C5\",\n      \"what_went_wrong\": \"The agent did not confirm whether the definition of 'Business Day' in the escrow agreement aligns with the SPA or other transaction documents.\",\n      \"should_have\": \"Checked for consistency in the definition of 'Business Day' across all transaction documents to avoid timing discrepancies.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C6\",\n      \"what_went_wrong\": \"The agent did not flag the absence of a material adverse change (MAC) clause, a standard provision in SPAs.\",\n      \"should_have\": \"Noted the absence of standard clauses like MAC and recommended their inclusion if appropriate.\",\n      \"failure_kind\": \"content\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"List all standard limitation of liability provisions (de minimis, basket, cap, time limits) and flag any missing or incomplete provisions in the issues list.\",\n      \"evidence\": [\"C3\", \"C6\"],\n      \"task_type_scope\": \"issues_list\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Recompute all financial thresholds (e.g., de minimis, basket, cap) as percentages of the purchase price and flag any mismatches with stated figures.\",\n      \"evidence\": [\"C1\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Cross-reference escrow release timings with warranty claim periods in the SPA to ensure alignment and flag any discrepancies.\",\n      \"evidence\": [\"C4\"],\n      \"task_type_scope\": \"issues_list\",\n      \"confidence\": 0.85\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"review\",\n      \"text\": \"Before finalising an issues list, verify the consistency of defined terms (e.g., 'Business Day') across all transaction documents.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.8\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Compare working capital adjustment methodologies against standard market practice and client-specific requirements to identify non-standard terms.\",\n      \"evidence\": [\"C2\"],\n      \"task_type_scope\": \"issues_list\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"Include a section in the issues list for standard clauses (e.g., MAC, sandbagging, anti-sandbagging) and flag their absence if material to the transaction.\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"issues_list\",\n      \"confidence\": 0.85\n    }\n  ],\n  \"lesson_feedback\": []\n}\n```"
+}

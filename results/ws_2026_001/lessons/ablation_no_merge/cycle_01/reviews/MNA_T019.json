@@ -1,0 +1,158 @@
+{
+  "task_id": "MNA_T019",
+  "cycle": 1,
+  "lineage": "ablation_no_merge",
+  "graded": true,
+  "failures": [
+    {
+      "criterion_id": "C1",
+      "what_went_wrong": "The deliverable identified the litigation disclosure inconsistency but failed to recommend specific protective measures like a dedicated indemnity or price adjustment. The actions listed were generic (e.g., 'clarification', 'review').",
+      "should_have": "Explicitly recommended tailored risk mitigation strategies, such as negotiating a specific indemnity for the undisclosed claim or adjusting the purchase price/escrow amount to reflect the potential liability.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C2",
+      "what_went_wrong": "The deliverable quoted the warranty cap figure from the SPA without verifying its arithmetic accuracy against the purchase price. It treated the stated figure as correct rather than cross-checking it.",
+      "should_have": "Recalculated the warranty cap as 25% of the purchase price and flagged the discrepancy between the computed value ($63,750,000) and the stated figure ($57,375,000).",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C5",
+      "what_went_wrong": "The deliverable noted the discrepancy between the warranty cap and 25% of the purchase price but did not show the arithmetic calculation or quantify the shortfall ($6,375,000).",
+      "should_have": "Explicitly shown the calculation (25% × $255,000,000 = $63,750,000) and highlighted the $6,375,000 shortfall in the stated cap.",
+      "failure_kind": "procedural"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T019_0",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "For every percentage-based cap or threshold in transaction documents, recompute the absolute value using the stated percentage and purchase price/consideration. Flag any mismatch with the stated figure.",
+      "source_tasks": [
+        "MNA_T019"
+      ],
+      "evidence": [
+        "MNA_T019:C2",
+        "MNA_T019:C5"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T019_1",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "When identifying undisclosed liabilities or warranty breaches, propose specific risk mitigation measures (e.g., indemnities, escrow adjustments, price reductions) tailored to the liability's magnitude and nature.",
+      "source_tasks": [
+        "MNA_T019"
+      ],
+      "evidence": [
+        "MNA_T019:C1"
+      ],
+      "task_type_scope": "issues_list",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T019_2",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Include the arithmetic calculation for every derived figure (e.g., caps, thresholds, percentages) in the deliverable, showing the formula and inputs used to arrive at the result.",
+      "source_tasks": [
+        "MNA_T019"
+      ],
+      "evidence": [
+        "MNA_T019:C5"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T019_3",
+      "type": "practice_note",
+      "category": "review",
+      "text": "Before finalising an issues list, verify that every numerical discrepancy includes both the computed value and the stated value, along with the delta between them.",
+      "source_tasks": [
+        "MNA_T019"
+      ],
+      "evidence": [
+        "MNA_T019:C2",
+        "MNA_T019:C5"
+      ],
+      "task_type_scope": "issues_list",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T019_4",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "For every identified risk in an issues list, include at least one specific, actionable recommendation to mitigate or resolve the risk, tailored to the client's position.",
+      "source_tasks": [
+        "MNA_T019"
+      ],
+      "evidence": [
+        "MNA_T019:C1"
+      ],
+      "task_type_scope": "issues_list",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.8
+    },
+    {
+      "candidate_id": "c01_MNA_T019_5",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "When reviewing transaction documents, cross-reference all numerical values against their defining formulas or percentages to ensure consistency and accuracy.",
+      "source_tasks": [
+        "MNA_T019"
+      ],
+      "evidence": [
+        "MNA_T019:C2",
+        "MNA_T019:C5"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.8
+    }
+  ],
+  "lesson_feedback": [
+    {
+      "lesson_id": "L0001",
+      "label": "HELPFUL",
+      "reason": "Directly addresses the procedural failure in C2 and C5 by ensuring arithmetic verification of percentage-based figures, a reusable behaviour for all transactional matters."
+    },
+    {
+      "lesson_id": "L0002",
+      "label": "HELPFUL",
+      "reason": "Targets the root cause of C1's failure by requiring specific, tailored risk mitigation measures, elevating the quality of recommendations in issues lists."
+    },
+    {
+      "lesson_id": "L0003",
+      "label": "HELPFUL",
+      "reason": "Ensures transparency and reproducibility in calculations, addressing the omission in C5 where the arithmetic was not shown."
+    },
+    {
+      "lesson_id": "L0004",
+      "label": "HELPFUL",
+      "reason": "Provides a clear review step to catch numerical discrepancies, preventing oversights like those in C2 and C5."
+    },
+    {
+      "lesson_id": "L0005",
+      "label": "HELPFUL",
+      "reason": "Generalises the requirement for actionable recommendations, directly improving the output for C1 and similar issues."
+    },
+    {
+      "lesson_id": "L0006",
+      "label": "HELPFUL",
+      "reason": "Reinforces the need for cross-checking numerical values, a critical step missed in C2 and C5."
+    }
+  ],
+  "input_tokens": 4262,
+  "output_tokens": 1287,
+  "cost_usd": 0.0040615,
+  "prompt": "# Task\nType: issues_list | Practice area: corporate_mna\nYou act for the Buyer, Eskdale Medical Ltd. Eskdale Medical Ltd (the Buyer) is acquiring the entire issued share capital of Brightwater Pharma plc (the Company) from Dunmore Software Ltd (the Seller).\n\nPrepare an issues list for the supervising partner covering the matter documents. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 5 June 2026. Address the deliverable to the supervising partner.\n\n# Trajectory (27 model steps, 27 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 3. [research] read_document({\"name\": \"client_email.md\"})\n 4. [research] read_document({\"name\": \"disclosure_letter.md\"})\n 5. [research] read_document({\"name\": \"escrow_agreement.md\"})\n 6. [research] read_document({\"name\": \"board_minutes.md\"})\n 7. [research] search_documents({\"query\": \"warranty\"})\n 8. [research] search_documents({\"query\": \"Schedule\"})\n 9. [research] search_documents({\"query\": \"indemn\"})\n10. [analysis] calculate({\"expression\": \"date('2026-06-05')\"})\n11. [analysis] calculate({\"expression\": \"closing_date = date('2026-08-13')\"})\n12. [analysis] calculate({\"expression\": \"days_between(date('2026-06-05'), closing_date)\"})\n13. [analysis] calculate({\"expression\": \"days_between(date('2026-06-05'), date('2026-08-13'))\"})\n14. [analysis] calculate({\"expression\": \"add_months(date('2026-06-05'), 18)\"})\n15. [drafting] write_draft(<1044 words>)\n16. [verification] read_draft({})\n17. [verification] calculate({\"expression\": \"escrow_percentage = (3750000 / 255000000) * 100\"})\n18. [editing] edit_draft(find='**Issue:** \\n- Escrow amount (£3,750,000) represents approxim' -> '**Issue:** \\n- Escrow amount (£3,750,000) represents approxim')\n19. [verification] search_documents({\"query\": \"interest\"})\n20. [verification] search_documents({\"query\": \"condition\"})\n21. [verification] read_document({\"name\": \"share_purchase_agreement.md\", \"start_line\": 36, \"num_lines\": 20})\n22. [editing] edit_draft(find='### 2. **Missing Warranty Schedule**\\n\\n**Issue:** The disclos' -> '### 2. **Incomplete Share Purchase Agreement**\\n\\n**Issue:** T')\n23. [editing] edit_draft(find='### 7. **Document Completeness**\\n\\n**Issue:** Several documen' -> '### 7. **Document Completeness and Interest Rate Provision**')\n24. [verification] search_documents({\"query\": \"email\"})\n25. [editing] edit_draft(find='## Priority Assessment\\n\\n| Issue | Priority | Impact | Urgenc' -> '## Priority Assessment\\n\\n| Issue | Priority | Impact | Urgenc')\n26. [verification] read_draft({})\n27. [control] finish({\"summary\": \"Issues list prepared for the supervising partner covering the acquisition of Brightwater Pharma plc by Eskdale Medical Ltd. The analysis identifies)\n\n# Final deliverable\n# Issues List: Acquisition of Brightwater Pharma plc by Eskdale Medical Ltd\n\n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Date:** 5 June 2026  \n**Matter:** Eskdale Medical Ltd acquisition of Brightwater Pharma plc from Dunmore Software Ltd  \n**Client:** Eskdale Medical Ltd (Buyer)\n\n## Executive Summary\n\nThis issues list identifies key legal and commercial concerns arising from the review of transaction documents for the proposed acquisition of Brightwater Pharma plc by Eskdale Medical Ltd. The documents reveal several material inconsistencies, omissions, and potential risks requiring immediate attention.\n\n## Key Issues Identified\n\n### 1. **Critical: Litigation Disclosure Inconsistency**\n\n**Issue:** The board minutes of Brightwater Pharma plc dated 3 June 2026 record receipt of a letter before action from Penrith Retail Group plc dated 28 May 2026, asserting a claim of approximately $450,000 for alleged defective deliveries. However, the disclosure letter dated 4 June 2026 states there are \"no current, pending or, to the best of the Seller's knowledge, threatened proceedings\" and specifically states \"None\" in relation to Warranty 7.1 (Litigation).\n\n**Risk:** This constitutes a material misrepresentation if not properly disclosed. The Seller may be in breach of warranty, potentially exposing the Buyer to undisclosed liabilities.\n\n**Action Required:** \n- Immediate clarification from Seller regarding this discrepancy\n- Review of the Penrith Retail Group plc claim documentation\n- Potential amendment to disclosure letter or warranty provisions\n- Consideration of impact on purchase price or escrow arrangements\n\n### 2. **Incomplete Share Purchase Agreement**\n\n**Issue:** The SPA is missing critical clauses:\n- Missing Clauses 4-7 (presumably covering warranties, conditions precedent, etc.)\n- References warranties in Clause 8.3 and Clause 9.7 but warranty text absent\n- Disclosure letter references \"Schedule 3 to the Agreement\" containing warranties, but no schedules provided\n- Board minutes mention conditions precedent (due diligence, shareholder approval, regulatory clearance) but SPA doesn't contain conditions precedent clause\n\n**Risk:** Critical gaps in contractual protection including missing warranties, conditions precedent, and other standard SPA provisions.\n\n**Action Required:**\n- Obtain complete SPA including all missing clauses and schedules\n- Review warranty provisions for comprehensiveness\n- Ensure conditions precedent are properly documented\n- Verify inclusion of standard SPA provisions: tax, employees, property, etc.\n\n### 3. **Date Inconsistencies**\n\n**Issue:** Multiple conflicting dates across documents:\n- SPA dated: 7 May 2026\n- Disclosure letter references SPA dated: 4 June 2026\n- Board minutes: Completion expected \"on or shortly after 5 June 2026\"\n- SPA Closing Date: 13 August 2026 (69 days from today)\n- Escrow agreement: Effective Date [●] June 2026\n\n**Risk:** Uncertainty regarding effective dates, contractual timelines, and potential conflicts in obligations.\n\n**Action Required:**\n- Clarify actual intended completion date\n- Align all documents with consistent dates\n- Ensure board minutes reflect correct timeline\n\n### 4. **Currency Inconsistencies**\n\n**Issue:** \n- SPA Purchase Price: $255,000,000 (USD)\n- Escrow Amount: £3,750,000 (GBP)\n- Disclosure letter payment provisions: Reference GBP payments\n- Penrith Retail Group claim: $450,000 (USD)\n\n**Risk:** Exchange rate exposure and confusion regarding payment obligations.\n\n**Action Required:**\n- Clarify intended currency for all payments\n- Consider currency hedging if USD/GBP mix is intentional\n- Ensure consistency across all transaction documents\n\n### 5. **Escrow Arrangement Issues**\n\n**Issue:** \n- Escrow amount (£3,750,000) represents approximately 1.47% of purchase price ($255M) assuming GBP/USD parity - actual percentage depends on exchange rate\n- Escrow release: 18 months after Effective Date\n- Claim notification: 45 days in escrow agreement vs 30 days in SPA\n- Escrow agreement references undefined \"Indemnity Obligations\" from SPA\n\n**Risk:** Insufficient security for potential claims; conflicting claim periods; undefined indemnity scope.\n\n**Action Required:**\n- Review adequacy of escrow amount relative to potential liabilities\n- Align claim notification periods (30 vs 45 days)\n- Clarify scope of \"Indemnity Obligations\" in SPA\n- Ensure escrow agent appointment and account details completed\n\n### 6. **Material Customer Relationship**\n\n**Issue:** Oakhurst Media Ltd identified as material customer in client email and board minutes, but no details of contractual relationship provided.\n\n**Risk:** Unclear revenue dependency, contract terms, termination rights, or other commercial risks.\n\n**Action Required:**\n- Obtain copy of Oakhurst Media Ltd contract\n- Review key terms: duration, termination, pricing, exclusivity\n- Assess revenue concentration risk\n\n### 7. **Document Completeness and Interest Rate Provision**\n\n**Issue:** Several documents contain placeholders or incomplete information:\n- Escrow agreement: Missing Effective Date, Escrow Agent details, email addresses\n- SPA: Missing Clauses 4-7 and all schedules\n- Disclosure letter: Potentially incomplete given litigation discrepancy\n\n**Additional Issue:** Disclosure letter Clause 4.2 specifies interest rate as \"4.5% per annum above the base rate from time to time of Barclays Bank PLC\" - this creates uncertainty as Barclays' base rate may not be a standard reference rate.\n\n**Risk:** Unenforceable provisions, gaps in contractual protection, and uncertain interest calculation methodology.\n\n**Action Required:**\n- Complete all placeholders in escrow agreement\n- Obtain full SPA with all missing clauses and schedules\n- Verify completeness of disclosure against due diligence findings\n- Consider amending interest rate provision to reference a standard benchmark (e.g., SONIA + margin)\n\n## Commercial Considerations\n\n### 1. **Purchase Price Protection**\n- Limitation of liability: 25% of purchase price ($57,375,000)\n- Escrow: Only £3,750,000 (approximately 1.47% of purchase price)\n- Consider whether escrow amount provides adequate protection for post-completion claims\n\n### 2. **Timing Considerations**\n- Current date: 5 June 2026\n- Board minutes suggest completion expected imminently (around 5 June)\n- SPA specifies Closing Date: 13 August 2026\n- Need to align expectations and manage client communications\n\n### 3. **Due Diligence Follow-up**\n- Penrith Retail Group claim requires immediate investigation\n- Oakhurst Media Ltd contract review needed\n- Financial due diligence to verify accounts given potential claim\n\n## Recommended Next Steps\n\n1. **Immediate (Today):**\n   - Contact Seller's counsel regarding Penrith Retail Group claim discrepancy\n   - Request complete SPA with all schedules\n   - Clarify intended completion timeline with client\n\n2. **Within 48 Hours:**\n   - Review Oakhurst Media Ltd contract\n   - Complete escrow agreement placeholders\n   - Align currency provisions across documents\n\n3. **Before Completion:**\n   - Finalize disclosure letter reflecting actual litigation position\n   - Verify board approval processes completed\n   - Conduct final due diligence on identified issues\n\n## Priority Assessment\n\n| Issue | Priority | Impact | Urgency |\n|-------|----------|--------|---------|\n| Litigation Disclosure | Critical | High | Immediate |\n| Incomplete SPA | Critical | High | Immediate |\n| Date Inconsistencies | High | High | High |\n| Currency Inconsistencies | Medium | Medium | Medium |\n| Escrow Arrangements | Medium | Medium | Medium |\n| Material Customer Contract | Medium | Medium | Medium |\n| Document Completeness | Medium | Medium | Medium |\n\n## Conclusion\n\nThis transaction presents several material issues requiring immediate attention, particularly the litigation disclosure inconsistency which could constitute a breach of warranty. The incomplete documentation and conflicting dates also create significant execution risk. We should address these issues with the Seller's counsel promptly and ensure our client fully understands the risks before proceeding to completion.\n\nI recommend we schedule a call with the client (Marcus Varga) today to discuss these findings and agree on our negotiation strategy.\n\n# Expert rubric verdicts (3/6 passed)\n- C1 [FAIL] Identifies the threatened $450,000 claim by Penrith Retail Group plc recorded in the board minutes and that it is not disclosed against the litigation warranty (Warranty 7.1), recommending a specific indemnity or price protection.\n    judges: FAIL: The deliverable identifies the Penrith Retail Group claim and the disclosure discrepancy, but fails to recommend a specific indemnity or price protection, instead listing generic actions such as seeking clarification and | PASS: The deliverable clearly identifies the $450,000 Penrith Retail Group claim from the board minutes and its non-disclosure against Warranty 7.1, recommending amendment to disclosure letter, warranty provisions, and conside\n- C2 [FAIL] Identifies that the warranty cap in SPA Section 8.3 is stated as $57,375,000 but 25% of the $255,000,000 Purchase Price is $63,750,000, i.e. the stated figure is wrong.\n    judges: PASS: The deliverable correctly identifies that the warranty cap is stated as $57,375,000 but that 25% of the $255,000,000 Purchase Price is $63,750,000, noting the stated figure is wrong. | FAIL: The deliverable quotes the $57,375,000 figure from the SPA without identifying that this is mathematically incorrect (25% of $255,000,000 = $63,750,000, not $57,375,000). The deliverable treats the stated figure as corre\n- C3 [PASS] Identifies the conflict between the 30-day claim notice period in SPA Section 9.7 and the 45-day period in Escrow Clause 5.2, and recommends the Buyer works to the shorter 30-day period or aligns the documents.\n    judges: PASS: The deliverable identifies the conflict between the 30-day claim period in the SPA and the 45-day period in the Escrow Agreement and recommends aligning the claim notification periods. | PASS: The deliverable explicitly identifies the conflict between the 30-day claim period in SPA Clause 9.7 and the 45-day period in Escrow Clause 5.2, and recommends aligning the claim notification periods.\n- C4 [PASS] Flags that the board minutes and the disclosure letter are inconsistent about litigation.\n    judges: PASS: The deliverable clearly flags the inconsistency between the board minutes recording the Penrith Retail Group claim and the disclosure letter stating there are no proceedings. | PASS: The deliverable clearly flags that the board minutes record the Penrith Retail Group claim while the disclosure letter states 'None' for Warranty 7.1, calling this a 'material misrepresentation' and 'material inconsisten\n- C5 [FAIL] Shows the arithmetic for the cap (25% x $255,000,000 = $63,750,000) and flags the discrepancy with the stated $57,375,000.\n    judges: FAIL: While the deliverable states that 25% of the purchase price is $63,750,000, it does not explicitly show the arithmetic calculation (25% x $255,000,000 = $63,750,000) as required by the criterion. | FAIL: The deliverable does not show the arithmetic calculation (25% x $255,000,000 = $63,750,000) or identify that the stated $57,375,000 is $6,375,000 short of the correct figure. It merely repeats the incorrect figure from t\n- C6 [PASS] Opens with a short 'Bottom line' / executive summary stating the overall conclusion and the most important risks before the detailed analysis.\n    judges: PASS: The deliverable opens with an Executive Summary section that states the overall conclusion and identifies the key risks before presenting the detailed analysis. | PASS: The deliverable opens with an 'Executive Summary' that states the overall conclusion ('several material inconsistencies, omissions, and potential risks requiring immediate attention') and identifies the most important ri\n\n# Your job\nAnalyse each FAILED criterion: what went wrong, what the agent should have done, and whether the failure is procedural (reusable) or task-specific. Then write reusable candidate lessons that would prevent the procedural failures on other matters.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|issues_list\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C1\",\n      \"what_went_wrong\": \"The deliverable identified the litigation disclosure inconsistency but failed to recommend specific protective measures like a dedicated indemnity or price adjustment. The actions listed were generic (e.g., 'clarification', 'review').\",\n      \"should_have\": \"Explicitly recommended tailored risk mitigation strategies, such as negotiating a specific indemnity for the undisclosed claim or adjusting the purchase price/escrow amount to reflect the potential liability.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C2\",\n      \"what_went_wrong\": \"The deliverable quoted the warranty cap figure from the SPA without verifying its arithmetic accuracy against the purchase price. It treated the stated figure as correct rather than cross-checking it.\",\n      \"should_have\": \"Recalculated the warranty cap as 25% of the purchase price and flagged the discrepancy between the computed value ($63,750,000) and the stated figure ($57,375,000).\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C5\",\n      \"what_went_wrong\": \"The deliverable noted the discrepancy between the warranty cap and 25% of the purchase price but did not show the arithmetic calculation or quantify the shortfall ($6,375,000).\",\n      \"should_have\": \"Explicitly shown the calculation (25% × $255,000,000 = $63,750,000) and highlighted the $6,375,000 shortfall in the stated cap.\",\n      \"failure_kind\": \"procedural\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"For every percentage-based cap or threshold in transaction documents, recompute the absolute value using the stated percentage and purchase price/consideration. Flag any mismatch with the stated figure.\",\n      \"evidence\": [\"C2\", \"C5\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"When identifying undisclosed liabilities or warranty breaches, propose specific risk mitigation measures (e.g., indemnities, escrow adjustments, price reductions) tailored to the liability's magnitude and nature.\",\n      \"evidence\": [\"C1\"],\n      \"task_type_scope\": \"issues_list\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"Include the arithmetic calculation for every derived figure (e.g., caps, thresholds, percentages) in the deliverable, showing the formula and inputs used to arrive at the result.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"review\",\n      \"text\": \"Before finalising an issues list, verify that every numerical discrepancy includes both the computed value and the stated value, along with the delta between them.\",\n      \"evidence\": [\"C2\", \"C5\"],\n      \"task_type_scope\": \"issues_list\",\n      \"confidence\": 0.85\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"For every identified risk in an issues list, include at least one specific, actionable recommendation to mitigate or resolve the risk, tailored to the client's position.\",\n      \"evidence\": [\"C1\"],\n      \"task_type_scope\": \"issues_list\",\n      \"confidence\": 0.8\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"When reviewing transaction documents, cross-reference all numerical values against their defining formulas or percentages to ensure consistency and accuracy.\",\n      \"evidence\": [\"C2\", \"C5\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.8\n    }\n  ],\n  \"lesson_feedback\": [\n    {\n      \"lesson_id\": \"L0001\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Directly addresses the procedural failure in C2 and C5 by ensuring arithmetic verification of percentage-based figures, a reusable behaviour for all transactional matters.\"\n    },\n    {\n      \"lesson_id\": \"L0002\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Targets the root cause of C1's failure by requiring specific, tailored risk mitigation measures, elevating the quality of recommendations in issues lists.\"\n    },\n    {\n      \"lesson_id\": \"L0003\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Ensures transparency and reproducibility in calculations, addressing the omission in C5 where the arithmetic was not shown.\"\n    },\n    {\n      \"lesson_id\": \"L0004\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Provides a clear review step to catch numerical discrepancies, preventing oversights like those in C2 and C5.\"\n    },\n    {\n      \"lesson_id\": \"L0005\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Generalises the requirement for actionable recommendations, directly improving the output for C1 and similar issues.\"\n    },\n    {\n      \"lesson_id\": \"L0006\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Reinforces the need for cross-checking numerical values, a critical step missed in C2 and C5.\"\n    }\n  ]\n}\n```"
+}

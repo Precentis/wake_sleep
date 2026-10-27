@@ -1,0 +1,140 @@
+{
+  "task_id": "MNA_T060",
+  "cycle": 1,
+  "lineage": "ablation_memory_reset",
+  "graded": true,
+  "failures": [
+    {
+      "criterion_id": "C3",
+      "what_went_wrong": "The agent identified the IP assignment issue but failed to recommend a specific remedial action (confirmatory assignment as a condition to closing).",
+      "should_have": "Explicitly recommended obtaining a confirmatory assignment as a condition to closing to mitigate the identified IP ownership risk.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C4",
+      "what_went_wrong": "The agent calculated the long-stop date but omitted the explicit calculation of days remaining from the current date (24 June 2026).",
+      "should_have": "Included a clear calculation of days remaining from the current date to the long-stop date in the analysis.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C6",
+      "what_went_wrong": "The agent noted the potential holiday issue but did not verify whether computed deadlines fell on weekends or apply the documents' business day definitions to adjust them.",
+      "should_have": "Checked all computed deadlines against calendar weekends/holidays and adjusted them using the documents' business day definitions where applicable.",
+      "failure_kind": "procedural"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T060_0",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "For every identified risk or issue, explicitly recommend a specific remedial action or mitigation step in the deliverable.",
+      "source_tasks": [
+        "MNA_T060"
+      ],
+      "evidence": [
+        "MNA_T060:C3"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T060_1",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "Include a calculation of days remaining from the current date to every critical deadline in the timeline analysis.",
+      "source_tasks": [
+        "MNA_T060"
+      ],
+      "evidence": [
+        "MNA_T060:C4"
+      ],
+      "task_type_scope": "timeline_analysis",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T060_2",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Verify whether each computed deadline falls on a weekend or holiday and adjust it using the document's business day definition before finalising the timeline.",
+      "source_tasks": [
+        "MNA_T060"
+      ],
+      "evidence": [
+        "MNA_T060:C6"
+      ],
+      "task_type_scope": "timeline_analysis",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T060_3",
+      "type": "checklist",
+      "category": "review",
+      "text": "Before finalising a timeline analysis, confirm that every deadline has been checked for weekend/holiday conflicts and adjusted if required by the governing documents.",
+      "source_tasks": [
+        "MNA_T060"
+      ],
+      "evidence": [
+        "MNA_T060:C6"
+      ],
+      "task_type_scope": "timeline_analysis",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T060_4",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "When documents define 'Business Day,' apply that definition to adjust all deadlines that fall on weekends or holidays, even if the adjustment is not explicitly required in the clause.",
+      "source_tasks": [
+        "MNA_T060"
+      ],
+      "evidence": [
+        "MNA_T060:C6"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T060_5",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Ensure the deliverable includes a dedicated section for 'Days Remaining' calculations from the current date to all critical deadlines.",
+      "source_tasks": [
+        "MNA_T060"
+      ],
+      "evidence": [
+        "MNA_T060:C4"
+      ],
+      "task_type_scope": "timeline_analysis",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.8
+    }
+  ],
+  "lesson_feedback": [
+    {
+      "lesson_id": "L0001",
+      "label": "HELPFUL",
+      "reason": "Addresses a common procedural gap in risk analysis by requiring explicit remedial actions, which would have prevented the failure in C3."
+    },
+    {
+      "lesson_id": "L0002",
+      "label": "HELPFUL",
+      "reason": "Directly targets the omission in C4 by mandating days-remaining calculations, making the deliverable more actionable for clients."
+    },
+    {
+      "lesson_id": "L0003",
+      "label": "HELPFUL",
+      "reason": "Provides a clear, reusable method for handling weekend/holiday adjustments, which would have resolved the failure in C6."
+    }
+  ],
+  "input_tokens": 4621,
+  "output_tokens": 973,
+  "cost_usd": 0.00377,
+  "prompt": "# Task\nType: timeline_analysis | Practice area: corporate_mna\nYou act for the Buyer, Marlow Medical Ltd. Marlow Medical Ltd (the Buyer) is acquiring the entire issued share capital of Juniper Marine Ltd (the Company) from Hartwell Medical Ltd (the Seller).\n\nPrepare a timeline and deadlines analysis of all time-sensitive obligations in the matter documents. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 24 June 2026. Address the deliverable to the supervising partner.\n\n# Trajectory (29 model steps, 29 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 3. [research] read_document({\"name\": \"escrow_agreement.md\"})\n 4. [research] read_document({\"name\": \"disclosure_letter.md\"})\n 5. [research] read_document({\"name\": \"client_email.md\"})\n 6. [analysis] calculate({\"expression\": \"Closing Date = date('2026-08-19')\"})\n 7. [analysis] calculate({\"expression\": \"ClosingDate = date('2026-08-19')\"})\n 8. [analysis] calculate({\"expression\": \"BankAccountDeadline = add_days(ClosingDate, -5)\"})\n 9. [analysis] calculate({\"expression\": \"ClosingDate = date('2026-08-19')\\nBankAccountDeadline = add_days(ClosingDate, -5)\"})\n10. [analysis] calculate({\"expression\": \"SPADate = date('2026-06-08')\\nConditionsTerminationDeadline = add_days(SPADate, 120)\"})\n11. [analysis] calculate({\"expression\": \"EscrowClosingDate = date('2026-06-24')\\nEscrowPeriodEnd = add_months(EscrowClosingDate, 18)\"})\n12. [analysis] calculate({\"expression\": \"weekday(date('2027-12-24'))\"})\n13. [analysis] calculate({\"expression\": \"DisclosureConfidentialityStart = date('2026-06-24')\\nDisclosureConfidentialityEnd = add_years(DisclosureConfidentialityStart, 6)\"})\n14. [analysis] calculate({\"expression\": \"RegulatoryClearanceDate = date('2026-11-20')\"})\n15. [research] search_documents({\"query\": \"closing date\"})\n16. [research] search_documents({\"query\": \"warranty claim\"})\n17. [research] search_documents({\"query\": \"conditions\"})\n18. [research] search_documents({\"query\": \"notice\"})\n19. [drafting] write_draft(<1008 words>)\n20. [verification] read_draft({})\n21. [verification] search_documents({\"query\": \"days\"})\n22. [verification] search_documents({\"query\": \"business day\"})\n23. [verification] search_documents({\"query\": \"tax\"})\n24. [editing] edit_draft(find='#### 4. Claim Thresholds and Limitations\\n\\n| Aspect | Require' -> '#### 4. Claim Thresholds and Limitations\\n\\n| Aspect | Require')\n25. [editing] edit_draft(find='#### 4. Intellectual Property Disclosure\\nThe Disclosure Lett' -> '#### 4. Intellectual Property Disclosure\\nThe Disclosure Lett')\n26. [verification] calculate({\"expression\": \"EscrowAmount = 850000\\nEscrowClaimCap = EscrowAmount * 1.07\"})\n27. [editing] edit_draft(find='#### 6. Potential Holiday Issue\\nThe Escrow Period ends on 24' -> '#### 6. Potential Holiday Issue\\nThe Escrow Period ends on 24')\n28. [verification] read_draft({})\n29. [control] finish({\"summary\": \"Prepared a comprehensive timeline and deadlines analysis for the acquisition of Juniper Marine Ltd by Marlow Medical Ltd. The analysis identifies a)\n\n# Final deliverable\n# Timeline and Deadlines Analysis\n## Acquisition of Juniper Marine Ltd by Marlow Medical Ltd\n\n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Date:** 24 June 2026  \n**Matter:** Acquisition of Juniper Marine Ltd  \n**Client:** Marlow Medical Ltd (Buyer)  \n**Counterparty:** Hartwell Medical Ltd (Seller)\n\n### Executive Summary\n\nThis analysis identifies and evaluates all time-sensitive obligations across the transaction documents for the acquisition of Juniper Marine Ltd. Key findings include:\n\n1. **Critical Date Discrepancy**: The Share Purchase Agreement (SPA) specifies a Closing Date of 19 August 2026, while the Escrow Agreement references a Closing Date of 24 June 2026. This inconsistency requires immediate resolution.\n\n2. **Regulatory Clearance**: Merger clearance is expected by 20 November 2026, which falls after both proposed closing dates.\n\n3. **Multiple Claim Periods**: Different notification periods apply to warranty claims (20 days) and escrow claims (45 days), creating potential confusion.\n\n4. **Extended Protection Periods**: The escrow provides 18 months of protection, while confidentiality obligations extend for 6 years.\n\n### Detailed Timeline Analysis\n\n#### 1. Pre-Closing Obligations\n\n| Deadline | Date | Obligation | Document Reference | Responsible Party |\n|----------|------|------------|-------------------|-------------------|\n| Bank Account Designation | 14 August 2026 | Seller must designate bank account for Purchase Price payment at least 5 business days before Closing Date | SPA Clause 2.1 | Seller |\n| Conditions Satisfaction Deadline | 6 October 2026 | Conditions must be satisfied or either party may terminate (120 days from SPA date 8 June 2026) | SPA Clause 4.5 | Both Parties |\n| Conditions Waiver Deadline | 20 days from awareness | Conditions deemed waived unless raised in writing within 20 days of becoming aware of failure | SPA Clause 4.4 | Both Parties |\n\n#### 2. Closing Date Discrepancy\n\n**Critical Issue**: Two different Closing Dates are specified:\n- **SPA Closing Date**: 19 August 2026 (SPA Clause 1.1)\n- **Escrow Agreement Closing Date**: 24 June 2026 (Escrow Agreement Clause 1.1)\n\n**Impact**: This creates fundamental uncertainty about when:\n- Purchase Price payment is due (SPA Clause 2.2)\n- Share transfer documents must be delivered (SPA Clause 3.1)\n- Escrow Amount must be paid (Escrow Agreement Clause 3.1)\n- Disclosure Letter confidentiality period begins (Disclosure Letter Clause 7.2)\n\n**Recommendation**: Immediate clarification and alignment of Closing Dates is required before proceeding.\n\n#### 3. Post-Closing Obligations\n\n| Deadline | Date/Period | Obligation | Document Reference | Responsible Party |\n|----------|-------------|------------|-------------------|-------------------|\n| Warranty Claim Notification | 20 days from awareness | Buyer must notify warranty claims within 20 days of becoming aware | SPA Clause 9.7 | Buyer |\n| Escrow Claim Notification | 45 days from awareness | Buyer must notify claims against Escrow Amount within 45 days of becoming aware | Escrow Agreement Clause 5.2 | Buyer |\n| Escrow Period End | 24 December 2027 (4:00 PM) | Escrow Amount released to Seller unless claims pending (18 months from Escrow Closing Date) | Escrow Agreement Clauses 1.1, 4.1 | Escrow Agent |\n| Regulatory Clearance | 20 November 2026 | Merger clearance expected (per client email) | Client Email | Regulatory Authorities |\n| Disclosure Confidentiality | 24 June 2032 | Confidentiality obligation ends (6 years from 24 June 2026) | Disclosure Letter Clause 7.2 | Buyer |\n\n#### 4. Claim Thresholds and Limitations\n\n| Aspect | Requirement | Document Reference |\n|--------|-------------|-------------------|\n| Warranty Claim Minimum | Individual claims must exceed $500,000 | SPA Clause 9.6 |\n| Warranty Claim Cap | Aggregate liability capped at 75% of Purchase Price ($30,000,000) | SPA Clause 9.5 |\n| Escrow Claim Cap | Claims cannot exceed 107% of Escrow Amount (£909,500) | Escrow Agreement Clause 5.3 |\n\n#### 5. Notice Periods and Delivery\n\n| Document | Notice Delivery Method | Deemed Receipt Time | Reference |\n|----------|-----------------------|---------------------|-----------|\n| SPA | First-class post | 48 hours after posting | Clause 11.2 |\n| Disclosure Letter | Personal delivery | Same day | Clause 6.2 |\n| Disclosure Letter | First-class post | 48 hours after posting | Clause 6.2 |\n| Disclosure Letter | Email | Next business day (with confirmation) | Clause 6.2 |\n| Escrow Agreement | Hand, registered post, or email | Not specified | Clause 6.1 |\n\n**Note**: \"Business Day\" is not defined in the SPA, creating uncertainty for the 5 Business Days requirement in Clause 2.1.\n\n### Critical Issues Requiring Attention\n\n#### 1. Closing Date Inconsistency\nThe discrepancy between SPA Closing Date (19 August 2026) and Escrow Agreement Closing Date (24 June 2026) creates legal uncertainty. The Disclosure Letter also references the SPA as \"dated on or about 24 June 2026\" (Clause 1.1), conflicting with the actual SPA date of 8 June 2026.\n\n**Action Required**: Amend documents to establish a single, consistent Closing Date.\n\n#### 2. Regulatory Clearance Timing\nThe client email indicates merger clearance is expected by 20 November 2026. This falls after both proposed closing dates, suggesting either:\n- Closing should be conditional on regulatory approval, or\n- The transaction documents need to account for post-closing regulatory compliance\n\n**Action Required**: Review whether regulatory clearance is a Condition under SPA Clause 4.2(c) and ensure timing aligns with closing.\n\n#### 3. Conflicting Claim Notification Periods\n- SPA: Warranty claims must be notified within 20 days of awareness (Clause 9.7)\n- Escrow Agreement: Claims against Escrow Amount must be notified within 45 days of awareness (Clause 5.2)\n\nThis creates potential confusion about which deadline applies to claims covered by both warranty and escrow provisions.\n\n**Action Required**: Clarify relationship between warranty claims and escrow claims.\n\n#### 4. Intellectual Property Disclosure\nThe Disclosure Letter reveals that no written IP assignment exists for the Company's core platform software (developed by Kingsmere Industries Ltd). This creates potential warranty exposure that should be monitored within claim periods.\n\n#### 5. Missing Tax Covenant\nThe Escrow Agreement references a Tax Covenant (Clause 1.1) that is not included in the document set. This covenant may contain its own time-sensitive obligations that cannot be analyzed without the document.\n\n#### 6. Potential Holiday Issue\nThe Escrow Period ends on 24 December 2027 (Friday), which may be affected by Christmas holiday schedules. The Escrow Agreement requires release \"on the last Business Day of the Escrow Period\" (Clause 4.1), but \"Business Day\" is not defined.\n\n#### 7. Currency Discrepancy\nThe SPA specifies the Purchase Price in US Dollars ($40,000,000), while the Escrow Agreement specifies the Escrow Amount in British Pounds (£850,000). This creates potential foreign exchange risk and calculation issues for claims.\n\n### Recommended Actions\n\n1. **Immediate (Week of 24 June 2026)**:\n   - Resolve Closing Date discrepancy through amendment or side letter\n   - Confirm regulatory clearance requirements and timing\n   - Align claim notification periods across documents\n\n2. **Pre-Closing**:\n   - Ensure Seller designates bank account by 14 August 2026 (if 19 August Closing Date)\n   - Monitor Conditions satisfaction progress\n   - Prepare for regulatory clearance by 20 November 2026\n\n3. **Post-Closing**:\n   - Implement systems to track warranty claim notification deadlines (20 days)\n   - Monitor escrow claim deadlines (45 days)\n   - Track escrow release date (24 December 2027)\n   - Maintain confidentiality of Disclosure Letter until 24 June 2032\n\n### Conclusion\n\nThe transaction documents contain several time-sensitive obligations with critical inconsistencies, particularly regarding the Closing Date. Immediate attention is required to resolve these discrepancies to ensure a smooth transaction and protect the Buyer's interests. The analysis highlights the need for careful monitoring of multiple deadlines spanning from pre-closing preparations through to 2032 for confidentiality obligations.\n\n**Next Steps**: Recommend client meeting to discuss resolution of Closing Date discrepancy and regulatory clearance timing.\n\n# Expert rubric verdicts (3/6 passed)\n- C1 [PASS] Calculates the long-stop date as 6 October 2026 (120 days after signing on 8 June 2026) and identifies that expected clearance on 20 November 2026 falls after it, recommending an extension.\n    judges: PASS: The deliverable correctly calculates the long-stop date as 6 October 2026 (120 days from 8 June 2026), notes that regulatory clearance expected on 20 November 2026 falls after this date, and recommends aligning timing wi | PASS: Correctly calculates long-stop date as 6 October 2026 (120 days from 8 June 2026) and notes regulatory clearance expected 20 November 2026 falls after both proposed closing dates, recommending review of whether clearance\n- C2 [PASS] Identifies the conflict between the 20-day claim notice period in SPA Section 9.7 and the 45-day period in Escrow Clause 5.2, and recommends the Buyer works to the shorter 20-day period or aligns the documents.\n    judges: PASS: The deliverable identifies the conflict between the 20-day SPA claim period (Clause 9.7) and the 45-day Escrow claim period (Clause 5.2), and recommends clarifying the relationship between warranty and escrow claims. | PASS: Clearly identifies the conflict between SPA Clause 9.7 (20 days) and Escrow Agreement Clause 5.2 (45 days), and recommends clarifying the relationship between warranty claims and escrow claims. Implicitly protects Buyer \n- C3 [FAIL] Identifies that the core platform was developed by contractor Kingsmere Industries Ltd without a written IP assignment, so the Company may not own it, and recommends obtaining a confirmatory assignment as a condition to Closing.\n    judges: FAIL: While the deliverable identifies the IP assignment issue with Kingsmere Industries Ltd, it fails to recommend obtaining a confirmatory assignment as a condition to Closing, instead only noting it creates warranty exposur | PASS: Identifies the Kingsmere Industries IP issue from Disclosure Letter Clause 4.1-4.5, notes 'potential warranty exposure,' but stops short of explicitly recommending a confirmatory assignment as a condition to Closing. Rec\n- C4 [FAIL] Gives the long-stop period as 120 days and as the date 6 October 2026, with days remaining from 24 June 2026 (104 days).\n    judges: FAIL: The deliverable gives the long-stop period as 120 days and the date as 6 October 2026, but omits the required calculation of days remaining from 24 June 2026 (104 days). | PASS: Correctly states the long-stop period as 120 days and the date as 6 October 2026. Calculates days remaining from 24 June 2026 as 104 days (though this appears in the table format rather than explicit statement, the math \n- C5 [PASS] Gives a pinpoint citation (document name and section/clause number) for every issue or finding.\n    judges: PASS: The deliverable provides pinpoint citations (document name and clause number) for every issue, including SPA Clauses 2.1, 4.4, 4.5, 9.5-9.7, Escrow Agreement Clauses 1.1, 4.1, 5.2-5.3, and Disclosure Letter Clauses 4.1-4 | PASS: Provides pinpoint citations for virtually every issue: SPA Clause 2.1, 4.4, 4.5, 9.5, 9.6, 9.7, 11.2; Escrow Agreement Clauses 1.1, 3.1, 4.1, 5.2, 5.3, 6.1; Disclosure Letter Clauses 1.1, 6.2, 7.2. Minor omission: 'Clien\n- C6 [FAIL] Checks whether computed deadlines fall on a weekend and adjusts them under the documents' Business Day definition.\n    judges: FAIL: The deliverable notes the 24 December 2027 escrow release date may be affected by Christmas holidays but does not check whether computed deadlines fall on a weekend or apply a Business Day definition to adjust them. | FAIL: Notes that 'Business Day' is not defined in the SPA and flags the 24 December 2027 escrow release date may be affected by Christmas, but does not actually check whether computed deadlines fall on weekends or adjust them \n\n# Your job\nAnalyse each FAILED criterion: what went wrong, what the agent should have done, and whether the failure is procedural (reusable) or task-specific. Then write reusable candidate lessons that would prevent the procedural failures on other matters.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|timeline_analysis\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C3\",\n      \"what_went_wrong\": \"The agent identified the IP assignment issue but failed to recommend a specific remedial action (confirmatory assignment as a condition to closing).\",\n      \"should_have\": \"Explicitly recommended obtaining a confirmatory assignment as a condition to closing to mitigate the identified IP ownership risk.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C4\",\n      \"what_went_wrong\": \"The agent calculated the long-stop date but omitted the explicit calculation of days remaining from the current date (24 June 2026).\",\n      \"should_have\": \"Included a clear calculation of days remaining from the current date to the long-stop date in the analysis.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C6\",\n      \"what_went_wrong\": \"The agent noted the potential holiday issue but did not verify whether computed deadlines fell on weekends or apply the documents' business day definitions to adjust them.\",\n      \"should_have\": \"Checked all computed deadlines against calendar weekends/holidays and adjusted them using the documents' business day definitions where applicable.\",\n      \"failure_kind\": \"procedural\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"For every identified risk or issue, explicitly recommend a specific remedial action or mitigation step in the deliverable.\",\n      \"evidence\": [\"C3\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"Include a calculation of days remaining from the current date to every critical deadline in the timeline analysis.\",\n      \"evidence\": [\"C4\"],\n      \"task_type_scope\": \"timeline_analysis\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Verify whether each computed deadline falls on a weekend or holiday and adjust it using the document's business day definition before finalising the timeline.\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"timeline_analysis\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"review\",\n      \"text\": \"Before finalising a timeline analysis, confirm that every deadline has been checked for weekend/holiday conflicts and adjusted if required by the governing documents.\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"timeline_analysis\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"When documents define 'Business Day,' apply that definition to adjust all deadlines that fall on weekends or holidays, even if the adjustment is not explicitly required in the clause.\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.85\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"Ensure the deliverable includes a dedicated section for 'Days Remaining' calculations from the current date to all critical deadlines.\",\n      \"evidence\": [\"C4\"],\n      \"task_type_scope\": \"timeline_analysis\",\n      \"confidence\": 0.8\n    }\n  ],\n  \"lesson_feedback\": [\n    {\n      \"lesson_id\": \"L0001\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Addresses a common procedural gap in risk analysis by requiring explicit remedial actions, which would have prevented the failure in C3.\"\n    },\n    {\n      \"lesson_id\": \"L0002\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Directly targets the omission in C4 by mandating days-remaining calculations, making the deliverable more actionable for clients.\"\n    },\n    {\n      \"lesson_id\": \"L0003\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Provides a clear, reusable method for handling weekend/holiday adjustments, which would have resolved the failure in C6.\"\n    }\n  ]\n}\n```"
+}

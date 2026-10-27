@@ -1,0 +1,143 @@
+{
+  "task_id": "MNA_T020",
+  "cycle": 1,
+  "lineage": "main",
+  "graded": true,
+  "failures": [
+    {
+      "criterion_id": "C2",
+      "what_went_wrong": "The agent incorrectly calculated the long-stop date as 23 October 2027 instead of the correct date, 1 November 2027. It also failed to note that the expected clearance date (15 November 2027) falls after the correct long-stop date.",
+      "should_have": "The agent should have accurately calculated the long-stop date as 150 days from the signing date (4 June 2027) and compared it to the expected clearance date to identify the timeline conflict.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C4",
+      "what_went_wrong": "The agent stated the long-stop date as 23 October 2027 instead of 1 November 2027 and did not calculate the days remaining from 10 June 2027 (144 days).",
+      "should_have": "The agent should have recomputed the long-stop date and days remaining from the current date to ensure accuracy in timeline analysis.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C6",
+      "what_went_wrong": "The agent did not include a dedicated section for assumptions and open questions, which would have highlighted missing information or items requiring client confirmation.",
+      "should_have": "The agent should have included an 'Assumptions and open questions' section to systematically list uncertainties, missing documents, or client confirmations needed.",
+      "failure_kind": "procedural"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T020_0",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Include an 'Assumptions and Open Questions' section in every legal memo to list missing information, uncertainties, or items requiring client confirmation.",
+      "source_tasks": [
+        "MNA_T020"
+      ],
+      "evidence": [
+        "MNA_T020:C6"
+      ],
+      "task_type_scope": "legal_memo",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T020_1",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Recompute all date-based calculations (e.g., long-stop dates, notice periods) using a calendar tool to verify accuracy before relying on them in analysis.",
+      "source_tasks": [
+        "MNA_T020"
+      ],
+      "evidence": [
+        "MNA_T020:C2",
+        "MNA_T020:C4"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T020_2",
+      "type": "practice_note",
+      "category": "review",
+      "text": "Cross-check all derived dates (e.g., termination dates, regulatory deadlines) against the original contractual provisions to ensure consistency and accuracy.",
+      "source_tasks": [
+        "MNA_T020"
+      ],
+      "evidence": [
+        "MNA_T020:C2",
+        "MNA_T020:C4"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T020_3",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Before finalising a legal memo, verify that all date calculations include the correct number of days remaining from the current date to key deadlines.",
+      "source_tasks": [
+        "MNA_T020"
+      ],
+      "evidence": [
+        "MNA_T020:C4"
+      ],
+      "task_type_scope": "legal_memo",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T020_4",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "When analysing regulatory timelines, compare the expected approval date with contractual deadlines to identify potential conflicts requiring renegotiation.",
+      "source_tasks": [
+        "MNA_T020"
+      ],
+      "evidence": [
+        "MNA_T020:C2"
+      ],
+      "task_type_scope": "legal_memo",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.8
+    },
+    {
+      "candidate_id": "c01_MNA_T020_5",
+      "type": "checklist",
+      "category": "review",
+      "text": "Ensure every legal memo includes a clear summary of timeline conflicts, with accurate date calculations and their implications for the transaction.",
+      "source_tasks": [
+        "MNA_T020"
+      ],
+      "evidence": [
+        "MNA_T020:C2",
+        "MNA_T020:C4"
+      ],
+      "task_type_scope": "legal_memo",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.8
+    }
+  ],
+  "lesson_feedback": [
+    {
+      "lesson_id": "L0001",
+      "label": "HELPFUL",
+      "reason": "This lesson addresses a common gap in legal memos by ensuring assumptions and open questions are explicitly documented, improving clarity and client communication."
+    },
+    {
+      "lesson_id": "L0002",
+      "label": "HELPFUL",
+      "reason": "Recomputing date-based calculations is a critical step to avoid errors in timeline analysis, which can have significant legal and transactional consequences."
+    },
+    {
+      "lesson_id": "L0003",
+      "label": "HELPFUL",
+      "reason": "Cross-checking derived dates against contractual provisions ensures consistency and reduces the risk of misinterpretation or oversight."
+    }
+  ],
+  "input_tokens": 4273,
+  "output_tokens": 1068,
+  "cost_usd": 0.0037385,
+  "prompt": "# Task\nType: legal_memo | Practice area: corporate_mna\nYou act for the Buyer, Redcliffe Media Ltd. Redcliffe Media Ltd (the Buyer) is acquiring the entire issued share capital of Ingleby Energy plc (the Company) from Kingsmere Retail Group plc (the Seller).\n\nPrepare a legal memo for the supervising partner analysing the key legal risks in the matter documents. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 10 June 2027. Address the deliverable to the supervising partner.\n\n# Trajectory (25 model steps, 25 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"client_email.md\"})\n 3. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 4. [research] read_document({\"name\": \"disclosure_letter.md\"})\n 5. [research] read_document({\"name\": \"escrow_agreement.md\"})\n 6. [research] search_documents({\"query\": \"warranty\"})\n 7. [research] search_documents({\"query\": \"clause 8\"})\n 8. [research] search_documents({\"query\": \"Eskdale\"})\n 9. [research] search_documents({\"query\": \"Lowther\"})\n10. [analysis] calculate({\"expression\": \"date('2027-06-04')\"})\n11. [analysis] calculate({\"expression\": \"add_days(date('2027-06-04'), 150)\"})\n12. [analysis] calculate({\"expression\": \"add_days(date('2027-06-04'), 150)\"})\n13. [analysis] calculate({\"expression\": \"date('2027-11-15')\"})\n14. [drafting] write_draft(<1046 words>)\n15. [verification] read_draft({})\n16. [verification] calculate({\"expression\": \"add_days(date('2027-06-04'), 150)\"})\n17. [verification] calculate({\"expression\": \"days_between(date('2027-06-04'), date('2027-10-23'))\"})\n18. [editing] edit_draft(find='**Legal Implications:**\\n1. **Automatic Termination Risk:** S' -> '**Legal Implications:**\\n1. **Automatic Termination Risk:** S')\n19. [verification] calculate({\"expression\": \"add_months(date('2027-07-12'), 18)\"})\n20. [editing] edit_draft(find='**Legal Implications:**\\n1. **Forum Shopping Risk:** Parties ' -> '**Legal Implications:**\\n1. **Forum Shopping Risk:** Parties ')\n21. [editing] edit_draft(find='**Legal Implications:**\\n1. **Forum Shopping Risk:** Parties ' -> '**Legal Implications:**\\n1. **Forum Shopping Risk:** Parties ')\n22. [editing] edit_draft(find='### 4.2 Escrow Agreement Revisions\\n\\n1. **Jurisdictional Alig' -> '### 4.2 Escrow Agreement Revisions\\n\\n1. **Jurisdictional Alig')\n23. [editing] edit_draft(find='3. **Timeline Alignment:**\\n   - Extend SPA termination date ' -> '3. **Timeline Alignment:**\\n   - Extend SPA termination date ')\n24. [verification] read_draft({})\n25. [control] finish({\"summary\": \"Legal memo analyzing key legal risks in Redcliffe Media Ltd's acquisition of Ingleby Energy plc, identifying five major risk areas: 1) Intellectual)\n\n# Final deliverable\n# LEGAL MEMORANDUM\n\n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Date:** 10 June 2027  \n**Re:** Acquisition of Ingleby Energy plc by Redcliffe Media Ltd – Key Legal Risks Analysis  \n**Matter:** Redcliffe Media Ltd / Ingleby Energy plc Acquisition  \n\n## 1. EXECUTIVE SUMMARY\n\nThis memorandum analyses the key legal risks arising from the proposed acquisition by Redcliffe Media Ltd (the \"Buyer\") of the entire issued share capital of Ingleby Energy plc (the \"Company\") from Kingsmere Retail Group plc (the \"Seller\"). The transaction documents reveal several significant legal risks requiring immediate attention, particularly concerning intellectual property ownership, escrow arrangements, and regulatory timelines.\n\n## 2. TRANSACTION OVERVIEW\n\n- **Parties:** Buyer (Redcliffe Media Ltd), Seller (Kingsmere Retail Group plc), Target (Ingleby Energy plc)\n- **Purchase Price:** $75,000,000 (seventy-five million US dollars)\n- **Closing Date:** 12 July 2027\n- **Key Conditions:** Regulatory approvals, accuracy of representations and warranties, performance of obligations\n- **Termination Date:** 23 October 2027 (150 days from SPA date of 4 June 2027)\n\n## 3. KEY LEGAL RISKS IDENTIFIED\n\n### 3.1 Intellectual Property Ownership Defect\n\n**Risk:** The Company's core platform software, developed in 2023 by Lowther Foods Ltd, lacks formal written assignment of intellectual property rights.\n\n**Documentary Evidence:**\n- Disclosure Letter dated 8 June 2027, Section 3\n- Development conducted without written agreement assigning IP rights\n- No written assignment executed between Company and Lowther Foods Ltd\n- Company operates on basis of implied licence only\n\n**Legal Implications:**\n1. **Title Risk:** The Company may not have legal title to its core operational software\n2. **Infringement Risk:** Continued use could constitute copyright infringement\n3. **Valuation Impact:** Core business asset may be significantly overvalued\n4. **Future Claims Risk:** Lowther Foods Ltd could assert ownership rights at any time\n\n**Risk Level:** HIGH – This affects fundamental business operations and asset valuation\n\n### 3.2 Escrow Agreement Jurisdictional Conflict\n\n**Risk:** The Escrow Agreement is governed by New York law with ICC arbitration in New York, while the SPA is governed by English law with English court jurisdiction.\n\n**Documentary Evidence:**\n- SPA Clause 15.1: English law and English court jurisdiction\n- Escrow Agreement Clause 12.1: New York law and ICC arbitration in New York\n- Escrow Amount: £1,750,000 (7.5% of purchase price)\n\n**Legal Implications:**\n1. **Forum Shopping Risk:** Parties could engage in strategic forum selection\n2. **Conflict of Laws:** Potential for inconsistent legal interpretations\n3. **Enforcement Complexity:** Cross-border enforcement of arbitration awards\n4. **Increased Costs:** Dual legal systems and arbitration proceedings\n5. **Timing Inconsistency:** Escrow period stated as commencing 10 June 2027 (before completion on 12 July 2027)\n6. **Currency Risk:** Purchase price in USD ($75,000,000) vs escrow in GBP (£1,750,000) creates FX exposure\n\n**Risk Level:** MEDIUM-HIGH – Creates procedural complexity and potential disputes\n\n### 3.3 Regulatory Approval Timeline Conflict\n\n**Risk:** The SPA termination date (23 October 2027) precedes the expected merger clearance date (15 November 2027).\n\n**Documentary Evidence:**\n- Client Email: Merger clearance expected by 15 November 2027\n- SPA Clause 4.5: Termination date 23 October 2027 (150 days from 4 June 2027)\n- SPA Clause 3.1: Conditions must be fulfilled within 150 days\n\n**Legal Implications:**\n1. **Automatic Termination Risk:** SPA may terminate before regulatory approval obtained\n2. **Date Discrepancy:** SPA states 150 days but specifies 23 October 2027 (141 days) - creates ambiguity\n3. **Wasted Costs:** Due diligence and transaction costs incurred without completion\n4. **Renegotiation Leverage:** Seller may seek better terms if renegotiation required\n5. **Market Uncertainty:** Extended timeline could affect business operations\n\n**Risk Level:** HIGH – Fundamental timing mismatch and date ambiguity threaten transaction completion\n\n### 3.4 Material Customer Relationship (Eskdale Pharma plc)\n\n**Risk:** Despite disclosures stating no material financial arrangements, significant escrow established specifically for Eskdale Pharma-related liabilities.\n\n**Documentary Evidence:**\n- Disclosure Letter Section 4: No outstanding loans/guarantees exceeding £100,000\n- Escrow Agreement Recital B: Escrow secures obligations for Eskdale Pharma-related liabilities\n- Client Email: Request for advice on implications of Company's relationship with Eskdale Pharma\n\n**Legal Implications:**\n1. **Contradictory Signals:** Significant escrow suggests unstated concerns\n2. **Due Diligence Gap:** Potential undisclosed liabilities or contingent exposures\n3. **Post-Completion Claims:** Buyer may face unexpected liabilities\n4. **Relationship Risk:** Material customer dependency not fully addressed\n\n**Risk Level:** MEDIUM – Requires enhanced due diligence on customer relationships\n\n### 3.5 Incomplete SPA Documentation\n\n**Risk:** The SPA provided is incomplete, missing key provisions including warranties, indemnities, and limitations of liability.\n\n**Documentary Evidence:**\n- SPA references Clause 8 (warranties) and Clause 8.2 (specific warranty) but not included\n- Disclosure Letter references Warranties in Clause 8 of SPA\n- Escrow Agreement references Clause 8.2 of SPA for indemnification\n\n**Legal Implications:**\n1. **Uncertain Obligations:** Buyer's rights and Seller's obligations unclear\n2. **Enforcement Risk:** Missing provisions may be unenforceable\n3. **Negotiation Disadvantage:** Critical terms not documented\n4. **Due Diligence Deficiency:** Incomplete risk assessment possible\n\n**Risk Level:** HIGH – Transaction lacks fundamental contractual protections\n\n## 4. RECOMMENDATIONS\n\n### 4.1 Immediate Actions Required\n\n1. **IP Remediation:** \n   - Negotiate retroactive assignment from Lowther Foods Ltd\n   - Conduct IP valuation assessment\n   - Consider price adjustment or specific indemnity\n\n2. **Document Completion:**\n   - Obtain complete SPA including all schedules and annexures\n   - Review and negotiate warranty and indemnity provisions\n   - Ensure consistency across all transaction documents\n\n3. **Timeline Alignment:**\n   - Extend SPA termination date beyond 15 November 2027\n   - Correct date discrepancy (150 days vs 23 October 2027)\n   - Consider regulatory approval as condition precedent\n   - Negotiate extension mechanism for regulatory delays\n\n### 4.2 Escrow Agreement Revisions\n\n1. **Jurisdictional Alignment:**\n   - Align governing law with SPA (English law)\n   - Consider English arbitration or court jurisdiction\n   - Ensure consistent dispute resolution mechanisms\n\n2. **Clarity on Claims:**\n   - Define specific Eskdale Pharma-related triggers\n   - Establish clear claims process and evidence requirements\n   - Review escrow amount adequacy (£1,750,000)\n\n3. **Timing Correction:**\n   - Align escrow commencement date with actual completion date\n   - Clarify escrow period calculation (18 months from completion)\n\n4. **Currency Consistency:**\n   - Consider aligning escrow currency with purchase price currency (USD)\n   - Address foreign exchange risk in escrow arrangements\n\n### 4.3 Enhanced Due Diligence\n\n1. **Customer Relationships:**\n   - Comprehensive review of Eskdale Pharma contracts\n   - Assessment of revenue concentration risk\n   - Analysis of contractual termination rights\n\n2. **Software Due Diligence:**\n   - Technical audit of core platform software\n   - Assessment of alternative software options\n   - Review of maintenance and support arrangements\n\n## 5. CONCLUSION\n\nThe acquisition presents several material legal risks requiring immediate attention. The intellectual property defect represents the most significant risk, potentially affecting the fundamental value proposition of the transaction. The jurisdictional conflict in dispute resolution mechanisms and the regulatory timeline mismatch also pose substantial completion risks.\n\n**Priority Actions:**\n1. Address IP ownership issue before completion\n2. Obtain complete transaction documentation\n3. Align regulatory and contractual timelines\n4. Harmonise dispute resolution mechanisms\n\nWithout addressing these issues, the Buyer faces significant post-completion liabilities and operational risks. Immediate renegotiation of key terms is recommended to protect the Buyer's interests and ensure transaction viability.\n\n**Next Steps:** Request urgent meeting with Seller's counsel to address identified issues and negotiate necessary amendments to transaction documents.\n\n# Expert rubric verdicts (3/6 passed)\n- C1 [PASS] Identifies that the core platform was developed by contractor Lowther Foods Ltd without a written IP assignment, so the Company may not own it, and recommends obtaining a confirmatory assignment as a condition to Closing.\n    judges: PASS: The deliverable identifies the IP ownership defect (software developed by Lowther Foods Ltd without written assignment) and recommends negotiating a retroactive assignment as an immediate action. | PASS: The deliverable clearly identifies the IP issue with Lowther Foods Ltd and recommends negotiating a retroactive assignment (Section 3.1 and Recommendation 4.1.1).\n- C2 [FAIL] Calculates the long-stop date as 1 November 2027 (150 days after signing on 4 June 2027) and identifies that expected clearance on 15 November 2027 falls after it, recommending an extension.\n    judges: FAIL: The deliverable incorrectly calculates the long-stop date as 23 October 2027 and fails to identify that the correct date (1 November 2027) still precedes the expected clearance date of 15 November 2027. | FAIL: The deliverable incorrectly states the long-stop date as 23 October 2027 (141 days) rather than calculating 150 days from 4 June 2027 as 1 November 2027. It notes the date discrepancy but fails to correctly calculate the\n- C3 [PASS] Identifies the mismatch between English law / English courts in the SPA and New York law / New York arbitration in the escrow agreement, and the risk of parallel proceedings on escrow claims.\n    judges: PASS: The deliverable correctly identifies the governing law and jurisdiction mismatch between the SPA (English law/courts) and the Escrow Agreement (New York law/arbitration) and notes the risk of forum shopping and enforceme | PASS: The deliverable clearly identifies the jurisdictional mismatch between English law/English courts in the SPA and New York law/ICC arbitration in the escrow agreement, with analysis of parallel proceedings risks (Section \n- C4 [FAIL] Gives the long-stop period as 150 days and as the date 1 November 2027, with days remaining from 10 June 2027 (144 days).\n    judges: FAIL: The deliverable states the long-stop date as 23 October 2027 rather than the correct date of 1 November 2027, and states 141 days remaining rather than the correct 144 days. | FAIL: The deliverable gives the long-stop period as 150 days but incorrectly states the date as 23 October 2027 instead of 1 November 2027, and does not calculate days remaining from 10 June 2027 as 144 days.\n- C5 [PASS] Opens with a short 'Bottom line' / executive summary stating the overall conclusion and the most important risks before the detailed analysis.\n    judges: PASS: The deliverable opens with an Executive Summary section that states the overall conclusion and identifies the most important risks before the detailed analysis. | PASS: The deliverable opens with an Executive Summary (Section 1) stating overall conclusion and most important risks, though it uses 'Executive Summary' rather than 'Bottom line' wording.\n- C6 [FAIL] Includes an 'Assumptions and open questions' section listing information that is missing or should be confirmed with the client.\n    judges: FAIL: The deliverable lacks a dedicated 'Assumptions and open questions' section listing missing information or items to confirm with the client. | FAIL: The deliverable does not include an 'Assumptions and open questions' section listing missing information or items to confirm with the client. While it notes the SPA is incomplete, this is framed as a risk rather than a s\n\n# Your job\nAnalyse each FAILED criterion: what went wrong, what the agent should have done, and whether the failure is procedural (reusable) or task-specific. Then write reusable candidate lessons that would prevent the procedural failures on other matters.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|legal_memo\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C2\",\n      \"what_went_wrong\": \"The agent incorrectly calculated the long-stop date as 23 October 2027 instead of the correct date, 1 November 2027. It also failed to note that the expected clearance date (15 November 2027) falls after the correct long-stop date.\",\n      \"should_have\": \"The agent should have accurately calculated the long-stop date as 150 days from the signing date (4 June 2027) and compared it to the expected clearance date to identify the timeline conflict.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C4\",\n      \"what_went_wrong\": \"The agent stated the long-stop date as 23 October 2027 instead of 1 November 2027 and did not calculate the days remaining from 10 June 2027 (144 days).\",\n      \"should_have\": \"The agent should have recomputed the long-stop date and days remaining from the current date to ensure accuracy in timeline analysis.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C6\",\n      \"what_went_wrong\": \"The agent did not include a dedicated section for assumptions and open questions, which would have highlighted missing information or items requiring client confirmation.\",\n      \"should_have\": \"The agent should have included an 'Assumptions and open questions' section to systematically list uncertainties, missing documents, or client confirmations needed.\",\n      \"failure_kind\": \"procedural\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"Include an 'Assumptions and Open Questions' section in every legal memo to list missing information, uncertainties, or items requiring client confirmation.\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"legal_memo\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Recompute all date-based calculations (e.g., long-stop dates, notice periods) using a calendar tool to verify accuracy before relying on them in analysis.\",\n      \"evidence\": [\"C2\", \"C4\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"review\",\n      \"text\": \"Cross-check all derived dates (e.g., termination dates, regulatory deadlines) against the original contractual provisions to ensure consistency and accuracy.\",\n      \"evidence\": [\"C2\", \"C4\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"Before finalising a legal memo, verify that all date calculations include the correct number of days remaining from the current date to key deadlines.\",\n      \"evidence\": [\"C4\"],\n      \"task_type_scope\": \"legal_memo\",\n      \"confidence\": 0.85\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"When analysing regulatory timelines, compare the expected approval date with contractual deadlines to identify potential conflicts requiring renegotiation.\",\n      \"evidence\": [\"C2\"],\n      \"task_type_scope\": \"legal_memo\",\n      \"confidence\": 0.8\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"review\",\n      \"text\": \"Ensure every legal memo includes a clear summary of timeline conflicts, with accurate date calculations and their implications for the transaction.\",\n      \"evidence\": [\"C2\", \"C4\"],\n      \"task_type_scope\": \"legal_memo\",\n      \"confidence\": 0.8\n    }\n  ],\n  \"lesson_feedback\": [\n    {\n      \"lesson_id\": \"L0001\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"This lesson addresses a common gap in legal memos by ensuring assumptions and open questions are explicitly documented, improving clarity and client communication.\"\n    },\n    {\n      \"lesson_id\": \"L0002\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Recomputing date-based calculations is a critical step to avoid errors in timeline analysis, which can have significant legal and transactional consequences.\"\n    },\n    {\n      \"lesson_id\": \"L0003\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Cross-checking derived dates against contractual provisions ensures consistency and reduces the risk of misinterpretation or oversight.\"\n    }\n  ]\n}\n```"
+}

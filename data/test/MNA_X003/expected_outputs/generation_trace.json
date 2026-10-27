@@ -1,0 +1,131 @@
+{
+  "docs": [
+    {
+      "title": "share_purchase_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 644,
+            "output_tokens": 890
+          }
+        }
+      ]
+    },
+    {
+      "title": "material_customer_contract.md",
+      "attempts": [
+        {
+          "missing": [
+            "change of control"
+          ],
+          "usage": {
+            "input_tokens": 514,
+            "output_tokens": 916
+          }
+        },
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 1455,
+            "output_tokens": 912
+          }
+        }
+      ]
+    },
+    {
+      "title": "disclosure_letter.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 494,
+            "output_tokens": 865
+          }
+        }
+      ]
+    },
+    {
+      "title": "employment_agreement.md",
+      "attempts": [
+        {
+          "missing": [
+            "12 months"
+          ],
+          "usage": {
+            "input_tokens": 491,
+            "output_tokens": 959
+          }
+        },
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 1476,
+            "output_tokens": 979
+          }
+        }
+      ]
+    },
+    {
+      "title": "client_email.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 474,
+            "output_tokens": 371
+          }
+        }
+      ]
+    }
+  ],
+  "doc_facts": {
+    "share_purchase_agreement.md": {
+      "key": "spa",
+      "facts": [
+        "Parties: Orwell Technologies Ltd (Buyer), Yarrow Media Ltd (Seller); the Company is Juniper Energy plc.",
+        "Section 2.1: the Purchase Price is $20,000,000.",
+        "This Agreement is dated 7 May 2026; Closing is scheduled for 26 June 2026 (the 'Closing Date').",
+        "Section 12.1: the Seller shall not compete with the business for 5 years after Closing.",
+        "Section 8.5 (Limitation of Liability): the aggregate liability of the Seller for warranty claims shall not exceed an amount equal to 10% of the Purchase Price, being $2,400,000. The Purchase Price is $20,000,000 (see Section 2.1)."
+      ],
+      "must_contain": [
+        "5 years",
+        "10%",
+        "$2,400,000",
+        "$20,000,000"
+      ]
+    },
+    "material_customer_contract.md": {
+      "key": "material_contract",
+      "facts": [
+        "Clause 14.2: either party may terminate this agreement on 30 days' notice if the other party undergoes a change of control without its prior written consent. The counterparty is Saltash Logistics plc."
+      ],
+      "must_contain": [
+        "change of control",
+        "prior written consent"
+      ]
+    },
+    "disclosure_letter.md": {
+      "key": "disclosure",
+      "facts": [
+        "Disclosure against Warranty 6.3 (Material Contracts): no material contract contains a change of control provision. (No further disclosure.)"
+      ],
+      "must_contain": []
+    },
+    "employment_agreement.md": {
+      "key": "employment",
+      "facts": [
+        "Clause 18: the Founder shall not compete with the business for 12 months after termination of employment."
+      ],
+      "must_contain": [
+        "12 months"
+      ]
+    },
+    "client_email.md": {
+      "key": "client_email",
+      "facts": [],
+      "must_contain": []
+    }
+  }
+}

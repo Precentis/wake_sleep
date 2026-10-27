@@ -1,0 +1,139 @@
+{
+  "task_id": "MNA_T091",
+  "cycle": 1,
+  "lineage": "ablation_no_commit_gate",
+  "graded": true,
+  "failures": [
+    {
+      "criterion_id": "C1",
+      "what_went_wrong": "The agent identified broad exclusions in the Material Adverse Change (MAC) definition but failed to spot the absence of a 'disproportionate effect' exception, which is a standard risk allocation tool.",
+      "should_have": "Explicitly checked for and flagged the absence of a 'disproportionate effect' exception in MAC carve-outs, especially in sector-specific contexts like pharmaceuticals where such risks are heightened.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C2",
+      "what_went_wrong": "The agent stated warranty survival periods as durations (24/48 months) but did not convert these into specific calendar deadlines based on the proposed closing date.",
+      "should_have": "Calculated and explicitly stated the exact expiry dates for warranty claims by adding the survival periods to the proposed closing date.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C4",
+      "what_went_wrong": "The agent identified a discrepancy in the warranty cap but showed the reverse arithmetic (percentage of stated cap) instead of calculating the correct cap based on the stated percentage of the purchase price.",
+      "should_have": "Shown the correct arithmetic (stated percentage × purchase price) and flagged the discrepancy with the stated cap figure.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C5",
+      "what_went_wrong": "The agent did not convert survival periods into specific dates or calculate the days remaining until warranty expiry from the current date.",
+      "should_have": "Converted survival periods into specific expiry dates and calculated the days remaining from the current date to highlight urgency.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C6",
+      "what_went_wrong": "The 'Executive Summary' described the transaction and documents but did not provide a concise 'bottom line' conclusion or prioritise the most critical risks upfront.",
+      "should_have": "Opened with a clear, concise 'bottom line' statement summarising the most important risks and overall conclusion before detailed analysis.",
+      "failure_kind": "procedural"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T091_0",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "For every Material Adverse Change (MAC) clause, explicitly check for and flag the absence of a 'disproportionate effect' exception in carve-outs, especially in sector-specific contexts.",
+      "source_tasks": [
+        "MNA_T091"
+      ],
+      "evidence": [
+        "MNA_T091:C1"
+      ],
+      "task_type_scope": "issues_list",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T091_1",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Convert all warranty survival periods into specific expiry dates by adding the survival duration to the proposed closing date, and calculate days remaining from the current date.",
+      "source_tasks": [
+        "MNA_T091"
+      ],
+      "evidence": [
+        "MNA_T091:C2",
+        "MNA_T091:C5"
+      ],
+      "task_type_scope": "issues_list",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T091_2",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Recompute caps or limits expressed as a percentage of a base figure (e.g., purchase price) using the stated percentage, and flag any discrepancy with the stated figure.",
+      "source_tasks": [
+        "MNA_T091"
+      ],
+      "evidence": [
+        "MNA_T091:C3",
+        "MNA_T091:C4"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T091_3",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Begin every issues list with a concise 'Bottom line' section stating the overall conclusion and the 2-3 most critical risks, before detailed analysis.",
+      "source_tasks": [
+        "MNA_T091"
+      ],
+      "evidence": [
+        "MNA_T091:C6"
+      ],
+      "task_type_scope": "issues_list",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T091_4",
+      "type": "practice_note",
+      "category": "review",
+      "text": "Before finalising an issues list, verify that all time-based obligations (e.g., survival periods, notice deadlines) are expressed both as durations and specific calendar dates.",
+      "source_tasks": [
+        "MNA_T091"
+      ],
+      "evidence": [
+        "MNA_T091:C2",
+        "MNA_T091:C5"
+      ],
+      "task_type_scope": "issues_list",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T091_5",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Ensure every derived figure (e.g., caps, thresholds) in a deliverable includes the arithmetic used to calculate it, even if the calculation is simple.",
+      "source_tasks": [
+        "MNA_T091"
+      ],
+      "evidence": [
+        "MNA_T091:C4"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.85
+    }
+  ],
+  "lesson_feedback": [],
+  "input_tokens": 4039,
+  "output_tokens": 1072,
+  "cost_usd": 0.0036275,
+  "prompt": "# Task\nType: issues_list | Practice area: corporate_mna\nYou act for the Buyer, Orwell Marine Ltd. Orwell Marine Ltd (the Buyer) is acquiring the entire issued share capital of Calloway Pharma plc (the Company) from Marlow Robotics Ltd (the Seller).\n\nPrepare an issues list for the supervising partner covering the matter documents. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 23 June 2027. Address the deliverable to the supervising partner.\n\n# Trajectory (19 model steps, 19 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"client_email.md\"})\n 3. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 4. [research] search_documents({\"query\": \"Warranties\"})\n 5. [research] search_documents({\"query\": \"conditions precedent\"})\n 6. [research] search_documents({\"query\": \"disclosure\"})\n 7. [analysis] calculate({\"expression\": \"date('2027-06-23')\"})\n 8. [analysis] calculate({\"expression\": \"days_between(date('2027-06-23'), date('2027-09-01'))\"})\n 9. [drafting] write_draft(<864 words>)\n10. [verification] read_draft({})\n11. [verification] calculate({\"expression\": \"45000000 * 0.25\"})\n12. [verification] calculate({\"expression\": \"10125000 / 45000000\"})\n13. [editing] edit_draft(find='### 5. **Limitation of Liability**\\n- **Issue:** Clause 9.2 c' -> '### 5. **Limitation of Liability**\\n- **Issue:** Clause 9.2 c')\n14. [editing] edit_draft(find='### 10. **Missing Disclosure Letter**\\n- **Issue:** Client em' -> '### 10. **Missing Disclosure Letter**\\n- **Issue:** Client em')\n15. [editing] edit_draft(find='### 8. **Purchase Price Currency**\\n- **Issue:** Purchase Pri' -> '### 8. **Purchase Price Currency and Payment Terms**\\n- **Iss')\n16. [editing] edit_draft(find='### 9. **Confidentiality Duration**\\n- **Issue:** Clause 5.2 ' -> '### 9. **Confidentiality Duration**\\n- **Issue:** Clause 5.2 ')\n17. [editing] edit_draft(find='### 11. **Governing Law and Jurisdiction**\\n- **Issue:** The ' -> '### 11. **Company as Party**\\n- **Issue:** The Company is lis')\n18. [verification] read_draft({})\n19. [control] finish({\"summary\": \"Issues list for acquisition of Calloway Pharma plc by Orwell Marine Ltd, identifying 12 critical issues including timeline discrepancy, incomplete )\n\n# Final deliverable\n# Issues List: Acquisition of Calloway Pharma plc by Orwell Marine Ltd\n\n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Date:** 23 June 2027  \n**Matter:** Acquisition of entire issued share capital of Calloway Pharma plc from Marlow Robotics Ltd  \n**Client:** Orwell Marine Ltd (Buyer)  \n**Our Role:** Acting for the Buyer  \n\n## Executive Summary\n\nWe have reviewed the matter documents comprising: (1) client email dated 18 June 2027 from Yusuf Yardley (Corporate Development Manager, Orwell Marine Ltd); and (2) draft Share Purchase Agreement dated 16 June 2027. The transaction involves the acquisition of the entire issued share capital of Calloway Pharma plc (a pharmaceutical company) for $45,000,000, with a proposed Closing Date of 1 September 2027.\n\n## Critical Issues Requiring Immediate Attention\n\n### 1. **Timeline Discrepancy**\n- **Issue:** Client email states intention to complete transaction \"prior to 23 June 2027\" (today's date), but SPA provides for Closing Date of 1 September 2027.\n- **Implication:** Either the client's timeline expectations are unrealistic, or the SPA Closing Date needs immediate revision.\n- **Action Required:** Clarify with client whether 1 September 2027 is acceptable or if earlier completion is required.\n\n### 2. **Incomplete Share Purchase Agreement**\n- **Issue:** The SPA is missing critical sections: Sections 6, 7, and 8 are absent. The document jumps from Section 5 (Confidentiality) to Section 9 (Limitation of Liability).\n- **Missing Sections Likely Include:** Warranties, Conditions Precedent, Indemnities, and Tax provisions.\n- **Implication:** Cannot properly assess risk allocation or negotiate key protections for Buyer.\n- **Action Required:** Request complete draft SPA from Seller's counsel.\n\n### 3. **Material Adverse Change Definition**\n- **Issue:** Clause 1.1 defines \"Material Adverse Change\" with broad exclusions including pandemics/public health emergencies \"regardless of duration or geographic scope.\"\n- **Implication:** For a pharmaceutical company, pandemic exclusions could be particularly detrimental as they may significantly impact operations.\n- **Action Required:** Negotiate narrower exclusions or pandemic carve-backs appropriate for pharmaceutical sector.\n\n### 4. **Warranty Framework Incomplete**\n- **Issue:** While Sections 9.2 and 10.1 reference Warranties, the actual warranty provisions appear to be missing.\n- **Implication:** Cannot assess scope of Seller's representations or Buyer's protections.\n- **Action Required:** Obtain complete warranty schedule and ensure comprehensive coverage for pharmaceutical regulatory compliance, intellectual property, material contracts (including Merrion Bioscience plc supply contract), and product liability.\n\n### 5. **Limitation of Liability**\n- **Issue:** Clause 9.2 caps Seller's liability at 25% of Purchase Price ($10,125,000) for warranty claims (excluding fraud). **Note:** $10,125,000 represents 22.5% of $45,000,000, not 25% as stated.\n- **Implication:** May be insufficient given pharmaceutical sector risks (regulatory, product liability, IP). Additionally, mathematical error creates ambiguity.\n- **Action Required:** Consider negotiating higher cap (e.g., 50-100% of Purchase Price) or uncapped liability for fundamental warranties. Correct mathematical discrepancy.\n\n### 6. **Warranty Survival Periods**\n- **Issue:** Clause 10.1 provides 24-month survival for General Warranties and 48-month for Fundamental Warranties (title, capacity, tax).\n- **Implication:** 24 months may be insufficient for latent defects in pharmaceutical operations (e.g., product liability claims, regulatory non-compliance).\n- **Action Required:** Extend General Warranty survival to 36 months; consider longer periods for specific operational warranties.\n\n### 7. **Absence of Conditions Precedent**\n- **Issue:** No conditions precedent section in current draft.\n- **Implication:** Buyer has no contractual right to withdraw if due diligence reveals material issues.\n- **Action Required:** Insert standard conditions precedent including satisfactory due diligence, regulatory approvals (MHRA/FDA if applicable), third-party consents (including Merrion Bioscience contract), and no Material Adverse Change.\n\n### 8. **Purchase Price Currency and Payment Terms**\n- **Issue:** Purchase Price stated as $45,000,000 (US dollars) but all parties are UK companies. Clause 3.2 states \"Time for payment shall be of the essence.\"\n- **Implication:** Exchange rate risk for Buyer. Strict time-is-of-the-essence provision creates risk of technical default for minor payment delays.\n- **Action Required:** Consider specifying GBP equivalent or including currency fluctuation protection. Negotiate removal or qualification of time-is-of-the-essence clause.\n\n### 9. **Confidentiality Duration**\n- **Issue:** Clause 5.2 imposes 5-year confidentiality obligation post-completion.\n- **Implication:** May restrict Buyer's ability to discuss acquisition for business purposes.\n- **Action Required:** Negotiate standard exceptions (disclosure to professional advisors, regulatory requirements, public announcements).\n\n### 10. **Missing Disclosure Letter**\n- **Issue:** Client email references need for disclosure letter, but none provided.\n- **Implication:** Cannot assess qualifications to warranties or known issues.\n- **Action Required:** Request draft disclosure letter from Seller and review against due diligence findings.\n\n### 11. **Company as Party**\n- **Issue:** The Company is listed as a party (Clause (3)) but has no apparent obligations under the agreement.\n- **Implication:** Unclear why Company is a party; may create unnecessary complexity or unintended obligations.\n- **Action Required:** Clarify purpose of Company's inclusion or consider removing as party if not required for specific covenants.\n\n### 12. **Governing Law and Jurisdiction**\n- **Issue:** The governing law clause is unnumbered and appears after Section 10, suggesting poor document structure.\n- **Implication:** Potential ambiguity in document hierarchy and interpretation.\n- **Action Required:** Ensure proper numbering and placement within agreement structure.\n\n## Due Diligence Priorities\n\nBased on client email reference to \"material supply contract with Merrion Bioscience plc\" and pharmaceutical sector:\n\n1. **Regulatory Compliance:** MHRA/FDA approvals, GMP compliance, product registrations\n2. **Intellectual Property:** Patent portfolio, trademarks, know-how protection\n3. **Material Contracts:** Merrion Bioscience supply agreement terms (duration, termination rights, change of control provisions)\n4. **Product Liability:** Insurance coverage, historical claims, litigation\n5. **Environmental:** Pharmaceutical manufacturing compliance\n6. **Data Protection:** Clinical trial data, patient information compliance\n\n## Next Steps\n\n1. **Immediate (Today):**\n   - Contact client to clarify timeline discrepancy\n   - Request complete SPA draft from Seller's counsel\n   - Initiate due diligence checklist\n\n2. **Short-term (This Week):**\n   - Review due diligence materials\n   - Prepare warranty wish-list for pharmaceutical acquisition\n   - Draft conditions precedent clause\n\n3. **Medium-term:**\n   - Negotiate SPA terms based on due diligence findings\n   - Prepare disclosure letter review\n   - Coordinate completion mechanics\n\n## Recommendation\n\nGiven the incomplete state of documentation and tight client timeline expectations, we recommend an urgent call with the client to:\n1. Reset realistic timeline expectations\n2. Confirm scope of due diligence required\n3. Authorize immediate request for complete documentation from Seller\n\nThe pharmaceutical sector presents specific regulatory and liability risks requiring particularly robust warranty protection and thorough due diligence.\n\n# Expert rubric verdicts (1/6 passed)\n- C1 [FAIL] Identifies that the MAC carve-outs (general economic, industry-wide and pandemic changes) contain no 'disproportionate effect' exception, so the Buyer bears those risks even where the Company is disproportionately affected, and recommends adding one.\n    judges: FAIL: The deliverable identifies the MAC definition and its broad exclusions but does not identify the missing 'disproportionate effect' exception or recommend adding one. | FAIL: The deliverable discusses MAC carve-outs at Issue 3 but only notes the broad pandemic exclusion as problematic for a pharmaceutical company; it does not identify the absence of a 'disproportionate effect' exception as a \n- C2 [FAIL] States that General Warranty claims must be notified by 1 September 2029 (24 months after Closing) and Fundamental Warranty claims by 1 September 2031 (48 months after Closing).\n    judges: FAIL: The deliverable states survival periods as durations (24 and 48 months) but does not calculate or state the specific claim notification deadlines of 1 September 2029 and 1 September 2031. | FAIL: The deliverable mentions 24-month and 48-month survival periods at Issue 6 but does not convert these to specific dates (1 September 2029 and 1 September 2031) as required.\n- C3 [PASS] Identifies that the warranty cap in SPA Section 9.2 is stated as $10,125,000 but 25% of the $45,000,000 Purchase Price is $11,250,000, i.e. the stated figure is wrong.\n    judges: PASS: The deliverable correctly identifies that the stated cap of $10,125,000 is incorrect, noting it represents 22.5% rather than the stated 25%. | PASS: At Issue 5, the deliverable correctly identifies that $10,125,000 represents 22.5% of $45,000,000, not 25% as stated in the SPA, flagging the mathematical error in the stated figure.\n- C4 [FAIL] Shows the arithmetic for the cap (25% x $45,000,000 = $11,250,000) and flags the discrepancy with the stated $10,125,000.\n    judges: FAIL: The deliverable does not show the correct arithmetic (25% x $45,000,000 = $11,250,000) nor flag the specific discrepancy between $11,250,000 and $10,125,000. | FAIL: While the deliverable identifies the discrepancy, it shows the reverse arithmetic (stating $10,125,000 is 22.5% of $45,000,000) rather than showing the correct calculation of 25% x $45,000,000 = $11,250,000 as required.\n- C5 [FAIL] States the survival periods as durations and as dates (1 September 2029; 1 September 2031) and gives days remaining to the general-warranty expiry from 23 June 2027 (801 days).\n    judges: FAIL: The deliverable does not state the survival periods as specific dates (1 September 2029; 1 September 2031) nor calculate the 801 days remaining to general-warranty expiry from 23 June 2027. | FAIL: The deliverable states survival periods as durations only (24 months, 48 months) but does not convert these to specific dates (1 September 2029, 1 September 2031) nor calculate days remaining to general-warranty expiry f\n- C6 [FAIL] Opens with a short 'Bottom line' / executive summary stating the overall conclusion and the most important risks before the detailed analysis.\n    judges: PASS: The deliverable opens with an Executive Summary that states the overall conclusion and identifies key risks including the timeline discrepancy and incomplete SPA before the detailed analysis. | FAIL: The deliverable has an 'Executive Summary' section but it merely describes the documents reviewed and transaction overview; it does not provide a 'bottom line' conclusion or state the most important risks before the deta\n\n# Your job\nAnalyse each FAILED criterion: what went wrong, what the agent should have done, and whether the failure is procedural (reusable) or task-specific. Then write reusable candidate lessons that would prevent the procedural failures on other matters.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|issues_list\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C1\",\n      \"what_went_wrong\": \"The agent identified broad exclusions in the Material Adverse Change (MAC) definition but failed to spot the absence of a 'disproportionate effect' exception, which is a standard risk allocation tool.\",\n      \"should_have\": \"Explicitly checked for and flagged the absence of a 'disproportionate effect' exception in MAC carve-outs, especially in sector-specific contexts like pharmaceuticals where such risks are heightened.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C2\",\n      \"what_went_wrong\": \"The agent stated warranty survival periods as durations (24/48 months) but did not convert these into specific calendar deadlines based on the proposed closing date.\",\n      \"should_have\": \"Calculated and explicitly stated the exact expiry dates for warranty claims by adding the survival periods to the proposed closing date.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C4\",\n      \"what_went_wrong\": \"The agent identified a discrepancy in the warranty cap but showed the reverse arithmetic (percentage of stated cap) instead of calculating the correct cap based on the stated percentage of the purchase price.\",\n      \"should_have\": \"Shown the correct arithmetic (stated percentage × purchase price) and flagged the discrepancy with the stated cap figure.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C5\",\n      \"what_went_wrong\": \"The agent did not convert survival periods into specific dates or calculate the days remaining until warranty expiry from the current date.\",\n      \"should_have\": \"Converted survival periods into specific expiry dates and calculated the days remaining from the current date to highlight urgency.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C6\",\n      \"what_went_wrong\": \"The 'Executive Summary' described the transaction and documents but did not provide a concise 'bottom line' conclusion or prioritise the most critical risks upfront.\",\n      \"should_have\": \"Opened with a clear, concise 'bottom line' statement summarising the most important risks and overall conclusion before detailed analysis.\",\n      \"failure_kind\": \"procedural\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"For every Material Adverse Change (MAC) clause, explicitly check for and flag the absence of a 'disproportionate effect' exception in carve-outs, especially in sector-specific contexts.\",\n      \"evidence\": [\"C1\"],\n      \"task_type_scope\": \"issues_list\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Convert all warranty survival periods into specific expiry dates by adding the survival duration to the proposed closing date, and calculate days remaining from the current date.\",\n      \"evidence\": [\"C2\", \"C5\"],\n      \"task_type_scope\": \"issues_list\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Recompute caps or limits expressed as a percentage of a base figure (e.g., purchase price) using the stated percentage, and flag any discrepancy with the stated figure.\",\n      \"evidence\": [\"C3\", \"C4\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"Begin every issues list with a concise 'Bottom line' section stating the overall conclusion and the 2-3 most critical risks, before detailed analysis.\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"issues_list\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"review\",\n      \"text\": \"Before finalising an issues list, verify that all time-based obligations (e.g., survival periods, notice deadlines) are expressed both as durations and specific calendar dates.\",\n      \"evidence\": [\"C2\", \"C5\"],\n      \"task_type_scope\": \"issues_list\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"Ensure every derived figure (e.g., caps, thresholds) in a deliverable includes the arithmetic used to calculate it, even if the calculation is simple.\",\n      \"evidence\": [\"C4\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.85\n    }\n  ],\n  \"lesson_feedback\": []\n}\n```"
+}

@@ -1,0 +1,162 @@
+{
+  "docs": [
+    {
+      "title": "share_purchase_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 695,
+            "output_tokens": 1145
+          }
+        }
+      ]
+    },
+    {
+      "title": "escrow_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 555,
+            "output_tokens": 1029
+          }
+        }
+      ]
+    },
+    {
+      "title": "client_email.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 519,
+            "output_tokens": 444
+          }
+        }
+      ]
+    },
+    {
+      "title": "board_minutes.md",
+      "attempts": [
+        {
+          "missing": [
+            "2 directors"
+          ],
+          "usage": {
+            "input_tokens": 488,
+            "output_tokens": 733
+          }
+        },
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 1246,
+            "output_tokens": 726
+          }
+        }
+      ]
+    },
+    {
+      "title": "articles_of_association_extract.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 494,
+            "output_tokens": 1043
+          }
+        }
+      ]
+    },
+    {
+      "title": "disclosure_letter.md",
+      "attempts": [
+        {
+          "missing": [
+            "No written assignment"
+          ],
+          "usage": {
+            "input_tokens": 524,
+            "output_tokens": 948
+          }
+        },
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 1497,
+            "output_tokens": 984
+          }
+        }
+      ]
+    }
+  ],
+  "doc_facts": {
+    "share_purchase_agreement.md": {
+      "key": "spa",
+      "facts": [
+        "Parties: Oakhurst Pharma plc (Buyer), Ingleby Bioscience plc (Seller); the Company is Glenrock Bioscience plc.",
+        "Section 2.1: the Purchase Price is $145,000,000.",
+        "This Agreement is dated 31 March 2026; Closing is scheduled for 27 May 2026 (the 'Closing Date').",
+        "Section 1.1: 'Closing Date' means 27 May 2026.",
+        "Section 3.4 (Earn-out): the Earn-out Payment equals 3 times the amount by which FY2026 EBITDA exceeds $4,000,000, capped at $5,000,000.",
+        "Section 10.1 (Survival): the General Warranties survive Closing for 12 months; the Fundamental Warranties (title, capacity, tax) survive for 36 months. Claims must be notified in writing before expiry."
+      ],
+      "must_contain": [
+        "$4,000,000",
+        "$5,000,000",
+        "12 months",
+        "36 months"
+      ]
+    },
+    "escrow_agreement.md": {
+      "key": "escrow",
+      "facts": [
+        "Clause 4.1: the Escrow Amount shall be released to the Seller on the date falling 24 months after the Closing Date, save to the extent of pending claims notified before that date. 'Business Day' means a day other than a Saturday or Sunday on which banks are open in London.",
+        "The Closing Date is 27 May 2026."
+      ],
+      "must_contain": [
+        "24 months",
+        "27 May 2026"
+      ]
+    },
+    "client_email.md": {
+      "key": "client_email",
+      "facts": [
+        "Management accounts show FY2026 EBITDA of $5,300,000; the Seller says the Earn-out Payment will therefore be $4,500,000."
+      ],
+      "must_contain": [
+        "$5,300,000",
+        "$4,500,000"
+      ]
+    },
+    "board_minutes.md": {
+      "key": "board_minutes",
+      "facts": [
+        "Present: 2 directors (of 5). The meeting was quorate. RESOLVED to approve entry into the Share Purchase Agreement."
+      ],
+      "must_contain": [
+        "2 directors"
+      ]
+    },
+    "articles_of_association_extract.md": {
+      "key": "articles",
+      "facts": [
+        "Article 11: the quorum for board meetings is three directors."
+      ],
+      "must_contain": [
+        "three directors"
+      ]
+    },
+    "disclosure_letter.md": {
+      "key": "disclosure",
+      "facts": [
+        "Disclosure against Warranty 8.2 (IP): the Company's core platform software was developed in 2023 by an independent contractor, Kestrel Bioscience plc. No written assignment of intellectual property was entered into."
+      ],
+      "must_contain": [
+        "Kestrel Bioscience plc",
+        "No written assignment"
+      ]
+    }
+  }
+}

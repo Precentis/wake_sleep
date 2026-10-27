@@ -1,0 +1,214 @@
+{
+  "task_id": "MNA_T018",
+  "cycle": 1,
+  "lineage": "ablation_no_merge",
+  "graded": true,
+  "failures": [
+    {
+      "criterion_id": "C2",
+      "what_went_wrong": "The agent accepted the stated termination date in the SPA without independently verifying it by calculating 150 days from the signing date.",
+      "should_have": "Recomputed the termination date by calculating 150 days from the signing date (27 December 2025) to verify the stated date (17 May 2026) and flagged the discrepancy.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C3",
+      "what_went_wrong": "The agent identified a material customer relationship but failed to spot the critical IP ownership issue (core platform developed by a contractor without written assignment).",
+      "should_have": "Systematically reviewed all contractor relationships for IP assignments and flagged any missing assignments as a condition precedent to closing.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C4",
+      "what_went_wrong": "The agent calculated the working capital shortfall and adjusted purchase price but did not explicitly compare it to the Seller's funds flow figure to identify the inconsistency.",
+      "should_have": "Explicitly cross-checked all derived figures (e.g., adjusted purchase price) against counterparty-provided figures and flagged discrepancies.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C5",
+      "what_went_wrong": "The agent did not analyse the MAC carve-outs for missing exceptions (e.g., 'disproportionate effect'), missing a critical risk allocation issue.",
+      "should_have": "Reviewed all material adverse change (MAC) clauses for standard exceptions (e.g., disproportionate effect) and flagged any omissions.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C6",
+      "what_went_wrong": "The agent stated the escrow release date and duration but did not calculate the days remaining from the current date (9 January 2026).",
+      "should_have": "Calculated and included the days remaining from the current date to all key deadlines, even when the date and duration were already stated.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C7",
+      "what_went_wrong": "The agent checked if the closing date was a business day but failed to apply the same check to the escrow release date (21 February 2027).",
+      "should_have": "Verified whether every deadline date falls on a business day and flagged any non-business days for potential adjustment.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C8",
+      "what_went_wrong": "The executive summary listed key deadlines but did not prioritise or highlight the most critical risks (e.g., regulatory clearance timing).",
+      "should_have": "Opened with a concise 'bottom line' summarising the overall conclusion and the top 2-3 risks, prioritised by severity.",
+      "failure_kind": "procedural"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T018_0",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "For every date expressed as a duration (e.g., '150 days after signing'), recompute the exact date and flag any mismatch with the stated date.",
+      "source_tasks": [
+        "MNA_T018"
+      ],
+      "evidence": [
+        "MNA_T018:C2"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T018_1",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Review all contractor and third-party relationships for IP assignments. Flag any missing assignments as a condition precedent to closing.",
+      "source_tasks": [
+        "MNA_T018"
+      ],
+      "evidence": [
+        "MNA_T018:C3"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T018_2",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "Cross-check every derived figure (e.g., purchase price adjustments) against counterparty-provided figures and flag discrepancies.",
+      "source_tasks": [
+        "MNA_T018"
+      ],
+      "evidence": [
+        "MNA_T018:C4"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T018_3",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Review all material adverse change (MAC) clauses for standard exceptions (e.g., disproportionate effect, industry-wide changes) and flag any omissions.",
+      "source_tasks": [
+        "MNA_T018"
+      ],
+      "evidence": [
+        "MNA_T018:C5"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T018_4",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "For every deadline, include the days remaining from the current date, even if the date and duration are already stated.",
+      "source_tasks": [
+        "MNA_T018"
+      ],
+      "evidence": [
+        "MNA_T018:C6"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T018_5",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "Verify whether every deadline date falls on a business day. Flag non-business days for potential adjustment per the agreement's business day definition.",
+      "source_tasks": [
+        "MNA_T018"
+      ],
+      "evidence": [
+        "MNA_T018:C7"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T018_6",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Open every deliverable with a concise 'bottom line' summarising the overall conclusion and the top 2-3 risks, prioritised by severity.",
+      "source_tasks": [
+        "MNA_T018"
+      ],
+      "evidence": [
+        "MNA_T018:C8"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    }
+  ],
+  "lesson_feedback": [
+    {
+      "lesson_id": "L0001",
+      "label": "HELPFUL",
+      "reason": "Generalises to any matter involving duration-based deadlines, ensuring accuracy and flagging discrepancies."
+    },
+    {
+      "lesson_id": "L0002",
+      "label": "HELPFUL",
+      "reason": "Proactively identifies IP risks in contractor relationships, which is critical for M&A and corporate matters."
+    },
+    {
+      "lesson_id": "L0003",
+      "label": "HELPFUL",
+      "reason": "Ensures derived figures are cross-checked, reducing errors in financial adjustments and purchase price calculations."
+    },
+    {
+      "lesson_id": "L0004",
+      "label": "HELPFUL",
+      "reason": "Standardises review of MAC clauses, a common risk allocation issue in M&A agreements."
+    },
+    {
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Include days remaining from the current date for every deadline, even if the date and duration are already stated, to aid immediate prioritisation.",
+      "evidence": [
+        "C6"
+      ],
+      "task_type_scope": "general",
+      "confidence": 0.95
+    },
+    {
+      "type": "checklist",
+      "category": "analysis",
+      "text": "Check whether every deadline date falls on a business day. Flag non-business days for potential adjustment per the agreement's business day definition.",
+      "evidence": [
+        "C7"
+      ],
+      "task_type_scope": "general",
+      "confidence": 0.95
+    },
+    {
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Open every deliverable with a concise 'bottom line' summarising the overall conclusion and the top 2-3 risks, prioritised by severity and impact.",
+      "evidence": [
+        "C8"
+      ],
+      "task_type_scope": "general",
+      "confidence": 0.9
+    }
+  ],
+  "input_tokens": 5476,
+  "output_tokens": 1750,
+  "cost_usd": 0.005363,
+  "prompt": "# Task\nType: timeline_analysis | Practice area: corporate_mna\nYou act for the Buyer, Glenrock Systems Ltd. Glenrock Systems Ltd (the Buyer) is acquiring the entire issued share capital of Calloway Pharma plc (the Company) from Arden Systems Ltd (the Seller).\n\nPrepare a timeline and deadlines analysis of all time-sensitive obligations in the matter documents. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 9 January 2026. Address the deliverable to the supervising partner.\n\n# Trajectory (35 model steps, 35 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"client_email.md\"})\n 3. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 4. [research] read_document({\"name\": \"escrow_agreement.md\"})\n 5. [research] read_document({\"name\": \"disclosure_letter.md\"})\n 6. [research] search_documents({\"query\": \"deadline\"})\n 7. [research] search_documents({\"query\": \"date\"})\n 8. [research] search_documents({\"query\": \"days\"})\n 9. [research] search_documents({\"query\": \"months\"})\n10. [research] search_documents({\"query\": \"years\"})\n11. [research] search_documents({\"query\": \"condition\"})\n12. [analysis] calculate({\"expression\": \"date('2025-12-27')\"})\n13. [analysis] calculate({\"expression\": \"add_days(date('2025-12-27'), 150)\"})\n14. [research] read_document({\"name\": \"share_purchase_agreement.md\", \"start_line\": 50, \"num_lines\": 5})\n15. [analysis] calculate({\"expression\": \"add_months(date('2026-02-21'), 12)\"})\n16. [drafting] write_draft(<1092 words>)\n17. [verification] read_draft({})\n18. [verification] calculate({\"expression\": \"prev_business_day(date('2026-02-21'), 5)\"})\n19. [verification] calculate({\"expression\": \"weekday(date('2026-02-21'))\"})\n20. [verification] search_documents({\"query\": \"Business Day\"})\n21. [verification] search_documents({\"query\": \"Balance Sheet\"})\n22. [editing] edit_draft(find='#### 2. Completion Date Obligations\\n\\n**A. Closing Date: 21 F' -> '#### 2. Completion Date Obligations\\n\\n**A. Closing Date: 21 F')\n23. [editing] edit_draft(find='#### 5. Kestrel Medical Ltd Relationship\\n**Issue:** Kestrel ' -> '#### 5. Business Day Definition Inconsistency\\n**Issue:** Clo')\n24. [editing] edit_draft(find='### Next Steps\\n\\n1. **Immediate (Week of 12 January 2026):**\\n' -> '### Next Steps\\n\\n1. **Immediate (Week of 12 January 2026):**\\n')\n25. [verification] calculate({\"expression\": \"prev_business_day(date('2026-02-21'))\"})\n26. [verification] calculate({\"expression\": \"next_business_day(date('2026-02-21'))\"})\n27. [editing] edit_draft(find='| **16 Feb 2026** (5 BD before 21 Feb) | Seller to provide b' -> '| **16 Feb 2026** (5 BD before 21 Feb) | Seller to provide b')\n28. [verification] calculate({\"expression\": \"2000000 - 1090000\"})\n29. [editing] edit_draft(find='**B. Payment Procedures**\\n- Seller must provide bank account' -> '**B. Payment Procedures**\\n- Seller must provide bank account')\n30. [verification] calculate({\"expression\": \"255000000 - 253180000\"})\n31. [editing] edit_draft(find='#### 7. Kestrel Medical Ltd Relationship\\n**Issue:** Kestrel ' -> '#### 7. Working Capital Calculation Discrepancy\\n**Issue:** C')\n32. [editing] edit_draft(find='1. **Immediate (Week of 12 January 2026):**\\n   - Clarify reg' -> '1. **Immediate (Week of 12 January 2026):**\\n   - Clarify reg')\n33. [verification] read_draft({})\n34. [verification] search_documents({\"query\": \"prior\"})\n35. [control] finish({\"summary\": \"Completed timeline and deadlines analysis for Glenrock Systems Ltd's acquisition of Calloway Pharma plc. Identified all time-sensitive obligations )\n\n# Final deliverable\n# Timeline and Deadlines Analysis\n## Acquisition of Calloway Pharma plc by Glenrock Systems Ltd\n\n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Date:** 9 January 2026  \n**Matter:** Acquisition of Calloway Pharma plc by Glenrock Systems Ltd  \n**Client:** Glenrock Systems Ltd (Buyer)  \n**Counterparty:** Arden Systems Ltd (Seller)  \n**Target:** Calloway Pharma plc (Company)\n\n### Executive Summary\n\nThis analysis identifies and summarises all time-sensitive obligations arising from the transaction documents for the acquisition of Calloway Pharma plc by Glenrock Systems Ltd. Key deadlines include the Closing Date of 21 February 2026, regulatory clearance expected by 10 July 2026, and various post-completion obligations extending through 2027.\n\n### Key Transaction Documents\n\n1. **Share Purchase Agreement (SPA)** - dated 27 December 2025\n2. **Escrow Agreement** - dated 9 January 2026 (Execution Date)\n3. **Disclosure Letter** - dated prior to 9 January 2026\n4. **Client Email** - providing additional context and regulatory timeline\n\n### Critical Dates and Deadlines\n\n#### 1. Pre-Completion Deadlines\n\n**A. Conditions Precedent (SPA Clause 3.1)**\nAll conditions must be satisfied or waived **on or before the Closing Date (21 February 2026)**:\n- Corporate and shareholder approvals obtained by both parties\n- No injunctions, restraints or prohibitions issued by courts or regulatory authorities\n- Delivery of unaudited management accounts as of the Last Balance Sheet Date\n\n**B. Regulatory Clearance**\nPer client email, regulatory counsel advises merger clearance is expected by **10 July 2026**. This is after the Closing Date, suggesting regulatory clearance may be a post-completion condition or may need to be addressed differently.\n\n**C. Termination Right (SPA Clause 4.5)**\nIf Conditions are not satisfied by **17 May 2026** (150 days after SPA date of 27 December 2025), either party may terminate the Agreement by written notice.\n\n#### 2. Completion Date Obligations\n\n**A. Closing Date: 21 February 2026**\n- **Note:** 21 February 2026 is a Saturday, which is not a Business Day per Escrow Agreement definition\n- Purchase Price of $255,000,000 payable in full in immediately available funds (SPA Clause 2.2)\n- Escrow Amount of £4,250,000 (12.5% of consideration) to be deposited into Escrow Account (Escrow Agreement Clause 3.1)\n- Working Capital adjustment: Purchase Price reduced dollar-for-dollar by any shortfall of Closing Working Capital below Target Working Capital of $2,000,000 (SPA Clause 2.3)\n\n**B. Payment Procedures**\n- Seller must provide bank account details to Buyer **not less than 5 Business Days** prior to payment date (Disclosure Letter Clause 3.1)\n- All payments to be made by bank transfer in GBP unless otherwise specified\n\n**C. Working Capital Adjustment Estimate**\n- Estimated Closing Working Capital: $1,090,000 (per client email)\n- Target Working Capital: $2,000,000 (SPA Clause 1.1)\n- **Potential shortfall: $910,000**\n- **Adjusted Purchase Price estimate: $254,090,000** ($255,000,000 - $910,000)\n\n#### 3. Post-Completion Deadlines\n\n**A. Escrow Release**\n- Escrow Amount to be released to Seller on **21 February 2027** (12 months after Closing Date)\n- Exception: Amounts subject to pending claims notified before release date will be retained (Escrow Agreement Clause 4.1)\n\n**B. Confidentiality Obligations**\n- Confidentiality obligations survive termination of SPA for **5 years** (SPA Clause 6.2)\n- Similar confidentiality provisions in Disclosure Letter (Clause 5.2) and Escrow Agreement (Clause 7.1)\n\n**C. Working Capital Adjustment**\n- To be determined in accordance with Accounting Principles in Schedule 2 of SPA (not provided in current documents)\n- Timing for determination not specified in reviewed documents\n\n### Timeline Summary\n\n| Date | Obligation | Document Reference | Responsible Party |\n|------|------------|-------------------|------------------|\n| **27 Dec 2025** | SPA Execution Date | SPA Date | Both Parties |\n| **9 Jan 2026** | Escrow Agreement Execution Date | Escrow Agreement Date | Both Parties |\n| **16 Feb 2026** (5 BD before 21 Feb) | Seller to provide bank account details for payment | Disclosure Letter 3.1 | Seller |\n| **20 Feb 2026** (Friday) | **Possible adjusted Closing Date** (if 21 Feb not valid as Business Day) | SPA 3.1 | Both Parties |\n| **21 Feb 2026** (Saturday) | **Stated Closing Date** (not a Business Day per Escrow Agreement) | SPA 3.1 | Both Parties |\n| **23 Feb 2026** (Monday) | **Possible adjusted Closing Date** (if 21 Feb not valid as Business Day) | SPA 3.1 | Both Parties |\n| **On Closing Date** | Purchase Price payment ($255M) | SPA 2.2 | Buyer |\n| **On Closing Date** | Escrow Amount deposit (£4.25M) | Escrow Agreement 3.1 | Buyer |\n| **17 May 2026** | Termination right if Conditions not satisfied | SPA 4.5 | Either Party |\n| **10 Jul 2026** | Expected regulatory clearance date | Client Email | Regulatory Counsel |\n| **21 Feb 2027** | Escrow Amount release (subject to claims) | Escrow Agreement 4.1 | Escrow Agent |\n| **27 Dec 2030** | Confidentiality obligations expire | SPA 6.2 | Both Parties |\n\n### Risk Analysis and Recommendations\n\n#### 1. Regulatory Clearance Timing Discrepancy\n**Issue:** Regulatory clearance expected by 10 July 2026, but Closing Date is 21 February 2026.\n**Risk:** Potential regulatory intervention post-completion could disrupt the transaction.\n**Recommendation:** \n- Clarify whether regulatory clearance is a condition precedent or post-completion obligation\n- Consider extending Closing Date or making completion conditional on regulatory clearance\n- Review regulatory risk allocation in SPA\n\n#### 2. Termination Date Calculation\n**Issue:** SPA states termination date is 17 May 2026 (150 days from 27 December 2025), but calculation yields 26 May 2026.\n**Risk:** Potential dispute over termination rights timing.\n**Recommendation:** \n- Clarify with counterparty which date is correct\n- Consider amending SPA to specify exact date rather than calculation formula\n\n#### 3. Working Capital Adjustment Timing\n**Issue:** No specified timeline for determining Closing Working Capital adjustment.\n**Risk:** Potential delays and disputes in purchase price adjustment.\n**Recommendation:** \n- Review Schedule 2 (Accounting Principles) for timing provisions\n- Consider specifying timeline in side letter or amendment if not addressed\n\n#### 4. Escrow Claims Notification\n**Issue:** Escrow release occurs 12 months post-closing, but claims must be notified before that date.\n**Risk:** Failure to notify claims in time could result in loss of recourse to escrow funds.\n**Recommendation:** \n- Implement robust claims tracking system\n- Calendar reminder for claims notification deadline (20 February 2027)\n\n#### 5. Business Day Definition Inconsistency\n**Issue:** Closing Date (21 February 2026) falls on a Saturday, which is not a Business Day per Escrow Agreement definition.\n**Risk:** Potential confusion over whether completion can occur on a non-Business Day.\n**Recommendation:** \n- Clarify with counterparty whether completion is intended for Friday, 20 February 2026 or Monday, 23 February 2026\n- Consider amending SPA to include Business Day definition consistent with Escrow Agreement\n\n#### 6. Undefined \"Last Balance Sheet Date\"\n**Issue:** SPA Condition (c) requires delivery of unaudited management accounts as of the \"Last Balance Sheet Date\" which is not defined.\n**Risk:** Uncertainty about which date's management accounts are required.\n**Recommendation:** \n- Clarify definition of \"Last Balance Sheet Date\" with counterparty\n- Consider specifying exact date in amendment\n\n#### 7. Working Capital Calculation Discrepancy\n**Issue:** Client email shows estimated Closing Working Capital of $1,090,000 (suggesting $910,000 shortfall) but references adjusted purchase price of $253,180,000 (suggesting $1,820,000 adjustment).\n**Risk:** Uncertainty about final purchase price adjustment amount.\n**Recommendation:** \n- Reconcile Working Capital estimates with Seller\n- Clarify whether additional adjustments beyond Working Capital are contemplated\n- Review Seller's draft funds flow statement mentioned in client email\n\n#### 8. Kestrel Medical Ltd Relationship\n**Issue:** Kestrel Medical Ltd identified as material customer requiring transition arrangements.\n**Risk:** Business disruption if relationship not properly managed during transition.\n**Recommendation:** \n- Ensure transition arrangements are documented\n- Consider specific warranties or indemnities regarding this relationship\n\n### Next Steps\n\n1. **Immediate (Week of 12 January 2026):**\n   - Clarify regulatory clearance condition with counterparty\n   - Resolve termination date discrepancy\n   - Address Closing Date falling on non-Business Day (Saturday)\n   - Clarify definition of \"Last Balance Sheet Date\"\n   - Reconcile Working Capital adjustment calculations with Seller\n   - Review Schedule 2 for Working Capital adjustment timing\n\n2. **Pre-Closing (Before 21 February 2026):**\n   - Ensure all conditions precedent are satisfied or waived\n   - Coordinate payment logistics with Seller's bank details\n   - Finalise escrow arrangements with appointed Escrow Agent\n\n3. **Post-Closing Monitoring:**\n   - Track regulatory clearance progress\n   - Monitor Working Capital adjustment process\n   - Calendar escrow claims notification deadline\n\n### Conclusion\n\nThe transaction involves multiple time-sensitive obligations with key deadlines spanning from February 2026 through February 2027. The most critical immediate concern is the discrepancy between the Closing Date (21 February 2026) and expected regulatory clearance (10 July 2026), which requires urgent clarification. Proper calendaring of all deadlines and proactive management of the conditions precedent will be essential for successful completion.\n\n# Expert rubric verdicts (1/8 passed)\n- C1 [PASS] States that the escrow release date is 21 February 2027 (12 months after the 21 February 2026 Closing Date) and that pending claims must be notified before then.\n    judges: PASS: The deliverable correctly states the escrow release date as 21 February 2027 (12 months after Closing) and notes that pending claims must be notified before that date. | PASS: The deliverable correctly states the escrow release date as 21 February 2027 (12 months after Closing Date) and notes that pending claims must be notified before that date, referencing Escrow Agreement Clause 4.1.\n- C2 [FAIL] Calculates the long-stop date as 26 May 2026 (150 days after signing on 27 December 2025) and identifies that expected clearance on 10 July 2026 falls after it, recommending an extension.\n    judges: FAIL: The deliverable incorrectly accepts the SPA's stated date of 17 May 2026 rather than calculating the correct date of 26 May 2026, and fails to recommend an extension to cover the 10 July 2026 regulatory clearance. | FAIL: The deliverable incorrectly states the long-stop date as 17 May 2026 (repeating the SPA's erroneous calculation) rather than calculating 150 days from 27 December 2025 as 26 May 2026. It identifies the 10 July 2026 clear\n- C3 [FAIL] Identifies that the core platform was developed by contractor Arden Software Ltd without a written IP assignment, so the Company may not own it, and recommends obtaining a confirmatory assignment as a condition to Closing.\n    judges: FAIL: While the deliverable identifies the IP issue, it fails to recommend obtaining a confirmatory assignment as a condition to Closing, instead vaguely suggesting transition arrangements. | FAIL: While the deliverable mentions Kestrel Medical Ltd in recommendations, it completely fails to identify the critical IP ownership issue regarding Arden Software Ltd's development of core platform software without written \n- C4 [FAIL] Calculates the working capital shortfall as $910,000 and the adjusted Purchase Price as $254,090,000, identifying that the Seller's funds flow figure of $253,180,000 is wrong.\n    judges: PASS: The deliverable correctly calculates the $910,000 working capital shortfall, the $254,090,000 adjusted Purchase Price, and identifies the Seller's $253,180,000 figure as discrepant. | FAIL: The deliverable calculates the working capital shortfall as $910,000 and adjusted Purchase Price as $254,090,000, but fails to identify that the Seller's funds flow figure of $253,180,000 is inconsistent with this calcul\n- C5 [FAIL] Identifies that the MAC carve-outs (general economic, industry-wide and pandemic changes) contain no 'disproportionate effect' exception, so the Buyer bears those risks even where the Company is disproportionately affected, and recommends adding one.\n    judges: FAIL: The deliverable fails to identify the missing 'disproportionate effect' exception in the MAC carve-out definition or recommend adding one. | FAIL: The deliverable does not identify the MAC carve-outs (general economic conditions, industry changes, pandemics) or the absence of a 'disproportionate effect' exception, nor does it recommend adding one. This analysis is \n- C6 [FAIL] Gives the escrow release period as a duration (12 months) and as a date (21 February 2027), with days remaining from 9 January 2026 (408 days).\n    judges: FAIL: The deliverable states the duration and date but fails to calculate the days remaining from 9 January 2026 (408 days). | PASS: The deliverable gives the escrow release period as 12 months and as the date 21 February 2027, and includes a timeline table showing days remaining from 9 January 2026 (though it shows 408 days to 21 Feb 2027, which is a\n- C7 [FAIL] Notes that 21 February 2027 is a Sunday and that the release moves to the next Business Day, 22 February 2027.\n    judges: FAIL: The deliverable fails to note that 21 February 2027 is a Sunday or that the release would move to 22 February 2027. | FAIL: The deliverable identifies that 21 February 2026 is a Saturday but fails to note that 21 February 2027 is a Sunday and that the release would move to the next Business Day (22 February 2027).\n- C8 [FAIL] Opens with a short 'Bottom line' / executive summary stating the overall conclusion and the most important risks before the detailed analysis.\n    judges: PASS: The deliverable opens with an Executive Summary that states the overall conclusion and identifies the key risks before the detailed analysis. | FAIL: The deliverable opens with an 'Executive Summary' but it does not state the overall conclusion or most important risks in a concise 'bottom line' format. Instead, it merely lists that key deadlines exist without prioriti\n\n# Your job\nAnalyse each FAILED criterion: what went wrong, what the agent should have done, and whether the failure is procedural (reusable) or task-specific. Then write reusable candidate lessons that would prevent the procedural failures on other matters.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|timeline_analysis\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C2\",\n      \"what_went_wrong\": \"The agent accepted the stated termination date in the SPA without independently verifying it by calculating 150 days from the signing date.\",\n      \"should_have\": \"Recomputed the termination date by calculating 150 days from the signing date (27 December 2025) to verify the stated date (17 May 2026) and flagged the discrepancy.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C3\",\n      \"what_went_wrong\": \"The agent identified a material customer relationship but failed to spot the critical IP ownership issue (core platform developed by a contractor without written assignment).\",\n      \"should_have\": \"Systematically reviewed all contractor relationships for IP assignments and flagged any missing assignments as a condition precedent to closing.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C4\",\n      \"what_went_wrong\": \"The agent calculated the working capital shortfall and adjusted purchase price but did not explicitly compare it to the Seller's funds flow figure to identify the inconsistency.\",\n      \"should_have\": \"Explicitly cross-checked all derived figures (e.g., adjusted purchase price) against counterparty-provided figures and flagged discrepancies.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C5\",\n      \"what_went_wrong\": \"The agent did not analyse the MAC carve-outs for missing exceptions (e.g., 'disproportionate effect'), missing a critical risk allocation issue.\",\n      \"should_have\": \"Reviewed all material adverse change (MAC) clauses for standard exceptions (e.g., disproportionate effect) and flagged any omissions.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C6\",\n      \"what_went_wrong\": \"The agent stated the escrow release date and duration but did not calculate the days remaining from the current date (9 January 2026).\",\n      \"should_have\": \"Calculated and included the days remaining from the current date to all key deadlines, even when the date and duration were already stated.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C7\",\n      \"what_went_wrong\": \"The agent checked if the closing date was a business day but failed to apply the same check to the escrow release date (21 February 2027).\",\n      \"should_have\": \"Verified whether every deadline date falls on a business day and flagged any non-business days for potential adjustment.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C8\",\n      \"what_went_wrong\": \"The executive summary listed key deadlines but did not prioritise or highlight the most critical risks (e.g., regulatory clearance timing).\",\n      \"should_have\": \"Opened with a concise 'bottom line' summarising the overall conclusion and the top 2-3 risks, prioritised by severity.\",\n      \"failure_kind\": \"procedural\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"For every date expressed as a duration (e.g., '150 days after signing'), recompute the exact date and flag any mismatch with the stated date.\",\n      \"evidence\": [\"C2\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Review all contractor and third-party relationships for IP assignments. Flag any missing assignments as a condition precedent to closing.\",\n      \"evidence\": [\"C3\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"Cross-check every derived figure (e.g., purchase price adjustments) against counterparty-provided figures and flag discrepancies.\",\n      \"evidence\": [\"C4\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Review all material adverse change (MAC) clauses for standard exceptions (e.g., disproportionate effect, industry-wide changes) and flag any omissions.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"For every deadline, include the days remaining from the current date, even if the date and duration are already stated.\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"Verify whether every deadline date falls on a business day. Flag non-business days for potential adjustment per the agreement's business day definition.\",\n      \"evidence\": [\"C7\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"Open every deliverable with a concise 'bottom line' summarising the overall conclusion and the top 2-3 risks, prioritised by severity.\",\n      \"evidence\": [\"C8\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    }\n  ],\n  \"lesson_feedback\": [\n    {\n      \"lesson_id\": \"L0001\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Generalises to any matter involving duration-based deadlines, ensuring accuracy and flagging discrepancies.\"\n    },\n    {\n      \"lesson_id\": \"L0002\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Proactively identifies IP risks in contractor relationships, which is critical for M&A and corporate matters.\"\n    },\n    {\n      \"lesson_id\": \"L0003\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Ensures derived figures are cross-checked, reducing errors in financial adjustments and purchase price calculations.\"\n    },\n    {\n      \"lesson_id\": \"L0004\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Standardises review of MAC clauses, a common risk allocation issue in M&A agreements.\"\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"Include days remaining from the current date for every deadline, even if the date and duration are already stated, to aid immediate prioritisation.\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"Check whether every deadline date falls on a business day. Flag non-business days for potential adjustment per the agreement's business day definition.\",\n      \"evidence\": [\"C7\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"Open every deliverable with a concise 'bottom line' summarising the overall conclusion and the top 2-3 risks, prioritised by severity and impact.\",\n      \"evidence\": [\"C8\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    }\n  ]\n}\n```"
+}

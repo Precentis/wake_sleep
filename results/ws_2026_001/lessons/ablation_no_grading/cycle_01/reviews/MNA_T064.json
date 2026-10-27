@@ -1,0 +1,142 @@
+{
+  "task_id": "MNA_T064",
+  "cycle": 1,
+  "lineage": "ablation_no_grading",
+  "graded": false,
+  "failures": [
+    {
+      "criterion_id": "C1",
+      "what_went_wrong": "The agent identified a discrepancy in the earn-out calculation but did not verify the formula's alignment with the client's stated expectations or the underlying financial assumptions.",
+      "should_have": "Cross-checked the earn-out formula against the client's email and recalculated the expected earn-out based on the provided EBITDA figure to confirm the discrepancy.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C2",
+      "what_went_wrong": "The agent noted the absence of warranties and representations but did not propose a standardised checklist of warranties for the practice area, leaving the draft open to omissions.",
+      "should_have": "Included a standardised list of warranties and representations for corporate M&A transactions to ensure completeness.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C3",
+      "what_went_wrong": "The agent calculated the escrow percentage but did not flag the currency mismatch between the escrow amount (GBP) and the purchase price (USD), which introduces exchange rate risk.",
+      "should_have": "Highlighted the currency mismatch and proposed aligning the escrow currency with the purchase price currency.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C4",
+      "what_went_wrong": "The agent identified a timing discrepancy between the client's email and the SPA but did not propose a mechanism to resolve such discrepancies in future agreements.",
+      "should_have": "Suggested a contractual mechanism (e.g., a 'drop-dead date' or force majeure clause) to address timing misalignments.",
+      "failure_kind": "task_specific"
+    },
+    {
+      "criterion_id": "C5",
+      "what_went_wrong": "The agent did not verify the enforceability of the restrictive covenants under the governing law (English law) or propose alternative drafting to mitigate unenforceability risks.",
+      "should_have": "Assessed the enforceability of restrictive covenants under the governing law and proposed alternative drafting to enhance enforceability.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C6",
+      "what_went_wrong": "The agent did not cross-reference the employment agreement's restrictive covenants with those in the SPA, leading to potential inconsistencies.",
+      "should_have": "Ensured alignment between restrictive covenants in the SPA and ancillary agreements (e.g., employment agreements).",
+      "failure_kind": "procedural"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T064_0",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Include a standardised checklist of warranties and representations for the practice area in redline notes to ensure no critical items are omitted.",
+      "source_tasks": [
+        "MNA_T064"
+      ],
+      "evidence": [
+        "MNA_T064:C2"
+      ],
+      "task_type_scope": "redline",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T064_1",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Recompute earn-out formulas using the client's stated financial assumptions and flag any discrepancies with the contractual provisions.",
+      "source_tasks": [
+        "MNA_T064"
+      ],
+      "evidence": [
+        "MNA_T064:C1"
+      ],
+      "task_type_scope": "redline",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T064_2",
+      "type": "checklist",
+      "category": "review",
+      "text": "Before finalising a redline note, verify that all monetary amounts (e.g., escrow, purchase price) are denominated in the same currency or include provisions to mitigate exchange rate risk.",
+      "source_tasks": [
+        "MNA_T064"
+      ],
+      "evidence": [
+        "MNA_T064:C3"
+      ],
+      "task_type_scope": "redline",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T064_3",
+      "type": "practice_note",
+      "category": "drafting",
+      "text": "For restrictive covenants, assess enforceability under the governing law and propose alternative drafting (e.g., reduced duration, narrower scope) to mitigate unenforceability risks.",
+      "source_tasks": [
+        "MNA_T064"
+      ],
+      "evidence": [
+        "MNA_T064:C5"
+      ],
+      "task_type_scope": "redline",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T064_4",
+      "type": "checklist",
+      "category": "review",
+      "text": "Cross-reference restrictive covenants, indemnities, and other key provisions across all transaction documents to ensure consistency and avoid conflicts.",
+      "source_tasks": [
+        "MNA_T064"
+      ],
+      "evidence": [
+        "MNA_T064:C6"
+      ],
+      "task_type_scope": "redline",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T064_5",
+      "type": "practice_note",
+      "category": "drafting",
+      "text": "Propose contractual mechanisms (e.g., 'drop-dead dates,' force majeure clauses) to address timing discrepancies between client expectations and contractual provisions.",
+      "source_tasks": [
+        "MNA_T064"
+      ],
+      "evidence": [
+        "MNA_T064:C4"
+      ],
+      "task_type_scope": "redline",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.8
+    }
+  ],
+  "lesson_feedback": [],
+  "input_tokens": 4533,
+  "output_tokens": 1112,
+  "cost_usd": 0.0039345,
+  "prompt": "# Task\nType: redline | Practice area: corporate_mna\nYou act for the Buyer, Eskdale Engineering Ltd. Eskdale Engineering Ltd (the Buyer) is acquiring the entire issued share capital of Foxley Software Ltd (the Company) from Whitlock Marine Ltd (the Seller).\n\nPrepare a redline note proposing amendments to the principal agreement to protect our client. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 8 May 2026. Address the deliverable to the supervising partner.\n\n# Trajectory (42 model steps, 42 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"client_email.md\"})\n 3. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 4. [research] read_document({\"name\": \"employment_agreement.md\"})\n 5. [research] read_document({\"name\": \"escrow_agreement.md\"})\n 6. [research] search_documents({\"query\": \"earn-out\"})\n 7. [research] search_documents({\"query\": \"EBITDA\"})\n 8. [research] search_documents({\"query\": \"management accounts\"})\n 9. [research] search_documents({\"query\": \"Foxley Retail\"})\n10. [research] search_documents({\"query\": \"indemnity\"})\n11. [research] search_documents({\"query\": \"indemnities\"})\n12. [research] read_document({\"name\": \"share_purchase_agreement.md\", \"start_line\": 60, \"num_lines\": 10})\n13. [analysis] calculate({\"expression\": \"earn_out = 2 * (4800000 - 4000000)\"})\n14. [analysis] calculate({\"expression\": \"max_earn_out = 2 * (4800000 - 4000000)\\ncap = 3000000\\nif max_earn_out > cap then cap else max_earn_out\"})\n15. [analysis] calculate({\"expression\": \"max_earn_out = 2 * (4800000 - 4000000)\\nmax_earn_out\"})\n16. [analysis] calculate({\"expression\": \"days_between(date('2026-05-08'), date('2026-07-10'))\"})\n17. [drafting] write_draft(<1016 words>)\n18. [verification] read_draft({})\n19. [verification] calculate({\"expression\": \"purchase_price_usd = 215000000\\nescrow_gbp = 1450000\\nexchange_rate = 1.25\\nescrow_usd = escrow_gbp * exchange_rate\\npercentage = (escrow_usd / )\n20. [editing] edit_draft(find='**Issue:** The escrow amount represents only approximately 0' -> '**Issue:** The escrow amount (£1,450,000, approximately $1,8')\n21. [editing] edit_draft(find='**Proposed Amendment:** \\n- Increase escrow amount to 5-10% o' -> '**Proposed Amendment:** \\n- Increase escrow amount to 5-10% o')\n22. [editing] edit_draft(find='### 1. Earn-out Calculation Discrepancy\\n**Current Provision ' -> '### 1. Earn-out Calculation Discrepancy\\n**Current Provision ')\n23. [editing] edit_draft(find='### 9. General Legal Points\\n**Current Position:** English la' -> '### 9. Timing Discrepancy\\n**Current Position:** \\n- Client em')\n24. [editing] edit_draft(find='### Priority 3 (Desirable):\\n7. **Dispute Resolution** - Incl' -> '### Priority 3 (Desirable):\\n8. **Dispute Resolution** - Incl')\n25. [verification] search_documents({\"query\": \"warrant\"})\n26. [verification] search_documents({\"query\": \"represent\"})\n27. [editing] edit_draft(find='### 2. Inadequate Indemnity Framework\\n**Current Provision (C' -> '### 2. Missing Warranties and Representations\\n**Current Prov')\n28. [editing] edit_draft(find='### 3. Escrow Arrangements\\n**Current Position (Escrow Agreem' -> '### 4. Escrow Arrangements\\n**Current Position (Escrow Agreem')\n29. [editing] edit_draft(find='### 4. Restrictive Covenants\\n**Current Provisions:**\\n- **SPA' -> '### 5. Restrictive Covenants\\n**Current Provisions:**\\n- **SPA')\n30. [editing] edit_draft(find='### 5. Protection of Key Customer Relationship\\n**Current Pos' -> '### 6. Protection of Key Customer Relationship\\n**Current Pos')\n31. [editing] edit_draft(find='### 6. Missing Schedules and Definitions\\n**Current Position:' -> '### 7. Missing Schedules and Definitions\\n**Current Position:')\n32. [editing] edit_draft(find='### 7. Earn-out Calculation and Verification\\n**Current Provi' -> '### 8. Earn-out Calculation and Verification\\n**Current Provi')\n33. [editing] edit_draft(find='### 8. Purchase Price Adjustment\\n**Current Provision (Clause' -> '### 9. Purchase Price Adjustment\\n**Current Provision (Clause')\n34. [editing] edit_draft(find='### 9. Timing Discrepancy\\n**Current Position:** \\n- Client em' -> '### 10. Timing Discrepancy\\n**Current Position:** \\n- Client e')\n35. [editing] edit_draft(find='## RECOMMENDED NEGOTIATING POSITION\\n\\n### Priority 1 (Essenti' -> '## RECOMMENDED NEGOTIATING POSITION\\n\\n### Priority 1 (Essenti')\n36. [verification] search_documents({\"query\": \"condition\"})\n37. [editing] edit_draft(find='### 11. General Legal Points\\n**Current Position:** English l' -> '### 11. Missing Conditions Precedent and Termination\\n**Curre')\n38. [editing] edit_draft(find='### Priority 3 (Desirable):\\n8. **Dispute Resolution** - Incl' -> '### Priority 3 (Desirable):\\n9. **Dispute Resolution** - Incl')\n39. [editing] edit_draft(find='## EXECUTIVE SUMMARY\\n\\nThis note identifies key areas requiri' -> '## EXECUTIVE SUMMARY\\n\\nThis note identifies key areas requiri')\n40. [verification] read_draft({})\n41. [editing] edit_draft(find='### Priority 3 (Desirable):\\n9. **Dispute Resolution** - Incl' -> '### Priority 3 (Desirable):\\n8. **Dispute Resolution** - Incl')\n42. [control] finish({\"summary\": \"Redline note proposing amendments to the Share Purchase Agreement for the acquisition of Foxley Software Ltd by Eskdale Engineering Ltd. The note i)\n\n# Final deliverable\n# REDLINE NOTE: PROPOSED AMENDMENTS TO SHARE PURCHASE AGREEMENT\n\n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Date:** 8 May 2026  \n**Matter:** Acquisition of Foxley Software Ltd by Eskdale Engineering Ltd  \n**Client:** Eskdale Engineering Ltd (Buyer)  \n**Counterparty:** Whitlock Marine Ltd (Seller)  \n\n## EXECUTIVE SUMMARY\n\nThis note identifies key areas requiring amendment to the Share Purchase Agreement dated 11 April 2026 (the \"SPA\") to protect our client's interests. The principal concerns relate to: (1) missing warranties and representations (entire section absent); (2) inadequate indemnity protection; (3) escrow arrangements; (4) restrictive covenants; (5) protection of key customer relationships; (6) earn-out mechanism and calculation discrepancy; and (7) missing conditions precedent and termination provisions. \n\n## KEY ISSUES IDENTIFIED\n\n### 1. Earn-out Calculation Discrepancy\n**Current Provision (Clause 3.4):** \n- Earn-out Payment = 2 × (FY2026 EBITDA - $4,000,000)\n- Cap: $3,000,000 maximum\n\n**Issue:** \n1. The Seller asserts the Earn-out Payment will be $2,200,000 based on FY2026 EBITDA of $4,800,000 (per client email). However, applying the formula: 2 × ($4,800,000 - $4,000,000) = $1,600,000. This $600,000 discrepancy requires clarification.\n2. Client email references \"earn-out provisions under clause 4.3\" but actual SPA contains earn-out in Clause 3.4. Need to verify correct clause numbering.\n\n**Proposed Amendment:** Clarify the earn-out formula or verify the Seller's calculation methodology. Consider whether additional components (e.g., revenue thresholds, customer retention metrics) should be incorporated.\n\n### 2. Missing Warranties and Representations\n**Current Provision:** No warranties or representations section in SPA.\n\n**Issue:** The SPA is missing fundamental sections that are standard in share purchase agreements:\n- No warranties regarding title to shares, corporate authority, financial statements, taxes, litigation, compliance, contracts, employees, intellectual property, assets, etc.\n- No representations regarding accuracy of information provided\n- No disclosure letter mechanism\n\n**Proposed Amendment:** Insert comprehensive warranties and representations schedule covering all material aspects of the Company's business, with appropriate disclosure letter process.\n\n### 3. Inadequate Indemnity Framework\n**Current Provision (Clause 9.4 only):**\n- De minimis threshold: $1,075,000 (0.5% of Purchase Price)\n- Basket: Seller liable only for excess above threshold\n\n**Issue:** The SPA lacks comprehensive indemnities for:\n- Breach of warranties and representations\n- Tax liabilities\n- Litigation matters\n- Regulatory compliance\n- Intellectual property infringement\n- Employee claims\n- Environmental liabilities\n\n**Proposed Amendment:** Insert comprehensive indemnity provisions covering standard acquisition risks, with appropriate survival periods (typically 3-7 years for tax, 6-24 months for business warranties).\n\n### 4. Escrow Arrangements\n**Current Position (Escrow Agreement):**\n- Escrow Amount: £1,450,000\n- Release: 12 months post-Closing\n- Claims process: Notices must be given before expiry\n\n**Issue:** The escrow amount (£1,450,000, approximately $1,812,500 at assumed exchange rate of 1.25) represents only approximately 0.84% of the Purchase Price ($215,000,000), which may be insufficient to cover potential claims. The 12-month period may be too short for certain liabilities to materialize.\n\n**Proposed Amendment:** \n- Increase escrow amount to 5-10% of Purchase Price (in same currency as Purchase Price - USD)\n- Extend escrow period to 18-24 months\n- Include specific provisions for tax and environmental claims with longer tails\n- Align currency of escrow with Purchase Price to avoid exchange rate risk\n\n### 5. Restrictive Covenants\n**Current Provisions:**\n- **SPA Clause 12.1:** Seller non-compete for 5 years in UK and jurisdictions where Company operates\n- **Employment Agreement Clause 18:** Founder non-compete for 12 months in UK\n\n**Issue:** \n1. Seller covenant may be unenforceable if deemed unreasonable under English restraint of trade doctrine (5 years is at upper limit of enforceability)\n2. Founder covenant (12 months) is reasonable but should be aligned with Seller covenant\n3. No non-solicitation of customers or employees provisions\n\n**Proposed Amendment:**\n- Consider reducing Seller non-compete to 2-3 years to enhance enforceability\n- Add non-solicitation covenants for customers (particularly Foxley Retail Group) and key employees\n- Include geographic scope aligned with actual business operations\n\n### 6. Protection of Key Customer Relationship\n**Current Position:** Foxley Retail Group plc identified as \"Material Customer\" in Employment Agreement and Escrow Agreement.\n\n**Issue:** No specific warranties or indemnities regarding:\n- Continuity of Foxley Retail Group relationship\n- No material adverse change in commercial terms\n- No pending termination or renegotiation\n\n**Proposed Amendment:** Include specific warranties regarding:\n- Status of material customer contracts\n- No notice of termination or material adverse change\n- Historical revenue from key customers\n- Retention provisions post-acquisition\n\n### 7. Missing Schedules and Definitions\n**Current Position:** Schedule 1 referenced (Clause 3.2) but not provided. EBITDA definition lacks specificity.\n\n**Issue:** \n- Schedule 1 (net debt and working capital methodology) missing\n- EBITDA definition (\"UK GAAP consistently applied\") may allow for interpretation disputes\n- No adjustment mechanism for accounting policy changes\n\n**Proposed Amendment:**\n- Require delivery of Schedule 1 before signing\n- Enhance EBITDA definition with specific inclusions/exclusions\n- Include mechanism for resolving accounting disputes (expert determination)\n- Specify accounting policies to be used consistently\n\n### 8. Earn-out Calculation and Verification\n**Current Provision:** Payment within 90 days of final audited financial statements.\n\n**Issue:** \n- No Buyer input or verification rights during earn-out period\n- No provisions for Buyer to operate business to maximize value\n- No protections against Seller interference\n\n**Proposed Amendment:**\n- Include Buyer operational controls during earn-out period\n- Require regular management accounts and reporting\n- Include dispute resolution mechanism for EBITDA calculation\n- Consider independent accountant verification\n\n### 9. Purchase Price Adjustment\n**Current Provision (Clause 3.2):** Adjustment for net debt and working capital per Schedule 1.\n\n**Issue:** Without Schedule 1, adjustment mechanism is undefined.\n\n**Proposed Amendment:**\n- Define working capital target and adjustment formula\n- Include timeframes for preparation and review of completion accounts\n- Specify dispute resolution process (expert determination)\n- Include interest provisions for late payments\n\n### 10. Timing Discrepancy\n**Current Position:** \n- Client email: Completion anticipated prior to 8 May 2026\n- SPA Clause 1.1: Closing Date defined as 10 July 2026\n\n**Issue:** 63-day discrepancy between anticipated completion and contractual Closing Date.\n\n**Proposed Amendment:** Align contractual Closing Date with business expectations or include mechanism for earlier closing if conditions satisfied.\n\n### 11. Missing Conditions Precedent and Termination\n**Current Position:** No conditions precedent or termination provisions.\n\n**Issue:** Standard conditions precedent missing:\n- Regulatory approvals\n- Third-party consents\n- No material adverse change\n- Accuracy of warranties\n- No termination rights for breach or failure of conditions\n\n**Proposed Amendment:** Insert conditions precedent section and termination rights for failure of conditions or material breach.\n\n### 12. General Legal Points\n**Current Position:** English law, English courts jurisdiction.\n\n**Issue:** No mediation or alternative dispute resolution provisions.\n\n**Proposed Amendment:** Include stepped dispute resolution clause (negotiation → mediation → arbitration/court).\n\n## RECOMMENDED NEGOTIATING POSITION\n\n### Priority 1 (Essential):\n1. **Warranties and Representations** - Insert comprehensive warranties schedule (currently missing entirely)\n2. **Comprehensive Indemnities** - Insert full indemnity schedule covering standard acquisition risks\n3. **Escrow Enhancement** - Increase amount to 10% and extend period to 24 months\n4. **Earn-out Clarification** - Resolve $600,000 calculation discrepancy\n\n### Priority 2 (Important):\n5. **Key Customer Protections** - Specific warranties on Foxley Retail Group relationship\n6. **Restrictive Covenants** - Ensure enforceability and add non-solicitation provisions\n7. **Missing Schedules** - Complete all referenced schedules before execution\n\n### Priority 3 (Desirable):\n8. **Dispute Resolution** - Include mediation/ADR provisions\n9. **Operational Controls** - Buyer rights during earn-out period\n10. **Accounting Specificity** - Enhanced EBITDA definition and verification process\n11. **Timing Alignment** - Align Closing Date with business expectations\n12. **Conditions Precedent** - Insert standard conditions and termination rights\n\n## NEXT STEPS\n\n1. Request missing Schedule 1 and any other referenced schedules\n2. Prepare mark-up of SPA with proposed amendments\n3. Schedule negotiation meeting with Seller's counsel\n4. Coordinate with accountants on earn-out calculation methodology\n5. Review employment agreements for key personnel retention\n\n## CONCLUSION\n\nThe current SPA requires significant enhancement to adequately protect our client's $215,000,000 investment. The most critical gaps are the limited indemnity framework and inadequate escrow protection. The earn-out calculation discrepancy must be resolved before signing. We recommend proceeding with the amendments outlined above to ensure our client's interests are properly safeguarded.\n\n**Prepared by:** Senior Associate  \n**Date:** 8 May 2026\n\n# Your job\nNo grades are available. Critically assess the deliverable and the work process yourself, as a demanding supervising partner would, and write reusable candidate lessons for improving the work.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|redline\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C1\",\n      \"what_went_wrong\": \"The agent identified a discrepancy in the earn-out calculation but did not verify the formula's alignment with the client's stated expectations or the underlying financial assumptions.\",\n      \"should_have\": \"Cross-checked the earn-out formula against the client's email and recalculated the expected earn-out based on the provided EBITDA figure to confirm the discrepancy.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C2\",\n      \"what_went_wrong\": \"The agent noted the absence of warranties and representations but did not propose a standardised checklist of warranties for the practice area, leaving the draft open to omissions.\",\n      \"should_have\": \"Included a standardised list of warranties and representations for corporate M&A transactions to ensure completeness.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C3\",\n      \"what_went_wrong\": \"The agent calculated the escrow percentage but did not flag the currency mismatch between the escrow amount (GBP) and the purchase price (USD), which introduces exchange rate risk.\",\n      \"should_have\": \"Highlighted the currency mismatch and proposed aligning the escrow currency with the purchase price currency.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C4\",\n      \"what_went_wrong\": \"The agent identified a timing discrepancy between the client's email and the SPA but did not propose a mechanism to resolve such discrepancies in future agreements.\",\n      \"should_have\": \"Suggested a contractual mechanism (e.g., a 'drop-dead date' or force majeure clause) to address timing misalignments.\",\n      \"failure_kind\": \"task_specific\"\n    },\n    {\n      \"criterion_id\": \"C5\",\n      \"what_went_wrong\": \"The agent did not verify the enforceability of the restrictive covenants under the governing law (English law) or propose alternative drafting to mitigate unenforceability risks.\",\n      \"should_have\": \"Assessed the enforceability of restrictive covenants under the governing law and proposed alternative drafting to enhance enforceability.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C6\",\n      \"what_went_wrong\": \"The agent did not cross-reference the employment agreement's restrictive covenants with those in the SPA, leading to potential inconsistencies.\",\n      \"should_have\": \"Ensured alignment between restrictive covenants in the SPA and ancillary agreements (e.g., employment agreements).\",\n      \"failure_kind\": \"procedural\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"Include a standardised checklist of warranties and representations for the practice area in redline notes to ensure no critical items are omitted.\",\n      \"evidence\": [\"C2\"],\n      \"task_type_scope\": \"redline\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Recompute earn-out formulas using the client's stated financial assumptions and flag any discrepancies with the contractual provisions.\",\n      \"evidence\": [\"C1\"],\n      \"task_type_scope\": \"redline\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"review\",\n      \"text\": \"Before finalising a redline note, verify that all monetary amounts (e.g., escrow, purchase price) are denominated in the same currency or include provisions to mitigate exchange rate risk.\",\n      \"evidence\": [\"C3\"],\n      \"task_type_scope\": \"redline\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"drafting\",\n      \"text\": \"For restrictive covenants, assess enforceability under the governing law and propose alternative drafting (e.g., reduced duration, narrower scope) to mitigate unenforceability risks.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"redline\",\n      \"confidence\": 0.85\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"review\",\n      \"text\": \"Cross-reference restrictive covenants, indemnities, and other key provisions across all transaction documents to ensure consistency and avoid conflicts.\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"redline\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"drafting\",\n      \"text\": \"Propose contractual mechanisms (e.g., 'drop-dead dates,' force majeure clauses) to address timing discrepancies between client expectations and contractual provisions.\",\n      \"evidence\": [\"C4\"],\n      \"task_type_scope\": \"redline\",\n      \"confidence\": 0.8\n    }\n  ],\n  \"lesson_feedback\": []\n}\n```"
+}

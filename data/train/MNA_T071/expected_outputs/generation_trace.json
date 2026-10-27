@@ -1,0 +1,126 @@
+{
+  "docs": [
+    {
+      "title": "share_purchase_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 652,
+            "output_tokens": 1088
+          }
+        }
+      ]
+    },
+    {
+      "title": "disclosure_letter.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 558,
+            "output_tokens": 992
+          }
+        }
+      ]
+    },
+    {
+      "title": "client_email.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 556,
+            "output_tokens": 503
+          }
+        }
+      ]
+    },
+    {
+      "title": "material_customer_contract.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 518,
+            "output_tokens": 902
+          }
+        }
+      ]
+    },
+    {
+      "title": "board_minutes.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 498,
+            "output_tokens": 770
+          }
+        }
+      ]
+    }
+  ],
+  "doc_facts": {
+    "share_purchase_agreement.md": {
+      "key": "spa",
+      "facts": [
+        "Parties: Thornbury Logistics plc (Buyer), Kingsmere Pharma plc (Seller); the Company is Corrib Bioscience plc.",
+        "Section 2.1: the Purchase Price is $205,000,000.",
+        "This Agreement is dated 5 July 2026; Closing is scheduled for 25 August 2026 (the 'Closing Date').",
+        "Section 2.3: the Purchase Price shall be reduced dollar-for-dollar by any shortfall of Closing Working Capital below the Target Working Capital of $3,500,000.",
+        "Section 3.4 (Earn-out): the Earn-out Payment equals 3 times the amount by which FY2026 EBITDA exceeds $4,000,000, capped at $5,000,000."
+      ],
+      "must_contain": [
+        "$3,500,000",
+        "$4,000,000",
+        "$5,000,000"
+      ]
+    },
+    "disclosure_letter.md": {
+      "key": "disclosure",
+      "facts": [
+        "Disclosure against Warranty 8.2 (IP): the Company's core platform software was developed in 2023 by an independent contractor, Pemberton Retail Group plc. No written assignment of intellectual property was entered into.",
+        "Disclosure against Warranty 6.3 (Material Contracts): no material contract contains a change of control provision. (No further disclosure.)",
+        "Disclosure against Warranty 7.1 (Litigation): None."
+      ],
+      "must_contain": [
+        "Pemberton Retail Group plc",
+        "No written assignment"
+      ]
+    },
+    "client_email.md": {
+      "key": "client_email",
+      "facts": [
+        "The estimated Closing Working Capital is $3,150,000. The Seller's draft funds flow shows an adjusted purchase price of $204,300,000.",
+        "Management accounts show FY2026 EBITDA of $6,100,000; the Seller says the Earn-out Payment will therefore be $4,600,000."
+      ],
+      "must_contain": [
+        "$3,150,000",
+        "$204,300,000",
+        "$6,100,000",
+        "$4,600,000"
+      ]
+    },
+    "material_customer_contract.md": {
+      "key": "material_contract",
+      "facts": [
+        "Clause 14.2: either party may terminate this agreement on 30 days' notice if the other party undergoes a change of control without its prior written consent. The counterparty is Arden Industries Ltd."
+      ],
+      "must_contain": [
+        "change of control",
+        "prior written consent"
+      ]
+    },
+    "board_minutes.md": {
+      "key": "board_minutes",
+      "facts": [
+        "Item 5: the board noted a letter before action from Hartwell Bioscience plc threatening proceedings for approximately $1,200,000 in respect of alleged defective deliveries. Management to monitor."
+      ],
+      "must_contain": [
+        "Hartwell Bioscience plc",
+        "$1,200,000"
+      ]
+    }
+  }
+}

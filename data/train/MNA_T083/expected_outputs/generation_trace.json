@@ -1,0 +1,144 @@
+{
+  "docs": [
+    {
+      "title": "share_purchase_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 678,
+            "output_tokens": 1031
+          }
+        }
+      ]
+    },
+    {
+      "title": "material_customer_contract.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 514,
+            "output_tokens": 899
+          }
+        }
+      ]
+    },
+    {
+      "title": "disclosure_letter.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 494,
+            "output_tokens": 1079
+          }
+        }
+      ]
+    },
+    {
+      "title": "board_minutes.md",
+      "attempts": [
+        {
+          "missing": [
+            "2 directors"
+          ],
+          "usage": {
+            "input_tokens": 479,
+            "output_tokens": 813
+          }
+        },
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 1321,
+            "output_tokens": 747
+          }
+        }
+      ]
+    },
+    {
+      "title": "articles_of_association_extract.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 485,
+            "output_tokens": 960
+          }
+        }
+      ]
+    },
+    {
+      "title": "client_email.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 475,
+            "output_tokens": 348
+          }
+        }
+      ]
+    }
+  ],
+  "doc_facts": {
+    "share_purchase_agreement.md": {
+      "key": "spa",
+      "facts": [
+        "Parties: Marlow Marine Ltd (Buyer), Thornbury Holdings Ltd (Seller); the Company is Marlow Media Ltd.",
+        "Section 2.1: the Purchase Price is $200,000,000.",
+        "This Agreement is dated 18 December 2025; Closing is scheduled for 10 March 2026 (the 'Closing Date').",
+        "Section 10.1 (Survival): the General Warranties survive Closing for 18 months; the Fundamental Warranties (title, capacity, tax) survive for 36 months. Claims must be notified in writing before expiry.",
+        "Section 8.2 (Limitation of Liability): the aggregate liability of the Seller for warranty claims shall not exceed an amount equal to 12% of the Purchase Price, being $21,600,000. The Purchase Price is $200,000,000 (see Section 2.1)."
+      ],
+      "must_contain": [
+        "18 months",
+        "36 months",
+        "12%",
+        "$21,600,000",
+        "$200,000,000"
+      ]
+    },
+    "material_customer_contract.md": {
+      "key": "material_contract",
+      "facts": [
+        "Clause 14.2: either party may terminate this agreement on 30 days' notice if the other party undergoes a change of control without its prior written consent. The counterparty is Foxley Engineering Ltd."
+      ],
+      "must_contain": [
+        "change of control",
+        "prior written consent"
+      ]
+    },
+    "disclosure_letter.md": {
+      "key": "disclosure",
+      "facts": [
+        "Disclosure against Warranty 6.3 (Material Contracts): no material contract contains a change of control provision. (No further disclosure.)"
+      ],
+      "must_contain": []
+    },
+    "board_minutes.md": {
+      "key": "board_minutes",
+      "facts": [
+        "Present: 2 directors (of 5). The meeting was quorate. RESOLVED to approve entry into the Share Purchase Agreement."
+      ],
+      "must_contain": [
+        "2 directors"
+      ]
+    },
+    "articles_of_association_extract.md": {
+      "key": "articles",
+      "facts": [
+        "Article 11: the quorum for board meetings is three directors."
+      ],
+      "must_contain": [
+        "three directors"
+      ]
+    },
+    "client_email.md": {
+      "key": "client_email",
+      "facts": [],
+      "must_contain": []
+    }
+  }
+}

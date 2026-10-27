@@ -1,0 +1,143 @@
+{
+  "task_id": "MNA_T090",
+  "cycle": 1,
+  "lineage": "ablation_no_grading",
+  "graded": false,
+  "failures": [
+    {
+      "criterion_id": "C1",
+      "what_went_wrong": "The agent miscalculated the conditions satisfaction deadline by initially using 90 days instead of the contractual 91 days, requiring correction during verification.",
+      "should_have": "Directly extracted the exact day count from the contract rather than assuming a standard period.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C2",
+      "what_went_wrong": "The timeline included a 'Letter before action received' date without cross-referencing its legal significance or deadline implications.",
+      "should_have": "Identified and highlighted all litigation-related deadlines (e.g., response periods) tied to legal documents.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C3",
+      "what_went_wrong": "The agent did not flag discrepancies between the employment agreement's non-compete period and the SPA's non-compete period for consistency.",
+      "should_have": "Cross-checked overlapping obligations (e.g., restrictive covenants) across all transaction documents for conflicts.",
+      "failure_kind": "task_specific"
+    },
+    {
+      "criterion_id": "C4",
+      "what_went_wrong": "The deliverable listed 'Preparatory documentation deadline' as a standalone date without clarifying its contractual basis or consequences of missing it.",
+      "should_have": "Explicitly tied every deadline to its source clause and potential consequences for non-compliance.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C5",
+      "what_went_wrong": "The agent did not verify whether the 'merger clearance expected' date aligned with statutory filing deadlines or contractual obligations.",
+      "should_have": "Cross-referenced regulatory deadlines with contractual timelines to identify potential conflicts or dependencies.",
+      "failure_kind": "analysis"
+    },
+    {
+      "criterion_id": "C6",
+      "what_went_wrong": "The draft included a 'Next Review Date' without explaining how it was determined or what triggers subsequent reviews.",
+      "should_have": "Defined criteria for follow-up reviews (e.g., post-major deadlines or external events) to ensure actionability.",
+      "failure_kind": "drafting"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T090_0",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "For every deadline expressed as a period (e.g., '90 days'), verify the exact day count in the contract and flag any deviation from the mathematical calculation.",
+      "source_tasks": [
+        "MNA_T090"
+      ],
+      "evidence": [
+        "MNA_T090:C1"
+      ],
+      "task_type_scope": "timeline_analysis",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T090_1",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Cross-reference restrictive covenants (e.g., non-compete periods) across all transaction documents to identify inconsistencies or conflicts.",
+      "source_tasks": [
+        "MNA_T090"
+      ],
+      "evidence": [
+        "MNA_T090:C3"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T090_2",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "For each deadline in the timeline, include: (1) the source clause, (2) consequences of non-compliance, and (3) responsible party.",
+      "source_tasks": [
+        "MNA_T090"
+      ],
+      "evidence": [
+        "MNA_T090:C2",
+        "MNA_T090:C4"
+      ],
+      "task_type_scope": "timeline_analysis",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T090_3",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Compare regulatory deadlines (e.g., merger clearance) with contractual timelines to identify potential conflicts or dependencies.",
+      "source_tasks": [
+        "MNA_T090"
+      ],
+      "evidence": [
+        "MNA_T090:C5"
+      ],
+      "task_type_scope": "timeline_analysis",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T090_4",
+      "type": "checklist",
+      "category": "review",
+      "text": "Before finalising, verify that all litigation-related deadlines (e.g., response periods) are explicitly tied to legal documents and include actionable next steps.",
+      "source_tasks": [
+        "MNA_T090"
+      ],
+      "evidence": [
+        "MNA_T090:C2"
+      ],
+      "task_type_scope": "timeline_analysis",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T090_5",
+      "type": "practice_note",
+      "category": "drafting",
+      "text": "Define criteria for follow-up reviews (e.g., post-major deadlines or external events) to ensure they are actionable and tied to specific triggers.",
+      "source_tasks": [
+        "MNA_T090"
+      ],
+      "evidence": [
+        "MNA_T090:C6"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.8
+    }
+  ],
+  "lesson_feedback": [],
+  "input_tokens": 4113,
+  "output_tokens": 1055,
+  "cost_usd": 0.003639,
+  "prompt": "# Task\nType: timeline_analysis | Practice area: corporate_mna\nYou act for the Buyer, Rothley Medical Ltd. Rothley Medical Ltd (the Buyer) is acquiring the entire issued share capital of Corrib Technologies Ltd (the Company) from Thornbury Retail Group plc (the Seller).\n\nPrepare a timeline and deadlines analysis of all time-sensitive obligations in the matter documents. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 1 September 2026. Address the deliverable to the supervising partner.\n\n# Trajectory (34 model steps, 34 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 3. [research] read_document({\"name\": \"disclosure_letter.md\"})\n 4. [research] read_document({\"name\": \"employment_agreement.md\"})\n 5. [research] read_document({\"name\": \"board_minutes.md\"})\n 6. [research] read_document({\"name\": \"client_email.md\"})\n 7. [analysis] calculate({\"expression\": \"current_date = date('2026-09-01')\"})\n 8. [analysis] calculate({\"expression\": \"closing_date = date('2026-09-24')\"})\n 9. [analysis] calculate({\"expression\": \"general_warranties_end = add_months(closing_date, 18)\"})\n10. [analysis] calculate({\"expression\": \"closing_date = date('2026-09-24')\\ngeneral_warranties_end = add_months(closing_date, 18)\"})\n11. [analysis] calculate({\"expression\": \"fundamental_warranties_end = add_months(closing_date, 36)\"})\n12. [analysis] calculate({\"expression\": \"closing_date = date('2026-09-24')\\nfundamental_warranties_end = add_months(closing_date, 36)\"})\n13. [analysis] calculate({\"expression\": \"non_compete_end = add_years(closing_date, 4)\"})\n14. [analysis] calculate({\"expression\": \"closing_date = date('2026-09-24')\\nnon_compete_end = add_years(closing_date, 4)\"})\n15. [analysis] calculate({\"expression\": \"agreement_date = date('2026-08-22')\\nconditions_deadline = add_days(agreement_date, 90)\"})\n16. [analysis] calculate({\"expression\": \"agreement_date = date('2026-08-22')\\nadd_days(agreement_date, 90)\"})\n17. [analysis] calculate({\"expression\": \"days_between(date('2026-08-22'), date('2026-11-21'))\"})\n18. [analysis] calculate({\"expression\": \"board_meeting_date = date('2026-08-28')\\nnext_biweekly_report = add_days(board_meeting_date, 14)\"})\n19. [analysis] calculate({\"expression\": \"employment_effective_date = date('2026-09-01')\\nemployment_non_compete_period = add_months(employment_effective_date, 18)\"})\n20. [drafting] write_draft(<1141 words>)\n21. [verification] read_draft({})\n22. [verification] calculate({\"expression\": \"closing_date = date('2026-09-24')\\nadd_months(closing_date, 18)\"})\n23. [verification] calculate({\"expression\": \"agreement_date = date('2026-08-22')\\nadd_days(agreement_date, 90)\"})\n24. [verification] search_documents({\"query\": \"days\"})\n25. [verification] search_documents({\"query\": \"months\"})\n26. [verification] search_documents({\"query\": \"years\"})\n27. [editing] edit_draft(find='| **21 November 2026** | Conditions satisfaction deadline (9' -> '| **21 November 2026** | Conditions satisfaction deadline (9')\n28. [editing] edit_draft(find='### 7.2 Termination Right\\n\\nIf Conditions not satisfied by **' -> '### 7.2 Termination Right\\n\\nIf Conditions not satisfied by **')\n29. [editing] edit_draft(find='## 10. CONCLUSION\\n\\nThe acquisition timeline is tight with Cl' -> '## 10. CONCLUSION\\n\\nThe acquisition timeline is tight with Cl')\n30. [editing] edit_draft(find='| **30 August 2026** | Disclosure Letter dated | Disclosure ' -> '| **25 August 2026** | Employment Agreement executed | Emplo')\n31. [verification] read_document({\"name\": \"board_minutes.md\", \"start_line\": 20, \"num_lines\": 10})\n32. [editing] edit_draft(find='### 7.1 Conditions to be Satisfied\\n\\n1. No court order prohib' -> '### 7.1 Conditions to be Satisfied\\n\\n1. No court order prohib')\n33. [verification] read_draft({})\n34. [control] finish({\"summary\": \"Completed timeline and deadlines analysis for Rothley Medical Ltd's acquisition of Corrib Technologies Ltd. Identified all time-sensitive obligatio)\n\n# Final deliverable\n# TIMELINE AND DEADLINES ANALYSIS\n## Acquisition of Corrib Technologies Ltd by Rothley Medical Ltd\n\n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Date:** 1 September 2026  \n**Matter:** Rothley Medical Ltd acquisition of Corrib Technologies Ltd  \n**Our Reference:** RML/CTL/2026/01  \n\n---\n\n## EXECUTIVE SUMMARY\n\nThis analysis sets out all time-sensitive obligations arising from the acquisition of Corrib Technologies Ltd (\"the Company\") by Rothley Medical Ltd (\"the Buyer\") from Thornbury Retail Group plc (\"the Seller\"). The transaction involves a Share Purchase Agreement dated 22 August 2026, with Closing scheduled for 24 September 2026. Key deadlines include merger clearance by 4 January 2027, warranty claim notification periods (18-36 months), and ongoing litigation monitoring obligations.\n\n## 1. TRANSACTION TIMELINE\n\n### 1.1 Key Transaction Dates\n\n| Date | Event | Document Reference |\n|------|-------|-------------------|\n| **22 August 2026** | Share Purchase Agreement executed | SPA Clause 1 |\n| **25 August 2026** | Letter before action received from Northgate Robotics Ltd | Board Minutes §5 |\n| **28 August 2026** | Board meeting of Corrib Technologies Ltd | Board Minutes |\n| **25 August 2026** | Employment Agreement executed | Employment Agreement |\n| **30 August 2026** | Disclosure Letter dated | Disclosure Letter |\n| **1 September 2026** | Employment Agreement effective date | Employment Agreement §1.1 |\n| **1 September 2026** | Preparatory documentation deadline | Client Email |\n| **5 September 2026** | Quarterly performance review with Calloway Retail Group plc | Board Minutes §6 |\n| **24 September 2026** | **CLOSING DATE** - Payment due by 3:00 p.m. | SPA Clauses 2.1, 3.1 |\n| **21 November 2026** | Conditions satisfaction deadline (91 days from SPA) | SPA Clause 4.5 |\n| **4 January 2027** | Merger clearance expected | Client Email |\n\n### 1.2 Critical Path to Closing\n\n1. **Immediate (by 1 September 2026)**: Finalise all preparatory documentation\n2. **5 September 2026**: Quarterly review with material customer Calloway Retail Group plc\n3. **24 September 2026**: Closing - payment of $210,000,000 due by 3:00 p.m.\n4. **21 November 2026**: Final date for satisfaction of Conditions precedent\n5. **4 January 2027**: Merger clearance expected\n\n## 2. POST-CLOSING OBLIGATIONS AND DEADLINES\n\n### 2.1 Warranty Survival Periods\n\n| Warranty Type | Survival Period | Expiry Date | Claim Notification Deadline |\n|---------------|----------------|-------------|----------------------------|\n| **General Warranties** | 18 months from Closing | 24 March 2028 | Must notify in writing before 24 March 2028 |\n| **Fundamental Warranties** (title, capacity, tax) | 36 months from Closing | 24 September 2029 | Must notify in writing before 24 September 2029 |\n\n**Key Point**: Any claim under the warranties must be notified in writing to the party in breach **prior to the expiry** of the relevant survival period, failing which such claim shall be extinguished (SPA Clause 10.1).\n\n### 2.2 Restrictive Covenants\n\n| Covenant | Duration | Expiry Date |\n|----------|----------|-------------|\n| **Seller Non-Compete** | 4 years from Closing Date | 24 September 2030 |\n| **Employee Non-Compete** (Dr. Elinor Grant) | 18 months after termination of employment | Variable based on termination date |\n| **Employee Confidentiality** | 5 years after termination of employment | Variable based on termination date |\n\n### 2.3 Employment Agreement Timelines\n\n1. **Effective Date**: 1 September 2026\n2. **Notice Period**: 6 months (either party)\n3. **Non-Compete**: 18 months post-termination (Employment Agreement Clause 18.1)\n4. **Confidentiality**: 5 years post-termination (Employment Agreement Clause 5.2)\n\n## 3. LITIGATION AND REGULATORY DEADLINES\n\n### 3.1 Northgate Robotics Ltd Claim\n\n| Date | Obligation | Responsible Party |\n|------|------------|------------------|\n| **25 August 2026** | Letter before action received | Company |\n| **28 August 2026** | Board directed biweekly reporting | Company Management |\n| **11 September 2026** | First biweekly report due | Company Management |\n| **Ongoing** | Preserve all relevant documentation | Company Management |\n\n**Exposure**: Approximately $450,000 for alleged defective deliveries under contract NRT-7742-2025.\n\n### 3.2 Regulatory Compliance\n\n1. **Merger Clearance**: Expected by 4 January 2027 (Client Email)\n2. **Third Party Consents**: Must be obtained as Condition precedent (SPA Clause 4.1(b))\n\n## 4. COMMERCIAL RELATIONSHIPS\n\n### 4.1 Calloway Retail Group plc\n\n| Date | Obligation | Importance |\n|------|------------|------------|\n| **5 September 2026** | Quarterly performance review | Material customer (32% of revenue) |\n| **Ongoing** | Maintain service levels and delivery timelines | Critical to business continuity |\n\n**Note**: Calloway Retail Group plc is defined as a \"Material Customer\" in the Employment Agreement (Clause 1.1).\n\n## 5. INTELLECTUAL PROPERTY CONSIDERATIONS\n\n### 5.1 Core Platform Software\n\n**Issue**: No written assignment of IP rights from Penrith Engineering Ltd (Disclosure Letter §4.2)\n\n**Risk**: Potential challenge to Company's ownership of core platform software developed in 2023.\n\n**Action**: Monitor for any claims by Penrith Engineering Ltd or third parties.\n\n## 6. PAYMENT OBLIGATIONS\n\n### 6.1 Purchase Price Payment\n\n| Amount | Due Date | Time | Payment Method |\n|--------|----------|------|---------------|\n| **$210,000,000** | 24 September 2026 | 3:00 p.m. | Cleared funds to Seller's designated account |\n\n## 7. CONDITIONS PRECEDENT\n\n### 7.1 Conditions to be Satisfied\n\n1. No court order prohibiting Closing (SPA Clause 4.1(a))\n2. All necessary third-party consents obtained (SPA Clause 4.1(b))\n3. Representations and warranties true and correct (SPA Clause 4.1(c))\n4. Shareholder approval (Board Minutes §4)\n5. Compliance with regulatory requirements (Board Minutes §4)\n\n### 7.2 Termination Right\n\nIf Conditions not satisfied by **21 November 2026** (91 days from Agreement date), either party may terminate the Agreement by written notice (SPA Clause 4.5).\n\n## 8. NOTICE PROVISIONS\n\n### 8.1 General Notice Requirements\n\n- All notices must be in writing (SPA Clause 13.1)\n- Delivered by hand, first-class pre-paid post, or email\n- To registered office of relevant party\n\n### 8.2 Deemed Receipt\n\n- Personal delivery: time of delivery\n- Post: 48 hours after posting\n- Email: upon confirmation of receipt\n\n## 9. RECOMMENDATIONS\n\n1. **Immediate Action**: Ensure all preparatory documentation finalised by 1 September 2026.\n2. **Payment Preparation**: Arrange $210,000,000 cleared funds for 24 September 2026, 3:00 p.m.\n3. **Litigation Monitoring**: Implement biweekly reporting system for Northgate Robotics claim.\n4. **Customer Relationship**: Prepare for 5 September 2026 review with Calloway Retail Group.\n5. **Warranty Tracking**: Establish system to track warranty claim deadlines (24 March 2028 and 24 September 2029).\n6. **Regulatory Compliance**: Monitor progress toward merger clearance by 4 January 2027.\n7. **IP Due Diligence**: Consider further investigation into Penrith Engineering IP assignment issue.\n\n## 10. CONCLUSION\n\nThe acquisition timeline is tight with Closing scheduled for 24 September 2026. Critical deadlines include the 1 September 2026 documentation completion, 5 September 2026 customer review, and the 21 November 2026 conditions satisfaction deadline. **Note**: The SPA specifies 21 November 2026 (91 days from 22 August 2026) rather than the mathematically calculated 90 days (20 November 2026). Parties should adhere to the contractual date of 21 November 2026.\n\nPost-closing, warranty claim periods (18-36 months) and restrictive covenants (4 years) create long-term obligations requiring careful monitoring. The Northgate Robotics litigation requires immediate attention with biweekly reporting obligations.\n\nAll dates calculated as at 1 September 2026. Parties should be advised that failure to meet time-sensitive obligations, particularly payment by 3:00 p.m. on Closing Date and warranty claim notifications before expiry, could result in significant financial and legal consequences.\n\n---\n\n**Prepared by:** Senior Associate  \n**Date:** 1 September 2026  \n**Next Review Date:** 5 September 2026 (post-customer review)\n\n# Your job\nNo grades are available. Critically assess the deliverable and the work process yourself, as a demanding supervising partner would, and write reusable candidate lessons for improving the work.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|timeline_analysis\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C1\",\n      \"what_went_wrong\": \"The agent miscalculated the conditions satisfaction deadline by initially using 90 days instead of the contractual 91 days, requiring correction during verification.\",\n      \"should_have\": \"Directly extracted the exact day count from the contract rather than assuming a standard period.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C2\",\n      \"what_went_wrong\": \"The timeline included a 'Letter before action received' date without cross-referencing its legal significance or deadline implications.\",\n      \"should_have\": \"Identified and highlighted all litigation-related deadlines (e.g., response periods) tied to legal documents.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C3\",\n      \"what_went_wrong\": \"The agent did not flag discrepancies between the employment agreement's non-compete period and the SPA's non-compete period for consistency.\",\n      \"should_have\": \"Cross-checked overlapping obligations (e.g., restrictive covenants) across all transaction documents for conflicts.\",\n      \"failure_kind\": \"task_specific\"\n    },\n    {\n      \"criterion_id\": \"C4\",\n      \"what_went_wrong\": \"The deliverable listed 'Preparatory documentation deadline' as a standalone date without clarifying its contractual basis or consequences of missing it.\",\n      \"should_have\": \"Explicitly tied every deadline to its source clause and potential consequences for non-compliance.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C5\",\n      \"what_went_wrong\": \"The agent did not verify whether the 'merger clearance expected' date aligned with statutory filing deadlines or contractual obligations.\",\n      \"should_have\": \"Cross-referenced regulatory deadlines with contractual timelines to identify potential conflicts or dependencies.\",\n      \"failure_kind\": \"analysis\"\n    },\n    {\n      \"criterion_id\": \"C6\",\n      \"what_went_wrong\": \"The draft included a 'Next Review Date' without explaining how it was determined or what triggers subsequent reviews.\",\n      \"should_have\": \"Defined criteria for follow-up reviews (e.g., post-major deadlines or external events) to ensure actionability.\",\n      \"failure_kind\": \"drafting\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"For every deadline expressed as a period (e.g., '90 days'), verify the exact day count in the contract and flag any deviation from the mathematical calculation.\",\n      \"evidence\": [\"C1\"],\n      \"task_type_scope\": \"timeline_analysis\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Cross-reference restrictive covenants (e.g., non-compete periods) across all transaction documents to identify inconsistencies or conflicts.\",\n      \"evidence\": [\"C3\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"For each deadline in the timeline, include: (1) the source clause, (2) consequences of non-compliance, and (3) responsible party.\",\n      \"evidence\": [\"C2\", \"C4\"],\n      \"task_type_scope\": \"timeline_analysis\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Compare regulatory deadlines (e.g., merger clearance) with contractual timelines to identify potential conflicts or dependencies.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"timeline_analysis\",\n      \"confidence\": 0.85\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"review\",\n      \"text\": \"Before finalising, verify that all litigation-related deadlines (e.g., response periods) are explicitly tied to legal documents and include actionable next steps.\",\n      \"evidence\": [\"C2\"],\n      \"task_type_scope\": \"timeline_analysis\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"drafting\",\n      \"text\": \"Define criteria for follow-up reviews (e.g., post-major deadlines or external events) to ensure they are actionable and tied to specific triggers.\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.8\n    }\n  ],\n  \"lesson_feedback\": []\n}\n```"
+}

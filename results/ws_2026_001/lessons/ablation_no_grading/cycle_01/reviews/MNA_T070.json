@@ -1,0 +1,142 @@
+{
+  "task_id": "MNA_T070",
+  "cycle": 1,
+  "lineage": "ablation_no_grading",
+  "graded": false,
+  "failures": [
+    {
+      "criterion_id": "C1",
+      "what_went_wrong": "The redline note did not verify the consistency of currency conversions between the purchase price and escrow amount, despite identifying a currency mismatch.",
+      "should_have": "Calculated and flagged the exact discrepancy arising from the currency mismatch between USD purchase price and GBP escrow amount, including the exchange rate risk.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C2",
+      "what_went_wrong": "The deliverable proposed amendments to the warranty claim notification period but did not align it with the escrow agreement's claim period, leaving a procedural gap.",
+      "should_have": "Ensured all claim notification periods across related agreements (SPA, escrow, disclosure) were harmonised to avoid conflicting deadlines.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C3",
+      "what_went_wrong": "The analysis of date inconsistencies was limited to identifying mismatches without proposing a unified timeline or cross-referencing all date-dependent clauses.",
+      "should_have": "Mapped all date-dependent clauses (closing, condition satisfaction, escrow release) into a single timeline to ensure logical consistency and flagged any remaining conflicts.",
+      "failure_kind": "analysis"
+    },
+    {
+      "criterion_id": "C4",
+      "what_went_wrong": "The proposed amendments for the material adverse change definition did not address whether the exclusions applied to the 'prospects' of the company, which could leave ambiguity.",
+      "should_have": "Clarified whether the MAC exclusions applied to 'prospects' of the company, not just current financial condition or operations.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C5",
+      "what_went_wrong": "The redline note did not include a cross-check of the escrow release date with the survival period of warranties, potentially leaving gaps in claim coverage.",
+      "should_have": "Verified that the escrow release date extended beyond the survival period of all warranties and indemnities to ensure funds were available for claims.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C6",
+      "what_went_wrong": "The deliverable did not propose a mechanism to address the disclosed IP issue beyond an indemnity, such as a holdback or price adjustment.",
+      "should_have": "Evaluated and proposed alternative risk mitigation tools (e.g., holdback, price adjustment, or specific performance obligations) for high-risk disclosures like IP ownership.",
+      "failure_kind": "content"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T070_0",
+      "type": "checklist",
+      "category": "review",
+      "text": "Before finalising a redline note, verify that all claim notification periods across related agreements (e.g., SPA, escrow, disclosure) are harmonised to avoid conflicting deadlines.",
+      "source_tasks": [
+        "MNA_T070"
+      ],
+      "evidence": [
+        "MNA_T070:C2"
+      ],
+      "task_type_scope": "redline",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T070_1",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "For transactions involving multi-currency payments or escrows, calculate and flag the exact discrepancy arising from currency mismatches, including exchange rate risks and valuation uncertainties.",
+      "source_tasks": [
+        "MNA_T070"
+      ],
+      "evidence": [
+        "MNA_T070:C1"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T070_2",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Ensure proposed amendments to material adverse change definitions explicitly address whether exclusions apply to the 'prospects' of the company, not just current financial condition or operations.",
+      "source_tasks": [
+        "MNA_T070"
+      ],
+      "evidence": [
+        "MNA_T070:C4"
+      ],
+      "task_type_scope": "redline",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T070_3",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Map all date-dependent clauses (e.g., closing, condition satisfaction, escrow release) into a single timeline to identify and resolve logical inconsistencies before proposing amendments.",
+      "source_tasks": [
+        "MNA_T070"
+      ],
+      "evidence": [
+        "MNA_T070:C3"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T070_4",
+      "type": "checklist",
+      "category": "review",
+      "text": "Confirm that escrow release dates extend beyond the survival period of all warranties and indemnities to ensure funds are available for claims before finalising the redline note.",
+      "source_tasks": [
+        "MNA_T070"
+      ],
+      "evidence": [
+        "MNA_T070:C5"
+      ],
+      "task_type_scope": "redline",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.88
+    },
+    {
+      "candidate_id": "c01_MNA_T070_5",
+      "type": "practice_note",
+      "category": "drafting",
+      "text": "For high-risk disclosures (e.g., IP ownership, material contracts), evaluate and propose alternative risk mitigation tools (e.g., holdback, price adjustment, specific performance obligations) beyond indemnities.",
+      "source_tasks": [
+        "MNA_T070"
+      ],
+      "evidence": [
+        "MNA_T070:C6"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.87
+    }
+  ],
+  "lesson_feedback": [],
+  "input_tokens": 4433,
+  "output_tokens": 1157,
+  "cost_usd": 0.003952,
+  "prompt": "# Task\nType: redline | Practice area: corporate_mna\nYou act for the Buyer, Hartwell Holdings Ltd. Hartwell Holdings Ltd (the Buyer) is acquiring the entire issued share capital of Arden Bioscience plc (the Company) from Bellhaven Media Ltd (the Seller).\n\nPrepare a redline note proposing amendments to the principal agreement to protect our client. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 22 June 2026. Address the deliverable to the supervising partner.\n\n# Trajectory (27 model steps, 27 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"client_email.md\"})\n 3. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 4. [research] read_document({\"name\": \"disclosure_letter.md\"})\n 5. [research] read_document({\"name\": \"escrow_agreement.md\"})\n 6. [research] search_documents({\"query\": \"warranty\"})\n 7. [research] search_documents({\"query\": \"condition\"})\n 8. [research] search_documents({\"query\": \"purchase price\"})\n 9. [analysis] calculate({\"expression\": \"date('2026-06-17')\"})\n10. [analysis] calculate({\"expression\": \"add_days(date('2026-06-17'), 90)\"})\n11. [analysis] calculate({\"expression\": \"date('2026-09-04')\"})\n12. [analysis] calculate({\"expression\": \"add_years(date('2026-06-22'), 1)\"})\n13. [drafting] write_draft(<2080 words>)\n14. [verification] read_draft({})\n15. [verification] calculate({\"expression\": \"days_between(date('2026-06-17'), date('2026-09-16'))\"})\n16. [editing] edit_draft(find='### 2.6 Regulatory Clearance Condition\\n**Client Email Indica' -> '### 2.6 Regulatory Clearance Condition\\n**Client Email Indica')\n17. [editing] edit_draft(find='### 3.5 Clause 4.5 – Conditions and Termination\\n**Current Te' -> '### 3.5 Clause 4.5 – Conditions and Termination\\n**Current Te')\n18. [editing] edit_draft(find='### 3.6 Clause 5.1 – Payment and Escrow Alignment' -> '### 3.7 Clause 5.1 – Payment and Escrow Alignment')\n19. [editing] edit_draft(find='### 3.7 Clause 6.1 – Notice Provisions' -> '### 3.8 Clause 6.1 – Notice Provisions')\n20. [editing] edit_draft(find='### 2.7 Date Inconsistencies\\n**Issues Identified:**\\n1. **SPA' -> '### 2.7 Date Inconsistencies\\n**Issues Identified:**\\n1. **SPA')\n21. [editing] edit_draft(find='### 3.4 New Clause – Intellectual Property Specific Indemnit' -> '### 3.4 New Clause – Intellectual Property Specific Indemnit')\n22. [editing] edit_draft(find='### 3.5 Clause 4.5 – Conditions and Termination' -> '### 3.6 Clause 4.5 – Conditions and Termination')\n23. [editing] edit_draft(find='### 3.6 Clause 3.1 – Closing Date Consistency' -> '### 3.7 Clause 3.1 – Closing Date Consistency')\n24. [editing] edit_draft(find='### 3.7 Clause 5.1 – Payment and Escrow Alignment' -> '### 3.8 Clause 5.1 – Payment and Escrow Alignment')\n25. [editing] edit_draft(find='### 3.8 Clause 6.1 – Notice Provisions' -> '### 3.9 Clause 6.1 – Notice Provisions')\n26. [verification] read_draft({})\n27. [control] finish({\"summary\": \"Redline note proposing amendments to the Share Purchase Agreement to protect Hartwell Holdings Ltd in its acquisition of Arden Bioscience plc. The )\n\n# Final deliverable\n# REDLINE NOTE: PROPOSED AMENDMENTS TO SHARE PURCHASE AGREEMENT\n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Date:** 22 June 2026  \n**Re:** Hartwell Holdings Ltd Acquisition of Arden Bioscience plc  \n**Matter:** Share Purchase Agreement Review and Proposed Amendments  \n\n## 1. EXECUTIVE SUMMARY\n\nThis note sets out proposed amendments to the Share Purchase Agreement (SPA) dated 17 June 2026 between Bellhaven Media Ltd (Seller) and Hartwell Holdings Ltd (Buyer) for the acquisition of the entire issued share capital of Arden Bioscience plc. Our review has identified several areas requiring amendment to better protect our client's interests, particularly in light of the significant intellectual property disclosure and commercial considerations raised in the client's instructions.\n\n## 2. KEY ISSUES IDENTIFIED\n\n### 2.1 Material Adverse Change Definition (Clause 1.1)\n**Current Provision:** The definition excludes \"changes in general economic conditions, changes affecting the industry generally, and pandemics\" without qualification.\n\n**Risk:** This is overly broad and could exclude changes that disproportionately affect the Company compared to its competitors.\n\n**Proposed Amendment:** Narrow the exclusions to ensure they only apply if the Company is not disproportionately affected.\n\n### 2.2 Limitation of Liability (Clause 8.3)\n**Current Provision:** Aggregate liability capped at 15% of Purchase Price ($15,937,500) with no de minimis or basket provisions.\n\n**Risk:** Buyer bears all small claims and must pursue numerous minor breaches individually.\n\n**Proposed Amendment:** Introduce a de minimis threshold (e.g., $25,000 per claim) and a basket (e.g., 1% of Purchase Price) before liability arises.\n\n### 2.3 Warranty Claim Notification Period (Clause 9.7)\n**Current Provision:** 20-day notification period from becoming aware (or reasonably ought to have become aware).\n\n**Risk:** Insufficient time for proper investigation and notification, particularly for complex matters like the disclosed intellectual property issues.\n\n**Proposed Amendment:** Extend to 30-45 days and clarify \"becoming aware\" standard.\n\n### 2.4 Intellectual Property Disclosure\n**Disclosure Letter (Clause 4):** Reveals that core platform software was developed by Thornbury Analytics Ltd in 2023 with no written assignment of IP rights and no payments made since 2023.\n\n**Risk:** Significant IP ownership uncertainty affecting Company's core asset value.\n\n**Proposed Amendment:** Require specific indemnity for IP claims and/or price adjustment mechanism.\n\n### 2.5 Escrow Arrangement Inconsistencies\n**Issues Identified:**\n1. SPA Purchase Price: $85,000,000 USD\n2. Escrow Amount: £4,850,000 GBP (stated as 15% of consideration)\n3. Escrow release: 12 months from 22 June 2026 (22 June 2027)\n4. Claim notification: 45 days in Escrow Agreement vs 20 days in SPA\n\n**Risk:** Currency mismatch creates valuation uncertainty; inconsistent claim periods create confusion.\n\n### 2.6 Regulatory Clearance Condition\n**Client Email Indication:** Merger clearance expected by 29 September 2026.\n\n**SPA Provision:** Conditions must be satisfied by 16 September 2026 (stated as 90 days from 17 June 2026, but actually 91 days).\n\n**Risk:** Regulatory clearance timeline may exceed condition satisfaction date.\n\n### 2.7 Date Inconsistencies\n**Issues Identified:**\n1. **SPA Closing Date:** 4 September 2026 (Clause 3.1)\n2. **Escrow Agreement Closing Date:** 22 June 2026 (Clause 1.1)\n3. **Condition Satisfaction Date:** 16 September 2026 (91 days from 17 June 2026, not 90 days as stated)\n\n**Risk:** Conflicting dates create uncertainty about transaction timeline and obligations.\n\n### 2.8 Customer Contracts Focus\n**Client Instruction:** Specific request to pay attention to customer contracts, particularly Yarrow Foods Ltd as a material customer.\n\n**Current SPA:** No specific warranty or representation regarding customer contracts.\n\n**Risk:** Potential undisclosed issues with key customer relationships affecting business value.\n\n## 3. DETAILED PROPOSED AMENDMENTS\n\n### 3.1 Clause 1.1 – Material Adverse Change Definition\n**Current Text:**\n> \"Material Adverse Change\" means any event which has a material adverse effect on the business of the Company, excluding changes in general economic conditions, changes affecting the industry generally, and pandemics.\n\n**Proposed Amendment:**\n> \"Material Adverse Change\" means any event, circumstance, change or effect that, individually or in the aggregate, has a material adverse effect on the business, operations, assets, liabilities, financial condition or prospects of the Company, **provided that none of the following shall constitute, or be taken into account in determining whether there has been, a Material Adverse Change: (a) changes in general economic conditions, (b) changes affecting the industry generally, or (c) pandemics; unless in each case such change, event or effect has a disproportionate adverse effect on the Company relative to other participants in the industry in which the Company operates.**\n\n### 3.2 Clause 8.3 – Limitation of Liability\n**Current Text:**\n> The aggregate liability of the Seller for all claims arising under the warranties set out in this Agreement shall not exceed an amount equal to 15% of the Purchase Price, being $15,937,500. For the avoidance of doubt, the Purchase Price is $85,000,000 as set out in Section 2.1.\n\n**Proposed Amendment:**\n> **8.3 (Limitation of Liability)** \n> (a) The Seller shall have no liability for any individual claim where the amount of such claim is less than $25,000 (the \"De Minimis Threshold\").\n> \n> (b) The Seller shall have no liability for any claims unless and until the aggregate amount of all valid claims (excluding claims below the De Minimis Threshold) exceeds $850,000 (being 1% of the Purchase Price) (the \"Basket\"), in which case the Seller shall be liable for the full amount of such claims (including the amount of the Basket).\n> \n> (c) The aggregate liability of the Seller for all claims arising under the warranties set out in this Agreement shall not exceed an amount equal to 15% of the Purchase Price, being $15,937,500.\n> \n> (d) For the avoidance of doubt, the limitations in this Clause 8.3 shall not apply to: (i) claims arising from fraud or fraudulent misrepresentation; (ii) claims under any tax covenant or tax deed; or (iii) any specific indemnities agreed between the parties.\n\n### 3.3 Clause 9.7 – Warranty Claim Notification\n**Current Text:**\n> Any claim by the Buyer in respect of a breach of warranty must be notified to the Seller in writing within 20 days of the Buyer becoming aware (or reasonably ought to have become aware) of the facts giving rise to the claim.\n\n**Proposed Amendment:**\n> Any claim by the Buyer in respect of a breach of warranty must be notified to the Seller in writing within **45** days of the Buyer **actually becoming aware** of the facts giving rise to the claim **following completion of reasonable due diligence investigation into such facts**.\n\n### 3.4 New Clause – Intellectual Property Specific Indemnity\n**Proposed Addition:**\n> **8.4 (Intellectual Property Indemnity)**\n> (a) Notwithstanding any other provision of this Agreement, the Seller hereby indemnifies the Buyer against all losses, liabilities, costs and expenses arising from:\n> (i) any claim by Thornbury Analytics Ltd or any third party in respect of intellectual property rights relating to the Company's core platform software;\n> (ii) any failure by the Company to have valid title to the intellectual property rights in the core platform software;\n> (iii) any requirement for the Company to make payments to Thornbury Analytics Ltd in respect of past or future use of the core platform software.\n> \n> (b) This indemnity shall be uncapped and shall survive for a period of **36 months** from the Closing Date.\n> \n> (c) The limitations in Clause 8.3 shall not apply to claims under this indemnity.\n\n### 3.5 New Clause – Customer Contracts Warranty\n**Proposed Addition:**\n> **8.5 (Customer Contracts)**\n> (a) The Seller warrants and represents that:\n> (i) all material customer contracts of the Company, including but not limited to contracts with Yarrow Foods Ltd, are valid, binding and in full force and effect;\n> (ii) there are no material disputes with any material customers;\n> (iii) no material customer has given notice of termination or intention to terminate its relationship with the Company;\n> (iv) the completion of this transaction will not trigger any change of control provisions requiring consent or giving termination rights under any material customer contracts.\n> \n> (b) For the purposes of this clause, \"material customer\" means any customer accounting for more than 5% of the Company's revenue in the last financial year.\n> \n> (c) The Seller shall indemnify the Buyer against all losses arising from any breach of this warranty.\n\n### 3.6 Clause 4.5 – Conditions and Termination\n**Current Text:**\n> If the Conditions (as defined in this Agreement) are not satisfied or waived by the date falling 90 days after the date of this Agreement (i.e., 16 September 2026), either party may terminate this Agreement by written notice to the other.\n\n**Proposed Amendment:**\n> If the Conditions (as defined in this Agreement) are not satisfied or waived by the date falling **120** days after the date of this Agreement (i.e., **15 October 2026**), either party may terminate this Agreement by written notice to the other, **provided that if the only condition outstanding is regulatory merger clearance and the parties are actively pursuing such clearance in good faith, this period shall automatically extend by 30 days.**\n\n### 3.7 Clause 3.1 – Closing Date Consistency\n**Current Text:**\n> Closing shall take place on 4 September 2026 (the \"Closing Date\"), at which time the parties shall deliver all documents and payments required under this Agreement.\n\n**Proposed Amendment:**\n> **3.1 (Closing)**\n> (a) Closing shall take place on **4 September 2026** (the \"Closing Date\"), at which time the parties shall deliver all documents and payments required under this Agreement.\n> \n> (b) **For the avoidance of doubt, references to \"Closing Date\" in any ancillary documents, including but not limited to the Escrow Agreement and Disclosure Letter, shall be deemed to refer to 4 September 2026 unless expressly stated otherwise.**\n\n### 3.8 Clause 5.1 – Payment and Escrow Alignment\n**Current Text:**\n> The Buyer shall pay the Purchase Price in full to the Seller on the Closing Date, by wire transfer in immediately available funds to a bank account designated in writing by the Seller at least five Business Days prior to the Closing Date.\n\n**Proposed Amendment:**\n> **5.1 (Payment)** \n> (a) The Purchase Price shall be paid as follows:\n> (i) $80,150,000 shall be paid directly to the Seller on the Closing Date; and\n> (ii) $4,850,000 (being 15% of the Purchase Price) shall be deposited into the escrow account established under the Escrow Agreement dated [●] June 2026.\n> \n> (b) All payments shall be made in US dollars by wire transfer in immediately available funds to bank accounts designated in writing by the Seller at least five Business Days prior to the Closing Date.\n> \n> **New Clause 5.2:**\n> The parties acknowledge and agree that the Escrow Agreement forms an integral part of this Agreement and that any claim under this Agreement may be satisfied from the escrow funds in accordance with the Escrow Agreement.\n\n### 3.9 Clause 6.1 – Notice Provisions\n**Current Text:**\n> Any notice or other communication required or permitted to be given under this Agreement shall be in writing and shall be delivered personally, sent by reputable overnight courier, or sent by email to the registered office of the relevant party or such other address or email address as a party may notify to the other in accordance with this clause. Notices shall be deemed to have been received at the time of delivery if delivered personally or by couri\n\n# Your job\nNo grades are available. Critically assess the deliverable and the work process yourself, as a demanding supervising partner would, and write reusable candidate lessons for improving the work.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|redline\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C1\",\n      \"what_went_wrong\": \"The redline note did not verify the consistency of currency conversions between the purchase price and escrow amount, despite identifying a currency mismatch.\",\n      \"should_have\": \"Calculated and flagged the exact discrepancy arising from the currency mismatch between USD purchase price and GBP escrow amount, including the exchange rate risk.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C2\",\n      \"what_went_wrong\": \"The deliverable proposed amendments to the warranty claim notification period but did not align it with the escrow agreement's claim period, leaving a procedural gap.\",\n      \"should_have\": \"Ensured all claim notification periods across related agreements (SPA, escrow, disclosure) were harmonised to avoid conflicting deadlines.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C3\",\n      \"what_went_wrong\": \"The analysis of date inconsistencies was limited to identifying mismatches without proposing a unified timeline or cross-referencing all date-dependent clauses.\",\n      \"should_have\": \"Mapped all date-dependent clauses (closing, condition satisfaction, escrow release) into a single timeline to ensure logical consistency and flagged any remaining conflicts.\",\n      \"failure_kind\": \"analysis\"\n    },\n    {\n      \"criterion_id\": \"C4\",\n      \"what_went_wrong\": \"The proposed amendments for the material adverse change definition did not address whether the exclusions applied to the 'prospects' of the company, which could leave ambiguity.\",\n      \"should_have\": \"Clarified whether the MAC exclusions applied to 'prospects' of the company, not just current financial condition or operations.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C5\",\n      \"what_went_wrong\": \"The redline note did not include a cross-check of the escrow release date with the survival period of warranties, potentially leaving gaps in claim coverage.\",\n      \"should_have\": \"Verified that the escrow release date extended beyond the survival period of all warranties and indemnities to ensure funds were available for claims.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C6\",\n      \"what_went_wrong\": \"The deliverable did not propose a mechanism to address the disclosed IP issue beyond an indemnity, such as a holdback or price adjustment.\",\n      \"should_have\": \"Evaluated and proposed alternative risk mitigation tools (e.g., holdback, price adjustment, or specific performance obligations) for high-risk disclosures like IP ownership.\",\n      \"failure_kind\": \"content\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"review\",\n      \"text\": \"Before finalising a redline note, verify that all claim notification periods across related agreements (e.g., SPA, escrow, disclosure) are harmonised to avoid conflicting deadlines.\",\n      \"evidence\": [\"C2\"],\n      \"task_type_scope\": \"redline\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"For transactions involving multi-currency payments or escrows, calculate and flag the exact discrepancy arising from currency mismatches, including exchange rate risks and valuation uncertainties.\",\n      \"evidence\": [\"C1\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"Ensure proposed amendments to material adverse change definitions explicitly address whether exclusions apply to the 'prospects' of the company, not just current financial condition or operations.\",\n      \"evidence\": [\"C4\"],\n      \"task_type_scope\": \"redline\",\n      \"confidence\": 0.85\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Map all date-dependent clauses (e.g., closing, condition satisfaction, escrow release) into a single timeline to identify and resolve logical inconsistencies before proposing amendments.\",\n      \"evidence\": [\"C3\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"review\",\n      \"text\": \"Confirm that escrow release dates extend beyond the survival period of all warranties and indemnities to ensure funds are available for claims before finalising the redline note.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"redline\",\n      \"confidence\": 0.88\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"drafting\",\n      \"text\": \"For high-risk disclosures (e.g., IP ownership, material contracts), evaluate and propose alternative risk mitigation tools (e.g., holdback, price adjustment, specific performance obligations) beyond indemnities.\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.87\n    }\n  ],\n  \"lesson_feedback\": []\n}\n```"
+}

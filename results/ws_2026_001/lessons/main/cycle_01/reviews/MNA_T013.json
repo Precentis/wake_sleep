@@ -1,0 +1,149 @@
+{
+  "task_id": "MNA_T013",
+  "cycle": 1,
+  "lineage": "main",
+  "graded": true,
+  "failures": [
+    {
+      "criterion_id": "C3",
+      "what_went_wrong": "The agent calculated and stated the General Warranty deadline but failed to identify or calculate the Fundamental Warranty deadline (72 months after Closing).",
+      "should_have": "The agent should have explicitly calculated and stated both General and Fundamental Warranty deadlines based on the survival periods specified in the agreement.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C5",
+      "what_went_wrong": "The agent calculated the working capital shortfall but failed to derive the adjusted Purchase Price by subtracting the shortfall from the base price. It also did not flag the discrepancy with the Seller's funds flow figure.",
+      "should_have": "The agent should have recomputed the adjusted Purchase Price by applying the working capital shortfall to the base price and compared it with the Seller's stated figure.",
+      "failure_kind": "procedural"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T013_0",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "For every financial adjustment (e.g., working capital, earn-out), recompute the adjusted amount and cross-check it against all stated figures in the documents.",
+      "source_tasks": [
+        "MNA_T013"
+      ],
+      "evidence": [
+        "MNA_T013:C5"
+      ],
+      "task_type_scope": "issues_list",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T013_1",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "When reviewing warranty survival periods, calculate and explicitly state the expiry dates for all categories (e.g., general, fundamental) to ensure completeness.",
+      "source_tasks": [
+        "MNA_T013"
+      ],
+      "evidence": [
+        "MNA_T013:C3"
+      ],
+      "task_type_scope": "issues_list",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T013_2",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "In issues lists, include a dedicated subsection for all derived financial calculations, showing the arithmetic and flagging any discrepancies with stated figures.",
+      "source_tasks": [
+        "MNA_T013"
+      ],
+      "evidence": [
+        "MNA_T013:C5"
+      ],
+      "task_type_scope": "issues_list",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T013_3",
+      "type": "practice_note",
+      "category": "review",
+      "text": "Before finalising an issues list, verify that every calculated deadline (e.g., warranty expiry, escrow release) is explicitly stated and matches the contractual survival periods.",
+      "source_tasks": [
+        "MNA_T013"
+      ],
+      "evidence": [
+        "MNA_T013:C3"
+      ],
+      "task_type_scope": "issues_list",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T013_4",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "For transactions with multiple warranty categories, create a timeline of all critical dates (e.g., closing, warranty expiry, escrow release) to identify gaps or overlaps.",
+      "source_tasks": [
+        "MNA_T013"
+      ],
+      "evidence": [
+        "MNA_T013:C3"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.8
+    },
+    {
+      "candidate_id": "c01_MNA_T013_5",
+      "type": "practice_note",
+      "category": "general",
+      "text": "When reconciling financial figures, document the source of each input (e.g., clause reference, calculation) to enable rapid verification during negotiations.",
+      "source_tasks": [
+        "MNA_T013"
+      ],
+      "evidence": [
+        "MNA_T013:C5"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.8
+    }
+  ],
+  "lesson_feedback": [
+    {
+      "lesson_id": "L0001",
+      "label": "HELPFUL",
+      "reason": "Directly addresses the procedural failure in C5 by ensuring derived financial adjustments are recomputed and cross-checked."
+    },
+    {
+      "lesson_id": "L0002",
+      "label": "HELPFUL",
+      "reason": "Targets the procedural gap in C3 by mandating explicit calculation and statement of all warranty deadlines."
+    },
+    {
+      "lesson_id": "L0003",
+      "label": "HELPFUL",
+      "reason": "Ensures transparency in financial calculations, which would have caught the missing adjusted Purchase Price in C5."
+    },
+    {
+      "lesson_id": "L0004",
+      "label": "HELPFUL",
+      "reason": "Prevents oversight of critical deadlines by requiring a verification step before finalising the deliverable."
+    },
+    {
+      "lesson_id": "L0005",
+      "label": "HELPFUL",
+      "reason": "Encourages a systematic approach to identifying timing-related issues, which would have highlighted the missing Fundamental Warranty deadline in C3."
+    },
+    {
+      "lesson_id": "L0006",
+      "label": "HELPFUL",
+      "reason": "Improves auditability of financial reconciliations, which would have made the adjusted Purchase Price discrepancy in C5 more apparent."
+    }
+  ],
+  "input_tokens": 4983,
+  "output_tokens": 1077,
+  "cost_usd": 0.004107,
+  "prompt": "# Task\nType: issues_list | Practice area: corporate_mna\nYou act for the Buyer, Saltash Logistics plc. Saltash Logistics plc (the Buyer) is acquiring the entire issued share capital of Hartwell Pharma plc (the Company) from Vantage Bioscience plc (the Seller).\n\nPrepare an issues list for the supervising partner covering the matter documents. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 26 February 2027. Address the deliverable to the supervising partner.\n\n# Trajectory (29 model steps, 29 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"client_email.md\"})\n 3. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 4. [research] read_document({\"name\": \"escrow_agreement.md\"})\n 5. [research] search_documents({\"query\": \"EBITDA\"})\n 6. [research] search_documents({\"query\": \"Working Capital\"})\n 7. [analysis] calculate({\"expression\": \"earn_out_calculation = (7300000 - 6500000) * 3\"})\n 8. [analysis] calculate({\"expression\": \"working_capital_shortfall = 5000000 - 4380000\"})\n 9. [research] search_documents({\"query\": \"$\"})\n10. [research] search_documents({\"query\": \"\\u00a3\"})\n11. [research] read_document({\"name\": \"share_purchase_agreement.md\", \"start_line\": 20, \"num_lines\": 15})\n12. [research] read_document({\"name\": \"escrow_agreement.md\", \"start_line\": 30, \"num_lines\": 5})\n13. [analysis] calculate({\"expression\": \"today = date('2027-02-26')\\nclosing_date = date('2027-04-22')\\ndays_to_closing = days_between(today, closing_date)\"})\n14. [analysis] calculate({\"expression\": \"general_warranty_end = add_months(closing_date, 18)\\nfundamental_warranty_end = add_months(closing_date, 72)\\nescrow_release_date = add_months(c)\n15. [analysis] calculate({\"expression\": \"closing_date = date('2027-04-22')\\ngeneral_warranty_end = add_months(closing_date, 18)\\nfundamental_warranty_end = add_months(closing_date, 72)\\)\n16. [analysis] calculate({\"expression\": \"warranty_claim_period = 20\\nescrow_claim_period = 45\"})\n17. [drafting] write_draft(<887 words>)\n18. [verification] read_draft({})\n19. [verification] read_document({\"name\": \"client_email.md\", \"start_line\": 18, \"num_lines\": 6})\n20. [editing] edit_draft(find='### 7.2 Missing Escrow Agent\\n- **Escrow Agreement:** Escrow ' -> '### 7.2 Missing Escrow Agent\\n- **Escrow Agreement:** Escrow ')\n21. [verification] read_document({\"name\": \"share_purchase_agreement.md\", \"start_line\": 1, \"num_lines\": 40})\n22. [editing] edit_draft(find='### 5.2 Missing Key Provisions\\n- **SPA Gaps:** No definition' -> '### 5.2 Missing Key Provisions\\n- **SPA Gaps:** No definition')\n23. [verification] read_document({\"name\": \"escrow_agreement.md\", \"start_line\": 50, \"num_lines\": 25})\n24. [editing] edit_draft(find='### 5.2 Missing Key Provisions\\n- **SPA Gaps:** No definition' -> '### 5.2 Missing Key Provisions\\n- **SPA Gaps:** No definition')\n25. [verification] calculate({\"expression\": \"escrow_release_date = add_months(date('2027-04-22'), 12)\\nis_business_day = weekday(escrow_release_date) != 6 and weekday(escrow_release_date) !)\n26. [verification] calculate({\"expression\": \"escrow_release_date = add_months(date('2027-04-22'), 12)\\nday_of_week = weekday(escrow_release_date)\"})\n27. [editing] edit_draft(find='### 3.2 Escrow Release Timing\\n- **Escrow Agreement Clause 4.' -> '### 3.2 Escrow Release Timing\\n- **Escrow Agreement Clause 4.')\n28. [verification] read_draft({})\n29. [control] finish({\"summary\": \"Issues list prepared for the acquisition of Hartwell Pharma plc by Saltash Logistics plc, identifying material inconsistencies in financial terms, )\n\n# Final deliverable\n# Issues List: Acquisition of Hartwell Pharma plc by Saltash Logistics plc\n\n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Date:** 26 February 2027  \n**Matter:** Acquisition of Hartwell Pharma plc from Vantage Bioscience plc  \n**Client:** Saltash Logistics plc (Buyer)\n\n## Executive Summary\n\nThis issues list identifies key concerns and inconsistencies in the draft transaction documents for the proposed acquisition of Hartwell Pharma plc. The documents reviewed include: (1) client email instructions dated 18 February 2027; (2) draft Share Purchase Agreement dated 10 February 2027; and (3) draft Escrow Agreement dated 20 February 2027. Several material inconsistencies require urgent attention before execution.\n\n## 1. Financial Terms Inconsistencies\n\n### 1.1 Purchase Price Discrepancy\n- **Client Email:** References \"adjusted purchase price of $138,760,000\"\n- **SPA Clause 2.1:** States purchase price of $140,000,000\n- **Issue:** $1,240,000 discrepancy requires clarification and alignment\n\n### 1.2 Earn-out Payment Calculation\n- **Client Email:** Seller indicates Earn-out Payment will be $2,000,000 based on FY2026 EBITDA of $7,300,000\n- **SPA Clause 3.4:** Formula calculates Earn-out as 3 × (FY2026 EBITDA - $6,500,000)\n- **Calculation:** ($7,300,000 - $6,500,000) × 3 = $2,400,000\n- **Issue:** $400,000 discrepancy between Seller's indication ($2,000,000) and SPA formula result ($2,400,000)\n\n### 1.3 Working Capital Adjustment\n- **Client Email:** Estimated Closing Working Capital is $4,380,000\n- **SPA Clause 2.3:** Target Working Capital is $5,000,000\n- **Calculation:** Shortfall of $620,000 would reduce purchase price\n- **Issue:** Need to verify calculation methodology and ensure alignment with client expectations\n\n## 2. Currency Inconsistency\n\n### 2.1 Mixed Currency References\n- **SPA:** All amounts in US dollars ($)\n- **Escrow Agreement Clause 1.1:** Escrow Amount defined as \"£15,000,000 (fifteen million pounds sterling)\"\n- **Issue:** Critical currency mismatch - SPA in USD, escrow in GBP. This creates significant foreign exchange risk and calculation uncertainty.\n\n## 3. Timing and Date Issues\n\n### 3.1 Completion Timing\n- **Client Email:** Target completion date \"prior to 26 February 2027\"\n- **SPA Clause 1.1 / Escrow Agreement Clause 1.1:** Closing Date defined as 22 April 2027\n- **Issue:** Significant delay from client's target date (55 days later)\n\n### 3.2 Escrow Release Timing\n- **Escrow Agreement Clause 4.1:** Escrow released 12 months after Closing Date (22 April 2028)\n- **Note:** 22 April 2028 is a Saturday - may require business day adjustment\n- **SPA Clause 10.1:** General Warranties survive 18 months (until 22 October 2028)\n- **Issue:** Escrow releases 6 months before general warranty period ends, leaving Buyer unprotected for final 6 months of warranty coverage\n\n## 4. Notice Period Inconsistencies\n\n### 4.1 Warranty Claims Notification\n- **SPA Clause 9.7:** 20-day notification period for warranty claims\n- **Escrow Agreement Clause 5.2:** 45-day notification period for escrow claims\n- **Issue:** Inconsistent notice periods create confusion and potential procedural traps\n\n### 4.2 Escrow Claim Eligibility\n- **Escrow Agreement Clause 5.1:** Claims limited to \"breach of representation, warranty or indemnity under the SPA\"\n- **Issue:** No explicit reference to working capital adjustments or earn-out disputes, which may also require escrow protection\n\n## 5. Structural Issues\n\n### 5.1 Escrow Amount Justification\n- **Issue:** No explanation in documents for why £15,000,000 escrow amount was chosen\n- **Concern:** Should be proportionate to potential exposures (warranty claims, working capital adjustments, earn-out disputes)\n\n### 5.2 Missing Key Provisions\n- **SPA Gaps:** No definitions for \"Closing Working Capital,\" calculation methodology, or dispute resolution process\n- **SPA Structural Issue:** Missing clauses 2.2, 3.1-3.3, 4-8, 9.1-9.6 - suggests incomplete draft\n- **Escrow Gaps:** No provisions for interest allocation, escrow agent fees, or claim resolution process\n- **Escrow Structural Issue:** Agreement ends abruptly after clause 8 - missing execution blocks, termination provisions, and general clauses\n\n## 6. Material Customer Disclosure\n\n### 6.1 Orwell Analytics Ltd\n- **Client Email:** Identified as \"material customer of Hartwell Pharma plc\"\n- **SPA:** No specific warranty or disclosure regarding material customer relationships\n- **Issue:** Need specific warranty on customer relationships and potential concentration risk\n\n## 7. Document Execution Issues\n\n### 7.1 Date Inconsistencies\n- **SPA:** Dated 10 February 2027\n- **Escrow Agreement:** Dated 20 February 2027 (Execution Date)\n- **Client Email:** Dated 18 February 2027 requesting review by 20 February 2027\n- **Issue:** Documents pre-date client instructions and review request\n\n### 7.2 Missing Escrow Agent\n- **Escrow Agreement:** Escrow Agent defined as \"[Name of Escrow Agent]\" (not filled in)\n- **Issue:** Critical party missing from agreement\n\n### 7.3 Missed Client Deadline\n- **Client Email:** Requested review \"by close of business 20 February 2027\"\n- **Current Date:** 26 February 2027\n- **Issue:** 6-day delay in providing review - urgent client communication required\n\n## 8. Legal Formalities\n\n### 8.1 Governing Law and Jurisdiction\n- **SPA Clause 13.2 / Escrow Agreement Clause 8.1:** Both specify English law and exclusive jurisdiction of English courts\n- **Check:** Consistent with client instructions\n\n### 8.2 Entire Agreement Clause\n- **SPA Clause 13.1:** Contains standard entire agreement clause\n- **Check:** Appropriate for transaction\n\n## Recommended Actions\n\n1. **Immediate Clarification Needed:**\n   - Resolve purchase price discrepancy ($138.76m vs $140m)\n   - Align currency references (USD vs GBP)\n   - Confirm completion date (February vs April 2027)\n\n2. **Financial Terms Review:**\n   - Verify earn-out calculation methodology\n   - Establish working capital calculation process\n   - Justify escrow amount selection\n\n3. **Document Amendments Required:**\n   - Harmonize notice periods (20 vs 45 days)\n   - Extend escrow period to match warranty survival\n   - Add missing definitions and procedures\n   - Include material customer warranty\n\n4. **Due Diligence Points:**\n   - Investigate Orwell Analytics Ltd relationship\n   - Verify FY2026 EBITDA of $7,300,000\n   - Validate estimated working capital of $4,380,000\n\n5. **Next Steps:**\n   - Schedule call with client (Amelia Wexford) to discuss discrepancies\n   - Prepare mark-up of SPA and Escrow Agreement\n   - Request updated financial information from Seller\n\n## Conclusion\n\nThe draft documents contain material inconsistencies that could significantly impact the transaction economics and risk allocation. Urgent client consultation is required before any document execution. The currency mismatch alone represents a substantial financial risk that must be resolved.\n\n# Expert rubric verdicts (6/8 passed)\n- C1 [PASS] States that the escrow release date is 22 April 2028 (12 months after the 22 April 2027 Closing Date) and that pending claims must be notified before then.\n    judges: PASS: Section 3.2 correctly states the escrow release date as 22 April 2028 (12 months after the 22 April 2027 Closing Date) and notes that pending claims must be notified before that date. | PASS: Section 3.2 correctly states escrow releases 12 months after Closing Date (22 April 2028) and notes pending claims must be notified before that date per Clause 4.1.\n- C2 [PASS] Calculates the Earn-out Payment as $2,400,000 (3 x ($7,300,000 - $6,500,000), subject to the $10,000,000 cap) and identifies that the Seller's figure of $2,000,000 is wrong.\n    judges: PASS: Section 1.2 correctly calculates the earn-out as $2,400,000 using the formula 3 × ($7,300,000 - $6,500,000) and identifies the $400,000 discrepancy with the Seller's incorrect $2,000,000 figure. | PASS: Section 1.2 correctly calculates Earn-out as $2,400,000 using the formula 3 × ($7,300,000 - $6,500,000) and identifies the $400,000 discrepancy with Seller's $2,000,000 figure.\n- C3 [FAIL] States that General Warranty claims must be notified by 22 October 2028 (18 months after Closing) and Fundamental Warranty claims by 22 April 2033 (72 months after Closing).\n    judges: FAIL: The deliverable correctly states the General Warranty deadline of 22 October 2028 but fails to identify or calculate the Fundamental Warranty deadline of 22 April 2033 (72 months after Closing). | PASS: Section 3.2 correctly states General Warranties survive until 22 October 2028 (18 months) and Fundamental Warranties until 22 April 2033 (72 months), with claims required before expiry.\n- C4 [PASS] Identifies the conflict between the 20-day claim notice period in SPA Section 9.7 and the 45-day period in Escrow Clause 5.2, and recommends the Buyer works to the shorter 20-day period or aligns the documents.\n    judges: PASS: Section 4.1 identifies the conflict between the 20-day SPA notice period and 45-day escrow period, and the Recommended Actions section explicitly recommends harmonizing the notice periods. | PASS: Section 4.1 identifies the 20-day vs 45-day inconsistency and recommends harmonization, with Recommended Action 3 explicitly stating to 'Harmonize notice periods (20 vs 45 days)'.\n- C5 [FAIL] Calculates the working capital shortfall as $620,000 and the adjusted Purchase Price as $139,380,000, identifying that the Seller's funds flow figure of $138,760,000 is wrong.\n    judges: FAIL: While the deliverable correctly calculates the $620,000 working capital shortfall, it fails to calculate the adjusted Purchase Price of $139,380,000 or identify that the Seller's $138,760,000 figure is wrong. | FAIL: The deliverable calculates the working capital shortfall correctly as $620,000 but fails to calculate the adjusted Purchase Price as $139,380,000 ($140,000,000 - $620,000). Instead it only notes the discrepancy with the \n- C6 [PASS] Flags the 20-day vs 45-day notice-period inconsistency between the SPA and the escrow agreement.\n    judges: PASS: Section 4.1 explicitly flags the inconsistency between the 20-day claim notice period in SPA Section 9.7 and the 45-day period in Escrow Clause 5.2. | PASS: Section 4.1 explicitly flags the 20-day vs 45-day notice period inconsistency between SPA Clause 9.7 and Escrow Clause 5.2.\n- C7 [PASS] Shows the earn-out arithmetic and flags the discrepancy between $2,400,000 and the Seller's $2,000,000.\n    judges: PASS: Section 1.2 shows the earn-out arithmetic (($7,300,000 - $6,500,000) × 3 = $2,400,000) and flags the $400,000 discrepancy with the Seller's $2,000,000 figure. | PASS: Section 1.2 shows the earn-out arithmetic ($7,300,000 - $6,500,000) × 3 = $2,400,000 and flags the discrepancy with Seller's $2,000,000 indication.\n- C8 [PASS] Gives a concrete recommended action for each issue (what to request, amend or negotiate).\n    judges: PASS: The Recommended Actions section provides concrete recommended actions for each identified issue, including specific requests for clarification, document amendments, and negotiation points. | PASS: The Recommended Actions section provides concrete actions for each issue: resolve purchase price discrepancy, align currency references, confirm completion date, verify earn-out methodology, harmonize notice periods, ext\n\n# Your job\nAnalyse each FAILED criterion: what went wrong, what the agent should have done, and whether the failure is procedural (reusable) or task-specific. Then write reusable candidate lessons that would prevent the procedural failures on other matters.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|issues_list\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C3\",\n      \"what_went_wrong\": \"The agent calculated and stated the General Warranty deadline but failed to identify or calculate the Fundamental Warranty deadline (72 months after Closing).\",\n      \"should_have\": \"The agent should have explicitly calculated and stated both General and Fundamental Warranty deadlines based on the survival periods specified in the agreement.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C5\",\n      \"what_went_wrong\": \"The agent calculated the working capital shortfall but failed to derive the adjusted Purchase Price by subtracting the shortfall from the base price. It also did not flag the discrepancy with the Seller's funds flow figure.\",\n      \"should_have\": \"The agent should have recomputed the adjusted Purchase Price by applying the working capital shortfall to the base price and compared it with the Seller's stated figure.\",\n      \"failure_kind\": \"procedural\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"For every financial adjustment (e.g., working capital, earn-out), recompute the adjusted amount and cross-check it against all stated figures in the documents.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"issues_list\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"When reviewing warranty survival periods, calculate and explicitly state the expiry dates for all categories (e.g., general, fundamental) to ensure completeness.\",\n      \"evidence\": [\"C3\"],\n      \"task_type_scope\": \"issues_list\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"In issues lists, include a dedicated subsection for all derived financial calculations, showing the arithmetic and flagging any discrepancies with stated figures.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"issues_list\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"review\",\n      \"text\": \"Before finalising an issues list, verify that every calculated deadline (e.g., warranty expiry, escrow release) is explicitly stated and matches the contractual survival periods.\",\n      \"evidence\": [\"C3\"],\n      \"task_type_scope\": \"issues_list\",\n      \"confidence\": 0.85\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"For transactions with multiple warranty categories, create a timeline of all critical dates (e.g., closing, warranty expiry, escrow release) to identify gaps or overlaps.\",\n      \"evidence\": [\"C3\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.8\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"general\",\n      \"text\": \"When reconciling financial figures, document the source of each input (e.g., clause reference, calculation) to enable rapid verification during negotiations.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.8\n    }\n  ],\n  \"lesson_feedback\": [\n    {\n      \"lesson_id\": \"L0001\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Directly addresses the procedural failure in C5 by ensuring derived financial adjustments are recomputed and cross-checked.\"\n    },\n    {\n      \"lesson_id\": \"L0002\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Targets the procedural gap in C3 by mandating explicit calculation and statement of all warranty deadlines.\"\n    },\n    {\n      \"lesson_id\": \"L0003\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Ensures transparency in financial calculations, which would have caught the missing adjusted Purchase Price in C5.\"\n    },\n    {\n      \"lesson_id\": \"L0004\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Prevents oversight of critical deadlines by requiring a verification step before finalising the deliverable.\"\n    },\n    {\n      \"lesson_id\": \"L0005\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Encourages a systematic approach to identifying timing-related issues, which would have highlighted the missing Fundamental Warranty deadline in C3.\"\n    },\n    {\n      \"lesson_id\": \"L0006\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Improves auditability of financial reconciliations, which would have made the adjusted Purchase Price discrepancy in C5 more apparent.\"\n    }\n  ]\n}\n```"
+}

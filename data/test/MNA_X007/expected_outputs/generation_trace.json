@@ -1,0 +1,85 @@
+{
+  "docs": [
+    {
+      "title": "share_purchase_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 725,
+            "output_tokens": 1033
+          }
+        }
+      ]
+    },
+    {
+      "title": "escrow_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 544,
+            "output_tokens": 1124
+          }
+        }
+      ]
+    },
+    {
+      "title": "client_email.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 523,
+            "output_tokens": 402
+          }
+        }
+      ]
+    }
+  ],
+  "doc_facts": {
+    "share_purchase_agreement.md": {
+      "key": "spa",
+      "facts": [
+        "Parties: Juniper Engineering Ltd (Buyer), Corrib Engineering Ltd (Seller); the Company is Merrion Holdings Ltd.",
+        "Section 2.1: the Purchase Price is $20,000,000.",
+        "This Agreement is dated 1 April 2026; Closing is scheduled for 1 May 2026 (the 'Closing Date').",
+        "Section 1.1: 'Closing Date' means 1 May 2026.",
+        "Section 8.3 (Limitation of Liability): the aggregate liability of the Seller for warranty claims shall not exceed an amount equal to 12% of the Purchase Price, being $1,920,000. The Purchase Price is $20,000,000 (see Section 2.1).",
+        "Section 4.5: if the Conditions are not satisfied by the date falling 120 days after the date of this Agreement (signed 1 April 2026), either party may terminate.",
+        "Section 2.3: the Purchase Price shall be reduced dollar-for-dollar by any shortfall of Closing Working Capital below the Target Working Capital of $5,000,000."
+      ],
+      "must_contain": [
+        "12%",
+        "$1,920,000",
+        "$20,000,000",
+        "120 days",
+        "1 April 2026",
+        "$5,000,000"
+      ]
+    },
+    "escrow_agreement.md": {
+      "key": "escrow",
+      "facts": [
+        "Clause 4.1: the Escrow Amount shall be released to the Seller on the date falling 12 months after the Closing Date, save to the extent of pending claims notified before that date. 'Business Day' means a day other than a Saturday or Sunday on which banks are open in London.",
+        "The Closing Date is 1 May 2026."
+      ],
+      "must_contain": [
+        "12 months",
+        "1 May 2026"
+      ]
+    },
+    "client_email.md": {
+      "key": "client_email",
+      "facts": [
+        "Regulatory counsel expects merger clearance by 29 August 2026.",
+        "The estimated Closing Working Capital is $4,380,000. The Seller's draft funds flow shows an adjusted purchase price of $18,760,000."
+      ],
+      "must_contain": [
+        "29 August 2026",
+        "$4,380,000",
+        "$18,760,000"
+      ]
+    }
+  }
+}

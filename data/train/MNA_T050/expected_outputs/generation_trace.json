@@ -1,0 +1,128 @@
+{
+  "docs": [
+    {
+      "title": "share_purchase_agreement.md",
+      "attempts": [
+        {
+          "missing": [
+            "$4,000,000",
+            "$3,000,000",
+            "$8,100,000",
+            "$45,000,000"
+          ],
+          "usage": {
+            "input_tokens": 728,
+            "output_tokens": 1078
+          }
+        },
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 1872,
+            "output_tokens": 1123
+          }
+        }
+      ]
+    },
+    {
+      "title": "disclosure_letter.md",
+      "attempts": [
+        {
+          "missing": [
+            "No written assignment"
+          ],
+          "usage": {
+            "input_tokens": 542,
+            "output_tokens": 1063
+          }
+        },
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 1634,
+            "output_tokens": 1061
+          }
+        }
+      ]
+    },
+    {
+      "title": "client_email.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 529,
+            "output_tokens": 442
+          }
+        }
+      ]
+    },
+    {
+      "title": "material_customer_contract.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 517,
+            "output_tokens": 1089
+          }
+        }
+      ]
+    }
+  ],
+  "doc_facts": {
+    "share_purchase_agreement.md": {
+      "key": "spa",
+      "facts": [
+        "Parties: Merrion Industries Ltd (Buyer), Penrith Energy plc (Seller); the Company is Elstree Capital LLP.",
+        "Section 2.1: the Purchase Price is $45,000,000.",
+        "This Agreement is dated 28 December 2025; Closing is scheduled for 13 February 2026 (the 'Closing Date').",
+        "Section 4.5: if the Conditions are not satisfied by the date falling 120 days after the date of this Agreement (signed 28 December 2025), either party may terminate.",
+        "Section 3.4 (Earn-out): the Earn-out Payment equals 3 times the amount by which FY2026 EBITDA exceeds $4,000,000, capped at $3,000,000.",
+        "Section 9.3 (Limitation of Liability): the aggregate liability of the Seller for warranty claims shall not exceed an amount equal to 15% of the Purchase Price, being $8,100,000. The Purchase Price is $45,000,000 (see Section 2.1)."
+      ],
+      "must_contain": [
+        "120 days",
+        "28 December 2025",
+        "$4,000,000",
+        "$3,000,000",
+        "15%",
+        "$8,100,000",
+        "$45,000,000"
+      ]
+    },
+    "disclosure_letter.md": {
+      "key": "disclosure",
+      "facts": [
+        "Disclosure against Warranty 8.2 (IP): the Company's core platform software was developed in 2023 by an independent contractor, Whitlock Systems Ltd. No written assignment of intellectual property was entered into.",
+        "Disclosure against Warranty 6.3 (Material Contracts): no material contract contains a change of control provision. (No further disclosure.)"
+      ],
+      "must_contain": [
+        "Whitlock Systems Ltd",
+        "No written assignment"
+      ]
+    },
+    "client_email.md": {
+      "key": "client_email",
+      "facts": [
+        "Regulatory counsel expects merger clearance by 11 June 2026.",
+        "Management accounts show FY2026 EBITDA of $4,800,000; the Seller says the Earn-out Payment will therefore be $3,300,000."
+      ],
+      "must_contain": [
+        "11 June 2026",
+        "$4,800,000",
+        "$3,300,000"
+      ]
+    },
+    "material_customer_contract.md": {
+      "key": "material_contract",
+      "facts": [
+        "Clause 14.2: either party may terminate this agreement on 30 days' notice if the other party undergoes a change of control without its prior written consent. The counterparty is Redcliffe Robotics Ltd."
+      ],
+      "must_contain": [
+        "change of control",
+        "prior written consent"
+      ]
+    }
+  }
+}

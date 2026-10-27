@@ -1,0 +1,126 @@
+{
+  "task_id": "MNA_X017",
+  "run_name": "eval/test/full_v10",
+  "judgements": [
+    {
+      "judge": "judge_1",
+      "model": "zai.glm-5",
+      "results": [
+        {
+          "criterion_id": "C1",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable does not identify the IP ownership issue regarding Yarrow Energy plc or recommend a confirmatory assignment; it only discusses a date calculation."
+        },
+        {
+          "criterion_id": "C2",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable fails to mention the Lowther Engineering Ltd claim, the litigation warranty disclosure discrepancy, or the need for an indemnity."
+        },
+        {
+          "criterion_id": "C3",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable does not calculate the long-stop date as 2 May 2026, nor does it identify the merger clearance timing issue; it merely notes a perceived typo in the agreement."
+        },
+        {
+          "criterion_id": "C4",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable does not address the Material Adverse Change carve-outs or the lack of a 'disproportionate effect' exception."
+        },
+        {
+          "criterion_id": "C5",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable omits the change of control provision in the Oakhurst Technologies contract and the conflicting disclosure under Warranty 6.3."
+        },
+        {
+          "criterion_id": "C6",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable does not flag the inconsistency between the board minutes (recording a threatened claim) and the disclosure letter (stating no proceedings are pending)."
+        },
+        {
+          "criterion_id": "C7",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable does not list a confirmatory IP assignment from Yarrow Energy plc as a required third-party action."
+        },
+        {
+          "criterion_id": "C8",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable provides only one partial citation (clause 4.5) and fails to provide pinpoint citations for the numerous issues required by other criteria."
+        }
+      ],
+      "input_tokens": 4750,
+      "output_tokens": 465,
+      "cost_usd": 0.006238,
+      "latency_ms": 5235,
+      "prompt_without_documents": "# Task instructions\nYou act for the Buyer, Brightwater Logistics plc. Brightwater Logistics plc (the Buyer) is acquiring the entire issued share capital of Oakhurst Medical Ltd (the Company) from Fenwick Holdings Ltd (the Seller).\n\nPrepare a due diligence findings report on the matter documents. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 15 January 2026. Address the deliverable to the supervising partner.\n\n# Matter documents\n[see task documents]\n# Deliverable to grade\n<<<DELIVERABLE\nI notice a discrepancy. The SSA states the deadline is \"1 February 2026 extended to 2 April 1 February 2 April 2026\" (clause 4.5). Let me examine the clause more carefully. The clause states \"by the date falling 120 days after the date of this Agreement (being 1 February 1 February 2026 extended to 2 April 2026)\". This appears to be a typographical error. Let me calculate 120 days from 2 January 2026.\n\n<｜DSML｜1-2)\nDELIVERABLE>>>\n\n# Rubric criteria\nC1: Identifies that the core platform was developed by contractor Yarrow Energy plc without a written IP assignment, so the Company may not own it, and recommends obtaining a confirmatory assignment as a condition to Closing.\nC2: Identifies the threatened $450,000 claim by Lowther Engineering Ltd recorded in the board minutes and that it is not disclosed against the litigation warranty (Warranty 7.1), recommending a specific indemnity or price protection.\nC3: Calculates the long-stop date as 2 May 2026 (120 days after signing on 2 January 2026) and identifies that expected clearance on 16 June 2026 falls after it, recommending an extension.\nC4: Identifies that the MAC carve-outs (general economic, industry-wide and pandemic changes) contain no 'disproportionate effect' exception, so the Buyer bears those risks even where the Company is disproportionately affected, and recommends adding one.\nC5: Identifies that the Oakhurst Technologies Ltd contract (Clause 14.2) allows termination on a change of control without consent, that the disclosure against Warranty 6.3 says there is no such provision, and that consent should be obtained as a condition to Closing.\nC6: Flags that the board minutes and the disclosure letter are inconsistent about litigation.\nC7: Lists a confirmatory IP assignment from Yarrow Energy plc as a required third-party action not yet obtained.\nC8: Gives a pinpoint citation (document name and section/clause number) for every issue or finding.\n\nGrade every criterion (8 total). JSON only.",
+      "raw_response": "{\"results\": [{\"criterion_id\": \"C1\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable does not identify the IP ownership issue regarding Yarrow Energy plc or recommend a confirmatory assignment; it only discusses a date calculation.\"}, {\"criterion_id\": \"C2\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable fails to mention the Lowther Engineering Ltd claim, the litigation warranty disclosure discrepancy, or the need for an indemnity.\"}, {\"criterion_id\": \"C3\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable does not calculate the long-stop date as 2 May 2026, nor does it identify the merger clearance timing issue; it merely notes a perceived typo in the agreement.\"}, {\"criterion_id\": \"C4\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable does not address the Material Adverse Change carve-outs or the lack of a 'disproportionate effect' exception.\"}, {\"criterion_id\": \"C5\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable omits the change of control provision in the Oakhurst Technologies contract and the conflicting disclosure under Warranty 6.3.\"}, {\"criterion_id\": \"C6\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable does not flag the inconsistency between the board minutes (recording a threatened claim) and the disclosure letter (stating no proceedings are pending).\"}, {\"criterion_id\": \"C7\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable does not list a confirmatory IP assignment from Yarrow Energy plc as a required third-party action.\"}, {\"criterion_id\": \"C8\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable provides only one partial citation (clause 4.5) and fails to provide pinpoint citations for the numerous issues required by other criteria.\"}]}"
+    },
+    {
+      "judge": "judge_2",
+      "model": "moonshotai.kimi-k2.5",
+      "results": [
+        {
+          "criterion_id": "C1",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable contains no mention of the IP issue with Yarrow Energy plc, the lack of written assignment, or any recommendation regarding confirmatory assignment."
+        },
+        {
+          "criterion_id": "C2",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable contains no mention of the Lowther Engineering Ltd claim, the $450,000 amount, or any recommendation regarding indemnity or price protection."
+        },
+        {
+          "criterion_id": "C3",
+          "result": "FAIL",
+          "confidence": 0.9,
+          "reason": "The deliverable attempts to calculate 120 days from 2 January 2026 but does not complete the calculation or identify 2 May 2026 as the long-stop date, nor does it mention the 16 June 2026 clearance date or recommend extension."
+        },
+        {
+          "criterion_id": "C4",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable contains no mention of MAC carve-outs, disproportionate effect exceptions, or any recommendation to add one."
+        },
+        {
+          "criterion_id": "C5",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable contains no mention of the Oakhurst Technologies Ltd contract, its change of control termination clause, the inconsistency with Warranty 6.3 disclosure, or any recommendation regarding consent."
+        },
+        {
+          "criterion_id": "C6",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable contains no mention of any inconsistency between board minutes and disclosure letter regarding litigation."
+        },
+        {
+          "criterion_id": "C7",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable contains no mention of Yarrow Energy plc or any required third-party action."
+        },
+        {
+          "criterion_id": "C8",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable provides no pinpoint citations for any issue or finding; it only contains an incomplete and garbled reference to clause 4.5 without proper document identification."
+        }
+      ],
+      "input_tokens": 4747,
+      "output_tokens": 539,
+      "cost_usd": 0.0041957,
+      "latency_ms": 7202,
+      "prompt_without_documents": "# Task instructions\nYou act for the Buyer, Brightwater Logistics plc. Brightwater Logistics plc (the Buyer) is acquiring the entire issued share capital of Oakhurst Medical Ltd (the Company) from Fenwick Holdings Ltd (the Seller).\n\nPrepare a due diligence findings report on the matter documents. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 15 January 2026. Address the deliverable to the supervising partner.\n\n# Matter documents\n[see task documents]\n# Deliverable to grade\n<<<DELIVERABLE\nI notice a discrepancy. The SSA states the deadline is \"1 February 2026 extended to 2 April 1 February 2 April 2026\" (clause 4.5). Let me examine the clause more carefully. The clause states \"by the date falling 120 days after the date of this Agreement (being 1 February 1 February 2026 extended to 2 April 2026)\". This appears to be a typographical error. Let me calculate 120 days from 2 January 2026.\n\n<｜DSML｜1-2)\nDELIVERABLE>>>\n\n# Rubric criteria\nC1: Identifies that the core platform was developed by contractor Yarrow Energy plc without a written IP assignment, so the Company may not own it, and recommends obtaining a confirmatory assignment as a condition to Closing.\nC2: Identifies the threatened $450,000 claim by Lowther Engineering Ltd recorded in the board minutes and that it is not disclosed against the litigation warranty (Warranty 7.1), recommending a specific indemnity or price protection.\nC3: Calculates the long-stop date as 2 May 2026 (120 days after signing on 2 January 2026) and identifies that expected clearance on 16 June 2026 falls after it, recommending an extension.\nC4: Identifies that the MAC carve-outs (general economic, industry-wide and pandemic changes) contain no 'disproportionate effect' exception, so the Buyer bears those risks even where the Company is disproportionately affected, and recommends adding one.\nC5: Identifies that the Oakhurst Technologies Ltd contract (Clause 14.2) allows termination on a change of control without consent, that the disclosure against Warranty 6.3 says there is no such provision, and that consent should be obtained as a condition to Closing.\nC6: Flags that the board minutes and the disclosure letter are inconsistent about litigation.\nC7: Lists a confirmatory IP assignment from Yarrow Energy plc as a required third-party action not yet obtained.\nC8: Gives a pinpoint citation (document name and section/clause number) for every issue or finding.\n\nGrade every criterion (8 total). JSON only.",
+      "raw_response": "{\"results\": [{\"criterion_id\": \"C1\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable contains no mention of the IP issue with Yarrow Energy plc, the lack of written assignment, or any recommendation regarding confirmatory assignment.\"}, {\"criterion_id\": \"C2\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable contains no mention of the Lowther Engineering Ltd claim, the $450,000 amount, or any recommendation regarding indemnity or price protection.\"}, {\"criterion_id\": \"C3\", \"result\": \"FAIL\", \"confidence\": 0.9, \"reason\": \"The deliverable attempts to calculate 120 days from 2 January 2026 but does not complete the calculation or identify 2 May 2026 as the long-stop date, nor does it mention the 16 June 2026 clearance date or recommend extension.\"}, {\"criterion_id\": \"C4\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable contains no mention of MAC carve-outs, disproportionate effect exceptions, or any recommendation to add one.\"}, {\"criterion_id\": \"C5\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable contains no mention of the Oakhurst Technologies Ltd contract, its change of control termination clause, the inconsistency with Warranty 6.3 disclosure, or any recommendation regarding consent.\"}, {\"criterion_id\": \"C6\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable contains no mention of any inconsistency between board minutes and disclosure letter regarding litigation.\"}, {\"criterion_id\": \"C7\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable contains no mention of Yarrow Energy plc or any required third-party action.\"}, {\"criterion_id\": \"C8\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable provides no pinpoint citations for any issue or finding; it only contains an incomplete and garbled reference to clause 4.5 without proper document identification.\"}]}"
+    }
+  ]
+}

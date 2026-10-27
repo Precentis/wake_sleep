@@ -1,0 +1,102 @@
+{
+  "task_id": "MNA_T076",
+  "run_name": "main/cycle_08/train",
+  "judgements": [
+    {
+      "judge": "judge_1",
+      "model": "zai.glm-5",
+      "results": [
+        {
+          "criterion_id": "C1",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable does not identify the mathematical error in SPA Section 9.5 where the stated cap of $44,062,500 does not equal 15% of the $235,000,000 Purchase Price."
+        },
+        {
+          "criterion_id": "C2",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable does not identify the missing 'disproportionate effect' exception in the MAC carve-outs or recommend adding one."
+        },
+        {
+          "criterion_id": "C3",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable does not identify the undisclosed $1,200,000 Saltash Software Ltd claim or recommend specific indemnity or price protection."
+        },
+        {
+          "criterion_id": "C4",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable does not explain how 'material adverse effect' could be read narrowly or broadly and the implications for the Buyer's walk-away right."
+        },
+        {
+          "criterion_id": "C5",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable does not show the arithmetic for the cap calculation (15% x $235,000,000 = $35,250,000) or flag the discrepancy."
+        },
+        {
+          "criterion_id": "C6",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable does not show any proposed drafting changes as before/after wording with a rationale."
+        }
+      ],
+      "input_tokens": 3618,
+      "output_tokens": 359,
+      "cost_usd": 0.0047668,
+      "latency_ms": 4351,
+      "prompt_without_documents": "# Task instructions\nYou act for the Buyer, Lowther Holdings Ltd. Lowther Holdings Ltd (the Buyer) is acquiring the entire issued share capital of Delamere Foods Ltd (the Company) from Glenrock Media Ltd (the Seller).\n\nPrepare a redline note proposing amendments to the principal agreement to protect our client. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 13 April 2026. Address the deliverable to the supervising partner.\n\n# Matter documents\n[see task documents]\n# Deliverable to grade\n<<<DELIVERABLE\nThe table must be used to the stricter standard) and document the legal/commercial effect, missing exceptions, and recommended resolution; (e.g., 'disproportionate effect', 'disproportionate effect' and include a 'Reverse Computation Check' subsection with citations), and include a 'Disproportionate effect' and recommended resolution, and quantify financial exposure, and include a 'Disproportionate Effect' in bold; (13))\nDELIVERABLE>>>\n\n# Rubric criteria\nC1: Identifies that the warranty cap in SPA Section 9.5 is stated as $44,062,500 but 15% of the $235,000,000 Purchase Price is $35,250,000, i.e. the stated figure is wrong.\nC2: Identifies that the MAC carve-outs (general economic, industry-wide and pandemic changes) contain no 'disproportionate effect' exception, so the Buyer bears those risks even where the Company is disproportionately affected, and recommends adding one.\nC3: Identifies the threatened $1,200,000 claim by Saltash Software Ltd recorded in the board minutes and that it is not disclosed against the litigation warranty (Warranty 7.1), recommending a specific indemnity or price protection.\nC4: Explains how 'material adverse effect' could be read narrowly or broadly and what each reading means for the Buyer's walk-away right.\nC5: Shows the arithmetic for the cap (15% x $235,000,000 = $35,250,000) and flags the discrepancy with the stated $44,062,500.\nC6: Shows proposed drafting changes as before/after (current wording vs proposed wording) with a one-line rationale.\n\nGrade every criterion (6 total). JSON only.",
+      "raw_response": "{\"results\": [{\"criterion_id\": \"C1\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable does not identify the mathematical error in SPA Section 9.5 where the stated cap of $44,062,500 does not equal 15% of the $235,000,000 Purchase Price.\"}, {\"criterion_id\": \"C2\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable does not identify the missing 'disproportionate effect' exception in the MAC carve-outs or recommend adding one.\"}, {\"criterion_id\": \"C3\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable does not identify the undisclosed $1,200,000 Saltash Software Ltd claim or recommend specific indemnity or price protection.\"}, {\"criterion_id\": \"C4\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable does not explain how 'material adverse effect' could be read narrowly or broadly and the implications for the Buyer's walk-away right.\"}, {\"criterion_id\": \"C5\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable does not show the arithmetic for the cap calculation (15% x $235,000,000 = $35,250,000) or flag the discrepancy.\"}, {\"criterion_id\": \"C6\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable does not show any proposed drafting changes as before/after wording with a rationale.\"}]}"
+    },
+    {
+      "judge": "judge_2",
+      "model": "moonshotai.kimi-k2.5",
+      "results": [
+        {
+          "criterion_id": "C1",
+          "result": "FAIL",
+          "confidence": 0.1,
+          "reason": "The deliverable contains garbled, incoherent text with no clear identification of the mathematical error in Section 9.5. No specific figures ($44,062,500 vs $35,250,000) are correctly stated."
+        },
+        {
+          "criterion_id": "C2",
+          "result": "FAIL",
+          "confidence": 0.2,
+          "reason": "While 'disproportionate effect' is mentioned multiple times in fragmented text, there is no coherent identification of the MAC carve-outs in Section 1.1 or clear recommendation to add a disproportionate effect exception. The text is garbled and lacks substance."
+        },
+        {
+          "criterion_id": "C3",
+          "result": "FAIL",
+          "confidence": 0.0,
+          "reason": "The Saltash Software Ltd claim is not mentioned at all. The deliverable contains no identification of the $1,200,000 threatened claim or any recommendation for specific indemnity or price protection."
+        },
+        {
+          "criterion_id": "C4",
+          "result": "FAIL",
+          "confidence": 0.0,
+          "reason": "There is no explanation of how 'material adverse effect' could be read narrowly or broadly, nor any discussion of the Buyer's walk-away right. The deliverable is incoherent."
+        },
+        {
+          "criterion_id": "C5",
+          "result": "FAIL",
+          "confidence": 0.1,
+          "reason": "No correct arithmetic is shown. The deliverable does not show 15% x $235,000,000 = $35,250,000 or flag the discrepancy with $44,062,500. The text is garbled and meaningless."
+        },
+        {
+          "criterion_id": "C6",
+          "result": "FAIL",
+          "confidence": 0.0,
+          "reason": "No before/after drafting changes are shown. There is no current wording vs proposed wording with rationale. The deliverable is incoherent and does not contain any proper legal drafting."
+        }
+      ],
+      "input_tokens": 3606,
+      "output_tokens": 483,
+      "cost_usd": 0.0033710999999999997,
+      "latency_ms": 5923,
+      "prompt_without_documents": "# Task instructions\nYou act for the Buyer, Lowther Holdings Ltd. Lowther Holdings Ltd (the Buyer) is acquiring the entire issued share capital of Delamere Foods Ltd (the Company) from Glenrock Media Ltd (the Seller).\n\nPrepare a redline note proposing amendments to the principal agreement to protect our client. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 13 April 2026. Address the deliverable to the supervising partner.\n\n# Matter documents\n[see task documents]\n# Deliverable to grade\n<<<DELIVERABLE\nThe table must be used to the stricter standard) and document the legal/commercial effect, missing exceptions, and recommended resolution; (e.g., 'disproportionate effect', 'disproportionate effect' and include a 'Reverse Computation Check' subsection with citations), and include a 'Disproportionate effect' and recommended resolution, and quantify financial exposure, and include a 'Disproportionate Effect' in bold; (13))\nDELIVERABLE>>>\n\n# Rubric criteria\nC1: Identifies that the warranty cap in SPA Section 9.5 is stated as $44,062,500 but 15% of the $235,000,000 Purchase Price is $35,250,000, i.e. the stated figure is wrong.\nC2: Identifies that the MAC carve-outs (general economic, industry-wide and pandemic changes) contain no 'disproportionate effect' exception, so the Buyer bears those risks even where the Company is disproportionately affected, and recommends adding one.\nC3: Identifies the threatened $1,200,000 claim by Saltash Software Ltd recorded in the board minutes and that it is not disclosed against the litigation warranty (Warranty 7.1), recommending a specific indemnity or price protection.\nC4: Explains how 'material adverse effect' could be read narrowly or broadly and what each reading means for the Buyer's walk-away right.\nC5: Shows the arithmetic for the cap (15% x $235,000,000 = $35,250,000) and flags the discrepancy with the stated $44,062,500.\nC6: Shows proposed drafting changes as before/after (current wording vs proposed wording) with a one-line rationale.\n\nGrade every criterion (6 total). JSON only.",
+      "raw_response": "{\"results\": [{\"criterion_id\": \"C1\", \"result\": \"FAIL\", \"confidence\": 0.1, \"reason\": \"The deliverable contains garbled, incoherent text with no clear identification of the mathematical error in Section 9.5. No specific figures ($44,062,500 vs $35,250,000) are correctly stated.\"}, {\"criterion_id\": \"C2\", \"result\": \"FAIL\", \"confidence\": 0.2, \"reason\": \"While 'disproportionate effect' is mentioned multiple times in fragmented text, there is no coherent identification of the MAC carve-outs in Section 1.1 or clear recommendation to add a disproportionate effect exception. The text is garbled and lacks substance.\"}, {\"criterion_id\": \"C3\", \"result\": \"FAIL\", \"confidence\": 0.0, \"reason\": \"The Saltash Software Ltd claim is not mentioned at all. The deliverable contains no identification of the $1,200,000 threatened claim or any recommendation for specific indemnity or price protection.\"}, {\"criterion_id\": \"C4\", \"result\": \"FAIL\", \"confidence\": 0.0, \"reason\": \"There is no explanation of how 'material adverse effect' could be read narrowly or broadly, nor any discussion of the Buyer's walk-away right. The deliverable is incoherent.\"}, {\"criterion_id\": \"C5\", \"result\": \"FAIL\", \"confidence\": 0.1, \"reason\": \"No correct arithmetic is shown. The deliverable does not show 15% x $235,000,000 = $35,250,000 or flag the discrepancy with $44,062,500. The text is garbled and meaningless.\"}, {\"criterion_id\": \"C6\", \"result\": \"FAIL\", \"confidence\": 0.0, \"reason\": \"No before/after drafting changes are shown. There is no current wording vs proposed wording with rationale. The deliverable is incoherent and does not contain any proper legal drafting.\"}]}"
+    }
+  ]
+}

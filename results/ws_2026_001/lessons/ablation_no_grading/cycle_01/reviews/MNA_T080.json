@@ -1,0 +1,142 @@
+{
+  "task_id": "MNA_T080",
+  "cycle": 1,
+  "lineage": "ablation_no_grading",
+  "graded": false,
+  "failures": [
+    {
+      "criterion_id": "C1",
+      "what_went_wrong": "The agent identified a critical gap (missing Schedule 2 for General Warranties) but did not verify whether the schedule was truly absent or simply not provided in the matter folder. The deliverable treats the absence as a fact rather than a potential oversight in document collection.",
+      "should_have": "Confirmed whether the missing schedule was unavailable or merely omitted from the provided documents before treating its absence as a risk.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C2",
+      "what_went_wrong": "The agent calculated termination dates but did not cross-check the mathematical discrepancies against the governing law (e.g., whether 'days' includes business days or calendar days). The analysis assumes literal interpretation without legal context.",
+      "should_have": "Clarified whether 'days' in the agreement refers to business days or calendar days under the governing law before calculating deadlines.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C3",
+      "what_went_wrong": "The agent flagged conflicting termination dates but did not assess whether the conflicts created a 'drop-dead' date or merely ambiguous rights. The legal implications section lacks specificity on enforceability.",
+      "should_have": "Analyzed whether the conflicting dates rendered the termination provisions void or merely ambiguous, and recommended specific drafting fixes (e.g., hierarchy clauses).",
+      "failure_kind": "task_specific"
+    },
+    {
+      "criterion_id": "C4",
+      "what_went_wrong": "The agent noted a quorum defect in board minutes but did not verify whether the Articles of Association permitted alternate quorum mechanisms (e.g., written resolutions or alternate directors).",
+      "should_have": "Checked the Articles for alternative approval mechanisms before concluding the board resolution was invalid.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C5",
+      "what_went_wrong": "The agent identified customer concentration risk but did not quantify the materiality threshold (e.g., whether 68.4% triggered change-of-control clauses). The analysis lacks actionable thresholds.",
+      "should_have": "Cross-referenced the supply agreement for change-of-control thresholds and quantified the financial impact of customer loss.",
+      "failure_kind": "task_specific"
+    },
+    {
+      "criterion_id": "C6",
+      "what_went_wrong": "The agent did not reconcile the SPA's warranty survival periods with statutory limitation periods (e.g., 6 years for breach of contract under English law). The recommendations ignore legal baselines.",
+      "should_have": "Compared warranty survival periods to statutory limitation periods and flagged any discrepancies as potential gaps.",
+      "failure_kind": "content"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T080_0",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "Before flagging a missing document as a risk, verify whether it exists in the matter folder or broader data room. Note any gaps in document collection as procedural risks.",
+      "source_tasks": [
+        "MNA_T080"
+      ],
+      "evidence": [
+        "MNA_T080:C1"
+      ],
+      "task_type_scope": "legal_memo",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T080_1",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "When interpreting time periods in agreements, clarify whether 'days' means business days or calendar days under the governing law. Recompute deadlines accordingly.",
+      "source_tasks": [
+        "MNA_T080"
+      ],
+      "evidence": [
+        "MNA_T080:C2"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T080_2",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "For conflicting contractual provisions, assess whether they create ambiguity or render the clause unenforceable. Recommend specific drafting fixes (e.g., hierarchy clauses).",
+      "source_tasks": [
+        "MNA_T080"
+      ],
+      "evidence": [
+        "MNA_T080:C3"
+      ],
+      "task_type_scope": "legal_memo",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T080_3",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "For corporate approvals, check the Articles of Association for alternative approval mechanisms (e.g., written resolutions) before concluding a quorum defect invalidates the action.",
+      "source_tasks": [
+        "MNA_T080"
+      ],
+      "evidence": [
+        "MNA_T080:C4"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T080_4",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "For material risks (e.g., customer concentration), quantify the financial impact and cross-reference contractual thresholds (e.g., change-of-control clauses) to assess enforceability.",
+      "source_tasks": [
+        "MNA_T080"
+      ],
+      "evidence": [
+        "MNA_T080:C5"
+      ],
+      "task_type_scope": "legal_memo",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.8
+    },
+    {
+      "candidate_id": "c01_MNA_T080_5",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Compare contractual warranty survival periods to statutory limitation periods. Flag any survival periods shorter than the statutory baseline as potential gaps.",
+      "source_tasks": [
+        "MNA_T080"
+      ],
+      "evidence": [
+        "MNA_T080:C6"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    }
+  ],
+  "lesson_feedback": [],
+  "input_tokens": 4294,
+  "output_tokens": 1152,
+  "cost_usd": 0.003875,
+  "prompt": "# Task\nType: legal_memo | Practice area: corporate_mna\nYou act for the Buyer, Fenwick Energy plc. Fenwick Energy plc (the Buyer) is acquiring the entire issued share capital of Larkspur Medical Ltd (the Company) from Galloway Media Ltd (the Seller).\n\nPrepare a legal memo for the supervising partner analysing the key legal risks in the matter documents. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 21 August 2026. Address the deliverable to the supervising partner.\n\n# Trajectory (33 model steps, 33 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 3. [research] read_document({\"name\": \"disclosure_letter.md\"})\n 4. [research] read_document({\"name\": \"client_email.md\"})\n 5. [research] read_document({\"name\": \"board_minutes.md\"})\n 6. [research] read_document({\"name\": \"articles_of_association_extract.md\"})\n 7. [research] search_documents({\"query\": \"warranty\"})\n 8. [research] search_documents({\"query\": \"condition\"})\n 9. [analysis] calculate({\"expression\": \"date('2026-08-01')\"})\n10. [analysis] calculate({\"expression\": \"add_days(date('2026-08-01'), 120)\"})\n11. [analysis] calculate({\"expression\": \"add_days(date('2026-08-01'), 119)\"})\n12. [analysis] calculate({\"expression\": \"date('2026-11-18')\"})\n13. [analysis] calculate({\"expression\": \"date('2026-12-13')\"})\n14. [drafting] write_draft(<1358 words>)\n15. [verification] read_draft({})\n16. [editing] edit_draft(find='**Issue:** The SPA provides for termination if Conditions ar' -> '**Issue:** The SPA contains conflicting termination provisio')\n17. [editing] edit_draft(find='### 3.2 Regulatory Timing Conflict (High Risk)\\n\\n**Issue:** T' -> '### 3.2 Regulatory Timing and Termination Date Conflicts (Hi')\n18. [verification] search_documents({\"query\": \"schedule\"})\n19. [editing] edit_draft(find='### 3.5 Warranty Protection Limitations (Medium Risk)\\n\\n**Iss' -> '### 3.5 Warranty Protection Limitations and Missing Schedule')\n20. [editing] edit_draft(find='**Legal Implications:**\\n1. Limited time to discover breaches' -> '**Legal Implications:**\\n1. Limited time to discover breaches')\n21. [editing] edit_draft(find='**Recommendation:**\\n1. Negotiate longer survival periods (24' -> '**Recommendation:**\\n1. **Essential:** Obtain and review Sche')\n22. [editing] edit_draft(find='The principal legal risks identified are:\\n\\n1. **Intellectual' -> 'The principal legal risks identified are:\\n\\n1. **Intellectual')\n23. [verification] read_document({\"name\": \"board_minutes.md\", \"start_line\": 30, \"num_lines\": 15})\n24. [verification] read_document({\"name\": \"articles_of_association_extract.md\", \"start_line\": 40, \"num_lines\": 5})\n25. [verification] search_documents({\"query\": \"21 August 2026\"})\n26. [editing] edit_draft(find='**Issue:** The SPA contains multiple timing conflicts:\\n1. **' -> '**Issue:** The SPA contains multiple timing conflicts:\\n1. **')\n27. [editing] edit_draft(find='**Legal Implications:**\\n1. Ambiguity in termination rights c' -> '**Legal Implications:**\\n1. Ambiguity in termination rights c')\n28. [editing] edit_draft(find='**Recommendation:**\\n1. Clarify and harmonise termination dat' -> '**Recommendation:**\\n1. Clarify and harmonise termination dat')\n29. [editing] edit_draft(find='### Immediate Actions (Pre-Signing):\\n1. **IP Title:** Requir' -> '### Immediate Actions (Pre-Signing):\\n1. **IP Title:** Requir')\n30. [verification] read_draft({})\n31. [editing] edit_draft(find='**Legal Implications:**\\n1. The Buyer could be forced to term' -> '')\n32. [verification] read_draft({})\n33. [control] finish({\"summary\": \"Comprehensive legal memorandum analysing key risks in Fenwick Energy plc's acquisition of Larkspur Medical Ltd, including intellectual property tit)\n\n# Final deliverable\n# LEGAL MEMORANDUM\n\n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Date:** 21 August 2026  \n**Subject:** Analysis of Key Legal Risks in Fenwick Energy plc's Acquisition of Larkspur Medical Ltd  \n\n## 1. EXECUTIVE SUMMARY\n\nThis memorandum analyses the key legal risks in Fenwick Energy plc's (\"Buyer\") proposed acquisition of the entire issued share capital of Larkspur Medical Ltd (\"Company\") from Galloway Media Ltd (\"Seller\"). The transaction is governed by a Share Purchase Agreement dated 1 August 2026 (\"SPA\") with a proposed Closing Date of 18 November 2026 and a purchase price of $100,000,000.\n\nThe principal legal risks identified are:\n\n1. **Intellectual Property Title Risk:** Critical uncertainty regarding the Company's ownership of its core platform software due to lack of written assignment from the developer.\n2. **Regulatory Timing and Termination Conflicts:** Multiple conflicting dates in SPA termination provisions and conflict with merger clearance timeline.\n3. **Missing Warranty Schedule:** Critical gap - Schedule 2 containing General Warranties is not provided for review.\n4. **Corporate Governance Issues:** Quorum requirements in Articles of Association potentially invalidating board approval of the transaction.\n5. **Customer Concentration Risk:** Heavy reliance on a single customer (Elstree Energy plc) representing 68.4% of revenue.\n6. **Warranty Protection Limitations:** Limited survival periods and IP warranty qualification.\n\n## 2. TRANSACTION OVERVIEW\n\n### 2.1 Parties\n- **Buyer:** Fenwick Energy plc (Company No. 10891150), registered office at 70 Moorgate, London\n- **Seller:** Galloway Media Ltd (Company No. 12294282), registered office at 35 Cheapside, London  \n- **Company:** Larkspur Medical Ltd (Company No. 12412292), registered office at 76 Cheapside, London\n\n### 2.2 Key Dates\n- SPA Execution Date: 1 August 2026\n- Closing Date: 18 November 2026\n- Conditions Satisfaction Deadline: 18 November 2026 (Clause 4.1) or 29 November 2026 (Clause 4.5)\n- Expected Merger Clearance: 13 December 2026 (per client email)\n- Deliverable Date: 21 August 2026\n\n### 2.3 Purchase Price\n- $100,000,000 payable on Closing Date by wire transfer\n\n## 3. DETAILED LEGAL RISK ANALYSIS\n\n### 3.1 Intellectual Property Title Defect (Critical Risk)\n\n**Issue:** The Disclosure Letter reveals that the Company's core platform software was developed in 2023 by Orwell Industries Ltd without a formal written development agreement or written assignment of intellectual property rights. Under English copyright law (Copyright, Designs and Patents Act 1988), copyright in commissioned works generally vests in the author (the contractor) unless there is a written assignment.\n\n**Legal Implications:**\n1. The Company may not have legal title to its most valuable asset\n2. Orwell Industries Ltd could potentially assert copyright ownership\n3. The Buyer's ability to exploit, modify, or license the software post-acquisition is uncertain\n4. This defect qualifies Warranty 8.2 (Intellectual Property) in the SPA\n\n**Risk Level:** High/Critical  \n**Recommendation:** \n1. Require Seller to obtain a retrospective written assignment from Orwell Industries Ltd\n2. Consider price reduction or escrow arrangement\n3. Conduct due diligence on all communications and payments to Orwell Industries Ltd\n4. Include specific indemnity for IP title defects\n\n### 3.2 Regulatory Timing and Termination Date Conflicts (High Risk)\n\n**Issue:** The SPA contains multiple timing conflicts:\n1. **Mathematical Discrepancy:** Clause 4.5 states termination is allowed \"120 days after the date of this Agreement (signed 1 August 2026)\" which calculates to 29 November 2026, but Clause 4.1 references 18 November 2026 as the termination date.\n2. **Regulatory Timeline Conflict:** Both termination dates (18 November 2026 and 29 November 2026) precede the expected merger clearance date of 13 December 2026.\n3. **Closing Date Conflict:** The Closing Date is 18 November 2026, which coincides with the Clause 4.1 termination date, creating ambiguity about whether completion must occur on that exact date.\n4. **Document Date Inconsistency:** The Disclosure Letter references a Share Purchase Agreement \"dated on or about 21 August 2026\" but the SPA is dated 1 August 2026, creating potential ambiguity about which document governs.\n\n**Legal Implications:**\n1. Ambiguity in termination rights creates uncertainty for both parties\n2. The Buyer could be forced to terminate before regulatory clearance is obtained\n3. The Seller could terminate if clearance is delayed\n4. The transaction timeline is unrealistic given regulatory requirements\n5. Contractual ambiguity may lead to disputes over termination rights\n6. Date inconsistencies between documents may create interpretation disputes\n7. Potential for arguments about which version of documents governs\n\n**Risk Level:** High  \n**Recommendation:**\n1. Clarify and harmonise termination dates in SPA\n2. Amend SPA to extend Conditions satisfaction deadline to at least 31 December 2026\n3. Include specific regulatory condition with long-stop date aligned with clearance expectations\n4. Consider making regulatory clearance a condition precedent rather than general condition\n5. Separate Closing Date from termination dates to avoid confusion\n6. Align all document dates and ensure consistent references\n7. Consider executing amended SPA with consistent date references\n\n\n\n### 3.3 Corporate Governance Defect (Medium-High Risk)\n\n**Issue:** The Company's Articles of Association (Article 11) require a quorum of three directors for board meetings. The Board Minutes show only two directors attended the meeting approving the SPA (Dr. Eleanor M. Hart and Mr. Julian T. Reed), with the Company having a total of five directors.\n\n**Legal Implications:**\n1. The board resolution approving the transaction may be invalid\n2. The Company's entry into the SPA may be ultra vires or voidable\n3. Potential challenge to transaction validity by minority shareholders or third parties\n\n**Risk Level:** Medium-High  \n**Recommendation:**\n1. Require ratification by properly constituted board meeting with three directors\n2. Obtain written confirmation from all directors\n3. Consider shareholder resolution if board approval remains questionable\n\n### 3.4 Customer Concentration Risk (Medium Risk)\n\n**Issue:** The Board Minutes disclose that Elstree Energy plc constitutes 68.4% of the Company's total revenue over the preceding 12-month period. The Articles of Association specifically reference Elstree Energy plc in confidentiality provisions.\n\n**Legal Implications:**\n1. Loss of this customer would have catastrophic financial impact\n2. Change of control provisions in supply agreement may allow termination\n3. Post-acquisition integration may disrupt customer relationship\n\n**Risk Level:** Medium  \n**Recommendation:**\n1. Review supply agreement with Elstree Energy plc for change of control provisions\n2. Engage with Elstree Energy plc pre-completion\n3. Consider earn-out or deferred consideration tied to customer retention\n4. Conduct due diligence on relationship history and contract terms\n\n### 3.5 Warranty Protection Limitations and Missing Schedule (Medium Risk)\n\n**Issue:** The SPA provides that General Warranties survive for 18 months and Fundamental Warranties (title, capacity, tax) for 48 months. The Disclosure Letter qualifies Warranty 8.2 regarding IP ownership. **Critical Gap:** The SPA references Schedule 2 for General Warranties, but this schedule is not included in the documents provided, meaning we cannot review the actual warranty terms.\n\n**Legal Implications:**\n1. Limited time to discover breaches of general warranties\n2. IP warranty effectively negated by disclosure\n3. No specific warranty regarding customer concentration\n4. **Critical Risk:** Cannot assess scope and substance of General Warranties without Schedule 2\n5. Potential for warranties to be narrowly drafted or exclude important matters\n\n**Risk Level:** Medium  \n**Recommendation:**\n1. **Essential:** Obtain and review Schedule 2 (General Warranties) before proceeding\n2. Negotiate longer survival periods (24 months for general, 6 years for fundamental)\n3. Require specific warranties regarding customer relationships and concentration\n4. Seek indemnity for disclosed IP issue rather than warranty qualification\n5. Ensure disclosure is limited to specific warranty and doesn't qualify others\n6. Review warranty limitations, exclusions, and de minimis thresholds\n\n### 3.6 Payment and Closing Mechanics (Low-Medium Risk)\n\n**Issue:** The SPA requires payment by wire transfer on Closing Date, with bank account details to be provided five Business Days prior. Resignations of all directors and secretaries are required.\n\n**Legal Implications:**\n1. Practical challenges in coordinating simultaneous exchange\n2. Risk of payment without proper share transfer documentation\n3. Potential disputes over \"reasonably required\" documents\n\n**Risk Level:** Low-Medium  \n**Recommendation:**\n1. Use escrow agent for simultaneous exchange\n2. Specify exact closing documents in schedule\n3. Include practical completion checklist\n\n## 4. ADDITIONAL CONSIDERATIONS\n\n### 4.1 Confidentiality Provisions\nBoth SPA (Clause 11) and Disclosure Letter (Clause 5) contain confidentiality provisions. The Articles of Association (Article 8) also impose confidentiality obligations on directors regarding commercial relationships including with Elstree Energy plc.\n\n### 4.2 Governing Law and Jurisdiction\nAll documents are governed by English law with exclusive jurisdiction of English courts, providing consistency and predictability.\n\n### 4.3 Notices Provisions\nAll documents contain notices provisions requiring written communication, providing clear audit trail.\n\n## 5. ACTION PLAN AND RECOMMENDATIONS\n\n### Immediate Actions (Pre-Signing):\n1. **IP Title:** Require Seller to obtain written assignment from Orwell Industries Ltd\n2. **Missing Schedule:** Obtain and review Schedule 2 (General Warranties) - **CRITICAL**\n3. **Timeline:** Amend SPA to align Conditions deadlines with regulatory clearance expectations\n4. **Governance:** Obtain properly constituted board resolution with three-director quorum\n5. **Customer:** Review Elstree Energy plc supply agreement for change of control provisions\n6. **Document Consistency:** Align dates across all transaction documents\n\n### Negotiation Priorities:\n1. Extend warranty survival periods\n2. Include specific indemnity for IP title defect\n3. Add customer concentration warranties\n4. Implement escrow arrangement for closing\n\n### Due Diligence Requirements:\n1. Complete review of all IP development documentation\n2. Full analysis of Elstree Energy plc contract\n3. Verification of board authority and corporate approvals\n4. Regulatory clearance strategy and timeline\n\n## 6. CONCLUSION\n\nThe acquisition presents significant legal risks, particularly regarding intellectual property ownership and regulatory timing conflicts. The IP title defect is the most critical issue, potentially undermining the fundamental value of the acquisition. The regulatory timeline conflict creates substantial completion risk. Corporate governance issues may affect transaction validity.\n\nWith appropriate amendments to the SPA, enhanced due diligence, and protective measures, these risks can be mitigated. However, the Buyer should proceed with caution and consider whether the current deal structure provides adequate protection given the identified risks.\n\n**Next Steps:** Request instructions on negotiating positions and whether to proceed with revised terms or consider alternative structures (asset purchase rather than share purchase may mitigate some IP risks).\n\n---\n\n*Prepared based on review of: Share Purchase Agreement, Disclosure Letter, Board Minutes, Articles of Association Extract, and Client Email.*\n\n# Your job\nNo grades are available. Critically assess the deliverable and the work process yourself, as a demanding supervising partner would, and write reusable candidate lessons for improving the work.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|legal_memo\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C1\",\n      \"what_went_wrong\": \"The agent identified a critical gap (missing Schedule 2 for General Warranties) but did not verify whether the schedule was truly absent or simply not provided in the matter folder. The deliverable treats the absence as a fact rather than a potential oversight in document collection.\",\n      \"should_have\": \"Confirmed whether the missing schedule was unavailable or merely omitted from the provided documents before treating its absence as a risk.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C2\",\n      \"what_went_wrong\": \"The agent calculated termination dates but did not cross-check the mathematical discrepancies against the governing law (e.g., whether 'days' includes business days or calendar days). The analysis assumes literal interpretation without legal context.\",\n      \"should_have\": \"Clarified whether 'days' in the agreement refers to business days or calendar days under the governing law before calculating deadlines.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C3\",\n      \"what_went_wrong\": \"The agent flagged conflicting termination dates but did not assess whether the conflicts created a 'drop-dead' date or merely ambiguous rights. The legal implications section lacks specificity on enforceability.\",\n      \"should_have\": \"Analyzed whether the conflicting dates rendered the termination provisions void or merely ambiguous, and recommended specific drafting fixes (e.g., hierarchy clauses).\",\n      \"failure_kind\": \"task_specific\"\n    },\n    {\n      \"criterion_id\": \"C4\",\n      \"what_went_wrong\": \"The agent noted a quorum defect in board minutes but did not verify whether the Articles of Association permitted alternate quorum mechanisms (e.g., written resolutions or alternate directors).\",\n      \"should_have\": \"Checked the Articles for alternative approval mechanisms before concluding the board resolution was invalid.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C5\",\n      \"what_went_wrong\": \"The agent identified customer concentration risk but did not quantify the materiality threshold (e.g., whether 68.4% triggered change-of-control clauses). The analysis lacks actionable thresholds.\",\n      \"should_have\": \"Cross-referenced the supply agreement for change-of-control thresholds and quantified the financial impact of customer loss.\",\n      \"failure_kind\": \"task_specific\"\n    },\n    {\n      \"criterion_id\": \"C6\",\n      \"what_went_wrong\": \"The agent did not reconcile the SPA's warranty survival periods with statutory limitation periods (e.g., 6 years for breach of contract under English law). The recommendations ignore legal baselines.\",\n      \"should_have\": \"Compared warranty survival periods to statutory limitation periods and flagged any discrepancies as potential gaps.\",\n      \"failure_kind\": \"content\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"Before flagging a missing document as a risk, verify whether it exists in the matter folder or broader data room. Note any gaps in document collection as procedural risks.\",\n      \"evidence\": [\"C1\"],\n      \"task_type_scope\": \"legal_memo\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"When interpreting time periods in agreements, clarify whether 'days' means business days or calendar days under the governing law. Recompute deadlines accordingly.\",\n      \"evidence\": [\"C2\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"For conflicting contractual provisions, assess whether they create ambiguity or render the clause unenforceable. Recommend specific drafting fixes (e.g., hierarchy clauses).\",\n      \"evidence\": [\"C3\"],\n      \"task_type_scope\": \"legal_memo\",\n      \"confidence\": 0.85\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"For corporate approvals, check the Articles of Association for alternative approval mechanisms (e.g., written resolutions) before concluding a quorum defect invalidates the action.\",\n      \"evidence\": [\"C4\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"For material risks (e.g., customer concentration), quantify the financial impact and cross-reference contractual thresholds (e.g., change-of-control clauses) to assess enforceability.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"legal_memo\",\n      \"confidence\": 0.8\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Compare contractual warranty survival periods to statutory limitation periods. Flag any survival periods shorter than the statutory baseline as potential gaps.\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    }\n  ],\n  \"lesson_feedback\": []\n}\n```"
+}

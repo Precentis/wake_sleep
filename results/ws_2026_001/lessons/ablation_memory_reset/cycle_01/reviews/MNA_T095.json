@@ -1,0 +1,143 @@
+{
+  "task_id": "MNA_T095",
+  "cycle": 1,
+  "lineage": "ablation_memory_reset",
+  "graded": true,
+  "failures": [
+    {
+      "criterion_id": "C3",
+      "what_went_wrong": "The agent noted the MAC carve-outs but failed to identify the absence of a 'disproportionate effect' exception, which is a critical risk allocation issue. The recommendation to add such an exception was omitted.",
+      "should_have": "The agent should have analysed the MAC definition for standard exceptions, identified the missing 'disproportionate effect' qualifier, and recommended its inclusion to protect the buyer from industry-wide risks that disproportionately affect the target.",
+      "failure_kind": "procedural"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T095_0",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "For every Material Adverse Change (MAC) clause, verify the presence of a 'disproportionate effect' exception and flag its absence as a risk allocation gap.",
+      "source_tasks": [
+        "MNA_T095"
+      ],
+      "evidence": [
+        "MNA_T095:C3"
+      ],
+      "task_type_scope": "due_diligence",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T095_1",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Compare MAC definitions against market-standard exceptions (e.g., general economic conditions, industry-wide changes, pandemics) and note any omissions or deviations that could expose the client to disproportionate risks.",
+      "source_tasks": [
+        "MNA_T095"
+      ],
+      "evidence": [
+        "MNA_T095:C3"
+      ],
+      "task_type_scope": "due_diligence",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T095_2",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Include in the risk assessment section a specific subheading for 'Risk Allocation Gaps' that flags missing qualifiers in MAC clauses or other critical definitions.",
+      "source_tasks": [
+        "MNA_T095"
+      ],
+      "evidence": [
+        "MNA_T095:C3"
+      ],
+      "task_type_scope": "due_diligence",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T095_3",
+      "type": "practice_note",
+      "category": "review",
+      "text": "Before finalising the report, cross-check all identified risks against the transaction documents to ensure no standard risk allocation mechanisms (e.g., MAC exceptions) have been overlooked.",
+      "source_tasks": [
+        "MNA_T095"
+      ],
+      "evidence": [
+        "MNA_T095:C3"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.8
+    },
+    {
+      "candidate_id": "c01_MNA_T095_4",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "For every exclusion or carve-out in a critical clause (e.g., MAC, warranties), assess whether the exclusion is absolute or qualified by terms like 'disproportionate' or 'material' and flag unqualified exclusions.",
+      "source_tasks": [
+        "MNA_T095"
+      ],
+      "evidence": [
+        "MNA_T095:C3"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T095_5",
+      "type": "practice_note",
+      "category": "general",
+      "text": "Use a standardised checklist of market-standard exceptions and qualifiers for critical clauses (e.g., MAC, force majeure) to ensure comprehensive risk analysis.",
+      "source_tasks": [
+        "MNA_T095"
+      ],
+      "evidence": [
+        "MNA_T095:C3"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.85
+    }
+  ],
+  "lesson_feedback": [
+    {
+      "lesson_id": "L0001",
+      "label": "HELPFUL",
+      "reason": "Directly addresses the procedural failure by ensuring the agent actively verifies a key risk allocation mechanism."
+    },
+    {
+      "lesson_id": "L0002",
+      "label": "HELPFUL",
+      "reason": "Provides a reusable method for analysing MAC clauses, which is critical for due diligence in M&A transactions."
+    },
+    {
+      "lesson_id": "L0003",
+      "label": "HELPFUL",
+      "reason": "Ensures the deliverable structure explicitly highlights risk allocation gaps, improving clarity for the client."
+    },
+    {
+      "lesson_id": "L0004",
+      "label": "HELPFUL",
+      "reason": "Encourages a final review step to catch overlooked standard mechanisms, reducing procedural oversights."
+    },
+    {
+      "lesson_id": "L0005",
+      "label": "HELPFUL",
+      "reason": "Generalises the behaviour to other critical clauses, making it reusable across different types of transactions."
+    },
+    {
+      "lesson_id": "L0006",
+      "label": "HELPFUL",
+      "reason": "Promotes consistency and thoroughness by leveraging standardised checklists, which is valuable for legal risk analysis."
+    }
+  ],
+  "input_tokens": 4635,
+  "output_tokens": 1019,
+  "cost_usd": 0.003846,
+  "prompt": "# Task\nType: due_diligence | Practice area: corporate_mna\nYou act for the Buyer, Juniper Bioscience plc. Juniper Bioscience plc (the Buyer) is acquiring the entire issued share capital of Ashcombe Media Ltd (the Company) from Lowther Technologies Ltd (the Seller).\n\nPrepare a due diligence findings report on the matter documents. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 25 January 2027. Address the deliverable to the supervising partner.\n\n# Trajectory (22 model steps, 22 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 3. [research] read_document({\"name\": \"disclosure_letter.md\"})\n 4. [research] read_document({\"name\": \"board_minutes.md\"})\n 5. [research] read_document({\"name\": \"client_email.md\"})\n 6. [research] search_documents({\"query\": \"warranty\"})\n 7. [research] search_documents({\"query\": \"clause\"})\n 8. [research] search_documents({\"query\": \"Material Adverse\"})\n 9. [analysis] calculate({\"expression\": \"date('2027-01-25')\"})\n10. [analysis] calculate({\"expression\": \"days_between(date('2027-01-20'), date('2027-01-25'))\"})\n11. [analysis] calculate({\"expression\": \"days_between(date('2027-01-24'), date('2027-01-25'))\"})\n12. [analysis] calculate({\"expression\": \"days_between(date('2027-01-11'), date('2027-01-25'))\"})\n13. [analysis] calculate({\"expression\": \"days_between(date('2027-01-25'), date('2027-03-19'))\"})\n14. [research] search_documents({\"query\": \"Eskdale\"})\n15. [drafting] write_draft(<1298 words>)\n16. [verification] read_draft({})\n17. [editing] edit_draft(find='**Evidence:**\\n- **Disclosure Letter (Clause 3):** States \"no' -> '**Evidence:**\\n- **Disclosure Letter (Clause 3.3):** Explicit')\n18. [editing] edit_draft(find='#### 3.3 Eskdale Entity Confusion\\n- **Eskdale Robotics Ltd:*' -> '#### 3.3 Eskdale Entity Confusion and Potential Connection\\n-')\n19. [editing] edit_draft(find='2. **Formal Letter to Seller** requesting:\\n   - Copy of Eskd' -> '2. **Formal Letter to Seller** requesting:\\n   - Copy of Eskd')\n20. [editing] edit_draft(find='#### 3.1 Disclosure Letter Issues\\n- **Date Discrepancy:** Di' -> '#### 3.1 Disclosure Letter Issues and SPA Inconsistencies\\n- ')\n21. [verification] read_draft({})\n22. [control] finish({\"summary\": \"Due diligence findings report identifying critical risks in the acquisition of Ashcombe Media Ltd, including severe IP ownership issues with Projec)\n\n# Final deliverable\n# Due Diligence Findings Report\n## Acquisition of Ashcombe Media Ltd by Juniper Bioscience plc\n\n**Date:** 25 January 2027  \n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Matter:** Acquisition of Ashcombe Media Ltd  \n**Client:** Juniper Bioscience plc (Buyer)  \n**Seller:** Lowther Technologies Ltd  \n**Target:** Ashcombe Media Ltd  \n\n### Executive Summary\n\nThis report outlines critical due diligence findings arising from the review of transaction documents for the proposed acquisition of Ashcombe Media Ltd. The review has identified several material issues requiring immediate attention, including significant intellectual property risks, undisclosed litigation threats, and timeline inconsistencies that may impact the transaction structure and valuation.\n\n### 1. Transaction Overview\n\n**Key Transaction Details:**\n- **Purchase Price:** $115,000,000\n- **Closing Date:** 19 March 2027 (per SPA dated 11 January 2027)\n- **Structure:** Acquisition of entire issued share capital\n- **Governing Law:** English law, exclusive jurisdiction of English courts\n\n**Documentation Reviewed:**\n1. Share Purchase Agreement (dated 11 January 2027)\n2. Disclosure Letter (dated 24 January 2027)\n3. Board Minutes of Ashcombe Media Ltd (dated 20 January 2027)\n4. Client Email Instructions\n\n### 2. Critical Findings\n\n#### 2.1 Intellectual Property Risk - \"Project Helix\" Software\n\n**Issue:** The Company's core platform software, \"Project Helix,\" presents a severe intellectual property risk.\n\n**Evidence:**\n- Disclosure Letter (Clauses 4.2-4.5) confirms:\n  - Software developed in 2023 by Eskdale Robotics Ltd\n  - No written contract or statement of work executed\n  - No written assignment of intellectual property rights\n  - Development conducted pursuant to \"verbal understanding\"\n\n**Risk Assessment:**\n- **High Risk:** The Company may not own the IP rights to its core business asset\n- **Valuation Impact:** Potential material adverse effect on business value\n- **Legal Exposure:** Risk of IP infringement claims from Eskdale Robotics Ltd\n- **Business Continuity:** Potential inability to use or modify core software\n\n**Required Action:**\n1. Immediate investigation into Eskdale Robotics Ltd relationship\n2. Demand written confirmation of IP ownership or assignment\n3. Consider escrow arrangement for portion of purchase price\n4. Review warranty protections in SPA regarding IP ownership\n\n#### 2.2 Undisclosed Litigation Threat\n\n**Issue:** Material inconsistency between Disclosure Letter and Board Minutes regarding litigation.\n\n**Evidence:**\n- **Disclosure Letter (Clause 3.3):** Explicitly states \"The disclosure against Warranty 7.1 is: **None**.\"\n- **Board Minutes (Item 5):** Records \"letter before action from Eskdale Engineering Ltd threatening proceedings for approximately $2,750,000\"\n  - Letter dated 15 January 2027 (received before Disclosure Letter dated 24 January 2027)\n  - Relates to alleged defective deliveries under supply agreement dated 3 March 2024\n  - No provision recorded in financial statements\n\n**Risk Assessment:**\n- **High Risk:** Seller has failed to disclose material litigation threat\n- **Warranty Breach:** Potential breach of Warranty 7.1 (Litigation)\n- **Financial Exposure:** $2.75M potential liability\n- **Reputational Risk:** Ongoing dispute with supplier\n\n**Required Action:**\n1. Immediate request for copy of letter before action\n2. Investigation into supply agreement with Eskdale Engineering Ltd\n3. Assessment of potential liability and accounting treatment\n4. Consider reduction in purchase price or specific indemnity\n\n#### 2.3 Timeline and Completion Date Inconsistency\n\n**Issue:** Discrepancy between client expectations and SPA terms.\n\n**Evidence:**\n- **Client Email:** \"completion expected to occur prior to 25 January 2027\"\n- **SPA (Clause 3):** Closing Date is 19 March 2027\n- **Current Date:** 25 January 2027 (deliverable date)\n\n**Risk Assessment:**\n- **Medium Risk:** Client expectations not aligned with transaction timeline\n- **Commercial Risk:** Potential business disruption if completion delayed\n- **Negotiation Risk:** Seller may resist acceleration of timeline\n\n**Required Action:**\n1. Clarify with client whether acceleration to January 2027 is required\n2. If acceleration needed, negotiate amendment to SPA\n3. Assess feasibility of completing due diligence by accelerated timeline\n\n#### 2.4 Material Customer Contract Renewal\n\n**Issue:** Key customer contract renewal pending.\n\n**Evidence:**\n- **Board Minutes (Item 6):** Agreement with Ingleby Technologies Ltd under renewal discussion\n- **Target Execution Date:** 28 February 2027\n- **Client Email:** Notes Ingleby Technologies as \"material customer\"\n\n**Risk Assessment:**\n- **Medium Risk:** Revenue dependency on single customer\n- **Commercial Risk:** Potential loss of material revenue stream\n- **Timing Risk:** Renewal target date (28 Feb 2027) precedes closing (19 Mar 2027)\n\n**Required Action:**\n1. Review current Ingleby Technologies contract terms\n2. Monitor renewal negotiations closely\n3. Consider condition precedent requiring successful renewal\n4. Assess impact on valuation if renewal fails\n\n### 3. Additional Observations\n\n#### 3.1 Disclosure Letter Issues and SPA Inconsistencies\n- **Date Discrepancy:** Disclosure Letter references SPA \"dated on or about 25 January 2027\" but SPA is dated 11 January 2027\n- **Material Adverse Effect Definition:** References Clause 3.1 of SPA, but SPA defines \"Material Adverse Change\" not \"Material Adverse Effect\"\n- **Clause References:** References non-existent clauses (Clause 9, Clause 15) in SPA\n- **Material Adverse Change Application:** SPA definition excludes \"changes in general economic conditions, changes affecting the industry generally, and pandemics\" - IP ownership and litigation issues likely qualify as Material Adverse Changes\n- **Warranty References:** Disclosure Letter references Warranties 7.1 and 8.2, but these are not contained in the provided SPA excerpt\n\n#### 3.2 Corporate Governance\n- **Board Composition:** Three directors (Edwin Parry, Lena Choi, Daniel Frost)\n- **Meeting Frequency:** Regular board meetings (previous meeting 18 December 2026)\n- **Decision Making:** Proper quorum and documentation observed\n\n#### 3.3 Eskdale Entity Confusion and Potential Connection\n- **Eskdale Robotics Ltd:** Developed Project Helix software (IP risk) - based in Penrith, Cumbria\n- **Eskdale Engineering Ltd:** Threatening litigation for $2.75M (supply dispute)\n- **Critical Risk:** Both entities share \"Eskdale\" name and similar business activities\n- **Investigation Required:** Determine if entities are related, affiliated, or under common control\n- **Disclosure Gap:** No disclosure of potential connection between these material business relationships\n\n### 4. Recommendations\n\n#### 4.1 Immediate Actions (Within 48 Hours)\n1. **Cease Transaction Progress** until critical issues resolved\n2. **Formal Letter to Seller** requesting:\n   - Copy of Eskdale Engineering Ltd letter before action\n   - Documentation of Eskdale Robotics Ltd relationship and IP assignment\n   - Explanation of disclosure inconsistencies\n   - Information on any connection between Eskdale Robotics Ltd and Eskdale Engineering Ltd\n3. **Client Meeting** to discuss findings and revised strategy\n\n#### 4.2 Transaction Structure Amendments\n1. **Purchase Price Adjustment:** Consider reduction for IP and litigation risks\n2. **Escrow Arrangement:** Minimum 12-month escrow for contingent liabilities\n3. **Specific Indemnities:** For IP ownership and Eskdale Engineering claim\n4. **Condition Precedents:**\n   - Satisfactory resolution of IP ownership\n   - Settlement or defense strategy for Eskdale claim\n   - Renewal of Ingleby Technologies contract\n\n#### 4.3 Due Diligence Continuation\n1. **Expanded IP Due Diligence:** Full audit of all software and technology assets\n2. **Litigation Investigation:** Complete review of all supplier relationships\n3. **Customer Contract Review:** All material customer agreements\n4. **Financial Due Diligence:** Impact of potential liabilities on accounts\n\n#### 4.4 Negotiation Strategy\n1. **Leverage Disclosure Failures:** Use inconsistencies to negotiate better terms\n2. **Risk Allocation:** Ensure appropriate risk transfer to Seller\n3. **Timeline Realignment:** Agree realistic timeline with proper due diligence\n4. **Warranty Enhancements:** Strengthen IP and litigation warranties\n\n### 5. Risk Matrix\n\n| Risk Category | Severity | Probability | Overall Risk | Mitigation Strategy |\n|--------------|----------|------------|--------------|---------------------|\n| IP Ownership | Critical | High | Critical | Escrow, indemnities, price adjustment |\n| Litigation Threat | High | Medium | High | Specific indemnity, liability assessment |\n| Customer Concentration | Medium | Medium | Medium | Condition precedent, revenue guarantee |\n| Timeline Mismatch | Medium | High | Medium | Client alignment, realistic scheduling |\n| Disclosure Integrity | High | High | High | Enhanced warranties, seller representations |\n\n### 6. Next Steps\n\n1. **Day 1 (25 Jan 2027):** Present findings to client, obtain instructions\n2. **Day 2 (26 Jan 2027):** Issue formal requests to Seller\n3. **Day 3-7 (27 Jan - 31 Jan 2027):** Conduct additional due diligence\n4. **Day 8-14 (1 Feb - 7 Feb 2027):** Negotiate amended SPA terms\n5. **Target Closing:** Realistic timeline of 6-8 weeks from resolution of issues\n\n### 7. Conclusion\n\nThe due diligence review has uncovered material risks that fundamentally impact the transaction. The IP ownership issue alone could render the Company's core business unsustainable. Combined with the undisclosed litigation threat and timeline inconsistencies, these findings necessitate a fundamental reassessment of the transaction.\n\n**Recommendation:** Advise client to pause the transaction pending resolution of these critical issues. The current SPA does not provide adequate protection for the identified risks, and proceeding without addressing them would expose Juniper Bioscience plc to unacceptable liability.\n\n**Priority:** Immediate client consultation to determine whether to:\n1. Proceed with heavily amended terms and protections, or\n2. Consider withdrawal from the transaction if risks cannot be adequately mitigated.\n\n---\n\n**Prepared by:** Senior Associate  \n**Date:** 25 January 2027  \n**Status:** URGENT - Requires Immediate Client Attention\n\n# Expert rubric verdicts (5/6 passed)\n- C1 [PASS] Identifies the threatened $2,750,000 claim by Eskdale Engineering Ltd recorded in the board minutes and that it is not disclosed against the litigation warranty (Warranty 7.1), recommending a specific indemnity or price protection.\n    judges: PASS: The deliverable identifies the $2,750,000 claim by Eskdale Engineering Ltd from the board minutes, notes the disclosure letter states 'None' against Warranty 7.1, and recommends a specific indemnity or price adjustment i | PASS: The deliverable clearly identifies the $2,750,000 claim by Eskdale Engineering Ltd from board minutes (Item 5), notes it is not disclosed against Warranty 7.1 (Disclosure Letter Clause 3.3 states 'None'), and recommends \n- C2 [PASS] Identifies that the core platform was developed by contractor Eskdale Robotics Ltd without a written IP assignment, so the Company may not own it, and recommends obtaining a confirmatory assignment as a condition to Closing.\n    judges: PASS: The deliverable identifies in section 2.1 that Project Helix was developed by Eskdale Robotics Ltd without a written IP assignment, creating a risk the Company does not own it, and recommends in section 4.1 obtaining a ' | PASS: The deliverable identifies Project Helix was developed by Eskdale Robotics Ltd without written IP assignment (Disclosure Letter Clauses 4.2-4.4), notes the Company may not own the IP, and recommends obtaining confirmator\n- C3 [FAIL] Identifies that the MAC carve-outs (general economic, industry-wide and pandemic changes) contain no 'disproportionate effect' exception, so the Buyer bears those risks even where the Company is disproportionately affected, and recommends adding one.\n    judges: FAIL: While the deliverable notes the MAC carve-outs in section 3.1, it does not identify the absence of a 'disproportionate effect' exception nor recommend adding one to protect the Buyer where the Company is disproportionate | FAIL: While the deliverable notes the MAC carve-outs at 3.1, it does not identify the absence of a 'disproportionate effect' exception as a specific problem or recommend adding one. The observation about MAC is limited to noti\n- C4 [PASS] Flags that the board minutes and the disclosure letter are inconsistent about litigation.\n    judges: PASS: Section 2.2 explicitly flags the 'Material inconsistency between Disclosure Letter and Board Minutes regarding litigation,' contrasting the 'None' disclosure with the recorded letter before action. | PASS: The deliverable explicitly flags the inconsistency between board minutes (Eskdale Engineering Ltd letter before action) and disclosure letter ('None' disclosure against Warranty 7.1) in section 2.2 with clear evidence co\n- C5 [PASS] Lists a confirmatory IP assignment from Eskdale Robotics Ltd as a required third-party action not yet obtained.\n    judges: PASS: Section 4.3 lists 'Condition Precedents: Satisfactory resolution of IP ownership,' and section 2.1 identifies the required action to 'Demand written confirmation of IP ownership or assignment,' which constitutes a requir | PASS: The deliverable lists obtaining confirmatory IP assignment from Eskdale Robotics Ltd as a required action in section 4.1 (formal letter to Seller requesting 'Documentation of Eskdale Robotics Ltd relationship and IP assi\n- C6 [PASS] Assigns a risk rating (High / Medium / Low) to each issue.\n    judges: PASS: Section 2.1 assigns a 'High Risk' to the IP issue, section 2.2 assigns a 'High Risk' to the litigation threat, section 2.3 assigns a 'Medium Risk' to the timeline, and section 5 includes a full risk matrix with severity  | PASS: The deliverable assigns risk ratings throughout: IP Ownership 'High Risk'/'Critical', Litigation Threat 'High Risk'/'High', Customer Concentration 'Medium Risk'/'Medium', Timeline Mismatch 'Medium Risk'/'Medium', and inc\n\n# Your job\nAnalyse each FAILED criterion: what went wrong, what the agent should have done, and whether the failure is procedural (reusable) or task-specific. Then write reusable candidate lessons that would prevent the procedural failures on other matters.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|due_diligence\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C3\",\n      \"what_went_wrong\": \"The agent noted the MAC carve-outs but failed to identify the absence of a 'disproportionate effect' exception, which is a critical risk allocation issue. The recommendation to add such an exception was omitted.\",\n      \"should_have\": \"The agent should have analysed the MAC definition for standard exceptions, identified the missing 'disproportionate effect' qualifier, and recommended its inclusion to protect the buyer from industry-wide risks that disproportionately affect the target.\",\n      \"failure_kind\": \"procedural\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"For every Material Adverse Change (MAC) clause, verify the presence of a 'disproportionate effect' exception and flag its absence as a risk allocation gap.\",\n      \"evidence\": [\"C3\"],\n      \"task_type_scope\": \"due_diligence\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Compare MAC definitions against market-standard exceptions (e.g., general economic conditions, industry-wide changes, pandemics) and note any omissions or deviations that could expose the client to disproportionate risks.\",\n      \"evidence\": [\"C3\"],\n      \"task_type_scope\": \"due_diligence\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"Include in the risk assessment section a specific subheading for 'Risk Allocation Gaps' that flags missing qualifiers in MAC clauses or other critical definitions.\",\n      \"evidence\": [\"C3\"],\n      \"task_type_scope\": \"due_diligence\",\n      \"confidence\": 0.85\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"review\",\n      \"text\": \"Before finalising the report, cross-check all identified risks against the transaction documents to ensure no standard risk allocation mechanisms (e.g., MAC exceptions) have been overlooked.\",\n      \"evidence\": [\"C3\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.8\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"For every exclusion or carve-out in a critical clause (e.g., MAC, warranties), assess whether the exclusion is absolute or qualified by terms like 'disproportionate' or 'material' and flag unqualified exclusions.\",\n      \"evidence\": [\"C3\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"general\",\n      \"text\": \"Use a standardised checklist of market-standard exceptions and qualifiers for critical clauses (e.g., MAC, force majeure) to ensure comprehensive risk analysis.\",\n      \"evidence\": [\"C3\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.85\n    }\n  ],\n  \"lesson_feedback\": [\n    {\n      \"lesson_id\": \"L0001\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Directly addresses the procedural failure by ensuring the agent actively verifies a key risk allocation mechanism.\"\n    },\n    {\n      \"lesson_id\": \"L0002\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Provides a reusable method for analysing MAC clauses, which is critical for due diligence in M&A transactions.\"\n    },\n    {\n      \"lesson_id\": \"L0003\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Ensures the deliverable structure explicitly highlights risk allocation gaps, improving clarity for the client.\"\n    },\n    {\n      \"lesson_id\": \"L0004\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Encourages a final review step to catch overlooked standard mechanisms, reducing procedural oversights.\"\n    },\n    {\n      \"lesson_id\": \"L0005\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Generalises the behaviour to other critical clauses, making it reusable across different types of transactions.\"\n    },\n    {\n      \"lesson_id\": \"L0006\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Promotes consistency and thoroughness by leveraging standardised checklists, which is valuable for legal risk analysis.\"\n    }\n  ]\n}\n```"
+}

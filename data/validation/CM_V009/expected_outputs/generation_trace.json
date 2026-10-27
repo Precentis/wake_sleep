@@ -1,0 +1,97 @@
+{
+  "docs": [
+    {
+      "title": "underwriting_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 609,
+            "output_tokens": 1053
+          }
+        }
+      ]
+    },
+    {
+      "title": "prospectus_extract.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 483,
+            "output_tokens": 1021
+          }
+        }
+      ]
+    },
+    {
+      "title": "comfort_letter.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 455,
+            "output_tokens": 1073
+          }
+        }
+      ]
+    },
+    {
+      "title": "client_email.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 435,
+            "output_tokens": 365
+          }
+        }
+      ]
+    }
+  ],
+  "doc_facts": {
+    "underwriting_agreement.md": {
+      "key": "underwriting",
+      "facts": [
+        "Parties: Upton Media Ltd (Company) and Galloway Foods Securities (Underwriter).",
+        "Clause 9: the Underwriters may offer the Shares to investors in the United States, Canada and the European Economic Area. No selling restrictions or exemption conditions are specified for any jurisdiction.",
+        "Clause 4: the Company grants the Underwriters an option to purchase up to 4,800,000 additional shares (the Over-allotment Option), representing 15% of the 24,000,000 Firm Shares.",
+        "Clause 7(b): the comfort letter cut-off date shall be no earlier than 3 business days before the pricing date. The pricing date is 20 June 2027.",
+        "Recital C: the Company has 63,000,000 ordinary shares in issue."
+      ],
+      "must_contain": [
+        "United States",
+        "European Economic Area",
+        "4,800,000",
+        "24,000,000",
+        "15%",
+        "20 June 2027",
+        "63,000,000"
+      ]
+    },
+    "prospectus_extract.md": {
+      "key": "prospectus",
+      "facts": [
+        "Issuer: Upton Media Ltd. The date of this Prospectus is 20 June 2027.",
+        "Capitalisation: 61,750,000 ordinary shares are in issue at the date of this Prospectus."
+      ],
+      "must_contain": [
+        "61,750,000"
+      ]
+    },
+    "comfort_letter.md": {
+      "key": "comfort",
+      "facts": [
+        "Paragraph 6: our procedures covered the period up to 11 June 2027 (the cut-off date)."
+      ],
+      "must_contain": [
+        "11 June 2027"
+      ]
+    },
+    "client_email.md": {
+      "key": "client_email",
+      "facts": [],
+      "must_contain": []
+    }
+  }
+}

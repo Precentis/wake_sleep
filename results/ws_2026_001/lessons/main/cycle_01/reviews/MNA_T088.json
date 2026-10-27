@@ -1,0 +1,178 @@
+{
+  "task_id": "MNA_T088",
+  "cycle": 1,
+  "lineage": "main",
+  "graded": true,
+  "failures": [
+    {
+      "criterion_id": "C1",
+      "what_went_wrong": "The agent accepted the stated liability cap figure without verifying its arithmetic accuracy against the percentage of the purchase price.",
+      "should_have": "Recomputed the cap by calculating 15% of the purchase price and compared it to the stated figure to identify discrepancies.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C2",
+      "what_went_wrong": "The agent described the basket as 'excessive' but did not explicitly identify or explain that it operated as a deductible (Seller liable only for excess) rather than a tipping basket.",
+      "should_have": "Explicitly stated the type of basket (deductible vs. tipping) and explained why the structure was less favourable to the Buyer.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C3",
+      "what_went_wrong": "The agent noted the inconsistency between the Seller non-compete and Founder non-compete durations but did not address enforceability concerns or flag that the 4-year period might be excessive.",
+      "should_have": "Assessed the reasonableness of the non-compete duration and flagged potential enforceability risks.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C5",
+      "what_went_wrong": "The agent stated survival periods as durations but did not convert them into specific calendar dates or calculate days remaining from the current date.",
+      "should_have": "Converted survival periods into specific expiry dates and calculated days remaining from the deliverable date.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C6",
+      "what_went_wrong": "The agent did not perform or show the arithmetic calculation for the cap (15% of purchase price) to verify the stated figure.",
+      "should_have": "Shown the arithmetic calculation (15% x purchase price) and flagged any discrepancy with the stated cap figure.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C7",
+      "what_went_wrong": "The agent did not convert survival periods into specific calendar dates or calculate days remaining to expiry from the deliverable date.",
+      "should_have": "Converted survival periods into specific expiry dates and calculated days remaining from the deliverable date for clarity.",
+      "failure_kind": "procedural"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T088_0",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "Recompute every monetary cap or threshold expressed as a percentage of the purchase price and flag any mismatch with the stated figure.",
+      "source_tasks": [
+        "MNA_T088"
+      ],
+      "evidence": [
+        "MNA_T088:C1",
+        "MNA_T088:C6"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T088_1",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Explicitly identify whether a basket operates as a deductible (Seller liable only for excess) or tipping basket (Seller liable for full amount once threshold is met) and note which structure favours the client.",
+      "source_tasks": [
+        "MNA_T088"
+      ],
+      "evidence": [
+        "MNA_T088:C2"
+      ],
+      "task_type_scope": "redline",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T088_2",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "Assess the reasonableness of non-compete durations and flag any potential enforceability risks or inconsistencies with other agreements.",
+      "source_tasks": [
+        "MNA_T088"
+      ],
+      "evidence": [
+        "MNA_T088:C3"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T088_3",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Convert all survival periods into specific expiry dates and calculate days remaining from the deliverable date to provide clear deadlines.",
+      "source_tasks": [
+        "MNA_T088"
+      ],
+      "evidence": [
+        "MNA_T088:C5",
+        "MNA_T088:C7"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T088_4",
+      "type": "checklist",
+      "category": "review",
+      "text": "Before finalising a redline note, verify that all arithmetic calculations (e.g., percentages, dates) are shown and match the stated figures.",
+      "source_tasks": [
+        "MNA_T088"
+      ],
+      "evidence": [
+        "MNA_T088:C1",
+        "MNA_T088:C5",
+        "MNA_T088:C6",
+        "MNA_T088:C7"
+      ],
+      "task_type_scope": "redline",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T088_5",
+      "type": "practice_note",
+      "category": "drafting",
+      "text": "When proposing amendments, include both the current and proposed wording with a clear rationale for each change to facilitate negotiation.",
+      "source_tasks": [
+        "MNA_T088"
+      ],
+      "evidence": [
+        "MNA_T088:C8"
+      ],
+      "task_type_scope": "redline",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.8
+    }
+  ],
+  "lesson_feedback": [
+    {
+      "lesson_id": "L0001",
+      "label": "HELPFUL",
+      "reason": "Directly addresses the procedural failure to verify arithmetic accuracy in C1 and C6."
+    },
+    {
+      "lesson_id": "L0002",
+      "label": "HELPFUL",
+      "reason": "Clarifies the need to explicitly identify basket types, addressing the omission in C2."
+    },
+    {
+      "lesson_id": "L0003",
+      "label": "HELPFUL",
+      "reason": "Encourages assessment of non-compete enforceability, which was missing in C3."
+    },
+    {
+      "lesson_id": "L0004",
+      "label": "HELPFUL",
+      "reason": "Ensures survival periods are converted to specific dates, addressing the gaps in C5 and C7."
+    },
+    {
+      "lesson_id": "L0005",
+      "label": "HELPFUL",
+      "reason": "Provides a review step to catch arithmetic and date calculation errors before finalising deliverables."
+    },
+    {
+      "lesson_id": "L0006",
+      "label": "HELPFUL",
+      "reason": "Reinforces best practice for drafting redline notes, as demonstrated in C8."
+    }
+  ],
+  "input_tokens": 5283,
+  "output_tokens": 1407,
+  "cost_usd": 0.004752,
+  "prompt": "# Task\nType: redline | Practice area: corporate_mna\nYou act for the Buyer, Vantage Foods Ltd. Vantage Foods Ltd (the Buyer) is acquiring the entire issued share capital of Ingleby Bioscience plc (the Company) from Merrion Technologies Ltd (the Seller).\n\nPrepare a redline note proposing amendments to the principal agreement to protect our client. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 6 August 2026. Address the deliverable to the supervising partner.\n\n# Trajectory (30 model steps, 30 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"client_email.md\"})\n 3. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 4. [research] read_document({\"name\": \"disclosure_letter.md\"})\n 5. [research] read_document({\"name\": \"employment_agreement.md\"})\n 6. [research] search_documents({\"query\": \"Schedule 2\"})\n 7. [research] search_documents({\"query\": \"warranty\"})\n 8. [research] search_documents({\"query\": \"Basket\"})\n 9. [research] search_documents({\"query\": \"1.0%\"})\n10. [analysis] calculate({\"expression\": \"date('2026-08-06')\"})\n11. [drafting] write_draft(<1046 words>)\n12. [verification] read_draft({})\n13. [verification] calculate({\"expression\": \"pct(15600000, 130000000)\"})\n14. [editing] edit_draft(find='### 5. INTELLECTUAL PROPERTY DISCLOSURE\\n\\n**Current:** Disclo' -> '### 5. INTELLECTUAL PROPERTY DISCLOSURE\\n\\n**Current:** Disclo')\n15. [editing] edit_draft(find='### 6. PAYMENT TERMS CONFLICT\\n\\n**Current Conflict:**\\n- SPA C' -> '### 6. DISCLOSURE LETTER DATE DISCREPANCY\\n\\n**Current:** Disc')\n16. [editing] edit_draft(find='### 7. NON-COMPETE PROVISIONS' -> '### 8. NON-COMPETE PROVISIONS')\n17. [editing] edit_draft(find='### 8. BELLHAVEN MEDICAL LTD SUPPLY AGREEMENT' -> '### 9. BELLHAVEN MEDICAL LTD SUPPLY AGREEMENT')\n18. [editing] edit_draft(find='### 9. NOTICE PROVISIONS' -> '### 10. NOTICE PROVISIONS')\n19. [editing] edit_draft(find='### 10. GOVERNING LAW AND JURISDICTION' -> '### 11. GOVERNING LAW AND JURISDICTION')\n20. [editing] edit_draft(find='Key concerns requiring amendment include:\\n1. **Missing Warra' -> 'Key concerns requiring amendment include:\\n1. **Missing Warra')\n21. [verification] read_draft({})\n22. [verification] calculate({\"expression\": \"0.5% of 130000000\"})\n23. [verification] calculate({\"expression\": \"pct(0.5, 130000000)\"})\n24. [verification] calculate({\"expression\": \"130000000 * 0.005\"})\n25. [editing] edit_draft(find='### 9. BELLHAVEN MEDICAL LTD SUPPLY AGREEMENT\\n\\n**Client Conc' -> '### 9. BELLHAVEN MEDICAL LTD SUPPLY AGREEMENT\\n\\n**Client Conc')\n26. [editing] edit_draft(find='### 10. NOTICE PROVISIONS\\n\\n**Current:** Various notice provi' -> '### 10. KEY EMPLOYEE RETENTION\\n\\n**Current:** Employment Agre')\n27. [editing] edit_draft(find='### 11. GOVERNING LAW AND JURISDICTION' -> '### 12. GOVERNING LAW AND JURISDICTION')\n28. [editing] edit_draft(find='Key concerns requiring amendment include:\\n1. **Missing Warra' -> 'Key concerns requiring amendment include:\\n1. **Missing Warra')\n29. [verification] read_draft({})\n30. [control] finish({\"summary\": \"Redline note proposing amendments to the Share Purchase Agreement for Vantage Foods Ltd's acquisition of Ingleby Bioscience plc. The note identifie)\n\n# Final deliverable\n# REDLINE NOTE: PROPOSED AMENDMENTS TO SHARE PURCHASE AGREEMENT\n**Matter:** Acquisition of Ingleby Bioscience plc by Vantage Foods Ltd  \n**Date:** 6 August 2026  \n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Client:** Vantage Foods Ltd (Buyer)  \n\n## EXECUTIVE SUMMARY\n\nThis note proposes amendments to the Share Purchase Agreement dated 18 July 2026 (the \"SPA\") between Merrion Technologies Ltd (Seller), Vantage Foods Ltd (Buyer), and Ingleby Bioscience plc (Company). The transaction involves the acquisition of the entire issued share capital for $130,000,000.\n\nKey concerns requiring amendment include:\n1. **Missing Warranties Schedule** - Schedule 2 is referenced but not provided\n2. **Inadequate Liability Protection** - 15% cap on claims ($15.6M) is insufficient for a $130M transaction\n3. **Excessive De Minimis Threshold** - $1.3M basket (1% of purchase price) is too high\n4. **Intellectual Property Risk** - Critical disclosure about unassigned software IP\n5. **Date Discrepancy** - Disclosure Letter dated 2025 vs. 2026 transaction\n6. **Conflicting Payment Terms** - Between SPA and Disclosure Letter\n7. **Insufficient Non-Compete Protection** - For key employees beyond the Founder\n8. **Key Employee Retention** - Lack of retention mechanisms for critical personnel\n\n## DETAILED ANALYSIS AND PROPOSED AMENDMENTS\n\n### 1. MISSING SCHEDULE 2 (WARRANTIES)\n\n**Current Position:** The SPA references Schedule 2 containing warranties but this schedule is not provided.\n\n**Risk:** Without specific warranties, the Buyer has limited contractual recourse for breaches. The Disclosure Letter references \"Warranty 8.2 (Intellectual Property)\" suggesting a detailed warranty schedule exists but is missing.\n\n**Proposed Action:** \n- Insist on inclusion of comprehensive warranty schedule covering:\n  - Title and capacity\n  - Financial statements\n  - Contracts (including Bellhaven Medical Ltd supply agreement)\n  - Intellectual property\n  - Compliance with laws\n  - Litigation\n  - Employees\n  - Tax\n  - Assets\n  - Environmental matters\n\n### 2. LIABILITY CAP (CLAUSE 8.2)\n\n**Current:** Aggregate liability capped at $15,600,000 (15% of $130M purchase price).\n\n**Analysis:** This represents only 12% of the purchase price. Market standard for similar transactions is typically 50-100% of purchase price for fundamental warranties.\n\n**Proposed Amendment:**\n```\n8.2 The aggregate liability of the Seller for all claims in respect of the General Warranties and any other warranty claims (other than fraud) shall not exceed [**50% of the Purchase Price, being $65,000,000**]. The aggregate liability of the Seller for claims in respect of the Fundamental Warranties shall not exceed [**100% of the Purchase Price, being $130,000,000**].\n```\n\n### 3. DE MINIMIS BASKET (CLAUSE 9.4)\n\n**Current:** No liability unless aggregate claims exceed $1,300,000 (1% of purchase price).\n\n**Analysis:** This threshold is excessive. Market standard is typically 0.1-0.5% of purchase price for transactions of this size.\n\n**Proposed Amendment:**\n```\n9.4 The Seller shall not be liable in respect of any claim unless the aggregate of all claims exceeds [**$650,000 (0.5% of the Purchase Price)**], in which case the Seller shall be liable only for the excess over that amount.\n```\n\n### 4. SURVIVAL PERIODS (CLAUSE 10.1)\n\n**Current:** General warranties survive 18 months; fundamental warranties survive 72 months.\n\n**Analysis:** While 72 months for tax warranties is reasonable, 18 months for general warranties may be insufficient for latent defects. Tax authority investigations can take longer than 6 years.\n\n**Proposed Amendment:**\n```\n10.1 The General Warranties shall survive the Closing for a period of [**24 months**]. The Fundamental Warranties shall survive for a period of [**84 months**] for tax matters and [**72 months**] for all other fundamental matters. All claims must be notified in writing before the expiry of the applicable survival period.\n```\n\n### 5. INTELLECTUAL PROPERTY DISCLOSURE\n\n**Current:** Disclosure Letter reveals core platform software developed by Penrith Technologies Ltd in 2023 without written IP assignment.\n\n**Risk:** The Company may not own its core technology. This represents a fundamental business risk as the software likely constitutes a key asset of the business.\n\n**Proposed Actions:**\n1. **Condition Precedent:** Require executed IP assignment from Penrith Technologies Ltd before completion\n2. **Specific Warranty:** Add warranty confirming Company owns all IP necessary for business\n3. **Indemnity:** Specific indemnity for IP claims with uncapped liability\n4. **Escrow:** Consider holding back portion of purchase price pending resolution\n5. **Due Diligence:** Review all contractor agreements for IP assignment provisions\n\n### 6. DISCLOSURE LETTER DATE DISCREPANCY\n\n**Current:** Disclosure Letter dated \"[●] August 2025\" - predates SPA by approximately one year.\n\n**Risk:** Creates uncertainty about whether disclosures are current and comprehensive. May suggest disclosures were prepared for a different transaction or timeline.\n\n**Proposed Amendment:**\n1. **Updated Date:** Require Disclosure Letter to be dated contemporaneously with SPA (August 2026)\n2. **Bring-Down Certificate:** Require Seller confirmation that disclosures remain accurate as of Closing Date\n3. **Comprehensive Review:** Ensure all material disclosures are included and up-to-date\n\n### 7. PAYMENT TERMS CONFLICT\n\n**Current Conflict:**\n- SPA Clause 3.1: Payment on Closing Date (22 October 2026)\n- Disclosure Letter Clause 4.1: Payment \"at least five (5) Business Days prior to the due date\"\n\n**Risk:** Creates ambiguity about payment timing.\n\n**Proposed Amendment:** Align with SPA and delete conflicting provision in Disclosure Letter.\n\n### 8. NON-COMPETE PROVISIONS\n\n**Current:**\n- Seller non-compete: 4 years (Clause 11.1)\n- Founder non-compete: 18 months post-termination (Employment Agreement Clause 18.2)\n\n**Analysis:** While Seller non-compete is reasonable, additional key employee protection needed.\n\n**Proposed Amendments:**\n1. **Key Employee Covenants:** Extend non-compete to all key employees (not just Founder)\n2. **Geographic Scope:** Consider global restriction given business nature\n3. **Consideration:** Ensure non-competes supported by adequate consideration\n\n### 9. BELLHAVEN MEDICAL LTD SUPPLY AGREEMENT\n\n**Client Concern:** Specifically highlighted in client email as material customer relationship.\n\n**Proposed Actions:**\n1. **Review Agreement:** Obtain and review actual Bellhaven Medical Ltd supply agreement\n2. **Specific Warranty:** Warranty that supply agreement is valid, binding, and in full force\n3. **Consent Requirement:** Warranty that no consents needed for change of control\n4. **Termination Rights:** Warranty that no termination rights triggered by transaction\n5. **Financial Warranty:** Warranty regarding revenue from this customer\n6. **Key Personnel:** Ensure key employees managing this relationship are retained\n\n### 10. KEY EMPLOYEE RETENTION\n\n**Current:** Employment Agreement covers Founder (Dr. Eleanor Hart) but no specific retention mechanisms for other key employees.\n\n**Risk:** Loss of key personnel post-acquisition could damage business value, particularly relationships with key customers like Bellhaven Medical Ltd.\n\n**Proposed Actions:**\n1. **Retention Bonuses:** Consider retention bonuses for key employees\n2. **Garden Leave:** Include garden leave provisions in employment contracts\n3. **Succession Planning:** Review succession plans for critical roles\n4. **Due Diligence:** Review all key employee contracts for change of control provisions\n\n### 11. NOTICE PROVISIONS\n\n**Current:** Various notice provisions across documents with different deemed receipt times.\n\n**Proposed:** Standardize notice provisions across all transaction documents.\n\n### 12. GOVERNING LAW AND JURISDICTION\n\n**Current:** Consistent English law and jurisdiction across documents - acceptable.\n\n## NEGOTIATING STRATEGY\n\n### High Priority (Walkaway Issues):\n1. Inclusion of comprehensive warranty schedule\n2. Reduction of de minimis basket to 0.5%\n3. Resolution of IP assignment issue (condition precedent)\n\n### Medium Priority (Strongly Negotiate):\n1. Increase liability cap to 50% for general warranties\n2. Extend survival periods\n3. Specific protections for Bellhaven Medical Ltd relationship\n\n### Lower Priority (Acceptable Compromises):\n1. Notice provision standardization\n2. Minor drafting clarifications\n\n## RECOMMENDATIONS\n\n1. **Immediate Action:** Request complete set of transaction documents including Schedule 2\n2. **Due Diligence:** Conduct focused due diligence on:\n   - IP ownership documentation\n   - Bellhaven Medical Ltd supply agreement\n   - Key employee contracts\n3. **Negotiation:** Lead with IP issue as critical business risk requiring resolution\n4. **Documentation:** Ensure all amendments properly documented in revised SPA and ancillary documents\n\n## NEXT STEPS\n\n1. Prepare mark-up of SPA with proposed amendments\n2. Schedule call with client to discuss strategy\n3. Engage with Seller's counsel on key issues\n4. Consider independent IP valuation if assignment cannot be obtained\n\nThe Buyer's position should be that without resolution of the IP ownership issue and adequate warranty protection, the transaction represents unacceptable risk for a $130M investment.\n\n# Expert rubric verdicts (2/8 passed)\n- C1 [FAIL] Identifies that the warranty cap in SPA Section 8.2 is stated as $15,600,000 but 15% of the $130,000,000 Purchase Price is $19,500,000, i.e. the stated figure is wrong.\n    judges: FAIL: The deliverable incorrectly states that $15,600,000 represents 12% of the purchase price, but fails to identify that 15% of $130,000,000 is actually $19,500,000, meaning the stated cap figure is arithmetically wrong. | FAIL: The deliverable states the Liability Cap is '$15,600,000 (15% of $130M purchase price)' and accepts this figure without identifying that 15% of $130,000,000 is actually $19,500,000, not $15,600,000. The error is not flag\n- C2 [FAIL] Identifies that the basket in SPA Section 9.4 ($1,300,000) operates as a deductible (Seller liable only for the excess), not a tipping basket, and explains that this is less favourable to the Buyer.\n    judges: FAIL: The deliverable does not identify that the basket operates as a deductible (excess-only recovery) rather than a tipping basket, nor explain that this structure is less favourable to the Buyer. | PASS: The deliverable correctly identifies at Section 3 that the basket operates as a deductible ('liable only for the excess') and explains this is 'excessive' and unfavorable to the Buyer, proposing reduction to 0.5%.\n- C3 [FAIL] Identifies that the 4-year SPA non-compete may be unenforceable as wider than reasonably necessary and is inconsistent with the 18-month restriction in the Founder's employment agreement.\n    judges: FAIL: The deliverable notes the 4-year Seller non-compete and 18-month Founder restriction but does not address enforceability concerns or explain that the 4-year period may be excessive and inconsistent with the employment ag | PASS: The deliverable identifies the inconsistency between the 4-year Seller non-compete and 18-month Founder restriction at Section 8, though it does not explicitly flag enforceability risk of the 4-year period as 'wider than\n- C4 [PASS] Identifies that the core platform was developed by contractor Penrith Technologies Ltd without a written IP assignment, so the Company may not own it, and recommends obtaining a confirmatory assignment as a condition to Closing.\n    judges: PASS: The deliverable identifies the Penrith Technologies IP assignment issue and proposes requiring an executed IP assignment as a condition precedent to completion. | PASS: Section 5 correctly identifies the Penrith Technologies IP disclosure and proposes 'Condition Precedent: Require executed IP assignment from Penrith Technologies Ltd before completion' among other protective measures.\n- C5 [FAIL] States that General Warranty claims must be notified by 22 April 2028 (18 months after Closing) and Fundamental Warranty claims by 22 October 2032 (72 months after Closing).\n    judges: FAIL: The deliverable does not state the specific claim notification deadlines of 22 April 2028 for General Warranties and 22 October 2032 for Fundamental Warranties. | FAIL: The deliverable does not calculate or state the specific expiry dates (22 April 2028 and 22 October 2032). It only mentions the durations (18 months, 72 months) and proposes extending them without calculating the actual \n- C6 [FAIL] Shows the arithmetic for the cap (15% x $130,000,000 = $19,500,000) and flags the discrepancy with the stated $15,600,000.\n    judges: FAIL: The deliverable does not show the arithmetic 15% x $130,000,000 = $19,500,000 or flag the discrepancy with the stated $15,600,000 figure. | FAIL: The deliverable does not show the arithmetic (15% x $130,000,000 = $19,500,000) or flag the discrepancy with the stated $15,600,000. It accepts the $15.6M figure as correct.\n- C7 [FAIL] States the survival periods as durations and as dates (22 April 2028; 22 October 2032) and gives days remaining to the general-warranty expiry from 6 August 2026 (625 days).\n    judges: FAIL: The deliverable states warranty survival periods as durations but does not convert them to specific calendar dates (22 April 2028; 22 October 2032) or calculate days remaining to general-warranty expiry from 6 August 202 | FAIL: The deliverable does not state the survival periods as specific dates (22 April 2028; 22 October 2032) and does not calculate days remaining to general-warranty expiry from 6 August 2026 (625 days). Only durations are me\n- C8 [PASS] Shows proposed drafting changes as before/after (current wording vs proposed wording) with a one-line rationale.\n    judges: PASS: The deliverable provides before/after drafting changes for Clauses 8.2, 9.4, and 10.1 with accompanying rationale for each proposed amendment. | PASS: The deliverable consistently shows proposed drafting changes as before/after with current wording struck through or bracketed and proposed wording in bold, with one-line rationales (e.g., 'Market standard for similar tra\n\n# Your job\nAnalyse each FAILED criterion: what went wrong, what the agent should have done, and whether the failure is procedural (reusable) or task-specific. Then write reusable candidate lessons that would prevent the procedural failures on other matters.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|redline\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C1\",\n      \"what_went_wrong\": \"The agent accepted the stated liability cap figure without verifying its arithmetic accuracy against the percentage of the purchase price.\",\n      \"should_have\": \"Recomputed the cap by calculating 15% of the purchase price and compared it to the stated figure to identify discrepancies.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C2\",\n      \"what_went_wrong\": \"The agent described the basket as 'excessive' but did not explicitly identify or explain that it operated as a deductible (Seller liable only for excess) rather than a tipping basket.\",\n      \"should_have\": \"Explicitly stated the type of basket (deductible vs. tipping) and explained why the structure was less favourable to the Buyer.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C3\",\n      \"what_went_wrong\": \"The agent noted the inconsistency between the Seller non-compete and Founder non-compete durations but did not address enforceability concerns or flag that the 4-year period might be excessive.\",\n      \"should_have\": \"Assessed the reasonableness of the non-compete duration and flagged potential enforceability risks.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C5\",\n      \"what_went_wrong\": \"The agent stated survival periods as durations but did not convert them into specific calendar dates or calculate days remaining from the current date.\",\n      \"should_have\": \"Converted survival periods into specific expiry dates and calculated days remaining from the deliverable date.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C6\",\n      \"what_went_wrong\": \"The agent did not perform or show the arithmetic calculation for the cap (15% of purchase price) to verify the stated figure.\",\n      \"should_have\": \"Shown the arithmetic calculation (15% x purchase price) and flagged any discrepancy with the stated cap figure.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C7\",\n      \"what_went_wrong\": \"The agent did not convert survival periods into specific calendar dates or calculate days remaining to expiry from the deliverable date.\",\n      \"should_have\": \"Converted survival periods into specific expiry dates and calculated days remaining from the deliverable date for clarity.\",\n      \"failure_kind\": \"procedural\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"Recompute every monetary cap or threshold expressed as a percentage of the purchase price and flag any mismatch with the stated figure.\",\n      \"evidence\": [\"C1\", \"C6\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Explicitly identify whether a basket operates as a deductible (Seller liable only for excess) or tipping basket (Seller liable for full amount once threshold is met) and note which structure favours the client.\",\n      \"evidence\": [\"C2\"],\n      \"task_type_scope\": \"redline\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"Assess the reasonableness of non-compete durations and flag any potential enforceability risks or inconsistencies with other agreements.\",\n      \"evidence\": [\"C3\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.85\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Convert all survival periods into specific expiry dates and calculate days remaining from the deliverable date to provide clear deadlines.\",\n      \"evidence\": [\"C5\", \"C7\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"review\",\n      \"text\": \"Before finalising a redline note, verify that all arithmetic calculations (e.g., percentages, dates) are shown and match the stated figures.\",\n      \"evidence\": [\"C1\", \"C5\", \"C6\", \"C7\"],\n      \"task_type_scope\": \"redline\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"drafting\",\n      \"text\": \"When proposing amendments, include both the current and proposed wording with a clear rationale for each change to facilitate negotiation.\",\n      \"evidence\": [\"C8\"],\n      \"task_type_scope\": \"redline\",\n      \"confidence\": 0.8\n    }\n  ],\n  \"lesson_feedback\": [\n    {\n      \"lesson_id\": \"L0001\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Directly addresses the procedural failure to verify arithmetic accuracy in C1 and C6.\"\n    },\n    {\n      \"lesson_id\": \"L0002\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Clarifies the need to explicitly identify basket types, addressing the omission in C2.\"\n    },\n    {\n      \"lesson_id\": \"L0003\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Encourages assessment of non-compete enforceability, which was missing in C3.\"\n    },\n    {\n      \"lesson_id\": \"L0004\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Ensures survival periods are converted to specific dates, addressing the gaps in C5 and C7.\"\n    },\n    {\n      \"lesson_id\": \"L0005\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Provides a review step to catch arithmetic and date calculation errors before finalising deliverables.\"\n    },\n    {\n      \"lesson_id\": \"L0006\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Reinforces best practice for drafting redline notes, as demonstrated in C8.\"\n    }\n  ]\n}\n```"
+}

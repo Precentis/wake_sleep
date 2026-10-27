@@ -1,0 +1,86 @@
+{
+  "docs": [
+    {
+      "title": "share_purchase_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 742,
+            "output_tokens": 977
+          }
+        }
+      ]
+    },
+    {
+      "title": "escrow_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 547,
+            "output_tokens": 1068
+          }
+        }
+      ]
+    },
+    {
+      "title": "client_email.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 553,
+            "output_tokens": 433
+          }
+        }
+      ]
+    }
+  ],
+  "doc_facts": {
+    "share_purchase_agreement.md": {
+      "key": "spa",
+      "facts": [
+        "Parties: Saltash Media Ltd (Buyer), Marlow Medical Ltd (Seller); the Company is Merrion Medical Ltd.",
+        "Section 2.1: the Purchase Price is $85,000,000.",
+        "This Agreement is dated 31 March 2027; Closing is scheduled for 15 July 2027 (the 'Closing Date').",
+        "Section 1.1: 'Closing Date' means 15 July 2027.",
+        "Section 8.4 (Limitation of Liability): the aggregate liability of the Seller for warranty claims shall not exceed an amount equal to 25% of the Purchase Price, being $25,500,000. The Purchase Price is $85,000,000 (see Section 2.1).",
+        "Section 3.4 (Earn-out): the Earn-out Payment equals 3 times the amount by which FY2026 EBITDA exceeds $6,500,000, capped at $5,000,000.",
+        "Section 2.3: the Purchase Price shall be reduced dollar-for-dollar by any shortfall of Closing Working Capital below the Target Working Capital of $3,500,000."
+      ],
+      "must_contain": [
+        "25%",
+        "$25,500,000",
+        "$85,000,000",
+        "$6,500,000",
+        "$5,000,000",
+        "$3,500,000"
+      ]
+    },
+    "escrow_agreement.md": {
+      "key": "escrow",
+      "facts": [
+        "Clause 4.1: the Escrow Amount shall be released to the Seller on the date falling 12 months after the Closing Date, save to the extent of pending claims notified before that date. 'Business Day' means a day other than a Saturday or Sunday on which banks are open in London.",
+        "The Closing Date is 15 July 2027."
+      ],
+      "must_contain": [
+        "12 months",
+        "15 July 2027"
+      ]
+    },
+    "client_email.md": {
+      "key": "client_email",
+      "facts": [
+        "Management accounts show FY2026 EBITDA of $7,300,000; the Seller says the Earn-out Payment will therefore be $3,300,000.",
+        "The estimated Closing Working Capital is $2,590,000. The Seller's draft funds flow shows an adjusted purchase price of $83,180,000."
+      ],
+      "must_contain": [
+        "$7,300,000",
+        "$3,300,000",
+        "$2,590,000",
+        "$83,180,000"
+      ]
+    }
+  }
+}

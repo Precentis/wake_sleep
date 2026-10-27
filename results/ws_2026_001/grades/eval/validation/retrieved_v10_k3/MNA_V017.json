@@ -1,0 +1,126 @@
+{
+  "task_id": "MNA_V017",
+  "run_name": "eval/validation/retrieved_v10_k3",
+  "judgements": [
+    {
+      "judge": "judge_1",
+      "model": "zai.glm-5",
+      "results": [
+        {
+          "criterion_id": "C1",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable is incoherent and does not identify the conflict between the 20-day and 45-day claim notice periods or provide any recommendation."
+        },
+        {
+          "criterion_id": "C2",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable does not identify the governing law mismatch between English law in the SPA and New York law in the escrow agreement."
+        },
+        {
+          "criterion_id": "C3",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable does not identify the error in the warranty cap calculation or flag the discrepancy between the stated figure and the correct percentage."
+        },
+        {
+          "criterion_id": "C4",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable does not calculate the working capital shortfall or identify the error in the Seller's adjusted purchase price figure."
+        },
+        {
+          "criterion_id": "C5",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable does not address the MAC carve-outs or recommend adding a disproportionate effect exception."
+        },
+        {
+          "criterion_id": "C6",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable does not flag the inconsistency between the 20-day and 45-day notice periods."
+        },
+        {
+          "criterion_id": "C7",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable does not show the arithmetic for the warranty cap or flag the discrepancy with the stated figure."
+        },
+        {
+          "criterion_id": "C8",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable does not provide pinpoint citations for any issues or findings as it contains no substantive content."
+        }
+      ],
+      "input_tokens": 3074,
+      "output_tokens": 417,
+      "cost_usd": 0.0044084,
+      "latency_ms": 16047,
+      "prompt_without_documents": "# Task instructions\nYou act for the Buyer, Fenwick Marine Ltd. Fenwick Marine Ltd (the Buyer) is acquiring the entire issued share capital of Thornbury Software Ltd (the Company) from Penrith Medical Ltd (the Seller).\n\nPrepare a due diligence findings report on the matter documents. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 1 March 2027. Address the deliverable to the supervising partner.\n\n# Matter documents\n[see task documents]\n# Deliverable to grade\n<<<DELIVERABLE\nNow let me calculate:\n   3|   31| \n  31| 1.1.1\"</\n   63 of the Transaction\"> \n   5| 1.1 The Seller\" means Fenwick Ltd.1.1.1.1.1.5.1 \"Escrow Agreement\" \n   6| \n  30| \n   3| \n   3| 51,812,000,1.1 (1.1.1.5.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1 (see Clause 1.1.1.1.5\"</result>\n-1-<br> 15| \n  35| \n  63 of the Agreement\" (the \"Escrow\n   63| 12| 7| \n   4| \n   2| 3| 12| \n   5| \n   3| \n   6| 12| \n  31| \n  55| 75| 12.1. \nDELIVERABLE>>>\n\n# Rubric criteria\nC1: Identifies the conflict between the 20-day claim notice period in SPA Section 9.7 and the 45-day period in Escrow Clause 5.2, and recommends the Buyer works to the shorter 20-day period or aligns the documents.\nC2: Identifies the mismatch between English law / English courts in the SPA and New York law / New York arbitration in the escrow agreement, and the risk of parallel proceedings on escrow claims.\nC3: Identifies that the warranty cap in SPA Section 9.3 is stated as $57,812,500 but 25% of the $185,000,000 Purchase Price is $46,250,000, i.e. the stated figure is wrong.\nC4: Calculates the working capital shortfall as $910,000 and the adjusted Purchase Price as $184,090,000, identifying that the Seller's funds flow figure of $183,180,000 is wrong.\nC5: Identifies that the MAC carve-outs (general economic, industry-wide and pandemic changes) contain no 'disproportionate effect' exception, so the Buyer bears those risks even where the Company is disproportionately affected, and recommends adding one.\nC6: Flags the 20-day vs 45-day notice-period inconsistency between the SPA and the escrow agreement.\nC7: Shows the arithmetic for the cap (25% x $185,000,000 = $46,250,000) and flags the discrepancy with the stated $57,812,500.\nC8: Gives a pinpoint citation (document name and section/clause number) for every issue or finding.\n\nGrade every criterion (8 total). JSON only.",
+      "raw_response": "{\"results\": [{\"criterion_id\": \"C1\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable is incoherent and does not identify the conflict between the 20-day and 45-day claim notice periods or provide any recommendation.\"}, {\"criterion_id\": \"C2\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable does not identify the governing law mismatch between English law in the SPA and New York law in the escrow agreement.\"}, {\"criterion_id\": \"C3\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable does not identify the error in the warranty cap calculation or flag the discrepancy between the stated figure and the correct percentage.\"}, {\"criterion_id\": \"C4\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable does not calculate the working capital shortfall or identify the error in the Seller's adjusted purchase price figure.\"}, {\"criterion_id\": \"C5\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable does not address the MAC carve-outs or recommend adding a disproportionate effect exception.\"}, {\"criterion_id\": \"C6\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable does not flag the inconsistency between the 20-day and 45-day notice periods.\"}, {\"criterion_id\": \"C7\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable does not show the arithmetic for the warranty cap or flag the discrepancy with the stated figure.\"}, {\"criterion_id\": \"C8\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable does not provide pinpoint citations for any issues or findings as it contains no substantive content.\"}]}"
+    },
+    {
+      "judge": "judge_2",
+      "model": "moonshotai.kimi-k2.5",
+      "results": [
+        {
+          "criterion_id": "C1",
+          "result": "FAIL",
+          "confidence": 0.0,
+          "reason": "The deliverable contains only garbled text fragments with no coherent identification of the 20-day vs 45-day claim notice conflict or any recommendation."
+        },
+        {
+          "criterion_id": "C2",
+          "result": "FAIL",
+          "confidence": 0.0,
+          "reason": "The deliverable contains no identification of the governing law/jurisdiction mismatch between English law in the SPA and New York law/arbitration in the escrow agreement."
+        },
+        {
+          "criterion_id": "C3",
+          "result": "FAIL",
+          "confidence": 0.0,
+          "reason": "The deliverable contains no identification of the warranty cap calculation error ($57,812,500 stated vs $46,250,000 correct)."
+        },
+        {
+          "criterion_id": "C4",
+          "result": "FAIL",
+          "confidence": 0.0,
+          "reason": "The deliverable contains no working capital shortfall calculation or identification that the Seller's funds flow figure of $183,180,000 is wrong."
+        },
+        {
+          "criterion_id": "C5",
+          "result": "FAIL",
+          "confidence": 0.0,
+          "reason": "The deliverable contains no analysis of the MAC carve-outs or identification of the missing 'disproportionate effect' exception."
+        },
+        {
+          "criterion_id": "C6",
+          "result": "FAIL",
+          "confidence": 0.0,
+          "reason": "The deliverable contains no flagging of the 20-day vs 45-day notice-period inconsistency between documents."
+        },
+        {
+          "criterion_id": "C7",
+          "result": "FAIL",
+          "confidence": 0.0,
+          "reason": "The deliverable contains no arithmetic showing 25% x $185,000,000 = $46,250,000 or flagging the discrepancy with $57,812,500."
+        },
+        {
+          "criterion_id": "C8",
+          "result": "FAIL",
+          "confidence": 0.0,
+          "reason": "The deliverable contains no properly formatted pinpoint citations; only garbled fragments appear."
+        }
+      ],
+      "input_tokens": 3053,
+      "output_tokens": 511,
+      "cost_usd": 0.0031093,
+      "latency_ms": 8081,
+      "prompt_without_documents": "# Task instructions\nYou act for the Buyer, Fenwick Marine Ltd. Fenwick Marine Ltd (the Buyer) is acquiring the entire issued share capital of Thornbury Software Ltd (the Company) from Penrith Medical Ltd (the Seller).\n\nPrepare a due diligence findings report on the matter documents. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 1 March 2027. Address the deliverable to the supervising partner.\n\n# Matter documents\n[see task documents]\n# Deliverable to grade\n<<<DELIVERABLE\nNow let me calculate:\n   3|   31| \n  31| 1.1.1\"</\n   63 of the Transaction\"> \n   5| 1.1 The Seller\" means Fenwick Ltd.1.1.1.1.1.5.1 \"Escrow Agreement\" \n   6| \n  30| \n   3| \n   3| 51,812,000,1.1 (1.1.1.5.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1 (see Clause 1.1.1.1.5\"</result>\n-1-<br> 15| \n  35| \n  63 of the Agreement\" (the \"Escrow\n   63| 12| 7| \n   4| \n   2| 3| 12| \n   5| \n   3| \n   6| 12| \n  31| \n  55| 75| 12.1. \nDELIVERABLE>>>\n\n# Rubric criteria\nC1: Identifies the conflict between the 20-day claim notice period in SPA Section 9.7 and the 45-day period in Escrow Clause 5.2, and recommends the Buyer works to the shorter 20-day period or aligns the documents.\nC2: Identifies the mismatch between English law / English courts in the SPA and New York law / New York arbitration in the escrow agreement, and the risk of parallel proceedings on escrow claims.\nC3: Identifies that the warranty cap in SPA Section 9.3 is stated as $57,812,500 but 25% of the $185,000,000 Purchase Price is $46,250,000, i.e. the stated figure is wrong.\nC4: Calculates the working capital shortfall as $910,000 and the adjusted Purchase Price as $184,090,000, identifying that the Seller's funds flow figure of $183,180,000 is wrong.\nC5: Identifies that the MAC carve-outs (general economic, industry-wide and pandemic changes) contain no 'disproportionate effect' exception, so the Buyer bears those risks even where the Company is disproportionately affected, and recommends adding one.\nC6: Flags the 20-day vs 45-day notice-period inconsistency between the SPA and the escrow agreement.\nC7: Shows the arithmetic for the cap (25% x $185,000,000 = $46,250,000) and flags the discrepancy with the stated $57,812,500.\nC8: Gives a pinpoint citation (document name and section/clause number) for every issue or finding.\n\nGrade every criterion (8 total). JSON only.",
+      "raw_response": "{\"results\": [{\"criterion_id\": \"C1\", \"result\": \"FAIL\", \"confidence\": 0.0, \"reason\": \"The deliverable contains only garbled text fragments with no coherent identification of the 20-day vs 45-day claim notice conflict or any recommendation.\"}, {\"criterion_id\": \"C2\", \"result\": \"FAIL\", \"confidence\": 0.0, \"reason\": \"The deliverable contains no identification of the governing law/jurisdiction mismatch between English law in the SPA and New York law/arbitration in the escrow agreement.\"}, {\"criterion_id\": \"C3\", \"result\": \"FAIL\", \"confidence\": 0.0, \"reason\": \"The deliverable contains no identification of the warranty cap calculation error ($57,812,500 stated vs $46,250,000 correct).\"}, {\"criterion_id\": \"C4\", \"result\": \"FAIL\", \"confidence\": 0.0, \"reason\": \"The deliverable contains no working capital shortfall calculation or identification that the Seller's funds flow figure of $183,180,000 is wrong.\"}, {\"criterion_id\": \"C5\", \"result\": \"FAIL\", \"confidence\": 0.0, \"reason\": \"The deliverable contains no analysis of the MAC carve-outs or identification of the missing 'disproportionate effect' exception.\"}, {\"criterion_id\": \"C6\", \"result\": \"FAIL\", \"confidence\": 0.0, \"reason\": \"The deliverable contains no flagging of the 20-day vs 45-day notice-period inconsistency between documents.\"}, {\"criterion_id\": \"C7\", \"result\": \"FAIL\", \"confidence\": 0.0, \"reason\": \"The deliverable contains no arithmetic showing 25% x $185,000,000 = $46,250,000 or flagging the discrepancy with $57,812,500.\"}, {\"criterion_id\": \"C8\", \"result\": \"FAIL\", \"confidence\": 0.0, \"reason\": \"The deliverable contains no properly formatted pinpoint citations; only garbled fragments appear.\"}]}"
+    }
+  ]
+}

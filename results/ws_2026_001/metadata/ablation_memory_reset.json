@@ -1,0 +1,133 @@
+{
+  "experiment_id": "ws_2026_001",
+  "run": "ablation_memory_reset",
+  "timestamp": "2026-10-09T15:48:10+00:00",
+  "agent_model": "deepseek.v3.2",
+  "judge_model": [
+    "zai.glm-5",
+    "moonshotai.kimi-k2.5"
+  ],
+  "sleep_model": "mistral.mistral-large-3-675b-instruct",
+  "commit_model": "qwen.qwen3-235b-a22b-2507",
+  "retrieval_model": "qwen.qwen3-235b-a22b-2507",
+  "dataset_author_model": "qwen.qwen3-235b-a22b-2507",
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "dataset_version": "lab_synth_v1",
+  "temperature": 0,
+  "retrieval_k": 10,
+  "max_tokens": 8192,
+  "max_steps": 50,
+  "git_commit": "c0198b21d5e0a499524f6181c0353bd993082edc",
+  "prompt_version": "p1",
+  "seed": 42,
+  "config": {
+    "experiment_id": "ws_2026_001",
+    "seed": 42,
+    "dataset_version": "lab_synth_v1",
+    "prompt_version": "p1",
+    "results_dir": "results",
+    "models": {
+      "agent": {
+        "provider": "bedrock",
+        "model": "deepseek.v3.2"
+      },
+      "judge_1": {
+        "provider": "bedrock",
+        "model": "zai.glm-5"
+      },
+      "judge_2": {
+        "provider": "bedrock",
+        "model": "moonshotai.kimi-k2.5"
+      },
+      "sleep": {
+        "provider": "bedrock",
+        "model": "mistral.mistral-large-3-675b-instruct"
+      },
+      "commit": {
+        "provider": "bedrock",
+        "model": "qwen.qwen3-235b-a22b-2507"
+      },
+      "retrieval": {
+        "provider": "bedrock",
+        "model": "qwen.qwen3-235b-a22b-2507"
+      },
+      "author": {
+        "provider": "bedrock",
+        "model": "qwen.qwen3-235b-a22b-2507"
+      }
+    },
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "prices": {
+      "DeepSeek-V4-Flash": {
+        "input": 0.14,
+        "output": 0.28
+      },
+      "mistral.mistral-large-3-675b-instruct": {
+        "input": 0.5,
+        "output": 1.5
+      },
+      "zai.glm-5": {
+        "input": 1.0,
+        "output": 3.2
+      },
+      "moonshotai.kimi-k2.5": {
+        "input": 0.6,
+        "output": 2.5
+      },
+      "deepseek.v3.2": {
+        "input": 0.62,
+        "output": 1.85
+      },
+      "qwen.qwen3-235b-a22b-2507": {
+        "input": 0.22,
+        "output": 0.88
+      }
+    },
+    "agent": {
+      "temperature": 0,
+      "max_steps": 50,
+      "max_tokens_per_call": 8192,
+      "max_input_tokens": 0
+    },
+    "wake": {
+      "workers": 6
+    },
+    "grading": {
+      "workers": 8,
+      "judges": [
+        "judge_1",
+        "judge_2"
+      ],
+      "aggregation": "both_pass"
+    },
+    "sleep": {
+      "workers": 8,
+      "generate_from_grades": true,
+      "helpfulness_from_cycle": 2,
+      "merge": true,
+      "merge_chunk": 40,
+      "max_lessons_per_category": 40
+    },
+    "commit_gate": {
+      "enabled": true,
+      "min_sources_for_auto_commit": 2
+    },
+    "memory": {
+      "mode": "full",
+      "retrieval_k": 10,
+      "retrieval_weights": {
+        "semantic": 0.4,
+        "task_type": 0.2,
+        "practice_area": 0.15,
+        "helpfulness": 0.15,
+        "general": 0.1
+      },
+      "llm_rerank": true
+    },
+    "cycles": 4,
+    "ablation": "memory_reset",
+    "reset_every": 2
+  },
+  "lineage": "ablation_memory_reset",
+  "cycles": 4
+}

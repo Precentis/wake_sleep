@@ -1,0 +1,129 @@
+{
+  "docs": [
+    {
+      "title": "share_purchase_agreement.md",
+      "attempts": [
+        {
+          "missing": [
+            "excess"
+          ],
+          "usage": {
+            "input_tokens": 679,
+            "output_tokens": 993
+          }
+        },
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 1695,
+            "output_tokens": 1029
+          }
+        }
+      ]
+    },
+    {
+      "title": "escrow_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 545,
+            "output_tokens": 1137
+          }
+        }
+      ]
+    },
+    {
+      "title": "material_customer_contract.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 514,
+            "output_tokens": 975
+          }
+        }
+      ]
+    },
+    {
+      "title": "disclosure_letter.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 494,
+            "output_tokens": 1077
+          }
+        }
+      ]
+    },
+    {
+      "title": "client_email.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 483,
+            "output_tokens": 434
+          }
+        }
+      ]
+    }
+  ],
+  "doc_facts": {
+    "share_purchase_agreement.md": {
+      "key": "spa",
+      "facts": [
+        "Parties: Ingleby Robotics Ltd (Buyer), Northgate Capital LLP (Seller); the Company is Arden Medical Ltd.",
+        "Section 2.1: the Purchase Price is $200,000,000.",
+        "This Agreement is dated 7 July 2026; Closing is scheduled for 3 September 2026 (the 'Closing Date').",
+        "Section 1.1: 'Closing Date' means 3 September 2026.",
+        "Section 9.4 (De Minimis and Basket): the Seller shall not be liable unless the aggregate of all claims exceeds $1,000,000 (0.5% of the Purchase Price), in which case the Seller shall be liable only for the excess over that amount.",
+        "Section 4.5: if the Conditions are not satisfied by the date falling 150 days after the date of this Agreement (signed 7 July 2026), either party may terminate."
+      ],
+      "must_contain": [
+        "$1,000,000",
+        "excess",
+        "150 days",
+        "7 July 2026"
+      ]
+    },
+    "escrow_agreement.md": {
+      "key": "escrow",
+      "facts": [
+        "Clause 4.1: the Escrow Amount shall be released to the Seller on the date falling 24 months after the Closing Date, save to the extent of pending claims notified before that date. 'Business Day' means a day other than a Saturday or Sunday on which banks are open in London.",
+        "The Closing Date is 3 September 2026."
+      ],
+      "must_contain": [
+        "24 months",
+        "3 September 2026"
+      ]
+    },
+    "material_customer_contract.md": {
+      "key": "material_contract",
+      "facts": [
+        "Clause 14.2: either party may terminate this agreement on 30 days' notice if the other party undergoes a change of control without its prior written consent. The counterparty is Saltash Marine Ltd."
+      ],
+      "must_contain": [
+        "change of control",
+        "prior written consent"
+      ]
+    },
+    "disclosure_letter.md": {
+      "key": "disclosure",
+      "facts": [
+        "Disclosure against Warranty 6.3 (Material Contracts): no material contract contains a change of control provision. (No further disclosure.)"
+      ],
+      "must_contain": []
+    },
+    "client_email.md": {
+      "key": "client_email",
+      "facts": [
+        "Regulatory counsel expects merger clearance by 18 December 2026."
+      ],
+      "must_contain": [
+        "18 December 2026"
+      ]
+    }
+  }
+}

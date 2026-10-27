@@ -1,0 +1,96 @@
+{
+  "docs": [
+    {
+      "title": "share_purchase_agreement.md",
+      "attempts": [
+        {
+          "missing": [
+            "excess"
+          ],
+          "usage": {
+            "input_tokens": 781,
+            "output_tokens": 991
+          }
+        },
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 1795,
+            "output_tokens": 1041
+          }
+        }
+      ]
+    },
+    {
+      "title": "client_email.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 555,
+            "output_tokens": 467
+          }
+        }
+      ]
+    },
+    {
+      "title": "escrow_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 501,
+            "output_tokens": 1195
+          }
+        }
+      ]
+    }
+  ],
+  "doc_facts": {
+    "share_purchase_agreement.md": {
+      "key": "spa",
+      "facts": [
+        "Parties: Vantage Robotics Ltd (Buyer), Netherby Technologies Ltd (Seller); the Company is Fenwick Engineering Ltd.",
+        "Section 2.1: the Purchase Price is $20,000,000.",
+        "This Agreement is dated 27 September 2026; Closing is scheduled for 4 January 2027 (the 'Closing Date').",
+        "Section 9.4 (De Minimis and Basket): the Seller shall not be liable unless the aggregate of all claims exceeds $200,000 (1.0% of the Purchase Price), in which case the Seller shall be liable only for the excess over that amount.",
+        "Section 3.4 (Earn-out): the Earn-out Payment equals 3 times the amount by which FY2026 EBITDA exceeds $6,500,000, capped at $5,000,000.",
+        "Section 9.7: the Buyer must notify any warranty claim within 30 days of becoming aware of it.",
+        "Section 2.3: the Purchase Price shall be reduced dollar-for-dollar by any shortfall of Closing Working Capital below the Target Working Capital of $3,500,000.",
+        "Section 1.1: 'Material Adverse Change' means any event which has a material adverse effect on the business of the Company, excluding changes in general economic conditions, changes affecting the industry generally, and pandemics."
+      ],
+      "must_contain": [
+        "$200,000",
+        "excess",
+        "$6,500,000",
+        "$5,000,000",
+        "30 days",
+        "$3,500,000",
+        "Material Adverse Change",
+        "pandemics"
+      ]
+    },
+    "client_email.md": {
+      "key": "client_email",
+      "facts": [
+        "Management accounts show FY2026 EBITDA of $7,800,000; the Seller says the Earn-out Payment will therefore be $4,500,000.",
+        "The estimated Closing Working Capital is $2,590,000. The Seller's draft funds flow shows an adjusted purchase price of $18,180,000."
+      ],
+      "must_contain": [
+        "$7,800,000",
+        "$4,500,000",
+        "$2,590,000",
+        "$18,180,000"
+      ]
+    },
+    "escrow_agreement.md": {
+      "key": "escrow",
+      "facts": [
+        "Clause 5.2: a claim against the Escrow Amount must be notified within 60 days of the Buyer becoming aware of it."
+      ],
+      "must_contain": [
+        "60 days"
+      ]
+    }
+  }
+}

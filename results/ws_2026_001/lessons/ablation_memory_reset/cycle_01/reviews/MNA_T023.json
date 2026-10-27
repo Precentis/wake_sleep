@@ -1,0 +1,150 @@
+{
+  "task_id": "MNA_T023",
+  "cycle": 1,
+  "lineage": "ablation_memory_reset",
+  "graded": true,
+  "failures": [
+    {
+      "criterion_id": "C1",
+      "what_went_wrong": "The deliverable identified the conflicting notification periods but failed to explicitly recommend working to the shorter 30-day period as an alternative to aligning the documents.",
+      "should_have": "Explicitly recommended both options: aligning the notification periods or, alternatively, working to the shorter period to protect the client's interests.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C6",
+      "what_went_wrong": "The deliverable did not provide pinpoint citations (document name and section/clause number) for all issues or findings, such as the date discrepancy issue.",
+      "should_have": "Ensured every issue or finding included a specific reference to the document name and section/clause number.",
+      "failure_kind": "procedural"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T023_0",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "For every identified inconsistency between documents, explicitly recommend both alignment of the documents and working to the more favourable or stricter provision for the client.",
+      "source_tasks": [
+        "MNA_T023"
+      ],
+      "evidence": [
+        "MNA_T023:C1"
+      ],
+      "task_type_scope": "due_diligence",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T023_1",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Before finalising the report, verify that every issue or finding includes a pinpoint citation to the document name and specific section or clause number.",
+      "source_tasks": [
+        "MNA_T023"
+      ],
+      "evidence": [
+        "MNA_T023:C6"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T023_2",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "When identifying conflicting provisions, assess which provision is more favourable to the client and explicitly state whether the client should work to the stricter or more lenient provision.",
+      "source_tasks": [
+        "MNA_T023"
+      ],
+      "evidence": [
+        "MNA_T023:C1"
+      ],
+      "task_type_scope": "due_diligence",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T023_3",
+      "type": "practice_note",
+      "category": "review",
+      "text": "Cross-check all findings in the report against the original documents to ensure every issue includes a precise document reference, including clause or section numbers.",
+      "source_tasks": [
+        "MNA_T023"
+      ],
+      "evidence": [
+        "MNA_T023:C6"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T023_4",
+      "type": "checklist",
+      "category": "review",
+      "text": "Ensure the report’s recommendations section addresses all identified risks with actionable steps, including alternatives where applicable.",
+      "source_tasks": [
+        "MNA_T023"
+      ],
+      "evidence": [
+        "MNA_T023:C1"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.8
+    },
+    {
+      "candidate_id": "c01_MNA_T023_5",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "For every discrepancy or inconsistency, note the specific clauses or sections involved and document the potential legal or practical implications of each provision.",
+      "source_tasks": [
+        "MNA_T023"
+      ],
+      "evidence": [
+        "MNA_T023:C1",
+        "MNA_T023:C6"
+      ],
+      "task_type_scope": "due_diligence",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.85
+    }
+  ],
+  "lesson_feedback": [
+    {
+      "lesson_id": "L0001",
+      "label": "HELPFUL",
+      "reason": "Directly addresses the procedural failure in C1 by ensuring both alignment and working to the stricter provision are considered."
+    },
+    {
+      "lesson_id": "L0002",
+      "label": "HELPFUL",
+      "reason": "Provides a clear, reusable behaviour to prevent the omission of pinpoint citations, which caused the failure in C6."
+    },
+    {
+      "lesson_id": "L0003",
+      "label": "HELPFUL",
+      "reason": "Encourages a thorough analysis of conflicting provisions, ensuring the client’s interests are prioritised, which would have mitigated the C1 failure."
+    },
+    {
+      "lesson_id": "L0004",
+      "label": "HELPFUL",
+      "reason": "Targets the procedural gap in C6 by mandating a review step to confirm all citations are included."
+    },
+    {
+      "lesson_id": "L0005",
+      "label": "HELPFUL",
+      "reason": "Ensures recommendations are actionable and comprehensive, addressing the lack of alternative options in C1."
+    },
+    {
+      "lesson_id": "L0006",
+      "label": "HELPFUL",
+      "reason": "Combines the lessons from C1 and C6 by emphasising the need for precise documentation of discrepancies and their implications."
+    }
+  ],
+  "input_tokens": 4411,
+  "output_tokens": 1053,
+  "cost_usd": 0.003785,
+  "prompt": "# Task\nType: due_diligence | Practice area: corporate_mna\nYou act for the Buyer, Kestrel Capital LLP. Kestrel Capital LLP (the Buyer) is acquiring the entire issued share capital of Arden Bioscience plc (the Company) from Quayside Systems Ltd (the Seller).\n\nPrepare a due diligence findings report on the matter documents. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 23 September 2026. Address the deliverable to the supervising partner.\n\n# Trajectory (27 model steps, 27 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"client_email.md\"})\n 3. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 4. [research] read_document({\"name\": \"escrow_agreement.md\"})\n 5. [research] read_document({\"name\": \"board_minutes.md\"})\n 6. [research] read_document({\"name\": \"articles_of_association_extract.md\"})\n 7. [research] search_documents({\"query\": \"warranty\"})\n 8. [research] search_documents({\"query\": \"consent\"})\n 9. [analysis] calculate({\"expression\": \"100000000 * 0.15\"})\n10. [analysis] calculate({\"expression\": \"date('2026-09-23')\"})\n11. [analysis] calculate({\"expression\": \"add_months(date('2026-09-23'), 18)\"})\n12. [analysis] calculate({\"expression\": \"add_months(date('2026-12-05'), 24)\"})\n13. [analysis] calculate({\"expression\": \"add_months(date('2026-12-05'), 48)\"})\n14. [research] search_documents({\"query\": \"dated\"})\n15. [drafting] write_draft(<1172 words>)\n16. [verification] read_draft({})\n17. [verification] search_documents({\"query\": \"share certificate\"})\n18. [editing] edit_draft(find='**2.6 Share Capital Structure**\\n- **Finding:** Company has 1' -> '**2.6 Share Capital Structure**\\n- **Finding:** Company has 1')\n19. [editing] edit_draft(find='**3.2 Post-Signing Actions**\\n1. **Update Register of Members' -> '**3.2 Post-Signing Actions**\\n1. **Update Register of Members')\n20. [editing] edit_draft(find='**2.2 Corporate Governance - Quorum Issues**\\n- **Finding:** ' -> '**2.2 Corporate Governance - Quorum Issues**\\n- **Finding:** ')\n21. [verification] calculate({\"expression\": \"add_days(date('2026-09-23'), 548)\"})\n22. [verification] calculate({\"expression\": \"add_months(date('2026-09-23'), 18)\"})\n23. [verification] search_documents({\"query\": \"9.7\"})\n24. [editing] edit_draft(find='**2.1 Document Date Inconsistencies**\\n- **Critical Issue:** ' -> '**2.1 Document Date and Drafting Issues**\\n- **Critical Issue')\n25. [verification] search_documents({\"query\": \"Corrib\"})\n26. [verification] search_documents({\"query\": \"payment\"})\n27. [control] finish({\"summary\": \"Due diligence findings report for Kestrel Capital LLP's acquisition of Arden Bioscience plc, identifying critical issues including document date in)\n\n# Final deliverable\n# Due Diligence Findings Report\n## Acquisition of Arden Bioscience plc by Kestrel Capital LLP\n\n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Date:** 23 September 2026  \n**Matter:** Acquisition of entire issued share capital of Arden Bioscience plc  \n**Client:** Kestrel Capital LLP (Buyer)  \n**Counterparty:** Quayside Systems Ltd (Seller)  \n**Target:** Arden Bioscience plc (Company)\n\n---\n\n### Executive Summary\n\nThis report sets out the key findings from our due diligence review of the proposed acquisition of Arden Bioscience plc by Kestrel Capital LLP. The transaction involves the purchase of 100% of the issued share capital for a consideration of $100,000,000, with completion scheduled for 5 December 2026. Our review has identified several material issues requiring attention, including inconsistencies in document dates, potential quorum issues, and discrepancies in warranty claim notification periods.\n\n### 1. Transaction Structure\n\n**1.1 Parties**\n- **Buyer:** Kestrel Capital LLP (company number 12720883), registered office at 125 Cheapside, London\n- **Seller:** Quayside Systems Ltd (company number 15687793), registered office at 64 Moorgate, London\n- **Target Company:** Arden Bioscience plc (company number 12762740), registered office at 75 Fleet Street, London\n\n**1.2 Transaction Terms**\n- Purchase Price: $100,000,000\n- Closing Date: 5 December 2026\n- Escrow Arrangement: 15% of purchase price ($15,000,000) held in escrow for 18 months from 23 September 2026\n- Governing Law: English law with exclusive jurisdiction of English courts\n\n### 2. Key Findings and Issues\n\n**2.1 Document Date and Drafting Issues**\n- **Critical Issue:** The Share Purchase Agreement (SPA) is dated 3 September 2026, but the Escrow Agreement references an SPA dated 23 September 2026.\n- **Finding:** The SPA appears to have inconsistent clause numbering (jumps from Clause 6.1 to Clause 9.7, with Clause 10.1 referenced separately).\n- **Risk:** Date discrepancy creates ambiguity about which version of the SPA governs the transaction. Inconsistent clause numbering suggests poor drafting that could lead to interpretation issues.\n- **Recommendation:** Clarify and align all document dates before execution. The SPA should be re-dated to 23 September 2026 to match the Escrow Agreement reference. Review and correct clause numbering inconsistencies.\n\n**2.2 Corporate Governance - Quorum Issues**\n- **Finding:** The Articles of Association (Article 11.1) require a quorum of three directors for board meetings.\n- **Finding:** The Board Minutes record only two directors (Dr. Eleanor Hartley and Mr. Julian Reed) attending the meeting on 21 September 2026, despite the Company having five directors in total.\n- **Finding:** The minutes incorrectly state that \"the attendance of 2 directors constituted a quorum under the Company's Articles of Association.\"\n- **Risk:** The board resolution approving the transaction may be invalid due to lack of quorum, potentially voiding the Company's approval.\n- **Recommendation:** Require a properly constituted board meeting with three directors present to re-approve the transaction, or obtain written resolutions from all five directors.\n\n**2.3 Escrow Arrangement**\n- **Finding:** $15,000,000 (15% of purchase price) to be held in escrow with HSBC Trust Company (UK) Limited.\n- **Finding:** Escrow period: 18 months from 23 September 2026 (release date: 23 March 2028).\n- **Finding:** Claims against escrow must be notified within 45 days of Buyer becoming aware.\n- **Risk:** The 45-day notification period for escrow claims conflicts with the 30-day notification period for warranty claims in the SPA (Clause 9.7).\n- **Recommendation:** Align notification periods to avoid confusion and ensure consistent claim procedures.\n\n**2.4 Warranty Survival Periods**\n- **Finding:** General Warranties survive for 24 months from Closing (until 5 December 2028).\n- **Finding:** Fundamental Warranties (title, capacity, tax) survive for 48 months from Closing (until 5 December 2030).\n- **Finding:** Warranty claims must be notified within 30 days of Buyer becoming aware.\n- **Observation:** The 30-day notification period is relatively short and may not provide sufficient time for proper investigation of potential breaches.\n\n**2.5 Material Customer Relationship**\n- **Finding:** Corrib Systems Ltd (company number 13827894) is identified as a material customer.\n- **Finding:** Board minutes indicate no third-party consents required under existing material contracts, including supply agreement with Corrib Systems Ltd.\n- **Finding:** Articles of Association (Article 3.2) allow board to refuse share transfers that would breach agreements with Corrib Systems Ltd.\n- **Recommendation:** Obtain written confirmation from Corrib Systems Ltd that no consent is required for change of control, despite Article 3.2 provisions.\n\n**2.6 Share Capital Structure**\n- **Finding:** Company has 100 ordinary shares of £1.00 each, all fully paid and owned by Seller.\n- **Finding:** No pre-emption rights or other transfer restrictions identified beyond Article 3.2 provisions.\n- **Finding:** SPA requires delivery of share transfer forms and certificates at Closing (Clause 3.2).\n\n**2.7 Confidentiality Provisions**\n- **Finding:** Multiple confidentiality provisions exist across documents (SPA Clause 5.1, Escrow Agreement Clause 6.1, Articles Article 14).\n- **Finding:** Articles confidentiality obligations survive transfer of shares/change of control.\n- **Recommendation:** Ensure consistency in confidentiality obligations and consider whether Articles provisions should be amended post-acquisition.\n\n### 3. Action Items\n\n**3.1 Immediate Actions (Pre-Signing)**\n1. **Align Document Dates:** Re-date SPA to 23 September 2026 to match Escrow Agreement.\n2. **Fix Quorum Issue:** Obtain valid board approval through either:\n   - Properly constituted board meeting with three directors, or\n   - Written resolutions from all five directors\n3. **Harmonize Notification Periods:** Align escrow claim (45 days) and warranty claim (30 days) notification periods.\n4. **Corrib Systems Confirmation:** Obtain written confirmation from Corrib Systems Ltd regarding change of control consent.\n\n**3.2 Post-Signing Actions**\n1. **Update Register of Members:** Ensure share transfer forms and certificates are properly executed and registered.\n2. **Director Resignations:** Secure resignations of current directors and secretary effective at Closing (as required by SPA Clause 3.2(c)).\n3. **Escrow Account Establishment:** Confirm $15,000,000 deposited into escrow account on Effective Date (23 September 2026).\n\n### 4. Risk Assessment\n\n**4.1 High Risk Issues**\n- **Invalid Board Approval:** Potential to void transaction approval by Company.\n- **Document Date Discrepancy:** Creates ambiguity in governing documents.\n\n**4.2 Medium Risk Issues**\n- **Conflicting Notification Periods:** Could lead to missed claims or disputes.\n- **Corrib Systems Consent:** Despite board minutes, Article 3.2 creates theoretical barrier.\n\n**4.3 Low Risk Issues**\n- **Multiple Confidentiality Provisions:** Administrative burden but low substantive risk.\n\n### 5. Recommendations\n\n1. **Do not proceed** with transaction until quorum issue is resolved and document dates are aligned.\n2. **Negotiate extended warranty claim notification period** from 30 days to 60-90 days for more reasonable investigation time.\n3. **Consider amending Articles post-acquisition** to remove unnecessary restrictions and align with Buyer's governance preferences.\n4. **Ensure all conditions precedent** are satisfied before releasing purchase price on Closing Date.\n\n### 6. Conclusion\n\nThe proposed acquisition of Arden Bioscience plc presents a straightforward transaction structure but contains several material issues requiring resolution before proceeding. The quorum deficiency and document date inconsistencies pose significant legal risks that must be addressed. With appropriate corrections to these issues, the transaction can proceed to a successful closing on 5 December 2026.\n\nThe escrow arrangement provides reasonable protection for the Buyer, though notification period alignment would enhance claim management. The absence of third-party consent requirements for material contracts is favorable, but written confirmation from Corrib Systems Ltd would provide additional comfort.\n\n**Next Steps:** We recommend addressing the high-risk issues identified above before proceeding with transaction execution.\n\n---\n\n**Appendix: Key Dates and Calculations**\n\n1. **Effective Date (Escrow):** 23 September 2026\n2. **Escrow Release Date:** 23 March 2028 (18 months from Effective Date)\n3. **Closing Date:** 5 December 2026\n4. **General Warranty Expiry:** 5 December 2028 (24 months from Closing)\n5. **Fundamental Warranty Expiry:** 5 December 2030 (48 months from Closing)\n6. **Escrow Amount:** $15,000,000 (15% of $100,000,000 purchase price)\n\n# Expert rubric verdicts (4/6 passed)\n- C1 [FAIL] Identifies the conflict between the 30-day claim notice period in SPA Section 9.7 and the 45-day period in Escrow Clause 5.2, and recommends the Buyer works to the shorter 30-day period or aligns the documents.\n    judges: FAIL: The deliverable recommends aligning the notification periods but does not recommend that the Buyer work to the shorter 30-day period as an alternative, which is the specific instruction in the rubric. | PASS: The deliverable clearly identifies the 30-day warranty claim period in SPA Clause 9.7 and the 45-day escrow claim period in Clause 5.2, and recommends aligning the notification periods to avoid confusion.\n- C2 [PASS] States that General Warranty claims must be notified by 5 December 2028 (24 months after Closing) and Fundamental Warranty claims by 5 December 2030 (48 months after Closing).\n    judges: PASS: The deliverable correctly states in Section 2.4 and the Appendix that General Warranty claims survive until 5 December 2028 and Fundamental Warranty claims until 5 December 2030. | PASS: The deliverable correctly states General Warranty expiry as 5 December 2028 (24 months from Closing) and Fundamental Warranty expiry as 5 December 2030 (48 months from Closing), with these dates also listed in the Append\n- C3 [PASS] Identifies that the board approval was given at a meeting with only 2 directors present when Article 11 requires a quorum of three, so the approval may be invalid, and recommends a fresh or ratifying resolution.\n    judges: PASS: Section 2.2 identifies the quorum issue (2 directors present vs. 3 required by Article 11.1), notes the approval may be invalid, and recommends obtaining a fresh resolution. | PASS: The deliverable identifies that Article 11.1 requires a quorum of three directors, the board meeting on 21 September 2026 had only two directors present, and recommends obtaining valid approval through a properly constit\n- C4 [PASS] Flags the 30-day vs 45-day notice-period inconsistency between the SPA and the escrow agreement.\n    judges: PASS: Section 2.3 explicitly flags the inconsistency between the 30-day notification period in the SPA and the 45-day period in the Escrow Agreement. | PASS: The deliverable explicitly flags the conflicting notification periods between the SPA (30 days) and escrow agreement (45 days) in section 2.3, stating 'The 45-day notification period for escrow claims conflicts with the \n- C5 [PASS] Lists valid board approval of the transaction as a required approval and states it has not been validly obtained.\n    judges: PASS: Section 3.1 lists 'Fix Quorum Issue: Obtain valid board approval' as an immediate action item, implicitly stating that valid approval has not been obtained. | PASS: The deliverable lists 'Invalid Board Approval' as a high risk issue, states in section 2.2 that 'The board resolution approving the transaction may be invalid due to lack of quorum,' and in section 3.1 requires fixing th\n- C6 [FAIL] Gives a pinpoint citation (document name and section/clause number) for every issue or finding.\n    judges: PASS: The deliverable provides specific citations for its findings, including Article 11.1, Clause 9.7, Clause 5.2, Clause 3.2, and Clause 10.1. | FAIL: While many citations are present, the deliverable fails to provide pinpoint citations for all issues. For example, the quorum issue cites 'Article 11.1' correctly, but the date discrepancy issue lacks specific clause ref\n\n# Your job\nAnalyse each FAILED criterion: what went wrong, what the agent should have done, and whether the failure is procedural (reusable) or task-specific. Then write reusable candidate lessons that would prevent the procedural failures on other matters.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|due_diligence\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C1\",\n      \"what_went_wrong\": \"The deliverable identified the conflicting notification periods but failed to explicitly recommend working to the shorter 30-day period as an alternative to aligning the documents.\",\n      \"should_have\": \"Explicitly recommended both options: aligning the notification periods or, alternatively, working to the shorter period to protect the client's interests.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C6\",\n      \"what_went_wrong\": \"The deliverable did not provide pinpoint citations (document name and section/clause number) for all issues or findings, such as the date discrepancy issue.\",\n      \"should_have\": \"Ensured every issue or finding included a specific reference to the document name and section/clause number.\",\n      \"failure_kind\": \"procedural\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"For every identified inconsistency between documents, explicitly recommend both alignment of the documents and working to the more favourable or stricter provision for the client.\",\n      \"evidence\": [\"C1\"],\n      \"task_type_scope\": \"due_diligence\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"Before finalising the report, verify that every issue or finding includes a pinpoint citation to the document name and specific section or clause number.\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"When identifying conflicting provisions, assess which provision is more favourable to the client and explicitly state whether the client should work to the stricter or more lenient provision.\",\n      \"evidence\": [\"C1\"],\n      \"task_type_scope\": \"due_diligence\",\n      \"confidence\": 0.85\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"review\",\n      \"text\": \"Cross-check all findings in the report against the original documents to ensure every issue includes a precise document reference, including clause or section numbers.\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"review\",\n      \"text\": \"Ensure the report’s recommendations section addresses all identified risks with actionable steps, including alternatives where applicable.\",\n      \"evidence\": [\"C1\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.8\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"For every discrepancy or inconsistency, note the specific clauses or sections involved and document the potential legal or practical implications of each provision.\",\n      \"evidence\": [\"C1\", \"C6\"],\n      \"task_type_scope\": \"due_diligence\",\n      \"confidence\": 0.85\n    }\n  ],\n  \"lesson_feedback\": [\n    {\n      \"lesson_id\": \"L0001\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Directly addresses the procedural failure in C1 by ensuring both alignment and working to the stricter provision are considered.\"\n    },\n    {\n      \"lesson_id\": \"L0002\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Provides a clear, reusable behaviour to prevent the omission of pinpoint citations, which caused the failure in C6.\"\n    },\n    {\n      \"lesson_id\": \"L0003\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Encourages a thorough analysis of conflicting provisions, ensuring the client’s interests are prioritised, which would have mitigated the C1 failure.\"\n    },\n    {\n      \"lesson_id\": \"L0004\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Targets the procedural gap in C6 by mandating a review step to confirm all citations are included.\"\n    },\n    {\n      \"lesson_id\": \"L0005\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Ensures recommendations are actionable and comprehensive, addressing the lack of alternative options in C1.\"\n    },\n    {\n      \"lesson_id\": \"L0006\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Combines the lessons from C1 and C6 by emphasising the need for precise documentation of discrepancies and their implications.\"\n    }\n  ]\n}\n```"
+}

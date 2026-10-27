@@ -1,0 +1,99 @@
+{
+  "docs": [
+    {
+      "title": "underwriting_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 476,
+            "output_tokens": 1025
+          }
+        }
+      ]
+    },
+    {
+      "title": "prospectus_extract.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 600,
+            "output_tokens": 1042
+          }
+        }
+      ]
+    },
+    {
+      "title": "board_minutes.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 494,
+            "output_tokens": 957
+          }
+        }
+      ]
+    },
+    {
+      "title": "client_email.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 437,
+            "output_tokens": 387
+          }
+        }
+      ]
+    }
+  ],
+  "doc_facts": {
+    "underwriting_agreement.md": {
+      "key": "underwriting",
+      "facts": [
+        "Parties: Kingsmere Energy plc (Company) and Oakhurst Bioscience Securities (Underwriter).",
+        "Recital C: the Company has 63,000,000 ordinary shares in issue."
+      ],
+      "must_contain": [
+        "63,000,000"
+      ]
+    },
+    "prospectus_extract.md": {
+      "key": "prospectus",
+      "facts": [
+        "Issuer: Kingsmere Energy plc. The date of this Prospectus is 23 April 2027.",
+        "Legal Proceedings: the Company is not party to any legal proceedings which may have a significant effect on its financial position.",
+        "Related Party Transactions: there are no related party transactions other than directors' service agreements.",
+        "Use of Proceeds: net proceeds of $120,000,000 will be applied as follows: repayment of the revolving facility $54,000,000; capital expenditure $36,000,000; general corporate purposes $35,000,000.",
+        "Capitalisation: 61,750,000 ordinary shares are in issue at the date of this Prospectus."
+      ],
+      "must_contain": [
+        "$120,000,000",
+        "$54,000,000",
+        "$36,000,000",
+        "$35,000,000",
+        "61,750,000"
+      ]
+    },
+    "board_minutes.md": {
+      "key": "board_minutes",
+      "facts": [
+        "Item 3: the board discussed a class action filed by Elstree Robotics Ltd seeking $8,000,000 in damages. Counsel assesses the claim as having reasonable prospects.",
+        "Item 7: the board approved a loan of $4,000,000 from the Company to Idris Montague, a director, on interest-free terms."
+      ],
+      "must_contain": [
+        "Elstree Robotics Ltd",
+        "$8,000,000",
+        "Idris Montague",
+        "$4,000,000"
+      ]
+    },
+    "client_email.md": {
+      "key": "client_email",
+      "facts": [],
+      "must_contain": []
+    }
+  }
+}

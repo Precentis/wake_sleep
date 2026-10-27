@@ -1,0 +1,142 @@
+{
+  "task_id": "MNA_T069",
+  "cycle": 1,
+  "lineage": "ablation_no_grading",
+  "graded": false,
+  "failures": [
+    {
+      "criterion_id": "C1",
+      "what_went_wrong": "The agent identified a discrepancy in clause numbering (client email referenced 'Clause 3.5' but SPA only contained clauses up to 2.4) but did not verify whether the SPA was incomplete or if the numbering was simply inconsistent across documents.",
+      "should_have": "Cross-referenced all mentioned clauses across documents to confirm whether missing clauses were genuinely absent or merely misnumbered.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C2",
+      "what_went_wrong": "The agent flagged a currency discrepancy between the SPA (USD) and Escrow Agreement (GBP) but did not calculate or flag the potential foreign exchange risk or conversion costs.",
+      "should_have": "Quantified the currency mismatch impact by calculating the potential FX risk or conversion costs based on the amounts involved.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C3",
+      "what_went_wrong": "The agent noted a weekend release date in the Escrow Agreement but did not verify whether the agreement included provisions for adjusting release dates to the next Business Day.",
+      "should_have": "Checked if the Escrow Agreement contained fallback provisions for release dates falling on non-Business Days.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C4",
+      "what_went_wrong": "The agent identified a litigation disclosure omission but did not cross-check the financial statements for related provisions or reserves.",
+      "should_have": "Verified whether the financial statements included provisions or disclosures related to the undisclosed litigation.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C5",
+      "what_went_wrong": "The agent noted undefined 'Business Day' in the SPA but did not propose a standard definition or check if the definition in the Escrow Agreement could be adopted.",
+      "should_have": "Proposed a standard definition for 'Business Day' or recommended adopting the definition from the Escrow Agreement for consistency.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C6",
+      "what_went_wrong": "The agent did not verify whether the working capital adjustment mechanism aligned with the accounting principles referenced in the financial statements.",
+      "should_have": "Cross-checked the working capital adjustment mechanism against the accounting principles used in the financial statements.",
+      "failure_kind": "task_specific"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T069_0",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "For every cross-reference to a clause, schedule, or document, verify its existence and consistency across all matter documents before flagging discrepancies.",
+      "source_tasks": [
+        "MNA_T069"
+      ],
+      "evidence": [
+        "MNA_T069:C1"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T069_1",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "When identifying currency mismatches between agreements, calculate and flag the potential foreign exchange risk or conversion costs based on the amounts involved.",
+      "source_tasks": [
+        "MNA_T069"
+      ],
+      "evidence": [
+        "MNA_T069:C2"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T069_2",
+      "type": "checklist",
+      "category": "review",
+      "text": "For dates falling on non-Business Days, verify whether the agreement includes fallback provisions to adjust deadlines or release dates to the next Business Day.",
+      "source_tasks": [
+        "MNA_T069"
+      ],
+      "evidence": [
+        "MNA_T069:C3"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T069_3",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "For undisclosed liabilities or litigation, cross-check financial statements for related provisions, reserves, or disclosures to assess materiality.",
+      "source_tasks": [
+        "MNA_T069"
+      ],
+      "evidence": [
+        "MNA_T069:C4"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T069_4",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "When an agreement lacks a definition for 'Business Day,' propose a standard definition or recommend adopting a consistent definition from another agreement in the matter.",
+      "source_tasks": [
+        "MNA_T069"
+      ],
+      "evidence": [
+        "MNA_T069:C5"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.8
+    },
+    {
+      "candidate_id": "c01_MNA_T069_5",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Compare the working capital adjustment mechanism against the accounting principles used in the financial statements to ensure consistency and flag misalignments.",
+      "source_tasks": [
+        "MNA_T069"
+      ],
+      "evidence": [
+        "MNA_T069:C6"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.85
+    }
+  ],
+  "lesson_feedback": [],
+  "input_tokens": 3550,
+  "output_tokens": 1076,
+  "cost_usd": 0.003389,
+  "prompt": "# Task\nType: contract_review | Practice area: corporate_mna\nYou act for the Buyer, Bellhaven Analytics Ltd. Bellhaven Analytics Ltd (the Buyer) is acquiring the entire issued share capital of Brightwater Technologies Ltd (the Company) from Juniper Foods Ltd (the Seller).\n\nReview the principal agreement against the other matter documents and report the problematic provisions. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 2 February 2026. Address the deliverable to the supervising partner.\n\n# Trajectory (29 model steps, 29 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 3. [research] read_document({\"name\": \"client_email.md\"})\n 4. [research] read_document({\"name\": \"disclosure_letter.md\"})\n 5. [research] read_document({\"name\": \"escrow_agreement.md\"})\n 6. [research] read_document({\"name\": \"board_minutes.md\"})\n 7. [research] search_documents({\"query\": \"Clause 3.5\"})\n 8. [research] search_documents({\"query\": \"warranty\"})\n 9. [research] search_documents({\"query\": \"Schedule 3\"})\n10. [research] search_documents({\"query\": \"working capital\"})\n11. [research] search_documents({\"query\": \"8.2\"})\n12. [research] search_documents({\"query\": \"litigation\"})\n13. [analysis] calculate({\"expression\": \"Target Working Capital = 3500000\"})\n14. [analysis] calculate({\"expression\": \"3500000 - 3150000\"})\n15. [analysis] calculate({\"expression\": \"30000000 - 350000\"})\n16. [analysis] calculate({\"expression\": \"days_between(date('2026-02-02'), date('2026-04-23'))\"})\n17. [drafting] write_draft(<1224 words>)\n18. [verification] read_draft({})\n19. [verification] search_documents({\"query\": \"3.5\"})\n20. [editing] edit_draft(find='## 1. Working Capital Adjustment Mechanism (Clause 2.3-2.4)\\n' -> '## 1. Working Capital Adjustment Mechanism (Clause 2.3-2.4)\\n')\n21. [verification] search_documents({\"query\": \"Business Day\"})\n22. [editing] edit_draft(find='## 4. Escrow Agreement Issues\\n\\n### Problematic Provisions\\n1.' -> '## 4. Escrow Agreement Issues\\n\\n### Problematic Provisions\\n1.')\n23. [verification] calculate({\"expression\": \"add_months(date('2026-04-23'), 18)\"})\n24. [editing] edit_draft(find='2. **Undefined \"Business Day\" in SPA:** The SPA uses \"Busine' -> '2. **Undefined \"Business Day\" in SPA:** The SPA uses \"Busine')\n25. [verification] search_documents({\"query\": \"clause 15\"})\n26. [editing] edit_draft(find='### Critical Omissions Identified\\n1. **Litigation Disclosure' -> '### Critical Omissions Identified\\n1. **Litigation Disclosure')\n27. [verification] read_draft({})\n28. [editing] edit_draft(find='3. **Weekend Release Date:** The Escrow Agreement provides f' -> '3. **Weekend Release Date:** The Escrow Agreement provides f')\n29. [control] finish({\"summary\": \"I have reviewed the Share Purchase Agreement and related documents for Bellhaven Analytics Ltd's acquisition of Brightwater Technologies Ltd. The r)\n\n# Final deliverable\n# Legal Review Report: Bellhaven Analytics Ltd Acquisition of Brightwater Technologies Ltd\n\n**Date:** 2 February 2026  \n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Subject:** Review of Share Purchase Agreement and Related Documents for Acquisition of Brightwater Technologies Ltd  \n\n## Executive Summary\n\nI have reviewed the principal agreement (Share Purchase Agreement dated 12 January 2026) and related matter documents concerning Bellhaven Analytics Ltd's acquisition of Brightwater Technologies Ltd from Juniper Foods Ltd. Several problematic provisions require immediate attention, particularly concerning working capital adjustments, warranty protections, disclosure issues, and conflicting governing law provisions.\n\n## 1. Working Capital Adjustment Mechanism (Clause 2.3-2.4)\n\n### Discrepancy Note\nThe client email references \"Clause 3.5 of the Share Purchase Agreement\" for purchase price adjustment mechanics, but the provided SPA only contains clauses up to 2.4 addressing working capital adjustments. This suggests either:\n1. The SPA is incomplete\n2. The clause numbering is inconsistent\n3. There is a separate purchase price adjustment clause not provided\n\n### Problematic Provisions\nThe working capital adjustment mechanism in Clause 2.3-2.4 of the SPA presents significant issues for the Buyer:\n\n1. **Unilateral Determination by Buyer:** Clause 2.3 provides that \"Closing Working Capital shall be determined in accordance with the working capital statement prepared by the Buyer's accountants.\" This gives the Seller no input into the initial calculation.\n\n2. **Inadequate Dispute Resolution Timeline:** Clause 2.4 allows only 10 Business Days for the Seller to dispute the calculation, followed by another 10 Business Days for resolution attempts. This compressed timeline may be insufficient for proper review and negotiation.\n\n3. **No Independent Determination Standard:** The clause lacks clear accounting principles or standards to be applied in the determination of Closing Working Capital.\n\n### Impact\nBased on the client email, the estimated Closing Working Capital is $3,150,000 against a Target Working Capital of $3,500,000, resulting in a $350,000 shortfall. This would reduce the purchase price to $29,650,000, not the $29,300,000 reflected in the Seller's draft funds flow statement.\n\n### Recommended Amendments\n- Include both parties' accountants in the preparation of the working capital statement\n- Extend dispute resolution timelines to 15-20 Business Days\n- Specify applicable accounting principles (e.g., GAAP, IFRS)\n- Provide for joint preparation or independent accountant determination\n\n## 2. Missing Warranties and Disclosure Issues\n\n### Problematic Provisions\nThe SPA appears to be incomplete, referencing Schedule 3 (Warranties) that is not included in the provided documents. The Disclosure Letter references Clause 8.2 of the SPA, which is also not provided.\n\n### Critical Omissions Identified\n1. **Litigation Disclosure:** The Disclosure Letter states \"7. Disclosure against Warranty 7.1 (Litigation): 7.1 None.\" However, the Board Minutes dated 31 January 2026 reveal:\n   - A letter before action dated 20 January 2026 from Calloway Marine Ltd threatening proceedings for approximately $3,400,000\n   - The Company denies liability but acknowledges the claim\n   - No provision has been made in financial statements\n\n2. **Material Customer Disclosure:** The client email specifically requests confirmation regarding disclosure of the Company's material customer, Merrion Industries Ltd. The Disclosure Letter Schedule 1 includes the contract with Merrion Industries Ltd dated 3 February 2024, but the Board Minutes reference an agreement dated 1 March 2024, creating inconsistency.\n\n3. **Incorrect Cross-Reference:** The Disclosure Letter Clause 6 states notices \"shall be given in accordance with clause 15 of the SPA,\" but Clause 15 of the SPA is governing law, not notices. Notices are addressed in Clause 4 of the SPA.\n\n### Impact\nThe failure to disclose the Calloway Marine litigation in the Disclosure Letter could constitute a breach of warranty if not properly disclosed. The Buyer would have a claim against the Seller for this undisclosed liability.\n\n### Recommended Actions\n- Require immediate amendment of the Disclosure Letter to include the Calloway Marine litigation\n- Clarify the correct date of the Merrion Industries Ltd contract\n- Review the complete SPA including all schedules (particularly Schedule 3 - Warranties)\n\n## 3. Conflicting Governing Law Provisions\n\n### Problematic Provisions\n1. **SPA Governing Law:** Clause 15.1 of the SPA specifies English law and exclusive jurisdiction of English courts.\n\n2. **Escrow Agreement Governing Law:** Clause 12.1 of the Escrow Agreement specifies New York law and Clause 12.2 provides for ICC arbitration in New York.\n\n### Impact\nThis creates a significant conflict:\n- The SPA (principal agreement) is governed by English law\n- The Escrow Agreement (ancillary agreement securing SPA obligations) is governed by New York law\n- Disputes could be litigated in different jurisdictions under different legal systems\n- Increased complexity and cost in enforcement\n\n### Recommended Amendments\n- Align the Escrow Agreement governing law with the SPA (English law)\n- Ensure consistent dispute resolution mechanisms\n- Consider whether ICC arbitration in New York is appropriate given the English law context\n\n## 4. Escrow Agreement Issues\n\n### Problematic Provisions\n1. **Currency Discrepancy:** The Escrow Agreement specifies £4,500,000 (pounds sterling), while the SPA purchase price is $30,000,000 (US dollars). This creates currency risk and conversion issues.\n\n2. **Undefined \"Business Day\" in SPA:** The SPA uses \"Business Days\" in multiple clauses (2.4, 4.2) but does not define the term. The Escrow Agreement defines \"Business Day\" as \"a day other than a Saturday or Sunday on which banks are open in London.\" This inconsistency creates ambiguity.\n\n3. **Weekend Release Date:** The Escrow Agreement provides for release \"18 months after the Closing Date\" (23 April 2026). 18 months from this date is 23 October 2027, which is a Saturday. Under the Business Day definition, this could delay release until the following Monday.\n\n4. **Timing Issues:** The Escrow Agreement requires deposit \"within two Business Days of the Closing Date\" (23 April 2026), but release occurs \"18 months after the Closing Date.\" The client email indicates closing is anticipated \"prior to 2 February 2026,\" creating confusion about actual timing.\n\n5. **Incomplete Document:** The Escrow Agreement has blanks for the Effective Date and Escrow Agent.\n\n### Impact\n- Currency mismatch creates unnecessary foreign exchange risk\n- Unclear timing creates operational uncertainty\n- Incomplete document prevents execution\n\n### Recommended Amendments\n- Align currency between SPA and Escrow Agreement (preferably USD)\n- Clarify closing timeline and ensure consistency across documents\n- Complete all blanks in the Escrow Agreement\n\n## 5. Material Adverse Change Definition\n\n### Problematic Provision\nClause 1.1 defines \"Material Adverse Change\" with broad exclusions: \"excluding changes in general economic conditions, changes affecting the industry generally, and pandemics.\"\n\n### Impact\nThis definition is overly broad in favor of the Seller. Under this definition, the Seller could avoid liability for many adverse events affecting the Company.\n\n### Recommended Amendment\n- Narrow the exclusions to be more specific and reasonable\n- Consider including materiality thresholds\n- Ensure the definition provides adequate protection for the Buyer\n\n## 6. Confidentiality Period\n\n### Problematic Provision\nClause 5.2 provides for confidentiality obligations to survive for \"five (5) years\" after termination.\n\n### Impact\nA five-year confidentiality period may be excessive for commercial information and could create unnecessary ongoing obligations.\n\n### Recommended Amendment\n- Reduce to 2-3 years for standard commercial confidentiality\n- Consider tiered approach with different periods for different types of information\n\n## 7. Notice Provisions\n\n### Problematic Provision\nClause 4.2 deems email notices received \"at the time of transmission, provided that no error message is generated.\"\n\n### Impact\nThis could lead to disputes about whether notices were actually received, as transmission does not guarantee delivery to the recipient's inbox.\n\n### Recommended Amendment\n- Add requirement for read receipt or confirmation of receipt\n- Specify alternative delivery methods if email fails\n- Consider deemed receipt at opening of business on next business day\n\n## Urgent Action Items\n\n1. **Immediate:**\n   - Require amendment of Disclosure Letter to include Calloway Marine litigation\n   - Obtain complete SPA including all schedules (particularly Schedule 3)\n   - Clarify closing date and ensure consistency across documents\n\n2. **Priority Negotiations:**\n   - Revise working capital adjustment mechanism\n   - Align governing law between SPA and Escrow Agreement\n   - Address currency discrepancy in Escrow Agreement\n\n3. **Document Completion:**\n   - Complete all blanks in Escrow Agreement\n   - Ensure all cross-references are accurate\n   - Verify consistency across all transaction documents\n\n## Conclusion\n\nThe current documentation presents significant risks for Bellhaven Analytics Ltd. The most critical issues are the undisclosed litigation, the incomplete warranty framework, and the conflicting governing law provisions. Immediate action is required to address these deficiencies before proceeding with the transaction.\n\nThe working capital adjustment mechanism also requires substantial revision to provide fair process and adequate dispute resolution mechanisms. All documents should be reviewed in their complete form before execution.\n\nI recommend scheduling a call with the client to discuss these findings and develop a negotiation strategy.\n\n# Your job\nNo grades are available. Critically assess the deliverable and the work process yourself, as a demanding supervising partner would, and write reusable candidate lessons for improving the work.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|contract_review\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C1\",\n      \"what_went_wrong\": \"The agent identified a discrepancy in clause numbering (client email referenced 'Clause 3.5' but SPA only contained clauses up to 2.4) but did not verify whether the SPA was incomplete or if the numbering was simply inconsistent across documents.\",\n      \"should_have\": \"Cross-referenced all mentioned clauses across documents to confirm whether missing clauses were genuinely absent or merely misnumbered.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C2\",\n      \"what_went_wrong\": \"The agent flagged a currency discrepancy between the SPA (USD) and Escrow Agreement (GBP) but did not calculate or flag the potential foreign exchange risk or conversion costs.\",\n      \"should_have\": \"Quantified the currency mismatch impact by calculating the potential FX risk or conversion costs based on the amounts involved.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C3\",\n      \"what_went_wrong\": \"The agent noted a weekend release date in the Escrow Agreement but did not verify whether the agreement included provisions for adjusting release dates to the next Business Day.\",\n      \"should_have\": \"Checked if the Escrow Agreement contained fallback provisions for release dates falling on non-Business Days.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C4\",\n      \"what_went_wrong\": \"The agent identified a litigation disclosure omission but did not cross-check the financial statements for related provisions or reserves.\",\n      \"should_have\": \"Verified whether the financial statements included provisions or disclosures related to the undisclosed litigation.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C5\",\n      \"what_went_wrong\": \"The agent noted undefined 'Business Day' in the SPA but did not propose a standard definition or check if the definition in the Escrow Agreement could be adopted.\",\n      \"should_have\": \"Proposed a standard definition for 'Business Day' or recommended adopting the definition from the Escrow Agreement for consistency.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C6\",\n      \"what_went_wrong\": \"The agent did not verify whether the working capital adjustment mechanism aligned with the accounting principles referenced in the financial statements.\",\n      \"should_have\": \"Cross-checked the working capital adjustment mechanism against the accounting principles used in the financial statements.\",\n      \"failure_kind\": \"task_specific\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"For every cross-reference to a clause, schedule, or document, verify its existence and consistency across all matter documents before flagging discrepancies.\",\n      \"evidence\": [\"C1\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"When identifying currency mismatches between agreements, calculate and flag the potential foreign exchange risk or conversion costs based on the amounts involved.\",\n      \"evidence\": [\"C2\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"review\",\n      \"text\": \"For dates falling on non-Business Days, verify whether the agreement includes fallback provisions to adjust deadlines or release dates to the next Business Day.\",\n      \"evidence\": [\"C3\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.85\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"For undisclosed liabilities or litigation, cross-check financial statements for related provisions, reserves, or disclosures to assess materiality.\",\n      \"evidence\": [\"C4\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"When an agreement lacks a definition for 'Business Day,' propose a standard definition or recommend adopting a consistent definition from another agreement in the matter.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.8\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Compare the working capital adjustment mechanism against the accounting principles used in the financial statements to ensure consistency and flag misalignments.\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.85\n    }\n  ],\n  \"lesson_feedback\": []\n}\n```"
+}

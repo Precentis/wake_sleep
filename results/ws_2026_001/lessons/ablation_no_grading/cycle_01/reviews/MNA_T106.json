@@ -1,0 +1,142 @@
+{
+  "task_id": "MNA_T106",
+  "cycle": 1,
+  "lineage": "ablation_no_grading",
+  "graded": false,
+  "failures": [
+    {
+      "criterion_id": "C1",
+      "what_went_wrong": "The agent recomputed the working capital adjustment but did not verify whether the formula in the SPA matched the intended economic deal (e.g., whether the target was a floor or a peg).",
+      "should_have": "Clarified whether the working capital adjustment was meant to be a true-up to a target or a floor below which price reduces.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C2",
+      "what_went_wrong": "The agent spotted a numerical discrepancy in the liability cap but did not cross-check the cap percentage against the client’s standard risk appetite or market practice for similar deals.",
+      "should_have": "Compared the proposed cap percentage to the client’s internal guidelines and typical market ranges for the sector.",
+      "failure_kind": "analysis"
+    },
+    {
+      "criterion_id": "C3",
+      "what_went_wrong": "The redline note listed inconsistencies between documents (e.g., currency, confidentiality periods) but did not flag which version should prevail or propose a hierarchy clause.",
+      "should_have": "Recommended a ‘governing document’ clause to resolve conflicts between the SPA, disclosure letter, and ancillary agreements.",
+      "failure_kind": "drafting"
+    },
+    {
+      "criterion_id": "C4",
+      "what_went_wrong": "The agent calculated derived figures (e.g., 10 % of price) but did not log the intermediate steps or save the calculation sheet for later verification.",
+      "should_have": "Maintained a separate calculation log with every intermediate step and source reference.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C5",
+      "what_went_wrong": "The deliverable included a numbered list of critical issues, but the numbering restarted at zero (‘0’) instead of one, creating potential confusion in partner review.",
+      "should_have": "Used consistent sequential numbering starting at one for all issue lists.",
+      "failure_kind": "drafting"
+    },
+    {
+      "criterion_id": "C6",
+      "what_went_wrong": "The agent proposed new warranties but did not check whether the disclosure letter already contained disclosures that would qualify those warranties.",
+      "should_have": "Reviewed the disclosure letter for any existing disclosures that would limit the scope of proposed warranties before finalising the redline.",
+      "failure_kind": "review"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T106_0",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Before finalising a redline note, ensure every issue list uses sequential numbering starting at one and that numbering is consistent throughout the document.",
+      "source_tasks": [
+        "MNA_T106"
+      ],
+      "evidence": [
+        "MNA_T106:C5"
+      ],
+      "task_type_scope": "redline",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T106_1",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Whenever a document states a cap as a percentage of price, recompute the percentage from the stated cap and price, then flag any mismatch.",
+      "source_tasks": [
+        "MNA_T106"
+      ],
+      "evidence": [
+        "MNA_T106:C2"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T106_2",
+      "type": "checklist",
+      "category": "review",
+      "text": "Before proposing new warranties, cross-check the disclosure letter for existing disclosures that would qualify those warranties and adjust the redline accordingly.",
+      "source_tasks": [
+        "MNA_T106"
+      ],
+      "evidence": [
+        "MNA_T106:C6"
+      ],
+      "task_type_scope": "redline",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T106_3",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "For every working capital adjustment clause, determine whether the target is a floor, a peg, or a collar, and flag any ambiguity in the drafting.",
+      "source_tasks": [
+        "MNA_T106"
+      ],
+      "evidence": [
+        "MNA_T106:C1"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T106_4",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "When listing document inconsistencies in a redline note, always propose a governing-document clause to resolve conflicts between the principal agreement and ancillary documents.",
+      "source_tasks": [
+        "MNA_T106"
+      ],
+      "evidence": [
+        "MNA_T106:C3"
+      ],
+      "task_type_scope": "redline",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T106_5",
+      "type": "practice_note",
+      "category": "review",
+      "text": "Maintain a separate calculation log that records every derived figure, the formula used, and the source references, and attach it to the deliverable.",
+      "source_tasks": [
+        "MNA_T106"
+      ],
+      "evidence": [
+        "MNA_T106:C4"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    }
+  ],
+  "lesson_feedback": [],
+  "input_tokens": 3870,
+  "output_tokens": 1084,
+  "cost_usd": 0.003561,
+  "prompt": "# Task\nType: redline | Practice area: corporate_mna\nYou act for the Buyer, Pemberton Logistics plc. Pemberton Logistics plc (the Buyer) is acquiring the entire issued share capital of Netherby Bioscience plc (the Company) from Pemberton Robotics Ltd (the Seller).\n\nPrepare a redline note proposing amendments to the principal agreement to protect our client. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 11 January 2027. Address the deliverable to the supervising partner.\n\n# Trajectory (28 model steps, 28 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 3. [research] read_document({\"name\": \"client_email.md\"})\n 4. [research] read_document({\"name\": \"disclosure_letter.md\"})\n 5. [research] read_document({\"name\": \"board_minutes.md\"})\n 6. [research] read_document({\"name\": \"employment_agreement.md\"})\n 7. [research] search_documents({\"query\": \"warranty\"})\n 8. [research] search_documents({\"query\": \"Schedule 3\"})\n 9. [research] search_documents({\"query\": \"Fenwick\"})\n10. [analysis] calculate({\"expression\": \"date('2027-01-11')\"})\n11. [analysis] calculate({\"expression\": \"days_between(date('2027-01-11'), date('2027-02-28'))\"})\n12. [analysis] calculate({\"expression\": \"Target Working Capital = 2000000\"})\n13. [analysis] calculate({\"expression\": \"2000000 - 1650000\"})\n14. [analysis] calculate({\"expression\": \"210000000 - 350000\"})\n15. [analysis] calculate({\"expression\": \"210000000 - 700000\"})\n16. [drafting] write_draft(<1036 words>)\n17. [verification] read_draft({})\n18. [verification] calculate({\"expression\": \"210000000 * 0.10\"})\n19. [editing] edit_draft(find='#### 3. **Missing Warranties and Inadequate Liability Cap**\\n' -> '#### 3. **Missing Warranties and Inadequate Liability Cap**\\n')\n20. [editing] edit_draft(find='2. **Section 8.3 - Liability Cap**\\n   ```\\n   Current: Limits' -> '2. **Section 8.3 - Liability Cap**\\n   ```\\n   Current: \"The a')\n21. [editing] edit_draft(find='#### 4. **Customer Concentration Risk**\\n- **Issue**: Bellhav' -> '#### 4. **Customer Concentration Risk**\\n- **Issue**: Bellhav')\n22. [editing] edit_draft(find='2. **Medium Priority (Strongly Desired)**:\\n   - Specific ind' -> '2. **Medium Priority (Strongly Desired)**:\\n   - Specific ind')\n23. [editing] edit_draft(find='### Critical Issues Requiring Immediate Attention\\n\\n#### 1. *' -> '### Critical Issues Requiring Immediate Attention\\n\\n#### 0. *')\n24. [editing] edit_draft(find='#### **Share Purchase Agreement Amendments**\\n\\n1. **Section 2' -> '#### **Share Purchase Agreement Amendments**\\n\\n1. **Section 1')\n25. [editing] edit_draft(find='2. **Section 8.3 - Liability Cap**' -> '3. **Section 8.3 - Liability Cap**')\n26. [editing] edit_draft(find='3. **Add New Section - Material Customer Warranty**' -> '4. **Add New Section - Material Customer Warranty**')\n27. [verification] read_draft({})\n28. [control] finish({\"summary\": \"Redline note proposing amendments to the Share Purchase Agreement for Pemberton Logistics plc's acquisition of Netherby Bioscience plc. The note id)\n\n# Final deliverable\n# Redline Note: Proposed Amendments to Share Purchase Agreement\n## Acquisition of Netherby Bioscience plc by Pemberton Logistics plc\n\n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Date:** 11 January 2027  \n**Matter:** Pemberton Logistics plc acquisition of Netherby Bioscience plc  \n\n### Executive Summary\n\nOur client, Pemberton Logistics plc (the \"Buyer\"), is acquiring the entire issued share capital of Netherby Bioscience plc (the \"Company\") from Pemberton Robotics Ltd (the \"Seller\"). The draft Share Purchase Agreement (\"SPA\") dated 23 December 2026 contains several material deficiencies that require amendment to protect the Buyer's interests. Key issues include inadequate disclosure of litigation, discrepancies in working capital adjustments, missing warranties, and inconsistencies between transaction documents.\n\n### Critical Issues Requiring Immediate Attention\n\n#### 0. **Material Adverse Change Definition**\n- **Issue**: SPA Section 1.1 defines \"Material Adverse Change\" excluding \"pandemics\" without qualification. This could exclude COVID-19 type events that disproportionately affect the Company.\n- **Risk**: Buyer may have no recourse if a pandemic disproportionately impacts the Company compared to industry peers.\n- **Proposed Action**:\n  - Qualify exclusion: \"excluding pandemics that affect the Company no more adversely than other companies in the same industry\"\n  - Consider removing blanket pandemic exclusion\n\n#### 1. **Material Litigation Not Disclosed**\n- **Issue**: Board minutes dated 5 January 2027 reveal a letter before action from Fenwick Robotics Ltd claiming approximately $3,400,000 for alleged defective deliveries. However, the Disclosure Letter states \"None\" for litigation disclosures (Section 3.1).\n- **Risk**: The Buyer may inherit undisclosed litigation liability exceeding the Seller's liability cap ($25.2M).\n- **Proposed Action**: \n  - Amend Disclosure Letter Section 3.1 to fully disclose the Fenwick Robotics claim\n  - Require Seller to provide indemnity for this specific claim\n  - Consider reducing purchase price to reflect litigation risk\n\n#### 2. **Working Capital Adjustment Discrepancy**\n- **Issue**: SPA Section 2.3 provides for dollar-for-dollar reduction for working capital shortfall below $2,000,000 target. Seller's draft funds flow shows $209,300,000 adjusted price (based on $1,650,000 estimated working capital), implying $700,000 reduction. However, mathematically: $2,000,000 - $1,650,000 = $350,000 reduction.\n- **Risk**: Buyer may overpay by $350,000 if Seller's calculation methodology differs from SPA formula.\n- **Proposed Action**:\n  - Require Seller to provide detailed calculation methodology\n  - Clarify that Schedule 3 (referenced but not provided) must be agreed before signing\n  - Specify exact formula: Purchase Price = $210,000,000 - ($2,000,000 - Actual Closing Working Capital)\n\n#### 3. **Missing Warranties and Inadequate Liability Cap**\n- **Issue**: SPA references warranties but only shows Section 8.3 limiting aggregate liability. There is a mathematical discrepancy: SPA states 10% of Purchase Price ($25,200,000), but 10% of $210,000,000 is $21,000,000. Either the cap is 12% or there is an error. No substantive warranties provided.\n- **Risk**: Buyer has limited recourse for breaches of representations about Company's condition, and the liability cap calculation is ambiguous.\n- **Proposed Action**:\n  - Insert comprehensive warranties covering:\n    - Title and capacity\n    - Accounts and financial position\n    - Litigation and disputes\n    - Contracts and commitments (including Bellhaven Analytics Ltd relationship)\n    - Compliance with laws\n    - Employees\n    - Intellectual property\n    - Assets\n  - Clarify liability cap calculation: either 10% ($21,000,000) or specify intended percentage\n  - Consider creating specific indemnities for known risks (Fenwick claim)\n\n#### 4. **Customer Concentration Risk**\n- **Issue**: Bellhaven Analytics Ltd is identified as a material customer in multiple documents. Board minutes indicate contract renewal negotiations are \"advanced\" but not finalized (proposed 36-month term from 1 April 2027). No warranty about customer relationships or contract renewals.\n- **Risk**: Loss of Bellhaven business would materially impact Company value. Uncertainty about contract renewal creates valuation risk.\n- **Proposed Action**:\n  - Add warranty that Bellhaven Analytics Ltd relationship is in good standing\n  - Require disclosure of status of renewal negotiations\n  - Consider purchase price adjustment if renewal not finalized by closing\n  - Consider specific indemnity for loss of Bellhaven business within specified period\n\n#### 5. **Document Inconsistencies**\n- **Issue**: Multiple inconsistencies between documents:\n  - **Payment Currency**: SPA references dollars, Disclosure Letter Section 4.2 references GBP\n  - **Confidentiality Period**: SPA Section 6: 3 years, Employment Agreement Section 5.2: indefinite\n  - **Non-compete**: SPA Section 12.1: Seller 5 years UK only, Employment Agreement Section 18: Founder 18 months broader restriction\n- **Risk**: Contractual ambiguities and enforcement difficulties.\n- **Proposed Action**:\n  - Standardize payment currency to USD throughout\n  - Align confidentiality periods (recommend indefinite for trade secrets)\n  - Review non-compete provisions for reasonableness and enforceability\n\n### Specific Redline Amendments\n\n#### **Share Purchase Agreement Amendments**\n\n1. **Section 1.1 - Material Adverse Change Definition**\n   ```\n   Current: \"Material Adverse Change means any event which has a material adverse effect on the business of the Company, excluding changes in general economic conditions, changes affecting the industry generally, and pandemics.\"\n   \n   Proposed: \"Material Adverse Change means any event which has a material adverse effect on the business of the Company, excluding changes in general economic conditions and changes affecting the industry generally (provided the Company is not disproportionately affected). The exclusion for pandemics shall only apply to the extent the Company is not disproportionately affected compared to other companies in the same industry.\"\n   ```\n\n2. **Section 2.3 - Working Capital Adjustment**\n   ```\n   Current: \"The Purchase Price shall be reduced dollar-for-dollar by any shortfall of Closing Working Capital below the Target Working Capital of $2,000,000.\"\n   \n   Proposed: \"The Purchase Price shall be calculated as follows: $210,000,000 minus the amount by which the Actual Closing Working Capital (as defined in Schedule 3) is less than $2,000,000. The methodology for calculating Actual Closing Working Capital is set out in Schedule 3, which must be agreed by both parties prior to signing this Agreement.\"\n   ```\n\n3. **Section 8.3 - Liability Cap**\n   ```\n   Current: \"The aggregate liability of the Seller for all claims arising under the warranties contained in this Agreement shall not exceed an amount equal to 10% of the Purchase Price, being $25,200,000. For the avoidance of doubt, the Purchase Price is $210,000,000 as set out in Section 2.1.\"\n   \n   Proposed: \"The aggregate liability of the Seller for all claims arising under the warranties contained in this Agreement shall not exceed an amount equal to 10% of the Purchase Price ($21,000,000). Notwithstanding the general cap, the Seller shall provide specific indemnities for: (a) the Fenwick Robotics Ltd claim disclosed in the Disclosure Letter; and (b) any loss of the Bellhaven Analytics Ltd customer relationship within 24 months post-completion.\"\n   ```\n\n4. **Add New Section - Material Customer Warranty**\n   ```\n   Proposed new warranty: \"The Company's relationship with Bellhaven Analytics Ltd is in good standing, and there are no circumstances known to the Seller that would reasonably be expected to result in termination or material adverse change to such relationship.\"\n   ```\n\n#### **Disclosure Letter Amendments**\n\n1. **Section 3.1 - Litigation Disclosure**\n   ```\n   Current: \"Disclosure against Warranty 7.1 (Litigation): None.\"\n   \n   Proposed: \"Disclosure against Warranty 7.1 (Litigation): Letter before action dated 30 December 2026 from Fenwick Robotics Ltd alleging defective deliveries under a supply agreement and claiming approximately $3,400,000 in damages. The Company disputes the claim and has made no admission of liability.\"\n   ```\n\n2. **Section 4.2 - Payment Currency**\n   ```\n   Current: \"All payments shall be made in pounds sterling (GBP)\"\n   \n   Proposed: \"All payments shall be made in United States dollars (USD)\"\n   ```\n\n### Negotiation Strategy\n\n1. **High Priority (Must Have)**:\n   - Full disclosure of Fenwick Robotics litigation\n   - Clear working capital adjustment formula\n   - Comprehensive warranties package\n\n2. **Medium Priority (Strongly Desired)**:\n   - Specific indemnity for Fenwick Robotics claim\n   - Bellhaven Analytics contract renewal protection\n   - Document consistency (currency, confidentiality)\n\n3. **Lower Priority (Negotiable)**:\n   - Liability cap percentage\n   - Non-compete duration and scope\n   - Exact confidentiality period\n\n### Next Steps\n\n1. Request missing Schedule 3 (working capital methodology) from Seller\n2. Prepare comprehensive warranties schedule for insertion into SPA\n3. Draft specific indemnity for Fenwick Robotics claim\n4. Schedule negotiation meeting with Seller's counsel to address discrepancies\n5. Conduct further due diligence on Bellhaven Analytics contract renewal status\n\n### Conclusion\n\nThe current draft SPA exposes the Buyer to significant undisclosed risks, particularly regarding litigation and working capital adjustments. The proposed amendments are essential to protect the Buyer's interests and ensure the transaction reflects the true value and risks of the Company. Immediate attention should be given to the litigation disclosure and working capital calculation issues before proceeding further.\n\n**Prepared by:** Senior Associate  \n**Date:** 11 January 2027\n\n# Your job\nNo grades are available. Critically assess the deliverable and the work process yourself, as a demanding supervising partner would, and write reusable candidate lessons for improving the work.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|redline\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C1\",\n      \"what_went_wrong\": \"The agent recomputed the working capital adjustment but did not verify whether the formula in the SPA matched the intended economic deal (e.g., whether the target was a floor or a peg).\",\n      \"should_have\": \"Clarified whether the working capital adjustment was meant to be a true-up to a target or a floor below which price reduces.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C2\",\n      \"what_went_wrong\": \"The agent spotted a numerical discrepancy in the liability cap but did not cross-check the cap percentage against the client’s standard risk appetite or market practice for similar deals.\",\n      \"should_have\": \"Compared the proposed cap percentage to the client’s internal guidelines and typical market ranges for the sector.\",\n      \"failure_kind\": \"analysis\"\n    },\n    {\n      \"criterion_id\": \"C3\",\n      \"what_went_wrong\": \"The redline note listed inconsistencies between documents (e.g., currency, confidentiality periods) but did not flag which version should prevail or propose a hierarchy clause.\",\n      \"should_have\": \"Recommended a ‘governing document’ clause to resolve conflicts between the SPA, disclosure letter, and ancillary agreements.\",\n      \"failure_kind\": \"drafting\"\n    },\n    {\n      \"criterion_id\": \"C4\",\n      \"what_went_wrong\": \"The agent calculated derived figures (e.g., 10 % of price) but did not log the intermediate steps or save the calculation sheet for later verification.\",\n      \"should_have\": \"Maintained a separate calculation log with every intermediate step and source reference.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C5\",\n      \"what_went_wrong\": \"The deliverable included a numbered list of critical issues, but the numbering restarted at zero (‘0’) instead of one, creating potential confusion in partner review.\",\n      \"should_have\": \"Used consistent sequential numbering starting at one for all issue lists.\",\n      \"failure_kind\": \"drafting\"\n    },\n    {\n      \"criterion_id\": \"C6\",\n      \"what_went_wrong\": \"The agent proposed new warranties but did not check whether the disclosure letter already contained disclosures that would qualify those warranties.\",\n      \"should_have\": \"Reviewed the disclosure letter for any existing disclosures that would limit the scope of proposed warranties before finalising the redline.\",\n      \"failure_kind\": \"review\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"Before finalising a redline note, ensure every issue list uses sequential numbering starting at one and that numbering is consistent throughout the document.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"redline\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Whenever a document states a cap as a percentage of price, recompute the percentage from the stated cap and price, then flag any mismatch.\",\n      \"evidence\": [\"C2\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"review\",\n      \"text\": \"Before proposing new warranties, cross-check the disclosure letter for existing disclosures that would qualify those warranties and adjust the redline accordingly.\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"redline\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"For every working capital adjustment clause, determine whether the target is a floor, a peg, or a collar, and flag any ambiguity in the drafting.\",\n      \"evidence\": [\"C1\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.85\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"When listing document inconsistencies in a redline note, always propose a governing-document clause to resolve conflicts between the principal agreement and ancillary documents.\",\n      \"evidence\": [\"C3\"],\n      \"task_type_scope\": \"redline\",\n      \"confidence\": 0.85\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"review\",\n      \"text\": \"Maintain a separate calculation log that records every derived figure, the formula used, and the source references, and attach it to the deliverable.\",\n      \"evidence\": [\"C4\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    }\n  ],\n  \"lesson_feedback\": []\n}\n```"
+}

@@ -1,0 +1,173 @@
+{
+  "task_id": "MNA_T060",
+  "cycle": 1,
+  "lineage": "ablation_no_grading",
+  "graded": false,
+  "failures": [
+    {
+      "criterion_id": "C1",
+      "what_went_wrong": "The agent identified a critical date discrepancy between the SPA and Escrow Agreement but did not verify whether the Escrow Agreement's Closing Date was a typo or intentional. This led to an incomplete recommendation.",
+      "should_have": "Cross-referenced the Escrow Agreement's Closing Date with the SPA's definition of 'Closing' and checked for any conditional language or side letters that might explain the discrepancy.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C2",
+      "what_went_wrong": "The agent calculated deadlines using calendar days but did not confirm whether the agreements defined 'days' as business days or calendar days. This could lead to incorrect deadline calculations.",
+      "should_have": "Explicitly checked and noted the definition of 'day' (business vs. calendar) in each agreement before performing date calculations.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C3",
+      "what_went_wrong": "The agent noted that 'Business Day' was not defined in the SPA but did not extend this check to other documents, such as the Escrow Agreement or Disclosure Letter, which may also rely on this term.",
+      "should_have": "Systematically checked all transaction documents for definitions of key terms like 'Business Day' and flagged any inconsistencies or omissions.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C4",
+      "what_went_wrong": "The agent did not verify whether the regulatory clearance date provided in the client email was reflected in the transaction documents as a condition precedent or subsequent.",
+      "should_have": "Cross-referenced external deadlines (e.g., regulatory clearance) with the conditions precedent/subsequent in the transaction documents to ensure alignment.",
+      "failure_kind": "task_specific"
+    },
+    {
+      "criterion_id": "C5",
+      "what_went_wrong": "The agent identified a missing Tax Covenant referenced in the Escrow Agreement but did not propose a specific action to locate or request the document for review.",
+      "should_have": "Recommended a specific follow-up action, such as requesting the missing document from the client or counterparty, to ensure all time-sensitive obligations are captured.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C6",
+      "what_went_wrong": "The agent did not prioritize the critical issues identified in the analysis, which could lead to the client overlooking the most urgent matters.",
+      "should_have": "Ranked critical issues by urgency and potential impact, and clearly labeled them in the deliverable (e.g., 'Immediate Action Required').",
+      "failure_kind": "drafting"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T060_0",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "Before finalising a timeline analysis, verify the definition of 'day' (business vs. calendar) in every agreement and apply the correct definition to all deadline calculations.",
+      "source_tasks": [
+        "MNA_T060"
+      ],
+      "evidence": [
+        "MNA_T060:C2"
+      ],
+      "task_type_scope": "timeline_analysis",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T060_1",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "Cross-reference all external deadlines (e.g., regulatory clearances) with the transaction documents to confirm they are captured as conditions precedent or subsequent.",
+      "source_tasks": [
+        "MNA_T060"
+      ],
+      "evidence": [
+        "MNA_T060:C4"
+      ],
+      "task_type_scope": "timeline_analysis",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T060_2",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "When identifying date discrepancies, check for conditional language, side letters, or definitions in related agreements that may explain or resolve the inconsistency.",
+      "source_tasks": [
+        "MNA_T060"
+      ],
+      "evidence": [
+        "MNA_T060:C1"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T060_3",
+      "type": "checklist",
+      "category": "review",
+      "text": "Systematically check all transaction documents for definitions of key terms (e.g., 'Business Day') and flag any inconsistencies or omissions in the timeline analysis.",
+      "source_tasks": [
+        "MNA_T060"
+      ],
+      "evidence": [
+        "MNA_T060:C3"
+      ],
+      "task_type_scope": "timeline_analysis",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T060_4",
+      "type": "practice_note",
+      "category": "drafting",
+      "text": "Rank critical issues in the timeline analysis by urgency and potential impact, and label them clearly (e.g., 'Immediate Action Required') to guide the client's prioritization.",
+      "source_tasks": [
+        "MNA_T060"
+      ],
+      "evidence": [
+        "MNA_T060:C6"
+      ],
+      "task_type_scope": "timeline_analysis",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.8
+    },
+    {
+      "candidate_id": "c01_MNA_T060_5",
+      "type": "practice_note",
+      "category": "general",
+      "text": "For any missing or referenced documents, recommend specific follow-up actions (e.g., requesting the document from the client or counterparty) to ensure all time-sensitive obligations are captured.",
+      "source_tasks": [
+        "MNA_T060"
+      ],
+      "evidence": [
+        "MNA_T060:C5"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    }
+  ],
+  "lesson_feedback": [
+    {
+      "lesson_id": "L0001",
+      "label": "HELPFUL",
+      "reason": "This lesson addresses a common and critical oversight in timeline analyses, where misapplying 'day' definitions can lead to incorrect deadlines."
+    },
+    {
+      "lesson_id": "L0002",
+      "label": "HELPFUL",
+      "reason": "Ensures external deadlines are properly aligned with contractual conditions, reducing the risk of missed obligations."
+    },
+    {
+      "lesson_id": "L0003",
+      "label": "HELPFUL",
+      "reason": "Encourages thorough investigation of discrepancies, which is essential for accurate legal analysis and client advice."
+    },
+    {
+      "lesson_id": "L0004",
+      "label": "HELPFUL",
+      "reason": "Promotes consistency in interpreting key terms across documents, which is vital for reliable timeline analyses."
+    },
+    {
+      "lesson_id": "L0005",
+      "label": "HELPFUL",
+      "reason": "Improves the clarity and actionability of the deliverable by guiding the client on prioritization."
+    },
+    {
+      "lesson_id": "L0006",
+      "label": "HELPFUL",
+      "reason": "Ensures no time-sensitive obligations are overlooked due to missing documents, which is critical for comprehensive analysis."
+    }
+  ],
+  "input_tokens": 3538,
+  "output_tokens": 1489,
+  "cost_usd": 0.0040025,
+  "prompt": "# Task\nType: timeline_analysis | Practice area: corporate_mna\nYou act for the Buyer, Marlow Medical Ltd. Marlow Medical Ltd (the Buyer) is acquiring the entire issued share capital of Juniper Marine Ltd (the Company) from Hartwell Medical Ltd (the Seller).\n\nPrepare a timeline and deadlines analysis of all time-sensitive obligations in the matter documents. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 24 June 2026. Address the deliverable to the supervising partner.\n\n# Trajectory (29 model steps, 29 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 3. [research] read_document({\"name\": \"escrow_agreement.md\"})\n 4. [research] read_document({\"name\": \"disclosure_letter.md\"})\n 5. [research] read_document({\"name\": \"client_email.md\"})\n 6. [analysis] calculate({\"expression\": \"Closing Date = date('2026-08-19')\"})\n 7. [analysis] calculate({\"expression\": \"ClosingDate = date('2026-08-19')\"})\n 8. [analysis] calculate({\"expression\": \"BankAccountDeadline = add_days(ClosingDate, -5)\"})\n 9. [analysis] calculate({\"expression\": \"ClosingDate = date('2026-08-19')\\nBankAccountDeadline = add_days(ClosingDate, -5)\"})\n10. [analysis] calculate({\"expression\": \"SPADate = date('2026-06-08')\\nConditionsTerminationDeadline = add_days(SPADate, 120)\"})\n11. [analysis] calculate({\"expression\": \"EscrowClosingDate = date('2026-06-24')\\nEscrowPeriodEnd = add_months(EscrowClosingDate, 18)\"})\n12. [analysis] calculate({\"expression\": \"weekday(date('2027-12-24'))\"})\n13. [analysis] calculate({\"expression\": \"DisclosureConfidentialityStart = date('2026-06-24')\\nDisclosureConfidentialityEnd = add_years(DisclosureConfidentialityStart, 6)\"})\n14. [analysis] calculate({\"expression\": \"RegulatoryClearanceDate = date('2026-11-20')\"})\n15. [research] search_documents({\"query\": \"closing date\"})\n16. [research] search_documents({\"query\": \"warranty claim\"})\n17. [research] search_documents({\"query\": \"conditions\"})\n18. [research] search_documents({\"query\": \"notice\"})\n19. [drafting] write_draft(<1008 words>)\n20. [verification] read_draft({})\n21. [verification] search_documents({\"query\": \"days\"})\n22. [verification] search_documents({\"query\": \"business day\"})\n23. [verification] search_documents({\"query\": \"tax\"})\n24. [editing] edit_draft(find='#### 4. Claim Thresholds and Limitations\\n\\n| Aspect | Require' -> '#### 4. Claim Thresholds and Limitations\\n\\n| Aspect | Require')\n25. [editing] edit_draft(find='#### 4. Intellectual Property Disclosure\\nThe Disclosure Lett' -> '#### 4. Intellectual Property Disclosure\\nThe Disclosure Lett')\n26. [verification] calculate({\"expression\": \"EscrowAmount = 850000\\nEscrowClaimCap = EscrowAmount * 1.07\"})\n27. [editing] edit_draft(find='#### 6. Potential Holiday Issue\\nThe Escrow Period ends on 24' -> '#### 6. Potential Holiday Issue\\nThe Escrow Period ends on 24')\n28. [verification] read_draft({})\n29. [control] finish({\"summary\": \"Prepared a comprehensive timeline and deadlines analysis for the acquisition of Juniper Marine Ltd by Marlow Medical Ltd. The analysis identifies a)\n\n# Final deliverable\n# Timeline and Deadlines Analysis\n## Acquisition of Juniper Marine Ltd by Marlow Medical Ltd\n\n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Date:** 24 June 2026  \n**Matter:** Acquisition of Juniper Marine Ltd  \n**Client:** Marlow Medical Ltd (Buyer)  \n**Counterparty:** Hartwell Medical Ltd (Seller)\n\n### Executive Summary\n\nThis analysis identifies and evaluates all time-sensitive obligations across the transaction documents for the acquisition of Juniper Marine Ltd. Key findings include:\n\n1. **Critical Date Discrepancy**: The Share Purchase Agreement (SPA) specifies a Closing Date of 19 August 2026, while the Escrow Agreement references a Closing Date of 24 June 2026. This inconsistency requires immediate resolution.\n\n2. **Regulatory Clearance**: Merger clearance is expected by 20 November 2026, which falls after both proposed closing dates.\n\n3. **Multiple Claim Periods**: Different notification periods apply to warranty claims (20 days) and escrow claims (45 days), creating potential confusion.\n\n4. **Extended Protection Periods**: The escrow provides 18 months of protection, while confidentiality obligations extend for 6 years.\n\n### Detailed Timeline Analysis\n\n#### 1. Pre-Closing Obligations\n\n| Deadline | Date | Obligation | Document Reference | Responsible Party |\n|----------|------|------------|-------------------|-------------------|\n| Bank Account Designation | 14 August 2026 | Seller must designate bank account for Purchase Price payment at least 5 business days before Closing Date | SPA Clause 2.1 | Seller |\n| Conditions Satisfaction Deadline | 6 October 2026 | Conditions must be satisfied or either party may terminate (120 days from SPA date 8 June 2026) | SPA Clause 4.5 | Both Parties |\n| Conditions Waiver Deadline | 20 days from awareness | Conditions deemed waived unless raised in writing within 20 days of becoming aware of failure | SPA Clause 4.4 | Both Parties |\n\n#### 2. Closing Date Discrepancy\n\n**Critical Issue**: Two different Closing Dates are specified:\n- **SPA Closing Date**: 19 August 2026 (SPA Clause 1.1)\n- **Escrow Agreement Closing Date**: 24 June 2026 (Escrow Agreement Clause 1.1)\n\n**Impact**: This creates fundamental uncertainty about when:\n- Purchase Price payment is due (SPA Clause 2.2)\n- Share transfer documents must be delivered (SPA Clause 3.1)\n- Escrow Amount must be paid (Escrow Agreement Clause 3.1)\n- Disclosure Letter confidentiality period begins (Disclosure Letter Clause 7.2)\n\n**Recommendation**: Immediate clarification and alignment of Closing Dates is required before proceeding.\n\n#### 3. Post-Closing Obligations\n\n| Deadline | Date/Period | Obligation | Document Reference | Responsible Party |\n|----------|-------------|------------|-------------------|-------------------|\n| Warranty Claim Notification | 20 days from awareness | Buyer must notify warranty claims within 20 days of becoming aware | SPA Clause 9.7 | Buyer |\n| Escrow Claim Notification | 45 days from awareness | Buyer must notify claims against Escrow Amount within 45 days of becoming aware | Escrow Agreement Clause 5.2 | Buyer |\n| Escrow Period End | 24 December 2027 (4:00 PM) | Escrow Amount released to Seller unless claims pending (18 months from Escrow Closing Date) | Escrow Agreement Clauses 1.1, 4.1 | Escrow Agent |\n| Regulatory Clearance | 20 November 2026 | Merger clearance expected (per client email) | Client Email | Regulatory Authorities |\n| Disclosure Confidentiality | 24 June 2032 | Confidentiality obligation ends (6 years from 24 June 2026) | Disclosure Letter Clause 7.2 | Buyer |\n\n#### 4. Claim Thresholds and Limitations\n\n| Aspect | Requirement | Document Reference |\n|--------|-------------|-------------------|\n| Warranty Claim Minimum | Individual claims must exceed $500,000 | SPA Clause 9.6 |\n| Warranty Claim Cap | Aggregate liability capped at 75% of Purchase Price ($30,000,000) | SPA Clause 9.5 |\n| Escrow Claim Cap | Claims cannot exceed 107% of Escrow Amount (£909,500) | Escrow Agreement Clause 5.3 |\n\n#### 5. Notice Periods and Delivery\n\n| Document | Notice Delivery Method | Deemed Receipt Time | Reference |\n|----------|-----------------------|---------------------|-----------|\n| SPA | First-class post | 48 hours after posting | Clause 11.2 |\n| Disclosure Letter | Personal delivery | Same day | Clause 6.2 |\n| Disclosure Letter | First-class post | 48 hours after posting | Clause 6.2 |\n| Disclosure Letter | Email | Next business day (with confirmation) | Clause 6.2 |\n| Escrow Agreement | Hand, registered post, or email | Not specified | Clause 6.1 |\n\n**Note**: \"Business Day\" is not defined in the SPA, creating uncertainty for the 5 Business Days requirement in Clause 2.1.\n\n### Critical Issues Requiring Attention\n\n#### 1. Closing Date Inconsistency\nThe discrepancy between SPA Closing Date (19 August 2026) and Escrow Agreement Closing Date (24 June 2026) creates legal uncertainty. The Disclosure Letter also references the SPA as \"dated on or about 24 June 2026\" (Clause 1.1), conflicting with the actual SPA date of 8 June 2026.\n\n**Action Required**: Amend documents to establish a single, consistent Closing Date.\n\n#### 2. Regulatory Clearance Timing\nThe client email indicates merger clearance is expected by 20 November 2026. This falls after both proposed closing dates, suggesting either:\n- Closing should be conditional on regulatory approval, or\n- The transaction documents need to account for post-closing regulatory compliance\n\n**Action Required**: Review whether regulatory clearance is a Condition under SPA Clause 4.2(c) and ensure timing aligns with closing.\n\n#### 3. Conflicting Claim Notification Periods\n- SPA: Warranty claims must be notified within 20 days of awareness (Clause 9.7)\n- Escrow Agreement: Claims against Escrow Amount must be notified within 45 days of awareness (Clause 5.2)\n\nThis creates potential confusion about which deadline applies to claims covered by both warranty and escrow provisions.\n\n**Action Required**: Clarify relationship between warranty claims and escrow claims.\n\n#### 4. Intellectual Property Disclosure\nThe Disclosure Letter reveals that no written IP assignment exists for the Company's core platform software (developed by Kingsmere Industries Ltd). This creates potential warranty exposure that should be monitored within claim periods.\n\n#### 5. Missing Tax Covenant\nThe Escrow Agreement references a Tax Covenant (Clause 1.1) that is not included in the document set. This covenant may contain its own time-sensitive obligations that cannot be analyzed without the document.\n\n#### 6. Potential Holiday Issue\nThe Escrow Period ends on 24 December 2027 (Friday), which may be affected by Christmas holiday schedules. The Escrow Agreement requires release \"on the last Business Day of the Escrow Period\" (Clause 4.1), but \"Business Day\" is not defined.\n\n#### 7. Currency Discrepancy\nThe SPA specifies the Purchase Price in US Dollars ($40,000,000), while the Escrow Agreement specifies the Escrow Amount in British Pounds (£850,000). This creates potential foreign exchange risk and calculation issues for claims.\n\n### Recommended Actions\n\n1. **Immediate (Week of 24 June 2026)**:\n   - Resolve Closing Date discrepancy through amendment or side letter\n   - Confirm regulatory clearance requirements and timing\n   - Align claim notification periods across documents\n\n2. **Pre-Closing**:\n   - Ensure Seller designates bank account by 14 August 2026 (if 19 August Closing Date)\n   - Monitor Conditions satisfaction progress\n   - Prepare for regulatory clearance by 20 November 2026\n\n3. **Post-Closing**:\n   - Implement systems to track warranty claim notification deadlines (20 days)\n   - Monitor escrow claim deadlines (45 days)\n   - Track escrow release date (24 December 2027)\n   - Maintain confidentiality of Disclosure Letter until 24 June 2032\n\n### Conclusion\n\nThe transaction documents contain several time-sensitive obligations with critical inconsistencies, particularly regarding the Closing Date. Immediate attention is required to resolve these discrepancies to ensure a smooth transaction and protect the Buyer's interests. The analysis highlights the need for careful monitoring of multiple deadlines spanning from pre-closing preparations through to 2032 for confidentiality obligations.\n\n**Next Steps**: Recommend client meeting to discuss resolution of Closing Date discrepancy and regulatory clearance timing.\n\n# Your job\nNo grades are available. Critically assess the deliverable and the work process yourself, as a demanding supervising partner would, and write reusable candidate lessons for improving the work.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|timeline_analysis\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C1\",\n      \"what_went_wrong\": \"The agent identified a critical date discrepancy between the SPA and Escrow Agreement but did not verify whether the Escrow Agreement's Closing Date was a typo or intentional. This led to an incomplete recommendation.\",\n      \"should_have\": \"Cross-referenced the Escrow Agreement's Closing Date with the SPA's definition of 'Closing' and checked for any conditional language or side letters that might explain the discrepancy.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C2\",\n      \"what_went_wrong\": \"The agent calculated deadlines using calendar days but did not confirm whether the agreements defined 'days' as business days or calendar days. This could lead to incorrect deadline calculations.\",\n      \"should_have\": \"Explicitly checked and noted the definition of 'day' (business vs. calendar) in each agreement before performing date calculations.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C3\",\n      \"what_went_wrong\": \"The agent noted that 'Business Day' was not defined in the SPA but did not extend this check to other documents, such as the Escrow Agreement or Disclosure Letter, which may also rely on this term.\",\n      \"should_have\": \"Systematically checked all transaction documents for definitions of key terms like 'Business Day' and flagged any inconsistencies or omissions.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C4\",\n      \"what_went_wrong\": \"The agent did not verify whether the regulatory clearance date provided in the client email was reflected in the transaction documents as a condition precedent or subsequent.\",\n      \"should_have\": \"Cross-referenced external deadlines (e.g., regulatory clearance) with the conditions precedent/subsequent in the transaction documents to ensure alignment.\",\n      \"failure_kind\": \"task_specific\"\n    },\n    {\n      \"criterion_id\": \"C5\",\n      \"what_went_wrong\": \"The agent identified a missing Tax Covenant referenced in the Escrow Agreement but did not propose a specific action to locate or request the document for review.\",\n      \"should_have\": \"Recommended a specific follow-up action, such as requesting the missing document from the client or counterparty, to ensure all time-sensitive obligations are captured.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C6\",\n      \"what_went_wrong\": \"The agent did not prioritize the critical issues identified in the analysis, which could lead to the client overlooking the most urgent matters.\",\n      \"should_have\": \"Ranked critical issues by urgency and potential impact, and clearly labeled them in the deliverable (e.g., 'Immediate Action Required').\",\n      \"failure_kind\": \"drafting\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"Before finalising a timeline analysis, verify the definition of 'day' (business vs. calendar) in every agreement and apply the correct definition to all deadline calculations.\",\n      \"evidence\": [\"C2\"],\n      \"task_type_scope\": \"timeline_analysis\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"Cross-reference all external deadlines (e.g., regulatory clearances) with the transaction documents to confirm they are captured as conditions precedent or subsequent.\",\n      \"evidence\": [\"C4\"],\n      \"task_type_scope\": \"timeline_analysis\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"When identifying date discrepancies, check for conditional language, side letters, or definitions in related agreements that may explain or resolve the inconsistency.\",\n      \"evidence\": [\"C1\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.85\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"review\",\n      \"text\": \"Systematically check all transaction documents for definitions of key terms (e.g., 'Business Day') and flag any inconsistencies or omissions in the timeline analysis.\",\n      \"evidence\": [\"C3\"],\n      \"task_type_scope\": \"timeline_analysis\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"drafting\",\n      \"text\": \"Rank critical issues in the timeline analysis by urgency and potential impact, and label them clearly (e.g., 'Immediate Action Required') to guide the client's prioritization.\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"timeline_analysis\",\n      \"confidence\": 0.8\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"general\",\n      \"text\": \"For any missing or referenced documents, recommend specific follow-up actions (e.g., requesting the document from the client or counterparty) to ensure all time-sensitive obligations are captured.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    }\n  ],\n  \"lesson_feedback\": [\n    {\n      \"lesson_id\": \"L0001\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"This lesson addresses a common and critical oversight in timeline analyses, where misapplying 'day' definitions can lead to incorrect deadlines.\"\n    },\n    {\n      \"lesson_id\": \"L0002\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Ensures external deadlines are properly aligned with contractual conditions, reducing the risk of missed obligations.\"\n    },\n    {\n      \"lesson_id\": \"L0003\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Encourages thorough investigation of discrepancies, which is essential for accurate legal analysis and client advice.\"\n    },\n    {\n      \"lesson_id\": \"L0004\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Promotes consistency in interpreting key terms across documents, which is vital for reliable timeline analyses.\"\n    },\n    {\n      \"lesson_id\": \"L0005\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Improves the clarity and actionability of the deliverable by guiding the client on prioritization.\"\n    },\n    {\n      \"lesson_id\": \"L0006\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Ensures no time-sensitive obligations are overlooked due to missing documents, which is critical for comprehensive analysis.\"\n    }\n  ]\n}\n```"
+}

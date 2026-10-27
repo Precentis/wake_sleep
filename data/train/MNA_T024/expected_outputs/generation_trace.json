@@ -1,0 +1,81 @@
+{
+  "docs": [
+    {
+      "title": "share_purchase_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 663,
+            "output_tokens": 1116
+          }
+        }
+      ]
+    },
+    {
+      "title": "escrow_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 548,
+            "output_tokens": 1037
+          }
+        }
+      ]
+    },
+    {
+      "title": "client_email.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 527,
+            "output_tokens": 425
+          }
+        }
+      ]
+    }
+  ],
+  "doc_facts": {
+    "share_purchase_agreement.md": {
+      "key": "spa",
+      "facts": [
+        "Parties: Juniper Software Ltd (Buyer), Kestrel Logistics plc (Seller); the Company is Lowther Retail Group plc.",
+        "Section 2.1: the Purchase Price is $255,000,000.",
+        "This Agreement is dated 24 April 2026; Closing is scheduled for 31 July 2026 (the 'Closing Date').",
+        "Section 1.1: 'Closing Date' means 31 July 2026.",
+        "Section 2.3: the Purchase Price shall be reduced dollar-for-dollar by any shortfall of Closing Working Capital below the Target Working Capital of $3,500,000.",
+        "Section 4.5: if the Conditions are not satisfied by the date falling 120 days after the date of this Agreement (signed 24 April 2026), either party may terminate."
+      ],
+      "must_contain": [
+        "$3,500,000",
+        "120 days",
+        "24 April 2026"
+      ]
+    },
+    "escrow_agreement.md": {
+      "key": "escrow",
+      "facts": [
+        "Clause 4.1: the Escrow Amount shall be released to the Seller on the date falling 12 months after the Closing Date, save to the extent of pending claims notified before that date. 'Business Day' means a day other than a Saturday or Sunday on which banks are open in London.",
+        "The Closing Date is 31 July 2026."
+      ],
+      "must_contain": [
+        "12 months",
+        "31 July 2026"
+      ]
+    },
+    "client_email.md": {
+      "key": "client_email",
+      "facts": [
+        "The estimated Closing Working Capital is $2,880,000. The Seller's draft funds flow shows an adjusted purchase price of $253,760,000.",
+        "Regulatory counsel expects merger clearance by 21 September 2026."
+      ],
+      "must_contain": [
+        "$2,880,000",
+        "$253,760,000",
+        "21 September 2026"
+      ]
+    }
+  }
+}

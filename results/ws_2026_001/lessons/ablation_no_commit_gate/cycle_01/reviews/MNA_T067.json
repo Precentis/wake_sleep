@@ -1,0 +1,169 @@
+{
+  "task_id": "MNA_T067",
+  "cycle": 1,
+  "lineage": "ablation_no_commit_gate",
+  "graded": true,
+  "failures": [
+    {
+      "criterion_id": "C2",
+      "what_went_wrong": "The agent calculated the termination date as 28 October 2026 instead of 27 October 2026 (150 days from 30 May 2026).",
+      "should_have": "Accurately calculated the termination date by counting 150 days from the agreement date, including the start date or excluding it as per the agreement's definition.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C3",
+      "what_went_wrong": "The agent identified the working capital shortfall but failed to calculate and state the adjusted purchase price ($224,650,000) or flag the discrepancy with the Seller's figure ($224,300,000).",
+      "should_have": "Calculated the adjusted purchase price by subtracting the working capital shortfall from the purchase price and compared it with the Seller's figure to flag discrepancies.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C5",
+      "what_went_wrong": "The agent noted the MAC carve-outs were broad but did not identify the missing 'disproportionate effect' exception or recommend adding one.",
+      "should_have": "Explicitly identified the absence of a 'disproportionate effect' exception in the MAC carve-outs and recommended its inclusion.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C6",
+      "what_went_wrong": "The agent did not show the adjustment arithmetic ($225,000,000 - $350,000 = $224,650,000) or flag the discrepancy with the Seller's figure.",
+      "should_have": "Displayed the arithmetic calculation for the adjusted purchase price and flagged any discrepancies with provided figures.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C7",
+      "what_went_wrong": "The agent stated the escrow release period and date but did not calculate or state the days remaining from the current date (12 June 2026).",
+      "should_have": "Calculated and included the days remaining from the current date to the escrow release date for clarity.",
+      "failure_kind": "procedural"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T067_0",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "For every date-based condition or deadline, recompute the target date from the base date and verify it matches the stated date in the document.",
+      "source_tasks": [
+        "MNA_T067"
+      ],
+      "evidence": [
+        "MNA_T067:C2"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T067_1",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "When calculating adjusted financial figures (e.g., purchase price), show the arithmetic steps explicitly to ensure transparency and enable verification.",
+      "source_tasks": [
+        "MNA_T067"
+      ],
+      "evidence": [
+        "MNA_T067:C3",
+        "MNA_T067:C6"
+      ],
+      "task_type_scope": "issues_list",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T067_2",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "For Material Adverse Change (MAC) clauses, check for and flag the absence of a 'disproportionate effect' exception in standard carve-outs.",
+      "source_tasks": [
+        "MNA_T067"
+      ],
+      "evidence": [
+        "MNA_T067:C5"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T067_3",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "For every duration-based deadline (e.g., escrow release), calculate and include the days remaining from the current date to the deadline.",
+      "source_tasks": [
+        "MNA_T067"
+      ],
+      "evidence": [
+        "MNA_T067:C7"
+      ],
+      "task_type_scope": "issues_list",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T067_4",
+      "type": "checklist",
+      "category": "review",
+      "text": "Before finalising an issues list, verify that all derived figures (e.g., adjusted prices, shortfalls) are calculated and cross-checked with provided figures.",
+      "source_tasks": [
+        "MNA_T067"
+      ],
+      "evidence": [
+        "MNA_T067:C3",
+        "MNA_T067:C6"
+      ],
+      "task_type_scope": "issues_list",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T067_5",
+      "type": "practice_note",
+      "category": "drafting",
+      "text": "When drafting issues related to financial adjustments, include the arithmetic formula and result to clearly demonstrate discrepancies.",
+      "source_tasks": [
+        "MNA_T067"
+      ],
+      "evidence": [
+        "MNA_T067:C6"
+      ],
+      "task_type_scope": "issues_list",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.85
+    }
+  ],
+  "lesson_feedback": [
+    {
+      "lesson_id": "L0001",
+      "label": "HELPFUL",
+      "reason": "Generalises the date calculation error to a reusable behaviour for verifying all date-based conditions."
+    },
+    {
+      "lesson_id": "L0002",
+      "label": "HELPFUL",
+      "reason": "Encourages transparency in financial calculations, which would have prevented the failure to show arithmetic steps."
+    },
+    {
+      "lesson_id": "L0003",
+      "label": "HELPFUL",
+      "reason": "Addresses a common oversight in MAC clauses and generalises to other matters."
+    },
+    {
+      "lesson_id": "L0004",
+      "label": "HELPFUL",
+      "reason": "Ensures clarity in duration-based deadlines, which is useful for any transaction involving time-sensitive conditions."
+    },
+    {
+      "lesson_id": "L0005",
+      "label": "HELPFUL",
+      "reason": "A good review step to catch calculation errors before finalising deliverables."
+    },
+    {
+      "lesson_id": "L0006",
+      "label": "HELPFUL",
+      "reason": "Improves the clarity and persuasiveness of issues related to financial adjustments."
+    }
+  ],
+  "input_tokens": 5306,
+  "output_tokens": 1373,
+  "cost_usd": 0.0047125,
+  "prompt": "# Task\nType: issues_list | Practice area: corporate_mna\nYou act for the Buyer, Fenwick Holdings Ltd. Fenwick Holdings Ltd (the Buyer) is acquiring the entire issued share capital of Calloway Medical Ltd (the Company) from Kingsmere Technologies Ltd (the Seller).\n\nPrepare an issues list for the supervising partner covering the matter documents. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 12 June 2026. Address the deliverable to the supervising partner.\n\n# Trajectory (29 model steps, 29 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"client_email.md\"})\n 3. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 4. [research] read_document({\"name\": \"disclosure_letter.md\"})\n 5. [research] read_document({\"name\": \"escrow_agreement.md\"})\n 6. [analysis] calculate({\"expression\": \"purchase_price = 225000000\\nadjusted_price_client = 224300000\\ndifference = purchase_price - adjusted_price_client\"})\n 7. [analysis] calculate({\"expression\": \"target_working_capital = 5000000\\nestimated_closing_working_capital = 4650000\\nshortfall = target_working_capital - estimated_closing_working_ca)\n 8. [analysis] calculate({\"expression\": \"agreement_date = date('2026-05-30')\\nclosing_date = date('2026-09-04')\\ntermination_date = add_days(agreement_date, 150)\\ndays_to_closing = days)\n 9. [analysis] calculate({\"expression\": \"current_date = date('2026-06-12')\\ndays_until_closing = days_between(current_date, closing_date)\\ndays_until_termination = days_between(current_)\n10. [analysis] calculate({\"expression\": \"agreement_date = date('2026-05-30')\\nclosing_date = date('2026-09-04')\\ntermination_date = add_days(agreement_date, 150)\\ncurrent_date = date('2)\n11. [analysis] calculate({\"expression\": \"regulatory_clearance_date = date('2026-12-11')\\ndays_until_regulatory_clearance = days_between(current_date, regulatory_clearance_date)\"})\n12. [analysis] calculate({\"expression\": \"current_date = date('2026-06-12')\\nregulatory_clearance_date = date('2026-12-11')\\ndays_until_regulatory_clearance = days_between(current_date, )\n13. [analysis] calculate({\"expression\": \"closing_date = date('2026-09-04')\\nescrow_release_date = add_months(closing_date, 18)\\ndays_until_escrow_release = days_between(current_date, es)\n14. [analysis] calculate({\"expression\": \"current_date = date('2026-06-12')\\nclosing_date = date('2026-09-04')\\nescrow_release_date = add_months(closing_date, 18)\\ndays_until_escrow_rele)\n15. [research] search_documents({\"query\": \"warranty\"})\n16. [research] search_documents({\"query\": \"representation\"})\n17. [drafting] write_draft(<1227 words>)\n18. [verification] read_draft({})\n19. [verification] calculate({\"expression\": \"escrow_gbp = 9500000\\npurchase_price_usd = 225000000\\nexchange_rate = 1.25\\nescrow_percentage = (escrow_gbp * exchange_rate) / purchase_price_us)\n20. [editing] edit_draft(find='### 4.1 Escrow Amount and Currency\\n- **Issue:** The Escrow A' -> '### 4.1 Escrow Amount and Currency\\n- **Issue:** The Escrow A')\n21. [editing] edit_draft(find='### 4.2 Escrow Release Timing\\n- **Issue:** Escrow release oc' -> '### 4.2 Escrow Release Timing\\n- **Issue:** Escrow release oc')\n22. [verification] search_documents({\"query\": \"[\\u25cf]\"})\n23. [verification] read_document({\"name\": \"escrow_agreement.md\", \"start_line\": 1, \"num_lines\": 30})\n24. [editing] edit_draft(find='### 4.3 Incomplete Escrow Agent Details\\n- **Issue:** The Esc' -> '### 4.3 Incomplete Escrow Agreement Details\\n- **Issue:** The')\n25. [verification] read_document({\"name\": \"disclosure_letter.md\", \"start_line\": 39, \"num_lines\": 10})\n26. [verification] calculate({\"expression\": \"spa_notice_days = 2\\ndisclosure_notice_days_post = 2\\ndisclosure_notice_days_email = 0\"})\n27. [editing] edit_draft(find='### 6.2 Date Inconsistencies\\n- **Issue:** Disclosure Letter ' -> '### 6.2 Date Inconsistencies\\n- **Issue:** Disclosure Letter ')\n28. [verification] read_draft({})\n29. [control] finish({\"summary\": \"Issues list for the acquisition of Calloway Medical Ltd by Fenwick Holdings Ltd, addressing key legal and commercial matters identified from review)\n\n# Final deliverable\n# Issues List: Acquisition of Calloway Medical Ltd by Fenwick Holdings Ltd\n**Date:** 12 June 2026  \n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Matter:** Acquisition of entire issued share capital of Calloway Medical Ltd from Kingsmere Technologies Ltd  \n**Client:** Fenwick Holdings Ltd (Buyer)\n\n## Executive Summary\n\nThis issues list identifies key legal and commercial matters arising from the review of transaction documents for the proposed acquisition of Calloway Medical Ltd. The transaction involves a purchase price of $225 million with a working capital adjustment mechanism, significant intellectual property disclosure issues, and an escrow arrangement for £9.5 million. Key dates include a Closing Date of 4 September 2026 and regulatory clearance expected by 11 December 2026.\n\n## 1. Transaction Structure and Key Terms\n\n### 1.1 Purchase Price Discrepancy\n- **Issue:** The Share Purchase Agreement specifies a Purchase Price of $225,000,000 (Clause 2.1), but the client email indicates an adjusted purchase price of $224,300,000 based on the Seller's draft funds flow.\n- **Analysis:** This represents a $700,000 discrepancy that requires clarification. The client email references Section 5.3, but no such section exists in the reviewed SPA.\n- **Action Required:** Confirm the correct purchase price and whether any adjustments have been agreed.\n\n### 1.2 Working Capital Adjustment Mechanism\n- **Issue:** The SPA provides for dollar-for-dollar reduction of Purchase Price for any shortfall of Closing Working Capital below Target Working Capital of $5,000,000 (Clause 2.3).\n- **Analysis:** The client email estimates Closing Working Capital at $4,650,000, representing a potential $350,000 adjustment. The adjustment calculation timeline (90 days post-closing) and dispute resolution mechanism (independent accountant) appear reasonable but require review of the detailed working capital methodology.\n- **Action Required:** Verify the working capital calculation methodology and ensure it aligns with IFRS as specified.\n\n## 2. Intellectual Property Concerns\n\n### 2.1 Core Software Ownership Risk\n- **Issue:** The Disclosure Letter reveals that the Company's core platform software was developed by Thornbury Marine Ltd without a written assignment of IP rights (Clause 2.3).\n- **Analysis:** The Company asserts ownership based on \"implied licence and conduct of the parties\" but acknowledges \"no formal title documentation exists.\" This creates significant title risk for a core operational asset.\n- **Risk Level:** High - This could affect the fundamental value of the acquisition.\n- **Action Required:** \n  1. Conduct IP due diligence on the software development arrangement\n  2. Consider requiring formal assignment from Thornbury Marine Ltd pre-closing\n  3. Assess potential indemnity or price adjustment for this risk\n\n### 2.2 Warranty Disclosure Specificity\n- **Issue:** The Disclosure Letter is specifically directed at \"Warranty 8.2 (Intellectual Property)\" but the SPA provided does not contain Clause 8 or detailed warranties.\n- **Analysis:** The absence of warranty provisions in the reviewed SPA suggests either an incomplete document or reference to a different version. The disclosure may not be comprehensive for all IP warranties.\n- **Action Required:** Obtain complete SPA including all warranty provisions to assess full disclosure adequacy.\n\n## 3. Conditions and Timing Issues\n\n### 3.1 Regulatory Clearance Timing Conflict\n- **Issue:** The client email states regulatory clearance is expected by 11 December 2026, but the SPA termination date is 28 October 2026 (150 days from 30 May 2026 agreement date).\n- **Analysis:** There is a 44-day gap between the termination date (28 October 2026) and the expected regulatory clearance (11 December 2026). This creates risk that the transaction could terminate before regulatory approval is obtained.\n- **Risk Level:** High - Could result in transaction failure.\n- **Action Required:** Negotiate extension of termination date to align with regulatory clearance timeline.\n\n### 3.2 Material Adverse Change Definition\n- **Issue:** The SPA defines Material Adverse Change with broad exclusions for general economic conditions, industry changes, and pandemics.\n- **Analysis:** The exclusions are standard but may be overly broad from Buyer's perspective. The definition does not specify quantitative thresholds.\n- **Action Required:** Consider whether to seek more specific criteria for determining Material Adverse Change.\n\n## 4. Escrow Arrangement\n\n### 4.1 Escrow Amount and Currency\n- **Issue:** The Escrow Agreement specifies £9,500,000 (sterling) while the Purchase Price is $225,000,000 (dollars).\n- **Analysis:** The currency mismatch creates foreign exchange risk. At an approximate exchange rate of 1.25, the escrow represents approximately 5.3% of the purchase price (£9.5m ≈ $11.875m).\n- **Action Required:** Confirm currency conversion mechanism and consider whether escrow should be in same currency as purchase price to eliminate FX risk.\n\n### 4.2 Escrow Release Timing\n- **Issue:** Escrow release occurs 18 months post-closing (4 March 2028) with claims notification required before that date.\n- **Analysis:** 18-month escrow period is reasonable for warranty claims but requires careful claims management to meet notification deadlines.\n- **Action Required:** Implement systems to track potential claims and ensure timely notification.\n\n### 4.3 Incomplete Escrow Agreement Details\n- **Issue:** The Escrow Agreement contains multiple placeholders: Effective Date (\"[●] 2026\"), Escrow Agent details (name and address), and SPA reference dates (\"[●] 2026\").\n- **Analysis:** These placeholders must be completed before execution. The Effective Date should likely be the Closing Date (4 September 2026) or shortly before.\n- **Action Required:** Complete all placeholder details, appoint Escrow Agent, and ensure dates align with SPA execution.\n\n## 5. Customer Concentration Risk\n\n### 5.1 Material Customer Disclosure\n- **Issue:** Both client email and Escrow Agreement identify Saltash Foods Ltd as a material customer.\n- **Analysis:** Customer concentration risk is acknowledged but not quantified in reviewed documents. No revenue percentages or dependency levels are specified.\n- **Action Required:** Obtain details of revenue concentration with Saltash Foods Ltd and consider appropriate representations/warranties.\n\n## 6. Document Completeness and Consistency\n\n### 6.1 Missing SPA Provisions\n- **Issue:** The reviewed SPA lacks standard provisions including detailed warranties, indemnities, limitations of liability, and tax provisions.\n- **Analysis:** This suggests either an incomplete document or a framework agreement requiring supplementation.\n- **Action Required:** Obtain complete transaction documentation including all schedules and exhibits.\n\n### 6.2 Date Inconsistencies\n- **Issue:** Disclosure Letter dated 11 June 2026 post-dates SPA execution date of 30 May 2026.\n- **Analysis:** This timing is logical (disclosure follows agreement) but requires confirmation that disclosures are complete for all warranties.\n- **Action Required:** Ensure all disclosures are final and incorporated into transaction.\n\n### 6.3 Confidentiality of Disclosures\n- **Issue:** The Disclosure Letter contains confidentiality restrictions limiting Buyer's ability to share disclosed information (Clause 6.1).\n- **Analysis:** While standard, these restrictions may impede due diligence investigations and discussions with advisors.\n- **Action Required:** Review confidentiality scope and consider carve-outs for necessary due diligence activities.\n\n## 7. Financial Considerations\n\n### 7.1 Purchase Price Payment Timing\n- **Issue:** SPA requires payment \"no later than 11:59 a.m. London time on the Closing Date\" (Clause 3.2).\n- **Analysis:** This creates tight payment timing constraints, particularly for international funds transfer.\n- **Action Required:** Confirm banking arrangements and consider earlier payment initiation.\n\n### 7.2 Interest on Escrow Funds\n- **Issue:** Escrow Agreement provides for interest-bearing account but does not specify interest distribution.\n- **Analysis:** Standard practice would allocate interest to Seller, but this should be explicitly stated.\n- **Action Required:** Clarify interest allocation in Escrow Agreement.\n\n## Priority Actions\n\n1. **Immediate (Next 7 days):**\n   - Obtain complete SPA with all warranties and schedules\n   - Conduct IP due diligence on Thornbury Marine Ltd software development\n   - Negotiate extension of termination date to align with regulatory clearance\n\n2. **Short-term (Next 30 days):**\n   - Finalise working capital adjustment methodology\n   - Resolve purchase price discrepancy\n   - Complete customer concentration analysis\n\n3. **Pre-closing:**\n   - Finalise escrow arrangements and currency considerations\n   - Ensure all conditions precedent are satisfied\n   - Coordinate payment logistics\n\n## Risk Assessment Summary\n\n| Risk Area | Risk Level | Mitigation Required |\n|-----------|------------|-------------------|\n| IP Ownership | High | Formal assignment or price adjustment |\n| Regulatory Timing | High | Extension of termination date |\n| Document Completeness | Medium | Obtain complete transaction docs |\n| Working Capital | Medium | Clarify calculation methodology |\n| Customer Concentration | Medium | Quantify and address in warranties |\n\n## Next Steps\n\n1. Schedule call with client to discuss identified issues\n2. Engage IP specialist for software due diligence\n3. Commence negotiations on key points (termination date, IP issues)\n4. Prepare due diligence request list for Seller\n\n**Prepared by:** Senior Associate  \n**Date:** 12 June 2026\n\n# Expert rubric verdicts (3/8 passed)\n- C1 [PASS] States that the escrow release date is 4 March 2028 (18 months after the 4 September 2026 Closing Date) and that pending claims must be notified before then.\n    judges: PASS: The deliverable correctly identifies the escrow release date as 4 March 2028 (18 months post-closing) and notes that claims notification is required before that date. | PASS: The deliverable correctly states the escrow release date as 4 March 2028 (18 months after 4 September 2026 Closing Date) at section 4.2, and notes that claims notification is required before that date.\n- C2 [FAIL] Calculates the long-stop date as 27 October 2026 (150 days after signing on 30 May 2026) and identifies that expected clearance on 11 December 2026 falls after it, recommending an extension.\n    judges: FAIL: The deliverable calculates the long-stop date as 28 October 2026, which is incorrect; 150 days from 30 May 2026 is 27 October 2026. | FAIL: The deliverable calculates the termination date as 28 October 2026 (section 3.1), not 27 October 2026 as required. While it correctly identifies the timing conflict with 11 December 2026 clearance and recommends extensio\n- C3 [FAIL] Calculates the working capital shortfall as $350,000 and the adjusted Purchase Price as $224,650,000, identifying that the Seller's funds flow figure of $224,300,000 is wrong.\n    judges: FAIL: The deliverable correctly calculates the $350,000 shortfall but fails to calculate the adjusted Purchase Price of $224,650,000 or identify that the Seller's $224,300,000 figure is wrong. | FAIL: The deliverable calculates the working capital shortfall as $350,000 correctly but fails to calculate or state the adjusted Purchase Price as $224,650,000. It only notes the discrepancy with the Seller's $224,300,000 fig\n- C4 [PASS] Identifies that the core platform was developed by contractor Thornbury Marine Ltd without a written IP assignment, so the Company may not own it, and recommends obtaining a confirmatory assignment as a condition to Closing.\n    judges: PASS: The deliverable identifies that the core platform was developed by Thornbury Marine Ltd without a written IP assignment and recommends obtaining a formal assignment pre-closing. | PASS: The deliverable clearly identifies at section 2.1 that Thornbury Marine Ltd developed the core platform without written IP assignment, creating ownership risk, and recommends obtaining formal assignment pre-closing.\n- C5 [FAIL] Identifies that the MAC carve-outs (general economic, industry-wide and pandemic changes) contain no 'disproportionate effect' exception, so the Buyer bears those risks even where the Company is disproportionately affected, and recommends adding one.\n    judges: FAIL: The deliverable notes the MAC carve-outs are broad but does not identify the missing 'disproportionate effect' exception or recommend adding one. | FAIL: The deliverable mentions the MAC carve-outs at section 3.2 but only notes they 'may be overly broad' and lack quantitative thresholds. It does not identify the specific missing 'disproportionate effect' exception or reco\n- C6 [FAIL] Shows the adjustment arithmetic ($225,000,000 - $350,000 = $224,650,000) and flags the discrepancy.\n    judges: FAIL: The deliverable does not show the adjustment arithmetic ($225,000,000 - $350,000 = $224,650,000) nor does it flag the specific discrepancy with the Seller's figure. | FAIL: The deliverable does not show the adjustment arithmetic ($225,000,000 - $350,000 = $224,650,000). It mentions the $350,000 potential adjustment and the $224,300,000 figure from the client email, but never performs or dis\n- C7 [FAIL] Gives the escrow release period as a duration (18 months) and as a date (4 March 2028), with days remaining from 12 June 2026 (631 days).\n    judges: FAIL: The deliverable states the 18-month duration and 4 March 2028 date but does not provide the days remaining from 12 June 2026 (631 days). | FAIL: The deliverable gives the escrow release period as 18 months and the date as 4 March 2028 at section 4.2, but does not calculate or state the days remaining from 12 June 2026 (631 days).\n- C8 [PASS] Opens with a short 'Bottom line' / executive summary stating the overall conclusion and the most important risks before the detailed analysis.\n    judges: PASS: The deliverable opens with an Executive Summary that states the overall conclusion and identifies the most important risks before the detailed analysis. | PASS: The deliverable opens with an 'Executive Summary' that states overall conclusions and identifies the most important risks: $225 million purchase price with working capital adjustment, IP disclosure issues, and £9.5 milli\n\n# Your job\nAnalyse each FAILED criterion: what went wrong, what the agent should have done, and whether the failure is procedural (reusable) or task-specific. Then write reusable candidate lessons that would prevent the procedural failures on other matters.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|issues_list\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C2\",\n      \"what_went_wrong\": \"The agent calculated the termination date as 28 October 2026 instead of 27 October 2026 (150 days from 30 May 2026).\",\n      \"should_have\": \"Accurately calculated the termination date by counting 150 days from the agreement date, including the start date or excluding it as per the agreement's definition.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C3\",\n      \"what_went_wrong\": \"The agent identified the working capital shortfall but failed to calculate and state the adjusted purchase price ($224,650,000) or flag the discrepancy with the Seller's figure ($224,300,000).\",\n      \"should_have\": \"Calculated the adjusted purchase price by subtracting the working capital shortfall from the purchase price and compared it with the Seller's figure to flag discrepancies.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C5\",\n      \"what_went_wrong\": \"The agent noted the MAC carve-outs were broad but did not identify the missing 'disproportionate effect' exception or recommend adding one.\",\n      \"should_have\": \"Explicitly identified the absence of a 'disproportionate effect' exception in the MAC carve-outs and recommended its inclusion.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C6\",\n      \"what_went_wrong\": \"The agent did not show the adjustment arithmetic ($225,000,000 - $350,000 = $224,650,000) or flag the discrepancy with the Seller's figure.\",\n      \"should_have\": \"Displayed the arithmetic calculation for the adjusted purchase price and flagged any discrepancies with provided figures.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C7\",\n      \"what_went_wrong\": \"The agent stated the escrow release period and date but did not calculate or state the days remaining from the current date (12 June 2026).\",\n      \"should_have\": \"Calculated and included the days remaining from the current date to the escrow release date for clarity.\",\n      \"failure_kind\": \"procedural\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"For every date-based condition or deadline, recompute the target date from the base date and verify it matches the stated date in the document.\",\n      \"evidence\": [\"C2\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"When calculating adjusted financial figures (e.g., purchase price), show the arithmetic steps explicitly to ensure transparency and enable verification.\",\n      \"evidence\": [\"C3\", \"C6\"],\n      \"task_type_scope\": \"issues_list\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"For Material Adverse Change (MAC) clauses, check for and flag the absence of a 'disproportionate effect' exception in standard carve-outs.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"For every duration-based deadline (e.g., escrow release), calculate and include the days remaining from the current date to the deadline.\",\n      \"evidence\": [\"C7\"],\n      \"task_type_scope\": \"issues_list\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"review\",\n      \"text\": \"Before finalising an issues list, verify that all derived figures (e.g., adjusted prices, shortfalls) are calculated and cross-checked with provided figures.\",\n      \"evidence\": [\"C3\", \"C6\"],\n      \"task_type_scope\": \"issues_list\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"drafting\",\n      \"text\": \"When drafting issues related to financial adjustments, include the arithmetic formula and result to clearly demonstrate discrepancies.\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"issues_list\",\n      \"confidence\": 0.85\n    }\n  ],\n  \"lesson_feedback\": [\n    {\n      \"lesson_id\": \"L0001\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Generalises the date calculation error to a reusable behaviour for verifying all date-based conditions.\"\n    },\n    {\n      \"lesson_id\": \"L0002\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Encourages transparency in financial calculations, which would have prevented the failure to show arithmetic steps.\"\n    },\n    {\n      \"lesson_id\": \"L0003\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Addresses a common oversight in MAC clauses and generalises to other matters.\"\n    },\n    {\n      \"lesson_id\": \"L0004\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Ensures clarity in duration-based deadlines, which is useful for any transaction involving time-sensitive conditions.\"\n    },\n    {\n      \"lesson_id\": \"L0005\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"A good review step to catch calculation errors before finalising deliverables.\"\n    },\n    {\n      \"lesson_id\": \"L0006\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Improves the clarity and persuasiveness of issues related to financial adjustments.\"\n    }\n  ]\n}\n```"
+}

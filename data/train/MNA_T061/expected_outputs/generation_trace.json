@@ -1,0 +1,93 @@
+{
+  "docs": [
+    {
+      "title": "share_purchase_agreement.md",
+      "attempts": [
+        {
+          "missing": [
+            "excess"
+          ],
+          "usage": {
+            "input_tokens": 721,
+            "output_tokens": 1011
+          }
+        },
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 1755,
+            "output_tokens": 1114
+          }
+        }
+      ]
+    },
+    {
+      "title": "escrow_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 548,
+            "output_tokens": 959
+          }
+        }
+      ]
+    },
+    {
+      "title": "client_email.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 525,
+            "output_tokens": 460
+          }
+        }
+      ]
+    }
+  ],
+  "doc_facts": {
+    "share_purchase_agreement.md": {
+      "key": "spa",
+      "facts": [
+        "Parties: Orwell Systems Ltd (Buyer), Quayside Robotics Ltd (Seller); the Company is Corrib Medical Ltd.",
+        "Section 2.1: the Purchase Price is $85,000,000.",
+        "This Agreement is dated 28 February 2026; Closing is scheduled for 20 May 2026 (the 'Closing Date').",
+        "Section 1.1: 'Closing Date' means 20 May 2026.",
+        "Section 9.4 (De Minimis and Basket): the Seller shall not be liable unless the aggregate of all claims exceeds $425,000 (0.5% of the Purchase Price), in which case the Seller shall be liable only for the excess over that amount.",
+        "Section 2.3: the Purchase Price shall be reduced dollar-for-dollar by any shortfall of Closing Working Capital below the Target Working Capital of $3,500,000.",
+        "Section 4.5: if the Conditions are not satisfied by the date falling 150 days after the date of this Agreement (signed 28 February 2026), either party may terminate."
+      ],
+      "must_contain": [
+        "$425,000",
+        "excess",
+        "$3,500,000",
+        "150 days",
+        "28 February 2026"
+      ]
+    },
+    "escrow_agreement.md": {
+      "key": "escrow",
+      "facts": [
+        "Clause 4.1: the Escrow Amount shall be released to the Seller on the date falling 24 months after the Closing Date, save to the extent of pending claims notified before that date. 'Business Day' means a day other than a Saturday or Sunday on which banks are open in London.",
+        "The Closing Date is 20 May 2026."
+      ],
+      "must_contain": [
+        "24 months",
+        "20 May 2026"
+      ]
+    },
+    "client_email.md": {
+      "key": "client_email",
+      "facts": [
+        "The estimated Closing Working Capital is $2,880,000. The Seller's draft funds flow shows an adjusted purchase price of $83,760,000.",
+        "Regulatory counsel expects merger clearance by 11 August 2026."
+      ],
+      "must_contain": [
+        "$2,880,000",
+        "$83,760,000",
+        "11 August 2026"
+      ]
+    }
+  }
+}

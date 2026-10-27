@@ -1,0 +1,142 @@
+{
+  "task_id": "MNA_T044",
+  "cycle": 1,
+  "lineage": "ablation_no_grading",
+  "graded": false,
+  "failures": [
+    {
+      "criterion_id": "C1",
+      "what_went_wrong": "The agent recomputed the termination date (120 days from 21 September 2026) but did not flag the inconsistency between the calculated date (19 January 2027) and the stated date (20 January 2027) in the SPA.",
+      "should_have": "Explicitly highlighted the discrepancy between the calculated and stated termination dates as a drafting error requiring correction.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C2",
+      "what_went_wrong": "The agent identified a currency mismatch between the Articles of Association (sterling) and the SPA (USD) but did not quantify the potential financial impact or recommend specific mitigation steps beyond generic advice.",
+      "should_have": "Calculated the exchange rate risk and recommended either amending the Articles or including a currency adjustment mechanism in the SPA.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C3",
+      "what_went_wrong": "The agent noted the threatened litigation amount ($2,750,000) but did not verify whether this figure exceeded the warranty cap or basket thresholds in the SPA, missing a critical risk assessment point.",
+      "should_have": "Compared the threatened claim amount against all relevant financial thresholds in the SPA (e.g., de minimis, basket, cap) to assess whether it would trigger a warranty claim.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C4",
+      "what_went_wrong": "The agent did not cross-reference the disclosure letter's 'nil disclosure' for litigation with the SPA's definition of 'fair disclosure', potentially overlooking a material misalignment in disclosure standards.",
+      "should_have": "Verified whether the 'nil disclosure' met the SPA's 'fair disclosure' standard and flagged any gaps as a risk.",
+      "failure_kind": "analysis"
+    },
+    {
+      "criterion_id": "C5",
+      "what_went_wrong": "The agent listed multiple conflicting dates but did not prioritize them by impact (e.g., regulatory clearance vs. client target dates) or recommend a hierarchy for resolution.",
+      "should_have": "Prioritized timeline risks based on regulatory dependencies and contractual deadlines, with clear recommendations for which dates to align first.",
+      "failure_kind": "drafting"
+    },
+    {
+      "criterion_id": "C6",
+      "what_went_wrong": "The agent did not verify whether the quorum issue in the board minutes was an isolated incident or systemic (e.g., by checking other minutes), leaving the corporate governance risk assessment incomplete.",
+      "should_have": "Reviewed additional board minutes to determine if the quorum issue was recurring or a one-time oversight.",
+      "failure_kind": "analysis"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T044_0",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "For every financial threshold in a transaction document (e.g., caps, baskets, de minimis), compare all identified liabilities against these thresholds and flag any breaches or near-breaches.",
+      "source_tasks": [
+        "MNA_T044"
+      ],
+      "evidence": [
+        "MNA_T044:C3"
+      ],
+      "task_type_scope": "legal_memo",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T044_1",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "When dates are expressed as 'X days from Y date', recompute the resulting date yourself and flag any mismatch with the stated date in the document.",
+      "source_tasks": [
+        "MNA_T044"
+      ],
+      "evidence": [
+        "MNA_T044:C1"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.98
+    },
+    {
+      "candidate_id": "c01_MNA_T044_2",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "In risk assessments involving multiple conflicting provisions, prioritize risks by their regulatory or contractual dependencies and recommend resolution steps in order of criticality.",
+      "source_tasks": [
+        "MNA_T044"
+      ],
+      "evidence": [
+        "MNA_T044:C5"
+      ],
+      "task_type_scope": "legal_memo",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T044_3",
+      "type": "practice_note",
+      "category": "review",
+      "text": "Before finalising a risk analysis, cross-check all disclosures against the governing agreement's definition of 'fair disclosure' and flag any gaps or ambiguities.",
+      "source_tasks": [
+        "MNA_T044"
+      ],
+      "evidence": [
+        "MNA_T044:C4"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.92
+    },
+    {
+      "candidate_id": "c01_MNA_T044_4",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "For currency mismatches between transaction documents, calculate the potential financial impact using current exchange rates and recommend specific mitigation steps (e.g., currency adjustment clauses).",
+      "source_tasks": [
+        "MNA_T044"
+      ],
+      "evidence": [
+        "MNA_T044:C2"
+      ],
+      "task_type_scope": "legal_memo",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.88
+    },
+    {
+      "candidate_id": "c01_MNA_T044_5",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "When identifying corporate governance issues (e.g., quorum failures), review additional corporate records to determine if the issue is systemic or isolated before finalising the risk assessment.",
+      "source_tasks": [
+        "MNA_T044"
+      ],
+      "evidence": [
+        "MNA_T044:C6"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    }
+  ],
+  "lesson_feedback": [],
+  "input_tokens": 4225,
+  "output_tokens": 1186,
+  "cost_usd": 0.0038915,
+  "prompt": "# Task\nType: legal_memo | Practice area: corporate_mna\nYou act for the Buyer, Lowther Foods Ltd. Lowther Foods Ltd (the Buyer) is acquiring the entire issued share capital of Galloway Media Ltd (the Company) from Foxley Energy plc (the Seller).\n\nPrepare a legal memo for the supervising partner analysing the key legal risks in the matter documents. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 28 September 2026. Address the deliverable to the supervising partner.\n\n# Trajectory (31 model steps, 31 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 3. [research] read_document({\"name\": \"disclosure_letter.md\"})\n 4. [research] read_document({\"name\": \"client_email.md\"})\n 5. [research] read_document({\"name\": \"board_minutes.md\"})\n 6. [research] read_document({\"name\": \"articles_of_association_extract.md\"})\n 7. [research] search_documents({\"query\": \"warranty\"})\n 8. [research] search_documents({\"query\": \"Vantage Holdings\"})\n 9. [research] search_documents({\"query\": \"Pemberton\"})\n10. [analysis] calculate({\"expression\": \"date('2026-09-28')\"})\n11. [analysis] calculate({\"expression\": \"days_between(date('2026-09-28'), date('2026-12-14'))\"})\n12. [analysis] calculate({\"expression\": \"days_between(date('2026-09-28'), date('2027-02-02'))\"})\n13. [analysis] calculate({\"expression\": \"add_days(date('2026-09-21'), 120)\"})\n14. [drafting] write_draft(<1421 words>)\n15. [verification] read_draft({})\n16. [verification] calculate({\"expression\": \"pct(2750000, 195000000)\"})\n17. [verification] calculate({\"expression\": \"add_days(date('2026-09-21'), 120)\"})\n18. [verification] read_document({\"name\": \"share_purchase_agreement.md\", \"start_line\": 60, \"num_lines\": 5})\n19. [editing] edit_draft(find='**Legal Analysis:**\\n- The SPA conditions include regulatory ' -> '**Legal Analysis:**\\n- The SPA conditions include regulatory ')\n20. [verification] read_document({\"name\": \"disclosure_letter.md\", \"start_line\": 12, \"num_lines\": 5})\n21. [editing] edit_draft(find='**Legal Analysis:**\\n- The \"limited disclosure\" approach rest' -> '**Legal Analysis:**\\n- The \"limited disclosure\" approach rest')\n22. [verification] read_document({\"name\": \"board_minutes.md\", \"start_line\": 1, \"num_lines\": 10})\n23. [verification] read_document({\"name\": \"board_minutes.md\", \"start_line\": 28, \"num_lines\": 10})\n24. [editing] edit_draft(find='**Risk:** Multiple conflicting dates create uncertainty and ' -> '**Risk:** Multiple conflicting dates create uncertainty and ')\n25. [editing] edit_draft(find='**Legal Analysis:**\\n- The SPA conditions include regulatory ' -> '**Legal Analysis:**\\n- The SPA conditions include regulatory ')\n26. [verification] read_draft({})\n27. [verification] read_document({\"name\": \"articles_of_association_extract.md\", \"start_line\": 40, \"num_lines\": 20})\n28. [editing] edit_draft(find='### 3.5 Material Customer Contract Issues (MEDIUM RISK)\\n\\n**R' -> '### 3.5 Material Customer Contract Issues (MEDIUM RISK)\\n\\n**R')\n29. [verification] read_document({\"name\": \"share_purchase_agreement.md\", \"start_line\": 63, \"num_lines\": 10})\n30. [verification] read_draft({})\n31. [control] finish({\"summary\": \"Legal memorandum analyzing key legal risks in Lowther Foods Ltd's acquisition of Galloway Media Ltd from Foxley Energy plc. The memo identifies cri)\n\n# Final deliverable\n# LEGAL MEMORANDUM\n\n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Date:** 28 September 2026  \n**Subject:** Analysis of Key Legal Risks in Proposed Acquisition of Galloway Media Ltd by Lowther Foods Ltd  \n**Matter:** Acquisition of entire issued share capital of Galloway Media Ltd from Foxley Energy plc  \n**Client:** Lowther Foods Ltd (Buyer)\n\n## 1. EXECUTIVE SUMMARY\n\nThis memorandum analyses the key legal risks identified in the matter documents relating to Lowther Foods Ltd's proposed acquisition of the entire issued share capital of Galloway Media Ltd from Foxley Energy plc. The transaction involves a purchase price of $195,000,000 with a scheduled closing date of 14 December 2026. Critical risks identified include:\n\n1. **Undisclosed Litigation Risk**: A material threatened claim of approximately $2,750,000 that has not been disclosed in the Disclosure Letter\n2. **Timeline Inconsistencies**: Conflicts between the client's target completion date (28 September 2026), the SPA closing date (14 December 2026), and regulatory clearance expectations (2 February 2027)\n3. **Warranty Disclosure Issues**: The Disclosure Letter contains a \"nil disclosure\" for litigation warranties despite known threatened proceedings\n4. **Corporate Governance Concerns**: Potential quorum issues under the Company's Articles of Association\n5. **Material Customer Contract Issues**: Vantage Holdings Ltd's contractual arrangements may contain change of control provisions\n\n## 2. BACKGROUND\n\nThe transaction involves:\n- **Buyer**: Lowther Foods Ltd (company number 13060157)\n- **Seller**: Foxley Energy plc (company number 10441381)  \n- **Target Company**: Galloway Media Ltd (company number 14506852)\n- **Purchase Price**: $195,000,000\n- **Governing Law**: English law with exclusive English jurisdiction\n- **Current Date**: 28 September 2026 (date of this memorandum)\n\n## 3. KEY LEGAL RISKS ANALYSIS\n\n### 3.1 Undisclosed Litigation Risk (CRITICAL)\n\n**Risk:** The board minutes of Galloway Media Ltd dated 27 September 2026 reveal receipt of a letter before action from Pemberton Energy plc threatening proceedings for approximately $2,750,000 relating to alleged defective deliveries under a contract dated 14 March 2024. \n\n**Legal Analysis:**\n- The Disclosure Letter (clause 3) states: \"the disclosure against Warranty 7.1 (Litigation) is: None\"\n- This directly contradicts the board minutes which confirm receipt of a letter before action\n- Under English law, a letter before action constitutes a \"threatened\" claim that should be disclosed\n- The SPA provides for General Warranties surviving for 18 months and Fundamental Warranties for 48 months\n- Failure to disclose this claim could constitute a breach of warranty, potentially allowing the Buyer to claim damages\n\n**Recommendation:** Immediate renegotiation of the Disclosure Letter to include this threatened claim. Consideration should be given to:\n- Requiring specific indemnity for this claim\n- Adjusting the purchase price to reflect the contingent liability\n- Obtaining written confirmation from the Seller regarding their knowledge of this claim\n\n### 3.2 Timeline Inconsistencies (HIGH RISK)\n\n**Risk:** Multiple conflicting dates create uncertainty and potential breach scenarios:\n\n1. **Client Target Date**: 28 September 2026 (per client email)\n2. **Board Minutes Target**: 30 September 2026 (per board minutes)\n3. **SPA Closing Date**: 14 December 2026 (77 days from today)\n4. **Regulatory Clearance**: Expected by 2 February 2027 (127 days from today)\n5. **SPA Termination Date**: 20 January 2027 (as stated, though 120 days from 21 September 2026 is 19 January 2027)\n6. **Document Date Inconsistencies**: \n   - SPA dated 21 September 2026\n   - Board minutes reference SPA draft dated 26 September 2026\n   - Disclosure Letter references SPA dated \"on or about 28 September 2026\"\n\n**Legal Analysis:**\n- The SPA conditions include regulatory approvals (clause 4.3)\n- The termination date (20 January 2027 as stated in the SPA, though 120 days from 21 September 2026 is actually 19 January 2027) precedes the expected regulatory clearance (2 February 2027) by 13-14 days\n- This creates a scenario where the SPA could be terminated before regulatory approval is obtained\n- Multiple inconsistent completion dates (28 September, 30 September, 14 December) create confusion and potential breach scenarios\n- The date inconsistencies throughout the documents (SPA dates, termination dates, completion dates) suggest poor drafting and coordination between documents\n- The client's internal target (28 September 2026) is unrealistic given regulatory timelines\n\n**Recommendation:** \n1. Amend the SPA to extend the termination date to at least 28 February 2027\n2. Clarify with the client their understanding of regulatory timelines\n3. Consider including a long-stop date that aligns with regulatory expectations\n\n### 3.3 Warranty and Disclosure Issues (HIGH RISK)\n\n**Risk:** The Disclosure Letter contains problematic language that may limit the Buyer's protection:\n\n1. **Limited Disclosure Approach**: Clause 2.2 states disclosures are \"limited to the specific warranties to which they are directed and do not constitute disclosures for any other warranty\"\n2. **Nil Disclosure for Litigation**: Despite the threatened claim, clause 3.3 states \"disclosure against Warranty 7.1 (Litigation) is: None\"\n\n**Legal Analysis:**\n- The \"limited disclosure\" approach restricts cross-referencing between warranties\n- Under English law, general disclosures should protect against warranty claims unless specifically limited\n- The nil disclosure for litigation is factually incorrect given the board minutes\n- This could lead to disputes over whether the threatened claim was \"fairly disclosed\"\n- There is a date inconsistency: the Disclosure Letter references an SPA \"dated on or about 28 September 2026\" while the SPA is dated 21 September 2026\n\n**Recommendation:**\n1. Require amendment of the Disclosure Letter to include the threatened claim\n2. Negotiate removal of the restrictive language in clause 2.2\n3. Ensure disclosures are \"fair and accurate\" as defined in the Disclosure Letter\n\n### 3.4 Corporate Governance Concerns (MEDIUM RISK)\n\n**Risk:** The Articles of Association require a quorum of three directors for board meetings (Article 11), but the board minutes show only two directors were present at the meeting approving the SPA.\n\n**Legal Analysis:**\n- Article 6.1 of the Articles states: \"The quorum for the transaction of business at any meeting of the Board shall be three directors\"\n- The board minutes show only two directors present (Mr. A.R. Finch and Ms. E.T. Pike)\n- This raises questions about the validity of the board resolution approving the SPA\n- Under English company law, decisions made without a quorum may be invalid\n\n**Recommendation:**\n1. Require written confirmation that the board meeting was properly constituted\n2. Consider obtaining a fresh board resolution with proper quorum\n3. Review whether any other corporate actions may be affected by this issue\n\n### 3.5 Material Customer Contract Issues (MEDIUM RISK)\n\n**Risk:** Vantage Holdings Ltd is identified as a material customer, and the Articles of Association specifically reference confidentiality obligations regarding contracts with this entity.\n\n**Legal Analysis:**\n- Article 9.1 of the Articles imposes confidentiality obligations regarding contracts with Vantage Holdings Ltd\n- The client email notes that \"contractual arrangements may be subject to transfer provisions\"\n- Change of control provisions in material customer contracts could:\n  - Require consent for assignment\n  - Trigger termination rights\n  - Allow renegotiation of terms\n- Article 7.1 requires payments to be made in sterling, but the SPA purchase price is in US dollars ($195,000,000) - this may require amendment to the Articles or specific agreement\n\n**Recommendation:**\n1. Conduct due diligence on all contracts with Vantage Holdings Ltd\n2. Identify any change of control, assignment, or termination provisions\n3. Consider requiring Seller to obtain necessary consents pre-closing\n4. Address the currency inconsistency between Articles and SPA\n\n## 4. CONTRACTUAL PROVISIONS REQUIRING ATTENTION\n\n### 4.1 SPA Clause 4.5 (Termination Date)\n- Current: 20 January 2027 (120 days from 21 September 2026)\n- Issue: Precedes expected regulatory clearance (2 February 2027)\n- **Action Required:** Extend to at least 28 February 2027\n\n### 4.2 Disclosure Letter Clause 3 (Litigation Disclosure)\n- Current: \"None\" disclosed\n- Issue: Contradicts board minutes showing threatened claim\n- **Action Required:** Amend to disclose threatened Pemberton Energy claim\n\n### 4.3 SPA Clause 10.1 (Warranty Survival)\n- Current: General Warranties 18 months, Fundamental Warranties 48 months\n- Issue: May be insufficient for latent claims\n- **Action Required:** Consider extending for specific warranties (e.g., tax, litigation)\n\n## 5. PRACTICAL RECOMMENDATIONS\n\n### Immediate Actions (Next 48 hours):\n1. **Raise Undisclosed Litigation**: Formal written notice to Seller's counsel regarding the Pemberton Energy claim\n2. **Timeline Clarification**: Discuss with client the realistic timeline given regulatory constraints\n3. **Corporate Governance Review**: Obtain evidence of proper board constitution\n\n### Negotiation Priorities:\n1. **Amend Disclosure Letter** to include all known claims and threats\n2. **Extend SPA Termination Date** to align with regulatory expectations\n3. **Consider Purchase Price Adjustment** for the $2,750,000 contingent liability\n4. **Review Material Contracts** for change of control provisions\n\n### Due Diligence Requirements:\n1. **Full Litigation Review**: All threatened, pending, and historical claims\n2. **Regulatory Analysis**: Detailed timeline for merger clearance\n3. **Contract Review**: All material customer contracts, especially Vantage Holdings Ltd\n4. **Corporate Records**: Verification of all board meetings and resolutions\n\n## 6. CONCLUSION\n\nThe proposed acquisition presents several material legal risks that require immediate attention. The most critical issue is the undisclosed threatened litigation of $2,750,000, which represents approximately 1.4% of the purchase price. The timeline inconsistencies create significant execution risk, particularly given the regulatory clearance expectations.\n\n**Key Recommendations:**\n1. **Do not proceed with current documentation** without addressing the undisclosed litigation\n2. **Renegotiate the Disclosure Letter** to properly reflect all known risks\n3. **Align the SPA timeline** with regulatory realities\n4. **Conduct enhanced due diligence** on material contracts and corporate governance\n\nThe Buyer should be advised that proceeding with the transaction in its current form exposes them to significant warranty claims and potential liability that could materially affect the value of the acquisition.\n\n**Next Steps:** I recommend an urgent conference with the client to discuss these risks and determine negotiation strategy. The client should be advised that the current target completion date of 28 September 2026 is not achievable given the identified issues.\n\n# Your job\nNo grades are available. Critically assess the deliverable and the work process yourself, as a demanding supervising partner would, and write reusable candidate lessons for improving the work.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|legal_memo\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C1\",\n      \"what_went_wrong\": \"The agent recomputed the termination date (120 days from 21 September 2026) but did not flag the inconsistency between the calculated date (19 January 2027) and the stated date (20 January 2027) in the SPA.\",\n      \"should_have\": \"Explicitly highlighted the discrepancy between the calculated and stated termination dates as a drafting error requiring correction.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C2\",\n      \"what_went_wrong\": \"The agent identified a currency mismatch between the Articles of Association (sterling) and the SPA (USD) but did not quantify the potential financial impact or recommend specific mitigation steps beyond generic advice.\",\n      \"should_have\": \"Calculated the exchange rate risk and recommended either amending the Articles or including a currency adjustment mechanism in the SPA.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C3\",\n      \"what_went_wrong\": \"The agent noted the threatened litigation amount ($2,750,000) but did not verify whether this figure exceeded the warranty cap or basket thresholds in the SPA, missing a critical risk assessment point.\",\n      \"should_have\": \"Compared the threatened claim amount against all relevant financial thresholds in the SPA (e.g., de minimis, basket, cap) to assess whether it would trigger a warranty claim.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C4\",\n      \"what_went_wrong\": \"The agent did not cross-reference the disclosure letter's 'nil disclosure' for litigation with the SPA's definition of 'fair disclosure', potentially overlooking a material misalignment in disclosure standards.\",\n      \"should_have\": \"Verified whether the 'nil disclosure' met the SPA's 'fair disclosure' standard and flagged any gaps as a risk.\",\n      \"failure_kind\": \"analysis\"\n    },\n    {\n      \"criterion_id\": \"C5\",\n      \"what_went_wrong\": \"The agent listed multiple conflicting dates but did not prioritize them by impact (e.g., regulatory clearance vs. client target dates) or recommend a hierarchy for resolution.\",\n      \"should_have\": \"Prioritized timeline risks based on regulatory dependencies and contractual deadlines, with clear recommendations for which dates to align first.\",\n      \"failure_kind\": \"drafting\"\n    },\n    {\n      \"criterion_id\": \"C6\",\n      \"what_went_wrong\": \"The agent did not verify whether the quorum issue in the board minutes was an isolated incident or systemic (e.g., by checking other minutes), leaving the corporate governance risk assessment incomplete.\",\n      \"should_have\": \"Reviewed additional board minutes to determine if the quorum issue was recurring or a one-time oversight.\",\n      \"failure_kind\": \"analysis\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"For every financial threshold in a transaction document (e.g., caps, baskets, de minimis), compare all identified liabilities against these thresholds and flag any breaches or near-breaches.\",\n      \"evidence\": [\"C3\"],\n      \"task_type_scope\": \"legal_memo\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"When dates are expressed as 'X days from Y date', recompute the resulting date yourself and flag any mismatch with the stated date in the document.\",\n      \"evidence\": [\"C1\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.98\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"In risk assessments involving multiple conflicting provisions, prioritize risks by their regulatory or contractual dependencies and recommend resolution steps in order of criticality.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"legal_memo\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"review\",\n      \"text\": \"Before finalising a risk analysis, cross-check all disclosures against the governing agreement's definition of 'fair disclosure' and flag any gaps or ambiguities.\",\n      \"evidence\": [\"C4\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.92\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"For currency mismatches between transaction documents, calculate the potential financial impact using current exchange rates and recommend specific mitigation steps (e.g., currency adjustment clauses).\",\n      \"evidence\": [\"C2\"],\n      \"task_type_scope\": \"legal_memo\",\n      \"confidence\": 0.88\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"When identifying corporate governance issues (e.g., quorum failures), review additional corporate records to determine if the issue is systemic or isolated before finalising the risk assessment.\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    }\n  ],\n  \"lesson_feedback\": []\n}\n```"
+}

@@ -1,0 +1,103 @@
+{
+  "docs": [
+    {
+      "title": "share_purchase_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 631,
+            "output_tokens": 936
+          }
+        }
+      ]
+    },
+    {
+      "title": "disclosure_letter.md",
+      "attempts": [
+        {
+          "missing": [
+            "No written assignment"
+          ],
+          "usage": {
+            "input_tokens": 531,
+            "output_tokens": 963
+          }
+        },
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 1519,
+            "output_tokens": 1004
+          }
+        }
+      ]
+    },
+    {
+      "title": "board_minutes.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 494,
+            "output_tokens": 753
+          }
+        }
+      ]
+    },
+    {
+      "title": "client_email.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 480,
+            "output_tokens": 386
+          }
+        }
+      ]
+    }
+  ],
+  "doc_facts": {
+    "share_purchase_agreement.md": {
+      "key": "spa",
+      "facts": [
+        "Parties: Kestrel Software Ltd (Buyer), Merrion Logistics plc (Seller); the Company is Glenrock Technologies Ltd.",
+        "Section 2.1: the Purchase Price is $150,000,000.",
+        "This Agreement is dated 29 January 2026; Closing is scheduled for 22 May 2026 (the 'Closing Date').",
+        "Section 8.5 (Limitation of Liability): the aggregate liability of the Seller for warranty claims shall not exceed an amount equal to 15% of the Purchase Price, being $18,000,000. The Purchase Price is $150,000,000 (see Section 2.1)."
+      ],
+      "must_contain": [
+        "15%",
+        "$18,000,000",
+        "$150,000,000"
+      ]
+    },
+    "disclosure_letter.md": {
+      "key": "disclosure",
+      "facts": [
+        "Disclosure against Warranty 8.2 (IP): the Company's core platform software was developed in 2023 by an independent contractor, Dunmore Retail Group plc. No written assignment of intellectual property was entered into.",
+        "Disclosure against Warranty 7.1 (Litigation): None."
+      ],
+      "must_contain": [
+        "Dunmore Retail Group plc",
+        "No written assignment"
+      ]
+    },
+    "board_minutes.md": {
+      "key": "board_minutes",
+      "facts": [
+        "Item 5: the board noted a letter before action from Thornbury Capital LLP threatening proceedings for approximately $450,000 in respect of alleged defective deliveries. Management to monitor."
+      ],
+      "must_contain": [
+        "Thornbury Capital LLP",
+        "$450,000"
+      ]
+    },
+    "client_email.md": {
+      "key": "client_email",
+      "facts": [],
+      "must_contain": []
+    }
+  }
+}

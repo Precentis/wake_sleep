@@ -1,0 +1,161 @@
+{
+  "task_id": "MNA_T054",
+  "cycle": 1,
+  "lineage": "main",
+  "graded": true,
+  "failures": [
+    {
+      "criterion_id": "C1",
+      "what_went_wrong": "The agent failed to identify and analyze the governing law and jurisdiction clauses in the transaction documents, missing a critical mismatch between the SPA (English law/English courts) and the Escrow Agreement (New York law/ICC arbitration).",
+      "should_have": "Systematically extracted and compared governing law and jurisdiction clauses from all transaction documents, then flagged any inconsistencies or risks of parallel proceedings.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C2",
+      "what_went_wrong": "The agent did not cross-check the board meeting quorum requirements (from the Articles of Association) against the actual number of directors present at the meeting, missing that the approval may be invalid.",
+      "should_have": "Verified quorum requirements against attendance records for all corporate approvals, flagging any discrepancies or invalidity risks.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C3",
+      "what_went_wrong": "The agent did not analyze the Material Adverse Change (MAC) definition or its carve-outs, missing the absence of a 'disproportionate effect' exception in the carve-outs.",
+      "should_have": "Reviewed the MAC definition and all carve-outs for completeness, flagging any missing exceptions (e.g., 'disproportionate effect') and recommending additions if needed.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C8",
+      "what_went_wrong": "The agent calculated deadlines but did not check whether they fell on weekends or holidays, nor did it apply the documents' Business Day definitions to adjust them.",
+      "should_have": "Applied Business Day definitions to all computed deadlines, adjusting for weekends/holidays and flagging any discrepancies with stated deadlines.",
+      "failure_kind": "procedural"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T054_0",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "Extract and compare governing law and jurisdiction clauses from all transaction documents. Flag any inconsistencies or risks of parallel proceedings.",
+      "source_tasks": [
+        "MNA_T054"
+      ],
+      "evidence": [
+        "MNA_T054:C1"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T054_1",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "For every corporate approval, verify quorum requirements against attendance records. Flag any discrepancies or invalidity risks.",
+      "source_tasks": [
+        "MNA_T054"
+      ],
+      "evidence": [
+        "MNA_T054:C2"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T054_2",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Review Material Adverse Change (MAC) definitions and carve-outs for completeness. Flag missing exceptions (e.g., 'disproportionate effect') and recommend additions if needed.",
+      "source_tasks": [
+        "MNA_T054"
+      ],
+      "evidence": [
+        "MNA_T054:C3"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T054_3",
+      "type": "checklist",
+      "category": "review",
+      "text": "Before finalising any deadline, check if it falls on a weekend or holiday and apply the document's Business Day definition to adjust it.",
+      "source_tasks": [
+        "MNA_T054"
+      ],
+      "evidence": [
+        "MNA_T054:C8"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T054_4",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "When analyzing event-triggered deadlines (e.g., claim notifications), cross-check all related documents for conflicting time periods and recommend alignment.",
+      "source_tasks": [
+        "MNA_T054"
+      ],
+      "evidence": [
+        "MNA_T054:C5"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.8
+    },
+    {
+      "candidate_id": "c01_MNA_T054_5",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "In timeline analyses, explicitly state whether deadlines are business days or calendar days, and note any adjustments made for weekends/holidays.",
+      "source_tasks": [
+        "MNA_T054"
+      ],
+      "evidence": [
+        "MNA_T054:C8"
+      ],
+      "task_type_scope": "timeline_analysis",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.85
+    }
+  ],
+  "lesson_feedback": [
+    {
+      "lesson_id": "L0001",
+      "label": "HELPFUL",
+      "reason": "Addresses a critical procedural gap in cross-document analysis, applicable to all transactional work."
+    },
+    {
+      "lesson_id": "L0002",
+      "label": "HELPFUL",
+      "reason": "Ensures corporate governance compliance is systematically verified, reducing risk of invalid approvals."
+    },
+    {
+      "lesson_id": "L0003",
+      "label": "HELPFUL",
+      "reason": "Encourages deeper analysis of MAC clauses, which are often high-risk areas in transactions."
+    },
+    {
+      "lesson_id": "L0004",
+      "label": "HELPFUL",
+      "reason": "Prevents errors in deadline calculations, a common source of compliance failures."
+    },
+    {
+      "lesson_id": "L0005",
+      "label": "HELPFUL",
+      "reason": "Generalizes the approach to handling conflicting deadlines, useful beyond timeline analyses."
+    },
+    {
+      "lesson_id": "L0006",
+      "label": "HELPFUL",
+      "reason": "Improves clarity in deliverables by explicitly stating deadline adjustments, reducing ambiguity."
+    }
+  ],
+  "input_tokens": 5419,
+  "output_tokens": 1245,
+  "cost_usd": 0.004577,
+  "prompt": "# Task\nType: timeline_analysis | Practice area: corporate_mna\nYou act for the Buyer, Elstree Marine Ltd. Elstree Marine Ltd (the Buyer) is acquiring the entire issued share capital of Ivybridge Energy plc (the Company) from Calloway Media Ltd (the Seller).\n\nPrepare a timeline and deadlines analysis of all time-sensitive obligations in the matter documents. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 18 February 2027. Address the deliverable to the supervising partner.\n\n# Trajectory (27 model steps, 27 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 3. [research] read_document({\"name\": \"escrow_agreement.md\"})\n 4. [research] read_document({\"name\": \"client_email.md\"})\n 5. [research] read_document({\"name\": \"board_minutes.md\"})\n 6. [research] read_document({\"name\": \"articles_of_association_extract.md\"})\n 7. [research] search_documents({\"query\": \"days\"})\n 8. [research] search_documents({\"query\": \"date\"})\n 9. [research] search_documents({\"query\": \"clearance\"})\n10. [analysis] calculate({\"expression\": \"SPA_date = date('2027-02-09')\\nClosing_Date = date('2027-04-02')\\nEscrow_Effective_Date = date('2027-02-10')\\nCurrent_Date = date('2027-02-18')\\)\n11. [analysis] calculate({\"expression\": \"SPA_date = date('2027-02-09')\\nCondition_Deadline = add_days(SPA_date, 150)\"})\n12. [analysis] calculate({\"expression\": \"Escrow_Effective_Date = date('2027-02-10')\\nEscrow_Deposit_Deadline = add_days(Escrow_Effective_Date, 2)\\nEscrow_Deposit_Deadline = next_busines)\n13. [analysis] calculate({\"expression\": \"Escrow_Deposit_Deadline = date('2027-02-12')\\nCurrent_Date = date('2027-02-18')\\ndays_between(Escrow_Deposit_Deadline, Current_Date)\"})\n14. [analysis] calculate({\"expression\": \"Current_Date = date('2027-02-18')\\nClosing_Date = date('2027-04-02')\\ndays_between(Current_Date, Closing_Date)\"})\n15. [analysis] calculate({\"expression\": \"Current_Date = date('2027-02-18')\\nCondition_Deadline = date('2027-07-09')\\ndays_between(Current_Date, Condition_Deadline)\"})\n16. [analysis] calculate({\"expression\": \"Current_Date = date('2027-02-18')\\nMerger_Clearance_Deadline = date('2027-07-23')\\ndays_between(Current_Date, Merger_Clearance_Deadline)\"})\n17. [research] search_documents({\"query\": \"waiver\"})\n18. [research] search_documents({\"query\": \"termination\"})\n19. [research] read_document({\"name\": \"share_purchase_agreement.md\", \"start_line\": 30, \"num_lines\": 10})\n20. [drafting] write_draft(<1328 words>)\n21. [verification] read_draft({})\n22. [verification] search_documents({\"query\": \"business day\"})\n23. [verification] calculate({\"expression\": \"SPA_date = date('2027-02-09')\\nCondition_Deadline = add_days(SPA_date, 150)\\nEscrow_Effective_Date = date('2027-02-10')\\nEscrow_Deposit_Deadline)\n24. [verification] read_document({\"name\": \"client_email.md\", \"start_line\": 5, \"num_lines\": 10})\n25. [editing] edit_draft(find='## CONCLUSION\\n\\nThe acquisition of Ivybridge Energy plc invol' -> '## CONCLUSION\\n\\nThe acquisition of Ivybridge Energy plc invol')\n26. [verification] read_draft({})\n27. [control] finish({\"summary\": \"Timeline and deadlines analysis for Elstree Marine Ltd's acquisition of Ivybridge Energy plc, identifying all time-sensitive obligations including )\n\n# Final deliverable\n# TIMELINE AND DEADLINES ANALYSIS\n## Acquisition of Ivybridge Energy plc by Elstree Marine Ltd\n### For: Supervising Partner\n### Date: 18 February 2027\n### Prepared by: Senior Associate, Harbour International Chambers\n\n---\n\n## EXECUTIVE SUMMARY\n\nThis analysis identifies and assesses all time-sensitive obligations arising from the acquisition of Ivybridge Energy plc by Elstree Marine Ltd. The transaction involves a Share Purchase Agreement dated 9 February 2027, an Escrow Agreement dated 10 February 2027, and various corporate governance requirements. \n\n**CRITICAL FINDINGS:**\n1. **Escrow Deposit Deadline Missed:** The Buyer was required to deposit £4,250,000 into escrow by 12 February 2027, which has now passed by 6 days.\n2. **Immediate Closing Preparation:** Closing is scheduled for 2 April 2027 (43 days from today).\n3. **Condition Satisfaction Deadline:** Conditions precedent must be satisfied or waived by 9 July 2027 (141 days from today).\n4. **Regulatory Clearance:** Merger clearance is expected by 23 July 2027 (155 days from today).\n\n---\n\n## DETAILED TIMELINE ANALYSIS\n\n### 1. KEY TRANSACTION DATES\n\n| Date | Event | Status | Days from Today |\n|------|-------|--------|-----------------|\n| **9 February 2027** | Share Purchase Agreement executed | Completed | -9 days |\n| **10 February 2027** | Escrow Agreement effective date | Completed | -8 days |\n| **12 February 2027** | Escrow deposit deadline (2 business days from 10 Feb) | **MISSED** | -6 days |\n| **15 February 2027** | Ivybridge Energy plc board meeting | Completed | -3 days |\n| **18 February 2027** | Today's date / Board minutes approval deadline | Current | 0 days |\n| **2 April 2027** | Closing Date (payment and share transfer) | Pending | 43 days |\n| **9 July 2027** | Condition satisfaction/waiver deadline (150 days from SPA) | Pending | 141 days |\n| **23 July 2027** | Expected merger clearance deadline | Pending | 155 days |\n\n### 2. TIME-SENSITIVE OBLIGATIONS\n\n#### A. **PAST DEADLINES (Requiring Immediate Attention)**\n\n**1. Escrow Deposit (CRITICAL)**\n- **Source:** Escrow Agreement Clause 3.1\n- **Requirement:** Buyer to deposit £4,250,000 with HSBC Trust Company (UK) Limited within 2 business days of 10 February 2027\n- **Deadline:** 12 February 2027\n- **Status:** **MISSED BY 6 DAYS**\n- **Risk:** Potential breach of Escrow Agreement; may affect Seller's confidence in transaction\n- **Action Required:** Immediate deposit with explanation to Seller and Escrow Agent\n\n**2. Board Minutes Approval**\n- **Source:** Board Minutes (dated 15 February 2027)\n- **Requirement:** Minutes to be approved by 18 February 2027\n- **Deadline:** 18 February 2027 (today)\n- **Status:** **DUE TODAY**\n- **Action Required:** Ensure minutes are formally approved and signed\n\n#### B. **IMMINENT DEADLINES (Within 60 Days)**\n\n**1. Closing Date**\n- **Source:** Share Purchase Agreement Clause 3\n- **Requirement:** Payment of $165,000,000 purchase price and transfer of shares\n- **Deadline:** 2 April 2027\n- **Days Remaining:** 43 days\n- **Key Actions Required:**\n  - Finalise payment arrangements\n  - Prepare wire transfer instructions\n  - Coordinate share certificate transfers\n  - Ensure all closing documents ready\n\n#### C. **MEDIUM-TERM DEADLINES (60-180 Days)**\n\n**1. Condition Satisfaction/Waiver**\n- **Source:** Share Purchase Agreement Clause 4.5\n- **Requirement:** All conditions precedent satisfied or waived\n- **Deadline:** 9 July 2027 (150 days from SPA date)\n- **Days Remaining:** 141 days\n- **Consequence:** Either party may terminate if conditions not satisfied/waived by this date\n\n**2. Merger Clearance**\n- **Source:** Client Email (11 February 2027)\n- **Requirement:** Regulatory merger clearance obtained\n- **Expected Deadline:** 23 July 2027\n- **Days Remaining:** 155 days\n- **Note:** This is likely a key condition precedent under Schedule 2 of the SPA\n\n#### D. **EVENT-TRIGGERED DEADLINES**\n\n**1. Warranty Claims Notification**\n- **Source:** Share Purchase Agreement Clause 9.7\n- **Requirement:** Buyer must notify Seller in writing of any warranty claim within 30 days of becoming aware\n- **Trigger:** Awareness of matter giving rise to claim\n- **Consequence:** Failure to notify within 30 days bars the claim (except fraud)\n\n**2. Escrow Claims Notification**\n- **Source:** Escrow Agreement Clause 5.2\n- **Requirement:** Buyer must notify Seller and Escrow Agent of claim against escrow within 45 days of becoming aware\n- **Trigger:** Awareness of claim\n- **Consequence:** Failure to notify within 45 days may bar claim against escrow funds\n\n**3. Escrow Agent Resignation Notice**\n- **Source:** Escrow Agreement Clause 10.1\n- **Requirement:** 30 days' written notice for resignation\n- **Trigger:** Escrow Agent decision to resign\n- **Note:** Standard provision; not currently triggered\n\n### 3. CORPORATE GOVERNANCE REQUIREMENTS\n\n**1. Board Meetings**\n- **Source:** Articles of Association Clause 10\n- **Requirement:** Board to meet at least once every calendar quarter\n- **Note:** Post-acquisition compliance requirement for Ivybridge Energy plc\n\n**2. Quorum Requirements**\n- **Source:** Articles of Association Clause 11\n- **Requirement:** 3 directors present for quorum\n- **Note:** Current board has 5 directors; post-acquisition board composition may need review\n\n### 4. NOTICE PROVISIONS\n\n**A. Share Purchase Agreement Notices**\n- **Deemed Receipt:** When delivered (hand), 2 business days after posting, or upon confirmation of receipt (email)\n\n**B. Escrow Agreement Notices**\n- **Deemed Receipt:** When delivered (hand), 2 business days after posting, or 24 hours after email transmission (if no delivery failure)\n\n**C. Articles of Association Notices**\n- **Deemed Receipt:** 48 hours after posting or time of transmission (email)\n\n---\n\n## RISK ASSESSMENT AND RECOMMENDATIONS\n\n### **HIGH PRIORITY RISKS**\n\n1. **Escrow Deposit Breach (HIGH RISK)**\n   - **Issue:** Failure to deposit £4,250,000 by 12 February 2027\n   - **Impact:** Potential breach of Escrow Agreement; may give Seller grounds for concern or termination\n   - **Recommendation:** \n     - Deposit funds immediately with written explanation\n     - Consider seeking waiver from Seller for late deposit\n     - Document reasons for delay (e.g., internal approval processes)\n\n2. **Closing Preparation (MEDIUM-HIGH RISK)**\n   - **Issue:** Only 43 days until closing with significant preparation required\n   - **Impact:** Risk of missing closing date or incomplete documentation\n   - **Recommendation:**\n     - Establish closing checklist immediately\n     - Assign responsibilities for each closing requirement\n     - Weekly progress reviews starting immediately\n\n### **MEDIUM PRIORITY RISKS**\n\n3. **Condition Satisfaction Timeline (MEDIUM RISK)**\n   - **Issue:** 141 days to satisfy/waive all conditions, including merger clearance\n   - **Impact:** Transaction may terminate if conditions not met by 9 July 2027\n   - **Recommendation:**\n     - Identify all conditions precedent in Schedule 2\n     - Create tracking system for each condition\n     - Regular updates on merger clearance progress\n\n4. **Warranty and Escrow Claim Deadlines (MEDIUM RISK)**\n   - **Issue:** Short notification periods (30/45 days) from awareness\n   - **Impact:** Potential loss of claims if not notified promptly\n   - **Recommendation:**\n     - Implement internal process to identify potential claims immediately\n     - Designate responsible person for claim notifications\n     - Maintain detailed records of claim awareness dates\n\n### **ACTION PLAN**\n\n**Week 1 (19-25 February 2027):**\n1. Deposit escrow funds with written explanation to Seller\n2. Finalise and approve board minutes\n3. Begin closing checklist preparation\n\n**Week 2-4 (26 Feb - 18 Mar 2027):**\n1. Complete all closing document preparation\n2. Establish payment mechanisms for $165,000,000\n3. Coordinate with regulatory counsel on merger clearance\n\n**Week 5-6 (19 Mar - 1 Apr 2027):**\n1. Final closing preparations\n2. Pre-closing verification of all conditions\n3. Execution of closing documents\n\n**Post-Closing:**\n1. Implement warranty claim monitoring system\n2. Review post-acquisition board composition and meeting schedule\n3. Monitor escrow account for potential claims\n\n---\n\n## CONCLUSION\n\nThe acquisition of Ivybridge Energy plc involves multiple time-sensitive obligations requiring careful management. The most urgent issue is the missed escrow deposit deadline, which requires immediate attention to maintain transaction credibility. With 43 days until closing, systematic preparation is essential to ensure a smooth transaction completion.\n\nAll event-triggered deadlines (warranty and escrow claims) require robust internal processes to avoid missing notification windows. The condition satisfaction deadline of 9 July 2027 provides a reasonable timeframe but requires proactive management of merger clearance and other conditions precedent.\n\n**Additional Observations:**\n1. **Currency Discrepancy:** The SPA specifies $165,000,000 (US dollars) while the Escrow Agreement specifies £4,250,000 (British pounds). This should be verified for consistency.\n2. **Date Consistency:** The Escrow Agreement references the SPA as dated \"on or about 10 February 2027\" while the SPA is actually dated 9 February 2027. This minor inconsistency should be noted.\n3. **Missing Schedules:** The SPA references Schedule 2 (Conditions) and Schedule 3 (Warranties) which are not in the matter folder. These may contain additional deadlines.\n\n**Recommended Next Steps:**\n1. Immediate escrow deposit with explanatory communication\n2. Convene internal project team to manage all deadlines\n3. Regular partner updates on progress and risks\n4. Review missing Schedules 2 and 3 for additional obligations\n\n---\n*Prepared based on review of: Share Purchase Agreement (9 Feb 2027), Escrow Agreement (10 Feb 2027), Board Minutes (15 Feb 2027), Client Email (11 Feb 2027), and Articles of Association Extract.*\n\n# Expert rubric verdicts (4/8 passed)\n- C1 [FAIL] Identifies the mismatch between English law / English courts in the SPA and New York law / New York arbitration in the escrow agreement, and the risk of parallel proceedings on escrow claims.\n    judges: FAIL: The deliverable does not identify the governing law mismatch between the SPA (English law/English courts) and the Escrow Agreement (New York law/ICC arbitration) or the risk of parallel proceedings. | FAIL: The deliverable does not identify the governing law/jurisdiction mismatch between the SPA (English law/English courts) and the Escrow Agreement (New York law/New York arbitration), nor does it mention the risk of paralle\n- C2 [FAIL] Identifies that the board approval was given at a meeting with only 2 directors present when Article 11 requires a quorum of three, so the approval may be invalid, and recommends a fresh or ratifying resolution.\n    judges: FAIL: The deliverable incorrectly states the board meeting was quorate and fails to identify the critical issue that only 2 directors attended when Article 11 requires a quorum of 3, rendering the approval potentially invalid. | FAIL: The deliverable notes the quorum requirement of 3 directors under Article 11 but does not identify that the 15 February 2027 board meeting had only 2 directors present, that this may invalidate the approval, or recommend\n- C3 [FAIL] Identifies that the MAC carve-outs (general economic, industry-wide and pandemic changes) contain no 'disproportionate effect' exception, so the Buyer bears those risks even where the Company is disproportionately affected, and recommends adding one.\n    judges: FAIL: The deliverable does not analyze the MAC definition or identify the risk that the carve-outs lack a 'disproportionate effect' exception. | FAIL: The deliverable does not identify that the MAC definition in SPA Clause 1.1 excludes general economic conditions, industry changes and pandemics without a 'disproportionate effect' exception, or recommend adding such an \n- C4 [PASS] Calculates the long-stop date as 9 July 2027 (150 days after signing on 9 February 2027) and identifies that expected clearance on 23 July 2027 falls after it, recommending an extension.\n    judges: PASS: The deliverable correctly calculates the long-stop date as 9 July 2027, notes that merger clearance is expected on 23 July 2027, and recommends extending the deadline. | PASS: The deliverable correctly calculates the long-stop date as 9 July 2027 (150 days after 9 February 2027), identifies that expected merger clearance on 23 July 2027 falls after it, and recommends managing this timeline ris\n- C5 [PASS] Identifies the conflict between the 30-day claim notice period in SPA Section 9.7 and the 45-day period in Escrow Clause 5.2, and recommends the Buyer works to the shorter 30-day period or aligns the documents.\n    judges: PASS: The deliverable identifies the conflict between the 30-day claim period in the SPA and the 45-day period in the Escrow Agreement and recommends working to the shorter period or aligning the documents. | PASS: The deliverable identifies both the 30-day warranty claim notice period (SPA Clause 9.7) and the 45-day escrow claim notice period (Escrow Clause 5.2), notes them as event-triggered deadlines, and recommends implementing\n- C6 [PASS] Gives the long-stop period as 150 days and as the date 9 July 2027, with days remaining from 18 February 2027 (141 days).\n    judges: PASS: The deliverable correctly states the long-stop period is 150 days, the deadline is 9 July 2027, and that 141 days remain from the deliverable date of 18 February 2027. | PASS: The deliverable correctly states the long-stop period as 150 days, the date as 9 July 2027, and calculates 141 days remaining from 18 February 2027.\n- C7 [PASS] Opens with a short 'Bottom line' / executive summary stating the overall conclusion and the most important risks before the detailed analysis.\n    judges: PASS: The deliverable opens with an Executive Summary that clearly states the overall conclusion and highlights the most important risks before the detailed analysis. | PASS: The deliverable opens with an 'EXECUTIVE SUMMARY' containing 'CRITICAL FINDINGS' that state overall conclusions and the most important risks (missed escrow deposit, immediate closing preparation, condition satisfaction d\n- C8 [FAIL] Checks whether computed deadlines fall on a weekend and adjusts them under the documents' Business Day definition.\n    judges: FAIL: The deliverable does not check whether the computed deadlines (e.g., 9 July 2027) fall on a weekend or apply a Business Day definition adjustment. | FAIL: The deliverable does not check whether any computed deadlines fall on weekends or adjust them under any Business Day definition in the documents.\n\n# Your job\nAnalyse each FAILED criterion: what went wrong, what the agent should have done, and whether the failure is procedural (reusable) or task-specific. Then write reusable candidate lessons that would prevent the procedural failures on other matters.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|timeline_analysis\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C1\",\n      \"what_went_wrong\": \"The agent failed to identify and analyze the governing law and jurisdiction clauses in the transaction documents, missing a critical mismatch between the SPA (English law/English courts) and the Escrow Agreement (New York law/ICC arbitration).\",\n      \"should_have\": \"Systematically extracted and compared governing law and jurisdiction clauses from all transaction documents, then flagged any inconsistencies or risks of parallel proceedings.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C2\",\n      \"what_went_wrong\": \"The agent did not cross-check the board meeting quorum requirements (from the Articles of Association) against the actual number of directors present at the meeting, missing that the approval may be invalid.\",\n      \"should_have\": \"Verified quorum requirements against attendance records for all corporate approvals, flagging any discrepancies or invalidity risks.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C3\",\n      \"what_went_wrong\": \"The agent did not analyze the Material Adverse Change (MAC) definition or its carve-outs, missing the absence of a 'disproportionate effect' exception in the carve-outs.\",\n      \"should_have\": \"Reviewed the MAC definition and all carve-outs for completeness, flagging any missing exceptions (e.g., 'disproportionate effect') and recommending additions if needed.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C8\",\n      \"what_went_wrong\": \"The agent calculated deadlines but did not check whether they fell on weekends or holidays, nor did it apply the documents' Business Day definitions to adjust them.\",\n      \"should_have\": \"Applied Business Day definitions to all computed deadlines, adjusting for weekends/holidays and flagging any discrepancies with stated deadlines.\",\n      \"failure_kind\": \"procedural\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"Extract and compare governing law and jurisdiction clauses from all transaction documents. Flag any inconsistencies or risks of parallel proceedings.\",\n      \"evidence\": [\"C1\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"For every corporate approval, verify quorum requirements against attendance records. Flag any discrepancies or invalidity risks.\",\n      \"evidence\": [\"C2\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Review Material Adverse Change (MAC) definitions and carve-outs for completeness. Flag missing exceptions (e.g., 'disproportionate effect') and recommend additions if needed.\",\n      \"evidence\": [\"C3\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.85\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"review\",\n      \"text\": \"Before finalising any deadline, check if it falls on a weekend or holiday and apply the document's Business Day definition to adjust it.\",\n      \"evidence\": [\"C8\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"When analyzing event-triggered deadlines (e.g., claim notifications), cross-check all related documents for conflicting time periods and recommend alignment.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.8\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"In timeline analyses, explicitly state whether deadlines are business days or calendar days, and note any adjustments made for weekends/holidays.\",\n      \"evidence\": [\"C8\"],\n      \"task_type_scope\": \"timeline_analysis\",\n      \"confidence\": 0.85\n    }\n  ],\n  \"lesson_feedback\": [\n    {\n      \"lesson_id\": \"L0001\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Addresses a critical procedural gap in cross-document analysis, applicable to all transactional work.\"\n    },\n    {\n      \"lesson_id\": \"L0002\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Ensures corporate governance compliance is systematically verified, reducing risk of invalid approvals.\"\n    },\n    {\n      \"lesson_id\": \"L0003\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Encourages deeper analysis of MAC clauses, which are often high-risk areas in transactions.\"\n    },\n    {\n      \"lesson_id\": \"L0004\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Prevents errors in deadline calculations, a common source of compliance failures.\"\n    },\n    {\n      \"lesson_id\": \"L0005\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Generalizes the approach to handling conflicting deadlines, useful beyond timeline analyses.\"\n    },\n    {\n      \"lesson_id\": \"L0006\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Improves clarity in deliverables by explicitly stating deadline adjustments, reducing ambiguity.\"\n    }\n  ]\n}\n```"
+}

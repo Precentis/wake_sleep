@@ -1,0 +1,127 @@
+{
+  "docs": [
+    {
+      "title": "share_purchase_agreement.md",
+      "attempts": [
+        {
+          "missing": [
+            "English law"
+          ],
+          "usage": {
+            "input_tokens": 603,
+            "output_tokens": 1293
+          }
+        },
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 1924,
+            "output_tokens": 1268
+          }
+        }
+      ]
+    },
+    {
+      "title": "escrow_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 582,
+            "output_tokens": 1017
+          }
+        }
+      ]
+    },
+    {
+      "title": "disclosure_letter.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 530,
+            "output_tokens": 980
+          }
+        }
+      ]
+    },
+    {
+      "title": "board_minutes.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 494,
+            "output_tokens": 838
+          }
+        }
+      ]
+    },
+    {
+      "title": "client_email.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 481,
+            "output_tokens": 379
+          }
+        }
+      ]
+    }
+  ],
+  "doc_facts": {
+    "share_purchase_agreement.md": {
+      "key": "spa",
+      "facts": [
+        "Parties: Galloway Engineering Ltd (Buyer), Oakhurst Analytics Ltd (Seller); the Company is Dunmore Robotics Ltd.",
+        "Section 2.1: the Purchase Price is $180,000,000.",
+        "This Agreement is dated 20 November 2026; Closing is scheduled for 22 January 2027 (the 'Closing Date').",
+        "Section 1.1: 'Closing Date' means 22 January 2027.",
+        "Section 15.1: this Agreement is governed by English law and the courts of England have exclusive jurisdiction."
+      ],
+      "must_contain": [
+        "English law"
+      ]
+    },
+    "escrow_agreement.md": {
+      "key": "escrow",
+      "facts": [
+        "Clause 4.1: the Escrow Amount shall be released to the Seller on the date falling 18 months after the Closing Date, save to the extent of pending claims notified before that date. 'Business Day' means a day other than a Saturday or Sunday on which banks are open in London.",
+        "The Closing Date is 22 January 2027.",
+        "Clause 12: this escrow agreement is governed by the laws of the State of New York and disputes shall be referred to arbitration in New York."
+      ],
+      "must_contain": [
+        "18 months",
+        "22 January 2027",
+        "New York"
+      ]
+    },
+    "disclosure_letter.md": {
+      "key": "disclosure",
+      "facts": [
+        "Disclosure against Warranty 8.2 (IP): the Company's core platform software was developed in 2023 by an independent contractor, Juniper Logistics plc. No written assignment of intellectual property was entered into.",
+        "Disclosure against Warranty 7.1 (Litigation): None."
+      ],
+      "must_contain": [
+        "Juniper Logistics plc",
+        "No written assignment"
+      ]
+    },
+    "board_minutes.md": {
+      "key": "board_minutes",
+      "facts": [
+        "Item 5: the board noted a letter before action from Yarrow Capital LLP threatening proceedings for approximately $450,000 in respect of alleged defective deliveries. Management to monitor."
+      ],
+      "must_contain": [
+        "Yarrow Capital LLP",
+        "$450,000"
+      ]
+    },
+    "client_email.md": {
+      "key": "client_email",
+      "facts": [],
+      "must_contain": []
+    }
+  }
+}

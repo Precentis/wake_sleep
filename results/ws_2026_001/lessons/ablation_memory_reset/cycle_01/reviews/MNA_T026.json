@@ -1,0 +1,169 @@
+{
+  "task_id": "MNA_T026",
+  "cycle": 1,
+  "lineage": "ablation_memory_reset",
+  "graded": true,
+  "failures": [
+    {
+      "criterion_id": "C1",
+      "what_went_wrong": "The agent identified the MAC carve-outs but failed to recognise the absence of a 'disproportionate effect' exception, which is a critical gap in risk allocation. The deliverable only noted that the carve-outs were 'narrowly drafted' without analysing the implications of this omission.",
+      "should_have": "The agent should have explicitly identified the missing 'disproportionate effect' exception in the MAC carve-outs, explained its legal significance, and recommended adding it to protect the Buyer from disproportionate impacts of excluded events.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C2",
+      "what_went_wrong": "The agent calculated the working capital shortfall but did not compute the adjusted purchase price or explicitly flag the discrepancy between the calculated figure and the Seller's representation. The deliverable implied overpayment but did not show the arithmetic.",
+      "should_have": "The agent should have shown the adjustment arithmetic (e.g., base price - shortfall = adjusted price) and explicitly flagged the discrepancy between the calculated adjusted price and the Seller's figure.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C4",
+      "what_went_wrong": "The agent stated the survival periods for warranties but did not calculate or state the specific claim notification deadlines (e.g., 12 months or 36 months from closing). This omission leaves ambiguity about the Buyer's time limits for claims.",
+      "should_have": "The agent should have calculated and explicitly stated the specific claim notification deadlines (e.g., 11 November 2027 for general warranties) based on the survival periods and closing date.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C5",
+      "what_went_wrong": "The agent discussed the MAC carve-outs but did not analyse how 'material adverse effect' could be interpreted narrowly or broadly, nor did it explain the implications of each interpretation for the Buyer's walk-away rights.",
+      "should_have": "The agent should have explained the potential interpretations of 'material adverse effect', their legal implications, and how each interpretation affects the Buyer's ability to walk away from the transaction.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C6",
+      "what_went_wrong": "The agent identified the working capital shortfall but did not show the adjustment arithmetic (e.g., base price - shortfall = adjusted price) or explicitly flag the discrepancy with the correct calculated figure.",
+      "should_have": "The agent should have shown the full adjustment arithmetic and explicitly flagged the discrepancy between the calculated adjusted price and the Seller's figure.",
+      "failure_kind": "procedural"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T026_0",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "For every material adverse change (MAC) clause, identify and explicitly state any missing exceptions (e.g., 'disproportionate effect') and recommend additions to protect the client's interests.",
+      "source_tasks": [
+        "MNA_T026"
+      ],
+      "evidence": [
+        "MNA_T026:C1"
+      ],
+      "task_type_scope": "legal_memo",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T026_1",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "When analysing financial adjustments (e.g., working capital, earn-outs), show the full arithmetic calculation (e.g., base price ± adjustments = final price) and explicitly flag discrepancies with represented figures.",
+      "source_tasks": [
+        "MNA_T026"
+      ],
+      "evidence": [
+        "MNA_T026:C2",
+        "MNA_T026:C6"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T026_2",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "For warranty survival periods, always calculate and state the specific claim notification deadlines (e.g., '12 months from closing on [date]') to remove ambiguity.",
+      "source_tasks": [
+        "MNA_T026"
+      ],
+      "evidence": [
+        "MNA_T026:C4"
+      ],
+      "task_type_scope": "legal_memo",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T026_3",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "For ambiguous legal terms (e.g., 'material adverse effect'), analyse and explain potential narrow and broad interpretations, and clarify their implications for the client's rights or obligations.",
+      "source_tasks": [
+        "MNA_T026"
+      ],
+      "evidence": [
+        "MNA_T026:C5"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T026_4",
+      "type": "checklist",
+      "category": "review",
+      "text": "Before finalising a risk analysis, verify that every calculated figure (e.g., adjustments, caps, deadlines) is explicitly shown in the deliverable with its arithmetic derivation.",
+      "source_tasks": [
+        "MNA_T026"
+      ],
+      "evidence": [
+        "MNA_T026:C2",
+        "MNA_T026:C6"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T026_5",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "When reviewing carve-outs in risk allocation clauses, cross-check against standard market exceptions (e.g., 'disproportionate effect') and flag any omissions for negotiation.",
+      "source_tasks": [
+        "MNA_T026"
+      ],
+      "evidence": [
+        "MNA_T026:C1"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.85
+    }
+  ],
+  "lesson_feedback": [
+    {
+      "lesson_id": "L0001",
+      "label": "HELPFUL",
+      "reason": "Directly addresses the procedural failure in C1 by ensuring missing exceptions in MAC clauses are identified and recommended for addition."
+    },
+    {
+      "lesson_id": "L0002",
+      "label": "HELPFUL",
+      "reason": "Prevents the procedural failures in C2 and C6 by mandating explicit arithmetic calculations and discrepancy flagging for financial adjustments."
+    },
+    {
+      "lesson_id": "L0003",
+      "label": "HELPFUL",
+      "reason": "Addresses the procedural failure in C4 by requiring specific claim notification deadlines to be calculated and stated, removing ambiguity."
+    },
+    {
+      "lesson_id": "L0004",
+      "label": "HELPFUL",
+      "reason": "Targets the procedural failure in C5 by requiring analysis of ambiguous legal terms and their implications, which was missing in the deliverable."
+    },
+    {
+      "lesson_id": "L0005",
+      "label": "HELPFUL",
+      "reason": "Reinforces the need for explicit arithmetic derivations, addressing the procedural failures in C2 and C6 during the review phase."
+    },
+    {
+      "lesson_id": "L0006",
+      "label": "HELPFUL",
+      "reason": "Complements L0001 by providing a broader practice note for reviewing carve-outs, ensuring omissions like the one in C1 are flagged."
+    }
+  ],
+  "input_tokens": 4774,
+  "output_tokens": 1569,
+  "cost_usd": 0.0047405,
+  "prompt": "# Task\nType: legal_memo | Practice area: corporate_mna\nYou act for the Buyer, Larkspur Logistics plc. Larkspur Logistics plc (the Buyer) is acquiring the entire issued share capital of Netherby Pharma plc (the Company) from Ivybridge Pharma plc (the Seller).\n\nPrepare a legal memo for the supervising partner analysing the key legal risks in the matter documents. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 31 August 2026. Address the deliverable to the supervising partner.\n\n# Trajectory (22 model steps, 22 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"client_email.md\"})\n 3. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 4. [research] search_documents({\"query\": \"Brightwater\"})\n 5. [research] search_documents({\"query\": \"disclosure\"})\n 6. [research] search_documents({\"query\": \"Schedule\"})\n 7. [research] search_documents({\"query\": \"warranty\"})\n 8. [research] search_documents({\"query\": \"indemnity\"})\n 9. [analysis] calculate({\"expression\": \"date('2026-08-31')\"})\n10. [analysis] calculate({\"expression\": \"days_between(date('2026-08-31'), date('2026-11-11'))\"})\n11. [analysis] calculate({\"expression\": \"2000000 - 1650000\"})\n12. [analysis] calculate({\"expression\": \"5800000 - 5000000\"})\n13. [analysis] calculate({\"expression\": \"2 * 800000\"})\n14. [analysis] calculate({\"expression\": \"date('2026-12-31')\"})\n15. [drafting] write_draft(<1141 words>)\n16. [verification] read_draft({})\n17. [verification] calculate({\"expression\": \"days_between(date('2026-08-16'), date('2026-11-11'))\"})\n18. [editing] edit_draft(find='**Risk**: Extended period between signing (16 August 2026) a' -> '**Risk**: Extended period between signing (16 August 2026) a')\n19. [editing] edit_draft(find='### Immediate Actions (Next 7 Days):\\n1. **Financial Reconcil' -> '### Immediate Actions (Next 7 Days):\\n1. **Urgent Status Revi')\n20. [editing] edit_draft(find='The transaction presents several material legal risks requir' -> 'The transaction presents several material legal risks requir')\n21. [verification] read_draft({})\n22. [control] finish({\"summary\": \"Submitted comprehensive legal memo analyzing key legal risks in Larkspur Logistics plc's acquisition of Netherby Pharma plc. The memo identifies cr)\n\n# Final deliverable\n# LEGAL MEMORANDUM\n\n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Date:** 31 August 2026  \n**Subject:** Analysis of Key Legal Risks in Larkspur Logistics plc's Acquisition of Netherby Pharma plc  \n**Matter:** Acquisition of entire issued share capital of Netherby Pharma plc from Ivybridge Pharma plc  \n**Our Client:** Larkspur Logistics plc (Buyer)\n\n## 1. EXECUTIVE SUMMARY\n\nThis memorandum analyses the key legal risks identified in the draft Share Purchase Agreement (SPA) dated 16 August 2026 and related transaction documents for the acquisition of Netherby Pharma plc (the Company) by Larkspur Logistics plc (the Buyer) from Ivybridge Pharma plc (the Seller). \n\nCritical issues requiring immediate attention include:\n\n1. **Financial Term Discrepancies**: Material inconsistencies between the Seller's financial representations and the SPA terms regarding purchase price adjustments and earn-out calculations.\n2. **Incomplete Documentation**: Absence of disclosure schedules, particularly concerning material contracts such as the Brightwater Foods Ltd agreement.\n3. **Timing Risks**: Extended gap between signing (16 August 2026) and closing (11 November 2026) creating material adverse change exposure.\n4. **Warranty Limitations**: Restricted survival periods for general warranties (12 months) and fundamental warranties (36 months).\n5. **Working Capital Adjustment Mechanism**: Potential for disputes given the 90-day post-closing determination period.\n\n## 2. TRANSACTION OVERVIEW\n\n- **Parties**: \n  - Buyer: Larkspur Logistics plc (company number 14830733)\n  - Seller: Ivybridge Pharma plc (company number 13912206)\n  - Target: Netherby Pharma plc (company number 13095686)\n\n- **Transaction Structure**: Acquisition of entire issued share capital\n- **SPA Date**: 16 August 2026\n- **Target Closing Date**: 11 November 2026\n- **Governing Law**: English law with exclusive English jurisdiction\n\n## 3. DETAILED RISK ANALYSIS\n\n### 3.1 Financial Term Discrepancies\n\n#### 3.1.1 Purchase Price and Working Capital Adjustment\n\n**Risk**: Significant discrepancy between Seller's representations and SPA terms creates potential for post-closing disputes and unexpected financial exposure.\n\n**Analysis**:\n- **SPA Terms**: Base purchase price $80,000,000 with Target Working Capital of $2,000,000 (Clause 2.1, 2.3)\n- **Seller's Representation**: Adjusted purchase price $79,300,000 based on estimated Closing Working Capital of $1,650,000 (client email)\n- **Financial Impact**: $350,000 shortfall ($2,000,000 - $1,650,000) suggests Buyer may be overpaying by this amount\n- **Timing Risk**: Working capital adjustment determined 90 days post-closing with 15-day settlement period creates cash flow uncertainty\n\n**Recommendation**: \n1. Require Seller to reconcile this discrepancy before signing\n2. Consider reducing base purchase price to reflect actual estimated working capital\n3. Negotiate shorter determination period for working capital adjustment\n\n#### 3.1.2 Earn-out Payment Calculation\n\n**Risk**: Seller's earn-out calculation inconsistent with SPA formula, potentially understating Buyer's liability.\n\n**Analysis**:\n- **SPA Formula**: Earn-out = 2 × (FY2026 EBITDA - $5,000,000), capped at $5,000,000 (Clause 3.4)\n- **Seller's Calculation**: $1,200,000 based on FY2026 EBITDA of $5,800,000\n- **Correct Calculation**: $1,600,000 [2 × ($5,800,000 - $5,000,000)]\n- **Discrepancy**: $400,000 understatement by Seller\n\n**Recommendation**:\n1. Clarify this discrepancy with Seller immediately\n2. Ensure Buyer's financial team understands actual earn-out liability\n3. Consider whether EBITDA definition requires tightening to prevent manipulation\n\n### 3.2 Incomplete Documentation and Disclosure Schedules\n\n**Risk**: Critical transaction documents missing, particularly disclosure schedules referencing material contracts.\n\n**Analysis**:\n- Client specifically requests confirmation that \"all disclosure schedules, including those relating to material contracts such as the agreement with Brightwater Foods Ltd... are up to date\" (client email)\n- No disclosure schedules provided with current SPA draft\n- Material contracts not identified or reviewed\n- Potential for undisclosed liabilities or obligations\n\n**Recommendation**:\n1. Insist on receipt and review of all disclosure schedules before signing\n2. Conduct due diligence on Brightwater Foods Ltd contract and other material agreements\n3. Consider warranty qualifications for undisclosed matters\n\n### 3.3 Timing and Material Adverse Change Risks\n\n**Risk**: Extended period between signing (16 August 2026) and closing (11 November 2026) exposes Buyer to material adverse changes.\n\n**Analysis**:\n- **Time Gap**: 87 days between SPA date and scheduled closing (72 days from today, 31 August 2026)\n- **MAC Definition**: Narrowly drafted exclusion for general economic conditions, law changes, acts of war/terrorism/pandemics/natural disasters, and transaction announcement effects (Clause 1.1)\n- **Risk Exposure**: Company performance deterioration during interim period not adequately protected\n- **Current Status**: SPA already dated 16 August 2026 but not yet signed by Buyer\n\n**Recommendation**:\n1. Negotiate broader MAC protection or interim operating covenants\n2. Consider bringing forward closing date if possible\n3. Implement regular reporting requirements during interim period\n\n### 3.4 Warranty and Indemnity Limitations\n\n**Risk**: Restricted survival periods may limit Buyer's ability to recover for breaches.\n\n**Analysis**:\n- **General Warranties**: 12-month survival period (Clause 10.1)\n- **Fundamental Warranties**: 36-month survival period for title, capacity, and tax warranties only (Clause 10.1)\n- **Notification Requirement**: Claims must be notified before expiry of survival period\n- **Missing Elements**: No specific indemnities for identified risks\n\n**Recommendation**:\n1. Extend general warranty survival period to 24 months\n2. Include specific indemnities for tax, environmental, and employment matters\n3. Clarify notification procedures and cure periods\n\n### 3.5 Working Capital Adjustment Mechanism\n\n**Risk**: Post-closing determination process prone to disputes and delays.\n\n**Analysis**:\n- **Determination Period**: 90 days post-closing (Clause 2.3)\n- **Settlement Period**: 15 days after determination final\n- **Accounting Principles**: Referenced to Schedule 1 (not provided)\n- **Dispute Risk**: No specified dispute resolution mechanism for working capital disagreements\n\n**Recommendation**:\n1. Require provision of Schedule 1 accounting principles before signing\n2. Include detailed dispute resolution process with expert determination\n3. Consider escrow arrangement for potential adjustments\n\n## 4. ADDITIONAL CONSIDERATIONS\n\n### 4.1 Confidentiality Provisions\n\n**Analysis**: Standard confidentiality clause (Clause 11.1) with exceptions for legal requirements and consent. Adequate for transaction but should consider post-closing information sharing needs.\n\n### 4.2 Notice Provisions\n\n**Analysis**: Standard notice provisions (Clause 12.1) acceptable but should confirm email addresses for service.\n\n### 4.3 Jurisdiction and Governing Law\n\n**Analysis**: English law and exclusive English jurisdiction (Clause 13) appropriate for all English incorporated parties.\n\n## 5. ACTION PLAN AND NEXT STEPS\n\n### Immediate Actions (Next 7 Days):\n1. **Urgent Status Review**: Confirm with Buyer whether SPA dated 16 August 2026 has been signed - if not, delay signing until risks addressed\n2. **Financial Reconciliation**: Request Seller to explain discrepancies in purchase price and earn-out calculations\n3. **Document Request**: Demand complete disclosure schedules, particularly for material contracts\n4. **Due Diligence**: Initiate review of Brightwater Foods Ltd agreement and other key contracts\n\n### Negotiation Priorities:\n1. **Financial Terms**: Align SPA with actual financial estimates\n2. **Warranty Protection**: Extend survival periods and include specific indemnities\n3. **MAC Protection**: Strengthen interim period protections\n4. **Adjustment Mechanism**: Clarify working capital determination process\n\n### Recommended Timetable:\n- **Week 1**: Resolve financial discrepancies and obtain missing documents\n- **Week 2**: Negotiate key SPA amendments\n- **Week 3**: Final due diligence and signing preparation\n- **Target Signing**: Mid-September 2026 (to minimise interim period risk)\n\n## 6. CONCLUSION\n\nThe transaction presents several material legal risks requiring immediate attention, particularly regarding financial term discrepancies and incomplete documentation. The extended period between the SPA date (16 August 2026) and closing (11 November 2026) exacerbates these risks. \n\n**Critical Urgency**: The SPA is already dated 16 August 2026. If not yet signed by Buyer, signing should be delayed until key risks are addressed. If already signed, urgent amendments may be required.\n\nKey priorities are: (1) reconciling the $350,000 working capital discrepancy and $400,000 earn-out calculation error; (2) obtaining and reviewing all disclosure schedules; and (3) strengthening interim protections during the 87-day gap to closing.\n\nWith appropriate amendments and thorough due diligence, the transaction can proceed, but significant work remains before the SPA should be signed or before proceeding to closing if already signed.\n\n**Prepared by:**  \nSenior Associate  \nHarbour International Chambers  \n31 August 2026\n\n# Expert rubric verdicts (2/7 passed)\n- C1 [FAIL] Identifies that the MAC carve-outs (general economic, industry-wide and pandemic changes) contain no 'disproportionate effect' exception, so the Buyer bears those risks even where the Company is disproportionately affected, and recommends adding one.\n    judges: FAIL: The deliverable identifies the MAC carve-outs but does not mention the absence of a 'disproportionate effect' exception or recommend adding one; it merely notes the exclusions are 'narrowly drafted'. | FAIL: The deliverable discusses MAC carve-outs at 3.3 but does not identify the specific gap of a missing 'disproportionate effect' exception, nor does it recommend adding one. It only notes the narrow definition and recommend\n- C2 [FAIL] Calculates the working capital shortfall as $350,000 and the adjusted Purchase Price as $79,650,000, identifying that the Seller's funds flow figure of $79,300,000 is wrong.\n    judges: FAIL: The deliverable correctly calculates the $350,000 working capital shortfall but fails to calculate the adjusted Purchase Price of $79,650,000, instead stating the Buyer 'may be overpaying by this amount'. | FAIL: The deliverable calculates the working capital shortfall as $350,000 correctly, but states the Seller's adjusted purchase price is $79,300,000 and identifies a '$350,000 shortfall' suggesting overpayment. It does not cal\n- C3 [PASS] Calculates the Earn-out Payment as $1,600,000 (2 x ($5,800,000 - $5,000,000), subject to the $5,000,000 cap) and identifies that the Seller's figure of $1,200,000 is wrong.\n    judges: PASS: The deliverable correctly calculates the Earn-out Payment as $1,600,000 using the formula 2 × ($5,800,000 - $5,000,000) and identifies the Seller's $1,200,000 figure as incorrect. | PASS: The deliverable correctly calculates the Earn-out Payment as $1,600,000 [2 × ($5,800,000 - $5,000,000)] and identifies the $400,000 discrepancy with the Seller's figure of $1,200,000 at 3.1.2.\n- C4 [FAIL] States that General Warranty claims must be notified by 11 November 2027 (12 months after Closing) and Fundamental Warranty claims by 11 November 2029 (36 months after Closing).\n    judges: FAIL: The deliverable states the survival periods (12 and 36 months) but does not calculate or state the specific claim notification deadlines of 11 November 2027 and 11 November 2029. | FAIL: The deliverable states survival periods of 12 months for General Warranties and 36 months for Fundamental Warranties at 3.4, but does not calculate or state the specific claim notification deadlines of 11 November 2027 a\n- C5 [FAIL] Explains how 'material adverse effect' could be read narrowly or broadly and what each reading means for the Buyer's walk-away right.\n    judges: FAIL: The deliverable does not explain how 'material adverse effect' could be read narrowly or broadly and what each reading means for the Buyer's walk-away right; it focuses on the carve-outs rather than the interpretation of | FAIL: The deliverable discusses MAC at 3.3 but does not explain how 'material adverse effect' could be read narrowly or broadly, nor what each reading means for the Buyer's walk-away right. It only notes the narrow definition \n- C6 [FAIL] Shows the adjustment arithmetic ($80,000,000 - $350,000 = $79,650,000) and flags the discrepancy.\n    judges: FAIL: The deliverable does not show the adjustment arithmetic ($80,000,000 - $350,000 = $79,650,000); it identifies the shortfall and the discrepancy but omits the specific adjusted price calculation. | FAIL: While the deliverable identifies the $350,000 shortfall, it does not show the adjustment arithmetic ($80,000,000 - $350,000 = $79,650,000) explicitly, nor does it flag the discrepancy with the correct calculated figure o\n- C7 [PASS] Opens with a short 'Bottom line' / executive summary stating the overall conclusion and the most important risks before the detailed analysis.\n    judges: PASS: The deliverable opens with an Executive Summary that states the overall conclusion and lists the most important risks before the detailed analysis. | PASS: The deliverable opens with an 'EXECUTIVE SUMMARY' at section 1 that states the overall conclusion and lists the five most important risks before the detailed analysis begins at section 3.\n\n# Your job\nAnalyse each FAILED criterion: what went wrong, what the agent should have done, and whether the failure is procedural (reusable) or task-specific. Then write reusable candidate lessons that would prevent the procedural failures on other matters.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|legal_memo\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C1\",\n      \"what_went_wrong\": \"The agent identified the MAC carve-outs but failed to recognise the absence of a 'disproportionate effect' exception, which is a critical gap in risk allocation. The deliverable only noted that the carve-outs were 'narrowly drafted' without analysing the implications of this omission.\",\n      \"should_have\": \"The agent should have explicitly identified the missing 'disproportionate effect' exception in the MAC carve-outs, explained its legal significance, and recommended adding it to protect the Buyer from disproportionate impacts of excluded events.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C2\",\n      \"what_went_wrong\": \"The agent calculated the working capital shortfall but did not compute the adjusted purchase price or explicitly flag the discrepancy between the calculated figure and the Seller's representation. The deliverable implied overpayment but did not show the arithmetic.\",\n      \"should_have\": \"The agent should have shown the adjustment arithmetic (e.g., base price - shortfall = adjusted price) and explicitly flagged the discrepancy between the calculated adjusted price and the Seller's figure.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C4\",\n      \"what_went_wrong\": \"The agent stated the survival periods for warranties but did not calculate or state the specific claim notification deadlines (e.g., 12 months or 36 months from closing). This omission leaves ambiguity about the Buyer's time limits for claims.\",\n      \"should_have\": \"The agent should have calculated and explicitly stated the specific claim notification deadlines (e.g., 11 November 2027 for general warranties) based on the survival periods and closing date.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C5\",\n      \"what_went_wrong\": \"The agent discussed the MAC carve-outs but did not analyse how 'material adverse effect' could be interpreted narrowly or broadly, nor did it explain the implications of each interpretation for the Buyer's walk-away rights.\",\n      \"should_have\": \"The agent should have explained the potential interpretations of 'material adverse effect', their legal implications, and how each interpretation affects the Buyer's ability to walk away from the transaction.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C6\",\n      \"what_went_wrong\": \"The agent identified the working capital shortfall but did not show the adjustment arithmetic (e.g., base price - shortfall = adjusted price) or explicitly flag the discrepancy with the correct calculated figure.\",\n      \"should_have\": \"The agent should have shown the full adjustment arithmetic and explicitly flagged the discrepancy between the calculated adjusted price and the Seller's figure.\",\n      \"failure_kind\": \"procedural\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"For every material adverse change (MAC) clause, identify and explicitly state any missing exceptions (e.g., 'disproportionate effect') and recommend additions to protect the client's interests.\",\n      \"evidence\": [\"C1\"],\n      \"task_type_scope\": \"legal_memo\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"When analysing financial adjustments (e.g., working capital, earn-outs), show the full arithmetic calculation (e.g., base price ± adjustments = final price) and explicitly flag discrepancies with represented figures.\",\n      \"evidence\": [\"C2\", \"C6\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"For warranty survival periods, always calculate and state the specific claim notification deadlines (e.g., '12 months from closing on [date]') to remove ambiguity.\",\n      \"evidence\": [\"C4\"],\n      \"task_type_scope\": \"legal_memo\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"For ambiguous legal terms (e.g., 'material adverse effect'), analyse and explain potential narrow and broad interpretations, and clarify their implications for the client's rights or obligations.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.85\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"review\",\n      \"text\": \"Before finalising a risk analysis, verify that every calculated figure (e.g., adjustments, caps, deadlines) is explicitly shown in the deliverable with its arithmetic derivation.\",\n      \"evidence\": [\"C2\", \"C6\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"When reviewing carve-outs in risk allocation clauses, cross-check against standard market exceptions (e.g., 'disproportionate effect') and flag any omissions for negotiation.\",\n      \"evidence\": [\"C1\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.85\n    }\n  ],\n  \"lesson_feedback\": [\n    {\n      \"lesson_id\": \"L0001\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Directly addresses the procedural failure in C1 by ensuring missing exceptions in MAC clauses are identified and recommended for addition.\"\n    },\n    {\n      \"lesson_id\": \"L0002\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Prevents the procedural failures in C2 and C6 by mandating explicit arithmetic calculations and discrepancy flagging for financial adjustments.\"\n    },\n    {\n      \"lesson_id\": \"L0003\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Addresses the procedural failure in C4 by requiring specific claim notification deadlines to be calculated and stated, removing ambiguity.\"\n    },\n    {\n      \"lesson_id\": \"L0004\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Targets the procedural failure in C5 by requiring analysis of ambiguous legal terms and their implications, which was missing in the deliverable.\"\n    },\n    {\n      \"lesson_id\": \"L0005\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Reinforces the need for explicit arithmetic derivations, addressing the procedural failures in C2 and C6 during the review phase.\"\n    },\n    {\n      \"lesson_id\": \"L0006\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Complements L0001 by providing a broader practice note for reviewing carve-outs, ensuring omissions like the one in C1 are flagged.\"\n    }\n  ]\n}\n```"
+}

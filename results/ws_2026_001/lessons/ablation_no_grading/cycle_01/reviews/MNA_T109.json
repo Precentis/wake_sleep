@@ -1,0 +1,142 @@
+{
+  "task_id": "MNA_T109",
+  "cycle": 1,
+  "lineage": "ablation_no_grading",
+  "graded": false,
+  "failures": [
+    {
+      "criterion_id": "C1",
+      "what_went_wrong": "The agent recomputed the earn-out calculation but did not cross-check the formula's percentage basis against the purchase price to identify potential misalignments.",
+      "should_have": "Verified whether the earn-out multiplier or cap was expressed as a percentage of the purchase price and flagged any inconsistencies.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C2",
+      "what_went_wrong": "The agent noted missing schedules (representations/warranties, covenants) but did not systematically list all standard schedules expected in an M&A agreement for this transaction size.",
+      "should_have": "Maintained a checklist of standard schedules for M&A agreements and flagged any omissions with specific drafting recommendations.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C3",
+      "what_went_wrong": "The agent identified vague conditions precedent but did not propose specific, enforceable language alternatives or benchmark them against market standards.",
+      "should_have": "Drafted precise, market-standard language for ambiguous clauses and included it in the issues list for partner consideration.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C4",
+      "what_went_wrong": "The agent calculated date intervals (e.g., termination date) but did not verify whether these dates fell on business days or holidays, which could impact enforceability.",
+      "should_have": "Checked whether critical dates (e.g., termination, payment) fell on business days or holidays and flagged potential adjustments.",
+      "failure_kind": "analysis"
+    },
+    {
+      "criterion_id": "C5",
+      "what_went_wrong": "The agent listed missing provisions (e.g., tax, employee matters) but did not prioritize them based on transaction-specific risks or client instructions.",
+      "should_have": "Prioritized missing provisions by assessing their materiality to the transaction and client's stated concerns (e.g., Fenwick Capital relationship).",
+      "failure_kind": "task_specific"
+    },
+    {
+      "criterion_id": "C6",
+      "what_went_wrong": "The agent did not cross-reference the client email's stated EBITDA figure with the agreement's definition of EBITDA to identify potential scope mismatches (e.g., adjustments, exclusions).",
+      "should_have": "Compared the agreement's definition of financial metrics (e.g., EBITDA) with client-provided figures to flag discrepancies in scope or calculation methodology.",
+      "failure_kind": "analysis"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T109_0",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "For earn-out or price adjustment clauses, recompute the formula using the stated financial metrics and verify whether caps or thresholds are expressed as percentages of the purchase price. Flag any mismatches.",
+      "source_tasks": [
+        "MNA_T109"
+      ],
+      "evidence": [
+        "MNA_T109:C1"
+      ],
+      "task_type_scope": "issues_list",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T109_1",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Before finalising an issues list for M&A agreements, cross-check the document against a standard schedule checklist (e.g., representations, covenants, indemnities) and flag missing schedules with drafting recommendations.",
+      "source_tasks": [
+        "MNA_T109"
+      ],
+      "evidence": [
+        "MNA_T109:C2"
+      ],
+      "task_type_scope": "issues_list",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T109_2",
+      "type": "practice_note",
+      "category": "drafting",
+      "text": "When flagging vague clauses, draft precise, market-standard language alternatives and include them in the issues list to expedite partner review and negotiation.",
+      "source_tasks": [
+        "MNA_T109"
+      ],
+      "evidence": [
+        "MNA_T109:C3"
+      ],
+      "task_type_scope": "issues_list",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T109_3",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "Verify whether critical dates (e.g., termination, payment, regulatory deadlines) fall on business days or holidays. Flag potential adjustments to avoid enforceability issues.",
+      "source_tasks": [
+        "MNA_T109"
+      ],
+      "evidence": [
+        "MNA_T109:C4"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T109_4",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Compare the agreement's definitions of financial metrics (e.g., EBITDA, net debt) with client-provided figures to identify discrepancies in scope, adjustments, or calculation methodology.",
+      "source_tasks": [
+        "MNA_T109"
+      ],
+      "evidence": [
+        "MNA_T109:C6"
+      ],
+      "task_type_scope": "issues_list",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.8
+    },
+    {
+      "candidate_id": "c01_MNA_T109_5",
+      "type": "checklist",
+      "category": "review",
+      "text": "Prioritize missing provisions in an M&A agreement by assessing their materiality to the transaction and cross-referencing with client instructions or identified risks (e.g., key customer relationships).",
+      "source_tasks": [
+        "MNA_T109"
+      ],
+      "evidence": [
+        "MNA_T109:C5"
+      ],
+      "task_type_scope": "issues_list",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.85
+    }
+  ],
+  "lesson_feedback": [],
+  "input_tokens": 4043,
+  "output_tokens": 1151,
+  "cost_usd": 0.003748,
+  "prompt": "# Task\nType: issues_list | Practice area: corporate_mna\nYou act for the Buyer, Corrib Energy plc. Corrib Energy plc (the Buyer) is acquiring the entire issued share capital of Upton Holdings Ltd (the Company) from Calloway Media Ltd (the Seller).\n\nPrepare an issues list for the supervising partner covering the matter documents. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 1 March 2027. Address the deliverable to the supervising partner.\n\n# Trajectory (27 model steps, 27 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"client_email.md\"})\n 3. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 4. [research] search_documents({\"query\": \"warranties\"})\n 5. [research] search_documents({\"query\": \"indemnity\"})\n 6. [research] search_documents({\"query\": \"covenants\"})\n 7. [research] search_documents({\"query\": \"Fenwick\"})\n 8. [analysis] calculate({\"expression\": \"date('2027-03-01')\"})\n 9. [analysis] calculate({\"expression\": \"days_between(date('2027-03-01'), date('2027-03-22'))\"})\n10. [analysis] calculate({\"expression\": \"days_between(date('2027-01-30'), date('2027-05-30'))\"})\n11. [analysis] calculate({\"expression\": \"EBITDA = 7300000\"})\n12. [analysis] calculate({\"expression\": \"threshold = 6500000\"})\n13. [analysis] calculate({\"expression\": \"excess = EBITDA - threshold\"})\n14. [analysis] calculate({\"expression\": \"excess = 7300000 - 6500000\"})\n15. [analysis] calculate({\"expression\": \"earnout_calculation = 3 * excess\"})\n16. [analysis] calculate({\"expression\": \"earnout_calculation = 3 * 800000\"})\n17. [drafting] write_draft(<1329 words>)\n18. [verification] read_draft({})\n19. [editing] edit_draft(find='### **High Priority (Immediate Attention Required):**\\n1. **C' -> '### **High Priority (Immediate Attention Required):**\\n1. **C')\n20. [editing] edit_draft(find='## EXECUTIVE SUMMARY\\n\\nWe act for Corrib Energy plc (Buyer) i' -> '## EXECUTIVE SUMMARY\\n\\nWe act for Corrib Energy plc (Buyer) i')\n21. [verification] calculate({\"expression\": \"add_days(date('2026-12-31'), 90)\"})\n22. [editing] edit_draft(find='**Analysis:**\\n- FY2026 ended 31 December 2026\\n- Audited stat' -> '**Analysis:**\\n- FY2026 ended 31 December 2026\\n- Audited stat')\n23. [editing] edit_draft(find='**Note:** The client requested initial input by close of bus' -> '**Note:** The client requested initial input by close of bus')\n24. [verification] calculate({\"expression\": \"add_days(date('2027-01-30'), 120)\"})\n25. [editing] edit_draft(find='- **4.5 Termination:** Allows termination if Conditions not ' -> '- **4.5 Termination:** Allows termination if Conditions not ')\n26. [verification] read_draft({})\n27. [control] finish({\"summary\": \"Issues list for supervising partner covering the acquisition of Upton Holdings Ltd by Corrib Energy plc. Identifies 9 key issues requiring attentio)\n\n# Final deliverable\n# ISSUES LIST: Acquisition of Upton Holdings Ltd by Corrib Energy plc\n**Date:** 1 March 2027  \n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Matter:** Acquisition of entire issued share capital of Upton Holdings Ltd from Calloway Media Ltd  \n**Client:** Corrib Energy plc (Buyer)  \n**Our Role:** Acting for Buyer  \n\n## EXECUTIVE SUMMARY\n\nWe act for Corrib Energy plc (Buyer) in its proposed acquisition of the entire issued share capital of Upton Holdings Ltd (Company) from Calloway Media Ltd (Seller). The draft Share Purchase Agreement dated 30 January 2027 provides for a purchase price of $140,000,000 with an earn-out mechanism based on FY2026 EBITDA. Completion is scheduled for 22 March 2027, subject to regulatory approvals expected by 29 June 2027.\n\n**Note:** The client requested initial input by close of business on 28 February 2027. This issues list is being provided on 1 March 2027, one business day after the requested deadline. **Urgency:** Completion is scheduled for 22 March 2027 (21 days from today).\n\nThis issues list identifies key legal and commercial concerns requiring partner review, particularly regarding the earn-out mechanism, conditions precedent, liability limitations, and regulatory coordination.\n\n## KEY ISSUES REQUIRING IMMEDIATE ATTENTION\n\n### 1. **EARN-OUT MECHANISM: DISCREPANCY BETWEEN CLIENT INFORMATION AND AGREEMENT**\n\n**Issue:** The client email states that based on FY2026 EBITDA of $7,300,000, the Seller has confirmed an Earn-out Payment of $3,000,000. However, the Agreement calculation yields a different amount.\n\n**Analysis:**\n- Agreement formula (Clause 3.4): Earn-out = 3 × (EBITDA - $6,500,000), capped at $5,000,000\n- With EBITDA of $7,300,000: 3 × ($7,300,000 - $6,500,000) = 3 × $800,000 = $2,400,000\n- This is $600,000 less than the $3,000,000 figure mentioned by the client\n- The Agreement cap of $5,000,000 is not triggered at this EBITDA level\n\n**Action Required:** Clarify with client whether:\n1. There is a misunderstanding of the calculation\n2. The Seller's confirmation of $3,000,000 reflects different terms not captured in the Agreement\n3. Additional components (e.g., working capital adjustments) contribute to the earn-out\n4. The Agreement needs amendment to reflect the agreed $3,000,000 figure\n\n**Risk:** Proceeding without clarification could lead to post-completion disputes over the earn-out amount.\n\n### 2. **CONDITIONS PRECEDENT: VAGUE AND UNENFORCEABLE PROVISIONS**\n\n**Issue:** Clause 4.1 contains imprecise conditions that create uncertainty and potential for dispute.\n\n**Analysis:**\n- **4.1(a) \"receipt of all necessary regulatory approvals\":** No definition of \"necessary\" or timeline specification\n- **4.1(b) \"accuracy of the representations and warranties as of the Closing Date, subject to materiality qualifications\":** No representations and warranties schedule attached to Agreement\n- **4.1(c) \"performance in all material respects of each Party’s covenants\":** No covenants schedule attached to Agreement\n- **4.5 Termination:** Allows termination if Conditions not satisfied/waived by 30 May 2027 (120 days from 30 January 2027, falls on a Sunday - may need clarification regarding business days)\n\n**Action Required:**\n1. Draft and attach schedules for representations/warranties and covenants\n2. Define \"necessary regulatory approvals\" with specificity\n3. Consider whether materiality qualifications should be defined\n4. Align termination date (30 May 2027) with regulatory clearance expectation (29 June 2027)\n\n**Risk:** Vague conditions may allow Seller to avoid completion or create disputes over satisfaction.\n\n### 3. **REGULATORY TIMELINE MISMATCH**\n\n**Issue:** Regulatory clearance expected by 29 June 2027, but Agreement termination date is 30 May 2027.\n\n**Analysis:**\n- Client email: Regulatory clearance expected by 29 June 2027\n- Agreement Clause 4.5: Termination if Conditions not satisfied/waived by 30 May 2027\n- This creates a 30-day gap where the Agreement could terminate before expected clearance\n\n**Action Required:** Amend Clause 4.5 to extend termination date beyond 29 June 2027 to allow for regulatory process.\n\n**Risk:** Agreement may terminate automatically before regulatory clearance obtained, jeopardizing transaction.\n\n### 4. **LIMITATION OF LIABILITY: UNFAVORABLE TO BUYER**\n\n**Issue:** Clause 9.4 imposes a high threshold for Seller liability claims.\n\n**Analysis:**\n- Seller not liable unless aggregate claims exceed $1,400,000 (1% of Purchase Price)\n- Seller liable only for excess over $1,400,000\n- This is a \"basket\" style limitation common in M&A, but the threshold is relatively high\n- No de minimis or \"first dollar\" recovery for claims below threshold\n\n**Action Required:** Negotiate more favorable terms:\n1. Reduce threshold percentage (e.g., 0.5% or lower)\n2. Consider \"first dollar\" recovery for certain categories of claims\n3. Ensure carve-outs for fundamental breaches, fraud, etc.\n\n**Risk:** Buyer may bear significant losses below $1,400,000 threshold without recourse.\n\n### 5. **MISSING ESSENTIAL PROVISIONS**\n\n**Issue:** Agreement lacks standard M&A provisions critical for buyer protection.\n\n**Analysis:** Missing entirely:\n1. **Representations and Warranties Schedule:** Fundamental to allocating risk\n2. **Covenants Schedule:** Pre- and post-completion obligations\n3. **Indemnification Provisions:** Mechanism for post-completion claims\n4. **Disclosure Letter:** Qualifications to representations/warranties\n5. **Tax Provisions:** Tax indemnities and covenants\n6. **Employee Matters:** TUPE considerations, pension obligations\n7. **Intellectual Property:** Ownership and protection of IP assets\n\n**Action Required:** Draft and incorporate standard M&A schedules and provisions appropriate for a $140m transaction.\n\n**Risk:** Proceeding without these provisions leaves Buyer exposed to undisclosed liabilities and risks.\n\n### 6. **FENWICK CAPITAL LLP CUSTOMER RELATIONSHIP**\n\n**Issue:** Client specifically mentioned implications from Company's material customer, Fenwick Capital LLP.\n\n**Analysis:**\n- Fenwick Capital LLP is identified as a material customer\n- No provisions in Agreement addressing:\n  - Customer concentration risk\n  - Assignment/change of control provisions in customer contracts\n  - Revenue continuity post-acquisition\n  - Key person relationships\n\n**Action Required:**\n1. Include specific representations/warranties regarding material contracts\n2. Require disclosure of key customer contracts\n3. Address change of control provisions in customer agreements\n4. Consider earn-out adjustments if key customer relationships terminate\n\n**Risk:** Loss of key customer post-acquisition could significantly impact Company value and earn-out calculations.\n\n### 7. **PAYMENT TERMS: UNCONDITIONAL OBLIGATION CONCERN**\n\n**Issue:** Clause 3.2 states payment obligation \"shall be unconditional upon Closing, save as expressly provided herein.\"\n\n**Analysis:**\n- Creates absolute payment obligation upon Closing\n- Limited exceptions not clearly defined\n- Could require payment even if material breaches discovered at Closing\n\n**Action Required:** Amend to allow payment withholding or escrow arrangements for identified breaches or unresolved issues.\n\n**Risk:** Buyer may be forced to pay despite material issues discovered at completion.\n\n### 8. **EARN-OUT PAYMENT TIMING AND VERIFICATION**\n\n**Issue:** Clause 3.4 provides for earn-out payment within 90 days of FY2026 audited financial statements approval.\n\n**Analysis:**\n- FY2026 ended 31 December 2026\n- Audited statements likely already in preparation or approved\n- Payment could be due as early as end of March 2027 (within 90 days of board approval)\n- No mechanism for Buyer input or dispute resolution regarding EBITDA calculation\n- No audit rights for Buyer to verify calculation\n- Buyer will have limited time to review calculation before payment due\n\n**Action Required:** Include:\n1. Right for Buyer to review/audit EBITDA calculation\n2. Dispute resolution mechanism\n3. Clear accounting principles for EBITDA calculation\n4. Timing provisions aligned with audit completion\n\n**Risk:** Disputes over EBITDA calculation could delay payment or require litigation.\n\n### 9. **GOVERNING LAW AND JURISDICTION**\n\n**Issue:** Agreement governed by English law with English courts having exclusive jurisdiction (Clause 8).\n\n**Analysis:**\n- Appropriate for English companies\n- No issues identified, but standard for review\n\n**Action Required:** Confirm all parties comfortable with English jurisdiction.\n\n## PRIORITY ACTIONS\n\n### **High Priority (Immediate Attention Required):**\n1. **Clarify earn-out discrepancy** - Contact client before 28 February 2027 deadline (client's requested deadline)\n2. **Address regulatory timeline mismatch** - Amend termination date in Clause 4.5 to align with 29 June 2027 clearance expectation\n3. **Draft missing schedules** - Representations/warranties and covenants (fundamental to Agreement enforceability)\n\n### **Medium Priority:**\n4. **Negotiate liability limitations** - Reduce $1,400,000 threshold in Clause 9.4\n5. **Address Fenwick Capital relationship** - Include specific provisions\n6. **Amend payment terms** - Remove unconditional obligation language\n\n### **Lower Priority (Standard M&A Provisions):**\n7. **Add indemnification provisions**\n8. **Include tax provisions**\n9. **Address employee matters**\n10. **Add intellectual property protections**\n\n## NEXT STEPS\n\n1. **Client Meeting:** Schedule immediate discussion to clarify earn-out discrepancy and regulatory timeline\n2. **Document Mark-up:** Prepare redlined version of Agreement addressing identified issues\n3. **Due Diligence:** Request additional due diligence on Fenwick Capital relationship and material contracts\n4. **Negotiation Strategy:** Develop positions on key commercial terms for partner approval\n5. **Regulatory Coordination:** Liaise with regulatory counsel to align Agreement with clearance timeline\n\n## CONCLUSION\n\nThe draft Share Purchase Agreement requires substantial revision to adequately protect Buyer interests. The most urgent issues are the earn-out calculation discrepancy and regulatory timeline conflict. We recommend seeking client instructions on these matters immediately, followed by comprehensive redrafting of the Agreement with standard M&A protections.\n\nThe transaction value ($140m) justifies robust contractual protections, particularly given the earn-out component and identified material customer relationship. We should aim to present a marked-up draft to the client by 7 March 2027, following resolution of the immediate priority issues.\n\n# Your job\nNo grades are available. Critically assess the deliverable and the work process yourself, as a demanding supervising partner would, and write reusable candidate lessons for improving the work.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|issues_list\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C1\",\n      \"what_went_wrong\": \"The agent recomputed the earn-out calculation but did not cross-check the formula's percentage basis against the purchase price to identify potential misalignments.\",\n      \"should_have\": \"Verified whether the earn-out multiplier or cap was expressed as a percentage of the purchase price and flagged any inconsistencies.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C2\",\n      \"what_went_wrong\": \"The agent noted missing schedules (representations/warranties, covenants) but did not systematically list all standard schedules expected in an M&A agreement for this transaction size.\",\n      \"should_have\": \"Maintained a checklist of standard schedules for M&A agreements and flagged any omissions with specific drafting recommendations.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C3\",\n      \"what_went_wrong\": \"The agent identified vague conditions precedent but did not propose specific, enforceable language alternatives or benchmark them against market standards.\",\n      \"should_have\": \"Drafted precise, market-standard language for ambiguous clauses and included it in the issues list for partner consideration.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C4\",\n      \"what_went_wrong\": \"The agent calculated date intervals (e.g., termination date) but did not verify whether these dates fell on business days or holidays, which could impact enforceability.\",\n      \"should_have\": \"Checked whether critical dates (e.g., termination, payment) fell on business days or holidays and flagged potential adjustments.\",\n      \"failure_kind\": \"analysis\"\n    },\n    {\n      \"criterion_id\": \"C5\",\n      \"what_went_wrong\": \"The agent listed missing provisions (e.g., tax, employee matters) but did not prioritize them based on transaction-specific risks or client instructions.\",\n      \"should_have\": \"Prioritized missing provisions by assessing their materiality to the transaction and client's stated concerns (e.g., Fenwick Capital relationship).\",\n      \"failure_kind\": \"task_specific\"\n    },\n    {\n      \"criterion_id\": \"C6\",\n      \"what_went_wrong\": \"The agent did not cross-reference the client email's stated EBITDA figure with the agreement's definition of EBITDA to identify potential scope mismatches (e.g., adjustments, exclusions).\",\n      \"should_have\": \"Compared the agreement's definition of financial metrics (e.g., EBITDA) with client-provided figures to flag discrepancies in scope or calculation methodology.\",\n      \"failure_kind\": \"analysis\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"For earn-out or price adjustment clauses, recompute the formula using the stated financial metrics and verify whether caps or thresholds are expressed as percentages of the purchase price. Flag any mismatches.\",\n      \"evidence\": [\"C1\"],\n      \"task_type_scope\": \"issues_list\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"Before finalising an issues list for M&A agreements, cross-check the document against a standard schedule checklist (e.g., representations, covenants, indemnities) and flag missing schedules with drafting recommendations.\",\n      \"evidence\": [\"C2\"],\n      \"task_type_scope\": \"issues_list\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"drafting\",\n      \"text\": \"When flagging vague clauses, draft precise, market-standard language alternatives and include them in the issues list to expedite partner review and negotiation.\",\n      \"evidence\": [\"C3\"],\n      \"task_type_scope\": \"issues_list\",\n      \"confidence\": 0.85\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"Verify whether critical dates (e.g., termination, payment, regulatory deadlines) fall on business days or holidays. Flag potential adjustments to avoid enforceability issues.\",\n      \"evidence\": [\"C4\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Compare the agreement's definitions of financial metrics (e.g., EBITDA, net debt) with client-provided figures to identify discrepancies in scope, adjustments, or calculation methodology.\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"issues_list\",\n      \"confidence\": 0.8\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"review\",\n      \"text\": \"Prioritize missing provisions in an M&A agreement by assessing their materiality to the transaction and cross-referencing with client instructions or identified risks (e.g., key customer relationships).\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"issues_list\",\n      \"confidence\": 0.85\n    }\n  ],\n  \"lesson_feedback\": []\n}\n```"
+}

@@ -1,0 +1,137 @@
+{
+  "docs": [
+    {
+      "title": "share_purchase_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 655,
+            "output_tokens": 1036
+          }
+        }
+      ]
+    },
+    {
+      "title": "client_email.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 488,
+            "output_tokens": 378
+          }
+        }
+      ]
+    },
+    {
+      "title": "board_minutes.md",
+      "attempts": [
+        {
+          "missing": [
+            "2 directors"
+          ],
+          "usage": {
+            "input_tokens": 484,
+            "output_tokens": 829
+          }
+        },
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 1342,
+            "output_tokens": 863
+          }
+        }
+      ]
+    },
+    {
+      "title": "articles_of_association_extract.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 490,
+            "output_tokens": 1064
+          }
+        }
+      ]
+    },
+    {
+      "title": "disclosure_letter.md",
+      "attempts": [
+        {
+          "missing": [
+            "No written assignment"
+          ],
+          "usage": {
+            "input_tokens": 516,
+            "output_tokens": 935
+          }
+        },
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 1476,
+            "output_tokens": 947
+          }
+        }
+      ]
+    }
+  ],
+  "doc_facts": {
+    "share_purchase_agreement.md": {
+      "key": "spa",
+      "facts": [
+        "Parties: Fenwick Energy plc (Buyer), Galloway Media Ltd (Seller); the Company is Larkspur Medical Ltd.",
+        "Section 2.1: the Purchase Price is $100,000,000.",
+        "This Agreement is dated 1 August 2026; Closing is scheduled for 18 November 2026 (the 'Closing Date').",
+        "Section 4.5: if the Conditions are not satisfied by the date falling 120 days after the date of this Agreement (signed 1 August 2026), either party may terminate.",
+        "Section 10.1 (Survival): the General Warranties survive Closing for 18 months; the Fundamental Warranties (title, capacity, tax) survive for 48 months. Claims must be notified in writing before expiry."
+      ],
+      "must_contain": [
+        "120 days",
+        "1 August 2026",
+        "18 months",
+        "48 months"
+      ]
+    },
+    "client_email.md": {
+      "key": "client_email",
+      "facts": [
+        "Regulatory counsel expects merger clearance by 13 December 2026."
+      ],
+      "must_contain": [
+        "13 December 2026"
+      ]
+    },
+    "board_minutes.md": {
+      "key": "board_minutes",
+      "facts": [
+        "Present: 2 directors (of 5). The meeting was quorate. RESOLVED to approve entry into the Share Purchase Agreement."
+      ],
+      "must_contain": [
+        "2 directors"
+      ]
+    },
+    "articles_of_association_extract.md": {
+      "key": "articles",
+      "facts": [
+        "Article 11: the quorum for board meetings is three directors."
+      ],
+      "must_contain": [
+        "three directors"
+      ]
+    },
+    "disclosure_letter.md": {
+      "key": "disclosure",
+      "facts": [
+        "Disclosure against Warranty 8.2 (IP): the Company's core platform software was developed in 2023 by an independent contractor, Orwell Industries Ltd. No written assignment of intellectual property was entered into."
+      ],
+      "must_contain": [
+        "Orwell Industries Ltd",
+        "No written assignment"
+      ]
+    }
+  }
+}

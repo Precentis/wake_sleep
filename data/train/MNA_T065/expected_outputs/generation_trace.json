@@ -1,0 +1,73 @@
+{
+  "docs": [
+    {
+      "title": "share_purchase_agreement.md",
+      "attempts": [
+        {
+          "missing": [
+            "excess"
+          ],
+          "usage": {
+            "input_tokens": 769,
+            "output_tokens": 1142
+          }
+        },
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 1938,
+            "output_tokens": 1179
+          }
+        }
+      ]
+    },
+    {
+      "title": "client_email.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 560,
+            "output_tokens": 464
+          }
+        }
+      ]
+    }
+  ],
+  "doc_facts": {
+    "share_purchase_agreement.md": {
+      "key": "spa",
+      "facts": [
+        "Parties: Ingleby Analytics Ltd (Buyer), Brightwater Media Ltd (Seller); the Company is Calloway Marine Ltd.",
+        "Section 2.1: the Purchase Price is $205,000,000.",
+        "This Agreement is dated 21 March 2026; Closing is scheduled for 20 May 2026 (the 'Closing Date').",
+        "Section 9.4 (De Minimis and Basket): the Seller shall not be liable unless the aggregate of all claims exceeds $1,025,000 (0.5% of the Purchase Price), in which case the Seller shall be liable only for the excess over that amount.",
+        "Section 10.1 (Survival): the General Warranties survive Closing for 12 months; the Fundamental Warranties (title, capacity, tax) survive for 36 months. Claims must be notified in writing before expiry.",
+        "Section 2.3: the Purchase Price shall be reduced dollar-for-dollar by any shortfall of Closing Working Capital below the Target Working Capital of $3,500,000.",
+        "Section 3.4 (Earn-out): the Earn-out Payment equals 2 times the amount by which FY2026 EBITDA exceeds $6,500,000, capped at $3,000,000."
+      ],
+      "must_contain": [
+        "$1,025,000",
+        "excess",
+        "12 months",
+        "36 months",
+        "$3,500,000",
+        "$6,500,000",
+        "$3,000,000"
+      ]
+    },
+    "client_email.md": {
+      "key": "client_email",
+      "facts": [
+        "The estimated Closing Working Capital is $2,880,000. The Seller's draft funds flow shows an adjusted purchase price of $203,760,000.",
+        "Management accounts show FY2026 EBITDA of $7,800,000; the Seller says the Earn-out Payment will therefore be $3,200,000."
+      ],
+      "must_contain": [
+        "$2,880,000",
+        "$203,760,000",
+        "$7,800,000",
+        "$3,200,000"
+      ]
+    }
+  }
+}

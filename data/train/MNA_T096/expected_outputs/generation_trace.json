@@ -1,0 +1,80 @@
+{
+  "docs": [
+    {
+      "title": "share_purchase_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 645,
+            "output_tokens": 991
+          }
+        }
+      ]
+    },
+    {
+      "title": "escrow_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 580,
+            "output_tokens": 1106
+          }
+        }
+      ]
+    },
+    {
+      "title": "client_email.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 511,
+            "output_tokens": 436
+          }
+        }
+      ]
+    }
+  ],
+  "doc_facts": {
+    "share_purchase_agreement.md": {
+      "key": "spa",
+      "facts": [
+        "Parties: Saltash Engineering Ltd (Buyer), Brightwater Robotics Ltd (Seller); the Company is Ashcombe Bioscience plc.",
+        "Section 2.1: the Purchase Price is $145,000,000.",
+        "This Agreement is dated 27 January 2026; Closing is scheduled for 11 March 2026 (the 'Closing Date').",
+        "Section 1.1: 'Closing Date' means 11 March 2026.",
+        "Section 2.3: the Purchase Price shall be reduced dollar-for-dollar by any shortfall of Closing Working Capital below the Target Working Capital of $5,000,000.",
+        "Section 9.7: the Buyer must notify any warranty claim within 30 days of becoming aware of it."
+      ],
+      "must_contain": [
+        "$5,000,000",
+        "30 days"
+      ]
+    },
+    "escrow_agreement.md": {
+      "key": "escrow",
+      "facts": [
+        "Clause 4.1: the Escrow Amount shall be released to the Seller on the date falling 18 months after the Closing Date, save to the extent of pending claims notified before that date. 'Business Day' means a day other than a Saturday or Sunday on which banks are open in London.",
+        "The Closing Date is 11 March 2026.",
+        "Clause 5.2: a claim against the Escrow Amount must be notified within 45 days of the Buyer becoming aware of it."
+      ],
+      "must_contain": [
+        "18 months",
+        "11 March 2026",
+        "45 days"
+      ]
+    },
+    "client_email.md": {
+      "key": "client_email",
+      "facts": [
+        "The estimated Closing Working Capital is $4,090,000. The Seller's draft funds flow shows an adjusted purchase price of $143,180,000."
+      ],
+      "must_contain": [
+        "$4,090,000",
+        "$143,180,000"
+      ]
+    }
+  }
+}

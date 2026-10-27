@@ -1,0 +1,106 @@
+{
+  "docs": [
+    {
+      "title": "share_purchase_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 596,
+            "output_tokens": 1357
+          }
+        }
+      ]
+    },
+    {
+      "title": "material_customer_contract.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 513,
+            "output_tokens": 987
+          }
+        }
+      ]
+    },
+    {
+      "title": "disclosure_letter.md",
+      "attempts": [
+        {
+          "missing": [
+            "No written assignment"
+          ],
+          "usage": {
+            "input_tokens": 538,
+            "output_tokens": 989
+          }
+        },
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 1552,
+            "output_tokens": 963
+          }
+        }
+      ]
+    },
+    {
+      "title": "client_email.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 482,
+            "output_tokens": 381
+          }
+        }
+      ]
+    }
+  ],
+  "doc_facts": {
+    "share_purchase_agreement.md": {
+      "key": "spa",
+      "facts": [
+        "Parties: Ivybridge Foods Ltd (Buyer), Pemberton Marine Ltd (Seller); the Company is Kingsmere Engineering Ltd.",
+        "Section 2.1: the Purchase Price is $120,000,000.",
+        "This Agreement is dated 12 February 2026; Closing is scheduled for 23 March 2026 (the 'Closing Date').",
+        "Section 4.5: if the Conditions are not satisfied by the date falling 120 days after the date of this Agreement (signed 12 February 2026), either party may terminate."
+      ],
+      "must_contain": [
+        "120 days",
+        "12 February 2026"
+      ]
+    },
+    "material_customer_contract.md": {
+      "key": "material_contract",
+      "facts": [
+        "Clause 14.2: either party may terminate this agreement on 30 days' notice if the other party undergoes a change of control without its prior written consent. The counterparty is Eskdale Energy plc."
+      ],
+      "must_contain": [
+        "change of control",
+        "prior written consent"
+      ]
+    },
+    "disclosure_letter.md": {
+      "key": "disclosure",
+      "facts": [
+        "Disclosure against Warranty 6.3 (Material Contracts): no material contract contains a change of control provision. (No further disclosure.)",
+        "Disclosure against Warranty 8.2 (IP): the Company's core platform software was developed in 2023 by an independent contractor, Corrib Engineering Ltd. No written assignment of intellectual property was entered into."
+      ],
+      "must_contain": [
+        "Corrib Engineering Ltd",
+        "No written assignment"
+      ]
+    },
+    "client_email.md": {
+      "key": "client_email",
+      "facts": [
+        "Regulatory counsel expects merger clearance by 27 July 2026."
+      ],
+      "must_contain": [
+        "27 July 2026"
+      ]
+    }
+  }
+}

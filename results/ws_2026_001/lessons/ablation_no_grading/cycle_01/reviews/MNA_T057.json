@@ -1,0 +1,130 @@
+{
+  "task_id": "MNA_T057",
+  "cycle": 1,
+  "lineage": "ablation_no_grading",
+  "graded": false,
+  "failures": [
+    {
+      "criterion_id": "C1",
+      "what_went_wrong": "The agent did not verify whether the termination period calculation aligned with the 'Business Day' definition in the agreements, potentially misaligning contractual timelines.",
+      "should_have": "Checked if the termination period was expressed in calendar days or business days and recalculated accordingly.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C2",
+      "what_went_wrong": "The agent identified missing schedules but did not cross-reference the SPA’s definition of 'Warranty Claim' with the absence of Schedule 3 to assess enforceability risks.",
+      "should_have": "Explicitly flagged whether the absence of referenced schedules rendered warranty claims unenforceable or required fallback provisions.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C3",
+      "what_went_wrong": "The agent noted inconsistent claim notification periods but did not propose a hierarchy (e.g., 'the longer period shall prevail') to resolve conflicts.",
+      "should_have": "Drafted a conflict-resolution clause for inconsistent notification periods between the SPA and escrow agreement.",
+      "failure_kind": "task_specific"
+    },
+    {
+      "criterion_id": "C4",
+      "what_went_wrong": "The agent did not cross-check the escrow amount’s percentage of the purchase price against market standards or the client’s risk profile.",
+      "should_have": "Compared the escrow amount (if specified) to typical M&A escrow ranges (e.g., 10-15% of purchase price) and flagged deviations.",
+      "failure_kind": "content"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T057_0",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "For every time-bound obligation (e.g., termination rights, claim notifications), confirm whether the period is expressed in calendar days or business days and recalculate deadlines accordingly.",
+      "source_tasks": [
+        "MNA_T057"
+      ],
+      "evidence": [
+        "MNA_T057:C1"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T057_1",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "When a contract references schedules or annexes not provided, assess whether the absence renders related clauses (e.g., warranties) unenforceable and recommend fallback provisions.",
+      "source_tasks": [
+        "MNA_T057"
+      ],
+      "evidence": [
+        "MNA_T057:C2"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T057_2",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "For inconsistent provisions across related agreements (e.g., notification periods), draft a conflict-resolution clause specifying which provision prevails or how conflicts are resolved.",
+      "source_tasks": [
+        "MNA_T057"
+      ],
+      "evidence": [
+        "MNA_T057:C3"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T057_3",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Compare escrow amounts or caps to market standards (e.g., 10-15% of purchase price for M&A) and flag deviations that may require negotiation or risk adjustment.",
+      "source_tasks": [
+        "MNA_T057"
+      ],
+      "evidence": [
+        "MNA_T057:C4"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.8
+    },
+    {
+      "candidate_id": "c01_MNA_T057_4",
+      "type": "checklist",
+      "category": "review",
+      "text": "Before finalising a contract review, verify that all cross-referenced documents (e.g., schedules, annexes) are accounted for and their absence is explicitly addressed in the deliverable.",
+      "source_tasks": [
+        "MNA_T057"
+      ],
+      "evidence": [
+        "MNA_T057:C2"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T057_5",
+      "type": "practice_note",
+      "category": "general",
+      "text": "For M&A transactions, map all critical dates (e.g., termination rights, regulatory deadlines) on a timeline to identify conflicts or gaps before drafting recommendations.",
+      "source_tasks": [
+        "MNA_T057"
+      ],
+      "evidence": [
+        "MNA_T057:C1"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.85
+    }
+  ],
+  "lesson_feedback": [],
+  "input_tokens": 3422,
+  "output_tokens": 943,
+  "cost_usd": 0.0031255,
+  "prompt": "# Task\nType: contract_review | Practice area: corporate_mna\nYou act for the Buyer, Juniper Systems Ltd. Juniper Systems Ltd (the Buyer) is acquiring the entire issued share capital of Bellhaven Foods Ltd (the Company) from Elstree Logistics plc (the Seller).\n\nReview the principal agreement against the other matter documents and report the problematic provisions. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 14 December 2026. Address the deliverable to the supervising partner.\n\n# Trajectory (28 model steps, 28 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"client_email.md\"})\n 3. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 4. [research] read_document({\"name\": \"escrow_agreement.md\"})\n 5. [research] search_documents({\"query\": \"warranty\"})\n 6. [research] search_documents({\"query\": \"indemnity\"})\n 7. [research] search_documents({\"query\": \"schedule\"})\n 8. [analysis] calculate({\"expression\": \"date('2026-12-14')\"})\n 9. [analysis] calculate({\"expression\": \"add_days(date('2026-11-15'), 150)\"})\n10. [analysis] calculate({\"expression\": \"date('2027-05-29')\"})\n11. [analysis] calculate({\"expression\": \"date('2027-01-08')\"})\n12. [analysis] calculate({\"expression\": \"add_months(date('2027-01-08'), 18)\"})\n13. [analysis] calculate({\"expression\": \"weekday(date('2027-05-29'))\"})\n14. [analysis] calculate({\"expression\": \"days_between(date('2026-11-15'), date('2027-05-29'))\"})\n15. [analysis] calculate({\"expression\": \"days_between(date('2026-11-15'), date('2027-04-14'))\"})\n16. [drafting] write_draft(<1070 words>)\n17. [verification] read_draft({})\n18. [verification] read_document({\"name\": \"escrow_agreement.md\", \"start_line\": 1, \"num_lines\": 10})\n19. [verification] search_documents({\"query\": \"Business Day\"})\n20. [verification] search_documents({\"query\": \"days\"})\n21. [verification] search_documents({\"query\": \"Escrow Amount\"})\n22. [verification] search_documents({\"query\": \"escrow\"})\n23. [editing] edit_draft(find='### 3.3 Escrow Agreement Deficiencies\\n\\n**3.3.1 Incorrect Com' -> '### 3.3 Escrow Agreement Deficiencies\\n\\n**3.3.1 Incorrect Com')\n24. [editing] edit_draft(find='### 4.1 Purchase Price Payment Timing\\nClause 2.1 requires fu' -> '### 4.1 Purchase Price Payment Timing\\n**Problem:** Clause 2.')\n25. [verification] read_draft({})\n26. [verification] calculate({\"expression\": \"days_between(date('2026-11-15'), date('2027-04-14'))\"})\n27. [verification] calculate({\"expression\": \"days_between(date('2026-11-15'), date('2027-05-29'))\"})\n28. [control] finish({\"summary\": \"Comprehensive review of the Share Purchase Agreement and related documents identifying critical timeline conflict (150-day termination right vs 195)\n\n# Final deliverable\n# Memorandum\n\n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Date:** 14 December 2026  \n**Subject:** Review of Share Purchase Agreement for Acquisition of Bellhaven Foods Ltd by Juniper Systems Ltd  \n**Matter:** Juniper Systems Ltd / Bellhaven Foods Ltd Acquisition  \n\n## 1. Executive Summary\n\nI have reviewed the principal share purchase agreement (SPA) dated 15 November 2026 and related escrow agreement against the client's instructions and have identified several problematic provisions that require urgent attention. The most critical issue is a fundamental timeline conflict between the SPA's termination provision and the expected merger clearance date, which could jeopardise the entire transaction.\n\n## 2. Critical Issues Requiring Immediate Amendment\n\n### 2.1 Timeline Conflict Between Termination Right and Merger Clearance\n\n**Problem:** Clause 4.3 of the SPA permits either party to terminate the agreement if any condition precedent is not satisfied or waived within 150 days of the SPA date (15 November 2026), i.e., by 14 April 2027. However, the client's email advises that merger clearance is expected by 29 May 2027 – 45 days after the termination right arises.\n\n**Risk:** The Seller could terminate the SPA on 14 April 2027 before merger clearance is obtained, leaving the Buyer without protection and potentially liable for costs incurred. Even if the Buyer wishes to proceed, the Seller could use this termination right as leverage to renegotiate terms.\n\n**Recommended Amendment:** The termination period in Clause 4.3 should be extended to at least 195 days from the SPA date (to 29 May 2027) or, preferably, linked specifically to the expected clearance date of 29 May 2027 with appropriate buffer.\n\n### 2.2 Inconsistent Claim Notification Periods\n\n**Problem:** Clause 9.7 of the SPA requires the Buyer to notify the Seller of any Warranty Claim within 30 days of becoming aware. However, Clause 5.2 of the Escrow Agreement allows 45 days for notifying claims against the escrow amount.\n\n**Risk:** This inconsistency creates uncertainty and could lead to disputes about which timeframe applies. A claim notified between 31-45 days might be valid under the Escrow Agreement but barred under the SPA.\n\n**Recommended Amendment:** Align the notification periods. Given the commercial context, we should seek to extend the SPA period to 45 days to match the escrow terms, or at minimum ensure the longer period applies to escrow claims.\n\n## 3. Other Problematic Provisions\n\n### 3.1 Missing Schedules\n\n**Problem:** The SPA references \"warranties set out in Schedule 3\" (Clause 1.1 definition of \"Warranty Claim\") but no schedules are provided in the reviewed documents.\n\n**Risk:** Without the warranties schedule, the Buyer has no contractual protection against breaches of representations by the Seller. This is a fundamental gap in the agreement.\n\n**Action Required:** Obtain Schedule 3 (Warranties) and any other referenced schedules for review.\n\n### 3.2 Vague Conditions Precedent\n\n**3.2.1 Regulatory Consents (Clause 4.1(a))**\n**Problem:** The condition requires \"the Buyer having obtained all necessary regulatory consents\" without specifying merger clearance or other specific consents.\n\n**Risk:** The Seller could argue that minor administrative consents not obtained by Closing constitute failure of the condition.\n\n**Recommended Amendment:** Specify \"merger clearance from the Competition and Markets Authority\" as the key regulatory consent, with appropriate carve-outs for minor consents.\n\n**3.2.2 Intercompany Balances (Clause 4.1(b))**\n**Problem:** Requires evidence \"satisfactory to the Buyer\" – a subjective standard.\n\n**Risk:** Disputes could arise over what constitutes \"satisfactory\" evidence.\n\n**Recommended Amendment:** Replace with objective criteria, e.g., \"written confirmation from the Company's auditors\" or \"bank statements showing zero balances.\"\n\n**3.2.3 Representations and Warranties (Clause 4.1(c))**\n**Problem:** Requires representations and warranties to be \"true and accurate in all respects\" – an absolute standard.\n\n**Risk:** Any minor inaccuracy, however immaterial, could allow termination.\n\n**Recommended Amendment:** Introduce materiality qualifiers, e.g., \"true and accurate in all material respects.\"\n\n### 3.3 Escrow Agreement Deficiencies\n\n**3.3.1 Incorrect Company Details**\n**Problem:** The Escrow Agreement records the Buyer's company number as 12048682 (Clause 5(1)) instead of the correct number 12041418.\n\n**Risk:** Could create issues with enforcement or identification of the proper party.\n\n**Recommended Amendment:** Correct the company number throughout.\n\n**3.3.2 Placeholder Information**\n**Problem:** The agreement contains \"[●]\" placeholders for dates and the escrow agent's identity.\n\n**Risk:** The agreement is incomplete and unenforceable in its current state.\n\n**Action Required:** Complete all placeholder information before execution.\n\n**3.3.3 Missing Escrow Amount Specification**\n**Problem:** The Escrow Agreement refers to \"the Escrow Amount\" but does not specify the amount or percentage of the purchase price to be held in escrow.\n\n**Risk:** Uncertainty about the funds available for claims and potential disputes over the appropriate amount.\n\n**Recommended Amendment:** Specify the escrow amount (e.g., $X or Y% of the purchase price) and include provisions for any interest earned.\n\n**3.3.4 No Link to SPA**\n**Problem:** The SPA makes no reference to the escrow arrangement, despite the Escrow Agreement being intended to secure claims under the SPA.\n\n**Risk:** Lack of contractual connection between the agreements could create enforcement issues.\n\n**Recommended Amendment:** Include reference to the escrow arrangement in the SPA, particularly in the payment provisions and claims mechanisms.\n\n**3.3.5 Inconsistent Business Day Definition**\n**Problem:** The Escrow Agreement defines \"Business Day\" (Clause 1.1) but the SPA does not, despite referencing \"Business Days\" in Clause 2.1.\n\n**Risk:** Inconsistent interpretation of time periods calculated in business days.\n\n**Recommended Amendment:** Include a consistent \"Business Day\" definition in the SPA, aligned with the escrow definition.\n\n### 3.4 Yarrow Capital LLP Consideration\n\n**Background:** The client email specifically notes Yarrow Capital LLP as a material customer requiring due diligence attention.\n\n**Current Status:** Neither agreement addresses customer contracts or contains specific protections regarding material customers.\n\n**Recommended Action:** Include specific warranties regarding material customer contracts (particularly Yarrow Capital LLP) and consider appropriate indemnities for loss of such contracts post-completion.\n\n## 4. Commercial Considerations\n\n### 4.1 Purchase Price Payment Timing\n**Problem:** Clause 2.1 requires full payment of the $170,000,000 purchase price on the Closing Date (8 January 2027), which is approximately 4.5 months before the expected merger clearance date (29 May 2027).\n\n**Risk:** The Buyer would be required to pay the full purchase price while regulatory clearance is still pending. If clearance is denied or delayed, the Buyer would have paid for shares it cannot legally own and would face significant recovery challenges.\n\n**Recommended Considerations:**\n- Defer a portion of payment until merger clearance is obtained\n- Implement staggered payments tied to clearance milestones\n- Increase escrow retention specifically for regulatory risks\n- Strengthen the regulatory condition precedent to make clearance an absolute condition\n\n### 4.2 Escrow Release Timing\nClause 4.1 of the Escrow Agreement provides for release to the Seller 18 months after Closing (8 July 2028). This is a reasonable period for warranty claims but should be reviewed against the typical lifespan of potential liabilities.\n\n## 5. Next Steps\n\n1. **Immediate Priority:** Amend Clause 4.3 of the SPA to extend the termination period beyond 29 May 2027.\n2. **Coordinate with Regulatory Counsel:** Confirm the expected 29 May 2027 clearance date and build appropriate buffer into timelines.\n3. **Obtain Missing Schedules:** Request Schedule 3 (Warranties) and any other referenced schedules.\n4. **Align Documentation:** Harmonise claim notification periods between SPA and Escrow Agreement.\n5. **Complete Escrow Agreement:** Fill all placeholders and correct company details.\n6. **Enhance Customer Protections:** Draft specific warranties and indemnities regarding material customer contracts, particularly Yarrow Capital LLP.\n\n## 6. Conclusion\n\nThe SPA in its current form contains several problematic provisions, most critically the timeline conflict that could allow termination before merger clearance. The Buyer's position would be significantly weakened without amendment of Clause 4.3. All other identified issues should be addressed in parallel to ensure robust contractual protection.\n\nI recommend we seek the client's instructions on these points and prepare mark-ups for negotiation with the Seller's counsel.\n\n# Your job\nNo grades are available. Critically assess the deliverable and the work process yourself, as a demanding supervising partner would, and write reusable candidate lessons for improving the work.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|contract_review\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C1\",\n      \"what_went_wrong\": \"The agent did not verify whether the termination period calculation aligned with the 'Business Day' definition in the agreements, potentially misaligning contractual timelines.\",\n      \"should_have\": \"Checked if the termination period was expressed in calendar days or business days and recalculated accordingly.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C2\",\n      \"what_went_wrong\": \"The agent identified missing schedules but did not cross-reference the SPA’s definition of 'Warranty Claim' with the absence of Schedule 3 to assess enforceability risks.\",\n      \"should_have\": \"Explicitly flagged whether the absence of referenced schedules rendered warranty claims unenforceable or required fallback provisions.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C3\",\n      \"what_went_wrong\": \"The agent noted inconsistent claim notification periods but did not propose a hierarchy (e.g., 'the longer period shall prevail') to resolve conflicts.\",\n      \"should_have\": \"Drafted a conflict-resolution clause for inconsistent notification periods between the SPA and escrow agreement.\",\n      \"failure_kind\": \"task_specific\"\n    },\n    {\n      \"criterion_id\": \"C4\",\n      \"what_went_wrong\": \"The agent did not cross-check the escrow amount’s percentage of the purchase price against market standards or the client’s risk profile.\",\n      \"should_have\": \"Compared the escrow amount (if specified) to typical M&A escrow ranges (e.g., 10-15% of purchase price) and flagged deviations.\",\n      \"failure_kind\": \"content\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"For every time-bound obligation (e.g., termination rights, claim notifications), confirm whether the period is expressed in calendar days or business days and recalculate deadlines accordingly.\",\n      \"evidence\": [\"C1\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"When a contract references schedules or annexes not provided, assess whether the absence renders related clauses (e.g., warranties) unenforceable and recommend fallback provisions.\",\n      \"evidence\": [\"C2\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"For inconsistent provisions across related agreements (e.g., notification periods), draft a conflict-resolution clause specifying which provision prevails or how conflicts are resolved.\",\n      \"evidence\": [\"C3\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.85\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Compare escrow amounts or caps to market standards (e.g., 10-15% of purchase price for M&A) and flag deviations that may require negotiation or risk adjustment.\",\n      \"evidence\": [\"C4\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.8\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"review\",\n      \"text\": \"Before finalising a contract review, verify that all cross-referenced documents (e.g., schedules, annexes) are accounted for and their absence is explicitly addressed in the deliverable.\",\n      \"evidence\": [\"C2\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"general\",\n      \"text\": \"For M&A transactions, map all critical dates (e.g., termination rights, regulatory deadlines) on a timeline to identify conflicts or gaps before drafting recommendations.\",\n      \"evidence\": [\"C1\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.85\n    }\n  ],\n  \"lesson_feedback\": []\n}\n```"
+}

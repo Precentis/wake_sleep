@@ -1,0 +1,102 @@
+{
+  "task_id": "CM_X005",
+  "run_name": "eval/test/budget_matched_v10",
+  "judgements": [
+    {
+      "judge": "judge_1",
+      "model": "zai.glm-5",
+      "results": [
+        {
+          "criterion_id": "C1",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable does not identify the comfort letter cut-off date issue or the need for a bring-down letter."
+        },
+        {
+          "criterion_id": "C2",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable does not identify the correct share count inconsistency (61,750,000 vs 62,250,000) or state that it must be reconciled before pricing."
+        },
+        {
+          "criterion_id": "C3",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable does not identify the over-allotment option mathematical error (2,000,000 vs the correct 1,500,000 shares)."
+        },
+        {
+          "criterion_id": "C4",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable references a share count inconsistency but cites 'line 11' and does not mention the Prospectus figure, failing to clearly flag the specific document inconsistency."
+        },
+        {
+          "criterion_id": "C5",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable does not show the over-allotment arithmetic or flag the discrepancy."
+        },
+        {
+          "criterion_id": "C6",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable does not assign any risk ratings to issues."
+        }
+      ],
+      "input_tokens": 3977,
+      "output_tokens": 328,
+      "cost_usd": 0.0050266,
+      "latency_ms": 8361,
+      "prompt_without_documents": "# Task instructions\nYou act for the Company (issuer), Yarrow Technologies Ltd. Yarrow Technologies Ltd (the Company) is undertaking an initial public offering of ordinary shares underwritten by Ashcombe Marine Securities (the Underwriter).\n\nPrepare a due diligence findings report on the matter documents. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 9 September 2026. Address the deliverable to the supervising partner.\n\n# Matter documents\n[see task documents]\n# Deliverable to grade\n<<<DELIVERABLE\nI found a critical inconsistency! The underwriting agreement says the Company has 62,250,000 ordinary shares in issue (line 11), but the prospectus states a different figure; (2) document-stated expiry date, and document-stated expiry date, and document-stated expiry dates, and recommend a default definition and document the legal/commercial effect of missing the deadline, and recommend a default definition, or ambiguous term, or ambiguous, or ambiguous, or ambiguous, or ambiguous, and recommend a default definition; (6) include a 'Alternative Interpretations' subsection analyzing the longest duration first and contrast it with shorter restrictions to limit client exposure; (e.g., 'days excluding weekends and public holidays in the applicable jurisdiction') and document the legal/commercial effect of missing the deadline, and recommend a default definition; (17) include a 'Alternative Interpretations' subsection analyzing the longest duration first and contrast it)\nDELIVERABLE>>>\n\n# Rubric criteria\nC1: Identifies that the comfort letter cut-off of 9 October 2026 is 9 days before the 18 October 2026 pricing date, outside the 3-business-day requirement in Clause 7(b), so a bring-down letter is needed.\nC2: Identifies the inconsistency between 61,750,000 shares in issue in the Prospectus and 62,250,000 in the Underwriting Agreement recital, which must be reconciled before pricing.\nC3: Identifies that 15% of 10,000,000 Firm Shares is 1,500,000 shares, not the 2,000,000 stated in the Over-allotment Option (Clause 4).\nC4: Flags the share-count inconsistency between the Prospectus and the Underwriting Agreement.\nC5: Shows the over-allotment arithmetic (15% x 10,000,000 = 1,500,000) and flags the discrepancy.\nC6: Assigns a risk rating (High / Medium / Low) to each issue.\n\nGrade every criterion (6 total). JSON only.",
+      "raw_response": "{\"results\": [{\"criterion_id\": \"C1\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable does not identify the comfort letter cut-off date issue or the need for a bring-down letter.\"}, {\"criterion_id\": \"C2\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable does not identify the correct share count inconsistency (61,750,000 vs 62,250,000) or state that it must be reconciled before pricing.\"}, {\"criterion_id\": \"C3\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable does not identify the over-allotment option mathematical error (2,000,000 vs the correct 1,500,000 shares).\"}, {\"criterion_id\": \"C4\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable references a share count inconsistency but cites 'line 11' and does not mention the Prospectus figure, failing to clearly flag the specific document inconsistency.\"}, {\"criterion_id\": \"C5\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable does not show the over-allotment arithmetic or flag the discrepancy.\"}, {\"criterion_id\": \"C6\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable does not assign any risk ratings to issues.\"}]}"
+    },
+    {
+      "judge": "judge_2",
+      "model": "moonshotai.kimi-k2.5",
+      "results": [
+        {
+          "criterion_id": "C1",
+          "result": "FAIL",
+          "confidence": 0.9,
+          "reason": "The deliverable contains garbled, nonsensical text and does not mention the comfort letter cut-off date of 9 October 2026, the pricing date of 18 October 2026, or the 3-business-day requirement in Clause 7(b). No bring-down letter recommendation is present."
+        },
+        {
+          "criterion_id": "C2",
+          "result": "FAIL",
+          "confidence": 0.8,
+          "reason": "While the deliverable mentions a share count inconsistency, it garbles the figures (referencing '62,250,000' from the Underwriting Agreement but failing to clearly state the Prospectus figure of 61,750,000) and does not clearly articulate that these specific numbers must be reconciled before pricing."
+        },
+        {
+          "criterion_id": "C3",
+          "result": "FAIL",
+          "confidence": 0.95,
+          "reason": "The deliverable does not mention the Over-allotment Option, Clause 4, the 15% calculation, or the discrepancy between 1,500,000 (correct) and 2,000,000 (stated) shares."
+        },
+        {
+          "criterion_id": "C4",
+          "result": "FAIL",
+          "confidence": 0.7,
+          "reason": "The deliverable vaguely references a share-count inconsistency but does not clearly flag the specific discrepancy between 61,750,000 shares (Prospectus) and 62,250,000 shares (Underwriting Agreement) with the clarity required."
+        },
+        {
+          "criterion_id": "C5",
+          "result": "FAIL",
+          "confidence": 0.95,
+          "reason": "The deliverable contains no arithmetic showing 15% x 10,000,000 = 1,500,000 and does not flag the discrepancy with the 2,000,000 Additional Shares stated in Clause 4.1."
+        },
+        {
+          "criterion_id": "C6",
+          "result": "FAIL",
+          "confidence": 0.95,
+          "reason": "The deliverable contains no risk ratings (High/Medium/Low) assigned to any issues; the text is largely unintelligible gibberish with no structured analysis."
+        }
+      ],
+      "input_tokens": 3968,
+      "output_tokens": 529,
+      "cost_usd": 0.0037032999999999996,
+      "latency_ms": 9152,
+      "prompt_without_documents": "# Task instructions\nYou act for the Company (issuer), Yarrow Technologies Ltd. Yarrow Technologies Ltd (the Company) is undertaking an initial public offering of ordinary shares underwritten by Ashcombe Marine Securities (the Underwriter).\n\nPrepare a due diligence findings report on the matter documents. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 9 September 2026. Address the deliverable to the supervising partner.\n\n# Matter documents\n[see task documents]\n# Deliverable to grade\n<<<DELIVERABLE\nI found a critical inconsistency! The underwriting agreement says the Company has 62,250,000 ordinary shares in issue (line 11), but the prospectus states a different figure; (2) document-stated expiry date, and document-stated expiry date, and document-stated expiry dates, and recommend a default definition and document the legal/commercial effect of missing the deadline, and recommend a default definition, or ambiguous term, or ambiguous, or ambiguous, or ambiguous, or ambiguous, and recommend a default definition; (6) include a 'Alternative Interpretations' subsection analyzing the longest duration first and contrast it with shorter restrictions to limit client exposure; (e.g., 'days excluding weekends and public holidays in the applicable jurisdiction') and document the legal/commercial effect of missing the deadline, and recommend a default definition; (17) include a 'Alternative Interpretations' subsection analyzing the longest duration first and contrast it)\nDELIVERABLE>>>\n\n# Rubric criteria\nC1: Identifies that the comfort letter cut-off of 9 October 2026 is 9 days before the 18 October 2026 pricing date, outside the 3-business-day requirement in Clause 7(b), so a bring-down letter is needed.\nC2: Identifies the inconsistency between 61,750,000 shares in issue in the Prospectus and 62,250,000 in the Underwriting Agreement recital, which must be reconciled before pricing.\nC3: Identifies that 15% of 10,000,000 Firm Shares is 1,500,000 shares, not the 2,000,000 stated in the Over-allotment Option (Clause 4).\nC4: Flags the share-count inconsistency between the Prospectus and the Underwriting Agreement.\nC5: Shows the over-allotment arithmetic (15% x 10,000,000 = 1,500,000) and flags the discrepancy.\nC6: Assigns a risk rating (High / Medium / Low) to each issue.\n\nGrade every criterion (6 total). JSON only.",
+      "raw_response": "{\"results\": [{\"criterion_id\": \"C1\", \"result\": \"FAIL\", \"confidence\": 0.9, \"reason\": \"The deliverable contains garbled, nonsensical text and does not mention the comfort letter cut-off date of 9 October 2026, the pricing date of 18 October 2026, or the 3-business-day requirement in Clause 7(b). No bring-down letter recommendation is present.\"}, {\"criterion_id\": \"C2\", \"result\": \"FAIL\", \"confidence\": 0.8, \"reason\": \"While the deliverable mentions a share count inconsistency, it garbles the figures (referencing '62,250,000' from the Underwriting Agreement but failing to clearly state the Prospectus figure of 61,750,000) and does not clearly articulate that these specific numbers must be reconciled before pricing.\"}, {\"criterion_id\": \"C3\", \"result\": \"FAIL\", \"confidence\": 0.95, \"reason\": \"The deliverable does not mention the Over-allotment Option, Clause 4, the 15% calculation, or the discrepancy between 1,500,000 (correct) and 2,000,000 (stated) shares.\"}, {\"criterion_id\": \"C4\", \"result\": \"FAIL\", \"confidence\": 0.7, \"reason\": \"The deliverable vaguely references a share-count inconsistency but does not clearly flag the specific discrepancy between 61,750,000 shares (Prospectus) and 62,250,000 shares (Underwriting Agreement) with the clarity required.\"}, {\"criterion_id\": \"C5\", \"result\": \"FAIL\", \"confidence\": 0.95, \"reason\": \"The deliverable contains no arithmetic showing 15% x 10,000,000 = 1,500,000 and does not flag the discrepancy with the 2,000,000 Additional Shares stated in Clause 4.1.\"}, {\"criterion_id\": \"C6\", \"result\": \"FAIL\", \"confidence\": 0.95, \"reason\": \"The deliverable contains no risk ratings (High/Medium/Low) assigned to any issues; the text is largely unintelligible gibberish with no structured analysis.\"}]}"
+    }
+  ]
+}

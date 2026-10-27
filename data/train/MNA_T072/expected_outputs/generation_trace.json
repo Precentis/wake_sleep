@@ -1,0 +1,113 @@
+{
+  "docs": [
+    {
+      "title": "share_purchase_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 747,
+            "output_tokens": 1125
+          }
+        }
+      ]
+    },
+    {
+      "title": "employment_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 492,
+            "output_tokens": 1046
+          }
+        }
+      ]
+    },
+    {
+      "title": "disclosure_letter.md",
+      "attempts": [
+        {
+          "missing": [
+            "No written assignment"
+          ],
+          "usage": {
+            "input_tokens": 513,
+            "output_tokens": 1016
+          }
+        },
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 1554,
+            "output_tokens": 1052
+          }
+        }
+      ]
+    },
+    {
+      "title": "client_email.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 482,
+            "output_tokens": 363
+          }
+        }
+      ]
+    }
+  ],
+  "doc_facts": {
+    "share_purchase_agreement.md": {
+      "key": "spa",
+      "facts": [
+        "Parties: Northgate Robotics Ltd (Buyer), Whitlock Logistics plc (Seller); the Company is Juniper Systems Ltd.",
+        "Section 2.1: the Purchase Price is $125,000,000.",
+        "This Agreement is dated 21 March 2026; Closing is scheduled for 24 April 2026 (the 'Closing Date').",
+        "Section 10.1 (Survival): the General Warranties survive Closing for 12 months; the Fundamental Warranties (title, capacity, tax) survive for 48 months. Claims must be notified in writing before expiry.",
+        "Section 12.1: the Seller shall not compete with the business for 5 years after Closing.",
+        "Section 4.5: if the Conditions are not satisfied by the date falling 150 days after the date of this Agreement (signed 21 March 2026), either party may terminate.",
+        "Section 8.4 (Limitation of Liability): the aggregate liability of the Seller for warranty claims shall not exceed an amount equal to 20% of the Purchase Price, being $31,250,000. The Purchase Price is $125,000,000 (see Section 2.1)."
+      ],
+      "must_contain": [
+        "12 months",
+        "48 months",
+        "5 years",
+        "150 days",
+        "21 March 2026",
+        "20%",
+        "$31,250,000",
+        "$125,000,000"
+      ]
+    },
+    "employment_agreement.md": {
+      "key": "employment",
+      "facts": [
+        "Clause 18: the Founder shall not compete with the business for 18 months after termination of employment."
+      ],
+      "must_contain": [
+        "18 months"
+      ]
+    },
+    "disclosure_letter.md": {
+      "key": "disclosure",
+      "facts": [
+        "Disclosure against Warranty 8.2 (IP): the Company's core platform software was developed in 2023 by an independent contractor, Ashcombe Technologies Ltd. No written assignment of intellectual property was entered into."
+      ],
+      "must_contain": [
+        "Ashcombe Technologies Ltd",
+        "No written assignment"
+      ]
+    },
+    "client_email.md": {
+      "key": "client_email",
+      "facts": [
+        "Regulatory counsel expects merger clearance by 2 October 2026."
+      ],
+      "must_contain": [
+        "2 October 2026"
+      ]
+    }
+  }
+}

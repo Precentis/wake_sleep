@@ -1,0 +1,141 @@
+{
+  "docs": [
+    {
+      "title": "share_purchase_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 578,
+            "output_tokens": 1012
+          }
+        }
+      ]
+    },
+    {
+      "title": "escrow_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 549,
+            "output_tokens": 996
+          }
+        }
+      ]
+    },
+    {
+      "title": "board_minutes.md",
+      "attempts": [
+        {
+          "missing": [
+            "2 directors"
+          ],
+          "usage": {
+            "input_tokens": 525,
+            "output_tokens": 872
+          }
+        },
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 1420,
+            "output_tokens": 864
+          }
+        }
+      ]
+    },
+    {
+      "title": "disclosure_letter.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 484,
+            "output_tokens": 933
+          }
+        }
+      ]
+    },
+    {
+      "title": "articles_of_association_extract.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 488,
+            "output_tokens": 1051
+          }
+        }
+      ]
+    },
+    {
+      "title": "client_email.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 479,
+            "output_tokens": 389
+          }
+        }
+      ]
+    }
+  ],
+  "doc_facts": {
+    "share_purchase_agreement.md": {
+      "key": "spa",
+      "facts": [
+        "Parties: Ingleby Marine Ltd (Buyer), Holloway Systems Ltd (Seller); the Company is Whitlock Media Ltd.",
+        "Section 2.1: the Purchase Price is $200,000,000.",
+        "This Agreement is dated 15 May 2027; Closing is scheduled for 22 July 2027 (the 'Closing Date').",
+        "Section 1.1: 'Closing Date' means 22 July 2027."
+      ],
+      "must_contain": []
+    },
+    "escrow_agreement.md": {
+      "key": "escrow",
+      "facts": [
+        "Clause 4.1: the Escrow Amount shall be released to the Seller on the date falling 12 months after the Closing Date, save to the extent of pending claims notified before that date. 'Business Day' means a day other than a Saturday or Sunday on which banks are open in London.",
+        "The Closing Date is 22 July 2027."
+      ],
+      "must_contain": [
+        "12 months",
+        "22 July 2027"
+      ]
+    },
+    "board_minutes.md": {
+      "key": "board_minutes",
+      "facts": [
+        "Item 5: the board noted a letter before action from Corrib Retail Group plc threatening proceedings for approximately $1,200,000 in respect of alleged defective deliveries. Management to monitor.",
+        "Present: 2 directors (of 5). The meeting was quorate. RESOLVED to approve entry into the Share Purchase Agreement."
+      ],
+      "must_contain": [
+        "Corrib Retail Group plc",
+        "$1,200,000",
+        "2 directors"
+      ]
+    },
+    "disclosure_letter.md": {
+      "key": "disclosure",
+      "facts": [
+        "Disclosure against Warranty 7.1 (Litigation): None."
+      ],
+      "must_contain": []
+    },
+    "articles_of_association_extract.md": {
+      "key": "articles",
+      "facts": [
+        "Article 11: the quorum for board meetings is three directors."
+      ],
+      "must_contain": [
+        "three directors"
+      ]
+    },
+    "client_email.md": {
+      "key": "client_email",
+      "facts": [],
+      "must_contain": []
+    }
+  }
+}

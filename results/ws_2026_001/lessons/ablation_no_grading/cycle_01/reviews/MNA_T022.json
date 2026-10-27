@@ -1,0 +1,142 @@
+{
+  "task_id": "MNA_T022",
+  "cycle": 1,
+  "lineage": "ablation_no_grading",
+  "graded": false,
+  "failures": [
+    {
+      "criterion_id": "C1",
+      "what_went_wrong": "The redline note did not verify whether the purchase price currency matched the escrow currency or recompute the escrow percentage based on the correct currency.",
+      "should_have": "Recomputed the escrow amount as a percentage of the purchase price using the same currency for both figures.",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C2",
+      "what_went_wrong": "The deliverable did not cross-check the disclosed warranty clause numbers in the Disclosure Letter against the actual clauses in the SPA.",
+      "should_have": "Verified that all referenced warranty clause numbers in the Disclosure Letter exist in the SPA or flagged discrepancies.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C3",
+      "what_went_wrong": "The redline note proposed amendments without first confirming whether the client's completion timeline aligned with the SPA's closing date.",
+      "should_have": "Explicitly confirmed the intended completion date with the client before finalising timing-related amendments.",
+      "failure_kind": "task_specific"
+    },
+    {
+      "criterion_id": "C4",
+      "what_went_wrong": "The deliverable did not include a checklist of standard warranties for the practice area, leading to potential omissions.",
+      "should_have": "Used a standard warranty checklist for corporate M&A transactions to ensure completeness.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C5",
+      "what_went_wrong": "The redline note did not flag the absence of a 'materiality scrape' provision in the indemnity section, which is standard in many SPAs.",
+      "should_have": "Reviewed the indemnity provisions against a market-standard template to identify missing clauses.",
+      "failure_kind": "content"
+    },
+    {
+      "criterion_id": "C6",
+      "what_went_wrong": "The deliverable did not verify whether the escrow release tranches aligned with the warranty survival periods.",
+      "should_have": "Ensured escrow release tranches matched the survival periods of the warranties they were intended to secure.",
+      "failure_kind": "procedural"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T022_0",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "Before finalising escrow provisions, recompute the escrow amount as a percentage of the purchase price using the same currency for both figures.",
+      "source_tasks": [
+        "MNA_T022"
+      ],
+      "evidence": [
+        "MNA_T022:C1"
+      ],
+      "task_type_scope": "redline",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T022_1",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "Cross-check all clause numbers referenced in the Disclosure Letter against the principal agreement to identify missing or misnumbered provisions.",
+      "source_tasks": [
+        "MNA_T022"
+      ],
+      "evidence": [
+        "MNA_T022:C2"
+      ],
+      "task_type_scope": "redline",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T022_2",
+      "type": "practice_note",
+      "category": "general",
+      "text": "Confirm critical dates (e.g., completion timeline) with the client before drafting or finalising amendments to avoid inconsistencies.",
+      "source_tasks": [
+        "MNA_T022"
+      ],
+      "evidence": [
+        "MNA_T022:C3"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T022_3",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Use a standard warranty checklist for the practice area to ensure all material warranties are included in the redline amendments.",
+      "source_tasks": [
+        "MNA_T022"
+      ],
+      "evidence": [
+        "MNA_T022:C4"
+      ],
+      "task_type_scope": "redline",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T022_4",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Compare indemnity provisions against a market-standard template to identify and propose missing clauses, such as 'materiality scrape' provisions.",
+      "source_tasks": [
+        "MNA_T022"
+      ],
+      "evidence": [
+        "MNA_T022:C5"
+      ],
+      "task_type_scope": "redline",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.85
+    },
+    {
+      "candidate_id": "c01_MNA_T022_5",
+      "type": "checklist",
+      "category": "review",
+      "text": "Ensure escrow release tranches align with the survival periods of the warranties they are intended to secure before finalising the redline.",
+      "source_tasks": [
+        "MNA_T022"
+      ],
+      "evidence": [
+        "MNA_T022:C6"
+      ],
+      "task_type_scope": "redline",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    }
+  ],
+  "lesson_feedback": [],
+  "input_tokens": 3605,
+  "output_tokens": 1015,
+  "cost_usd": 0.003325,
+  "prompt": "# Task\nType: redline | Practice area: corporate_mna\nYou act for the Buyer, Rothley Capital LLP. Rothley Capital LLP (the Buyer) is acquiring the entire issued share capital of Pemberton Engineering Ltd (the Company) from Northgate Media Ltd (the Seller).\n\nPrepare a redline note proposing amendments to the principal agreement to protect our client. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 29 March 2027. Address the deliverable to the supervising partner.\n\n# Trajectory (16 model steps, 16 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 3. [research] read_document({\"name\": \"client_email.md\"})\n 4. [research] read_document({\"name\": \"disclosure_letter.md\"})\n 5. [research] read_document({\"name\": \"escrow_agreement.md\"})\n 6. [research] read_document({\"name\": \"material_customer_contract.md\"})\n 7. [research] search_documents({\"query\": \"warranty\"})\n 8. [research] search_documents({\"query\": \"indemnity\"})\n 9. [research] search_documents({\"query\": \"liability\"})\n10. [analysis] calculate({\"expression\": \"date('2027-03-29')\"})\n11. [drafting] write_draft(<1453 words>)\n12. [verification] read_draft({})\n13. [editing] edit_draft(find='## Timing Considerations\\n\\n**Current Inconsistency:** Client ' -> '## Additional Critical Issues\\n\\n### 11. Currency Discrepancy\\n')\n14. [editing] edit_draft(find='**Specific IP Concern:** The Disclosure Letter references Wa' -> '**Specific IP Concern:** The Disclosure Letter references Wa')\n15. [editing] edit_draft(find='**Proposed Amendment:** \\n1. Require specific disclosure of a' -> '**Proposed Amendment:** \\n1. Require Seller to correct Disclo')\n16. [control] finish({\"summary\": \"Redline note proposing comprehensive amendments to the Share Purchase Agreement to protect Rothley Capital LLP in its acquisition of Pemberton Engi)\n\n# Final deliverable\n# Redline Note: Proposed Amendments to Share Purchase Agreement\n## Rothley Capital LLP Acquisition of Pemberton Engineering Ltd\n**Date:** 29 March 2027  \n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Matter:** Proposed acquisition of Pemberton Engineering Ltd by Rothley Capital LLP  \n\n---\n\n## Executive Summary\n\nThis redline note identifies critical deficiencies in the current Share Purchase Agreement (SPA) and proposes comprehensive amendments to protect our client, Rothley Capital LLP (the Buyer). The current SPA lacks essential protections including warranties, indemnities, limitations of liability, and conditions precedent. Additionally, we have identified material risks including:\n\n1. **Missing Warranties and Indemnities**: The SPA contains no warranties or indemnities from the Seller\n2. **IP Risk**: No written assignment exists for the Company's core platform software\n3. **Contractual Risk**: Material customer contract contains change of control provision contrary to Disclosure Letter\n4. **Inadequate Escrow**: £2.5M escrow represents less than 2% of £140M purchase price\n5. **Timing Inconsistency**: Client email indicates completion before 29 March 2027, but SPA shows 29 April 2027\n\n## Critical Issues Requiring Amendment\n\n### 1. Missing Warranties and Representations (Clause Addition)\n\n**Current Position:** The SPA contains no warranties or representations from the Seller.\n\n**Risk:** The Buyer has no contractual recourse if the Company's affairs are not as represented.\n\n**Proposed Amendment:** Add comprehensive warranties covering:\n- Title to shares\n- Accounts and financial position\n- Taxation\n- Assets and properties\n- Contracts and commitments\n- Employment matters\n- Intellectual property\n- Litigation\n- Compliance with laws\n- Environmental matters\n\n**Specific IP Concern:** The Disclosure Letter references Warranty 8.2 (IP) and discloses that no written assignment exists for the core platform software developed by Yarrow Systems Ltd. This creates significant IP ownership risk.\n\n**Immediate Action Required:** Before completion, obtain written assignment from Yarrow Systems Ltd or negotiate specific indemnity covering full replacement cost of software.\n\n**Proposed IP Warranty Language:**\n```\n6.8 Intellectual Property\n(a) The Company owns or has valid rights to use all Intellectual Property necessary for the conduct of its business as currently conducted.\n(b) All Intellectual Property created for or on behalf of the Company by employees or contractors has been validly assigned to the Company in writing.\n(c) No third party has asserted any claim of infringement or ownership of any Intellectual Property used by the Company.\n```\n\n### 2. Material Contracts Disclosure Inaccuracy\n\n**Current Position:** Disclosure Letter states \"no material contract contains a change of control provision\" (clause 2.1).\n\n**Contradiction:** The Material Customer Contract with Calloway Media Ltd contains clause 14.2 allowing termination on 30 days' notice upon change of control without consent.\n\n**Risk:** Key customer relationship may be terminated post-acquisition.\n\n**Proposed Amendment:** \n1. Require Seller to correct Disclosure Letter to accurately disclose change of control provision in Calloway Media Ltd contract\n2. Add condition precedent requiring consent from Calloway Media Ltd or waiver of change of control right\n3. Add indemnity for losses arising from termination under change of control provisions\n4. Consider price reduction if consent cannot be obtained\n\n### 3. Inadequate Escrow Arrangements\n\n**Current Position:** £2.5M escrow for 12 months (Escrow Agreement).\n\n**Analysis:** £2.5M represents only 1.79% of £140M purchase price, insufficient for material claims.\n\n**Proposed Amendment:** Increase escrow to minimum 10% of purchase price (£14M) with 24-month retention period.\n\n**Escrow Release Language:**\n```\n4.1 The Escrow Amount shall be released to the Seller in three tranches:\n(a) 50% on the date falling 12 months after the Closing Date;\n(b) 25% on the date falling 18 months after the Closing Date;\n(c) 25% on the date falling 24 months after the Closing Date;\nin each case save to the extent of any Pending Claim notified before the relevant release date.\n```\n\n### 4. Missing Indemnities\n\n**Current Position:** No indemnity provisions in SPA.\n\n**Risk:** Buyer bears all post-completion risks without recourse.\n\n**Proposed Amendment:** Add comprehensive indemnities for:\n- Breach of warranties\n- Pre-completion liabilities\n- Tax liabilities\n- Environmental liabilities\n- Litigation matters\n- IP infringement claims\n\n### 5. Limitation of Liability\n\n**Current Position:** No limitation on Seller's liability.\n\n**Risk:** Seller may seek to limit liability for breaches.\n\n**Proposed Amendment:** Add provisions:\n- No financial cap on Seller's liability for fundamental breaches\n- Time limits for claims (24-36 months for general warranties, longer for tax)\n- De minimis thresholds and baskets\n\n### 6. Conditions Precedent\n\n**Current Position:** No conditions precedent in SPA.\n\n**Risk:** Buyer obligated to complete regardless of due diligence findings or third-party consents.\n\n**Proposed Amendment:** Add conditions precedent including:\n- Due diligence satisfactory to Buyer\n- No material adverse change\n- Third-party consents (including Calloway Media Ltd)\n- Regulatory approvals\n- Financing arrangements\n\n### 7. Purchase Price Adjustment Mechanism\n\n**Current Position:** Fixed price of $140,000,000 with no adjustment mechanism.\n\n**Risk:** Price does not reflect actual net asset value or working capital at completion.\n\n**Proposed Amendment:** Add working capital adjustment mechanism based on completion accounts.\n\n### 8. Confidentiality and Restrictive Covenants\n\n**Current Position:** Basic 5-year confidentiality clause (clause 4).\n\n**Risk:** No protection against Seller competing with the Company.\n\n**Proposed Amendment:** Add restrictive covenants preventing Seller from:\n- Competing with the Company for 3-5 years\n- Soliciting customers or employees\n- Using confidential information\n\n### 9. Dispute Resolution\n\n**Current Position:** Basic jurisdiction clause (clause 5).\n\n**Risk:** Costly and time-consuming court proceedings.\n\n**Proposed Amendment:** Add tiered dispute resolution:\n1. Senior management negotiation (30 days)\n2. Mediation (30 days)\n3. Arbitration (LCIA or ICC rules)\n\n### 10. Definitions and Interpretation\n\n**Current Position:** Minimal definitions (clause 1).\n\n**Risk:** Ambiguity in key terms.\n\n**Proposed Amendment:** Expand definitions including:\n- Business Day\n- Material Adverse Change\n- Intellectual Property\n- Warranties\n- Indemnities\n- Completion\n\n## Specific Redline Amendments\n\n### Clause 1: Interpretation\n**Add definitions:**\n```\n\"Business Day\" means a day (other than a Saturday or Sunday) on which banks are open for general business in London.\n\"Completion\" means completion of the sale and purchase of the Shares in accordance with clause 2.\n\"Completion Date\" means the date on which Completion takes place.\n\"Disclosure Letter\" means the letter from the Seller to the Buyer disclosing information against the Warranties.\n\"Indemnities\" means the indemnities set out in clause [X].\n\"Intellectual Property\" means patents, trademarks, service marks, registered designs, applications for any of the foregoing, copyright, design rights, database rights, trade secrets, know-how, and all other intellectual property rights of a similar or analogous nature.\n\"Material Adverse Change\" means any change, event, circumstance or effect that is materially adverse to the business, operations, assets, liabilities, financial condition or results of operations of the Company.\n\"Warranties\" means the warranties set out in clause [X].\n```\n\n### New Clause: Conditions Precedent\n**Insert after clause 1:**\n```\n2. CONDITIONS PRECEDENT\n2.1 Completion is conditional upon the following conditions being satisfied or waived by the Buyer:\n(a) the Buyer completing its due diligence investigation of the Company to its satisfaction;\n(b) there being no Material Adverse Change in the business or financial condition of the Company;\n(c) receipt of all necessary third-party consents, including but not limited to consent from Calloway Media Ltd under clause 14.2 of the material customer contract dated 15 March 2024;\n(d) receipt of all necessary regulatory approvals;\n(e) the Buyer obtaining financing for the Purchase Price on terms satisfactory to it.\n2.2 The conditions in clause 2.1 must be satisfied by [date], failing which either party may terminate this Agreement.\n```\n\n### New Clause: Warranties\n**Insert comprehensive warranty schedule covering all material aspects of the Company's business.**\n\n### New Clause: Indemnities\n**Insert comprehensive indemnity provisions with specific reference to IP risks identified in Disclosure Letter.**\n\n### Clause 2: Sale and Purchase\n**Amend 2.1:**\n```\n2.1 The Purchase Price is $140,000,000, subject to adjustment in accordance with clause [X] (Completion Accounts). The Buyer shall pay the Purchase Price to the Seller in full, in cleared funds, by wire transfer to a bank account designated in writing by the Seller at least three Business Days prior to the Completion Date.\n```\n\n**Add Completion Accounts clause providing for post-completion price adjustment based on working capital.**\n\n## Additional Critical Issues\n\n### 11. Currency Discrepancy\n\n**Current Position:** Purchase Price is $140,000,000 (dollars) but Escrow Amount is £2,500,000 (pounds).\n\n**Risk:** Currency fluctuation risk and confusion over applicable currency.\n\n**Proposed Amendment:** Standardize currency throughout documents (preferably GBP for UK transaction).\n\n### 12. Referenced but Non-Existent Warranties\n\n**Current Position:** Disclosure Letter references Warranties 6.3 (Material Contracts) and 8.2 (IP) that do not exist in SPA.\n\n**Risk:** Contractual ambiguity and potential dispute over whether warranties were intended to be included.\n\n**Proposed Amendment:** Either:\n1. Insert the referenced warranties into SPA, or\n2. Remove references from Disclosure Letter and clarify no warranties are given\n\n## Timing Considerations\n\n**Current Inconsistency:** Client email indicates completion \"prior to 29 March 2027\" but SPA shows Closing Date as 29 April 2027.\n\n**Recommendation:** Align completion date with client instructions (before 29 March 2027) or obtain client confirmation of April date.\n\n## Next Steps\n\n1. **Immediate Priority:** Address the contradictory disclosure regarding change of control provisions\n2. **Critical:** Insert comprehensive warranties and indemnities\n3. **Essential:** Increase escrow amount and duration\n4. **Important:** Add conditions precedent and price adjustment mechanism\n5. **Standard:** Include restrictive covenants and enhanced dispute resolution\n\n## Conclusion\n\nThe current SPA provides inadequate protection for a £140M acquisition. The proposed amendments are essential to mitigate identified risks, particularly the IP ownership issue and contradictory disclosure regarding change of control provisions. We should negotiate these amendments vigorously to protect our client's position.\n\n**Recommended Negotiation Strategy:** Present the missing warranties and indemnities as standard market practice for transactions of this size. The escrow increase is justified by the purchase price magnitude. The conditions precedent are necessary given the identified risks in due diligence.\n\n# Your job\nNo grades are available. Critically assess the deliverable and the work process yourself, as a demanding supervising partner would, and write reusable candidate lessons for improving the work.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|redline\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C1\",\n      \"what_went_wrong\": \"The redline note did not verify whether the purchase price currency matched the escrow currency or recompute the escrow percentage based on the correct currency.\",\n      \"should_have\": \"Recomputed the escrow amount as a percentage of the purchase price using the same currency for both figures.\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C2\",\n      \"what_went_wrong\": \"The deliverable did not cross-check the disclosed warranty clause numbers in the Disclosure Letter against the actual clauses in the SPA.\",\n      \"should_have\": \"Verified that all referenced warranty clause numbers in the Disclosure Letter exist in the SPA or flagged discrepancies.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C3\",\n      \"what_went_wrong\": \"The redline note proposed amendments without first confirming whether the client's completion timeline aligned with the SPA's closing date.\",\n      \"should_have\": \"Explicitly confirmed the intended completion date with the client before finalising timing-related amendments.\",\n      \"failure_kind\": \"task_specific\"\n    },\n    {\n      \"criterion_id\": \"C4\",\n      \"what_went_wrong\": \"The deliverable did not include a checklist of standard warranties for the practice area, leading to potential omissions.\",\n      \"should_have\": \"Used a standard warranty checklist for corporate M&A transactions to ensure completeness.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C5\",\n      \"what_went_wrong\": \"The redline note did not flag the absence of a 'materiality scrape' provision in the indemnity section, which is standard in many SPAs.\",\n      \"should_have\": \"Reviewed the indemnity provisions against a market-standard template to identify missing clauses.\",\n      \"failure_kind\": \"content\"\n    },\n    {\n      \"criterion_id\": \"C6\",\n      \"what_went_wrong\": \"The deliverable did not verify whether the escrow release tranches aligned with the warranty survival periods.\",\n      \"should_have\": \"Ensured escrow release tranches matched the survival periods of the warranties they were intended to secure.\",\n      \"failure_kind\": \"procedural\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"Before finalising escrow provisions, recompute the escrow amount as a percentage of the purchase price using the same currency for both figures.\",\n      \"evidence\": [\"C1\"],\n      \"task_type_scope\": \"redline\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"Cross-check all clause numbers referenced in the Disclosure Letter against the principal agreement to identify missing or misnumbered provisions.\",\n      \"evidence\": [\"C2\"],\n      \"task_type_scope\": \"redline\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"general\",\n      \"text\": \"Confirm critical dates (e.g., completion timeline) with the client before drafting or finalising amendments to avoid inconsistencies.\",\n      \"evidence\": [\"C3\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"Use a standard warranty checklist for the practice area to ensure all material warranties are included in the redline amendments.\",\n      \"evidence\": [\"C4\"],\n      \"task_type_scope\": \"redline\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Compare indemnity provisions against a market-standard template to identify and propose missing clauses, such as 'materiality scrape' provisions.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"redline\",\n      \"confidence\": 0.85\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"review\",\n      \"text\": \"Ensure escrow release tranches align with the survival periods of the warranties they are intended to secure before finalising the redline.\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"redline\",\n      \"confidence\": 0.9\n    }\n  ],\n  \"lesson_feedback\": []\n}\n```"
+}

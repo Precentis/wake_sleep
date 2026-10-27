@@ -1,0 +1,94 @@
+{
+  "docs": [
+    {
+      "title": "underwriting_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 539,
+            "output_tokens": 1161
+          }
+        }
+      ]
+    },
+    {
+      "title": "prospectus_extract.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 507,
+            "output_tokens": 1038
+          }
+        }
+      ]
+    },
+    {
+      "title": "lock_up_agreement.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 487,
+            "output_tokens": 895
+          }
+        }
+      ]
+    },
+    {
+      "title": "client_email.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 442,
+            "output_tokens": 388
+          }
+        }
+      ]
+    }
+  ],
+  "doc_facts": {
+    "underwriting_agreement.md": {
+      "key": "underwriting",
+      "facts": [
+        "Parties: Ivybridge Pharma plc (Company) and Elstree Bioscience Securities (Underwriter).",
+        "Recital C: the Company has 89,250,000 ordinary shares in issue.",
+        "Clause 4: the Company grants the Underwriters an option to purchase up to 3,200,000 additional shares (the Over-allotment Option), representing 15% of the 16,000,000 Firm Shares."
+      ],
+      "must_contain": [
+        "89,250,000",
+        "3,200,000",
+        "16,000,000",
+        "15%"
+      ]
+    },
+    "prospectus_extract.md": {
+      "key": "prospectus",
+      "facts": [
+        "Issuer: Ivybridge Pharma plc. The date of this Prospectus is 25 September 2026.",
+        "The date of this Prospectus is 25 September 2026.",
+        "Capitalisation: 88,000,000 ordinary shares are in issue at the date of this Prospectus."
+      ],
+      "must_contain": [
+        "25 September 2026",
+        "88,000,000"
+      ]
+    },
+    "lock_up_agreement.md": {
+      "key": "lock_up",
+      "facts": [
+        "Clause 2: the Shareholder shall not sell any Shares during the period ending 365 days after the date of the Prospectus. 'Business Day' means a day other than a Saturday or Sunday on which banks are open in New York."
+      ],
+      "must_contain": [
+        "365 days"
+      ]
+    },
+    "client_email.md": {
+      "key": "client_email",
+      "facts": [],
+      "must_contain": []
+    }
+  }
+}

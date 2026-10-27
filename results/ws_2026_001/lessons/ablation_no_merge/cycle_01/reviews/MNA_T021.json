@@ -1,0 +1,145 @@
+{
+  "task_id": "MNA_T021",
+  "cycle": 1,
+  "lineage": "ablation_no_merge",
+  "graded": true,
+  "failures": [
+    {
+      "criterion_id": "N/A",
+      "what_went_wrong": "No failures identified; all criteria passed. However, the agent could improve consistency and thoroughness in certain procedural aspects to prevent potential oversights in future tasks.",
+      "should_have": "Maintained even higher standards of pinpoint citation, cross-referencing, and verification to ensure no minor omissions or inconsistencies slip through.",
+      "failure_kind": "procedural"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T021_0",
+      "type": "checklist",
+      "category": "review",
+      "text": "Before finalising the deliverable, verify that every issue or finding includes a pinpoint citation (document name, clause/section/paragraph number) and cross-reference it with the source text.",
+      "source_tasks": [
+        "MNA_T021"
+      ],
+      "evidence": [
+        "MNA_T021:C6"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T021_1",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "For every date-related condition or deadline, calculate and explicitly state the number of days between key dates (e.g., signing, closing, long-stop) to identify misalignments.",
+      "source_tasks": [
+        "MNA_T021"
+      ],
+      "evidence": [
+        "MNA_T021:C3",
+        "MNA_T021:C5"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T021_2",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Ensure the deliverable explicitly states whether each identified third-party consent has been obtained, and recommend it as a condition precedent if not.",
+      "source_tasks": [
+        "MNA_T021"
+      ],
+      "evidence": [
+        "MNA_T021:C4"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T021_3",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "When reviewing material contracts, cross-check every change-of-control provision against disclosures to identify contradictions and flag them as misrepresentations.",
+      "source_tasks": [
+        "MNA_T021"
+      ],
+      "evidence": [
+        "MNA_T021:C1"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T021_4",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "For intellectual property issues, verify the existence of written assignments for all critical IP and flag any gaps as conditions precedent to closing.",
+      "source_tasks": [
+        "MNA_T021"
+      ],
+      "evidence": [
+        "MNA_T021:C2"
+      ],
+      "task_type_scope": "contract_review",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T021_5",
+      "type": "checklist",
+      "category": "review",
+      "text": "Recompute all derived figures (e.g., days between dates, percentages, caps) using a calculator tool before relying on them in the deliverable.",
+      "source_tasks": [
+        "MNA_T021"
+      ],
+      "evidence": [
+        "MNA_T021:C3",
+        "MNA_T021:C5"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.85
+    }
+  ],
+  "lesson_feedback": [
+    {
+      "lesson_id": "L0001",
+      "label": "HELPFUL",
+      "reason": "Ensures compliance with pinpoint citation requirements, which is critical for legal deliverables."
+    },
+    {
+      "lesson_id": "L0002",
+      "label": "HELPFUL",
+      "reason": "Proactively identifies timeline misalignments, which are common in transactional work and can derail deals."
+    },
+    {
+      "lesson_id": "L0003",
+      "label": "HELPFUL",
+      "reason": "Clarifies the status of third-party consents, which is a frequent oversight in contract reviews."
+    },
+    {
+      "lesson_id": "L0004",
+      "label": "HELPFUL",
+      "reason": "Systematic cross-checking of disclosures against contracts prevents misrepresentations from being overlooked."
+    },
+    {
+      "lesson_id": "L0005",
+      "label": "HELPFUL",
+      "reason": "IP due diligence is a recurring issue in M&A, and this lesson ensures critical gaps are flagged early."
+    },
+    {
+      "lesson_id": "L0006",
+      "label": "HELPFUL",
+      "reason": "Double-checking calculations reduces errors in quantitative analysis, which is essential for accuracy."
+    }
+  ],
+  "input_tokens": 4228,
+  "output_tokens": 965,
+  "cost_usd": 0.0035615,
+  "prompt": "# Task\nType: contract_review | Practice area: corporate_mna\nYou act for the Buyer, Ivybridge Foods Ltd. Ivybridge Foods Ltd (the Buyer) is acquiring the entire issued share capital of Kingsmere Engineering Ltd (the Company) from Pemberton Marine Ltd (the Seller).\n\nReview the principal agreement against the other matter documents and report the problematic provisions. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 3 March 2026. Address the deliverable to the supervising partner.\n\n# Trajectory (28 model steps, 28 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"client_email.md\"})\n 3. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 4. [research] read_document({\"name\": \"disclosure_letter.md\"})\n 5. [research] read_document({\"name\": \"material_customer_contract.md\"})\n 6. [research] search_documents({\"query\": \"warranty\"})\n 7. [research] search_documents({\"query\": \"indemnity\"})\n 8. [research] search_documents({\"query\": \"limitation\"})\n 9. [research] search_documents({\"query\": \"liability\"})\n10. [research] search_documents({\"query\": \"Clause 5\"})\n11. [research] search_documents({\"query\": \"Clause 6\"})\n12. [analysis] calculate({\"expression\": \"date('2026-02-12')\"})\n13. [analysis] calculate({\"expression\": \"add_days(date('2026-02-12'), 120)\"})\n14. [analysis] calculate({\"expression\": \"date('2026-07-27')\"})\n15. [analysis] calculate({\"expression\": \"date('2026-03-23')\"})\n16. [analysis] calculate({\"expression\": \"days_between(date('2026-02-12'), date('2026-03-23'))\"})\n17. [drafting] write_draft(<1053 words>)\n18. [verification] read_draft({})\n19. [editing] edit_draft(find='**Risk:** Corrib Engineering Ltd could assert ownership righ' -> '**Risk:** Corrib Engineering Ltd could assert ownership righ')\n20. [verification] search_documents({\"query\": \"Business Days\"})\n21. [verification] read_document({\"name\": \"share_purchase_agreement.md\", \"start_line\": 23, \"num_lines\": 20})\n22. [editing] edit_draft(find='**Problem:** The absence of these warranty clauses means the' -> '**Problem:** The absence of these warranty clauses means the')\n23. [verification] read_document({\"name\": \"share_purchase_agreement.md\", \"start_line\": 96, \"num_lines\": 20})\n24. [verification] calculate({\"expression\": \"days_between(date('2026-03-23'), date('2026-07-27'))\"})\n25. [editing] edit_draft(find='**Problem:** The Closing Date (23 March 2026) precedes the e' -> '**Problem:** The Closing Date (23 March 2026) precedes the e')\n26. [verification] calculate({\"expression\": \"days_between(date('2026-06-12'), date('2026-07-27'))\"})\n27. [verification] search_documents({\"query\": \"schedule\"})\n28. [control] finish({\"summary\": \"Comprehensive review of the share purchase agreement identifying critical deficiencies including missing warranty clauses, conflicting timelines, m)\n\n# Final deliverable\n# Memorandum\n\n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Date:** 3 March 2026  \n**Subject:** Review of Share Purchase Agreement for Acquisition of Kingsmere Engineering Ltd by Ivybridge Foods Ltd  \n**Matter:** Acquisition of Kingsmere Engineering Ltd  \n\n## Executive Summary\n\nI have reviewed the principal share purchase agreement (SPA) dated 12 February 2026 against the other matter documents. The review reveals several problematic provisions that require urgent attention, including missing warranty clauses, conflicting timelines, material contractual issues, intellectual property concerns, and drafting inconsistencies. These issues pose significant risks to the Buyer's position and the successful completion of the transaction.\n\n## 1. Missing Clauses and Incomplete Agreement\n\n### 1.1 Missing Warranty Clauses\nThe SPA jumps from Clause 4 (Conditions) to Clause 7 (Confidentiality), omitting Clauses 5 and 6 entirely. The disclosure letter references:\n- **Warranty 6.3 (Material Contracts)** - Paragraph 3 of disclosure letter\n- **Warranty 8.2 (IP)** - Paragraph 4 of disclosure letter\n\n**Problem:** The absence of these warranty clauses means the Buyer has no contractual protections regarding material contracts or intellectual property, despite the Seller making disclosures against these non-existent warranties. The disclosure letter purports to qualify warranties that do not exist in the SPA.\n\n**Risk:** The Buyer would have no recourse if representations about material contracts or IP prove false, despite the Seller's disclosures suggesting such warranties were intended to be included.\n\n## 2. Timeline Conflicts and Condition Precedent Issues\n\n### 2.1 Conflicting Timelines\n- **SPA Closing Date:** 23 March 2026 (Clause 1.1)\n- **Merger Clearance:** Expected by 27 July 2026 (client email)\n- **SPA Termination Date:** 12 June 2026 (120 days from 12 February 2026, per Clause 4.5)\n\n**Problem:** The Closing Date (23 March 2026) precedes the expected merger clearance date (27 July 2026) by 126 days (over four months). The SPA would terminate on 12 June 2026 if conditions aren't satisfied, which is 45 days before the expected merger clearance (27 July 2026).\n\n**Risk:** The transaction cannot complete without merger clearance, yet the SPA timelines are fundamentally misaligned with regulatory expectations.\n\n### 2.2 Condition Precedent Drafting\nClause 4.3(a) references \"receipt of all necessary third-party consents and approvals, including any required under agreements with Eskdale Energy plc.\" However, the condition is drafted as inclusive (\"include, but are not limited to\") rather than exhaustive.\n\n**Problem:** This creates uncertainty about what constitutes satisfaction of conditions.\n\n**Risk:** The Seller could argue that other unspecified conditions must be satisfied, potentially delaying or preventing completion.\n\n## 3. Material Customer Contract Issues\n\n### 3.1 Eskdale Energy Change of Control Provision\nThe material customer contract with Eskdale Energy plc contains at Clause 14.2:\n> \"Either party may terminate this agreement on 30 days' notice if the other party undergoes a change of control without its prior written consent.\"\n\n**Contradiction:** The disclosure letter at Paragraph 3.1 states:\n> \"no Material Contract to which the Company is a party contains any provision requiring consent, notice, or amendment as a result of a change of control of the Company.\"\n\n**Problem:** The disclosure directly contradicts the actual contractual provision, creating a fundamental misrepresentation.\n\n**Risk:** Eskdale Energy could terminate the contract post-acquisition, potentially destroying the Company's value. The Buyer would have limited recourse due to the missing warranty clauses.\n\n## 4. Intellectual Property Ownership Issues\n\n### 4.1 Core Platform Software IP\nThe disclosure letter reveals (Paragraphs 4.1-4.4):\n- Core platform software developed in 2023 by Corrib Engineering Ltd\n- No written assignment of intellectual property rights\n- IP ownership \"may not be fully enforceable under English law\"\n\n**Problem:** The Company's fundamental operational software lacks clear IP ownership, yet this critical asset is central to the Company's value.\n\n**Risk:** Corrib Engineering Ltd could assert ownership rights over the software, potentially requiring redevelopment or licensing payments. The $120 million purchase price may be significantly overstated given this fundamental IP defect.\n\n## 5. Drafting Inconsistencies and Technical Issues\n\n### 5.1 Currency Mismatch\n- **Purchase Price:** $120,000,000 (USD) - Clause 2.1\n- **All Parties:** UK companies operating in pounds sterling\n- **Customer Contract:** Fees payable in pounds sterling (Clause 4.1 of material contract)\n\n**Problem:** Currency risk and conversion costs not addressed.\n\n**Risk:** Exchange rate fluctuations could significantly affect the actual purchase price.\n\n### 5.2 Date Inconsistencies\n- **SPA Date:** 12 February 2026\n- **Disclosure Letter Reference:** \"dated on or about 3 March 2026\"\n- **Our Deliverable Date:** 3 March 2026\n\n**Problem:** Creates confusion about which document governs.\n\n### 5.3 Incomplete Definitions\nClause 1.1 defines \"Business Days\" but this term is used in Clause 2.2 without definition.\n\n**Problem:** Creates uncertainty about payment timing.\n\n## 6. Additional Omissions\n\n### 6.1 No Indemnity Provisions\nThe SPA contains no indemnity clauses to protect the Buyer against post-completion liabilities.\n\n### 6.2 No Limitation of Liability\nNo caps on liability, time limits for claims, or financial thresholds.\n\n### 6.3 No Tax Provisions\nNo tax indemnities or provisions for tax liabilities.\n\n### 6.4 No Restrictive Covenants\nNo non-compete or non-solicitation provisions to protect the acquired business.\n\n## Recommendations\n\n1. **Immediate Redrafting Required:** The SPA requires complete redrafting to include:\n   - Comprehensive warranty clauses (including for material contracts and IP)\n   - Indemnity provisions\n   - Limitation of liability clauses\n   - Tax provisions\n\n2. **Timeline Realignment:** \n   - Extend Closing Date beyond expected merger clearance (post-27 July 2026)\n   - Extend termination date accordingly\n   - Consider making merger clearance a specific condition precedent\n\n3. **Eskdale Energy Consent:** \n   - Require Eskdale Energy change of control consent as a condition precedent\n   - Address the contradictory disclosure\n   - Consider renegotiating the disclosure letter\n\n4. **IP Due Diligence:** \n   - Conduct urgent IP due diligence\n   - Require Seller to obtain proper IP assignments from Corrib Engineering Ltd\n   - Consider price adjustment or escrow arrangement\n\n5. **Currency Correction:** \n   - Specify purchase price in pounds sterling\n   - Include exchange rate mechanism if USD intended\n\n6. **Comprehensive Review:** Engage specialist counsel for:\n   - IP due diligence and remediation\n   - Competition law advice on merger clearance timing\n   - Tax structuring advice\n\n## Conclusion\n\nThe current SPA is fundamentally deficient and poses unacceptable risks to the Buyer. The missing warranty clauses alone would leave the Buyer exposed to significant post-completion liabilities without recourse. The timeline conflicts, material contract issues, and IP ownership concerns compound these risks.\n\nI recommend we immediately advise the client not to sign the current SPA and commence negotiations for a comprehensively redrafted agreement that properly protects the Buyer's interests.\n\n**Next Steps:**\n1. Schedule urgent client meeting to discuss findings\n2. Prepare mark-up of required SPA amendments\n3. Engage specialist IP counsel\n4. Commence negotiations with Seller's representatives\n\nPlease advise on your preferred approach.\n\n# Expert rubric verdicts (6/6 passed)\n- C1 [PASS] Identifies that the Eskdale Energy plc contract (Clause 14.2) allows termination on a change of control without consent, that the disclosure against Warranty 6.3 says there is no such provision, and that consent should be obtained as a condition to Closing.\n    judges: PASS: The deliverable identifies Clause 14.2 of the Eskdale Energy contract allowing termination on change of control without consent, notes the disclosure letter at Paragraph 3.1 contradicts this, and recommends obtaining con | PASS: The deliverable correctly identifies the Eskdale Energy Clause 14.2 change of control termination right, notes the contradictory disclosure letter Paragraph 3.1 claim that no such provision exists, and recommends obtaini\n- C2 [PASS] Identifies that the core platform was developed by contractor Corrib Engineering Ltd without a written IP assignment, so the Company may not own it, and recommends obtaining a confirmatory assignment as a condition to Closing.\n    judges: PASS: The deliverable identifies that core platform software was developed by Corrib Engineering Ltd without written IP assignment (disclosure letter Paragraphs 4.1-4.4), notes ownership may not be enforceable, and recommends  | PASS: The deliverable correctly identifies the Corrib Engineering Ltd software development without written IP assignment (disclosure letter Paragraphs 4.1-4.4), notes the ownership risk, and recommends obtaining proper IP assi\n- C3 [PASS] Calculates the long-stop date as 12 June 2026 (120 days after signing on 12 February 2026) and identifies that expected clearance on 27 July 2026 falls after it, recommending an extension.\n    judges: PASS: The deliverable correctly calculates the long-stop date as 12 June 2026 (120 days from 12 February 2026), identifies that expected merger clearance on 27 July 2026 falls after this date, and recommends extending the term | PASS: The deliverable correctly calculates the long-stop date as 12 June 2026 (120 days from 12 February 2026), identifies that expected merger clearance on 27 July 2026 falls after it, and recommends timeline realignment (Sec\n- C4 [PASS] Lists the Eskdale Energy plc change-of-control consent as a required third-party consent and states it has not been obtained.\n    judges: PASS: The deliverable lists the Eskdale Energy change of control consent as a required third-party consent in the recommendations and notes that the SPA references consents required under agreements with Eskdale Energy plc, im | PASS: The deliverable lists the Eskdale Energy change of control consent as a required third-party consent in Clause 4.3(a) and explicitly states it has not been obtained, recommending it be made a condition precedent (Section\n- C5 [PASS] Gives the long-stop period as 120 days and as the date 12 June 2026, with days remaining from 3 March 2026 (101 days).\n    judges: PASS: The deliverable states the long-stop period is 120 days, gives the date as 12 June 2026, and correctly calculates 101 days remaining from the deliverable date of 3 March 2026 (12 June minus 3 March = 101 days). | PASS: The deliverable states the long-stop period is 120 days (Clause 4.5), gives the date as 12 June 2026, and implicitly notes 101 days remain from 3 March 2026 by stating the gap to 27 July 2026 is 126 days from Closing Dat\n- C6 [PASS] Gives a pinpoint citation (document name and section/clause number) for every issue or finding.\n    judges: PASS: The deliverable provides pinpoint citations for every issue, including SPA Clause 1.1, Clause 2.1, Clause 4.3(a), Clause 4.5, Clause 7.1, Clause 8.1; disclosure letter Paragraphs 3.1, 4.1-4.4; and material customer contr | PASS: The deliverable provides pinpoint citations for all major issues: SPA Clauses 1.1, 2.1, 2.2, 4.3(a), 4.5, 7, 8; disclosure letter Paragraphs 3.1, 4.1-4.4; and material customer contract Clause 14.2. Minor omission: 'Busi\n\n# Your job\nAnalyse each FAILED criterion: what went wrong, what the agent should have done, and whether the failure is procedural (reusable) or task-specific. Then write reusable candidate lessons that would prevent the procedural failures on other matters.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|contract_review\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"N/A\",\n      \"what_went_wrong\": \"No failures identified; all criteria passed. However, the agent could improve consistency and thoroughness in certain procedural aspects to prevent potential oversights in future tasks.\",\n      \"should_have\": \"Maintained even higher standards of pinpoint citation, cross-referencing, and verification to ensure no minor omissions or inconsistencies slip through.\",\n      \"failure_kind\": \"procedural\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"review\",\n      \"text\": \"Before finalising the deliverable, verify that every issue or finding includes a pinpoint citation (document name, clause/section/paragraph number) and cross-reference it with the source text.\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"For every date-related condition or deadline, calculate and explicitly state the number of days between key dates (e.g., signing, closing, long-stop) to identify misalignments.\",\n      \"evidence\": [\"C3\", \"C5\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"Ensure the deliverable explicitly states whether each identified third-party consent has been obtained, and recommend it as a condition precedent if not.\",\n      \"evidence\": [\"C4\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"When reviewing material contracts, cross-check every change-of-control provision against disclosures to identify contradictions and flag them as misrepresentations.\",\n      \"evidence\": [\"C1\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"For intellectual property issues, verify the existence of written assignments for all critical IP and flag any gaps as conditions precedent to closing.\",\n      \"evidence\": [\"C2\"],\n      \"task_type_scope\": \"contract_review\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"review\",\n      \"text\": \"Recompute all derived figures (e.g., days between dates, percentages, caps) using a calculator tool before relying on them in the deliverable.\",\n      \"evidence\": [\"C3\", \"C5\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.85\n    }\n  ],\n  \"lesson_feedback\": [\n    {\n      \"lesson_id\": \"L0001\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Ensures compliance with pinpoint citation requirements, which is critical for legal deliverables.\"\n    },\n    {\n      \"lesson_id\": \"L0002\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Proactively identifies timeline misalignments, which are common in transactional work and can derail deals.\"\n    },\n    {\n      \"lesson_id\": \"L0003\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Clarifies the status of third-party consents, which is a frequent oversight in contract reviews.\"\n    },\n    {\n      \"lesson_id\": \"L0004\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Systematic cross-checking of disclosures against contracts prevents misrepresentations from being overlooked.\"\n    },\n    {\n      \"lesson_id\": \"L0005\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"IP due diligence is a recurring issue in M&A, and this lesson ensures critical gaps are flagged early.\"\n    },\n    {\n      \"lesson_id\": \"L0006\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"Double-checking calculations reduces errors in quantitative analysis, which is essential for accuracy.\"\n    }\n  ]\n}\n```"
+}

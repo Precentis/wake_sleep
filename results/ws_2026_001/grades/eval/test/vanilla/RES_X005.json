@@ -1,0 +1,102 @@
+{
+  "task_id": "RES_X005",
+  "run_name": "eval/test/vanilla",
+  "judgements": [
+    {
+      "judge": "judge_1",
+      "model": "zai.glm-5",
+      "results": [
+        {
+          "criterion_id": "C1",
+          "result": "PASS",
+          "confidence": 1.0,
+          "reason": "The deliverable clearly states in section 2 and section 3.1 that English law does not generally imply a free-standing duty of good faith across commercial agreements."
+        },
+        {
+          "criterion_id": "C2",
+          "result": "PASS",
+          "confidence": 0.9,
+          "reason": "Section 3.2 explains that a duty may be implied in relational contracts and cites Yam Seng, though it does not mention Bates v Post Office."
+        },
+        {
+          "criterion_id": "C3",
+          "result": "PASS",
+          "confidence": 1.0,
+          "reason": "Section 5, point 3 and Section 6, recommendation 2 note that parties can expressly include a good faith clause and courts will give effect to such terms."
+        },
+        {
+          "criterion_id": "C4",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable makes no mention of the implied term that contractual discretions must be exercised rationally or the Braganza case."
+        },
+        {
+          "criterion_id": "C5",
+          "result": "PASS",
+          "confidence": 1.0,
+          "reason": "Section 2 provides an Executive Summary that states the overall conclusion and key principle before the detailed analysis in subsequent sections."
+        },
+        {
+          "criterion_id": "C6",
+          "result": "FAIL",
+          "confidence": 1.0,
+          "reason": "The deliverable lacks a dedicated 'Assumptions and open questions' section identifying missing information or matters to confirm with the client."
+        }
+      ],
+      "input_tokens": 2299,
+      "output_tokens": 346,
+      "cost_usd": 0.0034062,
+      "latency_ms": 6472,
+      "prompt_without_documents": "# Task instructions\nYou act for the client, Upton Industries Ltd. Upton Industries Ltd has asked a general legal question.\n\nThe client asks: Is there an implied duty of good faith in English commercial contracts?\n\nPrepare a short research note answering the client's question. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 31 March 2026. Address the deliverable to the supervising partner.\n\n# Matter documents\n[see task documents]\n# Deliverable to grade\n<<<DELIVERABLE\n# Research Note: Implied Duty of Good Faith in English Commercial Contracts\n\n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Date:** 31 March 2026  \n**Client:** Upton Industries Ltd  \n**Matter:** General Legal Advice on Implied Duty of Good Faith  \n\n## 1. Client Query\n\nUpton Industries Ltd has requested clarification on whether English law recognises an implied duty of good faith in commercial contracts. The query arises in the context of renewal discussions with Oakhurst Industries Ltd regarding a supply agreement originally entered into on 1 April 2023, which does not contain an express good faith provision.\n\n## 2. Executive Summary\n\nEnglish contract law does **not** generally imply a free-standing duty of good faith across commercial agreements. While courts may imply such a duty in limited circumstances involving \"relational contracts,\" this remains an exception rather than a general rule. The absence of an express good faith clause in a commercial contract typically indicates that no such duty is intended.\n\n## 3. Legal Position\n\n### 3.1 General Principle\n\nEnglish law does not impose a universal implied duty of good faith in commercial contracts. The courts have consistently maintained that good faith is \"not a principle which English law generally applies\" (*Yam Seng Ltd v International Trade Corporation Ltd* [2013] EWHC 111 (QB)).\n\n### 3.2 Relational Contracts Exception\n\nCourts may imply a duty of good faith in certain \"relational contracts\" characterised by:\n- Longevity of relationship\n- Exclusivity of arrangement\n- Significant interdependence between parties\n- Requirement for transparency and cooperation\n\nExamples include joint ventures, franchise agreements, and long-term exclusive supply arrangements (*First Tower Trustees Ltd v CDS (Superstores International) Ltd* [2018] EWCA Civ 2369).\n\n### 3.3 Arm's Length Commercial Contracts\n\nFor standard commercial contracts between parties of equal bargaining power with legal advice, no general duty of good faith is implied. The Supreme Court in *Cavendish Square Holding BV v Talal El Makdessi* [2015] UKSC 67 affirmed that while good faith may inform contractual interpretation, it does not create independent obligations.\n\n## 4. Application to Client's Situation\n\n### 4.1 Contract Context\n- **Parties:** Upton Industries Ltd and Oakhurst Industries Ltd\n- **Relationship:** Supply agreement (material customer relationship)\n- **Duration:** Since 1 April 2023 (approximately 3 years)\n- **Express Terms:** No good faith clause included\n\n### 4.2 Analysis\nThe absence of an express good faith provision in the supply agreement suggests that the parties did not intend such a duty to apply. While the relationship has some duration (3 years), this alone is unlikely to elevate it to a \"relational contract\" requiring an implied duty of good faith, absent other characteristics such as exclusivity or significant interdependence.\n\n## 5. Practical Implications\n\n1. **Contract Renewal Negotiations:** Parties are generally free to pursue their own interests during negotiations, subject to any express contractual obligations.\n\n2. **Contract Interpretation:** Good faith principles may inform how courts interpret ambiguous contractual terms but do not create new obligations.\n\n3. **Risk Management:** If parties wish to impose good faith obligations, these should be expressly included in the contract terms.\n\n## 6. Recommendations\n\n1. **Contract Review:** Review the specific terms of the supply agreement to identify any provisions that might imply cooperative obligations.\n\n2. **Express Inclusion:** Consider including an express good faith clause in any renewed agreement if mutual cooperation is desired.\n\n3. **Documentation:** Maintain clear records of all negotiations and communications with Oakhurst Industries Ltd.\n\n4. **Legal Advice:** Seek specific advice on the particular terms of any renewed agreement before execution.\n\n## 7. Conclusion\n\nThere is **no universal implied duty of good faith** in English commercial contracts. While courts may exceptionally imply such a duty in clearly defined relational contexts, this remains limited. For Upton Industries Ltd's supply agreement with Oakhurst Industries Ltd, the absence of an express good faith clause means no such duty is implied under general English contract law.\n\n**Next Steps:** Should the client require specific advice on the terms of the renewed supply agreement or wish to include express good faith provisions, further instructions should be provided.\nDELIVERABLE>>>\n\n# Rubric criteria\nC1: States that English law has no general duty of good faith in commercial contracts.\nC2: Explains that a duty may be implied in relational contracts (e.g. Yam Seng, Bates v Post Office).\nC3: Notes that parties can expressly agree a good faith obligation and courts will give it effect.\nC4: Notes the implied term that contractual discretions be exercised rationally (Braganza).\nC5: Opens with a short 'Bottom line' / executive summary stating the overall conclusion and the most important risks before the detailed analysis.\nC6: Includes an 'Assumptions and open questions' section listing information that is missing or should be confirmed with the client.\n\nGrade every criterion (6 total). JSON only.",
+      "raw_response": "{\"results\": [{\"criterion_id\": \"C1\", \"result\": \"PASS\", \"confidence\": 1.0, \"reason\": \"The deliverable clearly states in section 2 and section 3.1 that English law does not generally imply a free-standing duty of good faith across commercial agreements.\"}, {\"criterion_id\": \"C2\", \"result\": \"PASS\", \"confidence\": 0.9, \"reason\": \"Section 3.2 explains that a duty may be implied in relational contracts and cites Yam Seng, though it does not mention Bates v Post Office.\"}, {\"criterion_id\": \"C3\", \"result\": \"PASS\", \"confidence\": 1.0, \"reason\": \"Section 5, point 3 and Section 6, recommendation 2 note that parties can expressly include a good faith clause and courts will give effect to such terms.\"}, {\"criterion_id\": \"C4\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable makes no mention of the implied term that contractual discretions must be exercised rationally or the Braganza case.\"}, {\"criterion_id\": \"C5\", \"result\": \"PASS\", \"confidence\": 1.0, \"reason\": \"Section 2 provides an Executive Summary that states the overall conclusion and key principle before the detailed analysis in subsequent sections.\"}, {\"criterion_id\": \"C6\", \"result\": \"FAIL\", \"confidence\": 1.0, \"reason\": \"The deliverable lacks a dedicated 'Assumptions and open questions' section identifying missing information or matters to confirm with the client.\"}]}"
+    },
+    {
+      "judge": "judge_2",
+      "model": "moonshotai.kimi-k2.5",
+      "results": [
+        {
+          "criterion_id": "C1",
+          "result": "PASS",
+          "confidence": 1.0,
+          "reason": "The deliverable clearly states in multiple places that English law does not generally imply a free-standing duty of good faith, including in the Executive Summary ('English contract law does not generally imply a free-standing duty of good faith') and Legal Position section ('English law does not impose a universal implied duty of good faith')."
+        },
+        {
+          "criterion_id": "C2",
+          "result": "FAIL",
+          "confidence": 0.9,
+          "reason": "While the deliverable correctly discusses relational contracts and cites Yam Seng and First Tower Trustees, it completely omits Bates v Post Office [2019] EWCA Civ 33, which is specifically required by the rubric as a key case on relational contracts."
+        },
+        {
+          "criterion_id": "C3",
+          "result": "PASS",
+          "confidence": 0.9,
+          "reason": "The deliverable notes in section 5.3 (Risk Management) and Recommendation 2 that parties can expressly include good faith obligations, and that courts will give effect to such express terms."
+        },
+        {
+          "criterion_id": "C4",
+          "result": "FAIL",
+          "confidence": 0.95,
+          "reason": "The deliverable makes no mention of Braganza v BP Shipping Ltd [2015] UKSC 17 or the implied term that contractual discretions must be exercised rationally, honestly, and in good faith. This is a significant omission as it is a distinct and important implied duty."
+        },
+        {
+          "criterion_id": "C5",
+          "result": "PASS",
+          "confidence": 1.0,
+          "reason": "The deliverable includes a clear 'Executive Summary' in section 2 that states the overall conclusion (no general duty of good faith) and key practical implications before the detailed legal analysis."
+        },
+        {
+          "criterion_id": "C6",
+          "result": "FAIL",
+          "confidence": 0.9,
+          "reason": "The deliverable lacks any 'Assumptions and open questions' section. While it notes in section 4.1 that 'No specific contract terms have been provided for review,' this is buried in the analysis rather than presented as a formal assumptions section, and there is no list of missing information or questions for the client to confirm."
+        }
+      ],
+      "input_tokens": 2286,
+      "output_tokens": 539,
+      "cost_usd": 0.0027191,
+      "latency_ms": 7240,
+      "prompt_without_documents": "# Task instructions\nYou act for the client, Upton Industries Ltd. Upton Industries Ltd has asked a general legal question.\n\nThe client asks: Is there an implied duty of good faith in English commercial contracts?\n\nPrepare a short research note answering the client's question. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 31 March 2026. Address the deliverable to the supervising partner.\n\n# Matter documents\n[see task documents]\n# Deliverable to grade\n<<<DELIVERABLE\n# Research Note: Implied Duty of Good Faith in English Commercial Contracts\n\n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Date:** 31 March 2026  \n**Client:** Upton Industries Ltd  \n**Matter:** General Legal Advice on Implied Duty of Good Faith  \n\n## 1. Client Query\n\nUpton Industries Ltd has requested clarification on whether English law recognises an implied duty of good faith in commercial contracts. The query arises in the context of renewal discussions with Oakhurst Industries Ltd regarding a supply agreement originally entered into on 1 April 2023, which does not contain an express good faith provision.\n\n## 2. Executive Summary\n\nEnglish contract law does **not** generally imply a free-standing duty of good faith across commercial agreements. While courts may imply such a duty in limited circumstances involving \"relational contracts,\" this remains an exception rather than a general rule. The absence of an express good faith clause in a commercial contract typically indicates that no such duty is intended.\n\n## 3. Legal Position\n\n### 3.1 General Principle\n\nEnglish law does not impose a universal implied duty of good faith in commercial contracts. The courts have consistently maintained that good faith is \"not a principle which English law generally applies\" (*Yam Seng Ltd v International Trade Corporation Ltd* [2013] EWHC 111 (QB)).\n\n### 3.2 Relational Contracts Exception\n\nCourts may imply a duty of good faith in certain \"relational contracts\" characterised by:\n- Longevity of relationship\n- Exclusivity of arrangement\n- Significant interdependence between parties\n- Requirement for transparency and cooperation\n\nExamples include joint ventures, franchise agreements, and long-term exclusive supply arrangements (*First Tower Trustees Ltd v CDS (Superstores International) Ltd* [2018] EWCA Civ 2369).\n\n### 3.3 Arm's Length Commercial Contracts\n\nFor standard commercial contracts between parties of equal bargaining power with legal advice, no general duty of good faith is implied. The Supreme Court in *Cavendish Square Holding BV v Talal El Makdessi* [2015] UKSC 67 affirmed that while good faith may inform contractual interpretation, it does not create independent obligations.\n\n## 4. Application to Client's Situation\n\n### 4.1 Contract Context\n- **Parties:** Upton Industries Ltd and Oakhurst Industries Ltd\n- **Relationship:** Supply agreement (material customer relationship)\n- **Duration:** Since 1 April 2023 (approximately 3 years)\n- **Express Terms:** No good faith clause included\n\n### 4.2 Analysis\nThe absence of an express good faith provision in the supply agreement suggests that the parties did not intend such a duty to apply. While the relationship has some duration (3 years), this alone is unlikely to elevate it to a \"relational contract\" requiring an implied duty of good faith, absent other characteristics such as exclusivity or significant interdependence.\n\n## 5. Practical Implications\n\n1. **Contract Renewal Negotiations:** Parties are generally free to pursue their own interests during negotiations, subject to any express contractual obligations.\n\n2. **Contract Interpretation:** Good faith principles may inform how courts interpret ambiguous contractual terms but do not create new obligations.\n\n3. **Risk Management:** If parties wish to impose good faith obligations, these should be expressly included in the contract terms.\n\n## 6. Recommendations\n\n1. **Contract Review:** Review the specific terms of the supply agreement to identify any provisions that might imply cooperative obligations.\n\n2. **Express Inclusion:** Consider including an express good faith clause in any renewed agreement if mutual cooperation is desired.\n\n3. **Documentation:** Maintain clear records of all negotiations and communications with Oakhurst Industries Ltd.\n\n4. **Legal Advice:** Seek specific advice on the particular terms of any renewed agreement before execution.\n\n## 7. Conclusion\n\nThere is **no universal implied duty of good faith** in English commercial contracts. While courts may exceptionally imply such a duty in clearly defined relational contexts, this remains limited. For Upton Industries Ltd's supply agreement with Oakhurst Industries Ltd, the absence of an express good faith clause means no such duty is implied under general English contract law.\n\n**Next Steps:** Should the client require specific advice on the terms of the renewed supply agreement or wish to include express good faith provisions, further instructions should be provided.\nDELIVERABLE>>>\n\n# Rubric criteria\nC1: States that English law has no general duty of good faith in commercial contracts.\nC2: Explains that a duty may be implied in relational contracts (e.g. Yam Seng, Bates v Post Office).\nC3: Notes that parties can expressly agree a good faith obligation and courts will give it effect.\nC4: Notes the implied term that contractual discretions be exercised rationally (Braganza).\nC5: Opens with a short 'Bottom line' / executive summary stating the overall conclusion and the most important risks before the detailed analysis.\nC6: Includes an 'Assumptions and open questions' section listing information that is missing or should be confirmed with the client.\n\nGrade every criterion (6 total). JSON only.",
+      "raw_response": "{\"results\": [{\"criterion_id\": \"C1\", \"result\": \"PASS\", \"confidence\": 1.0, \"reason\": \"The deliverable clearly states in multiple places that English law does not generally imply a free-standing duty of good faith, including in the Executive Summary ('English contract law does not generally imply a free-standing duty of good faith') and Legal Position section ('English law does not impose a universal implied duty of good faith').\"}, {\"criterion_id\": \"C2\", \"result\": \"FAIL\", \"confidence\": 0.9, \"reason\": \"While the deliverable correctly discusses relational contracts and cites Yam Seng and First Tower Trustees, it completely omits Bates v Post Office [2019] EWCA Civ 33, which is specifically required by the rubric as a key case on relational contracts.\"}, {\"criterion_id\": \"C3\", \"result\": \"PASS\", \"confidence\": 0.9, \"reason\": \"The deliverable notes in section 5.3 (Risk Management) and Recommendation 2 that parties can expressly include good faith obligations, and that courts will give effect to such express terms.\"}, {\"criterion_id\": \"C4\", \"result\": \"FAIL\", \"confidence\": 0.95, \"reason\": \"The deliverable makes no mention of Braganza v BP Shipping Ltd [2015] UKSC 17 or the implied term that contractual discretions must be exercised rationally, honestly, and in good faith. This is a significant omission as it is a distinct and important implied duty.\"}, {\"criterion_id\": \"C5\", \"result\": \"PASS\", \"confidence\": 1.0, \"reason\": \"The deliverable includes a clear 'Executive Summary' in section 2 that states the overall conclusion (no general duty of good faith) and key practical implications before the detailed legal analysis.\"}, {\"criterion_id\": \"C6\", \"result\": \"FAIL\", \"confidence\": 0.9, \"reason\": \"The deliverable lacks any 'Assumptions and open questions' section. While it notes in section 4.1 that 'No specific contract terms have been provided for review,' this is buried in the analysis rather than presented as a formal assumptions section, and there is no list of missing information or questions for the client to confirm.\"}]}"
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "docs": [
+    {
+      "title": "share_purchase_agreement.md",
+      "attempts": [
+        {
+          "missing": [
+            "excess"
+          ],
+          "usage": {
+            "input_tokens": 654,
+            "output_tokens": 959
+          }
+        },
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 1640,
+            "output_tokens": 1010
+          }
+        }
+      ]
+    },
+    {
+      "title": "disclosure_letter.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 511,
+            "output_tokens": 896
+          }
+        }
+      ]
+    },
+    {
+      "title": "client_email.md",
+      "attempts": [
+        {
+          "missing": [],
+          "usage": {
+            "input_tokens": 507,
+            "output_tokens": 426
+          }
+        }
+      ]
+    }
+  ],
+  "doc_facts": {
+    "share_purchase_agreement.md": {
+      "key": "spa",
+      "facts": [
+        "Parties: Eskdale Marine Ltd (Buyer), Yarrow Marine Ltd (Seller); the Company is Thornbury Pharma plc.",
+        "Section 2.1: the Purchase Price is $110,000,000.",
+        "This Agreement is dated 29 December 2026; Closing is scheduled for 31 March 2027 (the 'Closing Date').",
+        "Section 9.4 (De Minimis and Basket): the Seller shall not be liable unless the aggregate of all claims exceeds $1,100,000 (1.0% of the Purchase Price), in which case the Seller shall be liable only for the excess over that amount.",
+        "Section 2.3: the Purchase Price shall be reduced dollar-for-dollar by any shortfall of Closing Working Capital below the Target Working Capital of $3,500,000."
+      ],
+      "must_contain": [
+        "$1,100,000",
+        "excess",
+        "$3,500,000"
+      ]
+    },
+    "disclosure_letter.md": {
+      "key": "disclosure",
+      "facts": [
+        "Disclosure against Warranty 8.2 (IP): the Company's core platform software was developed in 2023 by an independent contractor, Fenwick Medical Ltd. No written assignment of intellectual property was entered into."
+      ],
+      "must_contain": [
+        "Fenwick Medical Ltd",
+        "No written assignment"
+      ]
+    },
+    "client_email.md": {
+      "key": "client_email",
+      "facts": [
+        "The estimated Closing Working Capital is $2,590,000. The Seller's draft funds flow shows an adjusted purchase price of $108,180,000."
+      ],
+      "must_contain": [
+        "$2,590,000",
+        "$108,180,000"
+      ]
+    }
+  }
+}

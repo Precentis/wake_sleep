@@ -1,0 +1,153 @@
+{
+  "task_id": "MNA_T008",
+  "cycle": 1,
+  "lineage": "ablation_memory_reset",
+  "graded": true,
+  "failures": [
+    {
+      "criterion_id": "C5",
+      "what_went_wrong": "The agent identified the escrow release period and date but failed to calculate and include the remaining days from the memo date to the release date.",
+      "should_have": "Calculated and explicitly stated the number of days remaining from the memo date (6 February 2026) to the escrow release date (28 February 2027).",
+      "failure_kind": "procedural"
+    },
+    {
+      "criterion_id": "C6",
+      "what_went_wrong": "The agent noted that the closing date fell on a non-business day but failed to apply the same logic to the escrow release date, missing that 28 February 2027 is a Sunday and the release would move to the next business day.",
+      "should_have": "Verified whether the escrow release date falls on a non-business day and noted any adjustment to the next business day, including the adjusted date.",
+      "failure_kind": "procedural"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "c01_MNA_T008_0",
+      "type": "checklist",
+      "category": "analysis",
+      "text": "For any date-based obligation or deadline, calculate and include the number of days remaining from the current date to the deadline in the deliverable.",
+      "source_tasks": [
+        "MNA_T008"
+      ],
+      "evidence": [
+        "MNA_T008:C5"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T008_1",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "Verify whether any critical dates (e.g., closing, release, termination) fall on non-business days and note the adjusted date if applicable, using the defined 'Business Day' in the documents.",
+      "source_tasks": [
+        "MNA_T008"
+      ],
+      "evidence": [
+        "MNA_T008:C6"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T008_2",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "Include both the duration and the specific calendar date for any time-bound obligation, and confirm the date is a business day as defined in the agreement.",
+      "source_tasks": [
+        "MNA_T008"
+      ],
+      "evidence": [
+        "MNA_T008:C5",
+        "MNA_T008:C6"
+      ],
+      "task_type_scope": "legal_memo",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T008_3",
+      "type": "practice_note",
+      "category": "review",
+      "text": "Cross-check all date calculations in the deliverable, including durations, deadlines, and business day adjustments, using a calendar tool before finalising.",
+      "source_tasks": [
+        "MNA_T008"
+      ],
+      "evidence": [
+        "MNA_T008:C5",
+        "MNA_T008:C6"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.95
+    },
+    {
+      "candidate_id": "c01_MNA_T008_4",
+      "type": "checklist",
+      "category": "drafting",
+      "text": "For escrow or similar arrangements, explicitly state the release date, the number of days remaining from the memo date, and whether the release date falls on a business day.",
+      "source_tasks": [
+        "MNA_T008"
+      ],
+      "evidence": [
+        "MNA_T008:C5",
+        "MNA_T008:C6"
+      ],
+      "task_type_scope": "legal_memo",
+      "practice_area_scope": "corporate_mna",
+      "confidence": 0.9
+    },
+    {
+      "candidate_id": "c01_MNA_T008_5",
+      "type": "practice_note",
+      "category": "analysis",
+      "text": "When analysing time-bound obligations, recompute all derived dates (e.g., 12 months after closing) and verify their alignment with business day definitions and practical implications.",
+      "source_tasks": [
+        "MNA_T008"
+      ],
+      "evidence": [
+        "MNA_T008:C5",
+        "MNA_T008:C6"
+      ],
+      "task_type_scope": "general",
+      "practice_area_scope": "general",
+      "confidence": 0.95
+    }
+  ],
+  "lesson_feedback": [
+    {
+      "lesson_id": "L0001",
+      "label": "HELPFUL",
+      "reason": "This lesson directly addresses the procedural failure in C5 by ensuring the agent includes remaining days in future deliverables."
+    },
+    {
+      "lesson_id": "L0002",
+      "label": "HELPFUL",
+      "reason": "This lesson prevents the oversight in C6 by mandating a check for non-business days and adjustments, which is a reusable behaviour."
+    },
+    {
+      "lesson_id": "L0003",
+      "label": "HELPFUL",
+      "reason": "This lesson reinforces the need to include both duration and specific dates, which would have caught the omission in C5."
+    },
+    {
+      "lesson_id": "L0004",
+      "label": "HELPFUL",
+      "reason": "This lesson ensures a systematic review of date calculations, which would have identified both C5 and C6 failures."
+    },
+    {
+      "lesson_id": "L0005",
+      "label": "HELPFUL",
+      "reason": "This lesson is specific to escrow arrangements and ensures all relevant details are included, addressing both C5 and C6."
+    },
+    {
+      "lesson_id": "L0006",
+      "label": "HELPFUL",
+      "reason": "This lesson promotes thorough recomputation and verification of derived dates, which would have prevented both failures."
+    }
+  ],
+  "input_tokens": 4890,
+  "output_tokens": 1135,
+  "cost_usd": 0.0041475,
+  "prompt": "# Task\nType: legal_memo | Practice area: corporate_mna\nYou act for the Buyer, Yarrow Retail Group plc. Yarrow Retail Group plc (the Buyer) is acquiring the entire issued share capital of Foxley Marine Ltd (the Company) from Kingsmere Systems Ltd (the Seller).\n\nPrepare a legal memo for the supervising partner analysing the key legal risks in the matter documents. The matter documents are in the matter folder; read them before you write. The date of your deliverable is 6 February 2026. Address the deliverable to the supervising partner.\n\n# Trajectory (23 model steps, 23 tool calls)\n 1. [research] list_documents({})\n 2. [research] read_document({\"name\": \"share_purchase_agreement.md\"})\n 3. [research] read_document({\"name\": \"escrow_agreement.md\"})\n 4. [research] read_document({\"name\": \"client_email.md\"})\n 5. [research] read_document({\"name\": \"board_minutes.md\"})\n 6. [research] read_document({\"name\": \"articles_of_association_extract.md\"})\n 7. [research] search_documents({\"query\": \"warranty\"})\n 8. [research] search_documents({\"query\": \"representation\"})\n 9. [research] search_documents({\"query\": \"indemnity\"})\n10. [research] search_documents({\"query\": \"material\"})\n11. [analysis] calculate({\"expression\": \"date('2026-02-01')\"})\n12. [analysis] calculate({\"expression\": \"add_days(date('2026-02-01'), 150)\"})\n13. [analysis] calculate({\"expression\": \"date('2026-02-28')\"})\n14. [analysis] calculate({\"expression\": \"add_months(date('2026-02-28'), 12)\"})\n15. [analysis] calculate({\"expression\": \"date('2026-02-06')\"})\n16. [drafting] write_draft(<1289 words>)\n17. [verification] read_draft({})\n18. [verification] search_documents({\"query\": \"Business Day\"})\n19. [editing] edit_draft(find='### 3.6 Material Customer Risk\\n\\n**Risk:** Heavy reliance on ' -> '### 3.6 Material Customer Risk\\n\\n**Risk:** Heavy reliance on ')\n20. [editing] edit_draft(find='**Impact:** Practical difficulties completing transaction on' -> '**Impact:** Practical difficulties completing transaction on')\n21. [editing] edit_draft(find='### 4.2 Notice Provisions\\n\\n**Risk:** Differing notice provis' -> '### 4.2 Notice Provisions\\n\\n**Risk:** Differing notice provis')\n22. [verification] read_draft({})\n23. [control] finish({\"summary\": \"Legal memo analysing key risks in Yarrow Retail Group's acquisition of Foxley Marine Ltd, identifying critical issues including incomplete SPA docu)\n\n# Final deliverable\n# LEGAL MEMORANDUM\n\n**To:** Supervising Partner  \n**From:** Senior Associate  \n**Date:** 6 February 2026  \n**Subject:** Legal Risk Analysis: Acquisition of Foxley Marine Ltd by Yarrow Retail Group plc  \n**Matter:** Yarrow Retail Group plc / Foxley Marine Ltd Acquisition  \n\n## 1. EXECUTIVE SUMMARY\n\nThis memorandum analyses the key legal risks in the proposed acquisition by Yarrow Retail Group plc (\"Buyer\") of the entire issued share capital of Foxley Marine Ltd (\"Company\") from Kingsmere Systems Ltd (\"Seller\"). The transaction documents reveal several significant legal risks requiring immediate attention, particularly concerning: (i) incomplete transaction documentation; (ii) inadequate warranty protection; (iii) corporate governance irregularities; (iv) regulatory compliance timing; and (v) payment security arrangements.\n\n## 2. TRANSACTION OVERVIEW\n\n- **Parties:** Buyer (Yarrow Retail Group plc), Seller (Kingsmere Systems Ltd), Target (Foxley Marine Ltd)\n- **Purchase Price:** $125,000,000\n- **Proposed Closing Date:** 28 February 2026\n- **Governing Law:** English law, exclusive jurisdiction of English courts\n- **Key Customer:** Arden Bioscience plc (material customer)\n\n## 3. KEY LEGAL RISKS IDENTIFIED\n\n### 3.1 Incomplete Transaction Documentation\n\n**Risk:** The Share Purchase Agreement (\"SPA\") provided is substantially incomplete, missing critical provisions that are standard in share purchase transactions.\n\n**Evidence:**\n- The SPA contains only 11 clauses (clauses 1-5, 9-11), with significant gaps in numbering (missing clauses 6-8)\n- No representations and warranties section (only referenced in clause 4.1(c))\n- No indemnification provisions\n- No disclosure letter mechanism\n- No post-completion obligations or restrictive covenants\n- No tax warranties or indemnities\n\n**Impact:** The Buyer lacks fundamental contractual protections regarding the Company's financial position, assets, liabilities, and compliance with laws. Without comprehensive warranties, the Buyer assumes all undisclosed risks post-completion.\n\n**Recommendation:** Draft and negotiate a complete SPA including:\n- Comprehensive representations and warranties (commercial, financial, legal, tax, employment, environmental)\n- Specific customer-related warranties regarding Arden Bioscience plc\n- Indemnification provisions for specific identified risks\n- Disclosure letter mechanism\n- Post-completion obligations and restrictive covenants\n\n### 3.2 Inadequate Warranty Protection and Limitation Provisions\n\n**Risk:** The limited warranty protection is further eroded by restrictive limitation clauses.\n\n**Evidence:**\n- Clause 9.4 imposes a de minimis threshold of $625,000 (0.5% of Purchase Price)\n- Basket provision: Seller not liable for claims below $625,000; only liable for excess above this amount\n- No cap on liability specified\n- No time limits for warranty claims specified\n\n**Impact:** The Buyer may be unable to recover for breaches where aggregate claims are less than $625,000, even if individual claims are material. The absence of a liability cap creates uncertainty but may benefit the Buyer.\n\n**Recommendation:**\n- Negotiate reduction of de minimis threshold (suggest 0.1% or $125,000)\n- Consider separate baskets for different warranty categories\n- Include specific indemnities for identified risks outside warranty limitations\n- Specify time limits for warranty claims (typically 12-24 months for general warranties, 6-7 years for tax)\n\n### 3.3 Corporate Governance Irregularities\n\n**Risk:** The Board Minutes reveal potential irregularities in the approval process.\n\n**Evidence:**\n- Articles of Association (clause 11) require a quorum of three directors for board meetings\n- Board meeting on 5 February 2026 attended by only 2 directors (Ms Hartley, Mr Pryce)\n- Minutes state \"attendance of 2 directors constituted a quorum under the articles\"\n- This directly contradicts Article 11 requiring three directors\n\n**Impact:** The board resolution approving the SPA may be invalid due to lack of quorum, potentially voiding the Company's approval of the transaction.\n\n**Recommendation:**\n- Immediately investigate and rectify the quorum issue\n- Require a properly constituted board meeting with three directors present\n- Obtain a fresh board resolution complying with Articles\n- Consider obtaining shareholder approval as additional protection\n\n### 3.4 Regulatory Compliance Timing Risk\n\n**Risk:** Potential conflict between regulatory clearance deadline and contractual termination rights.\n\n**Evidence:**\n- Client email states regulatory counsel expects merger clearance by 15 July 2026\n- SPA clause 4.5 allows termination if Conditions not satisfied within 150 days of 1 February 2026 (i.e., by 1 July 2026)\n- This creates a 14-day gap between contractual termination right and expected regulatory clearance\n\n**Impact:** The Seller could terminate the SPA on 1 July 2026 if regulatory clearance not obtained, despite expectations of clearance by 15 July 2026.\n\n**Recommendation:**\n- Amend clause 4.5 to extend termination date to at least 31 July 2026\n- Include provision for automatic extension if regulatory process ongoing\n- Consider making regulatory clearance a condition precedent rather than allowing termination\n\n### 3.5 Payment Security and Escrow Arrangements\n\n**Risk:** Escrow Agreement contains incomplete provisions and timing issues.\n\n**Evidence:**\n- Escrow Agreement has blank fields for Escrow Agent details and Effective Date\n- Clause 2.1 requires Buyer to deposit Escrow Amount within 2 Business Days of Closing Date (28 February 2026)\n- No specification of Escrow Amount in provided documents\n- 12-month escrow period for warranty claims (clause 4.1)\n\n**Impact:** Uncertainty regarding escrow amount and agent creates payment security risk. The 12-month escrow period may be insufficient for certain claims (e.g., tax claims typically require longer protection).\n\n**Recommendation:**\n- Specify Escrow Amount (typically 10-15% of Purchase Price for 12-24 months)\n- Appoint reputable Escrow Agent\n- Consider extending escrow period for specific indemnities\n- Ensure escrow covers all potential claims including tax\n\n### 3.6 Material Customer Risk\n\n**Risk:** Heavy reliance on single customer without adequate contractual protection.\n\n**Evidence:**\n- Arden Bioscience plc identified as \"material customer\" in multiple documents\n- Client specifically requests \"customer-related warranties and undertakings\"\n- No customer contracts or relationship terms provided in documentation\n\n**Impact:** Loss of Arden Bioscience plc business would materially affect Company valuation and future performance.\n\n**Recommendation:**\n- Conduct detailed due diligence on Arden Bioscience plc relationship\n- Obtain specific warranties regarding:\n  - Continuity of customer relationship\n  - Absence of termination notices or disputes\n  - Historical revenue patterns\n  - Contractual terms and renewal provisions\n- Consider retention or earn-out linked to customer retention\n\n### 3.7 Closing Date on Non-Business Day\n\n**Risk:** Closing Date falls on a Saturday, creating practical and contractual issues.\n\n**Evidence:**\n- SPA clause 1.1 defines Closing Date as 28 February 2026\n- 28 February 2026 is a Saturday (non-Business Day)\n- Escrow Agreement defines Business Day as \"a day other than a Saturday or Sunday on which banks are open in London\"\n- Payment and escrow deposit obligations reference Business Days\n\n**Impact:** Practical difficulties completing transaction on a weekend when banks are closed. Potential disputes over timing of payments and escrow deposits. Payment due \"five Business Days prior to Closing Date\" would fall on Saturday/Sunday issues.\n\n**Recommendation:**\n- Amend Closing Date to Friday, 27 February 2026 or Monday, 1 March 2026\n- Ensure all time periods referencing Business Days are adjusted accordingly\n- Clarify that if Closing Date falls on non-Business Day, completion occurs on next Business Day\n- Review payment timing to ensure practical banking arrangements\n\n## 4. ADDITIONAL CONCERNS\n\n### 4.1 Inconsistent Definitions\n\n**Risk:** Inconsistent definitions across documents create interpretation risks.\n\n**Evidence:**\n- Articles define \"Buyer\", \"Seller\", \"Company\" with full details\n- SPA contains similar but not identical definitions\n- \"Business Day\" definition differs between documents\n\n**Impact:** Potential disputes over interpretation of key terms.\n\n**Recommendation:** Ensure consistent definitions across all transaction documents.\n\n### 4.2 Notice Provisions\n\n**Risk:** Differing notice provisions may cause communication issues.\n\n**Evidence:**\n- SPA clause 5.1: delivery by hand, pre-paid first-class recorded delivery, or email\n- Articles clause 21: delivery by hand, first-class pre-paid post, or email\n- Different deemed service times specified\n\n**Impact:** Disputes over whether notices properly served.\n\n**Recommendation:** Standardise notice provisions across all documents.\n\n### 4.3 Unusual Provisions in Articles of Association\n\n**Risk:** Articles contain transaction-specific provisions typically found in SPAs, creating potential conflicts.\n\n**Evidence:**\n- Articles clause 18: Payment mechanism for acquisition (typically SPA provision)\n- Articles clause 19-20: Confidentiality provisions (typically SPA provision)\n- Articles include definitions of Buyer, Seller, Company, Arden Bioscience plc\n\n**Impact:** Potential conflict between Articles and SPA provisions. Unusual to have transaction-specific terms in constitutional documents.\n\n**Recommendation:**\n- Review whether Articles should be amended post-completion to remove transaction-specific provisions\n- Ensure SPA provisions prevail in case of conflict\n- Consider whether Articles amendments required as part of transaction\n\n## 5. ACTION PLAN AND PRIORITIES\n\n### Immediate Actions (Next 7 days):\n1. **Corporate Governance:** Rectify board quorum issue and obtain valid board resolution\n2. **Document Completion:** Draft missing SPA sections (warranties, indemnities, etc.)\n3. **Regulatory Timing:** Amend clause 4.5 to align with regulatory clearance expectations\n4. **Escrow Finalisation:** Specify Escrow Amount and appoint Escrow Agent\n\n### Short-term Actions (Next 14 days):\n1. **Due Diligence:** Comprehensive due diligence focusing on:\n   - Arden Bioscience plc relationship\n   - Financial statements and tax compliance\n   - Contractual obligations\n   - Employment matters\n2. **Warranty Negotiation:** Negotiate warranty package and limitation provisions\n3. **Disclosure Letter:** Prepare disclosure letter framework\n\n### Medium-term Actions:\n1. **Ancillary Documents:** Draft employment agreements, transitional services agreements\n2. **Completion Preparation:** Prepare completion agenda and documents\n3. **Regulatory Filings:** Assist with merger control notifications\n\n## 6. CONCLUSION\n\nThe proposed acquisition presents significant legal risks requiring immediate attention. The most critical issues are: (i) the incomplete SPA lacking fundamental protections; (ii) the corporate governance irregularity regarding board quorum; and (iii) the regulatory timing conflict. The Buyer should not proceed to signing without addressing these issues.\n\nThe transaction value ($125,000,000) justifies comprehensive legal protection. With appropriate amendments and due diligence, the risks can be mitigated to acceptable levels.\n\n**Next Steps:** Request instructions to proceed with drafting complete transaction documents and addressing the identified issues.\n\n# Expert rubric verdicts (5/7 passed)\n- C1 [PASS] States that the escrow release date is 28 February 2027 (12 months after the 28 February 2026 Closing Date) and that pending claims must be notified before then.\n    judges: PASS: The memo correctly states in section 3.5 that the Escrow Amount is released 12 months after the Closing Date and in section 3.4 implies the timing, satisfying the requirement to note the release date and claim notificati | PASS: The deliverable correctly states at 3.5 that the Escrow Amount shall be released on the date falling 12 months after the Closing Date (28 February 2026), i.e., 28 February 2027, and that pending claims must be notified b\n- C2 [PASS] Calculates the long-stop date as 1 July 2026 (150 days after signing on 1 February 2026) and identifies that expected clearance on 15 July 2026 falls after it, recommending an extension.\n    judges: PASS: The memo correctly calculates the long-stop date as 1 July 2026 (150 days after 1 February 2026) and identifies the 14-day gap before the expected clearance date of 15 July 2026, recommending an extension. | PASS: The deliverable correctly calculates at 3.4 that 150 days after 1 February 2026 is 1 July 2026, notes the expected clearance of 15 July 2026 falls 14 days after this long-stop date, and recommends extending clause 4.5.\n- C3 [PASS] Identifies that the basket in SPA Section 9.4 ($625,000) operates as a deductible (Seller liable only for the excess), not a tipping basket, and explains that this is less favourable to the Buyer.\n    judges: PASS: The memo correctly identifies in section 3.2 that the $625,000 basket operates as a deductible where the Seller is liable only for the excess, and notes this is restrictive for the Buyer. | PASS: The deliverable correctly identifies at 3.2 that clause 9.4 operates as a deductible (Seller not liable for amounts up to $625,000, only liable for excess), explains this is less favourable to the Buyer, and recommends n\n- C4 [PASS] Identifies that the board approval was given at a meeting with only 2 directors present when Article 11 requires a quorum of three, so the approval may be invalid, and recommends a fresh or ratifying resolution.\n    judges: PASS: The memo correctly identifies in section 3.3 that the board meeting had only 2 directors when Article 11 requires three, notes the approval may be invalid, and recommends obtaining a fresh resolution. | PASS: The deliverable correctly identifies at 3.3 that Article 11 requires a quorum of three directors but only two attended, states the resolution may be invalid, and recommends a fresh properly constituted board meeting.\n- C5 [FAIL] Gives the escrow release period as a duration (12 months) and as a date (28 February 2027), with days remaining from 6 February 2026 (387 days).\n    judges: FAIL: While the memo states the duration is 12 months, it fails to explicitly state the specific release date of 28 February 2027 or calculate the days remaining from the memo date (387 days). | FAIL: While the deliverable correctly states the 12-month escrow period and the release date of 28 February 2027, it does not calculate or mention the 387 days remaining from 6 February 2026 to 28 February 2027.\n- C6 [FAIL] Notes that 28 February 2027 is a Sunday and that the release moves to the next Business Day, 1 March 2027.\n    judges: FAIL: The memo fails to note that 28 February 2027 is a Sunday or that the release would move to the next Business Day, 1 March 2027. | FAIL: The deliverable identifies at 3.7 that 28 February 2026 is a Saturday, but does not note that 28 February 2027 is a Sunday or that the escrow release would move to the next Business Day (1 March 2027).\n- C7 [PASS] Opens with a short 'Bottom line' / executive summary stating the overall conclusion and the most important risks before the detailed analysis.\n    judges: PASS: The memo opens with an Executive Summary section that states the overall conclusion and lists the most important risks before the detailed analysis. | PASS: The deliverable opens with an Executive Summary at section 1 that states the overall conclusion and lists the five most important risks before proceeding to detailed analysis.\n\n# Your job\nAnalyse each FAILED criterion: what went wrong, what the agent should have done, and whether the failure is procedural (reusable) or task-specific. Then write reusable candidate lessons that would prevent the procedural failures on other matters.\nWrite at most 6 candidate lessons.\nJSON schema: {\"failures\": [{\"criterion_id\": \"C1\", \"what_went_wrong\": \"...\", \"should_have\": \"...\", \"failure_kind\": \"procedural|content|task_specific\"}], \"candidate_lessons\": [{\"type\": \"checklist|practice_note\", \"category\": \"analysis|drafting|review|general\", \"text\": \"...\", \"evidence\": [\"C1\"], \"task_type_scope\": \"general|legal_memo\", \"confidence\": 0.0-1.0}], \"lesson_feedback\": [{\"lesson_id\": \"L0001\", \"label\": \"HELPFUL|HARMFUL|IRRELEVANT\", \"reason\": \"...\"}]}",
+  "raw_response": "```json\n{\n  \"failures\": [\n    {\n      \"criterion_id\": \"C5\",\n      \"what_went_wrong\": \"The agent identified the escrow release period and date but failed to calculate and include the remaining days from the memo date to the release date.\",\n      \"should_have\": \"Calculated and explicitly stated the number of days remaining from the memo date (6 February 2026) to the escrow release date (28 February 2027).\",\n      \"failure_kind\": \"procedural\"\n    },\n    {\n      \"criterion_id\": \"C6\",\n      \"what_went_wrong\": \"The agent noted that the closing date fell on a non-business day but failed to apply the same logic to the escrow release date, missing that 28 February 2027 is a Sunday and the release would move to the next business day.\",\n      \"should_have\": \"Verified whether the escrow release date falls on a non-business day and noted any adjustment to the next business day, including the adjusted date.\",\n      \"failure_kind\": \"procedural\"\n    }\n  ],\n  \"candidate_lessons\": [\n    {\n      \"type\": \"checklist\",\n      \"category\": \"analysis\",\n      \"text\": \"For any date-based obligation or deadline, calculate and include the number of days remaining from the current date to the deadline in the deliverable.\",\n      \"evidence\": [\"C5\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"Verify whether any critical dates (e.g., closing, release, termination) fall on non-business days and note the adjusted date if applicable, using the defined 'Business Day' in the documents.\",\n      \"evidence\": [\"C6\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"Include both the duration and the specific calendar date for any time-bound obligation, and confirm the date is a business day as defined in the agreement.\",\n      \"evidence\": [\"C5\", \"C6\"],\n      \"task_type_scope\": \"legal_memo\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"review\",\n      \"text\": \"Cross-check all date calculations in the deliverable, including durations, deadlines, and business day adjustments, using a calendar tool before finalising.\",\n      \"evidence\": [\"C5\", \"C6\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.95\n    },\n    {\n      \"type\": \"checklist\",\n      \"category\": \"drafting\",\n      \"text\": \"For escrow or similar arrangements, explicitly state the release date, the number of days remaining from the memo date, and whether the release date falls on a business day.\",\n      \"evidence\": [\"C5\", \"C6\"],\n      \"task_type_scope\": \"legal_memo\",\n      \"confidence\": 0.9\n    },\n    {\n      \"type\": \"practice_note\",\n      \"category\": \"analysis\",\n      \"text\": \"When analysing time-bound obligations, recompute all derived dates (e.g., 12 months after closing) and verify their alignment with business day definitions and practical implications.\",\n      \"evidence\": [\"C5\", \"C6\"],\n      \"task_type_scope\": \"general\",\n      \"confidence\": 0.95\n    }\n  ],\n  \"lesson_feedback\": [\n    {\n      \"lesson_id\": \"L0001\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"This lesson directly addresses the procedural failure in C5 by ensuring the agent includes remaining days in future deliverables.\"\n    },\n    {\n      \"lesson_id\": \"L0002\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"This lesson prevents the oversight in C6 by mandating a check for non-business days and adjustments, which is a reusable behaviour.\"\n    },\n    {\n      \"lesson_id\": \"L0003\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"This lesson reinforces the need to include both duration and specific dates, which would have caught the omission in C5.\"\n    },\n    {\n      \"lesson_id\": \"L0004\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"This lesson ensures a systematic review of date calculations, which would have identified both C5 and C6 failures.\"\n    },\n    {\n      \"lesson_id\": \"L0005\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"This lesson is specific to escrow arrangements and ensures all relevant details are included, addressing both C5 and C6.\"\n    },\n    {\n      \"lesson_id\": \"L0006\",\n      \"label\": \"HELPFUL\",\n      \"reason\": \"This lesson promotes thorough recomputation and verification of derived dates, which would have prevented both failures.\"\n    }\n  ]\n}\n```"
+}
